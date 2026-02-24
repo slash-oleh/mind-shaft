@@ -1,38 +1,38 @@
-# {{TITLE: Write maintainable code}}
+# {{TITLE}}
 
-{{DESCRIPTION: A brief, one or two-sentence summary of the rule and its goal.}}
+{{DESCRIPTION}}
 
 ## Problem
 
-{{PROBLEM: Explain the problem this rule addresses.}}
+{{PROBLEM}}
 
 ## Good solution
 
-{{DESCRIPTION: Describe what and how we're doing it.}}
+{{DESCRIPTION}}
 
 ```{{language}}
-{{GOOD CODE EXAMPLE: this.isQuite('maintainable')}}
+{{GOOD_CODE_EXAMPLE}}
 ```
 
 ## Bad solution
 
-{{DESCRIPTION: Describe what and how we're doing it.}}
+{{DESCRIPTION}}
 
 ```{{language}}
-{{BAD CODE EXAMPLE: this.isNot[42].any['maintainable'].code[7]();}}
+{{BAD_CODE_EXAMPLE}}
 ```
 
 ## Impact
 
-- **[Impact](../../home/impact/positive/...)**: {{IMPACT: Explain how this practice helps/hinders this attribute.}}
+- **[{{IMPACT}}](../../home/impact/...)**: {{IMPACT_CONTEXT}}
 - ...
 
 ## Exceptions
 
-- {{EXCEPTION: Describe scenarios where this rule should be ignored or modified.}}
+- **{{EXCEPTION}}**: {{EXCEPTION_EXPLANATION}}
 - ...
 
 ## References
 
-- [{{RESOURCE NAME}}: {{MATERIAL TITLE}} {{by AUTHOR, IF NECESSARY}}]({{URL}})
+- [{{RESOURCE NAME}}: {{RESOURCE TITLE}}]({{RESOURCE_URL}})
 - ...

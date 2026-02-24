@@ -1,4 +1,4 @@
-# {{ TITLE: Maintainability }}
+# {{ TITLE }}
 
-- [{{Source: Wiki}}]({{URL}})
+- [{{RESOURCE_NAME}}]({{RESOURCE_URL}})
 - ...
