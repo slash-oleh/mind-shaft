@@ -25,6 +25,8 @@ Use [article template](templates/article.md) - copy the file and fill in the blo
 
 #### 1. Fill "Title"
 
+Format:
+
 - Use imperative form
 - One sentence without any punctuation at the end
 - Prefer positive wording where possible ("do" over "don't")
@@ -40,50 +42,86 @@ Some possible presets:
 
 #### 2. Fill the "TLDR"
 
+Format:
+
 - Use imperative form
 - One paragraph
 - Usually a 1 or 2 sentences long
-- Defines the rule and its goal
-- Less mention why but rather what, and, if needed, how and when
+
+Content:
+
+- Defines the rule, mostly "what" to do
+- Less mention "why" aspect, it's covered by the "Problem" and "Impact" sections
+- If necessary, very shortly mention "how" or "when"
 
 #### 3. Fill "Problem"
 
 Explain the problem this rule addresses.
 
+Format:
+
 - Usually a few sentences long
-- Defines the issue and its impact
+
+Content:
+
+- Some context if needed
+- Why it's an issue
+- Why it's important
 
 #### 4. Fill "Good solution"
+
+Format:
 
 - Usually a few sentences long
 - Usually has a code example
 
 #### 5. Fill "Bad solution"
 
-Same format as "Good solution".
+Format:
+
+- Same as "Good solution".
+
+Content:
 
 - The example should outline reaching the same goal (having the same result, solving the same problem) as the good solution, but in a bad way
 
 #### 6. Fill "Impact"
 
-A list of reasons why this rule is important.
+Format:
 
-- Usually a few list items
-- Reason is basically an [Impact](./src/home/impact/README.md)
-- Where possible, just reference items from there, and don't duplicate its definition
-- If the reason is not covered by any Impact, but it is generic, add it as a new one
+- Only list items
+- Usually a few
+- Use only [Impact](./src/home/impact/README.md) items with the internal links
+
+Content:
+
+- If the reason is not covered by any Impact, but it is generic, add it as a new Impact item
 - Where needed, add a context unique for this impact application (usually a sentence)
 
 #### 7. Exceptions
 
-When not to use this rule, or when it can be broken.
+Format:
+
+- Only list items
+- Usually 1 or 2
+
+Content:
+
+- When the rule should or can be broken
 
 #### 8. References
 
-External resources, articles, etc.
+Format:
 
+- Only list items
+- Usually a few
+- Only links
+
+Content:
+
+- Extenal resources, articles, etc.
 - Do not reference other internal articles
-- Title links like `Source: Title` or `Source: Title by Author`, for example `Wikipedia: Cohesion`
+- Title links as `Source: Title`, for example `Wikipedia: Cohesion`
 
 ## Adding an Impact item
 
