@@ -136,7 +136,7 @@ export const getLabel = async (dirPath, fallback) => {
 };
 
 /**
- * Extracts all paragraphs from the "TLDR" section.
+ * Extracts all paragraphs from the "TLDR" section using raw content slicing.
  */
 export const extractFirstParagraph = (content) => {
   const tree = parser.parse(content);
@@ -152,7 +152,9 @@ export const extractFirstParagraph = (content) => {
 
     const paragraphs = sectionNodes.filter(n => n.type === 'paragraph');
     if (paragraphs.length > 0) {
-      return stringifier.stringify({ type: 'root', children: paragraphs }).trim();
+      const start = paragraphs[0].position.start.offset;
+      const end = paragraphs[paragraphs.length - 1].position.end.offset;
+      return content.slice(start, end).trim();
     }
   }
 
@@ -191,7 +193,7 @@ export const extractImpactItems = (content) => {
 };
 
 /**
- * Extracts the "Good Solution" and "Bad Solution" sections including code blocks.
+ * Extracts the "Good Solution" and "Bad Solution" sections using raw content slicing.
  */
 export const extractSolutions = (content) => {
   const tree = parser.parse(content);
@@ -212,8 +214,12 @@ export const extractSolutions = (content) => {
       const nextHeadingIndex = nextNodes.findIndex(n => n.type === 'heading' && n.depth === 2);
       const sectionNodes = nextHeadingIndex === -1 ? nextNodes : nextNodes.slice(0, nextHeadingIndex);
 
-      const key = sectionName === 'Good Solution' ? 'good' : 'bad';
-      result[key] = stringifier.stringify({ type: 'root', children: sectionNodes }).trim();
+      if (sectionNodes.length > 0) {
+        const start = sectionNodes[0].position.start.offset;
+        const end = sectionNodes[sectionNodes.length - 1].position.end.offset;
+        const key = sectionName === 'Good Solution' ? 'good' : 'bad';
+        result[key] = content.slice(start, end).trim();
+      }
     }
   }
 
