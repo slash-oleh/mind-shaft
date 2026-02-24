@@ -25,7 +25,8 @@ Use [article template](templates/article.md) - copy the file and fill in the blo
 
 #### 1. Fill "Title"
 
-- Use imperative form ("do X", "use X")
+- Use imperative form
+- One sentence without any punctuation at the end
 - Prefer positive wording where possible ("do" over "don't")
 
 Some possible presets:
@@ -34,15 +35,16 @@ Some possible presets:
 - "Prefer X over Y"
 - "Use X"
 - "Reduce X"
+- "Avoid X"
 - "Keep X"
 
 #### 2. Fill the brief
 
 Under the title, provide some context.
 
+- Use imperative form
 - Usually a few sentences long
 - Defines the rule and its goal
-- Use imperative form
 - Less mention why but rather what, and, if needed, how and when
 
 #### 3. Fill "Problem"
@@ -54,8 +56,8 @@ Explain the problem this rule addresses.
 
 #### 4. Fill "Good solution"
 
-- Usually a few sentences long.
-- Usually has a code example.
+- Usually a few sentences long
+- Usually has a code example
 
 #### 5. Fill "Bad solution"
 
