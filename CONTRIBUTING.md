@@ -42,6 +42,8 @@ Under the title, provide some context.
 
 - Usually a few sentences long
 - Defines the rule and its goal
+- Use imperative form
+- Less mention why but rather what, and, if needed, how and when
 
 #### 3. Fill "Problem"
 
