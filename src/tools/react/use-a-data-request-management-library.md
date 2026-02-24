@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use specialized libraries like **TanStack Query (React Query)** or **SWR** to manage asynchronous data fetching. These tools automatically handle the lifecycle of a request - caching, synchronization, state management and many more.
+Use specialized libraries like TanStack Query or SWR to manage asynchronous data fetching and state instead of manual `useEffect` routines.
 
 ## Problem
 

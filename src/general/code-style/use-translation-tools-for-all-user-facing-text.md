@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Internalize all user-facing strings into translation files (i18n), even for single-language projects, to decouple text management from code development.
+Internalize all user-facing strings into translation files (i18n).
 
 ## Problem
 

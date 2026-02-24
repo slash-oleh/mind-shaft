@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use the Arrange-Act-Assert (AAA) pattern to structure your tests. This standardizes test layout, making them easier to read, understand, and maintain.
+Use the Arrange-Act-Assert (AAA) pattern to structure tests.
 
 ## Problem
 

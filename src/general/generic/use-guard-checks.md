@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Apply guard checks - both as robust range comparisons and as early-return clauses to prevent logic errors and reduce code complexity.
+Apply guard checks at the beginning of functions to handle edge cases early and use robust range comparisons instead of strict equality for threshold checks.
 
 ## Problem
 

@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use a standardized naming convention for Git branches to ensure they are easily identifiable, searchable, and logically linked to project tasks.
+Use a standardized naming convention for Git branches to ensure they are easily identifiable and linked to project tasks.
 
 ## Problem
 

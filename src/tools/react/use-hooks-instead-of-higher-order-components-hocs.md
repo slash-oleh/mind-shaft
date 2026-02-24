@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use custom Hooks instead of Higher-Order Components (HOCs) to share logic between components. Hooks offer a more direct, readable, and composable way to inject behavior without bloating the component tree.
+Use custom Hooks instead of Higher-Order Components (HOCs) to share logic between components for better composability and flatter component trees.
 
 ## Problem
 

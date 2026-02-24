@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Organize translation keys to mirror the directory and file structure of your codebase. This creates a direct mapping between the code and its translated strings.
+Organize translation keys to mirror the directory and file structure of the codebase.
 
 ## Problem
 

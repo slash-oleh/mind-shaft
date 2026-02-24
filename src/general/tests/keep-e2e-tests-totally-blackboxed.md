@@ -2,7 +2,7 @@
 
 ## TLDR
 
-End-to-End (E2E) tests should interact with the system only through its public interfaces (e.g., the UI or public API). They should verify the final output and behavior without any knowledge of the system's internal implementation.
+Interact with the system only through public interfaces (UI or public API) in E2E tests to verify final behavior without implementation knowledge.
 
 ## Problem
 

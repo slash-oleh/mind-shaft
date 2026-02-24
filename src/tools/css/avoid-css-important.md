@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Never use the `!important` flag in CSS to force a style to apply. Instead, manage CSS specificity correctly by using selectors properly.
+Manage CSS specificity correctly using selectors instead of the `!important` flag.
 
 ## Problem
 

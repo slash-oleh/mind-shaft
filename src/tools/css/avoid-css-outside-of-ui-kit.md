@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use custom CSS exclusively to implement primitive components within your Design System (UI Kit). For higher-level business components and pages, compose existing UI components rather than writing low-level CSS.
+Encapsulate raw CSS within the UI Kit's primitive components and build business features by composing these primitives.
 
 ## Problem
 

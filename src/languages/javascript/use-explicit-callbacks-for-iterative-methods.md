@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Always use an explicit callback function when using iterative array methods (`map`, `filter`, `forEach`, etc.) to avoid passing unexpected additional arguments to the handler.
+Use explicit callback functions when using iterative array methods like `map`, `filter`, or `forEach` instead of passing function references directly.
 
 ## Problem
 

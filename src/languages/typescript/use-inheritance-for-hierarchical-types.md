@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prefer using interface extension (`extends`) to model hierarchical relationships and share common properties, rather than defining a union of types that duplicate the same base fields.
+Use interface extension (`extends`) to model hierarchical relationships and share common properties instead of defining unions of types that duplicate base fields.
 
 ## Problem
 

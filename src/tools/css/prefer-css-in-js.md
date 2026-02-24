@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prefer using CSS-in-JS or CSS Modules where class names are directly referenced as JavaScript variables over global CSS stylesheets.
+Use CSS-in-JS or CSS Modules to bind styling directly to component logic instead of using global CSS stylesheets.
 
 ## Problem
 

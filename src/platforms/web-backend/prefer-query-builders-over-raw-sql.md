@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use query builders for standard database operations to reduce boilerplate, ensure composability, and improve long-term maintainability.
+Use query builders for standard database operations instead of raw SQL strings.
 
 ## Problem
 

@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format for Date, Time, and Duration representation to ensure consistency and interoperability.
+Use the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format for Date, Time, and Duration representation.
 
 ## Problem
 

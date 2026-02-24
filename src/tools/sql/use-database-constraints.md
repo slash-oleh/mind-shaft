@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Enforce data integrity, consistency, and validity at the schema level by utilizing foreign keys, unique constraints, and check constraints.
+Use foreign keys, unique constraints, and check constraints to enforce data integrity and validity at the schema level.
 
 ## Problem
 

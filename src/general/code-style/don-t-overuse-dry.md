@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Avoid the temptation to deduplicate every repeating piece of code. While the "Don't Repeat Yourself" (DRY) principle aims for a single source of truth, over-applying it can lead to premature or incorrect abstractions that are more difficult and expensive to maintain than simple duplication.
+Avoid premature deduplication and only create abstractions when code represents the same underlying concept, not just the same visual shape.
 
 ## Problem
 

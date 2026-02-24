@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Improve application performance and load times by implementing code splitting and lazy loading strategies.
+Implement code splitting and lazy loading for routes and large components.
 
 ## Problem
 

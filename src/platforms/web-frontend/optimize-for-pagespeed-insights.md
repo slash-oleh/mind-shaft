@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Achieve high performance scores by optimizing Core Web Vitals and addressing common bottlenecks highlighted by [PageSpeed Insights](https://pagespeed.web.dev/).
+Optimize Core Web Vitals like LCP and CLS to meet PageSpeed Insights standards.
 
 ## Problem
 

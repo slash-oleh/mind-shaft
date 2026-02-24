@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use a "headless" library like **TanStack Table (React Table)** to manage complex table logic. Headless libraries handle the state and calculations (sorting, pagination, filtering) while leaving the UI and styling entirely under your control.
+Use a headless library like TanStack Table to manage complex table logic, ensuring full control over UI and styling while delegating state and calculations.
 
 ## Problem
 

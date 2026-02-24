@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Adhere to the Git branching model chosen for the project to ensure a predictable and manageable development process.
+Adhere to the established Git branching model to ensure a predictable and manageable development process.
 
 ## Problem
 

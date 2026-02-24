@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Distinguish between "reactive" dependencies that *trigger* an effect and "non-reactive" values that the effect merely *reads*. Avoid blindly including every variable in the dependency array if you only want the effect to respond to specific changes.
+Distinguish between reactive dependencies that trigger an effect and non-reactive values that are merely read to avoid over-reactive effects.
 
 ## Problem
 

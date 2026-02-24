@@ -2,7 +2,7 @@
 
 ## TLDR
 
-When the same issue or violation occurs in multiple places within a Pull Request, provide a detailed explanation in the first instance (the "main" comment) and link to it in subsequent occurrences instead of duplicating the entire explanation.
+Provide a detailed explanation for the first occurrence of an issue within a Pull Request and link to it for all subsequent occurrences instead of duplicating the feedback.
 
 ## Problem
 

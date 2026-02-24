@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Avoid cramming multiple operations or long method chains into a single line.
+Break down complex operations and long method chains into multiple lines.
 
 ## Problem
 

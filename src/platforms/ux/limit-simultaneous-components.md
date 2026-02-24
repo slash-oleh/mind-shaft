@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Avoid overwhelming users by displaying too many interactive elements, data points, or navigation options at once.
+Limit the number of interactive elements, data points, and navigation options displayed simultaneously.
 
 ## Problem
 

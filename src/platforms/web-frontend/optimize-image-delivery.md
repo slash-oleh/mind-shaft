@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Ensure images are delivered in the most efficient format, size, and timing to minimize page weight and maximize performance.
+Deliver images in modern formats (WebP/AVIF), use responsive resizing, and implement lazy loading.
 
 ## Problem
 

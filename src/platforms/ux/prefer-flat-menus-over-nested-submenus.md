@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Keep navigation shallow. Use flat lists with clear grouping instead of deeply nested submenus that hide options and require precise physical coordination.
+Keep navigation shallow by using flat lists with clear grouping instead of nested submenus.
 
 ## Problem
 

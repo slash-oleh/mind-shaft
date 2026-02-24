@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Avoid embedding implementation details, built-in data types, or generic roles like `Object`, `String`, `Helper`, or `Wrapper` in your identifiers. Use plural forms instead of suffixes for collections.
+Avoid embedding implementation details or generic roles like 'Object', 'String', 'Helper' in identifiers and use plural forms instead of suffixes for collections.
 
 ## Problem
 

@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use relative root units (`rem`) rather than absolute pixels (`px`) for managing typography sizes across the application.
+Use relative root units (`rem`) instead of absolute pixels (`px`) for managing typography sizes.
 
 ## Problem
 

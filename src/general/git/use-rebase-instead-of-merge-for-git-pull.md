@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prefer rebasing your local changes on top of the remote branch when pulling updates to maintain a clean, linear, and easily readable project history.
+Rebase local changes on top of the remote branch when pulling updates to maintain a clean, linear history.
 
 ## Problem
 

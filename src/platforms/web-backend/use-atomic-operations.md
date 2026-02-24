@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Ensure that complex operations involving multiple steps or state changes are executed as a single, atomic unit of work that either succeeds completely or fails without side effects.
+Execute complex operations as atomic units of work that either succeed completely or fail without side effects.
 
 ## Problem
 

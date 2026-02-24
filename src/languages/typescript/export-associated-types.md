@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Export the interfaces or type aliases of function parameters (like options objects) along with the functions themselves.
+Export parameter interfaces and type aliases alongside their functions.
 
 ## Problem
 

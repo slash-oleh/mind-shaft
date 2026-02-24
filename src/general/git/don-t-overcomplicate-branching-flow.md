@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Start with the simplest branching model that meets your project's needs and allow it to evolve naturally as complexity increases.
+Start with the simplest branching model that meets the project's needs and evolve as complexity increases.
 
 ## Problem
 

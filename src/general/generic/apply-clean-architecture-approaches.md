@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Ensure that business logic (the domain) is strictly separated from infrastructure concerns like HTTP handling, database queries, and external APIs.
+Separate business logic from infrastructure concerns like HTTP handling, database queries, and external APIs.
 
 ## Problem
 

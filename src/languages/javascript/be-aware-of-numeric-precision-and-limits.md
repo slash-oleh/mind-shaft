@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Understand the limitations of JavaScript's `Number` type (IEEE 754 floating-point) and use appropriate strategies for high-precision or large-integer arithmetic.
+Use `BigInt` for large integers and epsilon-based comparisons or specialized libraries for high-precision decimal arithmetic.
 
 ## Problem
 

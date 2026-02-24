@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use the `useCallback` hook to maintain a stable reference for a function across re-renders. This is primarily used to prevent unnecessary re-renders of memoized child components and to provide stable dependencies for other hooks.
+Use the `useCallback` hook to maintain stable function references when passing them to memoized child components or using them as hook dependencies.
 
 ## Problem
 

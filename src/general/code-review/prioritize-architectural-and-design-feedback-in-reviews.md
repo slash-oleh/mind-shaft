@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Conduct code reviews in a structured manner by prioritizing high-level concerns such as architecture, design patterns, and overall logic before focusing on minor details. This ensures that fundamental issues are addressed early, preventing wasted effort on smaller corrections that might be invalidated by larger changes.
+Prioritize high-level concerns such as architecture, design patterns, and overall logic during code reviews before addressing minor implementation details.
 
 ## Problem
 

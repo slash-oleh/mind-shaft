@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prioritize tools and libraries with active maintenance and a healthy ecosystem to ensure long-term project stability.
+Use tools and libraries with active maintenance and healthy ecosystems to ensure long-term project stability.
 
 ## Problem
 

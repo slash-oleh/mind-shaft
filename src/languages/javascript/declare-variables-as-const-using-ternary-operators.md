@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prefer using ternary operators to initialize `const` variables over using `let` with `if/else` blocks. This ensures variables are immutable and reduces the cognitive load of tracking state changes.
+Use ternary operators to initialize `const` variables instead of using `let` with `if/else` blocks.
 
 ## Problem
 

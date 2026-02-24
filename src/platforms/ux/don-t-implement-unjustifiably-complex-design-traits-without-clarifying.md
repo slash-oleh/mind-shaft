@@ -2,9 +2,11 @@
 
 ## TLDR
 
-When a design contains a detail that seems unusually complex, inconsistent with existing patterns, or introduces redundant UX flows, clarify with the designer before implementing it. The design is a source of truth for *intent*, but it may lack the context of existing technical and UX constraints.
+Clarify unusually complex or inconsistent design details with the designer before implementation.
 
 ## Problem
+
+When a design contains a detail that seems unusually complex, inconsistent with existing patterns, or introduces redundant UX flows, clarify with the designer before implementing it. The design is a source of truth for *intent*, but it may lack the context of existing technical and UX constraints.
 
 Designers may accidentally introduce new UX patterns for existing features (e.g., a modal for an error that is usually shown in a snackbar) or draw complex one-off components that duplicate existing functionality. Silently implementing these "deviations" creates a fragmented user experience, increases the maintenance burden, and leads to code duplication.
 

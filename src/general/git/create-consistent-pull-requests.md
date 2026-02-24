@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Ensure that Pull Request (PR) titles and descriptions follow a standardized format to facilitate easier reviews and clear project history.
+Use a standardized format for Pull Request (PR) titles and descriptions, following the imperative mood and including associated ticket numbers.
 
 ## Problem
 

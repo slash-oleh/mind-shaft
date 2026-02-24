@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Implement long-term caching for immutable assets while ensuring rapid updates for entry points like `index.html`.
+Use long-term caching for hashed static assets and `must-revalidate` for entry points like `index.html`.
 
 ## Problem
 

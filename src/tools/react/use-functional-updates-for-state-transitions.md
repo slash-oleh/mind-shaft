@@ -2,7 +2,7 @@
 
 ## TLDR
 
-When updating state based on its previous value, always use the functional update pattern (`setCount(prev => prev + 1)`). This ensures you are always working with the most recent state, even when multiple updates occur in rapid succession.
+Use the functional update pattern when transitioning state based on its previous value to ensure you are always working with the most recent data.
 
 ## Problem
 

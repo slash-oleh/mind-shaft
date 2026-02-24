@@ -2,10 +2,11 @@
 
 ## TLDR
 
-Position your state at the lowest possible level that still allows all components that need the data to access it. This "lifting state up" pattern ensures a single source of truth while avoiding unnecessary prop drilling.
+Position your state at the lowest possible level that still allows all components that need the data to access it.
 
 ## Problem
 
+This "lifting state up" pattern ensures a single source of truth while avoiding unnecessary prop drilling.
 When state is managed too deep in the component tree, it becomes impossible for sibling components or parent components to coordinate. For example, in a `Table`, if each `Row` manages its own `isExpanded` state, the parent `Table` cannot implement a "Collapse All" button or ensure that only one row is expanded at a time. This results in fragmented logic, where pieces of the same feature are scattered across different components, making the system difficult to control and prone to synchronization bugs. However, if you lift the state up to the `Page` component, you'll have to pass the state all the way down to the `Table` component, although nothing else except for the `Table` component will use it.
 
 ## Good solution

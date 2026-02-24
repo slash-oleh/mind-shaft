@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Whenever deciding how to push content away from a boundary or create space around an element, prefer using `padding` on the container rather than `margin` on the children.
+Use `padding` on containers to create internal space instead of using `margin` on child elements.
 
 ## Problem
 

@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Keep the DOM hierarchy as flat as possible. Use as few wrapper elements (e.g., redundant `<div>` or `<span>` tags) as absolutely necessary.
+Minimize the use of wrapper elements like `<div>` or `<span>` to keep the DOM hierarchy flat.
 
 ## Problem
 

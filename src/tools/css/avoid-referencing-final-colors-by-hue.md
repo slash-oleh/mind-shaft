@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Abstract from hue-based color values in your final components. Use semantic color tokens instead.
+Use semantic color tokens instead of hue-based color values in final components.
 
 ## Problem
 

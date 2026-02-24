@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Avoid magic values. Centralize design decisions into predefined theme constants and reference those tokens instead of hardcoding raw values.
+Centralize design decisions like colors, spacing, and typography into predefined theme constants and reference these tokens instead of hardcoding raw values.
 
 ## Problem
 

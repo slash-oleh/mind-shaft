@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prefer naming many-to-many (m2m) junction tables based on the relationship they represent rather than just concatenating the names of the tables they connect.
+Name many-to-many junction tables based on the relationship they represent instead of just concatenating the names of the connected tables.
 
 ## Problem
 

@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Store the minimal amount of data in your state. When referencing an item from a collection, store only its unique identifier (ID) rather than a copy of the entire object.
+Store only unique identifiers (IDs) in selection state instead of copying entire objects to maintain a single source of truth.
 
 ## Problem
 

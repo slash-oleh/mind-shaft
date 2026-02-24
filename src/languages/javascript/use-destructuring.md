@@ -2,11 +2,11 @@
 
 ## TLDR
 
-Prefer destructuring assignments for objects and arrays to improve code clarity and reduce visual repetition.
+Use destructuring to extract data from objects and arrays into local variables or function parameters.
 
 ## Problem
 
-Repeatedly referencing properties through their parent object (e.g., `user.profile.name`, `user.profile.avatar`) creates visual noise and makes the code harder to scan. It forces the reader to filter out the redundant object references to see what data is actually being used. This "property drilling" within a function body also makes it more difficult to identify at a glance which specific data points a block of logic depends on.
+Repeatedly referencing properties through their parent objects creates visual noise and obscures the core logic. This "property drilling" makes it harder to identify at a glance which specific data points a block of code depends on, and increases the difficulty of refactoring as object name changes must be propagated across multiple redundant references.
 
 ## Good solution
 

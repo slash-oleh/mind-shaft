@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Deduplicate testing logic by using parametrized tests (table-driven tests) when covering multiple scenarios with different inputs and expected outputs for the same logic.
+Use parametrized tests (table-driven tests) to deduplicate logic when testing multiple scenarios with different inputs and outputs.
 
 ## Problem
 

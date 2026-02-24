@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Always use Pull Requests (PRs) or Merge Requests to integrate changes into main branches (e.g., `main`, `master`, `develop`), even when working alone.
+Use Pull Requests (PRs) or Merge Requests to integrate all changes into main branches, even when working alone.
 
 ## Problem
 

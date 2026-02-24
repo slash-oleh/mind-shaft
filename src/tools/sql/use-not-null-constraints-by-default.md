@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prefer defining database columns as `NOT NULL` to reduce ambiguity and simplify application logic.
+Define database columns as `NOT NULL` by default to reduce ambiguity and simplify application logic.
 
 ## Problem
 

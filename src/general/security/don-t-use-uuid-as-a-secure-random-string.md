@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Never use Universally Unique Identifiers (UUIDs) as security credentials, session tokens, or any random string that requires high entropy and unpredictability. Use cryptographically secure random number generators (CSPRNG) for these purposes instead.
+Use cryptographically secure random number generators (CSPRNG) instead of UUIDs for security credentials, session tokens, or unpredictable strings.
 
 ## Problem
 

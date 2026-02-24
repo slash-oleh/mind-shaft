@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Always restrict Cross-Origin Resource Sharing (CORS) to specific, trusted domains in production environments. Avoid using wildcard origins (`*`) which effectively disable browser-level cross-origin protections.
+Restrict Cross-Origin Resource Sharing (CORS) to specific, trusted domains and avoid using wildcard origins (`*`) in production.
 
 ## Problem
 

@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use descriptive keys that represent the purpose or location of a message rather than the literal content of the message.
+Use descriptive translation keys that represent the purpose or context of a message rather than its literal content.
 
 ## Problem
 

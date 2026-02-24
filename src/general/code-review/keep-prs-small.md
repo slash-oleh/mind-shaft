@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Aim to keep Pull Requests (PRs) small and focused. Small PRs are easier to review, reduce the risk of introducing bugs, and promote a faster, more agile development cycle.
+Keep Pull Requests (PRs) small and focused, ideally under 500 lines of code changes.
 
 ## Problem
 

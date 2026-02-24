@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use clear and descriptive names for your tests to ensure they act as documentation for the system's requirements. A good test name should state the unit of work, the context (condition), and the expected result.
+Use clear and descriptive names for tests that state the unit of work, context, and expected result.
 
 ## Problem
 

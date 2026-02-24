@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use the initializer function pattern (`useState(() => createInitialState())`) when the initial value of a state requires an expensive computation. This ensures the logic only runs once during the initial mount.
+Use the initializer function pattern (`useState(() => createInitialState())`) when the initial value of a state requires an expensive computation.
 
 ## Problem
 

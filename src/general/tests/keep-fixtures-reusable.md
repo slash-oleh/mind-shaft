@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use data factories or builders to create test fixtures. Centralize the creation of complex objects and ensure they can be easily customized for specific test scenarios.
+Use data factories or builders to create test fixtures that can be easily customized for specific scenarios.
 
 ## Problem
 

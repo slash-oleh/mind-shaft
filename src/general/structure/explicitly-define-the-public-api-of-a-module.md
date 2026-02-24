@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Expose only essential components and functions through a root index file. Keep internal implementation details hidden to ensure proper encapsulation and reduce coupling.
+Export only essential components and functions through a root index file to keep internal implementation details hidden.
 
 ## Problem
 

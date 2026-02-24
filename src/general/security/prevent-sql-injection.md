@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Always use parameterized queries or an Object-Relational Mapper (ORM) to handle database interactions, ensuring that user input is never directly concatenated into SQL strings.
+Use parameterized queries or an ORM to handle database interactions and avoid concatenating user input into SQL strings.
 
 ## Problem
 

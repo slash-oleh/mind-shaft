@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Avoid hardcoding colors directly in SVG files. Instead, use `currentColor` or CSS variables to ensure icons and illustrations are themeable and maintainable.
+Use `currentColor` or CSS variables instead of hardcoding colors directly in SVG files.
 
 ## Problem
 

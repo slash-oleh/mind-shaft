@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Ensure that variable names provide sufficient information to be understood within their scope, while avoiding redundant details already provided by the surrounding context.
+Ensure variable names provide sufficient information for clarity while avoiding redundant details already provided by the surrounding context.
 
 ## Problem
 

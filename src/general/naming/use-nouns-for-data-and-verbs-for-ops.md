@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Distinguish between data variables and executable operations by using nouns for data and verbs for functions/methods to clearly communicate their structural role in the code.
+Use nouns for data variables and verbs for functions or methods to clearly distinguish between data and operations.
 
 ## Problem
 

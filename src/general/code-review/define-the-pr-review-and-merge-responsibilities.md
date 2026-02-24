@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Establish clear ownership for Pull Requests (PRs) at every stage of the lifecycle. This ensures that PRs are reviewed, addressed, and merged efficiently without lingering in an ambiguous state.
+Establish clear ownership for Pull Requests (PRs) and designate the author as the primary driver of the process.
 
 ## Problem
 

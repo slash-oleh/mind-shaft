@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Do not strive for "pixel-perfect" implementations that match design mockups down to the exact pixel. Instead, build fluid, adaptable, and system-driven layouts.
+Implement fluid, adaptable, and system-driven layouts instead of trying to match design mockups down to the exact pixel.
 
 ## Problem
 

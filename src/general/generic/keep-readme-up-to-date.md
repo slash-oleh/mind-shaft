@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Maintain the README as a fresh, accurate, and comprehensive entry point for everyone working on the project, especially for new team members onboarding.
+Maintain the README as a fresh, accurate, and comprehensive entry point for the project.
 
 ## Problem
 

@@ -2,7 +2,7 @@
 
 ## TLDR
 
-When a control is disabled, always provide a visible explanation of *why* it is disabled and *what* the user can do to enable it.
+Provide a visible explanation of *why* a control is disabled and *what* the user can do to enable it.
 
 ## Problem
 

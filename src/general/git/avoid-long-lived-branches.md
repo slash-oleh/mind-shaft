@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Keep feature and bug-fix branches short-lived to minimize integration pain, reduce merge conflicts, and ensure a steady flow of verified changes into the main codebase.
+Keep feature and bug-fix branches short-lived by merging small, incremental changes back into the main development line as frequently as possible.
 
 ## Problem
 

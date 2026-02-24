@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prefer reusing existing internal and third-party types through inheritance or imports instead of re-declaring their structure.
+Reuse existing internal and third-party types through inheritance or imports instead of re-declaring their structure.
 
 ## Problem
 

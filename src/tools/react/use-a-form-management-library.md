@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use specialized libraries like **React Hook Form** or **Formik** to handle form state, validation, and submission. Avoid managing complex form state manually with multiple `useState` hooks.
+Use specialized libraries like React Hook Form or Formik to handle form state, validation, and submission instead of managing complex state manually.
 
 ## Problem
 

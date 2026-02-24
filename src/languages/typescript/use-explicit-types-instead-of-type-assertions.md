@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prefer explicitly annotating variables and function returns with types rather than relying on type inference for complex objects or using type assertions to force compliance.
+Explicitly annotate variables and function returns with types instead of relying on inference for complex objects or using type assertions to force compliance.
 
 ## Problem
 

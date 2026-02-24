@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Preserve and enhance native browser accessibility features to ensure the application is usable by everyone, including those relying on assistive technologies.
+Preserve and enhance native browser accessibility features.
 
 ## Problem
 

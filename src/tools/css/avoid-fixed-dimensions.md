@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Avoid setting hardcoded, fixed dimensions (like `width: 300px` or `height: 500px`) on layout containers. Use responsive models that scale with their content or their parents.
+Use responsive layout models that scale with content instead of setting hardcoded fixed dimensions like `width: 300px` or `height: 500px`.
 
 ## Problem
 

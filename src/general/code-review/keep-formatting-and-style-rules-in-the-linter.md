@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Automate code formatting and style enforcement using linters and formatters (e.g., ESLint, Prettier). Avoid manual discussions about bike-shedding topics like indentation, quotes, or semicolon placement during code reviews.
+Automate code formatting and style enforcement using linters and formatters like ESLint or Prettier.
 
 ## Problem
 

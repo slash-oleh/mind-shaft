@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prefer modern layout systems like CSS Flexbox and Grid over `position: absolute` for positioning elements on a page.
+Use CSS Flexbox or Grid instead of `position: absolute` for general page layouts.
 
 ## Problem
 

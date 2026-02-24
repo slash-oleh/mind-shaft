@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prefer button groups, switches, or radio buttons over dropdowns when dealing with a small, finite number of options (typically 2-5).
+Use button groups, switches, or radio buttons instead of dropdowns for small sets of options (typically 2-5).
 
 ## Problem
 

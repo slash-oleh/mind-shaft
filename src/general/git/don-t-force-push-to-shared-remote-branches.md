@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Avoid using `git push --force` on branches that are shared with other developers to prevent disrupting their work and corrupting the project history.
+Avoid using `git push --force` on branches that are shared with other developers.
 
 ## Problem
 

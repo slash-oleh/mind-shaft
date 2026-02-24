@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use database enums (like PostgreSQL `ENUM`) exclusively for static domain concepts that rarely change. For dynamic or frequently updated sets of values, use a dedicated reference table with foreign keys.
+Use database enums exclusively for static domain concepts and reference tables with foreign keys for dynamic or frequently updated sets of values.
 
 ## Problem
 

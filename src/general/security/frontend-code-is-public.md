@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Assume all frontend source code, including obfuscated or minified assets, is fully accessible to the public. Never store secrets, API keys, or sensitive business logic on the client side.
+Assume all frontend source code is public and avoid storing secrets, API keys, or sensitive business logic on the client side.
 
 ## Problem
 

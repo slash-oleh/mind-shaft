@@ -2,7 +2,7 @@
 
 ## TLDR
 
-When a feature module contains multiple components or files of the same technical role, organize them into subdirectories (e.g., `components/`, `hooks/`, `actions/`) to maintain a clean and discoverable structure.
+Organize feature modules into subdirectories by technical role (e.g., `components/`, `hooks/`) when they contain multiple files of the same type.
 
 ## Problem
 

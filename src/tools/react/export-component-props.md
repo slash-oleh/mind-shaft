@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Always export the TypeScript interface or type for your component's props. This allows other components to reuse, extend, or wrap your component without resorting to complex type extraction hacks.
+Export the TypeScript interface or type for component props to enable easy reuse, extension, and wrapping.
 
 ## Problem
 

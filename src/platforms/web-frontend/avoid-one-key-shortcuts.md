@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prefer multi-key combinations (e.g., `Ctrl+S`, `Cmd+K`) over single-key shortcuts to prevent accidental feature invocation and accessibility conflicts.
+Use multi-key combinations (e.g., `Ctrl+S`, `Cmd+K`) instead of single-key shortcuts.
 
 ## Problem
 

@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prefer boolean operators over ternary operators or conditional statements when the desired outcome is a boolean value.
+Use boolean operators instead of ternary operators or conditional statements when the desired outcome is a boolean value.
 
 ## Problem
 

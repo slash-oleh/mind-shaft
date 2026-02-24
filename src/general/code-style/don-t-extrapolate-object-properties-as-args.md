@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Pass the entire object or a dedicated sub-interface instead of extracting individual properties as separate function arguments.
+Pass entire objects or dedicated interfaces instead of extracting individual properties as separate function arguments.
 
 ## Problem
 

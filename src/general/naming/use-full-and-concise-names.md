@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Balance the length of identifiers by using complete, descriptive words instead of cryptic abbreviations, while avoiding excessive verbosity that doesn't add clarity.
+Use complete, descriptive words instead of cryptic abbreviations while avoiding excessive verbosity that doesn't add clarity.
 
 ## Problem
 

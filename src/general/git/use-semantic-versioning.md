@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Adhere to the [Semantic Versioning (SemVer)](https://semver.org/) specification for all project releases and shared packages to ensure compatibility and predictability for consumers.
+Adhere to the Semantic Versioning (SemVer) specification for all project releases and shared packages to ensure compatibility.
 
 ## Problem
 

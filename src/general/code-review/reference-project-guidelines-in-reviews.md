@@ -2,7 +2,7 @@
 
 ## TLDR
 
-When providing feedback that relates to established standards, point the author to the relevant section of the project's documentation or guidelines instead of writing long, repetitive explanations.
+Reference established project guidelines and documentation in code review comments instead of writing repetitive explanations.
 
 ## Problem
 

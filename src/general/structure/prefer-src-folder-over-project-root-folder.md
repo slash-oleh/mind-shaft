@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Keep the project root clean by placing all application source code, assets, and business logic within a dedicated `src` directory. Reserve the root folder for project-wide configuration files and metadata.
+Place all application source code and assets within a dedicated `src` directory to keep the project root clean.
 
 ## Problem
 

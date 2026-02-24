@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Apply the "Boy Scout Rule" to the codebase: always leave the code better than you found it, or at the very least, ensure that your changes do not make it worse. This principle applies both to the author of the code and the reviewers.
+Leave the code better than you found it by fixing small issues encountered during development and ensuring new changes do not degrade the overall codebase health.
 
 ## Problem
 

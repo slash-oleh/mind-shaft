@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Maintain a "one primary export per file" policy to ensure high cohesion, better discoverability, and simplified testing. Each file should focus on a single responsibility.
+Export only one primary component per file.
 
 ## Problem
 

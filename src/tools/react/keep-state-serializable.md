@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Only store data that can be easily serialized as plain text like JSON (primitives, plain objects, and arrays) in your state or global stores. Avoid storing functions, class instances, or complex DOM nodes.
+Only store serializable data like primitives, plain objects, and arrays in state or global stores to ensure compatibility with hydration and debugging tools.
 
 ## Problem
 

@@ -2,11 +2,11 @@
 
 ## TLDR
 
-Reserve environment variables for infrastructure configuration and bootstrap values that the application requires to start. Avoid using them for business logic parameters, feature flags, or settings that change frequently, as this forces unnecessary deployment cycles and creates operational bottlenecks.
+Use environment variables only for infrastructure configuration instead of business logic or feature flags.
 
 ## Problem
 
-Misusing environment variables for business configuration creates a rigid system that requires technical intervention for minor setting adjustments. Every value change necessitates a restart or a full CI/CD deployment cycle, which is an overkill for high-level application settings like notification emails or discount rates. From a security perspective, environment variables are often stored in plain text across various logging and monitoring systems, making them poor candidates for highly sensitive data if better alternatives like secret managers are available. Furthermore, shifting these responsibilities to technical staff prevents non-technical administrators from managing the application via a user interface.
+Misusing environment variables for business configuration creates a rigid system that requires technical intervention and full deployment cycles for minor adjustments. This approach prevents runtime updates, clutters the process environment, and often leads to security vulnerabilities by exposing settings in plain text across logging systems. It also forces technical staff to manage high-level application settings that should ideally be accessible to non-technical administrators via an interface.
 
 ## Good solution
 

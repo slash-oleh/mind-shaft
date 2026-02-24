@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Maintain a clean, linear, and readable Git history by squashing intermediate commits and rebasing feature branches before merging.
+Squash intermediate commits and rebase feature branches before merging to maintain a clean and linear Git history.
 
 ## Problem
 

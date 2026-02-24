@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Avoid relying on CSS specificity and style overriding to achieve your desired design. Structure your classes modularly so properties are applied additively rather than destructively.
+Structure CSS classes modularly so that properties are applied additively instead of relying on overrides and high specificity.
 
 ## Problem
 

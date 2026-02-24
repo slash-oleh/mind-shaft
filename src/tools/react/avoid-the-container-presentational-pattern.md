@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Do not split components into separate "Container" (logic) and "Presentational" (view) pairs by default. Instead, use Hooks to keep logic and UI cohesive within a single component.
+Use Hooks to keep logic and UI cohesive within a single component instead of splitting them into "Container" and "Presentational" pairs by default.
 
 ## Problem
 

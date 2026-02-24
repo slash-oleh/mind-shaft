@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use visual hierarchy to guide the user's attention to the most important elements. Employ variations in font weight, color, size, and positioning to establish a clear order of importance.
+Establish a clear visual hierarchy using variations in font weight, color, size, and positioning to guide user attention.
 
 ## Problem
 

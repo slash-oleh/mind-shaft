@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prefer throwing exceptions over returning error codes or status objects to signal unexpected failures.
+Throw exceptions instead of returning error codes or status objects to signal unexpected failures.
 
 ## Problem
 

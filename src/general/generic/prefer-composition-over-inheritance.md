@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Favor building complex functionality by combining simple, independent components (composition) instead of creating deep class hierarchies (inheritance).
+Use composition to build complex functionality by combining simple, independent components instead of creating deep class hierarchies.
 
 ## Problem
 

@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Configure build, test, and deployment automation for every project, ensuring consistency and reliability across environments.
+Automate build, test, and deployment processes to ensure consistency and reliability across environments.
 
 ## Problem
 

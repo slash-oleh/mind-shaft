@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prefer defining `max-width` with 100% width over defining `min-width` with auto width.
+Define `max-width` combined with `width: 100%` instead of setting a `min-width` to allow components to shrink on small screens.
 
 ## Problem
 

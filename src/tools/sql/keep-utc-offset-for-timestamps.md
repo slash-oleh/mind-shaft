@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Store time in UTC (or local but always with an explicitly stored offset/timezone) to keep time comparable and unambiguous across different environments.
+Store all timestamps in UTC or with an explicit timezone offset.
 
 ## Problem
 

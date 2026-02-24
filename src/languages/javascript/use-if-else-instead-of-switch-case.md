@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prefer `if/else` statements or [lookup maps](./use-lookup-maps-instead-of-conditional-branching.md) over `switch/case` structures to avoid error-prone syntax and improve logic flexibility.
+Use `if/else` statements or lookup maps instead of `switch/case` structures.
 
 ## Problem
 

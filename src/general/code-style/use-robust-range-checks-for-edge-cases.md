@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prefer inclusive range checks (`>=` or `<=`) over exact equality (`==`) when monitoring progress, counters, or loop terminations. This "defensive" approach ensures that logic triggers correctly even if the target value is bypassed due to unexpected increments or precision issues.
+Use inclusive range checks (`>=` or `<=`) instead of exact equality (`==`) for progress monitoring, counters, and loop terminations.
 
 ## Problem
 

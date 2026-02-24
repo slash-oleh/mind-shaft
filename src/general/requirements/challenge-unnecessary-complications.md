@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Proactively identify and question requirements that prescribe specific, over-engineered solutions instead of defining core problems, and propose simpler alternatives that achieve the same business goals.
+Question requirements that prescribe over-engineered solutions and propose simpler alternatives that achieve the same business goals.
 
 ## Problem
 
@@ -21,7 +21,7 @@ Focus on the *what* and the *why* before committing to the *how*. When faced wit
 
 ## Bad solution
 
-Implementing complex architectural or technical requirements without questioning their necessity or exploring simpler ways to achieve the same objective.
+Implementing complex architectural or technical requirements without proactively questioning their necessity or exploring simpler ways to achieve the same objective.
 
 ## Impact
 

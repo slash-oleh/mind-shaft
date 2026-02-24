@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Always escape or sanitize user-controlled data before rendering it in the browser, and prefer safe DOM manipulation methods over direct HTML string injection.
+Escape or sanitize user-controlled data before rendering and prefer safe DOM manipulation methods over direct HTML string injection.
 
 ## Problem
 

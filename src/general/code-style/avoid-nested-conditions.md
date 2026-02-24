@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Flatten code by using guard clauses (early returns) and inverting conditions. Avoid deep nesting of conditional blocks, which makes code difficult to read and maintain.
+Use guard clauses and early returns to flatten logic and avoid deeply nested conditional blocks.
 
 ## Problem
 

@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use the simplest possible syntax for simple cases and refactor to more complex, flexible structures only when they are actually needed.
+Use the simplest possible syntax for simple cases and refactor to complex structures only when necessary.
 
 ## Problem
 

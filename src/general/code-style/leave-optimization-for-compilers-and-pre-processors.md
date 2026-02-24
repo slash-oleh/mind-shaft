@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Focus on writing clear, readable code rather than performing manual micro-optimizations that modern tools handle automatically.
+Write clear, readable code instead of performing manual micro-optimizations handled by compilers and JIT engines.
 
 ## Problem
 

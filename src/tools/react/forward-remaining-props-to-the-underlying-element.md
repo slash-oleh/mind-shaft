@@ -2,7 +2,7 @@
 
 ## TLDR
 
-When building components that wrap other elements, whether they are native HTML tags or other custom components, always forward unhandled properties (`...restProps`) to the primary child. This ensures that the wrapper remains transparent and preserves the full API of the component it encapsulates.
+Forward unhandled properties (`...restProps`) to the primary child when building wrapper components to preserve the full API of the encapsulated element.
 
 ## Problem
 

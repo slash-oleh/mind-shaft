@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prioritize consistency within the existing codebase over applying different styles, even if they are technically superior. Apply style improvements systematically across the entire project rather than incrementally within unrelated functional changes.
+Match the existing codebase's style and apply improvements systematically as separate tasks.
 
 ## Problem
 

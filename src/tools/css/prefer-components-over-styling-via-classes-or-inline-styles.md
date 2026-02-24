@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Encapsulate design decisions into reusable components rather than creating reusable CSS classes.
+Encapsulate design and layout decisions into reusable components like `Box` or `Stack` rather than using CSS classes or inline styles.
 
 ## Problem
 

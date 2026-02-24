@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Always append the `_id` suffix (or `Id` in camelCase contexts) to columns that store a foreign key reference to another table.
+Append the `_id` suffix (or `Id` in camelCase contexts) to all columns storing a foreign key reference.
 
 ## Problem
 

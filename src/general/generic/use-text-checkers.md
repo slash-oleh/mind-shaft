@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Utilize automated text, grammar, and style checkers to ensure clarity, professionalism, and correctness in all written documentation and code comments.
+Utilize automated text, grammar, and style checkers for all written documentation and code comments.
 
 ## Problem
 

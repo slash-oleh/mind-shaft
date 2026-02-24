@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use **Class Table Inheritance** when mapping object-oriented inheritance models or polymorphic relationships into a relational database.
+Use **Class Table Inheritance** for mapping object-oriented inheritance models or polymorphic relationships into a relational database.
 
 ## Problem
 

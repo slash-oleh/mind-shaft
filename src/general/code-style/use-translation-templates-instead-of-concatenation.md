@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use placeholders and template engines within translation strings instead of concatenating partial translation keys with dynamic values.
+Use placeholders within translation strings instead of concatenating partial keys with dynamic values.
 
 ## Problem
 

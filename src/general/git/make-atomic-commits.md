@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Ensure each commit represents a single, logical change that is complete and does not break the project's build or tests.
+Ensure each commit represents a single, logical change that leaves the project in a working state.
 
 ## Problem
 

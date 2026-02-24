@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Avoid nesting interactive elements (buttons, links, inputs) inside other interactive elements. This creates ambiguous click targets and unpredictable behavior, especially for keyboard and screen-reader users.
+Avoid nesting interactive elements (buttons, links, inputs) inside other interactive elements.
 
 ## Problem
 

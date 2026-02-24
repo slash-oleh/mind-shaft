@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Always choose the most specific, semantically correct data type for storing and transferring information, rather than generic primitives like `text`, `number`, or `timestamp`.
+Choose the most specific, semantically correct data type for storing and transferring information instead of using generic primitives like `text` or `number`.
 
 ## Problem
 

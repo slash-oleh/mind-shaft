@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Define a universal spacing unit as a foundational factor (e.g., `4px` or `8px`), and express all spacing and layout decisions as multiples of this unit, rather than arbitrary raw pixels.
+Define a universal spacing unit as a foundational factor and express all layout decisions as multiples of this unit instead of using arbitrary raw pixels.
 
 ## Problem
 

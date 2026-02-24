@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Do not store calculated or derived values in state or external stores. Instead, calculate them on‑the‑fly during rendering.
+Calculate derived values on-the-fly during rendering instead of storing them in state to maintain a single source of truth.
 
 ## Problem
 

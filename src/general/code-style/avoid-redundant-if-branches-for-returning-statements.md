@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Simplify logic by removing unnecessary `else` blocks and avoiding redundant `if` statements when boolean operations or early returns (guard clauses) can achieve the same result more elegantly.
+Remove unnecessary `else` blocks and avoid redundant `if` statements when using `return` or `throw`.
 
 ## Problem
 

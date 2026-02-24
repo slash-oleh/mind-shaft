@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Contribute fixes and improvements back to the original repositories of the open-source libraries you use, rather than maintaining local patches or workarounds.
+Contribute fixes and improvements back to the original repositories of open-source libraries instead of maintaining local patches.
 
 ## Problem
 

@@ -2,11 +2,11 @@
 
 ## TLDR
 
-Use positive words and states for identifiers instead of inverted logic to improve code readability and reduce cognitive load during conditional checks.
+Use positive identifiers for variables and states instead of inverted logic.
 
 ## Problem
 
-Inverted names like `disabled`, `notActive`, `isNotValid`, or `missingInfo` force the reader to perform mental negation (e.g., `!isDisabled` means "it is enabled"). When these are combined with actual logical negations (e.g., `if (!isDisabled)`), the code becomes significantly harder to parse and more prone to logical errors.
+Inverted names like `isDisabled` or `isNotValid` force the reader to perform mental negation. When these are combined with actual logical negations (e.g., `if (!isDisabled)`), the code becomes significantly harder to parse and more prone to logical errors, increasing the cognitive load required to understand the system's state.
 
 ## Good solution
 

@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Avoid creating internal state that simply mirrors a prop. Use **controlled components** where the parent remains the single source of truth for the data.
+Use controlled components where the parent remains the single source of truth instead of mirroring props in local state.
 
 ## Problem
 

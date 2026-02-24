@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Understand the fundamental difference between encoding (data representation) and encryption (data protection). Never use encoding as a security measure to protect sensitive information.
+Use encryption for data protection and avoid relying on encoding (like Base64) as a security measure.
 
 ## Problem
 

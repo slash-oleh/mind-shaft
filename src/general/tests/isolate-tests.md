@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Ensure that each test is completely independent of others. A test should not depend on the state left by a previous test, nor should it affect the outcome of subsequent tests.
+Design each test to be completely independent of others to avoid side effects.
 
 ## Problem
 

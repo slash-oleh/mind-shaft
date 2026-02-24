@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Each file should export and focus on a single React component. This keeps your codebase modular, easy to navigate, and highly searchable.
+Export only one primary React component per file.
 
 ## Problem
 

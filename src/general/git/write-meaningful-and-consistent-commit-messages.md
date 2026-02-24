@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Follow a standardized format for Git commit messages to ensure the project history is readable, searchable, and provides clear context for every change.
+Follow a standardized, imperative format for Git commit messages to ensure a readable and searchable project history.
 
 ## Problem
 
