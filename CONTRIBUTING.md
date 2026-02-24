@@ -38,12 +38,11 @@ Some possible presets:
 - "Avoid X"
 - "Keep X"
 
-#### 2. Fill the brief
-
-Under the title, provide some context.
+#### 2. Fill the "TLDR"
 
 - Use imperative form
-- Usually a few sentences long
+- One paragraph
+- Usually a 1 or 2 sentences long
 - Defines the rule and its goal
 - Less mention why but rather what, and, if needed, how and when
 

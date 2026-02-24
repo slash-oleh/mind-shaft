@@ -1,5 +1,7 @@
 # Prefer `src` folder over project root folder
 
+## TLDR
+
 Keep the project root clean by placing all application source code, assets, and business logic within a dedicated `src` directory. Reserve the root folder for project-wide configuration files and metadata.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Use exceptions for errors
 
+## TLDR
+
 Prefer throwing exceptions over returning error codes or status objects to signal unexpected failures.
 
 ## Problem

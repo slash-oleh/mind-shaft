@@ -1,5 +1,7 @@
 # Avoid `style` attribute
 
+## TLDR
+
 Prefer CSS classes, presumably via CSS-in-JS or CSS modules. Do not use the inline `style` attribute for static styling.
 
 ## Problem

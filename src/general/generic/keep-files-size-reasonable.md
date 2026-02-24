@@ -1,5 +1,7 @@
 # Keep files size reasonable
 
+## TLDR
+
 Maintain a balanced file size to ensure code remains navigable and focused without becoming fragmented.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Don't keep working on merged branches
 
+## TLDR
+
 Once a branch has been merged into the main development line, it should be considered finalized. Stop pushing new commits to a merged branch and instead create a new branch for any subsequent work or bug fixes.
 
 ## Problem

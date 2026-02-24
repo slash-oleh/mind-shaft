@@ -1,5 +1,7 @@
 # Prefer `max-width` over `min-width`
 
+## TLDR
+
 Prefer defining `max-width` with 100% width over defining `min-width` with auto width.
 
 ## Problem

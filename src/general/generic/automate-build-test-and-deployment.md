@@ -1,5 +1,7 @@
 # Automate build, test and deployment
 
+## TLDR
+
 Configure build, test, and deployment automation for every project, ensuring consistency and reliability across environments.
 
 ## Problem

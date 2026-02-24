@@ -1,5 +1,7 @@
 # Don't overuse environment variables
 
+## TLDR
+
 Reserve environment variables for infrastructure configuration and bootstrap values that the application requires to start. Avoid using them for business logic parameters, feature flags, or settings that change frequently, as this forces unnecessary deployment cycles and creates operational bottlenecks.
 
 ## Problem

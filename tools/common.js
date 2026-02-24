@@ -136,21 +136,27 @@ export const getLabel = async (dirPath, fallback) => {
 };
 
 /**
- * Extracts the first paragraph after the H1 title.
+ * Extracts all paragraphs from the "TLDR" section.
  */
 export const extractFirstParagraph = (content) => {
   const tree = parser.parse(content);
   const children = tree.children;
 
-  const h1 = children.find(n => n.type === 'heading' && n.depth === 1);
-  if (!h1) return null;
+  // Find the TLDR section
+  const tldrHeading = children.find(n => n.type === 'heading' && n.depth === 2 && toString(n).toLowerCase() === 'tldr');
+  if (tldrHeading) {
+    const tldrIndex = children.indexOf(tldrHeading);
+    const nextNodes = children.slice(tldrIndex + 1);
+    const nextHeadingIndex = nextNodes.findIndex(n => n.type === 'heading' && n.depth === 2);
+    const sectionNodes = nextHeadingIndex === -1 ? nextNodes : nextNodes.slice(0, nextHeadingIndex);
 
-  const h1Index = children.indexOf(h1);
-  const firstParagraph = children.slice(h1Index + 1).find(n => n.type === 'paragraph');
+    const paragraphs = sectionNodes.filter(n => n.type === 'paragraph');
+    if (paragraphs.length > 0) {
+      return stringifier.stringify({ type: 'root', children: paragraphs }).trim();
+    }
+  }
 
-  if (!firstParagraph) return null;
-
-  return stringifier.stringify({ type: 'root', children: [firstParagraph] }).trim();
+  return null;
 };
 
 /**

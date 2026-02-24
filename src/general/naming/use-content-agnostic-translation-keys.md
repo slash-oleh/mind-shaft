@@ -1,5 +1,7 @@
 # Use content-agnostic translation keys
 
+## TLDR
+
 Use descriptive keys that represent the purpose or location of a message rather than the literal content of the message.
 
 ## Problem

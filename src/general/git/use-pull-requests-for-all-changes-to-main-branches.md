@@ -1,5 +1,7 @@
 # Use pull requests for all changes to main branches
 
+## TLDR
+
 Always use Pull Requests (PRs) or Merge Requests to integrate changes into main branches (e.g., `main`, `master`, `develop`), even when working alone.
 
 ## Problem

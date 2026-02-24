@@ -1,5 +1,7 @@
 # Use IoC for page and navigation
 
+## TLDR
+
 Invert the control of page structure by allowing individual page components to compose their own layouts rather than being injected into a rigid, global wrapper.
 
 ## Problem

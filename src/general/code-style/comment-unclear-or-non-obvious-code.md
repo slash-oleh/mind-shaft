@@ -1,5 +1,7 @@
 # Comment unclear or non-obvious code
 
+## TLDR
+
 Prioritize writing self-explanatory code, but add comments when the logic is inherently complex, strange, or constrained by external factors. Comments should explain the "Why" (the intent or reasoning) rather than the "What" (the mechanics already visible in the code).
 
 ## Problem

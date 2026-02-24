@@ -1,5 +1,7 @@
 # Avoid global variables for application state
 
+## TLDR
+
 Avoid using plain variables in the module scope to store data that affects the UI. Use **local component state** for isolated data or **React Context** (or a state management library) for shared data.
 
 ## Problem

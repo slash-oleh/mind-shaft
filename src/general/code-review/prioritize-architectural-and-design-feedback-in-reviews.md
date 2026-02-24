@@ -1,5 +1,7 @@
 # Prioritize architectural and design feedback in reviews
 
+## TLDR
+
 Conduct code reviews in a structured manner by prioritizing high-level concerns such as architecture, design patterns, and overall logic before focusing on minor details. This ensures that fundamental issues are addressed early, preventing wasted effort on smaller corrections that might be invalidated by larger changes.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Use `if/else` instead of `switch/case`
 
+## TLDR
+
 Prefer `if/else` statements or [lookup maps](./use-lookup-maps-instead-of-conditional-branching.md) over `switch/case` structures to avoid error-prone syntax and improve logic flexibility.
 
 ## Problem

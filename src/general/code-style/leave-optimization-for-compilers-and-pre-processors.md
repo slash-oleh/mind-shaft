@@ -1,5 +1,7 @@
 # Leave optimization for compilers and pre-processors
 
+## TLDR
+
 Focus on writing clear, readable code rather than performing manual micro-optimizations that modern tools handle automatically.
 
 ## Problem

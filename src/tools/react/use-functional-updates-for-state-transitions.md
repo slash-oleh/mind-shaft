@@ -1,5 +1,7 @@
 # Use functional updates for state transitions
 
+## TLDR
+
 When updating state based on its previous value, always use the functional update pattern (`setCount(prev => prev + 1)`). This ensures you are always working with the most recent state, even when multiple updates occur in rapid succession.
 
 ## Problem

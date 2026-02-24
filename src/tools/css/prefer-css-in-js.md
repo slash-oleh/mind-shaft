@@ -1,5 +1,7 @@
 # Prefer CSS-in-JS
 
+## TLDR
+
 Prefer using CSS-in-JS or CSS Modules where class names are directly referenced as JavaScript variables over global CSS stylesheets.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Use database constraints
 
+## TLDR
+
 Enforce data integrity, consistency, and validity at the schema level by utilizing foreign keys, unique constraints, and check constraints.
 
 ## Problem

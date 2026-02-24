@@ -1,5 +1,7 @@
 # Export associated types
 
+## TLDR
+
 Export the interfaces or type aliases of function parameters (like options objects) along with the functions themselves.
 
 ## Problem

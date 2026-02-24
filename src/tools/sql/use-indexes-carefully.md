@@ -1,5 +1,7 @@
 # Use indexes carefully
 
+## TLDR
+
 Balance read performance with write latency by strategically indexing columns based on query patterns.
 
 ## Problem

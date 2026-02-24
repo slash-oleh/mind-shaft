@@ -1,5 +1,7 @@
 # Resolve linter issues before committing to the mainline
 
+## TLDR
+
 Ensure all linter errors and warnings are resolved before merging code into the main branch to maintain high code quality and consistency.
 
 ## Problem

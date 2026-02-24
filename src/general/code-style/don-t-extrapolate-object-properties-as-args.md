@@ -1,5 +1,7 @@
 # Don't extrapolate object properties as args
 
+## TLDR
+
 Pass the entire object or a dedicated sub-interface instead of extracting individual properties as separate function arguments.
 
 ## Problem

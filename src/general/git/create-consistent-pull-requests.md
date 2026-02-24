@@ -1,5 +1,7 @@
 # Create consistent pull requests
 
+## TLDR
+
 Ensure that Pull Request (PR) titles and descriptions follow a standardized format to facilitate easier reviews and clear project history.
 
 ## Problem

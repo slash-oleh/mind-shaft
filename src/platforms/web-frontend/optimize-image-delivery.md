@@ -1,5 +1,7 @@
 # Optimize image delivery
 
+## TLDR
+
 Ensure images are delivered in the most efficient format, size, and timing to minimize page weight and maximize performance.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Apply modern language features
 
+## TLDR
+
 Adopt modern syntax and language features (e.g., ES6+, TypeScript advanced features) to write more concise, readable, and safer code. Stay updated with the language's evolution while ensuring that new constructions improve clarity rather than adding unnecessary complexity.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Use inheritance for hierarchical types
 
+## TLDR
+
 Prefer using interface extension (`extends`) to model hierarchical relationships and share common properties, rather than defining a union of types that duplicate the same base fields.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Export component props
 
+## TLDR
+
 Always export the TypeScript interface or type for your component's props. This allows other components to reuse, extend, or wrap your component without resorting to complex type extraction hacks.
 
 ## Problem

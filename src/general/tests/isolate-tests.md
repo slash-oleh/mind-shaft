@@ -1,10 +1,12 @@
 # Isolate tests
 
+## TLDR
+
 Ensure that each test is completely independent of others. A test should not depend on the state left by a previous test, nor should it affect the outcome of subsequent tests.
 
-Cleanup before and after tests, and execute in a clean environment to ensure predictable results.
-
 ## Problem
+
+Cleanup before and after tests, and execute in a clean environment to ensure predictable results.
 
 Tests that share state (e.g., global variables, shared database records, or modified configuration) often become "flaky". This means they might pass in isolation but fail when run as part of a suite, or fail in a different order. This non-deterministic behavior makes debugging extremely difficult and erodes trust in the test suite.
 

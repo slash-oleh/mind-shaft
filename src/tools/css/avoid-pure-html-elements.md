@@ -1,5 +1,7 @@
 # Avoid pure HTML elements
 
+## TLDR
+
 Avoid using raw HTML elements (like `<div>`, `<span>`, `<a>`, or `<button>`) directly in your application pages or feature components. Instead, encapsulate them once into reusable, higher-level primitives within your UI Kit.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Use Server-Side Rendering (SSR)
 
+## TLDR
+
 Prefer Server-Side Rendering (SSR) for public-facing applications to improve initial load performance, enhance SEO, and ensure content accessibility.
 
 ## Problem

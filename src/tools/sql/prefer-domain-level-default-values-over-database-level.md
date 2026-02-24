@@ -1,5 +1,7 @@
 # Prefer domain-level default values over database-level
 
+## TLDR
+
 Define default values for entity attributes in the application domain layer rather than using database-level schema constraints.
 
 ## Problem

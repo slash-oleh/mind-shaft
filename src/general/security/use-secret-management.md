@@ -1,5 +1,7 @@
 # Use secret management
 
+## TLDR
+
 Never store credentials, API keys, or any sensitive secrets directly in the source code. Use environment variables, configuration storage, or dedicated vault services to manage sensitive information securely.
 
 ## Problem

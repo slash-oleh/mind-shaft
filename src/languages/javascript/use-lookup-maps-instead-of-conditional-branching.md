@@ -1,5 +1,7 @@
 # Use lookup maps instead of conditional branching
 
+## TLDR
+
 Use object literals or `Map` instances to handle multi-branch logic based on keys instead of extensive `if/else` or `switch` statements.
 
 ## Problem

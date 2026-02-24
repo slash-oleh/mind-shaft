@@ -1,5 +1,7 @@
 # Prevent SQL injection
 
+## TLDR
+
 Always use parameterized queries or an Object-Relational Mapper (ORM) to handle database interactions, ensuring that user input is never directly concatenated into SQL strings.
 
 ## Problem

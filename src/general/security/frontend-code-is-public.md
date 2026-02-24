@@ -1,5 +1,7 @@
 # Frontend code is public
 
+## TLDR
+
 Assume all frontend source code, including obfuscated or minified assets, is fully accessible to the public. Never store secrets, API keys, or sensitive business logic on the client side.
 
 ## Problem

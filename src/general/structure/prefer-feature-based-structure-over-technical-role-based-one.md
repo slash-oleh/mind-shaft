@@ -1,5 +1,7 @@
 # Prefer feature-based structure over technical role-based one
 
+## TLDR
+
 Organize your codebase around features or domain concepts rather than technical roles like "components", "data", or "hooks". Group everything related to a single feature in one place.
 
 ## Problem

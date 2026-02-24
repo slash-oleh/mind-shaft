@@ -1,5 +1,7 @@
 # Store normalized data in state
 
+## TLDR
+
 Store the minimal amount of data in your state. When referencing an item from a collection, store only its unique identifier (ID) rather than a copy of the entire object.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Merge internal and incoming props
 
+## TLDR
+
 Always merge incoming properties (like `className`, `style`, and event handlers) with your component's internal ones. This ensures your components remain extensible and composable.
 
 ## Problem

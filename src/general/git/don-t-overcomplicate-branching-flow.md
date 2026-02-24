@@ -1,5 +1,7 @@
 # Don't overcomplicate branching flow
 
+## TLDR
+
 Start with the simplest branching model that meets your project's needs and allow it to evolve naturally as complexity increases.
 
 ## Problem

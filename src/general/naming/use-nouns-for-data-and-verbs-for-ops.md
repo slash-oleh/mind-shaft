@@ -1,5 +1,7 @@
 # Use nouns for data and verbs for ops
 
+## TLDR
+
 Distinguish between data variables and executable operations by using nouns for data and verbs for functions/methods to clearly communicate their structural role in the code.
 
 ## Problem

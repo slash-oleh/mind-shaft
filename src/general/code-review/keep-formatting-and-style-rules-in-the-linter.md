@@ -1,5 +1,7 @@
 # Keep formatting and style rules in the linter
 
+## TLDR
+
 Automate code formatting and style enforcement using linters and formatters (e.g., ESLint, Prettier). Avoid manual discussions about bike-shedding topics like indentation, quotes, or semicolon placement during code reviews.
 
 ## Problem

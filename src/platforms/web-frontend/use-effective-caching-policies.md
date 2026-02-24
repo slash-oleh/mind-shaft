@@ -1,5 +1,7 @@
 # Use effective caching policies
 
+## TLDR
+
 Implement long-term caching for immutable assets while ensuring rapid updates for entry points like `index.html`.
 
 ## Problem

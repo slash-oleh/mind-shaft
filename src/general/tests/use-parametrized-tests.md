@@ -1,5 +1,7 @@
 # Use parametrized tests
 
+## TLDR
+
 Deduplicate testing logic by using parametrized tests (table-driven tests) when covering multiple scenarios with different inputs and expected outputs for the same logic.
 
 ## Problem

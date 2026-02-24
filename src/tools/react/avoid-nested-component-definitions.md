@@ -1,5 +1,7 @@
 # Avoid nested component definitions
 
+## TLDR
+
 Do not define a component inside the body of another component or wrap a component definition in `useCallback`. Define all components at the top level.
 
 ## Problem

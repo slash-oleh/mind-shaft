@@ -1,5 +1,7 @@
 # Avoid storing derived state in the database
 
+## TLDR
+
 Calculate state dynamically at runtime instead of saving derived or redundant values in the database schema.
 
 ## Problem

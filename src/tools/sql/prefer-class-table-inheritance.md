@@ -1,5 +1,7 @@
 # Prefer class table inheritance
 
+## TLDR
+
 Use **Class Table Inheritance** when mapping object-oriented inheritance models or polymorphic relationships into a relational database.
 
 ## Problem

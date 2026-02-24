@@ -1,5 +1,7 @@
 # Use sx prop
 
+## TLDR
+
 Use the `sx` prop to define theme-aware and dynamic styles directly on MUI components.
 
 ## Problem

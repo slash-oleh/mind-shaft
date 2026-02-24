@@ -1,5 +1,7 @@
 # Define the PR review and merge responsibilities
 
+## TLDR
+
 Establish clear ownership for Pull Requests (PRs) at every stage of the lifecycle. This ensures that PRs are reviewed, addressed, and merged efficiently without lingering in an ambiguous state.
 
 ## Problem

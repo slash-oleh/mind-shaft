@@ -1,5 +1,7 @@
 # Change style for single item case
 
+## TLDR
+
 Use the simplest possible syntax for simple cases and refactor to more complex, flexible structures only when they are actually needed.
 
 ## Problem

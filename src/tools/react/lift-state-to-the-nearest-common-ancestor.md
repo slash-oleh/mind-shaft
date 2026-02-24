@@ -1,5 +1,7 @@
 # Lift state to the nearest common ancestor
 
+## TLDR
+
 Position your state at the lowest possible level that still allows all components that need the data to access it. This "lifting state up" pattern ensures a single source of truth while avoiding unnecessary prop drilling.
 
 ## Problem

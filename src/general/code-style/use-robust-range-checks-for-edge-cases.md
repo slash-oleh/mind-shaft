@@ -1,5 +1,7 @@
 # Use robust range checks for edge cases
 
+## TLDR
+
 Prefer inclusive range checks (`>=` or `<=`) over exact equality (`==`) when monitoring progress, counters, or loop terminations. This "defensive" approach ensures that logic triggers correctly even if the target value is bypassed due to unexpected increments or precision issues.
 
 ## Problem

@@ -1,6 +1,10 @@
 # Use theme constants
 
+## TLDR
+
 Avoid magic values. Centralize design decisions into predefined theme constants and reference those tokens instead of hardcoding raw values.
+
+## Problem
 
 This applies strictly to:
 
@@ -10,8 +14,6 @@ This applies strictly to:
 - Shapes (border radius)
 - Breakpoints (width-limiting containers, other media queries)
 - Z-index
-
-## Problem
 
 Hardcoding raw values (like `#FF5A5F` for a button, or `14px` for text) directly into components or CSS classes creates magic values that cannot be centrally managed. When a brand's primary color changes, or when creating a dark mode theme, developers are forced into massive find-and-replace operations across hundreds of files. This process is highly error-prone and leads to inconsistent interfaces where slightly different shades of colors (like `#333` vs `#333333`) fracture the design system.
 

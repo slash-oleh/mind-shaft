@@ -1,5 +1,7 @@
 # Use query builders instead of ORMs
 
+## TLDR
+
 Prefer using type-safe query builders over full Object-Relational Mapping (ORM) libraries to maintain explicit control over database interactions and avoid hidden side effects.
 
 ## Problem

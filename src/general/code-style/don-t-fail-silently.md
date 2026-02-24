@@ -1,5 +1,7 @@
 # Don't fail silently
 
+## TLDR
+
 Ensure that errors are always either handled explicitly or reported to the appropriate logging/monitoring system.
 
 ## Problem

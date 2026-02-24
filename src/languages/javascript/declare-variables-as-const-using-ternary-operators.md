@@ -1,5 +1,7 @@
 # Declare variables as `const` using ternary operators
 
+## TLDR
+
 Prefer using ternary operators to initialize `const` variables over using `let` with `if/else` blocks. This ensures variables are immutable and reduces the cognitive load of tracking state changes.
 
 ## Problem

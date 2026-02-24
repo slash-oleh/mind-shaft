@@ -1,5 +1,7 @@
 # Avoid pixel perfect
 
+## TLDR
+
 Do not strive for "pixel-perfect" implementations that match design mockups down to the exact pixel. Instead, build fluid, adaptable, and system-driven layouts.
 
 ## Problem

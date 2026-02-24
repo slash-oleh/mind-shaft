@@ -1,5 +1,7 @@
 # Explicitly define the public API of a module
 
+## TLDR
+
 Expose only essential components and functions through a root index file. Keep internal implementation details hidden to ensure proper encapsulation and reduce coupling.
 
 ## Problem

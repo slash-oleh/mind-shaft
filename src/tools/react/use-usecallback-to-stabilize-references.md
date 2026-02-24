@@ -1,5 +1,7 @@
 # Use `useCallback` to stabilize references
 
+## TLDR
+
 Use the `useCallback` hook to maintain a stable reference for a function across re-renders. This is primarily used to prevent unnecessary re-renders of memoized child components and to provide stable dependencies for other hooks.
 
 ## Problem

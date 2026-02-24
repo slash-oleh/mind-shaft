@@ -1,5 +1,7 @@
 # Avoid floating areas
 
+## TLDR
+
 Minimize the use of modal windows, pop‑overs, and other floating UI elements that force users to switch context or navigate nested layers.
 
 ## Problem

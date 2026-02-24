@@ -1,5 +1,7 @@
 # Avoid premature optimization
 
+## TLDR
+
 Prioritize code readability and maintainability over performance until a specific performance issue is identified and measured.
 
 ## Problem

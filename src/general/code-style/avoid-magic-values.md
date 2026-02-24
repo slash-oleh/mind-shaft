@@ -1,5 +1,7 @@
 # Avoid magic values
 
+## TLDR
+
 Replace raw values (numbers, strings, flags) with named constants to clarify their purpose and make the code easier to maintain.
 
 ## Problem

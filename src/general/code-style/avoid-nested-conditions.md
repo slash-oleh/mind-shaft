@@ -1,5 +1,7 @@
 # Avoid nested conditions
 
+## TLDR
+
 Flatten code by using guard clauses (early returns) and inverting conditions. Avoid deep nesting of conditional blocks, which makes code difficult to read and maintain.
 
 ## Problem

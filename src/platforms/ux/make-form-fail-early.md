@@ -1,5 +1,7 @@
 # Make form fail early
 
+## TLDR
+
 Validate form inputs as soon as the user interacts with them, rather than waiting for submission. This allows users to correct errors immediately and reduces frustration.
 
 ## Problem

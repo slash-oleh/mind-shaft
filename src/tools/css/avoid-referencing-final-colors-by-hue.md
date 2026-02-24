@@ -1,5 +1,7 @@
 # Avoid referencing final colors by hue
 
+## TLDR
+
 Abstract from hue-based color values in your final components. Use semantic color tokens instead.
 
 ## Problem

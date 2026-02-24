@@ -1,5 +1,7 @@
 # Limit simultaneous components
 
+## TLDR
+
 Avoid overwhelming users by displaying too many interactive elements, data points, or navigation options at once.
 
 ## Problem

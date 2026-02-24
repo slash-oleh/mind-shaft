@@ -1,5 +1,7 @@
 # Avoid over-nesting component folders
 
+## TLDR
+
 Avoid creating a dedicated folder for every single component. Only use folders when a component is complex enough to require multiple related files.
 
 ## Problem

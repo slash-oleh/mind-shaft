@@ -1,5 +1,7 @@
 # Prefer fail-tolerant approaches
 
+## TLDR
+
 Design interfaces that prevent errors before they happen and allow users to recover easily when they do. Favor systems that "fail gracefully" over those that strictly block or punish incorrect input.
 
 ## Problem

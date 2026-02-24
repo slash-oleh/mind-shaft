@@ -1,5 +1,7 @@
 # Use Storybook for UI kit components only
 
+## TLDR
+
 Focus Storybook on isolated UI components and atomic design elements rather than complex, business-specific compound components that are tightly coupled to data and infrastructure.
 
 ## Problem

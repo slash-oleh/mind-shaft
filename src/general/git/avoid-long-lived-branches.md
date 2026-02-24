@@ -1,5 +1,7 @@
 # Avoid long-lived branches
 
+## TLDR
+
 Keep feature and bug-fix branches short-lived to minimize integration pain, reduce merge conflicts, and ensure a steady flow of verified changes into the main codebase.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Use a data request management library
 
+## TLDR
+
 Use specialized libraries like **TanStack Query (React Query)** or **SWR** to manage asynchronous data fetching. These tools automatically handle the lifecycle of a request - caching, synchronization, state management and many more.
 
 ## Problem

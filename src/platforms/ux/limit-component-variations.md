@@ -1,5 +1,7 @@
 # Limit component variations
 
+## TLDR
+
 Standardize on a small set of well-defined component variants. Avoid creating multiple components or variations that serve the same underlying purpose.
 
 ## Problem

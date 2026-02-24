@@ -1,5 +1,7 @@
 # Use secure CORS policy
 
+## TLDR
+
 Always restrict Cross-Origin Resource Sharing (CORS) to specific, trusted domains in production environments. Avoid using wildcard origins (`*`) which effectively disable browser-level cross-origin protections.
 
 ## Problem

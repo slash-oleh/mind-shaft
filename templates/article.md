@@ -1,5 +1,7 @@
 # {{TITLE}}
 
+## TLDR
+
 {{DESCRIPTION}}
 
 ## Problem

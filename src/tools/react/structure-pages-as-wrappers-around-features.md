@@ -1,5 +1,7 @@
 # Structure pages as wrappers around features
 
+## TLDR
+
 Organize your application such that the pages layer acts as a thin, compositional wrapper around domain-based feature modules. Think of **Pages** as **Controllers** in backend architecture - they handle routing entry points and orchestrate data flow, but delegate all business and UI logic to independent **Features**.
 
 ## Problem

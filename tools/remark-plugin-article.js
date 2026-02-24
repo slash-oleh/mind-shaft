@@ -19,6 +19,13 @@ const toFileName = (title) =>
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '') + '.md';
 
+const validateTLDR = (nodes, file, headingNode, settings) => {
+  const paragraphs = nodes.filter(n => n.type === 'paragraph');
+  if (paragraphs.length !== 1 || nodes.length !== 1) {
+    warn(file, 'Section "## TLDR" must contain exactly one paragraph and no other content', headingNode.position, 'checkSingleParagraph', settings, 'tldr');
+  }
+};
+
 const validateProblem = (nodes, file, headingNode, settings) => {
   if (!nodes.some(n => n.type === 'paragraph')) {
     warn(file, 'Section "## Problem" must contain at least one paragraph', headingNode.position, 'checkParagraph', settings, 'problem');
@@ -152,9 +159,9 @@ const checkH1 = (children, filePath, file, settings) => {
   if (actualFileName !== expectedFileName) {
     warn(file, `Filename "${actualFileName}" should match hyphenated title "${expectedFileName}"`, h1.position, 'checkFileNameMatch', settings);
   }
-  const description = children[h1Index + 1];
-  if (!description || description.type !== 'paragraph') {
-    warn(file, 'H1 title must be followed by a description paragraph', h1.position, 'checkH1Description', settings);
+  const nextNode = children[h1Index + 1];
+  if (!nextNode || nextNode.type !== 'heading' || nextNode.depth !== 2 || toString(nextNode).toLowerCase() !== 'tldr') {
+    warn(file, 'H1 title must be followed by a "## TLDR" section', h1.position, 'checkH1Description', settings);
   }
 };
 
@@ -214,6 +221,12 @@ const checkH2Sections = (children, file, tree, settings) => {
 
 const DEFAULT_SETTINGS = {
   sections: {
+    tldr: {
+      title: 'TLDR',
+      required: true,
+      validate: validateTLDR,
+      checkSingleParagraph: true,
+    },
     problem: {
       title: 'Problem',
       required: true,

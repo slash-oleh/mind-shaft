@@ -1,5 +1,7 @@
 # Avoid percentage for spacing
 
+## TLDR
+
 Avoid using percentages for margins, padding, or element sizing unless absolutely necessary. Prefer using fixed units (like `px`, `rem`, `em`) or flexible layout properties (like `flex`, `grid`, `max-width`).
 
 ## Problem

@@ -1,5 +1,7 @@
 # Keep PRs small
 
+## TLDR
+
 Aim to keep Pull Requests (PRs) small and focused. Small PRs are easier to review, reduce the risk of introducing bugs, and promote a faster, more agile development cycle.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Use atomic operations
 
+## TLDR
+
 Ensure that complex operations involving multiple steps or state changes are executed as a single, atomic unit of work that either succeeds completely or fails without side effects.
 
 ## Problem

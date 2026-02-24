@@ -1,5 +1,7 @@
 # Optimize for PageSpeed Insights
 
+## TLDR
+
 Achieve high performance scores by optimizing Core Web Vitals and addressing common bottlenecks highlighted by [PageSpeed Insights](https://pagespeed.web.dev/).
 
 ## Problem

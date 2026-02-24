@@ -1,5 +1,7 @@
 # Import assets directly in code
 
+## TLDR
+
 Import images, SVGs, and other static assets directly in your component files using `import` statements. Avoid using raw string paths to reference files located in static or public directories.
 
 ## Problem

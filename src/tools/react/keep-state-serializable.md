@@ -1,5 +1,7 @@
 # Keep state serializable
 
+## TLDR
+
 Only store data that can be easily serialized as plain text like JSON (primitives, plain objects, and arrays) in your state or global stores. Avoid storing functions, class instances, or complex DOM nodes.
 
 ## Problem

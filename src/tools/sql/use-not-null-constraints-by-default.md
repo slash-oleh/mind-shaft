@@ -1,5 +1,7 @@
 # Use NOT NULL constraints by default
 
+## TLDR
+
 Prefer defining database columns as `NOT NULL` to reduce ambiguity and simplify application logic.
 
 ## Problem

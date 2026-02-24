@@ -1,5 +1,7 @@
 # Use destructuring
 
+## TLDR
+
 Prefer destructuring assignments for objects and arrays to improve code clarity and reduce visual repetition.
 
 ## Problem

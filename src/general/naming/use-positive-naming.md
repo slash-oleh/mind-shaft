@@ -1,5 +1,7 @@
 # Use positive naming
 
+## TLDR
+
 Use positive words and states for identifiers instead of inverted logic to improve code readability and reduce cognitive load during conditional checks.
 
 ## Problem

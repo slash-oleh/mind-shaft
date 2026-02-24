@@ -1,5 +1,7 @@
 # Use guard checks
 
+## TLDR
+
 Apply guard checks - both as robust range comparisons and as early-return clauses to prevent logic errors and reduce code complexity.
 
 ## Problem

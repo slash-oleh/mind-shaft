@@ -1,5 +1,7 @@
 # Avoid redundant `if` branches for returning statements
 
+## TLDR
+
 Simplify logic by removing unnecessary `else` blocks and avoiding redundant `if` statements when boolean operations or early returns (guard clauses) can achieve the same result more elegantly.
 
 ## Problem

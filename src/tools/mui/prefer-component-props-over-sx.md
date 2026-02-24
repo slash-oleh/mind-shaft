@@ -1,5 +1,7 @@
 # Prefer component props over sx
 
+## TLDR
+
 Use component-specific props for styling and behavior instead of the generic `sx` prop when they are available.
 
 ## Problem

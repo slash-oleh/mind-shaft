@@ -1,5 +1,7 @@
 # Avoid odd or fractional pixels
 
+## TLDR
+
 Always use even, whole numbers for pixel values (like `margin`, `padding`, `width`, `height`, `font-size`) and avoid fractional pixels (like `13.5px`). Ideally, stick to a base multiple system (like an 8px grid or 4px grid system).
 
 ## Problem

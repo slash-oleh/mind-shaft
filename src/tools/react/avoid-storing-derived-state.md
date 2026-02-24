@@ -1,5 +1,7 @@
 # Avoid storing derived state
 
+## TLDR
+
 Do not store calculated or derived values in state or external stores. Instead, calculate them on‑the‑fly during rendering.
 
 ## Problem

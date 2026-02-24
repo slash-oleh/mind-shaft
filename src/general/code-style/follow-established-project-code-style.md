@@ -1,5 +1,7 @@
 # Follow established project code style
 
+## TLDR
+
 Prioritize consistency within the existing codebase over applying different styles, even if they are technically superior. Apply style improvements systematically across the entire project rather than incrementally within unrelated functional changes.
 
 ## Problem

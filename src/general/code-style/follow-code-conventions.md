@@ -1,5 +1,7 @@
 # Follow code conventions
 
+## TLDR
+
 Adhere to the standard naming, formatting, and structural conventions of the programming language you are using. Every language has established idiomatic patterns that make code predictable and familiar to its ecosystem's developers.
 
 ## Problem

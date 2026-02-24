@@ -1,5 +1,7 @@
 # Avoid async `useEffect` callbacks
 
+## TLDR
+
 Do not make the callback function passed to `useEffect` an `async` function. Instead, define an internal async function and call it immediately.
 
 ## Problem

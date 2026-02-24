@@ -1,5 +1,7 @@
 # Use Grid/Stack components for layout
 
+## TLDR
+
 For layout, positioning, and alignment, abstract away from writing low-level flexbox or CSS Grid properties directly. Use high-level layout components (like `<Grid>` or `<Stack>`) that manage the layout internally and expose a simplified interface.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Avoid absolute positioning
 
+## TLDR
+
 Prefer modern layout systems like CSS Flexbox and Grid over `position: absolute` for positioning elements on a page.
 
 ## Problem

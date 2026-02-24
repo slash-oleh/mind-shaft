@@ -1,5 +1,7 @@
 # Use functional components with Hooks
 
+## TLDR
+
 Use functional components and React Hooks for all new component development. Functional components are more concise, easier to test, and allow for better logic reuse through custom hooks.
 
 ## Problem

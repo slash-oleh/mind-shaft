@@ -1,5 +1,7 @@
 # Avoid pixels as user-level spacing unit
 
+## TLDR
+
 Define a universal spacing unit as a foundational factor (e.g., `4px` or `8px`), and express all spacing and layout decisions as multiples of this unit, rather than arbitrary raw pixels.
 
 ## Problem

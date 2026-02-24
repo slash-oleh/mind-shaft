@@ -1,5 +1,7 @@
 # Follow the established branching flow
 
+## TLDR
+
 Adhere to the Git branching model chosen for the project to ensure a predictable and manageable development process.
 
 ## Problem

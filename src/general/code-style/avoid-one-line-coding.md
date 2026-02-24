@@ -1,5 +1,7 @@
 # Avoid one-line coding
 
+## TLDR
+
 Avoid cramming multiple operations or long method chains into a single line.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Don't overuse DRY
 
+## TLDR
+
 Avoid the temptation to deduplicate every repeating piece of code. While the "Don't Repeat Yourself" (DRY) principle aims for a single source of truth, over-applying it can lead to premature or incorrect abstractions that are more difficult and expensive to maintain than simple duplication.
 
 ## Problem

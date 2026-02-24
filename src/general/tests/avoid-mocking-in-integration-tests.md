@@ -1,5 +1,7 @@
 # Avoid mocking in integration tests
 
+## TLDR
+
 Minimize the use of mocks in integration tests. Use real dependencies (like databases or file systems) or close-to-real equivalents to ensure that the test accurately reflects production behavior.
 
 ## Problem

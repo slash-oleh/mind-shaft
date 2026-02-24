@@ -1,5 +1,7 @@
 # Use thin controllers
 
+## TLDR
+
 Controllers should act as a bridge between the network protocol (HTTP/GraphQL) and core logic. Move business rules to services.
 
 ## Problem

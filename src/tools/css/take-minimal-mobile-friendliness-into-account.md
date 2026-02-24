@@ -1,5 +1,7 @@
 # Take minimal mobile friendliness into account
 
+## TLDR
+
 Even if an application is primarily targeted at desktop users and explicit mobile support is not required by the product specification, always design layouts with minimal mobile-friendliness in mind. Do not hardcode rigid layouts just because it's technically allowed.
 
 ## Problem

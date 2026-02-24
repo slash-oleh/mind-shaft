@@ -1,5 +1,7 @@
 # Use stable, unique keys in lists
 
+## TLDR
+
 Ensure that the `key` prop used in lists is both unique among siblings and stable across re-renders. Favor unique data IDs over array indices for dynamic collections.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Avoid element wrappers
 
+## TLDR
+
 Keep the DOM hierarchy as flat as possible. Use as few wrapper elements (e.g., redundant `<div>` or `<span>` tags) as absolutely necessary.
 
 ## Problem

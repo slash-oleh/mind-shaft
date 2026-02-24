@@ -1,5 +1,7 @@
 # Use only relative `z-index`
 
+## TLDR
+
 Centralize all `z-index` values into an aliased set of design tokens (like CSS variables or a JavaScript constant object). Reference these aliases instead of dropping magic numbers arbitrarily throughout the codebase.
 
 ## Problem

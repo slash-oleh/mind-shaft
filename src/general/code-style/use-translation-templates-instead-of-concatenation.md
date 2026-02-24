@@ -1,5 +1,7 @@
 # Use translation templates instead of concatenation
 
+## TLDR
+
 Use placeholders and template engines within translation strings instead of concatenating partial translation keys with dynamic values.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Use technical role separation inside feature module
 
+## TLDR
+
 When a feature module contains multiple components or files of the same technical role, organize them into subdirectories (e.g., `components/`, `hooks/`, `actions/`) to maintain a clean and discoverable structure.
 
 ## Problem

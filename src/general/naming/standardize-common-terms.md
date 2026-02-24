@@ -1,5 +1,7 @@
 # Standardize common terms
 
+## TLDR
+
 Use a single, project-wide term for common concepts and operations to reduce ambiguity, ensure a consistent vocabulary, and make the codebase more predictable.
 
 ## Problem

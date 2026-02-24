@@ -1,5 +1,7 @@
 # Use meaningful names for junction tables
 
+## TLDR
+
 Prefer naming many-to-many (m2m) junction tables based on the relationship they represent rather than just concatenating the names of the tables they connect.
 
 ## Problem

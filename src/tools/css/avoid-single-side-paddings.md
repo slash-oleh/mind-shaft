@@ -1,5 +1,7 @@
 # Avoid single-side paddings
 
+## TLDR
+
 Do not apply padding or margin to only one side of an element (e.g., `padding-left` or `margin-right`). Use symmetric padding (e.g., `padding: 0 16px`) and leverage modern CSS layout properties like `gap` for lists.
 
 ## Problem

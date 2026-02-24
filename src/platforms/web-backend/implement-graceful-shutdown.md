@@ -1,5 +1,7 @@
 # Implement graceful shutdown
 
+## TLDR
+
 Ensure the application correctly handles termination signals to finish active work and close resources before exiting.
 
 ## Problem

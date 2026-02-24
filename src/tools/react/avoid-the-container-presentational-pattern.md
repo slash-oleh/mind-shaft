@@ -1,5 +1,7 @@
 # Avoid the Container/Presentational pattern
 
+## TLDR
+
 Do not split components into separate "Container" (logic) and "Presentational" (view) pairs by default. Instead, use Hooks to keep logic and UI cohesive within a single component.
 
 ## Problem

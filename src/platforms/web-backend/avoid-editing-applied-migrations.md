@@ -1,5 +1,7 @@
 # Avoid editing applied migrations
 
+## TLDR
+
 Never modify database migration files once they have been applied to any shared environment (staging, production) or committed to the main branch.
 
 ## Problem

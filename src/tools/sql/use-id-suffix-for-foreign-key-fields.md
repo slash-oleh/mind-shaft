@@ -1,5 +1,7 @@
 # Use `_id` suffix for foreign key fields
 
+## TLDR
+
 Always append the `_id` suffix (or `Id` in camelCase contexts) to columns that store a foreign key reference to another table.
 
 ## Problem

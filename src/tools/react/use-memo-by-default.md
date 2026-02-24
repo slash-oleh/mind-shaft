@@ -1,5 +1,7 @@
 # Use `memo` by default
 
+## TLDR
+
 Wrap functional components in `React.memo` as a standard practice to prevent unnecessary re-renders. While the exact performance benefit varies, using it by default provides a more predictable and efficient performance profile across large component trees.
 
 ## Problem

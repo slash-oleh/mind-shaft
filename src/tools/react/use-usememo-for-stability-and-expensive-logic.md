@@ -1,5 +1,7 @@
 # Use useMemo for stability and expensive logic
 
+## TLDR
+
 Use `useMemo` to cache the results of expensive calculations and to maintain **referential stability** for complex objects and arrays. While it has a minor memory cost, the benefit of preventing unnecessary downstream re-renders is typically more significant.
 
 ## Problem

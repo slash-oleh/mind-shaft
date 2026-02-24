@@ -1,5 +1,7 @@
 # Perform code review
 
+## TLDR
+
 Conduct code reviews promptly and professionally. Treat the review process as a collaborative learning opportunity that ensures software quality, defect detection, and architectural alignment.
 
 ## Problem

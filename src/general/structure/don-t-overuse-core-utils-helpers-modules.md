@@ -1,5 +1,7 @@
 # Don't overuse `core`/`utils`/`helpers` modules
 
+## TLDR
+
 Avoid using generic catch-all modules like `core`, `utils`, or `helpers` for logic that has a definitive domain home. These modules should be reserved for truly foundational, non-business logic.
 
 ## Problem

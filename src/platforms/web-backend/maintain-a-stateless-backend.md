@@ -1,5 +1,7 @@
 # Maintain a stateless backend
 
+## TLDR
+
 Design the application logic to be completely stateless, ensuring that any instance of the service can handle any incoming request without relying on local, in-memory data.
 
 ## Problem

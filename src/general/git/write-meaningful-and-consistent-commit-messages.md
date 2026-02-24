@@ -1,5 +1,7 @@
 # Write meaningful and consistent commit messages
 
+## TLDR
+
 Follow a standardized format for Git commit messages to ensure the project history is readable, searchable, and provides clear context for every change.
 
 ## Problem

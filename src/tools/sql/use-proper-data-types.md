@@ -1,5 +1,7 @@
 # Use proper data types
 
+## TLDR
+
 Always choose the most specific, semantically correct data type for storing and transferring information, rather than generic primitives like `text`, `number`, or `timestamp`.
 
 ## Problem

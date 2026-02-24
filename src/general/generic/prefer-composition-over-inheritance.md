@@ -1,5 +1,7 @@
 # Prefer composition over inheritance
 
+## TLDR
+
 Favor building complex functionality by combining simple, independent components (composition) instead of creating deep class hierarchies (inheritance).
 
 ## Problem

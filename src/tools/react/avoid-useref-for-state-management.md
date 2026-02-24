@@ -1,5 +1,7 @@
 # Avoid `useRef` for state management
 
+## TLDR
+
 Favor declarative state (`useState`) over imperative refs. Use `useRef` only as a last resort for direct DOM access or for manual performance optimizations that don't affect the rendered UI.
 
 ## Problem

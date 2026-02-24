@@ -1,5 +1,7 @@
 # Don't implement unjustifiably complex design traits without clarifying
 
+## TLDR
+
 When a design contains a detail that seems unusually complex, inconsistent with existing patterns, or introduces redundant UX flows, clarify with the designer before implementing it. The design is a source of truth for *intent*, but it may lack the context of existing technical and UX constraints.
 
 ## Problem

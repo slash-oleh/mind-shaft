@@ -1,5 +1,7 @@
 # Use snake case for identifiers
 
+## TLDR
+
 Use `snake_case` (all lowercase words separated by underscores) for all database identifiers, including tables, columns, constraints, sequences, and indexes.
 
 ## Problem

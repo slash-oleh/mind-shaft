@@ -1,5 +1,7 @@
 # Use visual accents
 
+## TLDR
+
 Use visual hierarchy to guide the user's attention to the most important elements. Employ variations in font weight, color, size, and positioning to establish a clear order of importance.
 
 ## Problem

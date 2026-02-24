@@ -1,5 +1,7 @@
 # Prefer squash and rebase for a clean history
 
+## TLDR
+
 Maintain a clean, linear, and readable Git history by squashing intermediate commits and rebasing feature branches before merging.
 
 ## Problem

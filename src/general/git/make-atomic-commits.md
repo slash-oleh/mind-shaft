@@ -1,5 +1,7 @@
 # Make atomic commits
 
+## TLDR
+
 Ensure each commit represents a single, logical change that is complete and does not break the project's build or tests.
 
 ## Problem

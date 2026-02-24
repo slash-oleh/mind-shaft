@@ -1,5 +1,7 @@
 # Use singular form for table names
 
+## TLDR
+
 Name database tables using singular nouns to represent a single row's entity type.
 
 ## Problem

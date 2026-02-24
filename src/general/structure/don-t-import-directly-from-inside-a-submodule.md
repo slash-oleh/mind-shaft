@@ -1,5 +1,7 @@
 # Don't import directly from inside a submodule
 
+## TLDR
+
 Avoid importing internal files directly from within a submodule. Instead, always use the public API (entry point) exposed by the submodule to ensure proper encapsulation and reduce coupling.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Structure translations to represent the modules structure
 
+## TLDR
+
 Organize translation keys to mirror the directory and file structure of your codebase. This creates a direct mapping between the code and its translated strings.
 
 ## Problem

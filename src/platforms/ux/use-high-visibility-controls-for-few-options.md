@@ -1,5 +1,7 @@
 # Use high-visibility controls for few options
 
+## TLDR
+
 Prefer button groups, switches, or radio buttons over dropdowns when dealing with a small, finite number of options (typically 2-5).
 
 ## Problem

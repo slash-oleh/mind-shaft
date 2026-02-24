@@ -1,5 +1,7 @@
 # Don't overuse CSS specificity
 
+## TLDR
+
 Avoid relying on CSS specificity and style overriding to achieve your desired design. Structure your classes modularly so properties are applied additively rather than destructively.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Contribute back to Open Source dependencies
 
+## TLDR
+
 Contribute fixes and improvements back to the original repositories of the open-source libraries you use, rather than maintaining local patches or workarounds.
 
 ## Problem

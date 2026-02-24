@@ -1,5 +1,7 @@
 # Reference similar issues in comments
 
+## TLDR
+
 When the same issue or violation occurs in multiple places within a Pull Request, provide a detailed explanation in the first instance (the "main" comment) and link to it in subsequent occurrences instead of duplicating the entire explanation.
 
 ## Problem

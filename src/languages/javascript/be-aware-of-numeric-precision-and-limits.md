@@ -1,5 +1,7 @@
 # Be aware of numeric precision and limits
 
+## TLDR
+
 Understand the limitations of JavaScript's `Number` type (IEEE 754 floating-point) and use appropriate strategies for high-precision or large-integer arithmetic.
 
 ## Problem

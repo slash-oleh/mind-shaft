@@ -1,5 +1,7 @@
 # Avoid top-level component margins
 
+## TLDR
+
 Do not apply outer margins of any kind (like `margin`, `margin-top`, or `margin-right`) to the root element of a reusable UI component. Leave outer spacing decisions to the parent template or layout composing the component.
 
 ## Problem

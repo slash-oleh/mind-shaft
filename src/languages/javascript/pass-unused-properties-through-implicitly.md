@@ -1,5 +1,7 @@
 # Pass unused properties through implicitly
 
+## TLDR
+
 Use the rest operator (`...`) to collect and forward unused properties instead of explicitly destructuring every property when they are just being passed to another function.
 
 ## Problem

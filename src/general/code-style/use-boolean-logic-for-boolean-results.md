@@ -1,5 +1,7 @@
 # Use boolean logic for boolean results
 
+## TLDR
+
 Prefer boolean operators over ternary operators or conditional statements when the desired outcome is a boolean value.
 
 ## Problem

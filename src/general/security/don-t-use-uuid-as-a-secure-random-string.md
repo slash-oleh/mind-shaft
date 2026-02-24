@@ -1,5 +1,7 @@
 # Don't use UUID as a secure random string
 
+## TLDR
+
 Never use Universally Unique Identifiers (UUIDs) as security credentials, session tokens, or any random string that requires high entropy and unpredictability. Use cryptographically secure random number generators (CSPRNG) for these purposes instead.
 
 ## Problem

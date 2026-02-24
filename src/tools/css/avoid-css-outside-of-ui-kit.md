@@ -1,5 +1,7 @@
 # Avoid CSS outside of UI kit
 
+## TLDR
+
 Use custom CSS exclusively to implement primitive components within your Design System (UI Kit). For higher-level business components and pages, compose existing UI components rather than writing low-level CSS.
 
 ## Problem

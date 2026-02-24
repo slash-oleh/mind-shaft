@@ -1,5 +1,7 @@
 # Prefer controlled components over mirrored state
 
+## TLDR
+
 Avoid creating internal state that simply mirrors a prop. Use **controlled components** where the parent remains the single source of truth for the data.
 
 ## Problem

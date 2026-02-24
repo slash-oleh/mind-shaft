@@ -1,5 +1,7 @@
 # Care about variable context: not too generic and not too specific
 
+## TLDR
+
 Ensure that variable names provide sufficient information to be understood within their scope, while avoiding redundant details already provided by the surrounding context.
 
 ## Problem

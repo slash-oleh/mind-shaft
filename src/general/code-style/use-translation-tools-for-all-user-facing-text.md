@@ -1,5 +1,7 @@
 # Use translation tools for all user-facing text
 
+## TLDR
+
 Internalize all user-facing strings into translation files (i18n), even for single-language projects, to decouple text management from code development.
 
 ## Problem

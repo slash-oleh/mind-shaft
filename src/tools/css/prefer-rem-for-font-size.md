@@ -1,5 +1,7 @@
 # Prefer `rem` for font size
 
+## TLDR
+
 Use relative root units (`rem`) rather than absolute pixels (`px`) for managing typography sizes across the application.
 
 ## Problem

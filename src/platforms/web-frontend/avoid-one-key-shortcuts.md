@@ -1,5 +1,7 @@
 # Avoid one-key shortcuts
 
+## TLDR
+
 Prefer multi-key combinations (e.g., `Ctrl+S`, `Cmd+K`) over single-key shortcuts to prevent accidental feature invocation and accessibility conflicts.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Limit the use of color
 
+## TLDR
+
 Use color sparingly and purposefully. A restrained color palette improves clarity, focuses attention, and makes meaningful color cues (like errors or success states) stand out more effectively.
 
 ## Problem

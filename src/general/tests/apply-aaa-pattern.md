@@ -1,5 +1,7 @@
 # Apply AAA pattern
 
+## TLDR
+
 Use the Arrange-Act-Assert (AAA) pattern to structure your tests. This standardizes test layout, making them easier to read, understand, and maintain.
 
 ## Problem

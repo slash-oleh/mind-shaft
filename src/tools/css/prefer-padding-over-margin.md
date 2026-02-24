@@ -1,5 +1,7 @@
 # Prefer padding over margin
 
+## TLDR
+
 Whenever deciding how to push content away from a boundary or create space around an element, prefer using `padding` on the container rather than `margin` on the children.
 
 ## Problem

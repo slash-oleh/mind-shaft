@@ -1,5 +1,7 @@
 # Prefer components over styling via classes or inline styles
 
+## TLDR
+
 Encapsulate design decisions into reusable components rather than creating reusable CSS classes.
 
 ## Problem

@@ -1,5 +1,7 @@
 # Optimize application bundling
 
+## TLDR
+
 Improve application performance and load times by implementing code splitting and lazy loading strategies.
 
 ## Problem

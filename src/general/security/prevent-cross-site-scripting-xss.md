@@ -1,5 +1,7 @@
 # Prevent Cross-Site Scripting (XSS)
 
+## TLDR
+
 Always escape or sanitize user-controlled data before rendering it in the browser, and prefer safe DOM manipulation methods over direct HTML string injection.
 
 ## Problem

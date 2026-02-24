@@ -1,5 +1,7 @@
 # Avoid generic component name suffixes
 
+## TLDR
+
 Avoid using vague, meaningless suffixes like `Block`, `Container`, `Box`, `Screen`, `Section`, or `Area` in component names. Use descriptive names that reflect the component's semantic purpose or content.
 
 ## Problem

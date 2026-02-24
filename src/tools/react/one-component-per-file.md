@@ -1,5 +1,7 @@
 # One component per file
 
+## TLDR
+
 Each file should export and focus on a single React component. This keeps your codebase modular, easy to navigate, and highly searchable.
 
 ## Problem

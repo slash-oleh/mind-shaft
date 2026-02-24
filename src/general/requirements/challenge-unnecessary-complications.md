@@ -1,5 +1,7 @@
 # Challenge unnecessary complications
 
+## TLDR
+
 Proactively identify and question requirements that prescribe specific, over-engineered solutions instead of defining core problems, and propose simpler alternatives that achieve the same business goals.
 
 ## Problem

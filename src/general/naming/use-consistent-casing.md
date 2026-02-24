@@ -1,5 +1,7 @@
 # Use consistent casing
 
+## TLDR
+
 Use camelCase consistently for all variable and function names, and ensure that acronyms and abbreviations follow regular casing rules (e.g., `userId` instead of `userID`).
 
 ## Problem

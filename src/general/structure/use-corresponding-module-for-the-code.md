@@ -1,5 +1,7 @@
 # Use corresponding module for the code
 
+## TLDR
+
 Place code within the feature or domain module that it logically belongs to. Ensure that components, hooks, and services reside in the module that defines their business role or scope.
 
 ## Problem
