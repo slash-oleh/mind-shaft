@@ -46,11 +46,11 @@ if (step == lastStep) { // Risk: logic fails if step skips from 99 to 101
 }
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Early returns keep the "happy path" unnested and easy to follow.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Inclusive range checks (`>=`) handle overshooting and precision issues, preventing infinite loops or missed triggers.
-- **[Nesting](../../home/quality-attributes/negative/nesting.md)**: Reducing indentation depth lowers cognitive load and makes the code less prone to structural errors during refactoring.
+- **[Readability](../../home/impact/positive/readability.md)**: Early returns keep the "happy path" unnested and easy to follow.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Inclusive range checks (`>=`) handle overshooting and precision issues, preventing infinite loops or missed triggers.
+- **[Nesting](../../home/impact/negative/nesting.md)**: Reducing indentation depth lowers cognitive load and makes the code less prone to structural errors during refactoring.
 
 ## Exceptions
 

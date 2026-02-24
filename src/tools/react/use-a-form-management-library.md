@@ -65,11 +65,11 @@ export const RegistrationForm = () => {
 };
 ```
 
-## Why
+## Impact
 
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Reduces boilerplate by $60-80%$, letting you focus on the UI and business logic rather than wiring up event handlers.
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Libraries like React Hook Form minimize re-renders by using refs, keeping the UI responsive even in massive forms.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Integrates seamlessly with validation libraries (like Zod or Yup), creating a single source of truth for form rules.
+- **[KISS](../../home/impact/positive/kiss.md)**: Reduces boilerplate by $60-80%$, letting you focus on the UI and business logic rather than wiring up event handlers.
+- **[Performance](../../home/impact/positive/performance.md)**: Libraries like React Hook Form minimize re-renders by using refs, keeping the UI responsive even in massive forms.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Integrates seamlessly with validation libraries (like Zod or Yup), creating a single source of truth for form rules.
 
 ## Exceptions
 

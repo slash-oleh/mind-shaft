@@ -42,11 +42,11 @@ function UserProfile({ user }) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Encapsulating HTML ensures global design tokens (like focus states, default link colors, and typography scaling) are applied uniformly everywhere.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: If a global change is required (like adding an analytics tracker to all external links), you only modify the `<Link>` primitive inside the UI Kit, rather than refactoring 500 individual `<a>` tags.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Centralizing the HTML elements drastically reduces the risk of developers forgetting critical security or accessibility attributes (like `rel="noopener noreferrer"` on blank targets).
+- **[Consistency](../../home/impact/positive/consistency.md)**: Encapsulating HTML ensures global design tokens (like focus states, default link colors, and typography scaling) are applied uniformly everywhere.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: If a global change is required (like adding an analytics tracker to all external links), you only modify the `<Link>` primitive inside the UI Kit, rather than refactoring 500 individual `<a>` tags.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Centralizing the HTML elements drastically reduces the risk of developers forgetting critical security or accessibility attributes (like `rel="noopener noreferrer"` on blank targets).
 
 ## Exceptions
 

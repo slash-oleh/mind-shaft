@@ -28,9 +28,9 @@ import { v4 as uuidv4 } from 'uuid';
 const sessionToken = uuidv4(); // v4 is better than v1, but still not as secure as CSPRNG
 ```
 
-## Why
+## Impact
 
-- **[Security](../../home/quality-attributes/positive/security.md)**: CSPRNGs provide the high level of entropy required to prevent token guessing and brute-force attacks.
+- **[Security](../../home/impact/positive/security.md)**: CSPRNGs provide the high level of entropy required to prevent token guessing and brute-force attacks.
 
 ## Exceptions
 

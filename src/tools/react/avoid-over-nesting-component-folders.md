@@ -37,10 +37,10 @@ src/components/
       └── index.tsx      <-- Redundant nesting
 ```
 
-## Why
+## Impact
 
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: A flatter structure is easier to manage, scan, and refactor.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Descriptive filenames (e.g., `Button.tsx`) are much more readable in IDE tabs than generic `index.tsx` files.
+- **[KISS](../../home/impact/positive/kiss.md)**: A flatter structure is easier to manage, scan, and refactor.
+- **[Readability](../../home/impact/positive/readability.md)**: Descriptive filenames (e.g., `Button.tsx`) are much more readable in IDE tabs than generic `index.tsx` files.
 
 ## Exceptions
 

@@ -36,10 +36,10 @@ p {
 }
 ```
 
-## Why
+## Impact
 
-- **[Accessibility](../../home/quality-attributes/positive/accessibility.md)**: `rem` units inherently accommodate visually impaired users by allowing text to scale seamlessly with their system or browser defaults.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Modifying a single base font size on the `<html>` root scales the entire typographic hierarchy proportionally without manually updating dozens of pixel classes.
+- **[Accessibility](../../home/impact/positive/accessibility.md)**: `rem` units inherently accommodate visually impaired users by allowing text to scale seamlessly with their system or browser defaults.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Modifying a single base font size on the `<html>` root scales the entire typographic hierarchy proportionally without manually updating dozens of pixel classes.
 
 ## Exceptions
 

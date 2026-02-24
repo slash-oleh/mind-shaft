@@ -56,11 +56,11 @@ src/
     billing.ts
 ```
 
-## Why
+## Impact
 
-- **[Cohesion](../../home/quality-attributes/positive/cohesion.md)**: Related code stays together, making the feature's scope and logic obvious.
-- **[Encapsulation](../../home/quality-attributes/positive/encapsulation.md)**: Features can define clear public APIs and hide internal implementation details.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Features can be added, moved, or deleted with minimal impact on the rest of the system.
+- **[Cohesion](../../home/impact/positive/cohesion.md)**: Related code stays together, making the feature's scope and logic obvious.
+- **[Encapsulation](../../home/impact/positive/encapsulation.md)**: Features can define clear public APIs and hide internal implementation details.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Features can be added, moved, or deleted with minimal impact on the rest of the system.
 
 ## Exceptions
 

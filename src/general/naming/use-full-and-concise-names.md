@@ -37,10 +37,10 @@ const externallyFetchedUserWithDetailedInfo = await fetchUser();
 const currentActiveAccountFoundInTheList = accounts.find(a => a.isActive);
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Full names make the code self-documenting, while conciseness ensures it remains scannable and less visually overwhelming.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Reduces the risk of collisions between abbreviations and simplifies future modifications by keeping names focused.
+- **[Readability](../../home/impact/positive/readability.md)**: Full names make the code self-documenting, while conciseness ensures it remains scannable and less visually overwhelming.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Reduces the risk of collisions between abbreviations and simplifies future modifications by keeping names focused.
 
 ## Exceptions
 

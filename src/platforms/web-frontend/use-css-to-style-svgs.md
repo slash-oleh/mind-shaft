@@ -40,12 +40,12 @@ Keeping the original colors exported from design tools directly in the SVG path.
 </svg>
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Color changes are managed in CSS, not inside XML files.
-- **[Reusability](../../home/quality-attributes/positive/reusability.md)**: The same SVG asset can be used in multiple colors across different parts of the UI.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Icons automatically adapt to the application's color theme and state transitions.
-- **[Size/Code Amount](../../home/quality-attributes/negative/size-code-amount.md)**: Reduces the need for multiple SVG files for different color variations.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Color changes are managed in CSS, not inside XML files.
+- **[Reusability](../../home/impact/positive/reusability.md)**: The same SVG asset can be used in multiple colors across different parts of the UI.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Icons automatically adapt to the application's color theme and state transitions.
+- **[Size/Code Amount](../../home/impact/negative/size-code-amount.md)**: Reduces the need for multiple SVG files for different color variations.
 
 ## Exceptions
 

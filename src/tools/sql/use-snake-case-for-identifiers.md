@@ -36,11 +36,11 @@ CREATE TABLE "UserAccount" (
 SELECT "firstName" FROM "UserAccount"; -- Fragile and tedious
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Writing raw SQL statements and migrations is significantly easier and less prone to casing-related syntax errors.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Aligns with universal relational database naming standards.
-- **[Portability](../../home/quality-attributes/positive/portability.md)**: Makes your SQL schemas and scripts easier to run across different database dialects and management tools without fighting case-folding rules.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Writing raw SQL statements and migrations is significantly easier and less prone to casing-related syntax errors.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Aligns with universal relational database naming standards.
+- **[Portability](../../home/impact/positive/portability.md)**: Makes your SQL schemas and scripts easier to run across different database dialects and management tools without fighting case-folding rules.
 
 ## Exceptions
 

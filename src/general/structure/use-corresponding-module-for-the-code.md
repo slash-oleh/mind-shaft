@@ -31,11 +31,11 @@ user/
   Avatar.tsx
 ```
 
-## Why
+## Impact
 
-- **[Cohesion](../../home/quality-attributes/positive/cohesion.md)**: Ensures that a module contains all the necessary parts for its functionality.
-- **[Coupling](../../home/quality-attributes/negative/coupling.md)**: Prevents modules from depending on each other for internal feature details.
-- **[Reusability](../../home/quality-attributes/positive/reusability.md)**: Makes it easier to reuse a module in different parts of the application or in other projects.
+- **[Cohesion](../../home/impact/positive/cohesion.md)**: Ensures that a module contains all the necessary parts for its functionality.
+- **[Coupling](../../home/impact/negative/coupling.md)**: Prevents modules from depending on each other for internal feature details.
+- **[Reusability](../../home/impact/positive/reusability.md)**: Makes it easier to reuse a module in different parts of the application or in other projects.
 
 ## Exceptions
 

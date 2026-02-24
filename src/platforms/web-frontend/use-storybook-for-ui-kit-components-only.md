@@ -56,11 +56,11 @@ const meta: Meta<typeof ComplexDashboardSection> = {
 };
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Reduces the time spent fixing broken mocks in Storybook when internal data structures change.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Encourages the use of E2E tests for complex logic, which provides higher confidence in actual application behavior.
-- **[Separation of Concerns](../../home/quality-attributes/positive/separation-of-concerns.md)**: Clearly distinguishes between design-system components and application-specific business logic.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Reduces the time spent fixing broken mocks in Storybook when internal data structures change.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Encourages the use of E2E tests for complex logic, which provides higher confidence in actual application behavior.
+- **[Separation of Concerns](../../home/impact/positive/separation-of-concerns.md)**: Clearly distinguishes between design-system components and application-specific business logic.
 
 ## Exceptions
 

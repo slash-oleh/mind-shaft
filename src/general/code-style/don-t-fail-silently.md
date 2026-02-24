@@ -30,11 +30,11 @@ try {
 }
 ```
 
-## Why
+## Impact
 
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Prevents hidden failures from corrupting state or misleading users.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Essential for effective debugging and monitoring in production.
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: Makes the system's behavior predictable even during failure scenarios.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Prevents hidden failures from corrupting state or misleading users.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Essential for effective debugging and monitoring in production.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: Makes the system's behavior predictable even during failure scenarios.
 
 ## Exceptions
 

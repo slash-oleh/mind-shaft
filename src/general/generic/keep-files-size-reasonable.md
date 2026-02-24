@@ -39,12 +39,12 @@ export const DEFAULT_USER_AVATAR = "https://example.com/avatar.png";
 import { DEFAULT_USER_AVATAR } from './constants';
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Focused files are easier to scan, and inlining small logic keeps the context available where it's needed.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Smaller files reduce merge conflicts, while avoiding fragmentation reduces the cost of navigating the project.
-- **[Cohesion](../../home/quality-attributes/positive/cohesion.md)**: Keeping related logic together makes the system's architecture more intuitive.
-- **[Coupling](../../home/quality-attributes/negative/coupling.md)**: Smaller files reduce the number of dependencies between modules.
+- **[Readability](../../home/impact/positive/readability.md)**: Focused files are easier to scan, and inlining small logic keeps the context available where it's needed.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Smaller files reduce merge conflicts, while avoiding fragmentation reduces the cost of navigating the project.
+- **[Cohesion](../../home/impact/positive/cohesion.md)**: Keeping related logic together makes the system's architecture more intuitive.
+- **[Coupling](../../home/impact/negative/coupling.md)**: Smaller files reduce the number of dependencies between modules.
 
 ## Exceptions
 

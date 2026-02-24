@@ -43,11 +43,11 @@ function UserProfile({ id, dispatch, user, loading }) {
 }
 ```
 
-## Why
+## Impact
 
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Modern tools eliminate the "dispatch/selector" ceremony, allowing you to write significantly less code to achieve the same result.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: React Query handles complex requirements like caching, background refetching, and window-focus synchronization automatically.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Async logic becomes much easier to follow when it's declarative rather than hidden in middleware like Thunks or Sagas.
+- **[KISS](../../home/impact/positive/kiss.md)**: Modern tools eliminate the "dispatch/selector" ceremony, allowing you to write significantly less code to achieve the same result.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: React Query handles complex requirements like caching, background refetching, and window-focus synchronization automatically.
+- **[Readability](../../home/impact/positive/readability.md)**: Async logic becomes much easier to follow when it's declarative rather than hidden in middleware like Thunks or Sagas.
 
 ## Exceptions
 

@@ -46,11 +46,11 @@ it('should return false for empty email', () => {
 });
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Logic is defined once; changes only need to be made in one place.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: The data table clearly shows the range of cases covered, making the test's intent obvious at a glance.
-- **[Scalability](../../home/quality-attributes/positive/scalability.md)**: Adding a new test case is as simple as adding another row to the array.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Logic is defined once; changes only need to be made in one place.
+- **[Readability](../../home/impact/positive/readability.md)**: The data table clearly shows the range of cases covered, making the test's intent obvious at a glance.
+- **[Scalability](../../home/impact/positive/scalability.md)**: Adding a new test case is as simple as adding another row to the array.
 
 ## Exceptions
 

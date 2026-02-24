@@ -32,10 +32,10 @@ const encodedHeader = Buffer.from(sensitiveData).toString('base64');
 // Anyone can run: Buffer.from(encodedHeader, 'base64').toString()
 ```
 
-## Why
+## Impact
 
-- **[Security](../../home/quality-attributes/positive/security.md)**: Only encryption prevents unauthorized access by requiring a secret key.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Proper cryptographic practices are resistant to analysis and brute-force attacks.
+- **[Security](../../home/impact/positive/security.md)**: Only encryption prevents unauthorized access by requiring a secret key.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Proper cryptographic practices are resistant to analysis and brute-force attacks.
 
 ## Exceptions
 

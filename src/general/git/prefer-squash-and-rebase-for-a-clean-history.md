@@ -38,11 +38,11 @@ Bad Commit History showing a sequence of fragmented, non-atomic commits:
 >
 > Final fix for the service
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: A linear history with meaningful commits is significantly easier to audit and follow.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Simplifies repository maintenance, reverts, and the use of tools like `git bisect`.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures the entire project follows a single, clean standard for version control history.
+- **[Readability](../../home/impact/positive/readability.md)**: A linear history with meaningful commits is significantly easier to audit and follow.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Simplifies repository maintenance, reverts, and the use of tools like `git bisect`.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures the entire project follows a single, clean standard for version control history.
 
 ## Exceptions
 

@@ -34,10 +34,10 @@ Bad PR Titles:
 
 > Implemented the search results and also some styles
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: A uniform PR history is easier to search and navigate.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Reviewers can immediately grasp the scope and intent of the PR from the title.
+- **[Consistency](../../home/impact/positive/consistency.md)**: A uniform PR history is easier to search and navigate.
+- **[Readability](../../home/impact/positive/readability.md)**: Reviewers can immediately grasp the scope and intent of the PR from the title.
 
 ## Exceptions
 

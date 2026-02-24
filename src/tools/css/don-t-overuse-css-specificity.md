@@ -42,11 +42,11 @@ button.secondary {
 }
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Additive CSS is much easier to maintain than destructive CSS. You don't have to trace a long chain of overrides to figure out where a color is coming from.
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: The browser spends less time computing styles when it doesn't have to evaluate and discard overridden properties.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Reduces cognitive load linearly; a class simply applies what it says, rather than fighting against base styles.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Additive CSS is much easier to maintain than destructive CSS. You don't have to trace a long chain of overrides to figure out where a color is coming from.
+- **[Performance](../../home/impact/positive/performance.md)**: The browser spends less time computing styles when it doesn't have to evaluate and discard overridden properties.
+- **[KISS](../../home/impact/positive/kiss.md)**: Reduces cognitive load linearly; a class simply applies what it says, rather than fighting against base styles.
 
 ## Exceptions
 

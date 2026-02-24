@@ -30,10 +30,10 @@ CREATE TABLE "order" (
 );
 ```
 
-## Why
+## Impact
 
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: The `_id` suffix immediately tells the developer that the field holds a scalar identifier, not a serialized object or populated relationship.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Aligns with universal relational database conventions and prevents conflicts with ORMs that need to expose both the ID and the fetched relationship object on the same model.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: The `_id` suffix immediately tells the developer that the field holds a scalar identifier, not a serialized object or populated relationship.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Aligns with universal relational database conventions and prevents conflicts with ORMs that need to expose both the ID and the fetched relationship object on the same model.
 
 ## Exceptions
 

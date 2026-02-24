@@ -41,12 +41,12 @@ products:
 
 This approach leads to catastrophic data corruption over time, as there is no final "gatekeeper" to verify the data's validity before it is persisted.
 
-## Why
+## Impact
 
-- **[Integrity](../../home/quality-attributes/positive/integrity.md)**: Guarantees that relationships between tables remain valid (referential integrity).
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures that data follows a uniform set of rules across the entire system.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Acts as a final layer of defense against application bugs.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Prevents the introduction of "ghost" data that can cause runtime crashes.
+- **[Integrity](../../home/impact/positive/integrity.md)**: Guarantees that relationships between tables remain valid (referential integrity).
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures that data follows a uniform set of rules across the entire system.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Acts as a final layer of defense against application bugs.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Prevents the introduction of "ghost" data that can cause runtime crashes.
 
 ## Exceptions
 

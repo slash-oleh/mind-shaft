@@ -64,12 +64,12 @@ export const searchAndLog = async (options: SearchParams) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Reusability](../../home/quality-attributes/positive/reusability.md)**: Allows consumers to use the same type for extending, wrapping, or composition.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Prevents type duplication. If the options structure changes, it only needs to be updated in one place.
-- **[Scalability](../../home/quality-attributes/positive/scalability.md)**: Facilitates the growth of the application by making patterns easier to replicate and extend safely.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures that all parts of the application operation on the same unified type definitions.
+- **[Reusability](../../home/impact/positive/reusability.md)**: Allows consumers to use the same type for extending, wrapping, or composition.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Prevents type duplication. If the options structure changes, it only needs to be updated in one place.
+- **[Scalability](../../home/impact/positive/scalability.md)**: Facilitates the growth of the application by making patterns easier to replicate and extend safely.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures that all parts of the application operation on the same unified type definitions.
 
 ## Exceptions
 

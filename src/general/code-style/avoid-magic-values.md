@@ -30,10 +30,10 @@ if (button.color === '#FF5733' || file.mode === 0o644) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Describes the "what" and "why" of a value.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Centralizes configuration and reduces refactoring risk.
+- **[Readability](../../home/impact/positive/readability.md)**: Describes the "what" and "why" of a value.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Centralizes configuration and reduces refactoring risk.
 
 ## Exceptions
 

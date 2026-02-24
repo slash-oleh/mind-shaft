@@ -33,10 +33,10 @@ const getDiscount = (isPremium: boolean) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Reduces cognitive load by keeping the "happy path" aligned with the main function body.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Flat code is easier to refactor and test.
+- **[Readability](../../home/impact/positive/readability.md)**: Reduces cognitive load by keeping the "happy path" aligned with the main function body.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Flat code is easier to refactor and test.
 
 ## Exceptions
 

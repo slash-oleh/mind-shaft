@@ -46,11 +46,11 @@ function Card({ title, content }) {
 }
 ```
 
-## Why
+## Impact
 
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: A flatter HTML structure is significantly easier to understand, traverse, and debug in browser DevTools.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: CSS rules remain clean and predictable without needing to target deeply nested selectors or bypass structural barriers.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Semantic intent is clearer when the code isn't drowned in meaningless structural `div` wrappers.
+- **[KISS](../../home/impact/positive/kiss.md)**: A flatter HTML structure is significantly easier to understand, traverse, and debug in browser DevTools.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: CSS rules remain clean and predictable without needing to target deeply nested selectors or bypass structural barriers.
+- **[Readability](../../home/impact/positive/readability.md)**: Semantic intent is clearer when the code isn't drowned in meaningless structural `div` wrappers.
 
 ## Exceptions
 

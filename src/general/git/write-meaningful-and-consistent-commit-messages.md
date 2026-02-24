@@ -40,10 +40,10 @@ git commit -m "fixed the bug on the home page and also updated some styles"
 git commit -m "WIP"
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: A clean, well-formatted Git log is significantly easier to scan and understand.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Standardized messages make the repository history professional and predictable.
+- **[Readability](../../home/impact/positive/readability.md)**: A clean, well-formatted Git log is significantly easier to scan and understand.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Standardized messages make the repository history professional and predictable.
 
 ## Exceptions
 

@@ -27,11 +27,11 @@ Force pushing to a feature branch that multiple people are working on, or worse,
 git push --force origin feature/shared-task
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures the remote repository remains the single, reliable source of truth for the project history.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Prevents accidental code loss and reduces the risk of "broken" local environments for other team members.
-- **[Fragility](../../home/quality-attributes/negative/fragility.md)**: Force pushing makes the collaboration process fragile, as a single command can break the workflow for the entire team.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures the remote repository remains the single, reliable source of truth for the project history.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Prevents accidental code loss and reduces the risk of "broken" local environments for other team members.
+- **[Fragility](../../home/impact/negative/fragility.md)**: Force pushing makes the collaboration process fragile, as a single command can break the workflow for the entire team.
 
 ## Exceptions
 

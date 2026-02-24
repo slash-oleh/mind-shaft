@@ -37,12 +37,12 @@ await db.accounts.increment(receiverId, amount);
 await db.logs.create({ type: 'TRANSFER', amount });
 ```
 
-## Why
+## Impact
 
-- **[Integrity](../../home/quality-attributes/positive/integrity.md)**: Guarantees that data remains valid and meaningful even in the face of unexpected failures.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Simplifies error handling and recovery by ensuring the system doesn't enter unpredictable partial states.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures the system state always reflects the completion of whole business processes, not fragments.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Makes the application resilient to physical interruptions and service outages.
+- **[Integrity](../../home/impact/positive/integrity.md)**: Guarantees that data remains valid and meaningful even in the face of unexpected failures.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Simplifies error handling and recovery by ensuring the system doesn't enter unpredictable partial states.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures the system state always reflects the completion of whole business processes, not fragments.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Makes the application resilient to physical interruptions and service outages.
 
 ## Exceptions
 

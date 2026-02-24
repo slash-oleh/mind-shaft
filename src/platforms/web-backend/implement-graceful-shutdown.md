@@ -61,11 +61,11 @@ start();
 // (Process has no process.on('SIGTERM') handlers)
 ```
 
-## Why
+## Impact
 
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Prevents data loss and ensures the system remains in a predictable state during transitions.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Guarantees that business processes reach an atomic conclusion or a safe rollback point.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Makes the application a "good citizen" in containerized environments where restarts are frequent.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Prevents data loss and ensures the system remains in a predictable state during transitions.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Guarantees that business processes reach an atomic conclusion or a safe rollback point.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Makes the application a "good citizen" in containerized environments where restarts are frequent.
 
 ## Exceptions
 

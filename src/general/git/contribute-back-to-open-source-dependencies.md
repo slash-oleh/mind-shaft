@@ -41,11 +41,11 @@ someLibrary.brokenMethod = function() {
 };
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Reduces the long-term burden of supporting custom patches and specialized workarounds.
-- **[Legacy](../../home/quality-attributes/negative/legacy.md)**: Prevents the project from accumulating "fork-drift," where local versions of libraries diverge significantly from official releases.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures that the project uses standard, community-validated versions of its dependencies.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Reduces the long-term burden of supporting custom patches and specialized workarounds.
+- **[Legacy](../../home/impact/negative/legacy.md)**: Prevents the project from accumulating "fork-drift," where local versions of libraries diverge significantly from official releases.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures that the project uses standard, community-validated versions of its dependencies.
 
 ## Exceptions
 

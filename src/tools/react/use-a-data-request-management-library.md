@@ -54,10 +54,10 @@ export const UserProfile = ({ userId }) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Built-in caching avoids redundant network requests and makes the application feel significantly faster.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Automatically handles complex edge cases like request deduplication, retries, and stale-while-revalidate logic.
+- **[Performance](../../home/impact/positive/performance.md)**: Built-in caching avoids redundant network requests and makes the application feel significantly faster.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Automatically handles complex edge cases like request deduplication, retries, and stale-while-revalidate logic.
 
 ## Exceptions
 

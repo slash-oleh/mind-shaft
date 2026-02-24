@@ -38,11 +38,11 @@ Applying `!important` out of frustration when a style does not immediately take 
 }
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Prevents an endless escalation of high-specificity hacks, keeping stylesheets clean and predictable.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Normal cascading rules are much easier to trace and read through standard browser DevTools.
-- **[Scalability](../../home/quality-attributes/positive/scalability.md)**: A modular CSS architecture relies entirely on predictable specificity. `!important` breaks modularity immediately.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Prevents an endless escalation of high-specificity hacks, keeping stylesheets clean and predictable.
+- **[Readability](../../home/impact/positive/readability.md)**: Normal cascading rules are much easier to trace and read through standard browser DevTools.
+- **[Scalability](../../home/impact/positive/scalability.md)**: A modular CSS architecture relies entirely on predictable specificity. `!important` breaks modularity immediately.
 
 ## Exceptions
 

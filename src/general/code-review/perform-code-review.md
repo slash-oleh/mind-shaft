@@ -28,9 +28,9 @@ Leaving PRs without feedback or providing incomplete, unhelpful comments.
 - Ignoring major architectural concerns because you spent your time-box on minor typos.
 - Approving code you don't understand without seeking clarification or secondary review.
 
-## Why
+## Impact
 
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Detecting defects and edge cases early in the lifecycle.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Detecting defects and edge cases early in the lifecycle.
 
 ## Exceptions
 

@@ -59,10 +59,10 @@ if (!isValidEmail(email)) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Usability](../../home/quality-attributes/positive/usability.md)**: Immediate feedback helps users understand requirements as they go, reducing errors and improving task completion time.
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: Clear, contextual error messages show exactly what needs fixing and why.
+- **[Usability](../../home/impact/positive/usability.md)**: Immediate feedback helps users understand requirements as they go, reducing errors and improving task completion time.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: Clear, contextual error messages show exactly what needs fixing and why.
 
 ## Exceptions
 

@@ -48,11 +48,11 @@ export const Card = ({ children }) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Developers can quickly understand what a file does just by looking at its name.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Smaller files are easier to refactor, debug, and navigate.
-- **[Reusability](../../home/quality-attributes/positive/reusability.md)**: Makes it trivial to import any component anywhere in the project without bringing along unrelated code.
+- **[Readability](../../home/impact/positive/readability.md)**: Developers can quickly understand what a file does just by looking at its name.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Smaller files are easier to refactor, debug, and navigate.
+- **[Reusability](../../home/impact/positive/reusability.md)**: Makes it trivial to import any component anywhere in the project without bringing along unrelated code.
 
 ## Exceptions
 

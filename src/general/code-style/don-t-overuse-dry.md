@@ -53,11 +53,11 @@ const Dashboard = () => (
 );
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Explicit code is easier to scan than an abstraction driven by mapping or generic configurations.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Prevents the need for complex conditional logic inside shared components as requirements diverge.
-- **[Coupling](../../home/quality-attributes/negative/coupling.md)**: Premature abstraction tightly couples unrelated items to a shared schema, making it difficult to change one without affecting the others.
+- **[Readability](../../home/impact/positive/readability.md)**: Explicit code is easier to scan than an abstraction driven by mapping or generic configurations.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Prevents the need for complex conditional logic inside shared components as requirements diverge.
+- **[Coupling](../../home/impact/negative/coupling.md)**: Premature abstraction tightly couples unrelated items to a shared schema, making it difficult to change one without affecting the others.
 
 ## Exceptions
 

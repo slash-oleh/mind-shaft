@@ -43,10 +43,10 @@ Using the same styling for all text and elements, making the interface a single,
 </Card>
 ```
 
-## Why
+## Impact
 
-- **[Usability](../../home/quality-attributes/positive/usability.md)**: A clear hierarchy allows users to scan and find information quickly.
-- **[Accessibility](../../home/quality-attributes/positive/accessibility.md)**: Visual accents help users with cognitive disabilities focus on the most important content. Note: Always ensure color alone isn't the only way information is conveyed.
+- **[Usability](../../home/impact/positive/usability.md)**: A clear hierarchy allows users to scan and find information quickly.
+- **[Accessibility](../../home/impact/positive/accessibility.md)**: Visual accents help users with cognitive disabilities focus on the most important content. Note: Always ensure color alone isn't the only way information is conveyed.
 
 ## Exceptions
 

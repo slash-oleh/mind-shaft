@@ -40,11 +40,11 @@ git merge release/v1.1
 # ... etc ...
 ```
 
-## Why
+## Impact
 
-- **[Flexibility](../../home/quality-attributes/positive/flexibility.md)**: A simple flow allows teams to adapt quickly to changing requirements without being hindered by rigid processes.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Lower overhead in branch management leads to a cleaner repository history and easier pipeline maintenance.
-- **[Reinventing the wheel](../../home/quality-attributes/negative/reinventing-the-wheel.md)**: Avoid building a complex custom process when standard, simpler models are more efficient for the project's current stage.
+- **[Flexibility](../../home/impact/positive/flexibility.md)**: A simple flow allows teams to adapt quickly to changing requirements without being hindered by rigid processes.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Lower overhead in branch management leads to a cleaner repository history and easier pipeline maintenance.
+- **[Reinventing the wheel](../../home/impact/negative/reinventing-the-wheel.md)**: Avoid building a complex custom process when standard, simpler models are more efficient for the project's current stage.
 
 ## Exceptions
 

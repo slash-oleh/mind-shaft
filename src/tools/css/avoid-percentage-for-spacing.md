@@ -32,11 +32,11 @@ Using percentages for spacing, which creates unpredictable gaps that change base
 }
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Fixed units ensure that spacing looks the same across all screen sizes and parent container widths.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Developers can easily predict how the layout will behave without having to calculate percentages based on parent dimensions.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: The layout remains stable even when parent containers change size or when content wraps.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Fixed units ensure that spacing looks the same across all screen sizes and parent container widths.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Developers can easily predict how the layout will behave without having to calculate percentages based on parent dimensions.
+- **[Robustness](../../home/impact/positive/robustness.md)**: The layout remains stable even when parent containers change size or when content wraps.
 
 ## Exceptions
 

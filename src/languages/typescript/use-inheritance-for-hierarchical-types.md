@@ -62,12 +62,12 @@ const logUserName = (user: User) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Common fields are defined in a single source of truth.
-- **[Scalability](../../home/quality-attributes/positive/scalability.md)**: New subtypes can be added without modifying existing functions that operate on the base interface (Open/Closed Principle).
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures that all related entities strictly follow the same base structure.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Reduces the risk of "missing" a field update in one of the union branches.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Common fields are defined in a single source of truth.
+- **[Scalability](../../home/impact/positive/scalability.md)**: New subtypes can be added without modifying existing functions that operate on the base interface (Open/Closed Principle).
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures that all related entities strictly follow the same base structure.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Reduces the risk of "missing" a field update in one of the union branches.
 
 ## Exceptions
 

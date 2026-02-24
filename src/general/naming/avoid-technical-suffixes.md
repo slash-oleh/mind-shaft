@@ -36,10 +36,10 @@ const roleList = [];
 const roleSet = new Set();
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Keeps names focused on the "what" rather than the "how".
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Prevents visual noise and standardizes how collections and types are named.
+- **[Readability](../../home/impact/positive/readability.md)**: Keeps names focused on the "what" rather than the "how".
+- **[Consistency](../../home/impact/positive/consistency.md)**: Prevents visual noise and standardizes how collections and types are named.
 
 ## Exceptions
 

@@ -58,11 +58,11 @@ body {
 }
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Changing a brand color requires updating a single mapping in the theme configuration, rather than renaming classes across hundreds of components.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: A semantic naming architecture is the foundational requirement for supporting multiple themes (like Light/Dark modes) efficiently without duplication.
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: A token name like `danger` communicates *why* the color is used, whereas `red` only communicates *what* it currently looks like.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Changing a brand color requires updating a single mapping in the theme configuration, rather than renaming classes across hundreds of components.
+- **[Robustness](../../home/impact/positive/robustness.md)**: A semantic naming architecture is the foundational requirement for supporting multiple themes (like Light/Dark modes) efficiently without duplication.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: A token name like `danger` communicates *why* the color is used, whereas `red` only communicates *what* it currently looks like.
 
 ## Exceptions
 

@@ -22,9 +22,9 @@
 {{BAD CODE EXAMPLE: this.isNot[42].any['maintainable'].code[7]();}}
 ```
 
-## Why
+## Impact
 
-- **{{QUALITY ATTRIBUTE: Maintainability}}**: {{IMPACT: Explain how this practice helps/hinders this attribute.}}
+- **[Impact](../../home/impact/positive/...)**: {{IMPACT: Explain how this practice helps/hinders this attribute.}}
 - ...
 
 ## Exceptions

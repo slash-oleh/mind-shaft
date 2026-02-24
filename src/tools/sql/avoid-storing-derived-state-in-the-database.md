@@ -32,12 +32,12 @@ user:
   status # Fragile: Must be updated every time `is_active` or `suspended_at` changes
 ```
 
-## Why
+## Impact
 
-- **[Integrity](../../home/quality-attributes/positive/integrity.md)**: Prevents data anomalies where base values and derived state contradict each other.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Simplifies update operations, as you only need to modify the base data without managing cascading state updates.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Reduces the need for database triggers or complex application-level synchronization logic.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: There is only one source of truth for any given piece of information.
+- **[Integrity](../../home/impact/positive/integrity.md)**: Prevents data anomalies where base values and derived state contradict each other.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Simplifies update operations, as you only need to modify the base data without managing cascading state updates.
+- **[KISS](../../home/impact/positive/kiss.md)**: Reduces the need for database triggers or complex application-level synchronization logic.
+- **[Consistency](../../home/impact/positive/consistency.md)**: There is only one source of truth for any given piece of information.
 
 ## Exceptions
 

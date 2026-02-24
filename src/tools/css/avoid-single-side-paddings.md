@@ -38,11 +38,11 @@ function List() {
 }
 ```
 
-## Why
+## Impact
 
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: `gap` natively handles spacing without requiring complex CSS structural pseudo-selectors to patch up the ends.
-- **[Reusability](../../home/quality-attributes/positive/reusability.md)**: Symmetrically-padded components can be dropped anywhere without bringing awkward context-dependent whitespace.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Asymmetric layouts frequently break when translated to Right-To-Left (RTL) languages; symmetric paddings and logical properties adapt automatically.
+- **[KISS](../../home/impact/positive/kiss.md)**: `gap` natively handles spacing without requiring complex CSS structural pseudo-selectors to patch up the ends.
+- **[Reusability](../../home/impact/positive/reusability.md)**: Symmetrically-padded components can be dropped anywhere without bringing awkward context-dependent whitespace.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Asymmetric layouts frequently break when translated to Right-To-Left (RTL) languages; symmetric paddings and logical properties adapt automatically.
 
 ## Exceptions
 

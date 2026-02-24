@@ -48,10 +48,10 @@ Blocking the user with late-stage errors and losing their progress or context.
 </Form>
 ```
 
-## Why
+## Impact
 
-- **[Usability](../../home/quality-attributes/positive/usability.md)**: Users feel more confident and in control when they can't easily "break" things.
-- **[Accessibility](../../home/quality-attributes/positive/accessibility.md)**: Clear error suggestions and non-destructive flows are critical for users with cognitive or motor impairments who may make mistakes more frequently.
+- **[Usability](../../home/impact/positive/usability.md)**: Users feel more confident and in control when they can't easily "break" things.
+- **[Accessibility](../../home/impact/positive/accessibility.md)**: Clear error suggestions and non-destructive flows are critical for users with cognitive or motor impairments who may make mistakes more frequently.
 
 ## Exceptions
 

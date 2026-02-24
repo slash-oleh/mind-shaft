@@ -36,10 +36,10 @@ export default {
 };
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Keys are always predictable as they mirror the physical structure.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Makes translation files intuitive to browse.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Keys are always predictable as they mirror the physical structure.
+- **[Readability](../../home/impact/positive/readability.md)**: Makes translation files intuitive to browse.
 
 ## Exceptions
 

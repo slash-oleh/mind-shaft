@@ -56,11 +56,11 @@ Displaying all possible configuration options, metrics, and actions on a single 
 </Form>
 ```
 
-## Why
+## Impact
 
-- **[Usability](../../home/quality-attributes/positive/usability.md)**: Reducing the number of choices makes the interface more intuitive and reduces the "time to task completion."
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: Staged interactions make it clear what the current priority is.
-- **[Accessibility](../../home/quality-attributes/positive/accessibility.md)**: Simpler layouts are easier for screen-reader users and people with cognitive disabilities to navigate.
+- **[Usability](../../home/impact/positive/usability.md)**: Reducing the number of choices makes the interface more intuitive and reduces the "time to task completion."
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: Staged interactions make it clear what the current priority is.
+- **[Accessibility](../../home/impact/positive/accessibility.md)**: Simpler layouts are easier for screen-reader users and people with cognitive disabilities to navigate.
 
 ## Exceptions
 

@@ -39,11 +39,11 @@ git commit -m "Fixed everything"
 git push origin main
 ```
 
-## Why
+## Impact
 
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: PRs provide a checkpoint to ensure that only stable, tested, and reviewed code reaches the main branches.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: PR titles and descriptions provide an invaluable historical record of project evolution that is more searchable than raw commit logs.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Encourages a disciplined approach to development that reduces the likelihood of introducing technical debt.
+- **[Reliability](../../home/impact/positive/reliability.md)**: PRs provide a checkpoint to ensure that only stable, tested, and reviewed code reaches the main branches.
+- **[Readability](../../home/impact/positive/readability.md)**: PR titles and descriptions provide an invaluable historical record of project evolution that is more searchable than raw commit logs.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Encourages a disciplined approach to development that reduces the likelihood of introducing technical debt.
 
 ## Exceptions
 

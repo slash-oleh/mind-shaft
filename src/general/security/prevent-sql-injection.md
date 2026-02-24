@@ -28,10 +28,10 @@ const userInput = "' OR role = 'admin' --";
 db.raw(`SELECT id FROM users WHERE role = 'member' AND name = '${userInput}'`);
 ```
 
-## Why
+## Impact
 
-- **[Security](../../home/quality-attributes/positive/security.md)**: Prevents one of the most common and damaging web vulnerabilities.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Ensures that special characters in user input (like quotes) don't break the query syntax.
+- **[Security](../../home/impact/positive/security.md)**: Prevents one of the most common and damaging web vulnerabilities.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Ensures that special characters in user input (like quotes) don't break the query syntax.
 
 ## Exceptions
 

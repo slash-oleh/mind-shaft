@@ -34,12 +34,12 @@ CREATE TABLE event (
 );
 ```
 
-## Why
+## Impact
 
-- **[Integrity](../../home/quality-attributes/positive/integrity.md)**: Prevents events from shifting by hours depending on the server or client resolving the timestamp.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures the data means the same thing irrespective of where the database or application is hosted.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Standardizing on UTC or explicit offsets avoids production bugs when scaling across regions or when observing DST shifts.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Standardizing on UTC or explicit offsets avoids the need to trace timezone configuration across multiple layers of the stack.
+- **[Integrity](../../home/impact/positive/integrity.md)**: Prevents events from shifting by hours depending on the server or client resolving the timestamp.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures the data means the same thing irrespective of where the database or application is hosted.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Standardizing on UTC or explicit offsets avoids production bugs when scaling across regions or when observing DST shifts.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Standardizing on UTC or explicit offsets avoids the need to trace timezone configuration across multiple layers of the stack.
 
 ## Exceptions
 

@@ -25,11 +25,11 @@ Cluttering the process environment with business-level configuration.
 const adminEmails = process.env.ADMIN_EMAILS?.split(',');
 ```
 
-## Why
+## Impact
 
-- **[Flexibility](../../home/quality-attributes/positive/flexibility.md)**: Allows values to be updated on-the-fly without rebuilding, restarting, or redeploying the application.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Reduces the risk of "deployment fatigue" and human error during frequent minor configuration updates.
-- **[Security](../../home/quality-attributes/positive/security.md)**: Limits the exposure of application secrets and sensitive paths to process-level environment dumps.
+- **[Flexibility](../../home/impact/positive/flexibility.md)**: Allows values to be updated on-the-fly without rebuilding, restarting, or redeploying the application.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Reduces the risk of "deployment fatigue" and human error during frequent minor configuration updates.
+- **[Security](../../home/impact/positive/security.md)**: Limits the exposure of application secrets and sensitive paths to process-level environment dumps.
 
 ## Exceptions
 

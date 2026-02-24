@@ -42,12 +42,12 @@ Cache-Control: no-store
 Content-Type: image/png
 ```
 
-## Why
+## Impact
 
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Dramatically reduces page load times for returning visitors by serving assets from the local disk.
-- **[Scalability](../../home/quality-attributes/positive/scalability.md)**: Reduces the number of requests hitting the server and CDN, lowering infrastructure costs.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Content hashing ensures that the browser only caches a version of an asset if it matches the current application state.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: `must-revalidate` for `index.html` ensures users always see the latest version of the app immediately after deployment.
+- **[Performance](../../home/impact/positive/performance.md)**: Dramatically reduces page load times for returning visitors by serving assets from the local disk.
+- **[Scalability](../../home/impact/positive/scalability.md)**: Reduces the number of requests hitting the server and CDN, lowering infrastructure costs.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Content hashing ensures that the browser only caches a version of an asset if it matches the current application state.
+- **[Consistency](../../home/impact/positive/consistency.md)**: `must-revalidate` for `index.html` ensures users always see the latest version of the app immediately after deployment.
 
 ## Exceptions
 

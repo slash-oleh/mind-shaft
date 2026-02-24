@@ -31,9 +31,9 @@ Writing out lengthy explanations for common violations or just saying "fix this"
 Reviewer: "In this project, we prefer to use full names for variables instead of abbreviations because it makes the code more readable and helps other developers understand the context without having to guess what 'usr' stands for..."
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures everyone is following the same "documented" version of the rules.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures everyone is following the same "documented" version of the rules.
 
 ## Exceptions
 

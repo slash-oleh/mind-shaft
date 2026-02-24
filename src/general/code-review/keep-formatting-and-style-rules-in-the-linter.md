@@ -35,10 +35,10 @@ Reviewer: "Please use single quotes here instead of double quotes."
 // This should have been caught and auto-fixed by the linter.
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures the entire codebase looks like it was written by a single person.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Prevents the gradual accumulation of style-related technical debt.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures the entire codebase looks like it was written by a single person.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Prevents the gradual accumulation of style-related technical debt.
 
 ## Exceptions
 

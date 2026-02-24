@@ -49,11 +49,11 @@ function Card({ children }) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: A mathematical multiplier system establishes a strong, uniform visual rhythm across the entire application interface.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: If the global spacing tightness needs to change, you update the base factor behind the token, rather than changing 5,000 individual `px` declarations.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Developers don't have to guess or argue about whether a margin should be `15px` or `16px`; they simply choose the next step on the `4px` token scale.
+- **[Consistency](../../home/impact/positive/consistency.md)**: A mathematical multiplier system establishes a strong, uniform visual rhythm across the entire application interface.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: If the global spacing tightness needs to change, you update the base factor behind the token, rather than changing 5,000 individual `px` declarations.
+- **[KISS](../../home/impact/positive/kiss.md)**: Developers don't have to guess or argue about whether a margin should be `15px` or `16px`; they simply choose the next step on the `4px` token scale.
 
 ## Exceptions
 

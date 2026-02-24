@@ -35,12 +35,12 @@ window.addEventListener('keydown', (event) => {
 });
 ```
 
-## Why
+## Impact
 
-- **[Accessibility](../../home/quality-attributes/positive/accessibility.md)**: Prevents conflicts with assistive technologies and avoids issues for users with motor impairments.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Specifically reduces the risk of accidental data loss or navigation.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Aligns with standard web and browser behavior where most shortcuts require modifiers.
-- **[Human Factor](../../home/quality-attributes/negative/human-factor.md)**: Accounts for user error when focus is lost from input fields.
+- **[Accessibility](../../home/impact/positive/accessibility.md)**: Prevents conflicts with assistive technologies and avoids issues for users with motor impairments.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Specifically reduces the risk of accidental data loss or navigation.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Aligns with standard web and browser behavior where most shortcuts require modifiers.
+- **[Human Factor](../../home/impact/negative/human-factor.md)**: Accounts for user error when focus is lost from input fields.
 
 ## Exceptions
 

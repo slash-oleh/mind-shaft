@@ -30,11 +30,11 @@ Appending generic "container" words to every component name, regardless of its p
 <HomeSection title="Welcome" />
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Precise names allow developers to understand the structure of a page just by scanning the component tree.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Clear intent makes it obvious where a new feature belongs and prevents the creation of redundant components.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Removing redundant "filler" words keeps names concise and focused.
+- **[Readability](../../home/impact/positive/readability.md)**: Precise names allow developers to understand the structure of a page just by scanning the component tree.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Clear intent makes it obvious where a new feature belongs and prevents the creation of redundant components.
+- **[KISS](../../home/impact/positive/kiss.md)**: Removing redundant "filler" words keeps names concise and focused.
 
 ## Exceptions
 

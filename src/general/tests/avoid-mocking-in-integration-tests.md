@@ -54,10 +54,10 @@ it('should call save on the repository', async () => {
 });
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Tests are less likely to break during internal refactorings that don't change external behavior.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Catches configuration errors, schema mismatches, and database-specific edge cases early.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Tests are less likely to break during internal refactorings that don't change external behavior.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Catches configuration errors, schema mismatches, and database-specific edge cases early.
 
 ## Exceptions
 

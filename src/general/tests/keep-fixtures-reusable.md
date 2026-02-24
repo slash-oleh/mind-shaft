@@ -45,11 +45,11 @@ it('should do another thing', () => {
 });
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Changes to data structures only need to be updated in one place (the factory).
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Tests are shorter and highlight only the data that matters for the specific assertion.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Reduces the risk of using invalid or stale test data.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Changes to data structures only need to be updated in one place (the factory).
+- **[Readability](../../home/impact/positive/readability.md)**: Tests are shorter and highlight only the data that matters for the specific assertion.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Reduces the risk of using invalid or stale test data.
 
 ## Exceptions
 

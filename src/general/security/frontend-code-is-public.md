@@ -32,10 +32,10 @@ const SENSITIVE_API_KEY = "my-secret-key";
 const decodedKey = atob(ENCODED_KEY); // Obfuscation is not security
 ```
 
-## Why
+## Impact
 
-- **[Integrity](../../home/quality-attributes/positive/integrity.md)**: Prevents users from manipulating the system's security boundaries.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Ensures the system remains secure regardless of client-side inspection or tampering.
+- **[Integrity](../../home/impact/positive/integrity.md)**: Prevents users from manipulating the system's security boundaries.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Ensures the system remains secure regardless of client-side inspection or tampering.
 
 ## Exceptions
 

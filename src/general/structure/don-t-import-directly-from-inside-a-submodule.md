@@ -26,11 +26,11 @@ import { SignInForm } from '@/features/auth/components/forms/SignInForm';
 import { useUser } from '@/features/user/hooks/useUser';
 ```
 
-## Why
+## Impact
 
-- **[Encapsulation](../../home/quality-attributes/positive/encapsulation.md)**: Protects a module's internal logic and state from unauthorized external access.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Allows the internal structure of a module to be refactored without breaking its consumers.
-- **[Cohesion](../../home/quality-attributes/positive/cohesion.md)**: Ensures that a module presents a unified and intentional interface to the rest of the application.
+- **[Encapsulation](../../home/impact/positive/encapsulation.md)**: Protects a module's internal logic and state from unauthorized external access.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Allows the internal structure of a module to be refactored without breaking its consumers.
+- **[Cohesion](../../home/impact/positive/cohesion.md)**: Ensures that a module presents a unified and intentional interface to the rest of the application.
 
 ## Exceptions
 

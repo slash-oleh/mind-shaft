@@ -28,11 +28,11 @@ Ignoring typos and grammar issues, or relying solely on manual proofreading with
 To run the projct, type npm incstall. Its easy!
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Clear, error-free text is easier to understand and scan.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Professional documentation is easier to support and keep up-to-date.
-- **[Human factor](../../home/quality-attributes/negative/human-factor.md)**: Automated tools catch mistakes that humans naturally overlook, reducing the cognitive load of proofreading.
+- **[Readability](../../home/impact/positive/readability.md)**: Clear, error-free text is easier to understand and scan.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Professional documentation is easier to support and keep up-to-date.
+- **[Human factor](../../home/impact/negative/human-factor.md)**: Automated tools catch mistakes that humans naturally overlook, reducing the cognitive load of proofreading.
 
 ## Exceptions
 

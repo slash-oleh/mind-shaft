@@ -55,11 +55,11 @@ function UserProfile({ user }) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures the entire application looks uniform and perfectly adheres to the design system constraints.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Design changes (like altering a spacing scale) only need to be updated in one primitive UI Kit component to propagate across the entire app.
-- **[Reusability](../../home/quality-attributes/positive/reusability.md)**: Developers can rapidly build new pages by snapping together pre-styled components without writing CSS from scratch.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures the entire application looks uniform and perfectly adheres to the design system constraints.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Design changes (like altering a spacing scale) only need to be updated in one primitive UI Kit component to propagate across the entire app.
+- **[Reusability](../../home/impact/positive/reusability.md)**: Developers can rapidly build new pages by snapping together pre-styled components without writing CSS from scratch.
 
 ## Exceptions
 

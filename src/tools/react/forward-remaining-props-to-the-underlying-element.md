@@ -51,10 +51,10 @@ export const ProfileCard = ({ userId, title }: ProfileCardProps) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Automatically supports new props added to the underlying component without requiring changes to the wrapper.
-- **[Reusability](../../home/quality-attributes/positive/reusability.md)**: Allows your wrapper to be used in diverse contexts that require specific combinations of the underlying props.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Automatically supports new props added to the underlying component without requiring changes to the wrapper.
+- **[Reusability](../../home/impact/positive/reusability.md)**: Allows your wrapper to be used in diverse contexts that require specific combinations of the underlying props.
 
 ## Exceptions
 

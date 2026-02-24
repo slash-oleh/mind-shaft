@@ -70,10 +70,10 @@ export const MyTable = ({ data }) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Drastically reduces the amount of code you need to write and test, centralizing the table logic in a reliable third-party library.
-- **[Flexibility](../../home/quality-attributes/positive/flexibility.md)**: Being "headless" means you can apply any design or framework (like Tailwind or Material UI) without fighting against the library's internal styling.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Drastically reduces the amount of code you need to write and test, centralizing the table logic in a reliable third-party library.
+- **[Flexibility](../../home/impact/positive/flexibility.md)**: Being "headless" means you can apply any design or framework (like Tailwind or Material UI) without fighting against the library's internal styling.
 
 ## Exceptions
 

@@ -39,10 +39,10 @@ Forcing exact pixel measurements found in a mockup, using structural hacks or ma
 }
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Using standardized spacing tokens drastically reduces custom CSS and removes the need for brittle structural hacks.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Interfaces that rely on fluid rules rather than hardcoded pixels function correctly across all screen sizes.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Using standardized spacing tokens drastically reduces custom CSS and removes the need for brittle structural hacks.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Interfaces that rely on fluid rules rather than hardcoded pixels function correctly across all screen sizes.
 
 ## Exceptions
 

@@ -52,11 +52,11 @@ function UserProfileView({ user }) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Cohesion](../../home/quality-attributes/positive/cohesion.md)**: Keeps related data-fetching and display logic in one place, making the feature easier to understand and debug.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Reduces the total number of components and files in the project.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Hooks are a more flexible abstraction for logic reuse than component wrapping.
+- **[Cohesion](../../home/impact/positive/cohesion.md)**: Keeps related data-fetching and display logic in one place, making the feature easier to understand and debug.
+- **[KISS](../../home/impact/positive/kiss.md)**: Reduces the total number of components and files in the project.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Hooks are a more flexible abstraction for logic reuse than component wrapping.
 
 ## Exceptions
 

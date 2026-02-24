@@ -36,10 +36,10 @@ app.use(cors({
 }));
 ```
 
-## Why
+## Impact
 
-- **[Security](../../home/quality-attributes/positive/security.md)**: Prevents unauthorized third-party websites from making authenticated requests to your API.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Standardizes communication channels and prevents unexpected side-effects from unvetted origins.
+- **[Security](../../home/impact/positive/security.md)**: Prevents unauthorized third-party websites from making authenticated requests to your API.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Standardizes communication channels and prevents unexpected side-effects from unvetted origins.
 
 ## Exceptions
 

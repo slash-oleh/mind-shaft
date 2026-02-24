@@ -51,12 +51,12 @@ const points1 = [[42, 12] as Coordinates]; // number[][] otherwise
 const points2 = [] as Coordinates[]; // any[] otherwise
 ```
 
-## Why
+## Impact
 
-- **[Type Safety](../../home/quality-attributes/positive/type-safety.md)**: Ensures that objects strictly follow defined contracts, catching errors at the source.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Semantic names (like `User` or `Coordinates`) make the code's intent immediately clear.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Centralized type definitions make refactoring safer and easier.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Prevents the introduction of "hidden" bugs that assertions would otherwise mask.
+- **[Type Safety](../../home/impact/positive/type-safety.md)**: Ensures that objects strictly follow defined contracts, catching errors at the source.
+- **[Readability](../../home/impact/positive/readability.md)**: Semantic names (like `User` or `Coordinates`) make the code's intent immediately clear.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Centralized type definitions make refactoring safer and easier.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Prevents the introduction of "hidden" bugs that assertions would otherwise mask.
 
 ## Exceptions
 

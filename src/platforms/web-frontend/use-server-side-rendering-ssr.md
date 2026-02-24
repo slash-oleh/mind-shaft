@@ -47,12 +47,12 @@ Serving an empty root element and relying entirely on client-side hooks to fetch
 </html>
 ```
 
-## Why
+## Impact
 
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Dramatically improves First Contentful Paint (FCP) and Largest Contentful Paint (LCP) by sending rendered HTML.
-- **[SEO](../../home/quality-attributes/positive/readability.md)**: Ensures that search engines and social bots see a fully populated page, improving indexability and social sharing.
-- **[Accessibility](../../home/quality-attributes/positive/accessibility.md)**: Basic content is available even if JavaScript fails to load or is disabled.
-- **[UX](../../home/quality-attributes/positive/readability.md)**: Reduces the "blank screen" time, providing a smoother and more reliable initial experience.
+- **[Performance](../../home/impact/positive/performance.md)**: Dramatically improves First Contentful Paint (FCP) and Largest Contentful Paint (LCP) by sending rendered HTML.
+- **[SEO](../../home/impact/positive/readability.md)**: Ensures that search engines and social bots see a fully populated page, improving indexability and social sharing.
+- **[Accessibility](../../home/impact/positive/accessibility.md)**: Basic content is available even if JavaScript fails to load or is disabled.
+- **[UX](../../home/impact/positive/readability.md)**: Reduces the "blank screen" time, providing a smoother and more reliable initial experience.
 
 ## Exceptions
 

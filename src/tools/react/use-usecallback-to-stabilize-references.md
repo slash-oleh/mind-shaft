@@ -50,10 +50,10 @@ const Parent = () => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Vital for making `React.memo` effective by ensuring props remain referentially equal between renders.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Prevents `useEffect` from re-running unnecessarily when the callback logic itself hasn't changed.
+- **[Performance](../../home/impact/positive/performance.md)**: Vital for making `React.memo` effective by ensuring props remain referentially equal between renders.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Prevents `useEffect` from re-running unnecessarily when the callback logic itself hasn't changed.
 
 ## Exceptions
 

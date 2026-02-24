@@ -48,10 +48,10 @@ useEffect(async () => {
 }, [id]);
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Adheres to the React core team's specifications and prevents internal framework warnings.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Encourages the use of "ignore" flags or AbortControllers to prevent data race conditions.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Adheres to the React core team's specifications and prevents internal framework warnings.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Encourages the use of "ignore" flags or AbortControllers to prevent data race conditions.
 
 ## Exceptions
 

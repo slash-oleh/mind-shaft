@@ -15,9 +15,9 @@ Every recommendation article is defined in vacuum. You should consider project
 technical limitations and effort in a particular situation to decide whether to
 follow them or not.
 
-## Quality attributes
+## Impact
 
-We define the argumentation though so-called **Quality Attributes**. They are
+We define the argumentation through so-called **Impact**. They are
 referencing the well-known positive or negative consequences for the product.
 
-See more at [quality attributes](./quality-attributes).
+See more at [impact](./impact).

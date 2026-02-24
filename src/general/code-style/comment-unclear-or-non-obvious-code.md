@@ -27,9 +27,9 @@ const value = a << 2;
 const user = await userRepository.find(id); // Find user by id
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Saves time for future developers (including yourself) when revisiting complex parts of the system.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Saves time for future developers (including yourself) when revisiting complex parts of the system.
 
 ## Exceptions
 

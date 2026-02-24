@@ -30,11 +30,11 @@ export const Logo = () => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Allows build tools to identify and prune unused assets, keeping the project bundle lean.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Enables automatic cache busting via content hashing (e.g., `logo.a1b2c3.png`), ensuring users always see the latest version of an asset.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Build tools will throw an error at compile-time if an imported asset is missing, preventing broken images in production.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Allows build tools to identify and prune unused assets, keeping the project bundle lean.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Enables automatic cache busting via content hashing (e.g., `logo.a1b2c3.png`), ensuring users always see the latest version of an asset.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Build tools will throw an error at compile-time if an imported asset is missing, preventing broken images in production.
 
 ## Exceptions
 

@@ -32,11 +32,11 @@ people      # Completely different word
 user_roles  # Pluralizing only the last word
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Singular nouns avoid the linguistic gymnastics of irregular plurals, ensuring every table follows the exact same naming pattern.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Easier to map table names directly to application models classes (e.g., table `user` -> class `User`).
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Queries often feel more natural when referring to an alias of a single row (`SELECT user.id FROM user`).
+- **[Consistency](../../home/impact/positive/consistency.md)**: Singular nouns avoid the linguistic gymnastics of irregular plurals, ensuring every table follows the exact same naming pattern.
+- **[KISS](../../home/impact/positive/kiss.md)**: Easier to map table names directly to application models classes (e.g., table `user` -> class `User`).
+- **[Readability](../../home/impact/positive/readability.md)**: Queries often feel more natural when referring to an alias of a single row (`SELECT user.id FROM user`).
 
 ## Exceptions
 

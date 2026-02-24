@@ -65,11 +65,11 @@ const loginHandler = async (request) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Separation of concerns](../../home/quality-attributes/positive/separation-of-concerns.md)**: Each component has a single, well-defined responsibility, making the system easier to understand.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Easier to update or swap infrastructure components without affecting business logic.
-- **[Testability](../../home/quality-attributes/positive/testability.md)**: Business logic can be tested in isolation (unit tests) without mocking complex infrastructure or relying on a running database.
+- **[Separation of concerns](../../home/impact/positive/separation-of-concerns.md)**: Each component has a single, well-defined responsibility, making the system easier to understand.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Easier to update or swap infrastructure components without affecting business logic.
+- **[Testability](../../home/impact/positive/testability.md)**: Business logic can be tested in isolation (unit tests) without mocking complex infrastructure or relying on a running database.
 
 ## Exceptions
 

@@ -39,11 +39,11 @@ Locking elements into rigid dimensional structures just because the primary targ
 }
 ```
 
-## Why
+## Impact
 
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Allows the interface to handle unexpected edge cases, like a user splitting their desktop screen or using an ultra-portable laptop.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Implementing `flex-wrap` and fluid percentages takes zero extra development time upfront but saves hundreds of hours of refactoring when mobile requirements inevitably arrive.
-- **[Flexibility](../../home/quality-attributes/positive/flexibility.md)**: Layouts naturally adapt to various form-factors without needing dozens of brittle media queries.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Allows the interface to handle unexpected edge cases, like a user splitting their desktop screen or using an ultra-portable laptop.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Implementing `flex-wrap` and fluid percentages takes zero extra development time upfront but saves hundreds of hours of refactoring when mobile requirements inevitably arrive.
+- **[Flexibility](../../home/impact/positive/flexibility.md)**: Layouts naturally adapt to various form-factors without needing dozens of brittle media queries.
 
 ## Exceptions
 

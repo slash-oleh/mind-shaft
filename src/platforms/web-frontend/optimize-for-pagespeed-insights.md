@@ -43,12 +43,12 @@ Ignoring performance metrics until the end of development or using "fixes" that 
 <img src="hero.jpg" loading="lazy"> <!-- This DELAYS the initial render! -->
 ```
 
-## Why
+## Impact
 
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Directly improves the speed and responsiveness of the application.
-- **[User Experience](../../home/quality-attributes/positive/readability.md)**: Prevents jumpy layouts and ensures content is interactive as soon as possible.
-- **[Scalability](../../home/quality-attributes/positive/scalability.md)**: Optimized apps consume fewer resources on both the client and the server.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Ensures consistent behavior across a wide range of devices and network conditions.
+- **[Performance](../../home/impact/positive/performance.md)**: Directly improves the speed and responsiveness of the application.
+- **[User Experience](../../home/impact/positive/readability.md)**: Prevents jumpy layouts and ensures content is interactive as soon as possible.
+- **[Scalability](../../home/impact/positive/scalability.md)**: Optimized apps consume fewer resources on both the client and the server.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Ensures consistent behavior across a wide range of devices and network conditions.
 
 ## Exceptions
 

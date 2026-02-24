@@ -34,10 +34,10 @@ Hardcoding literal secret values or keys directly in the codebase, even for "tem
 initService({ token: 'kj42f9ughksng9ugh4j2fnjfnnf31' });
 ```
 
-## Why
+## Impact
 
-- **[Security](../../home/quality-attributes/positive/security.md)**: Prevents accidental exposure of sensitive credentials and reduces the blast radius of a potential code leak.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Allows rotation of secrets (changing passwords/keys) without modifying and redeploying the application code.
+- **[Security](../../home/impact/positive/security.md)**: Prevents accidental exposure of sensitive credentials and reduces the blast radius of a potential code leak.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Allows rotation of secrets (changing passwords/keys) without modifying and redeploying the application code.
 
 ## Exceptions
 

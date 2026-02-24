@@ -44,10 +44,10 @@ Using buttons or generic elements with imperative click handlers to navigate.
 </Tab>
 ```
 
-## Why
+## Impact
 
-- **[Usability](../../home/quality-attributes/positive/usability.md)**: Supports standard browser features like "Open in new tab" and "Back" button navigation.
-- **[Accessibility](../../home/quality-attributes/positive/accessibility.md)**: Screen readers announce links correctly and allow users to see where they are going.
+- **[Usability](../../home/impact/positive/usability.md)**: Supports standard browser features like "Open in new tab" and "Back" button navigation.
+- **[Accessibility](../../home/impact/positive/accessibility.md)**: Screen readers announce links correctly and allow users to see where they are going.
 
 ## Exceptions
 

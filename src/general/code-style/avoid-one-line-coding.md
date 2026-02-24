@@ -24,10 +24,10 @@ Packing multiple logical steps or long chains into a single line.
 const activeUserIds = users.filter((user) => user.isActive).map(({ id }) => id);
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Vertical code is easier to scan and understand at a glance.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Easier to modify or debug specific parts of a chain.
+- **[Readability](../../home/impact/positive/readability.md)**: Vertical code is easier to scan and understand at a glance.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Easier to modify or debug specific parts of a chain.
 
 ## Exceptions
 

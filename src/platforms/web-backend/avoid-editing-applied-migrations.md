@@ -39,12 +39,12 @@ CREATE TABLE users (
 );
 ```
 
-## Why
+## Impact
 
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Ensures that the database schema is built predictably across all environments.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Prevents schema drift between development, staging, and production.
-- **[Integrity](../../home/quality-attributes/positive/integrity.md)**: Maintains the audit trail of how the database reached its current state.
-- **[Team Collaboration](../../home/quality-attributes/negative/human-factor.md)**: Avoids breaking local databases for other team members who already applied the original migration.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Ensures that the database schema is built predictably across all environments.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Prevents schema drift between development, staging, and production.
+- **[Integrity](../../home/impact/positive/integrity.md)**: Maintains the audit trail of how the database reached its current state.
+- **[Team Collaboration](../../home/impact/negative/human-factor.md)**: Avoids breaking local databases for other team members who already applied the original migration.
 
 ## Exceptions
 

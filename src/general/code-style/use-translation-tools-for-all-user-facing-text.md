@@ -42,12 +42,12 @@ if (!success) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Content updates don't require code changes or redeployments if using a CMS-backed translation tool.
-- **[Scalability](../../home/quality-attributes/positive/scalability.md)**: The application is "translation-ready" from day one.
-- **[Separation of Concerns](../../home/quality-attributes/positive/separation-of-concerns.md)**: Decouples the technical implementation from the user-facing content management.
-- **[Human Factor](../../home/quality-attributes/negative/human-factor.md)**: Allows non-technical specialists to manage text, reducing the burden on developers.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Content updates don't require code changes or redeployments if using a CMS-backed translation tool.
+- **[Scalability](../../home/impact/positive/scalability.md)**: The application is "translation-ready" from day one.
+- **[Separation of Concerns](../../home/impact/positive/separation-of-concerns.md)**: Decouples the technical implementation from the user-facing content management.
+- **[Human Factor](../../home/impact/negative/human-factor.md)**: Allows non-technical specialists to manage text, reducing the burden on developers.
 
 ## Exceptions
 

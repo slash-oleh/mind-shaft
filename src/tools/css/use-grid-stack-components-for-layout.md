@@ -54,11 +54,11 @@ function DashboardLayout({ sidebar, content }) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: Tags like `<Stack direction="column">` or `<Grid>` instantly communicate their structural intent, whereas `<Box display="flex">` is a meaningless primitive that requires parsing multiple CSS properties to understand.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Dedicated layout components automatically handle browser inconsistencies and complex spacing mathematics (like negative margin offsets for grid gaps).
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: The developer API is simplified to a few specific props (`spacing`, `direction`, `alignItems`) rather than forcing the developer to memorize and write manual CSS layouts every time.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: Tags like `<Stack direction="column">` or `<Grid>` instantly communicate their structural intent, whereas `<Box display="flex">` is a meaningless primitive that requires parsing multiple CSS properties to understand.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Dedicated layout components automatically handle browser inconsistencies and complex spacing mathematics (like negative margin offsets for grid gaps).
+- **[KISS](../../home/impact/positive/kiss.md)**: The developer API is simplified to a few specific props (`spacing`, `direction`, `alignItems`) rather than forcing the developer to memorize and write manual CSS layouts every time.
 
 ## Exceptions
 

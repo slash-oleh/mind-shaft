@@ -35,11 +35,11 @@ git add .
 git commit -m "Updated auth, fixed header link, and fixed some typos"
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Clear, focused commits make the project's evolution easy to follow and audit.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Smaller commits are easier to review, revert, and cherry-pick if necessary.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Ensuring every commit is "green" (passes tests) allows for efficient use of `git bisect` and stable development.
+- **[Readability](../../home/impact/positive/readability.md)**: Clear, focused commits make the project's evolution easy to follow and audit.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Smaller commits are easier to review, revert, and cherry-pick if necessary.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Ensuring every commit is "green" (passes tests) allows for efficient use of `git bisect` and stable development.
 
 ## Exceptions
 

@@ -26,10 +26,10 @@ Allowing PRs to sit without a clear next step or owner.
 - Leaving reviewer comments unaddressed or unresolved without feedback.
 - Merging WIP branches without the author's consent.
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Ensures that all feedback is tracked and resolved before code reaches the main branch.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Makes the current state of any PR obvious to anyone looking at the dashboard.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Ensures that all feedback is tracked and resolved before code reaches the main branch.
+- **[Readability](../../home/impact/positive/readability.md)**: Makes the current state of any PR obvious to anyone looking at the dashboard.
 
 ## Exceptions
 

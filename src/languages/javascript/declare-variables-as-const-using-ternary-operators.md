@@ -29,12 +29,12 @@ if (condition) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Declarative](../../home/quality-attributes/positive/declarative.md)**: Explicitly defines *what* the value is based on a condition, rather than *how* to set it.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Reduces the amount of code and keeps the initialization in one place.
-- **[Stateless](../../home/quality-attributes/positive/stateless.md)**: Encourages immutability by allowing the use of `const`.
-- **[Size/Code Amount](../../home/quality-attributes/negative/size-code-amount.md)**: significantly shorter than the equivalent `if/else` structure.
+- **[Declarative](../../home/impact/positive/declarative.md)**: Explicitly defines *what* the value is based on a condition, rather than *how* to set it.
+- **[Readability](../../home/impact/positive/readability.md)**: Reduces the amount of code and keeps the initialization in one place.
+- **[Stateless](../../home/impact/positive/stateless.md)**: Encourages immutability by allowing the use of `const`.
+- **[Size/Code Amount](../../home/impact/negative/size-code-amount.md)**: significantly shorter than the equivalent `if/else` structure.
 
 ## Exceptions
 

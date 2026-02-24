@@ -47,11 +47,11 @@ Using `position: absolute` to force elements into specific places, breaking the 
 }
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Flex and Grid layouts require significantly less code to achieve complex results, and respond intuitively to content changes.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: The structural intent of a layout is much clearer in Flexbox/Grid syntax (`align-items: center`) than in rigid coordinate tracking.
-- **[Flexibility](../../home/quality-attributes/positive/flexibility.md)**: Elements laid out with Grid or Flexbox naturally adapt to container width, language direction (RTL/LTR), and varying content lengths without overlapping.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Flex and Grid layouts require significantly less code to achieve complex results, and respond intuitively to content changes.
+- **[Readability](../../home/impact/positive/readability.md)**: The structural intent of a layout is much clearer in Flexbox/Grid syntax (`align-items: center`) than in rigid coordinate tracking.
+- **[Flexibility](../../home/impact/positive/flexibility.md)**: Elements laid out with Grid or Flexbox naturally adapt to container width, language direction (RTL/LTR), and varying content lengths without overlapping.
 
 ## Exceptions
 

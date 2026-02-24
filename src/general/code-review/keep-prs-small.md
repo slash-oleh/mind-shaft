@@ -26,9 +26,9 @@ Bundling multiple unrelated changes into a single, massive PR.
 - Mixing a database schema change, a UI refactor, and three bug fixes in one PR.
 - Submitting thousands of lines of code for a single "super-feature" that could have been delivered in stages.
 
-## Why
+## Impact
 
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Reduces the blast radius of any single merge.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Reduces the blast radius of any single merge.
 
 ## Exceptions
 

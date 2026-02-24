@@ -42,11 +42,11 @@ function UserProfile({ name }) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: When structural updates are required, maintaining a central `Box` component is much easier than updating raw `<div>` tags scattered everywhere.
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: Passing strongly-typed props to a React component is safer and more self-documenting than passing string-based CSS utility classes into `className`.
-- **[Reusability](../../home/quality-attributes/positive/reusability.md)**: Components can inherently encapsulate behavioral state, aria attributes, and structural nested elements together with styling, whereas CSS classes can only handle presentation.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: When structural updates are required, maintaining a central `Box` component is much easier than updating raw `<div>` tags scattered everywhere.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: Passing strongly-typed props to a React component is safer and more self-documenting than passing string-based CSS utility classes into `className`.
+- **[Reusability](../../home/impact/positive/reusability.md)**: Components can inherently encapsulate behavioral state, aria attributes, and structural nested elements together with styling, whereas CSS classes can only handle presentation.
 
 ## Exceptions
 

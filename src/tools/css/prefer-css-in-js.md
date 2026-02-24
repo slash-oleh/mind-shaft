@@ -50,10 +50,10 @@ function Card({ children }) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Allows unused classes to be tracked as regular unreachable JavaScript code, which Linters can flag and Tree Shakers can automatically remove during build.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Eliminates global CSS naming collisions (e.g. BEM methodology becomes unnecessary).
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Allows unused classes to be tracked as regular unreachable JavaScript code, which Linters can flag and Tree Shakers can automatically remove during build.
+- **[KISS](../../home/impact/positive/kiss.md)**: Eliminates global CSS naming collisions (e.g. BEM methodology becomes unnecessary).
 
 ## Exceptions
 

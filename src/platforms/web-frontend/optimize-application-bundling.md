@@ -55,12 +55,12 @@ import { ComplexChart } from './components/ComplexChart';
 // is still downloaded and parsed on the first load.
 ```
 
-## Why
+## Impact
 
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Reduces the initial bundle size, leading to faster page loads and improved TTI.
-- **[Scalability](../../home/quality-attributes/positive/scalability.md)**: Allows the application to grow without exponentially increasing the cost of the first visit.
-- **[User Experience](../../home/quality-attributes/positive/readability.md)**: Provides a more responsive feel as users only download what they actually use.
-- **[Size/Code Amount](../../home/quality-attributes/negative/size-code-amount.md)**: Optimizes the delivery of code by only sending relevant bytes.
+- **[Performance](../../home/impact/positive/performance.md)**: Reduces the initial bundle size, leading to faster page loads and improved TTI.
+- **[Scalability](../../home/impact/positive/scalability.md)**: Allows the application to grow without exponentially increasing the cost of the first visit.
+- **[User Experience](../../home/impact/positive/readability.md)**: Provides a more responsive feel as users only download what they actually use.
+- **[Size/Code Amount](../../home/impact/negative/size-code-amount.md)**: Optimizes the delivery of code by only sending relevant bytes.
 
 ## Exceptions
 

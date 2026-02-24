@@ -26,10 +26,10 @@ Calling the expensive function directly inside the component body as an argument
 const [settings, setSettings] = useState(loadDataFromStorage('user-settings'));
 ```
 
-## Why
+## Impact
 
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Prevents redundant, heavy calculations from blocking the main thread during re-renders.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Provides a built-in React pattern for handling complex initialization without needing `useEffect`.
+- **[Performance](../../home/impact/positive/performance.md)**: Prevents redundant, heavy calculations from blocking the main thread during re-renders.
+- **[KISS](../../home/impact/positive/kiss.md)**: Provides a built-in React pattern for handling complex initialization without needing `useEffect`.
 
 ## Exceptions
 

@@ -40,11 +40,11 @@ CREATE TABLE subscription (
 );
 ```
 
-## Why
+## Impact
 
-- **[Type Safety](../../home/quality-attributes/positive/type-safety.md)**: Prevents impossible or corrupted data from entering the system at the lowest possible level.
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: The data type itself acts as documentation for what the column contains and how it should be used.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Allows you to leverage native database features (like `DATE_TRUNC`, indexing, and constraint checking) without having to write custom application-level validators and parsers.
+- **[Type Safety](../../home/impact/positive/type-safety.md)**: Prevents impossible or corrupted data from entering the system at the lowest possible level.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: The data type itself acts as documentation for what the column contains and how it should be used.
+- **[KISS](../../home/impact/positive/kiss.md)**: Allows you to leverage native database features (like `DATE_TRUNC`, indexing, and constraint checking) without having to write custom application-level validators and parsers.
 
 ## Exceptions
 

@@ -35,11 +35,11 @@ const colors = [
 ];
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: A uniform codebase is easier to navigate and maintain.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: predictable patterns reduce cognitive load.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Separating style from logic makes the version history much cleaner and easier to audit.
+- **[Consistency](../../home/impact/positive/consistency.md)**: A uniform codebase is easier to navigate and maintain.
+- **[Readability](../../home/impact/positive/readability.md)**: predictable patterns reduce cognitive load.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Separating style from logic makes the version history much cleaner and easier to audit.
 
 ## Exceptions
 

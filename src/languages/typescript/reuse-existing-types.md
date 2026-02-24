@@ -55,12 +55,12 @@ const login = (options: LocalAuthOptions) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Single Source of Truth](../../home/quality-attributes/positive/single-source-of-truth.md)**: Logic and data structures are defined once, ensuring system-wide consistency.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Updates to a base type automatically propagate to all consumers.
-- **[DRY](../../home/quality-attributes/positive/dry.md)**: Avoids unnecessary repetition of property lists.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Prevents "silent" mismatches between your local definitions and external requirements.
+- **[Single Source of Truth](../../home/impact/positive/single-source-of-truth.md)**: Logic and data structures are defined once, ensuring system-wide consistency.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Updates to a base type automatically propagate to all consumers.
+- **[DRY](../../home/impact/positive/dry.md)**: Avoids unnecessary repetition of property lists.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Prevents "silent" mismatches between your local definitions and external requirements.
 
 ## Exceptions
 

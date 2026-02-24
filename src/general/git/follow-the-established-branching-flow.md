@@ -30,11 +30,11 @@ git merge feature/42
 git push origin master
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: A uniform workflow makes the development lifecycle predictable for everyone on the team.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Predictable merging patterns reduce the chance of introducing regressions or deploying unfinished code to production.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Automated CI/CD pipelines are built around specific branching structures; deviating from them can break the deployment process.
+- **[Consistency](../../home/impact/positive/consistency.md)**: A uniform workflow makes the development lifecycle predictable for everyone on the team.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Predictable merging patterns reduce the chance of introducing regressions or deploying unfinished code to production.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Automated CI/CD pipelines are built around specific branching structures; deviating from them can break the deployment process.
 
 ## Exceptions
 

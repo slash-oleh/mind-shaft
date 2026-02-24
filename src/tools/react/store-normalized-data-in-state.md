@@ -54,10 +54,10 @@ function UserList({ users }) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Guarantees that you are always working with the most up‑to‑date version of an object.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Eliminates the need for complex `useEffect` hooks to keep the selected state synchronized with the source data.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Guarantees that you are always working with the most up‑to‑date version of an object.
+- **[KISS](../../home/impact/positive/kiss.md)**: Eliminates the need for complex `useEffect` hooks to keep the selected state synchronized with the source data.
 
 ## Exceptions
 

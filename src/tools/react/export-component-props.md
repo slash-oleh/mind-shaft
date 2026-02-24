@@ -38,10 +38,10 @@ export const UserProfile = ({ name, avatarUrl }: LocalProps) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Makes it effortless for other developers to wrap, extend, or document your components.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Explicitly exported types act as clear documentation for the component's API.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Makes it effortless for other developers to wrap, extend, or document your components.
+- **[Readability](../../home/impact/positive/readability.md)**: Explicitly exported types act as clear documentation for the component's API.
 
 ## Exceptions
 

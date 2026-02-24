@@ -40,11 +40,11 @@ export const SignUp = () => { ... };
 export const PasswordReset = () => { ... };
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Browsing the file system reveals the project's structure without opening every file.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Smaller files are easier to refactor, test, and audit.
-- **[Scalability](../../home/quality-attributes/positive/scalability.md)**: Prevents files from becoming "God Objects" as the project grows.
+- **[Readability](../../home/impact/positive/readability.md)**: Browsing the file system reveals the project's structure without opening every file.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Smaller files are easier to refactor, test, and audit.
+- **[Scalability](../../home/impact/positive/scalability.md)**: Prevents files from becoming "God Objects" as the project grows.
 
 ## Exceptions
 

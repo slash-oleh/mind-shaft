@@ -41,10 +41,10 @@ const UserProfile = ({ user, isLoading, theme }) => {
 export default withTheme(withAuth(UserProfile));
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Hooks make the dependencies of a component explicit and visible within the component's function body.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Eliminates the technical complexity of prop-injection patterns and complex HOC typing.
+- **[Readability](../../home/impact/positive/readability.md)**: Hooks make the dependencies of a component explicit and visible within the component's function body.
+- **[KISS](../../home/impact/positive/kiss.md)**: Eliminates the technical complexity of prop-injection patterns and complex HOC typing.
 
 ## Exceptions
 

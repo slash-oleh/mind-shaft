@@ -51,12 +51,12 @@ CREATE TABLE vehicle (
 );
 ```
 
-## Why
+## Impact
 
-- **[Integrity](../../home/quality-attributes/positive/integrity.md)**: Allows you to use strict `NOT NULL` constraints for subtype-specific fields, which is impossible in single-table inheritance.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Shared columns are stored in one place, avoiding the schema duplication found in concrete table inheritance.
-- **[Flexibility](../../home/quality-attributes/positive/flexibility.md)**: Represents composition more accurately than strict inheritance, making it easier to attach or detach aspects of an entity over time.
-- **[Separation of Concerns](../../home/quality-attributes/positive/separation-of-concerns.md)**: Each table only stores the attributes relevant to its specific domain.
+- **[Integrity](../../home/impact/positive/integrity.md)**: Allows you to use strict `NOT NULL` constraints for subtype-specific fields, which is impossible in single-table inheritance.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Shared columns are stored in one place, avoiding the schema duplication found in concrete table inheritance.
+- **[Flexibility](../../home/impact/positive/flexibility.md)**: Represents composition more accurately than strict inheritance, making it easier to attach or detach aspects of an entity over time.
+- **[Separation of Concerns](../../home/impact/positive/separation-of-concerns.md)**: Each table only stores the attributes relevant to its specific domain.
 
 ## Exceptions
 

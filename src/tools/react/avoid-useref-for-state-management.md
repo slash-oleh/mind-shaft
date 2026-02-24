@@ -50,11 +50,11 @@ function SearchForm() {
 }
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: State ensures the UI always correctly reflects the underlying data model.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Declarative code ("If data is X, render Y") is significantly easier to reason about than tracking imperative mutations.
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: Re-renders make side effects and data flow visible and predictable through standard React debugging tools.
+- **[Consistency](../../home/impact/positive/consistency.md)**: State ensures the UI always correctly reflects the underlying data model.
+- **[KISS](../../home/impact/positive/kiss.md)**: Declarative code ("If data is X, render Y") is significantly easier to reason about than tracking imperative mutations.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: Re-renders make side effects and data flow visible and predictable through standard React debugging tools.
 
 ## Exceptions
 

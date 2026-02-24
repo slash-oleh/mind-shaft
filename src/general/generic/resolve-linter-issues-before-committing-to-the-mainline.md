@@ -31,11 +31,11 @@ Ignoring linter output, pushing code with active warnings to the main branch, or
 const data = eval(userInput);
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures the entire project follows a single, unified coding style, regardless of who writes the code.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Linters catch common mistakes and "code smells" before they can cause runtime issues.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Clean code, free of formatting noise and warnings, is significantly easier to review and understand.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures the entire project follows a single, unified coding style, regardless of who writes the code.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Linters catch common mistakes and "code smells" before they can cause runtime issues.
+- **[Readability](../../home/impact/positive/readability.md)**: Clean code, free of formatting noise and warnings, is significantly easier to review and understand.
 
 ## Exceptions
 

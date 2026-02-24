@@ -52,11 +52,11 @@ function CardList() {
 }
 ```
 
-## Why
+## Impact
 
-- **[Reusability](../../home/quality-attributes/positive/reusability.md)**: Margin-free components can be dropped into any layout, grid, or stack without requiring override hacks.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Layout logic (spacing, gaps, alignment) is centralized in the parent container rather than scattered across the children.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Eliminates the need for CSS specificity wars or pseudo-selectors (`:not(:last-child)`) just to manage margins.
+- **[Reusability](../../home/impact/positive/reusability.md)**: Margin-free components can be dropped into any layout, grid, or stack without requiring override hacks.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Layout logic (spacing, gaps, alignment) is centralized in the parent container rather than scattered across the children.
+- **[KISS](../../home/impact/positive/kiss.md)**: Eliminates the need for CSS specificity wars or pseudo-selectors (`:not(:last-child)`) just to manage margins.
 
 ## Exceptions
 

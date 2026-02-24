@@ -33,12 +33,12 @@ Choosing a tool based solely on its initial features or ease of use, without con
 npm install react-popper
 ```
 
-## Why
+## Impact
 
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Maintained tools receive regular security updates and bug fixes, reducing the risk of system failure.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Using active dependencies prevents the project from becoming "legacy" prematurely and avoids the need for manual fixes to third-party code.
-- **[Portability](../../home/quality-attributes/positive/portability.md)**: Supported tools are more likely to be updated for new environments and platform versions.
-- **[Security](../../home/quality-attributes/positive/security.md)**: Outdated tools may have unpatched security vulnerabilities that can be exploited by attackers.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Maintained tools receive regular security updates and bug fixes, reducing the risk of system failure.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Using active dependencies prevents the project from becoming "legacy" prematurely and avoids the need for manual fixes to third-party code.
+- **[Portability](../../home/impact/positive/portability.md)**: Supported tools are more likely to be updated for new environments and platform versions.
+- **[Security](../../home/impact/positive/security.md)**: Outdated tools may have unpatched security vulnerabilities that can be exploited by attackers.
 
 ## Exceptions
 

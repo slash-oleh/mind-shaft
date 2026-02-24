@@ -41,10 +41,10 @@ Hiding related actions inside a nested submenu that requires a hover/click to re
 </Menu>
 ```
 
-## Why
+## Impact
 
-- **[Usability](../../home/quality-attributes/positive/usability.md)**: Flat menus improve discoverability and reduce the physical effort required to select an item.
-- **[Accessibility](../../home/quality-attributes/positive/accessibility.md)**: Screen readers and keyboard users benefit from a linear navigation path rather than managing nested focus layers.
+- **[Usability](../../home/impact/positive/usability.md)**: Flat menus improve discoverability and reduce the physical effort required to select an item.
+- **[Accessibility](../../home/impact/positive/accessibility.md)**: Screen readers and keyboard users benefit from a linear navigation path rather than managing nested focus layers.
 
 ## Exceptions
 

@@ -44,10 +44,10 @@ Using a dropdown for binary or small sets of options.
 </Select>
 ```
 
-## Why
+## Impact
 
-- **[Usability](../../home/quality-attributes/positive/usability.md)**: Making all options visible reduces the cognitive load required to understand the available choices.
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: The current state and alternative options are clearly displayed, making the system's state easier to parse at a glance.
+- **[Usability](../../home/impact/positive/usability.md)**: Making all options visible reduces the cognitive load required to understand the available choices.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: The current state and alternative options are clearly displayed, making the system's state easier to parse at a glance.
 
 ## Exceptions
 

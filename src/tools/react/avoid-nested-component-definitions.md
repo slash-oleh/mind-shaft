@@ -56,10 +56,10 @@ function Parent() {
 }
 ```
 
-## Why
+## Impact
 
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Prevents the massive overhead of destroying and rebuilding the DOM on every state change.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Preserves local component state, DOM focus, and scroll position.
+- **[Performance](../../home/impact/positive/performance.md)**: Prevents the massive overhead of destroying and rebuilding the DOM on every state change.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Preserves local component state, DOM focus, and scroll position.
 
 ## Exceptions
 

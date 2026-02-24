@@ -154,25 +154,25 @@ export const extractFirstParagraph = (content) => {
 };
 
 /**
- * Extracts quality attributes from the "Why" section.
+ * Extracts impact items from the "Impact" section.
  */
-export const extractQualityAttributes = (content) => {
+export const extractImpactItems = (content) => {
   const tree = parser.parse(content);
   const children = tree.children;
 
-  const whyHeading = children.find(n => n.type === 'heading' && n.depth === 2 && toString(n).toLowerCase() === 'why');
-  if (!whyHeading) return [];
+  const impactHeading = children.find(n => n.type === 'heading' && n.depth === 2 && toString(n).toLowerCase() === 'impact');
+  if (!impactHeading) return [];
 
-  const whyIndex = children.indexOf(whyHeading);
-  const nextNodes = children.slice(whyIndex + 1);
+  const impactIndex = children.indexOf(impactHeading);
+  const nextNodes = children.slice(impactIndex + 1);
   const nextHeadingIndex = nextNodes.findIndex(n => n.type === 'heading' && n.depth === 2);
   const sectionNodes = nextHeadingIndex === -1 ? nextNodes : nextNodes.slice(0, nextHeadingIndex);
 
-  const whyList = sectionNodes.find(n => n.type === 'list');
-  if (!whyList) return [];
+  const impactList = sectionNodes.find(n => n.type === 'list');
+  if (!impactList) return [];
 
   const attributes = [];
-  for (const item of whyList.children) {
+  for (const item of impactList.children) {
     const paragraph = item.children.find(c => c.type === 'paragraph');
     if (paragraph) {
       const strong = paragraph.children.find(c => c.type === 'strong');

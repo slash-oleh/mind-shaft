@@ -38,11 +38,11 @@ project-root/
     getUser.ts
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Follows standard industry practices for project organization, making it easier for new developers to onboard.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Provides a clear separation between "how the project is configured" and "what the project actually does".
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Simplifies tooling (Build, Lint, Test) by providing a single, predictable target directory for application code.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Follows standard industry practices for project organization, making it easier for new developers to onboard.
+- **[Readability](../../home/impact/positive/readability.md)**: Provides a clear separation between "how the project is configured" and "what the project actually does".
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Simplifies tooling (Build, Lint, Test) by providing a single, predictable target directory for application code.
 
 ## Exceptions
 

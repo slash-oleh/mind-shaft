@@ -49,12 +49,12 @@ export const handleRequest = async (req, res) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Scalability](../../home/quality-attributes/positive/scalability.md)**: Allows the application to scale horizontally (adding more instances) effortlessly as any instance can handle any request.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Instances become "disposable." If one fails, the load balancer can immediately route traffic to others without losing user state.
-- **[Portability](../../home/quality-attributes/positive/portability.md)**: Simplifies deployment in containerized environments (Docker, Kubernetes, Serverless) where instances are short-lived and frequently moved.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures all users see the same data regardless of which server instance they happen to reach.
+- **[Scalability](../../home/impact/positive/scalability.md)**: Allows the application to scale horizontally (adding more instances) effortlessly as any instance can handle any request.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Instances become "disposable." If one fails, the load balancer can immediately route traffic to others without losing user state.
+- **[Portability](../../home/impact/positive/portability.md)**: Simplifies deployment in containerized environments (Docker, Kubernetes, Serverless) where instances are short-lived and frequently moved.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures all users see the same data regardless of which server instance they happen to reach.
 
 ## Exceptions
 

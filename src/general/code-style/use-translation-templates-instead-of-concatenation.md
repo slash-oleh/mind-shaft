@@ -43,11 +43,11 @@ export const translations = {
 await notify(`${t('noUser')} ${email} ${t('emailSuffix')}`);
 ```
 
-## Why
+## Impact
 
-- **[Integrity](../../home/quality-attributes/positive/integrity.md)**: Ensures the linguistic integrity of the translated content.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Centralizes sentence structure in translation files, making it easier for translators to work without touching code.
-- **[Scalability](../../home/quality-attributes/positive/scalability.md)**: Simplifies the process of adding support for new languages with vastly different grammatical structures.
+- **[Integrity](../../home/impact/positive/integrity.md)**: Ensures the linguistic integrity of the translated content.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Centralizes sentence structure in translation files, making it easier for translators to work without touching code.
+- **[Scalability](../../home/impact/positive/scalability.md)**: Simplifies the process of adding support for new languages with vastly different grammatical structures.
 
 ## Exceptions
 

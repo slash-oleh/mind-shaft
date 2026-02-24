@@ -25,11 +25,11 @@ scp -R . root@production:/var/www/app
 ssh root@production "cd /var/www/app && npm install && pm2 restart all"
 ```
 
-## Why
+## Impact
 
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Automation ensures that every deployment is performed in a clean, consistent, and predictable manner.
-- **[Scalability](../../home/quality-attributes/positive/scalability.md)**: Allows the project to handle frequent releases and growing team sizes without linear increases in manual effort.
-- **[Human factor](../../home/quality-attributes/negative/human-factor.md)**: Minimizes the risk of mistakes caused by forgetfulness, fatigue, or misunderstanding of the deployment process.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Automation ensures that every deployment is performed in a clean, consistent, and predictable manner.
+- **[Scalability](../../home/impact/positive/scalability.md)**: Allows the project to handle frequent releases and growing team sizes without linear increases in manual effort.
+- **[Human factor](../../home/impact/negative/human-factor.md)**: Minimizes the risk of mistakes caused by forgetfulness, fatigue, or misunderstanding of the deployment process.
 
 ## Exceptions
 

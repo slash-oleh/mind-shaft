@@ -48,11 +48,11 @@ export const translations = {
 <h1>{t('welcomeToTheService')}</h1>
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Allows changing wording without affecting the codebase.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Keys provide semantic meaning about the message's function.
-- **[Context Deduplication](../../home/quality-attributes/positive/context-deduplication.md)**: Prevents reusing keys just because the text is currently the same, while the purpose is different.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Allows changing wording without affecting the codebase.
+- **[Readability](../../home/impact/positive/readability.md)**: Keys provide semantic meaning about the message's function.
+- **[Context Deduplication](../../home/impact/positive/context-deduplication.md)**: Prevents reusing keys just because the text is currently the same, while the purpose is different.
 
 ## Exceptions
 

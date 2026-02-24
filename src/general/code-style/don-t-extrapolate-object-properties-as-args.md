@@ -45,12 +45,12 @@ const deleteUser = (user: User) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Adding a new required property from the same object doesn't break the function signature.
-- **[Reusability](../../home/quality-attributes/positive/reusability.md)**: Functions accepting domain types are easier to compose and share across modules.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Reduces the risk of argument-order errors, especially when multiple parameters share the same type.
-- **[Single Source of Truth](../../home/quality-attributes/positive/consistency.md)**: Logic remains coupled to the data structure it operates on.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Adding a new required property from the same object doesn't break the function signature.
+- **[Reusability](../../home/impact/positive/reusability.md)**: Functions accepting domain types are easier to compose and share across modules.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Reduces the risk of argument-order errors, especially when multiple parameters share the same type.
+- **[Single Source of Truth](../../home/impact/positive/consistency.md)**: Logic remains coupled to the data structure it operates on.
 
 ## Exceptions
 

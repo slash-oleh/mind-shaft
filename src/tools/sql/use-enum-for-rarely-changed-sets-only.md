@@ -42,11 +42,11 @@ CREATE TABLE product (
 );
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Prevents the need for complex database migrations every time a new business category or option is introduced.
-- **[Flexibility](../../home/quality-attributes/positive/flexibility.md)**: Allows administrators or application logic to add new reference values at runtime without developer intervention.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Keeps the database schema simple and focused on structure rather than volatile data.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Prevents the need for complex database migrations every time a new business category or option is introduced.
+- **[Flexibility](../../home/impact/positive/flexibility.md)**: Allows administrators or application logic to add new reference values at runtime without developer intervention.
+- **[KISS](../../home/impact/positive/kiss.md)**: Keeps the database schema simple and focused on structure rather than volatile data.
 
 ## Exceptions
 

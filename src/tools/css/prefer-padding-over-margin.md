@@ -43,10 +43,10 @@ function DialogBox() {
 }
 ```
 
-## Why
+## Impact
 
-- **[Usability](../../home/quality-attributes/positive/usability.md)**: Padding actively increases the geometric hit-box of clickable zones, significantly improving touch targets on mobile devices.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Centralizing spacing onto parent containers via padding (and `gap`) keeps layout logic gathered in one place, rather than scattered across the margins of many individual children.
+- **[Usability](../../home/impact/positive/usability.md)**: Padding actively increases the geometric hit-box of clickable zones, significantly improving touch targets on mobile devices.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Centralizing spacing onto parent containers via padding (and `gap`) keeps layout logic gathered in one place, rather than scattered across the margins of many individual children.
 
 ## Exceptions
 

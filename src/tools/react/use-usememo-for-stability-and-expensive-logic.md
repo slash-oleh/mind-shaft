@@ -40,10 +40,10 @@ export const Dashboard = ({ data }) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Stabilizing references is critical for making `React.memo` effective.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Sacrificing a small amount of memory for a cache is often the correct architectural decision to ensure a smooth, lag-free UI.
+- **[Performance](../../home/impact/positive/performance.md)**: Stabilizing references is critical for making `React.memo` effective.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Sacrificing a small amount of memory for a cache is often the correct architectural decision to ensure a smooth, lag-free UI.
 
 ## Exceptions
 

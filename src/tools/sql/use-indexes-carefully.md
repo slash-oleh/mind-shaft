@@ -56,11 +56,11 @@ audit_logs:
 
 Adding an index to a high-cardinality `text` or `jsonb` field without a specific performance requirement is particularly wasteful.
 
-## Why
+## Impact
 
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Optimized indexes drastically reduce query execution time for large datasets.
-- **[Scalability](../../home/quality-attributes/positive/scalability.md)**: Prevents the database from becoming a bottleneck as the amount of data grows.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Reduces the risk of database lock contention caused by long-running sequential scans.
+- **[Performance](../../home/impact/positive/performance.md)**: Optimized indexes drastically reduce query execution time for large datasets.
+- **[Scalability](../../home/impact/positive/scalability.md)**: Prevents the database from becoming a bottleneck as the amount of data grows.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Reduces the risk of database lock contention caused by long-running sequential scans.
 
 ## Exceptions
 

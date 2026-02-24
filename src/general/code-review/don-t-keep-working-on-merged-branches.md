@@ -36,10 +36,10 @@ git commit -m "Small fix after merge"
 git push origin feature/user-auth
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Keeps the Git history clean and scanable.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Prevents accidental deployment of unapproved changes.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Keeps the Git history clean and scanable.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Prevents accidental deployment of unapproved changes.
 
 ## Exceptions
 

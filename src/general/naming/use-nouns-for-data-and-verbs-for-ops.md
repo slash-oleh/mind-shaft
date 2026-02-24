@@ -29,10 +29,10 @@ const user = (id) => { ... };         // Noun for an operation
 const checkStatus = true;             // Verb for a boolean constant
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Allows developers to immediately identify whether an identifier is a value or an action.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Establishes a logical grammatical structure for the entire codebase.
+- **[Readability](../../home/impact/positive/readability.md)**: Allows developers to immediately identify whether an identifier is a value or an action.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Establishes a logical grammatical structure for the entire codebase.
 
 ## Exceptions
 

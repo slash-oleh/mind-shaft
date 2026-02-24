@@ -46,12 +46,12 @@ export const createUser = async (req: Request, res: Response) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Separation of Concerns](../../home/quality-attributes/positive/separation-of-concerns.md)**: Decouples communication from core logic.
-- **[Reusability](../../home/quality-attributes/positive/reusability.md)**: Services can be called by multiple interfaces.
-- **[Testability](../../home/quality-attributes/positive/testability.md)**: Services are pure logic, easy to unit test.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Logic is centralized.
+- **[Separation of Concerns](../../home/impact/positive/separation-of-concerns.md)**: Decouples communication from core logic.
+- **[Reusability](../../home/impact/positive/reusability.md)**: Services can be called by multiple interfaces.
+- **[Testability](../../home/impact/positive/testability.md)**: Services are pure logic, easy to unit test.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Logic is centralized.
 
 ## Exceptions
 

@@ -44,29 +44,29 @@ const validateBadSolution = (nodes, file, headingNode, settings) => {
   validateSolution(nodes, file, headingNode, 'Bad solution', 'badSolution', settings);
 };
 
-const validateWhy = (nodes, file, headingNode, settings) => {
+const validateImpact = (nodes, file, headingNode, settings) => {
   const nonListNodes = nodes.filter(n => n.type !== 'list');
   if (nonListNodes.length > 0) {
-    warn(file, 'Section "## Why" must contain only a list', headingNode.position, 'checkOnlyList', settings, 'why');
+    warn(file, 'Section "## Impact" must contain only a list', headingNode.position, 'checkOnlyList', settings, 'impact');
   }
   const list = nodes.find(n => n.type === 'list');
   if (!list) {
-    warn(file, 'Section "## Why" must contain a list', headingNode.position, 'checkList', settings, 'why');
+    warn(file, 'Section "## Impact" must contain a list', headingNode.position, 'checkList', settings, 'impact');
   } else {
     list.children.forEach(item => {
       const paragraph = item.children.find(c => c.type === 'paragraph');
       if (!paragraph) {
-        warn(file, '"Why" list items must contain text', item.position, 'checkListItemText', settings, 'why');
+        warn(file, '"Impact" list items must contain text', item.position, 'checkListItemText', settings, 'impact');
         return;
       }
       const [firstChild, secondChild] = paragraph.children;
       const isBold = firstChild?.type === 'strong';
       const hasLinkInBold = isBold && firstChild.children.some(c =>
-        c.type === 'link' && c.url.includes('quality-attributes')
+        c.type === 'link' && c.url.includes('impact')
       );
       const hasColonAfter = secondChild && secondChild.type === 'text' && secondChild.value.startsWith(': ');
       if (!hasLinkInBold || !hasColonAfter) {
-        warn(file, '"Why" list items must follow the format: "**[Quality Attribute](../../home/quality-attributes/...md)**: description"', item.position, 'checkListItemFormat', settings, 'why');
+        warn(file, '"Impact" list items must follow the format: "**[Impact](../../home/impact/...md)**: description"', item.position, 'checkListItemFormat', settings, 'impact');
       }
     });
   }
@@ -234,10 +234,10 @@ const DEFAULT_SETTINGS = {
       checkParagraph: true,
       checkCode: true,
     },
-    why: {
-      title: 'Why',
+    impact: {
+      title: 'Impact',
       required: true,
-      validate: validateWhy,
+      validate: validateImpact,
       checkOnlyList: true,
       checkList: true,
       checkListItemText: true,
@@ -288,7 +288,7 @@ const remarkArticleStructure = (options = {}) => (tree, file) => {
     global: { ...DEFAULT_SETTINGS.global, ...options.global }
   };
   const filePath = file.path || '';
-  if (filePath.endsWith('README.md') || filePath.includes('quality-attributes')) return;
+  if (filePath.endsWith('README.md') || filePath.includes('impact')) return;
 
   const children = tree.children.filter(n => n.type !== 'html' || !n.value.startsWith('<!--'));
 

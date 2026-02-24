@@ -63,11 +63,11 @@ describe('ProductCatalog', () => {
 });
 ```
 
-## Why
+## Impact
 
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Prevents non-deterministic test failures (flakiness).
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Tests can be added, removed, or reordered without affecting others.
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Proper cleanup prevents resource leaks that can slow down or crash the test suite.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Prevents non-deterministic test failures (flakiness).
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Tests can be added, removed, or reordered without affecting others.
+- **[Performance](../../home/impact/positive/performance.md)**: Proper cleanup prevents resource leaks that can slow down or crash the test suite.
 
 ## Exceptions
 

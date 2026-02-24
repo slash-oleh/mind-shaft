@@ -45,11 +45,11 @@ const Input = (props) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Guarantees that the component always reflects the most up-to-date value from its parent.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Eliminates the maintenance burden of tracking duplicate values and manual synchronization logic.
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Reduces the number of re-renders by eliminating the intermediate "state sync" step.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Guarantees that the component always reflects the most up-to-date value from its parent.
+- **[KISS](../../home/impact/positive/kiss.md)**: Eliminates the maintenance burden of tracking duplicate values and manual synchronization logic.
+- **[Performance](../../home/impact/positive/performance.md)**: Reduces the number of re-renders by eliminating the intermediate "state sync" step.
 
 ## Exceptions
 

@@ -91,12 +91,12 @@ const App = () => (
 );
 ```
 
-## Why
+## Impact
 
-- **[Separation of Concerns](../../home/quality-attributes/positive/separation-of-concerns.md)**: The global layout doesn't need to know about the requirements of specific pages.
-- **[Flexibility](../../home/quality-attributes/positive/flexibility.md)**: Pages can easily deviate from the "standard" structure without touching shared code.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Reduces complex conditional logic in shared components.
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: The structure of a page is visible directly in the page component itself, not hidden in a wrapper.
+- **[Separation of Concerns](../../home/impact/positive/separation-of-concerns.md)**: The global layout doesn't need to know about the requirements of specific pages.
+- **[Flexibility](../../home/impact/positive/flexibility.md)**: Pages can easily deviate from the "standard" structure without touching shared code.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Reduces complex conditional logic in shared components.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: The structure of a page is visible directly in the page component itself, not hidden in a wrapper.
 
 ## Exceptions
 

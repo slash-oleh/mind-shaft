@@ -36,11 +36,11 @@ const getTodayComments = (userId: number) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Clean code is easier for others (and your future self) to understand and verify.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Simpler code is easier to modify and less likely to contain hidden bugs.
-- **[Flexibility](../../home/quality-attributes/positive/flexibility.md)**: It is much easier to optimize clear, well-structured code than it is to clean up complex, "optimized" code.
+- **[Readability](../../home/impact/positive/readability.md)**: Clean code is easier for others (and your future self) to understand and verify.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Simpler code is easier to modify and less likely to contain hidden bugs.
+- **[Flexibility](../../home/impact/positive/flexibility.md)**: It is much easier to optimize clear, well-structured code than it is to clean up complex, "optimized" code.
 
 ## Exceptions
 

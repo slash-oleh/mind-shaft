@@ -34,11 +34,11 @@ function Card({ children }) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Reusability](../../home/quality-attributes/positive/reusability.md)**: Classes can be shared across multiple elements, while inline styles cannot.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Keeps presentation separate from the HTML structure and avoids high-specificity override issues.
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Browsers can parse and apply CSS classes to multiple elements significantly faster than parsing individual inline style objects for static layouts.
+- **[Reusability](../../home/impact/positive/reusability.md)**: Classes can be shared across multiple elements, while inline styles cannot.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Keeps presentation separate from the HTML structure and avoids high-specificity override issues.
+- **[Performance](../../home/impact/positive/performance.md)**: Browsers can parse and apply CSS classes to multiple elements significantly faster than parsing individual inline style objects for static layouts.
 
 ## Exceptions
 

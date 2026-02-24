@@ -22,11 +22,11 @@ Using "clever" tricks or obscure syntax to achieve minor performance gains at th
 const offset = baseValue << 2;
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Code is easier to understand for other developers.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Clearer code is less prone to bugs during refactoring.
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: The intent of the operation is immediately obvious.
+- **[Readability](../../home/impact/positive/readability.md)**: Code is easier to understand for other developers.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Clearer code is less prone to bugs during refactoring.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: The intent of the operation is immediately obvious.
 
 ## Exceptions
 

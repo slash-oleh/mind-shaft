@@ -41,12 +41,12 @@ const handleStatus = (status) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Scalability](../../home/quality-attributes/positive/scalability.md)**: Adding a new case is as simple as adding a new key-value pair to the map.
-- **[Declarative](../../home/quality-attributes/positive/declarative.md)**: Describes *what* to do for each key rather than *how* to branch to it.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: The relationship between keys and actions is immediately obvious.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Encourages smaller, focused functions and separates selection logic from execution logic.
+- **[Scalability](../../home/impact/positive/scalability.md)**: Adding a new case is as simple as adding a new key-value pair to the map.
+- **[Declarative](../../home/impact/positive/declarative.md)**: Describes *what* to do for each key rather than *how* to branch to it.
+- **[Readability](../../home/impact/positive/readability.md)**: The relationship between keys and actions is immediately obvious.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Encourages smaller, focused functions and separates selection logic from execution logic.
 
 ## Exceptions
 

@@ -51,10 +51,10 @@ class Order {
 }
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Balanced context reduces visual noise while ensuring the code remains self-documenting.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Simplifies changes and reduces cognitive load by making identifiers predictable and intuitive.
+- **[Readability](../../home/impact/positive/readability.md)**: Balanced context reduces visual noise while ensuring the code remains self-documenting.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Simplifies changes and reduces cognitive load by making identifiers predictable and intuitive.
 
 ## Exceptions
 

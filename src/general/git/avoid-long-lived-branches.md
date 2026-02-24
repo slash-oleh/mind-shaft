@@ -36,11 +36,11 @@ git merge feature/massive-overhaul
 # Result: 57 files conflicted, local build broken, team frustrated
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Frequent integration keeps the codebase healthy and reduces the risk of massive, breaking changes.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Small, incremental changes are easier to test, verify, and revert if something goes wrong.
-- **[Nesting](../../home/quality-attributes/negative/nesting.md)**: Avoids structural "nesting" of logic in long-lived forks that becomes harder to untangle over time.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Frequent integration keeps the codebase healthy and reduces the risk of massive, breaking changes.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Small, incremental changes are easier to test, verify, and revert if something goes wrong.
+- **[Nesting](../../home/impact/negative/nesting.md)**: Avoids structural "nesting" of logic in long-lived forks that becomes harder to untangle over time.
 
 ## Exceptions
 

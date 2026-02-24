@@ -33,11 +33,11 @@ const handleTripleIncrement = () => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Guarantees that the update logic always operates on the literal "current" state, preventing data loss.
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Leverages React's **Automatic Batching**. While React 18+ batches multiple state updates into a single render by default, functional updates ensure that multiple updates to the *same* state within that single batch are cumulative rather than overwriting each other.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Solves stale closure issues in asynchronous callbacks (like `setTimeout` or `Promise.then`) without needing to add the state variable to dependency arrays in complex ways.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Guarantees that the update logic always operates on the literal "current" state, preventing data loss.
+- **[Performance](../../home/impact/positive/performance.md)**: Leverages React's **Automatic Batching**. While React 18+ batches multiple state updates into a single render by default, functional updates ensure that multiple updates to the *same* state within that single batch are cumulative rather than overwriting each other.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Solves stale closure issues in asynchronous callbacks (like `setTimeout` or `Promise.then`) without needing to add the state variable to dependency arrays in complex ways.
 
 ## Exceptions
 

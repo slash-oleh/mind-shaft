@@ -29,11 +29,11 @@ export { SignInButton } from './components/internal/SignInButton'; // Should be 
 export { useUserInternalState } from './hooks/useUserInternalState'; // Should be private
 ```
 
-## Why
+## Impact
 
-- **[Encapsulation](../../home/quality-attributes/positive/encapsulation.md)**: Protects internal details from external coupling, simplifying refactoring.
-- **[Cohesion](../../home/quality-attributes/positive/cohesion.md)**: Presents a unified, intentional interface that is easy to understand.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Reduces the risk of breaking changes across module boundaries.
+- **[Encapsulation](../../home/impact/positive/encapsulation.md)**: Protects internal details from external coupling, simplifying refactoring.
+- **[Cohesion](../../home/impact/positive/cohesion.md)**: Presents a unified, intentional interface that is easy to understand.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Reduces the risk of breaking changes across module boundaries.
 
 ## Exceptions
 

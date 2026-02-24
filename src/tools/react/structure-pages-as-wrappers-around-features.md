@@ -42,11 +42,11 @@ src/
       SignupForm.tsx    <-- Hard to reuse or move
 ```
 
-## Why
+## Impact
 
-- **[Cohesion](../../home/quality-attributes/positive/cohesion.md)**: Domain logic remains concentrated in feature modules, while pages remain lightweight and easy to reason about.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: You can safely delete or rename a page file without worrying about losing the underlying business logic.
-- **[Scalability](../../home/quality-attributes/positive/scalability.md)**: Creating a new page (e.g., a "Quick Sign In" modal or a new dashboard variant) is a matter of composing existing features.
+- **[Cohesion](../../home/impact/positive/cohesion.md)**: Domain logic remains concentrated in feature modules, while pages remain lightweight and easy to reason about.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: You can safely delete or rename a page file without worrying about losing the underlying business logic.
+- **[Scalability](../../home/impact/positive/scalability.md)**: Creating a new page (e.g., a "Quick Sign In" modal or a new dashboard variant) is a matter of composing existing features.
 
 ## Exceptions
 

@@ -38,11 +38,11 @@ Letting the README rot while the project evolves. Relying on "tribal knowledge" 
 To run: just type `make` (Note: 'make' was replaced by 'npm' a year ago)
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Accurate documentation reduces the cost of context switching and long-term support.
-- **[Onboarding](../../home/quality-attributes/positive/readability.md)**: Enables newcomers or returning developers to become productive quickly without external help.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures that everyone is following the same, up-to-date procedures for development and deployment.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Accurate documentation reduces the cost of context switching and long-term support.
+- **[Onboarding](../../home/impact/positive/readability.md)**: Enables newcomers or returning developers to become productive quickly without external help.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures that everyone is following the same, up-to-date procedures for development and deployment.
 
 ## Exceptions
 

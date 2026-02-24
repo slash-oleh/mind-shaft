@@ -32,11 +32,11 @@ Disabling a control with no visible feedback beyond the greyed-out appearance.
 <Button disabled>Submit</Button>
 ```
 
-## Why
+## Impact
 
-- **[Usability](../../home/quality-attributes/positive/usability.md)**: Users immediately understand the current state and know what action to take next.
-- **[Accessibility](../../home/quality-attributes/positive/accessibility.md)**: Screen readers can announce the reason, giving assistive-technology users the same information as sighted users.
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: The interface communicates intent rather than silently blocking interaction.
+- **[Usability](../../home/impact/positive/usability.md)**: Users immediately understand the current state and know what action to take next.
+- **[Accessibility](../../home/impact/positive/accessibility.md)**: Screen readers can announce the reason, giving assistive-technology users the same information as sighted users.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: The interface communicates intent rather than silently blocking interaction.
 
 ## Exceptions
 

@@ -46,12 +46,12 @@ user.name = "New Name";
 await user.save();
 ```
 
-## Why
+## Impact
 
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: Developers have full control and visibility over exactly what SQL is running and when.
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Prevents common ORM pitfalls like N+1 queries by making joins and associations explicit.
-- **[Decoupling](../../home/quality-attributes/positive/encapsulation.md)**: Keeps domain models (plain interfaces) free from database-specific decorators or base classes.
-- **[Predictability](../../home/quality-attributes/positive/stateless.md)**: Avoids the "magic" of change tracking and identity maps where mutating an object in memory can have hidden side effects.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: Developers have full control and visibility over exactly what SQL is running and when.
+- **[Performance](../../home/impact/positive/performance.md)**: Prevents common ORM pitfalls like N+1 queries by making joins and associations explicit.
+- **[Decoupling](../../home/impact/positive/encapsulation.md)**: Keeps domain models (plain interfaces) free from database-specific decorators or base classes.
+- **[Predictability](../../home/impact/positive/stateless.md)**: Avoids the "magic" of change tracking and identity maps where mutating an object in memory can have hidden side effects.
 
 ## Exceptions
 

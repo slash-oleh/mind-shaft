@@ -42,10 +42,10 @@ git checkout -b 101-Fix-UserAuth-!
 git checkout -b feature/new-login-flow
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: A uniform naming scheme makes the repository history predictable and easier to navigate.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Developers can immediately identify the purpose of a branch and its associated task.
+- **[Consistency](../../home/impact/positive/consistency.md)**: A uniform naming scheme makes the repository history predictable and easier to navigate.
+- **[Readability](../../home/impact/positive/readability.md)**: Developers can immediately identify the purpose of a branch and its associated task.
 
 ## Exceptions
 

@@ -44,12 +44,12 @@ switch (code) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Eliminates the risk of accidental fallthrough bugs.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: `if/else` is more concise and follows the standard control flow of modern programming.
-- **[Flexibility](../../home/quality-attributes/positive/flexibility.md)**: `if/else` easily supports complex conditions involving multiple variables and logical operators.
-- **[Size/Code Amount](../../home/quality-attributes/negative/size-code-amount.md)**: Requires fewer lines and less indentation than a `switch` statement.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Eliminates the risk of accidental fallthrough bugs.
+- **[Readability](../../home/impact/positive/readability.md)**: `if/else` is more concise and follows the standard control flow of modern programming.
+- **[Flexibility](../../home/impact/positive/flexibility.md)**: `if/else` easily supports complex conditions involving multiple variables and logical operators.
+- **[Size/Code Amount](../../home/impact/negative/size-code-amount.md)**: Requires fewer lines and less indentation than a `switch` statement.
 
 ## Exceptions
 

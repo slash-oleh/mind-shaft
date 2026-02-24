@@ -29,11 +29,11 @@ Silently implementing a inconsistent UX pattern, leading to fragmentation.
 <ErrorModal isOpen={true} message="Invalid input" />
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensuring similar actions result in similar feedback makes the app predictable and intuitive.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Reusing established patterns and components reduces the amount of code to write and test.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Avoiding one-off UX flows prevents "pattern rot" where the system becomes a collection of special cases.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensuring similar actions result in similar feedback makes the app predictable and intuitive.
+- **[KISS](../../home/impact/positive/kiss.md)**: Reusing established patterns and components reduces the amount of code to write and test.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Avoiding one-off UX flows prevents "pattern rot" where the system becomes a collection of special cases.
 
 ## Exceptions
 

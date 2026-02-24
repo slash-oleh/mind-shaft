@@ -10,7 +10,7 @@ Make sure the topic is not covered by another article.
 
 Try not to define the generic best practice as a Recommendation Item. This would
 simply duplicate the external resource with theoretical info. Instead, ask
-yourself if it's not a Quality Attribute actually. If so, add it and create a
+yourself if it's not an Impact actually. If so, add it and create a
 Recommendation Item with the reference and the example. The Recommendation Item
 can also reference the external practical examples.
 
@@ -63,15 +63,15 @@ Same format as "Good solution".
 
 - The example should outline reaching the same goal (having the same result, solving the same problem) as the good solution, but in a bad way
 
-#### 6. Fill "Why"
+#### 6. Fill "Impact"
 
 A list of reasons why this rule is important.
 
 - Usually a few list items
-- Reason is basically a [Quality Attribute](./src/home/quality-attributes.md)
+- Reason is basically an [Impact](./src/home/impact/README.md)
 - Where possible, just reference items from there, and don't duplicate its definition
-- If the reason is not covered by any Quality Attribute, but it is generic, add it as a new one
-- Where needed, add a context unique for this quality attribute application (usually a sentence)
+- If the reason is not covered by any Impact, but it is generic, add it as a new one
+- Where needed, add a context unique for this impact application (usually a sentence)
 
 #### 7. Exceptions
 
@@ -84,13 +84,13 @@ External resources, articles, etc.
 - Do not reference other internal articles
 - Title links like `Source: Title` or `Source: Title by Author`, for example `Wikipedia: Cohesion`
 
-## Adding a quality attribute
+## Adding an Impact item
 
 ### Follow the template
 
-Use [quality attribute template](templates/quality-attribute.md).
+Use [impact template](templates/impact.md).
 
-Put it under one of the categories under the [quality-attributes](./src/home/quality-attributes/) folder.
+Put it under one of the categories under the [impact](./src/home/impact/) folder.
 
 The same templating rules as for articles apply.
 

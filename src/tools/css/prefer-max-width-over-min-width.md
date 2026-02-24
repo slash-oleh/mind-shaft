@@ -29,11 +29,11 @@ Defining a hard `min-width`, which behaves like fixed dimensions on narrow viewp
 }
 ```
 
-## Why
+## Impact
 
-- **[Flexibility](../../home/quality-attributes/positive/flexibility.md)**: `max-width` paired with a percentage width allows components to gracefully adapt down to the smallest mobile screen without breaking the layout.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Prevents content clipping and horizontal scrollbars, ensuring the UI remains readable regardless of the device.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Fluid elements require fewer CSS media queries to patch up broken boundary constraints.
+- **[Flexibility](../../home/impact/positive/flexibility.md)**: `max-width` paired with a percentage width allows components to gracefully adapt down to the smallest mobile screen without breaking the layout.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Prevents content clipping and horizontal scrollbars, ensuring the UI remains readable regardless of the device.
+- **[KISS](../../home/impact/positive/kiss.md)**: Fluid elements require fewer CSS media queries to patch up broken boundary constraints.
 
 ## Exceptions
 

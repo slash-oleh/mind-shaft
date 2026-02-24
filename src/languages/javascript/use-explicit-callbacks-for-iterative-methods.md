@@ -35,11 +35,11 @@ const numbers = ids.map(parseInt);
 const strings = numbers.map(String);
 ```
 
-## Why
+## Impact
 
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Prevents bugs caused by functions receiving unintended additional arguments.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Makes it immediately clear which values are being used and how.
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: Explicitly defines the interface between the iteration and the processing logic.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Prevents bugs caused by functions receiving unintended additional arguments.
+- **[Readability](../../home/impact/positive/readability.md)**: Makes it immediately clear which values are being used and how.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: Explicitly defines the interface between the iteration and the processing logic.
 
 ## Exceptions
 

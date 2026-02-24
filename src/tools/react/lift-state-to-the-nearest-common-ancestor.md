@@ -48,10 +48,10 @@ export const Row = ({ item }) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Cohesion](../../home/quality-attributes/positive/cohesion.md)**: Moves the coordination logic (e.g., "only one expanded") into the component responsible for the whole feature.
-- **[Flexibility](../../home/quality-attributes/positive/flexibility.md)**: Allows the parent to easily add features like "Expand All," "Collapse All," or "Reset State" without modifying the children.
+- **[Cohesion](../../home/impact/positive/cohesion.md)**: Moves the coordination logic (e.g., "only one expanded") into the component responsible for the whole feature.
+- **[Flexibility](../../home/impact/positive/flexibility.md)**: Allows the parent to easily add features like "Expand All," "Collapse All," or "Reset State" without modifying the children.
 
 ## Exceptions
 

@@ -32,11 +32,11 @@ Locking exactly into pixel dimensions based on the designer's mockup canvas.
 }
 ```
 
-## Why
+## Impact
 
-- **[Flexibility](../../home/quality-attributes/positive/flexibility.md)**: UI components must fluidly adapt to infinite combinations of screen sizes, resolutions, and text densities.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Allows the layout engine to handle text wrapping and zooming natively, rather than requiring dozens of fragile media queries to tweak pixel numbers.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Ensures the interface does not break when user-generated content is longer than anticipated.
+- **[Flexibility](../../home/impact/positive/flexibility.md)**: UI components must fluidly adapt to infinite combinations of screen sizes, resolutions, and text densities.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Allows the layout engine to handle text wrapping and zooming natively, rather than requiring dozens of fragile media queries to tweak pixel numbers.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Ensures the interface does not break when user-generated content is longer than anticipated.
 
 ## Exceptions
 

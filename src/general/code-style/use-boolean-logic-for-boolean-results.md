@@ -38,10 +38,10 @@ if (user.age >= 18) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Reduces cognitive load by expressing logic as a direct mapping.
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: Makes it clear that the intent of the statement is to produce a boolean.
+- **[Readability](../../home/impact/positive/readability.md)**: Reduces cognitive load by expressing logic as a direct mapping.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: Makes it clear that the intent of the statement is to produce a boolean.
 
 ## Exceptions
 

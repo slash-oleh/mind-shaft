@@ -51,12 +51,12 @@ const findUsers = (params: SearchParams) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Programmatic query building is easier to read, refactor, and debug than long, interpolated strings.
-- **[DRY](../../home/quality-attributes/positive/dry.md)**: Reduces the need for repetitive SQL boilerplate for standard operations.
-- **[Flexibility](../../home/quality-attributes/positive/flexibility.md)**: Query builders make it effortless to compose complex queries from smaller, reusable parts.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Built-in parameter binding and syntax validation prevent common errors and security risks.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Programmatic query building is easier to read, refactor, and debug than long, interpolated strings.
+- **[DRY](../../home/impact/positive/dry.md)**: Reduces the need for repetitive SQL boilerplate for standard operations.
+- **[Flexibility](../../home/impact/positive/flexibility.md)**: Query builders make it effortless to compose complex queries from smaller, reusable parts.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Built-in parameter binding and syntax validation prevent common errors and security risks.
 
 ## Exceptions
 

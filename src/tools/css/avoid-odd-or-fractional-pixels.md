@@ -32,11 +32,11 @@ Using odd numbers, fractional pixels, or arbitrary measurements that don't scale
 }
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Sticking to an even, grid-based system establishes a strong visual rhythm and uniform spacing across the entire application.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Ensures borders and text look sharp and crisp across all screens, from legacy 1080p monitors to high-DPI Retina displays.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Removes the guesswork from layout decisions. Developers don't have to wonder if spacing should be `13px` or `14px`, they just use the next step on the `4px/8px` scale.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Sticking to an even, grid-based system establishes a strong visual rhythm and uniform spacing across the entire application.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Ensures borders and text look sharp and crisp across all screens, from legacy 1080p monitors to high-DPI Retina displays.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Removes the guesswork from layout decisions. Developers don't have to wonder if spacing should be `13px` or `14px`, they just use the next step on the `4px/8px` scale.
 
 ## Exceptions
 

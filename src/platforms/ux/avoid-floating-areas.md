@@ -44,11 +44,11 @@ Stacking multiple floating layers or using modals for non‑critical interaction
 </Modal>
 ```
 
-## Why
+## Impact
 
-- **[Usability](../../home/quality-attributes/positive/usability.md)**: Keeping interactions inline reduces context‑switching friction and improves task flow.
-- **[Accessibility](../../home/quality-attributes/positive/accessibility.md)**: Screen readers and keyboard navigation handle a single focus layer more reliably than nested dialogs.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Fewer modal components mean less duplicated overlay logic and fewer edge‑case bugs.
+- **[Usability](../../home/impact/positive/usability.md)**: Keeping interactions inline reduces context‑switching friction and improves task flow.
+- **[Accessibility](../../home/impact/positive/accessibility.md)**: Screen readers and keyboard navigation handle a single focus layer more reliably than nested dialogs.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Fewer modal components mean less duplicated overlay logic and fewer edge‑case bugs.
 
 ## Exceptions
 

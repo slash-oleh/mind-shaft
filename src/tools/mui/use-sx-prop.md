@@ -44,16 +44,16 @@ const useStyles = makeStyles((theme) => ({
 </div>
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Styles are co-located with the component, facilitating quick understanding of the UI structure.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Leverages the theme system, making it easy to perform global style updates.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures that components use the same spacing and color tokens defined in the project theme.
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: Dynamic styles are handled directly within the component's render logic, making the intent clear.
+- **[Readability](../../home/impact/positive/readability.md)**: Styles are co-located with the component, facilitating quick understanding of the UI structure.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Leverages the theme system, making it easy to perform global style updates.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures that components use the same spacing and color tokens defined in the project theme.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: Dynamic styles are handled directly within the component's render logic, making the intent clear.
 
 ## Exceptions
 
-- **Complex Reusable Components**: If a specific set of styles is reused across many instances, a custom `styled` component might be better for [Encapsulation](../../home/quality-attributes/positive/encapsulation.md).
+- **Complex Reusable Components**: If a specific set of styles is reused across many instances, a custom `styled` component might be better for [Encapsulation](../../home/impact/positive/encapsulation.md).
 - **Performance-Critical Lists**: In extremely large lists (thousands of items), the runtime overhead of `sx` might be measurable, and standard CSS or `styled` components might be preferred.
 
 ## References

@@ -31,9 +31,9 @@ const userInput = '"/><img src=x onerror="alert(1)';
 container.innerHTML += `<input value="${userInput}"/>`; // Executes the malicious payload
 ```
 
-## Why
+## Impact
 
-- **[Security](../../home/quality-attributes/positive/security.md)**: Protects users from script injection attacks and ensures the integrity of the application's UI.
+- **[Security](../../home/impact/positive/security.md)**: Protects users from script injection attacks and ensures the integrity of the application's UI.
 
 ## Exceptions
 

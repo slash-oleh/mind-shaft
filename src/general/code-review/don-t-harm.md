@@ -22,11 +22,11 @@ Ignoring existing issues or introducing new ones because "it's just a small chan
 - Introducing a temporary hack that soon becomes permanent.
 - Reviewing code with a purely negative mindset, focusing only on what's "wrong" without offering a better alternative.
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Prevents the gradual degradation of code quality.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Small improvements often prevent large, future bugs from manifesting.
-- **[Human Factor](../../home/quality-attributes/negative/human-factor.md)**: Fosters a culture of shared ownership and pride in the work.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Prevents the gradual degradation of code quality.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Small improvements often prevent large, future bugs from manifesting.
+- **[Human Factor](../../home/impact/negative/human-factor.md)**: Fosters a culture of shared ownership and pride in the work.
 
 ## Exceptions
 

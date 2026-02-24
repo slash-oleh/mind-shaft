@@ -34,10 +34,10 @@ git pull
 # Resulting log: "Merge branch 'main' of github.com:org/repo"
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: A linear history is significantly easier to audit and follow than one filled with merge noise.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures the entire team maintains a uniform standard for how local and remote histories are integrated.
+- **[Readability](../../home/impact/positive/readability.md)**: A linear history is significantly easier to audit and follow than one filled with merge noise.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures the entire team maintains a uniform standard for how local and remote histories are integrated.
 
 ## Exceptions
 

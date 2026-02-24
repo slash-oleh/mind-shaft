@@ -48,11 +48,11 @@ if (result !== 0) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Prevents accidental execution of the success path when an error occurs.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Separates the "happy path" from error handling logic, making the code cleaner.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Exceptions naturally bubble up the stack, allowing for centralized error handling and rich debugging information.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Prevents accidental execution of the success path when an error occurs.
+- **[Readability](../../home/impact/positive/readability.md)**: Separates the "happy path" from error handling logic, making the code cleaner.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Exceptions naturally bubble up the stack, allowing for centralized error handling and rich debugging information.
 
 ## Exceptions
 

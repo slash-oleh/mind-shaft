@@ -39,12 +39,12 @@ src/
       UserProfile.tsx
 ```
 
-## Why
+## Impact
 
-- **[Cohesion](../../home/quality-attributes/positive/cohesion.md)**: Ensures related logic stays together, making the module's purpose clear.
-- **[Encapsulation](../../home/quality-attributes/positive/encapsulation.md)**: Prevents internal feature details from leaking into the global project structure.
-- **[Coupling](../../home/quality-attributes/negative/coupling.md)**: Reduces the number of components that depend on a single, oversized module.
-- **[God Object](../../home/quality-attributes/negative/god-object.md)**: Prevents the creation of untestable, monolithic modules that handle too many responsibilities.
+- **[Cohesion](../../home/impact/positive/cohesion.md)**: Ensures related logic stays together, making the module's purpose clear.
+- **[Encapsulation](../../home/impact/positive/encapsulation.md)**: Prevents internal feature details from leaking into the global project structure.
+- **[Coupling](../../home/impact/negative/coupling.md)**: Reduces the number of components that depend on a single, oversized module.
+- **[God Object](../../home/impact/negative/god-object.md)**: Prevents the creation of untestable, monolithic modules that handle too many responsibilities.
 
 ## Exceptions
 

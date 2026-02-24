@@ -40,11 +40,11 @@ user/
   user.types.ts
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Developers can quickly find specific types of files by navigating to the appropriate subdirectory.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Follows a predictable pattern across all feature modules in the codebase.
-- **[Cohesion](../../home/quality-attributes/positive/cohesion.md)**: Keeps the internal structure of the module organized and logical.
+- **[Readability](../../home/impact/positive/readability.md)**: Developers can quickly find specific types of files by navigating to the appropriate subdirectory.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Follows a predictable pattern across all feature modules in the codebase.
+- **[Cohesion](../../home/impact/positive/cohesion.md)**: Keeps the internal structure of the module organized and logical.
 
 ## Exceptions
 

@@ -59,11 +59,11 @@ function Button({ children }) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: A global theme allows you to re-skin an entire application, introduce dark mode, or adjust spacing scales by modifying a single root file.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Developers are restricted to a defined palette of choices, ensuring identical visual rhythms and colors across all pages.
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: A variable name like `theme.colors.danger` clearly expresses its behavioral intent, whereas a raw hex code like `#E74C3C` tells you what it is but not what it *means*.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: A global theme allows you to re-skin an entire application, introduce dark mode, or adjust spacing scales by modifying a single root file.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Developers are restricted to a defined palette of choices, ensuring identical visual rhythms and colors across all pages.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: A variable name like `theme.colors.danger` clearly expresses its behavioral intent, whereas a raw hex code like `#E74C3C` tells you what it is but not what it *means*.
 
 ## Exceptions
 

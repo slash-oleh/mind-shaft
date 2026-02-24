@@ -28,10 +28,10 @@ if (notActive) { ... }
 if (!isInvalid) { ... }
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Positive naming makes conditional logic more natural and easier to read.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Reduces the risk of "negation bugs" where a developer misinterprets an inverted boolean.
+- **[Readability](../../home/impact/positive/readability.md)**: Positive naming makes conditional logic more natural and easier to read.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Reduces the risk of "negation bugs" where a developer misinterprets an inverted boolean.
 
 ## Exceptions
 

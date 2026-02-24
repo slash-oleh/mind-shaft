@@ -46,11 +46,11 @@ function CustomButton({ ...restProps }) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Adheres to the standard expectation that React components can be styled and extended by their parents.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Allows the design system to evolve without breaking consumers who need small visual or behavioral tweaks.
-- **[Reusability](../../home/quality-attributes/positive/reusability.md)**: A single component can serve many contexts when it correctly supports prop merging.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Adheres to the standard expectation that React components can be styled and extended by their parents.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Allows the design system to evolve without breaking consumers who need small visual or behavioral tweaks.
+- **[Reusability](../../home/impact/positive/reusability.md)**: A single component can serve many contexts when it correctly supports prop merging.
 
 ## Exceptions
 

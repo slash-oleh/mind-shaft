@@ -36,10 +36,10 @@ while (currentStep !== lastStep) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Robustness](../../home/quality-attributes/positive/reliability.md)**: Ensures the system remains stable and predictable even under edge cases or unexpected data.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Makes code less sensitive to future changes in increment logic.
+- **[Robustness](../../home/impact/positive/reliability.md)**: Ensures the system remains stable and predictable even under edge cases or unexpected data.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Makes code less sensitive to future changes in increment logic.
 
 ## Exceptions
 

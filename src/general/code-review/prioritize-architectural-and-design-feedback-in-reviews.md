@@ -26,9 +26,9 @@ Submitting feedback piecemeal or focusing on minor details before the big pictur
 - Commenting on variable names while the entire function's logic is fundamentally incorrect.
 - Requesting minor style changes that will be deleted anyway when the author implements a suggested refactor.
 
-## Why
+## Impact
 
-- **[Human Factor](../../home/quality-attributes/negative/human-factor.md)**: Reduces developer frustration by providing logical, structured feedback.
+- **[Human Factor](../../home/impact/negative/human-factor.md)**: Reduces developer frustration by providing logical, structured feedback.
 
 ## Exceptions
 

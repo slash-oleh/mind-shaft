@@ -36,10 +36,10 @@ it('works correctly', () => { ... });
 it('calculateTotal', () => { ... });
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Test reports become a readable list of business requirements.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Makes it easier to identify which specific requirement is broken when a test fails.
+- **[Readability](../../home/impact/positive/readability.md)**: Test reports become a readable list of business requirements.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Makes it easier to identify which specific requirement is broken when a test fails.
 
 ## Exceptions
 

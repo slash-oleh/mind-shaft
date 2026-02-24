@@ -38,10 +38,10 @@ const fetchLatestURL = '...';
 const myHTMLURLIsConfusing = '...'; // Is it HTML + URL or HTMLUR + L?
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Consistent casing and regularized acronyms allow developers to quickly parse word boundaries and identify the nature of an identifier.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures the codebase follows a single, professional aesthetic and avoids ambiguity in acronym-rich names.
+- **[Readability](../../home/impact/positive/readability.md)**: Consistent casing and regularized acronyms allow developers to quickly parse word boundaries and identify the nature of an identifier.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures the codebase follows a single, professional aesthetic and avoids ambiguity in acronym-rich names.
 
 ## Exceptions
 

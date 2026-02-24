@@ -48,11 +48,11 @@ function ShoppingCart({ items }) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: A single source of truth guarantees that calculations are always perfectly in sync with the source data.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Eliminating redundant `useState` and `useEffect` hooks makes the component much easier to read and test.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Refactoring becomes safer when you don't have to worry about updating manual synchronization logic.
+- **[Consistency](../../home/impact/positive/consistency.md)**: A single source of truth guarantees that calculations are always perfectly in sync with the source data.
+- **[KISS](../../home/impact/positive/kiss.md)**: Eliminating redundant `useState` and `useEffect` hooks makes the component much easier to read and test.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Refactoring becomes safer when you don't have to worry about updating manual synchronization logic.
 
 ## Exceptions
 

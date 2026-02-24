@@ -34,11 +34,11 @@ const date = "05/04/24 2:30 PM"; // Is it May 4th or April 5th? Which timezone?
 const duration = "11:30"
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Provides a single, unambiguous way to represent time and duration across the entire system.
-- **[Portability](../../home/quality-attributes/positive/portability.md)**: Ensures that data can be correctly parsed by any platform, language, or database without custom logic.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Includes explicit timezone offsets and standardized duration patterns, preventing "off-by-one" errors or unit misinterpretations.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Provides a single, unambiguous way to represent time and duration across the entire system.
+- **[Portability](../../home/impact/positive/portability.md)**: Ensures that data can be correctly parsed by any platform, language, or database without custom logic.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Includes explicit timezone offsets and standardized duration patterns, preventing "off-by-one" errors or unit misinterpretations.
 
 ## Exceptions
 

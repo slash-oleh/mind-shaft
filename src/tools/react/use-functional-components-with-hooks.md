@@ -55,11 +55,11 @@ class UserStatus extends React.Component {
 }
 ```
 
-## Why
+## Impact
 
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Functional components are just functions. They eliminate the confusion of `this` and the boilerplate of classes.
-- **[Cohesion](../../home/quality-attributes/positive/cohesion.md)**: Hooks allow you to group related code by what it's doing (e.g., a subscription) rather than when it's happening (lifecycle).
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Resulting code is shorter and follows a more declarative pattern.
+- **[KISS](../../home/impact/positive/kiss.md)**: Functional components are just functions. They eliminate the confusion of `this` and the boilerplate of classes.
+- **[Cohesion](../../home/impact/positive/cohesion.md)**: Hooks allow you to group related code by what it's doing (e.g., a subscription) rather than when it's happening (lifecycle).
+- **[Readability](../../home/impact/positive/readability.md)**: Resulting code is shorter and follows a more declarative pattern.
 
 ## Exceptions
 

@@ -56,11 +56,11 @@ Nesting a button inside a link or another interactive element.
 </ListItem>
 ```
 
-## Why
+## Impact
 
-- **[Usability](../../home/quality-attributes/positive/usability.md)**: Users should never have to guess which element will respond to their click. Clear separation reduces cognitive load and prevents errors.
-- **[Accessibility](../../home/quality-attributes/positive/accessibility.md)**: Nested interactive elements confuse screen readers and keyboard navigation. A user tabbing through the page might activate the outer element (e.g., navigate away) when they intended to activate the inner one (e.g., delete an item).
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: The interface should clearly communicate the boundaries of interactive regions. Nesting blurs these boundaries.
+- **[Usability](../../home/impact/positive/usability.md)**: Users should never have to guess which element will respond to their click. Clear separation reduces cognitive load and prevents errors.
+- **[Accessibility](../../home/impact/positive/accessibility.md)**: Nested interactive elements confuse screen readers and keyboard navigation. A user tabbing through the page might activate the outer element (e.g., navigate away) when they intended to activate the inner one (e.g., delete an item).
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: The interface should clearly communicate the boundaries of interactive regions. Nesting blurs these boundaries.
 
 ## Exceptions
 

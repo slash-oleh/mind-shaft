@@ -39,12 +39,12 @@ user_group: # Bad: generic mechanical name
   group_id
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Developers can understand the purpose of the table and the relationship it represents at a glance.
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: The domain model is reflected more accurately in the database schema.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: It is easier to add relationship-specific columns (like `joined_at` or `role`) to a table that represents a meaningful entity.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Encourages thinking about data in terms of domain entities rather than just technical links.
+- **[Readability](../../home/impact/positive/readability.md)**: Developers can understand the purpose of the table and the relationship it represents at a glance.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: The domain model is reflected more accurately in the database schema.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: It is easier to add relationship-specific columns (like `joined_at` or `role`) to a table that represents a meaningful entity.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Encourages thinking about data in terms of domain entities rather than just technical links.
 
 ## Exceptions
 

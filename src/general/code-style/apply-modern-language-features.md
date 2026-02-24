@@ -38,10 +38,10 @@ function getUsername(userId) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Modern syntax is often more declarative and significantly reduces "syntactic noise."
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Features like optional chaining reduce the likelihood of `undefined` or `null` errors.
+- **[Readability](../../home/impact/positive/readability.md)**: Modern syntax is often more declarative and significantly reduces "syntactic noise."
+- **[Reliability](../../home/impact/positive/reliability.md)**: Features like optional chaining reduce the likelihood of `undefined` or `null` errors.
 
 ## Exceptions
 

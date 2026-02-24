@@ -49,12 +49,12 @@ class UserHandler extends BaseHandler {
 }
 ```
 
-## Why
+## Impact
 
-- **[Flexibility](../../home/quality-attributes/positive/flexibility.md)**: Composed objects can be easily reconfigured or replaced without breaking the inheritance chain.
-- **[Reusability](../../home/quality-attributes/positive/reusability.md)**: Small, focused components can be reused across different parts of the application more easily than base classes.
-- **[Testability](../../home/quality-attributes/positive/testability.md)**: Independent components are easier to unit test and mock.
-- **[Coupling](../../home/quality-attributes/negative/coupling.md)**: Reduces tight coupling between classes, making the system more resilient to changes.
+- **[Flexibility](../../home/impact/positive/flexibility.md)**: Composed objects can be easily reconfigured or replaced without breaking the inheritance chain.
+- **[Reusability](../../home/impact/positive/reusability.md)**: Small, focused components can be reused across different parts of the application more easily than base classes.
+- **[Testability](../../home/impact/positive/testability.md)**: Independent components are easier to unit test and mock.
+- **[Coupling](../../home/impact/negative/coupling.md)**: Reduces tight coupling between classes, making the system more resilient to changes.
 
 ## Exceptions
 

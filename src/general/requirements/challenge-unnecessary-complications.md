@@ -21,10 +21,10 @@ Focus on the *what* and the *why* before committing to the *how*. When faced wit
 
 Implementing complex architectural or technical requirements without questioning their necessity or exploring simpler ways to achieve the same objective.
 
-## Why
+## Impact
 
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Reduces the amount of code to write and maintain.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Simpler systems are easier to understand, test, and evolve.
+- **[KISS](../../home/impact/positive/kiss.md)**: Reduces the amount of code to write and maintain.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Simpler systems are easier to understand, test, and evolve.
 
 ## Exceptions
 

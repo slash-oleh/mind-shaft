@@ -28,11 +28,11 @@ ALTER TABLE "user"
 ALTER COLUMN active SET DEFAULT true;
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Changing a hardcoded value in the application code is significantly easier and safer than performing a database schema migration.
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: Developers can see the default values immediately when inspecting the domain models in the codebase.
-- **[Cohesion](../../home/quality-attributes/positive/cohesion.md)**: Business rules regarding default states are kept closely aligned within the domain layer, rather than leaking into the database infrastructure layer.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Changing a hardcoded value in the application code is significantly easier and safer than performing a database schema migration.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: Developers can see the default values immediately when inspecting the domain models in the codebase.
+- **[Cohesion](../../home/impact/positive/cohesion.md)**: Business rules regarding default states are kept closely aligned within the domain layer, rather than leaking into the database infrastructure layer.
 
 ## Exceptions
 

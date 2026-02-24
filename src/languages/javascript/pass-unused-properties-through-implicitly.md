@@ -36,12 +36,12 @@ validate(email, password);
 signUp(email, password, { firstName, ...restInfo });
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Adding new properties to the source object doesn't require updates to forwarding logic.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Reduces visual noise by hiding properties that aren't relevant to the current scope.
-- **[Coupling](../../home/quality-attributes/negative/coupling.md)**: Reduces the dependency of the intermediate code on the full structure of the data object.
-- **[Size/Code Amount](../../home/quality-attributes/negative/size-code-amount.md)**: Less code to write and maintain.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Adding new properties to the source object doesn't require updates to forwarding logic.
+- **[Readability](../../home/impact/positive/readability.md)**: Reduces visual noise by hiding properties that aren't relevant to the current scope.
+- **[Coupling](../../home/impact/negative/coupling.md)**: Reduces the dependency of the intermediate code on the full structure of the data object.
+- **[Size/Code Amount](../../home/impact/negative/size-code-amount.md)**: Less code to write and maintain.
 
 ## Exceptions
 

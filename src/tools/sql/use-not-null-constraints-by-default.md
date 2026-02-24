@@ -34,12 +34,12 @@ user:
 
 This forces every consumer of this data to implement special handling for `null` values, increasing the risk of "Cannot read property of null" errors.
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures a single way to represent empty or missing data for a given field.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Reduces branching logic and boilerplate code in both frontend and backend.
-- **[Integrity](../../home/quality-attributes/positive/integrity.md)**: Prevents the accidental insertion of "missing" states into required fields.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Makes the application more resilient to common null-pointer exceptions.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures a single way to represent empty or missing data for a given field.
+- **[KISS](../../home/impact/positive/kiss.md)**: Reduces branching logic and boilerplate code in both frontend and backend.
+- **[Integrity](../../home/impact/positive/integrity.md)**: Prevents the accidental insertion of "missing" states into required fields.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Makes the application more resilient to common null-pointer exceptions.
 
 ## Exceptions
 

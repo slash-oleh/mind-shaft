@@ -40,10 +40,10 @@ def addUser(user):
     activeUsers.append(user)
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Standard patterns allow the brain to filter out boilerplate and focus on business logic.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Simplifies onboarding and reduces stylistic friction in code reviews.
+- **[Readability](../../home/impact/positive/readability.md)**: Standard patterns allow the brain to filter out boilerplate and focus on business logic.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Simplifies onboarding and reduces stylistic friction in code reviews.
 
 ## Exceptions
 

@@ -44,9 +44,9 @@ it('should generate a reset token', async ({ page }) => {
 });
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Tests remain valid through internal refactorings as long as the public API/UI doesn't change.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Tests remain valid through internal refactorings as long as the public API/UI doesn't change.
 
 ## Exceptions
 

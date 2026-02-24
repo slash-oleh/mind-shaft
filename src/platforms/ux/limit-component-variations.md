@@ -39,11 +39,11 @@ Creating one-off components or ad-hoc variants for every minor design tweak in a
 <ProductDisplayCard />
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: A uniform set of components makes the application feel cohesive and predictable for the user.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Reducing the number of unique components significantly lowers the long-term maintenance burden and build size.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: A streamlined design system is easier for new developers to understand and use correctly.
+- **[Consistency](../../home/impact/positive/consistency.md)**: A uniform set of components makes the application feel cohesive and predictable for the user.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Reducing the number of unique components significantly lowers the long-term maintenance burden and build size.
+- **[KISS](../../home/impact/positive/kiss.md)**: A streamlined design system is easier for new developers to understand and use correctly.
 
 ## Exceptions
 

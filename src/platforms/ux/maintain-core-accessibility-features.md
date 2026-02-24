@@ -66,12 +66,12 @@ button:focus {
 }
 ```
 
-## Why
+## Impact
 
-- **[Accessibility](../../home/quality-attributes/positive/accessibility.md)**: Ensures the product is usable by the widest possible audience, regardless of ability or device.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Semantic HTML provides a more resilient foundation that works better across different browsers and devices.
-- **[UX](../../home/quality-attributes/positive/readability.md)**: Features like visible focus states and zoom support improve the experience for *all* users, not just those with disabilities.
-- **[Portability](../../home/quality-attributes/positive/portability.md)**: Standards-compliant applications are more likely to work correctly on future platforms and assistive tools.
+- **[Accessibility](../../home/impact/positive/accessibility.md)**: Ensures the product is usable by the widest possible audience, regardless of ability or device.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Semantic HTML provides a more resilient foundation that works better across different browsers and devices.
+- **[UX](../../home/impact/positive/readability.md)**: Features like visible focus states and zoom support improve the experience for *all* users, not just those with disabilities.
+- **[Portability](../../home/impact/positive/portability.md)**: Standards-compliant applications are more likely to work correctly on future platforms and assistive tools.
 
 ## Exceptions
 

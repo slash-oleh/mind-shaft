@@ -43,10 +43,10 @@ function SearchComponent({ id }) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Ensures the application can be safely persisted to storage or hydrated from a server-rendered string.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Maintains a clear conceptual boundary between "data" (the state) and "logic" (the functions that operate on it).
+- **[Robustness](../../home/impact/positive/robustness.md)**: Ensures the application can be safely persisted to storage or hydrated from a server-rendered string.
+- **[KISS](../../home/impact/positive/kiss.md)**: Maintains a clear conceptual boundary between "data" (the state) and "logic" (the functions that operate on it).
 
 ## Exceptions
 

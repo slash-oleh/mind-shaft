@@ -42,10 +42,10 @@ const processUser = (user: User) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: The "happy path" is prioritized and easy to follow.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Flat code is much easier to refactor, test, and reason about.
+- **[Readability](../../home/impact/positive/readability.md)**: The "happy path" is prioritized and easy to follow.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Flat code is much easier to refactor, test, and reason about.
 
 ## Exceptions
 

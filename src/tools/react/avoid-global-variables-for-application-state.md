@@ -50,9 +50,9 @@ export const Counter = () => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Essential for stable Server-Side Rendering and reliable unit testing.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Essential for stable Server-Side Rendering and reliable unit testing.
 
 ## Exceptions
 

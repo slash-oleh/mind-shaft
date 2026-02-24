@@ -40,12 +40,12 @@ Serving raw, original assets directly from a camera or design tool without proce
 <!-- This file might be 5MB and 5000px wide, even if displayed at 200px. -->
 ```
 
-## Why
+## Impact
 
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Speeding up page load by reducing the number of bytes transferred.
-- **[Size/Code Amount](../../home/quality-attributes/negative/size-code-amount.md)**: Directly reduces the payload size of the application.
-- **[User Experience](../../home/quality-attributes/positive/readability.md)**: Faster visual rendering and less data usage, especially critical for mobile users.
-- **[Scalability](../../home/quality-attributes/positive/scalability.md)**: Reduces CDN egress costs and server load.
+- **[Performance](../../home/impact/positive/performance.md)**: Speeding up page load by reducing the number of bytes transferred.
+- **[Size/Code Amount](../../home/impact/negative/size-code-amount.md)**: Directly reduces the payload size of the application.
+- **[User Experience](../../home/impact/positive/readability.md)**: Faster visual rendering and less data usage, especially critical for mobile users.
+- **[Scalability](../../home/impact/positive/scalability.md)**: Reduces CDN egress costs and server load.
 
 ## Exceptions
 

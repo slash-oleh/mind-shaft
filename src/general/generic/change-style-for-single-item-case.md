@@ -43,11 +43,11 @@ const emptyObject = () => { return {}; };
 interface A extends B {}
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Minimizing boilerplate allows the reader to focus on the actual logic.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Simpler code is easier to refactor, move, or delete.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Reduces the number of ways a simple task can be accomplished, leading to more uniform code.
+- **[Readability](../../home/impact/positive/readability.md)**: Minimizing boilerplate allows the reader to focus on the actual logic.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Simpler code is easier to refactor, move, or delete.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Reduces the number of ways a simple task can be accomplished, leading to more uniform code.
 
 ## Exceptions
 

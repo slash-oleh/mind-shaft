@@ -38,11 +38,11 @@ const printProfile = (user) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Context Deduplication](../../home/quality-attributes/positive/context-deduplication.md)**: Removes redundant repetitions of the source object name.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Clearly states which properties are used at the top of the scope or in the signature.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Makes refactoring easier as you only need to change the property name in one place (the destructuring assignment).
+- **[Context Deduplication](../../home/impact/positive/context-deduplication.md)**: Removes redundant repetitions of the source object name.
+- **[Readability](../../home/impact/positive/readability.md)**: Clearly states which properties are used at the top of the scope or in the signature.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Makes refactoring easier as you only need to change the property name in one place (the destructuring assignment).
 
 ## Exceptions
 

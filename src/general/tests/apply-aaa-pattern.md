@@ -45,11 +45,11 @@ it('should calculate total', () => {
 });
 ```
 
-## Why
+## Impact
 
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Standard structure allows developers to quickly scan and understand any test.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Makes it easier to update setup logic or assertions without breaking the clarity of the test.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Follows a universally recognized testing standard.
+- **[Readability](../../home/impact/positive/readability.md)**: Standard structure allows developers to quickly scan and understand any test.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Makes it easier to update setup logic or assertions without breaking the clarity of the test.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Follows a universally recognized testing standard.
 
 ## Exceptions
 

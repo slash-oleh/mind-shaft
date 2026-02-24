@@ -51,11 +51,11 @@ if (result === NaN) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Prevents subtle bugs in financial calculations and large-scale data processing.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures predictable behavior across different environments and data ranges.
-- **[Integrity](../../home/quality-attributes/positive/integrity.md)**: Protects data accuracy when dealing with high-precision requirements.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Prevents subtle bugs in financial calculations and large-scale data processing.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures predictable behavior across different environments and data ranges.
+- **[Integrity](../../home/impact/positive/integrity.md)**: Protects data accuracy when dealing with high-precision requirements.
 
 ## Exceptions
 

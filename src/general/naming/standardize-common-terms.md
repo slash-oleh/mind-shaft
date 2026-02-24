@@ -71,10 +71,10 @@ if (checkExpired(user)) {
 distinguishAnomaly(data);
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Establishes a shared, predictable vocabulary for the entire team.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Reduces the time spent decrypting intent and makes the code feel cohesive.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Establishes a shared, predictable vocabulary for the entire team.
+- **[Readability](../../home/impact/positive/readability.md)**: Reduces the time spent decrypting intent and makes the code feel cohesive.
 
 ## Exceptions
 

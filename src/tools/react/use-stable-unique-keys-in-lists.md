@@ -52,11 +52,11 @@ function TodoList({ items }) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Stable keys allow React to reuse existing DOM nodes instead of destroying and recreating them.
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Ensures that local component state (like text in an input) remains attached to the correct data item even as the list moves.
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Prevents visual glitches and ensures transitions work as expected during list modifications.
+- **[Performance](../../home/impact/positive/performance.md)**: Stable keys allow React to reuse existing DOM nodes instead of destroying and recreating them.
+- **[Robustness](../../home/impact/positive/robustness.md)**: Ensures that local component state (like text in an input) remains attached to the correct data item even as the list moves.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Prevents visual glitches and ensures transitions work as expected during list modifications.
 
 ## Exceptions
 

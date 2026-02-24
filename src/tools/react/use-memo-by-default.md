@@ -40,10 +40,10 @@ export const UserCard = ({ name, role }: UserCardProps) => {
 };
 ```
 
-## Why
+## Impact
 
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Prevents redundant virtual DOM diffing and execution logic across the entire tree.
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: Removes the "vague and subjective" decision-making process of when to optimize. A consistent rule is easier to follow than ad-hoc measurements.
+- **[Performance](../../home/impact/positive/performance.md)**: Prevents redundant virtual DOM diffing and execution logic across the entire tree.
+- **[KISS](../../home/impact/positive/kiss.md)**: Removes the "vague and subjective" decision-making process of when to optimize. A consistent rule is easier to follow than ad-hoc measurements.
 
 ## Exceptions
 

@@ -48,11 +48,11 @@ function Tooltip({ children }) {
 }
 ```
 
-## Why
+## Impact
 
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Centralizing layers ensures you can insert a new global stacking context (e.g. a global notification banner) between two existing layers without adjusting dozens of arbitrary numbers scattered across files.
-- **[Explicitness](../../home/quality-attributes/positive/explicitness.md)**: Using aliases (`Z_INDEX.modal`) clearly communicates the visual geometric intent of the element, rather than a raw, meaningless integer (`10000`).
-- **[Robustness](../../home/quality-attributes/positive/robustness.md)**: Completely prevents the "z-index arms race" where developers continually escalate values to out-compete each other.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Centralizing layers ensures you can insert a new global stacking context (e.g. a global notification banner) between two existing layers without adjusting dozens of arbitrary numbers scattered across files.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: Using aliases (`Z_INDEX.modal`) clearly communicates the visual geometric intent of the element, rather than a raw, meaningless integer (`10000`).
+- **[Robustness](../../home/impact/positive/robustness.md)**: Completely prevents the "z-index arms race" where developers continually escalate values to out-compete each other.
 
 ## Exceptions
 

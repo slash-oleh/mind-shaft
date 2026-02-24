@@ -56,12 +56,12 @@ user/
   SignUpForm.tsx
 ```
 
-## Why
+## Impact
 
-- **[Coupling](../../home/quality-attributes/negative/coupling.md)**: Logic and UI can evolve independently.
-- **[Testability](../../home/quality-attributes/positive/testability.md)**: Business logic can be unit-tested without a browser or DOM simulation.
-- **[Reusability](../../home/quality-attributes/positive/reusability.md)**: Headless logic can be reused across different UI components or platforms.
-- **[Readability](../../home/quality-attributes/positive/readability.md)**: Technical role separation makes it easy to locate specific types of code.
+- **[Coupling](../../home/impact/negative/coupling.md)**: Logic and UI can evolve independently.
+- **[Testability](../../home/impact/positive/testability.md)**: Business logic can be unit-tested without a browser or DOM simulation.
+- **[Reusability](../../home/impact/positive/reusability.md)**: Headless logic can be reused across different UI components or platforms.
+- **[Readability](../../home/impact/positive/readability.md)**: Technical role separation makes it easy to locate specific types of code.
 
 ## Exceptions
 

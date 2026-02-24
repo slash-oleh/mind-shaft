@@ -41,11 +41,11 @@ Applying different colors to various labels, icons, and backgrounds without a cl
 </Card>
 ```
 
-## Why
+## Impact
 
-- **[KISS](../../home/quality-attributes/positive/kiss.md)**: A limited palette is easier to maintain and results in a cleaner, more focused UI.
-- **[Usability](../../home/quality-attributes/positive/usability.md)**: Reserved colors (like red for errors) are more effective when the rest of the interface is neutral.
-- **[Accessibility](../../home/quality-attributes/positive/accessibility.md)**: Fewer colors reduce the chance of poor contrast ratios and make the interface easier to interpret for users with color vision deficiencies.
+- **[KISS](../../home/impact/positive/kiss.md)**: A limited palette is easier to maintain and results in a cleaner, more focused UI.
+- **[Usability](../../home/impact/positive/usability.md)**: Reserved colors (like red for errors) are more effective when the rest of the interface is neutral.
+- **[Accessibility](../../home/impact/positive/accessibility.md)**: Fewer colors reduce the chance of poor contrast ratios and make the interface easier to interpret for users with color vision deficiencies.
 
 ## Exceptions
 

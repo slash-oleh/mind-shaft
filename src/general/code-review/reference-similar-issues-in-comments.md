@@ -32,9 +32,9 @@ Reviewer: "We should use explicit typed imports here... [Long explanation]"
 // (Repeat 10 more times throughout the PR)
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Ensures a single, authoritative source for the feedback.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Ensures a single, authoritative source for the feedback.
 
 ## Exceptions
 

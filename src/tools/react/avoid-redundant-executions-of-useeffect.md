@@ -42,10 +42,10 @@ useEffect(() => {
 }, [url, theme]); // Redundant log every time the theme is toggled!
 ```
 
-## Why
+## Impact
 
-- **[Performance](../../home/quality-attributes/positive/performance.md)**: Prevents expensive or rate-limited side effects from firing unnecessarily.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Clearly separates the *reason* an effect runs from the *data* it needs to perform its task.
+- **[Performance](../../home/impact/positive/performance.md)**: Prevents expensive or rate-limited side effects from firing unnecessarily.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Clearly separates the *reason* an effect runs from the *data* it needs to perform its task.
 
 ## Exceptions
 

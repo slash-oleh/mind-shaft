@@ -41,11 +41,11 @@ git tag -a v1.2 -m "New version"
 git tag -a v2024-05-20 -m "Release by date"
 ```
 
-## Why
+## Impact
 
-- **[Consistency](../../home/quality-attributes/positive/consistency.md)**: Provides a uniform language for communicating the scope of changes to both humans and machines.
-- **[Maintainability](../../home/quality-attributes/positive/maintainability.md)**: Allows for automated dependency management (e.g., using `^` or `~` in `package.json`) that can safely pull updates without breaking the project.
-- **[Reliability](../../home/quality-attributes/positive/reliability.md)**: Reduces the risk of accidental deployment of breaking changes by clearly marking them with a major version bump.
+- **[Consistency](../../home/impact/positive/consistency.md)**: Provides a uniform language for communicating the scope of changes to both humans and machines.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Allows for automated dependency management (e.g., using `^` or `~` in `package.json`) that can safely pull updates without breaking the project.
+- **[Reliability](../../home/impact/positive/reliability.md)**: Reduces the risk of accidental deployment of breaking changes by clearly marking them with a major version bump.
 
 ## Exceptions
 
