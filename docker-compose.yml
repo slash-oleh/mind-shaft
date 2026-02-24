@@ -1,0 +1,21 @@
+services:
+  zensical:
+    image: zensical/zensical:latest
+    ports:
+      - "8005:8000"
+    volumes:
+      - ./:/docs
+
+  lint:
+    image: node:20-slim
+    volumes:
+      - ./:/work
+    working_dir: /work
+    command: sh -c "npm install && npm run lint"
+
+  generate-toc:
+    image: node:20-slim
+    volumes:
+      - ./:/work
+    working_dir: /work
+    command: sh -c "npm install && npm run generate-toc"

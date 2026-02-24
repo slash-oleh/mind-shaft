@@ -1,0 +1,29 @@
+{
+  "name": "dev-rules",
+  "version": "1.0.0",
+  "description": "This repository contains development best practices.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "remark src README.md --no-stdout --quiet",
+    "lint:fix": "remark src README.md --no-stdout --quiet -o",
+    "generate-toc": "node tools/generate-toc.js",
+    "generate-antigravity-rules": "node tools/generate-antigravity-rules.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "mdast-util-to-string": "^4.0.0",
+    "remark-cli": "^12.0.1",
+    "remark-lint": "^10.0.1",
+    "remark-lint-heading-style": "^4.0.1",
+    "remark-lint-list-item-spacing": "^5.0.1",
+    "remark-lint-no-consecutive-blank-lines": "^5.0.1",
+    "remark-lint-no-missing-blank-lines": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-preset-lint-recommended": "^7.0.1",
+    "remark-stringify": "^11.0.0",
+    "unist-util-visit": "^5.1.0"
+  }
+}

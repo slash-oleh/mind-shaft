@@ -1,0 +1,41 @@
+[project]
+docs_dir="src"
+site_name="BP"
+
+#nav = [
+#  {"Home" = [
+#    "README.md",
+##    {"Articles" = "articles/README.md"},
+##    {"Quality Attributes" = "quality-attributes/README.md"}
+#  ]},
+#  {"Home" = [
+#    "articles/README.md",
+#  ]},
+#  {"QA" = [
+#    "quality-attributes/README.md",
+#  ]}
+#]
+
+[project.theme]
+features = [
+  "navigation.tabs",
+  "navigation.tabs.sticky",
+  "navigation.sections",
+#  "navigation.indexes",
+  "navigation.top",
+  "navigation.prune"
+]
+
+[project.markdown_extensions.abbr]
+
+[project.markdown_extensions.admonition]
+
+# Code blocks
+# https://zensical.org/docs/authoring/code-blocks/#configuration
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.snippets]
+[project.markdown_extensions.pymdownx.superfences]
