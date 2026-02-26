@@ -5,11 +5,11 @@ description: Refines or completes an article by following the template and contr
 
 # Refine Article Skill
 
-The goal is to complete an article,
+The goal is to complete an article.
 
 ## Current state
 
-The article can be
+The article in its current state can be:
 
 - Empty (only filename or only h1 title)
 - A draft with just thoughts and ideas, often as bullet points and random code snippets
