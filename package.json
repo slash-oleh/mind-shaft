@@ -2,12 +2,13 @@
   "name": "dev-rules",
   "version": "1.0.0",
   "description": "This repository contains development best practices.",
+  "repository": "https://github.com/insolite/dev-rules",
   "main": "index.js",
   "scripts": {
     "lint": "remark src README.md --no-stdout --quiet",
     "lint:fix": "remark src README.md --no-stdout --quiet -o",
-    "generate-toc": "node tools/generate-toc.js",
-    "generate-antigravity-rules": "node tools/generate-antigravity-rules.js"
+    "generate:toc": "node tools/generate-toc.js",
+    "generate:ai-rules": "node tools/generate-ai-rules.js"
   },
   "keywords": [],
   "author": "",
