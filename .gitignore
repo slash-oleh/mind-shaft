@@ -77,3 +77,12 @@ src/common/vendor/*
 
 # NodeJS dependencies
 node_modules/
+
+# AI agent-specific folders.
+# For committed instructions use .rulesync folder instead (single source of truth).
+# Run `npx rulesync generate --target <agent>` to sync for your favorite agent locally.
+.cursor/
+.claude/
+.agents/
+# npx skills command artifacts (for personally installed skills)
+skills-lock.json
