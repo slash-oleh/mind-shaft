@@ -1,0 +1,7 @@
+---
+globs:
+  - "**/*.ts"
+  - "**/*.tsx"
+---
+
+# TypeScript

@@ -92,7 +92,10 @@ export const walkArticles = async (callback) => {
   for (const cat of structure) {
     const catLabel = await getLabel(cat.path, formatName(cat.name));
     for (const subDir of cat.subDirs) {
-      const subDirLabel = await getLabel(subDir.path, formatName(subDir.name));
+      const { label: subDirLabel, globs: subDirGlobs } = await getSubDirMeta(
+        subDir.path,
+        formatName(subDir.name),
+      );
       for (const article of subDir.articles) {
         const content = await readFile(article.path, 'utf-8');
         await callback({
@@ -100,6 +103,7 @@ export const walkArticles = async (callback) => {
           catLabel,
           subDir,
           subDirLabel,
+          subDirGlobs,
           article,
           content,
         });
@@ -128,18 +132,57 @@ export const formatName = (s) => {
   return s.charAt(0).toUpperCase() + s.slice(1).replace(/-/g, ' ');
 };
 
-/**
- * Tries to read the H1 from README.md in a directory, otherwise formats the name.
- */
-export const getLabel = async (dirPath, fallback) => {
+const FRONT_MATTER_RE = /^---\r?\n([\s\S]*?)\r?\n---/;
+
+const YAML_INLINE_ARRAY_RE = /^\[(.*)\]$/s;
+const YAML_BLOCK_ITEM_RE = /^\s+-\s+(.*)$/;
+
+export const extractFrontMatter = (content) => {
+  const match = content.match(FRONT_MATTER_RE);
+  if (!match) return {};
+  const result = {};
+  let currentKey = null;
+  for (const line of match[1].split('\n')) {
+    const blockItem = line.match(YAML_BLOCK_ITEM_RE);
+    if (blockItem && currentKey) {
+      result[currentKey].push(blockItem[1].replace(/^["']|["']$/g, ''));
+      continue;
+    }
+    currentKey = null;
+    const colonIdx = line.indexOf(':');
+    if (colonIdx === -1) continue;
+    const key = line.slice(0, colonIdx).trim();
+    const raw = line.slice(colonIdx + 1).trim();
+    if (!key) continue;
+    const arrayMatch = raw.match(YAML_INLINE_ARRAY_RE);
+    if (arrayMatch) {
+      result[key] = arrayMatch[1]
+        .split(',')
+        .map((s) => s.trim().replace(/^["']|["']$/g, ''))
+        .filter(Boolean);
+    } else if (raw === '') {
+      result[key] = [];
+      currentKey = key;
+    } else {
+      result[key] = raw.replace(/^["']|["']$/g, '');
+    }
+  }
+  return result;
+};
+
+export const getSubDirMeta = async (dirPath, fallbackLabel) => {
   try {
-    const readmePath = path.join(dirPath, 'README.md');
-    const content = await readFile(readmePath, 'utf-8');
-    return extractH1(content) || fallback;
+    const content = await readFile(path.join(dirPath, 'README.md'), 'utf-8');
+    const fm = extractFrontMatter(content);
+    const label = extractH1(content) || fallbackLabel;
+    return { label, globs: fm.globs || null };
   } catch {
-    return fallback;
+    return { label: fallbackLabel, globs: null };
   }
 };
+
+export const getLabel = async (dirPath, fallback) =>
+  (await getSubDirMeta(dirPath, fallback)).label;
 
 /**
  * Extracts all paragraphs from the "TLDR" section using raw content slicing.

@@ -1,8 +1,11 @@
 ---
-description: "Languages: Typescript"
+description: "Languages: TypeScript"
+globs:
+  - "**/*.ts"
+  - "**/*.tsx"
 ---
 
-# Languages: Typescript
+# Languages: TypeScript
 
 ## Export associated types
 Export parameter interfaces and type aliases alongside their functions.

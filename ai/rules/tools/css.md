@@ -1,8 +1,8 @@
 ---
-description: "Tools: Css"
+description: "Tools: CSS"
 ---
 
-# Tools: Css
+# Tools: CSS
 
 ## Avoid absolute positioning
 Use CSS Flexbox or Grid instead of `position: absolute` for general page layouts.

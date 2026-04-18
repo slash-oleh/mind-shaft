@@ -1,8 +1,8 @@
 ---
-description: "Tools: Sql"
+description: "Tools: SQL"
 ---
 
-# Tools: Sql
+# Tools: SQL
 
 ## Avoid storing derived state in the database
 Calculate state dynamically at runtime instead of saving derived or redundant values in the database schema.

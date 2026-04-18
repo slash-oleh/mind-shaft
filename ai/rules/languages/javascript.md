@@ -1,8 +1,13 @@
 ---
-description: "Languages: Javascript"
+description: "Languages: JavaScript"
+globs:
+  - "**/*.js"
+  - "**/*.jsx"
+  - "**/*.ts"
+  - "**/*.tsx"
 ---
 
-# Languages: Javascript
+# Languages: JavaScript
 
 ## Be aware of numeric precision and limits
 Use `BigInt` for large integers and epsilon-based comparisons or specialized libraries for high-precision decimal arithmetic.

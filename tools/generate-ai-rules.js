@@ -20,7 +20,7 @@ const generate = async () => {
   const groupedRules = {};
 
   await walkArticles(
-    async ({ cat, subDir, article, content, catLabel, subDirLabel }) => {
+    async ({ cat, subDir, article, content, catLabel, subDirLabel, subDirGlobs }) => {
       const title = extractH1(content);
       const summary = extractFirstParagraph(content);
 
@@ -32,6 +32,7 @@ const generate = async () => {
             subDir,
             catLabel,
             subDirLabel,
+            subDirGlobs,
             rules: [],
           };
         }
@@ -50,7 +51,12 @@ const generate = async () => {
     await mkdir(groupDir, { recursive: true });
 
     const heading = `${group.catLabel}: ${group.subDirLabel}`;
-    let fileContent = `---\ndescription: "${heading}"\n---\n\n# ${heading}\n`;
+    const serializeGlobs = (g) =>
+      Array.isArray(g)
+        ? `\n${g.map((s) => `  - "${s}"`).join('\n')}`
+        : ` "${g}"`;
+    const globsLine = group.subDirGlobs ? `\nglobs:${serializeGlobs(group.subDirGlobs)}` : '';
+    let fileContent = `---\ndescription: "${heading}"${globsLine}\n---\n\n# ${heading}\n`;
 
     for (const rule of group.rules) {
       const url = `${GITHUB_BASE}/${group.cat.name}/${group.subDir.name}/${rule.slug}.md`;
