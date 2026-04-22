@@ -8,7 +8,8 @@
     "lint": "remark src README.md --no-stdout --quiet",
     "lint:fix": "remark src README.md --no-stdout --quiet -o",
     "generate:toc": "node tools/generate-toc.js",
-    "generate:ai-rules": "node tools/generate-ai-rules.js"
+    "generate:ai-rules": "node tools/generate-ai-rules.js",
+    "generate:ai-rules:short": "node tools/generate-ai-rules.js --short"
   },
   "keywords": [],
   "author": "",

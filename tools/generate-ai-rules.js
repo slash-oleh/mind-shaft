@@ -9,9 +9,10 @@ import {
 
 const { repository } = JSON.parse(await readFile('./package.json', 'utf-8'));
 const GITHUB_BASE = `${repository}/blob/main/src`;
+const SHORT = process.argv.includes('--short');
 
 const generate = async () => {
-  console.log('Generating ai/rules...');
+  console.log(`Generating ai/rules${SHORT ? ' (short)' : ''}...`);
 
   await rm(AI_RULES_DIR, { recursive: true, force: true });
   await mkdir(AI_RULES_DIR, { recursive: true });
@@ -20,7 +21,15 @@ const generate = async () => {
   const groupedRules = {};
 
   await walkArticles(
-    async ({ cat, subDir, article, content, catLabel, subDirLabel, subDirGlobs }) => {
+    async ({
+      cat,
+      subDir,
+      article,
+      content,
+      catLabel,
+      subDirLabel,
+      subDirGlobs,
+    }) => {
       const title = extractH1(content);
       const summary = extractFirstParagraph(content);
 
@@ -55,12 +64,20 @@ const generate = async () => {
       Array.isArray(g)
         ? `\n${g.map((s) => `  - "${s}"`).join('\n')}`
         : ` "${g}"`;
-    const globsLine = group.subDirGlobs ? `\nglobs:${serializeGlobs(group.subDirGlobs)}` : '';
-    let fileContent = `---\ndescription: "${heading}"${globsLine}\n---\n\n# ${heading}\n`;
+    const globsLine = group.subDirGlobs
+      ? `\nglobs:${serializeGlobs(group.subDirGlobs)}`
+      : '';
+    let fileContent = `---\ndescription: "${heading}"${globsLine}\n---\n\n`;
+
+    if (!SHORT) {
+      fileContent += `# ${heading}\n`;
+    }
 
     for (const rule of group.rules) {
       const url = `${GITHUB_BASE}/${group.cat.name}/${group.subDir.name}/${rule.slug}.md`;
-      fileContent += `\n## ${rule.title}\n${rule.summary}\n[read more](${url})\n`;
+      fileContent += SHORT
+        ? `- ${rule.summary}\n`
+        : `\n## ${rule.title}\n${rule.summary}\n[read more](${url})\n`;
     }
 
     await writeFile(
