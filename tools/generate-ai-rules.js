@@ -80,7 +80,7 @@ const generate = async () => {
     for (const rule of group.rules) {
       const url = `${GITHUB_BASE}/${group.cat.name}/${group.subDir.name}/${rule.slug}.md`;
       fileContent += SHORT
-        ? `- ${rule.summary}\n`
+        ? `- **${rule.title}**: ${rule.summary}\n`
         : `\n## ${rule.title}\n${rule.summary}\n[read more](${url})\n`;
     }
 
