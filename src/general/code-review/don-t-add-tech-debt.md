@@ -1,8 +1,8 @@
-# Don't harm
+# Don't add tech debt
 
 ## TLDR
 
-Don't add tech debt. Leave code in better state than you found it if possible.
+Leave code in better state than you found it if possible.
 
 ## Problem
 

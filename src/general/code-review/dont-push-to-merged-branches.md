@@ -1,8 +1,8 @@
-# Don't keep working on merged branches
+# Don't push to merged branches
 
 ## TLDR
 
-Don't push to merged branch. Use new branch for follow-up.
+Use new branches for follow-ups.
 
 ## Problem
 

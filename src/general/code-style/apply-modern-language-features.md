@@ -29,14 +29,13 @@ Relying on legacy constructs or verbose manual checks.
 
 ```javascript
 function getUsername(userId) {
-  return userRepository.find(userId)
-    .then(function(user) {
-      if (user && user.profile && user.profile.name) {
-        return user.profile.name;
-      } else {
-        return 'Anonymous';
-      }
-    });
+  return userRepository.find(userId).then(function (user) {
+    if (user && user.profile && user.profile.name) {
+      return user.profile.name;
+    } else {
+      return 'Anonymous';
+    }
+  });
 }
 ```
 

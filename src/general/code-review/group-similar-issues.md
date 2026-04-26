@@ -1,4 +1,4 @@
-# Reference similar issues in comments
+# Group similar issues
 
 ## TLDR
 

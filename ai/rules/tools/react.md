@@ -2,34 +2,34 @@
 description: "Tools: React"
 ---
 
-- Define async functions inside `useEffect` instead of making the callback `async`.
-- Avoid using vague, meaningless suffixes like `Block`, `Container`, `Box`, `Screen`, `Section`, or `Area` in component names. Use descriptive names that reflect the component's semantic purpose or content.
-- Avoid using plain variables in the module scope to store data that affects the UI. Use **local component state** for isolated data or **React Context** (or a state management library) for shared data.
-- Do not define a component inside the body of another component or wrap a component definition in `useCallback`. Define all components at the top level.
-- Avoid creating a dedicated folder for every single component. Only use folders when a component is complex enough to require multiple related files.
-- Distinguish between reactive dependencies that trigger an effect and non-reactive values that are merely read to avoid over-reactive effects.
-- Do not use Redux as the default state management solution. Favor modern, specialized tools like React Query for server state and Zustand or Context for global UI state.
-- Calculate derived values on-the-fly during rendering instead of storing them in state to maintain a single source of truth.
-- Use Hooks to keep logic and UI cohesive within a single component instead of splitting them into "Container" and "Presentational" pairs by default.
-- Favor declarative state (`useState`) over imperative refs and use `useRef` only for direct DOM access or non-UI bookkeeping.
-- Export the TypeScript interface or type for component props to enable easy reuse, extension, and wrapping.
-- Forward unhandled properties (`...restProps`) to the primary child when building wrapper components to preserve the full API of the encapsulated element.
-- Import images, SVGs, and other static assets directly in component files rather than using raw string paths from public directories.
-- Only store serializable data like primitives, plain objects, and arrays in state or global stores to ensure compatibility with hydration and debugging tools.
-- Position your state at the lowest possible level that still allows all components that need the data to access it.
-- Merge incoming properties like `className`, `style`, and event handlers with internal ones to ensure components remain extensible and composable.
-- Export only one primary React component per file.
-- Use controlled components where the parent remains the single source of truth instead of mirroring props in local state.
-- Store only unique identifiers (IDs) in selection state instead of copying entire objects to maintain a single source of truth.
-- Organize the pages layer as a thin compositional wrapper around domain-based feature modules to separate routing from business logic.
-- Use specialized libraries like TanStack Query or SWR to manage asynchronous data fetching and state instead of manual `useEffect` routines.
-- Use specialized libraries like React Hook Form or Formik to handle form state, validation, and submission instead of managing complex state manually.
-- Use a headless library like TanStack Table to manage complex table logic, ensuring full control over UI and styling while delegating state and calculations.
-- Develop all new components as functional components using React Hooks.
-- Use the functional update pattern when transitioning state based on its previous value to ensure you are always working with the most recent data.
-- Use custom Hooks instead of Higher-Order Components (HOCs) to share logic between components for better composability and flatter component trees.
-- Use the initializer function pattern (`useState(() => createInitialState())`) when the initial value of a state requires an expensive computation.
-- Wrap functional components in `React.memo`.
-- Use unique and stable identifiers for the `key` prop in lists, favoring data IDs over array indices for dynamic collections.
-- Use the `useCallback` hook to maintain stable function references when passing them to memoized child components or using them as hook dependencies.
-- Use `useMemo` to cache results of expensive calculations and maintain referential stability for complex objects and arrays passed to downstream components.
+- **Avoid async useEffect callbacks**: Define async functions inside `useEffect` instead of making the callback `async`.
+- **Avoid generic component name suffixes**: Avoid using vague, meaningless suffixes like `Block`, `Container`, `Box`, `Screen`, `Section`, or `Area` in component names. Use descriptive names that reflect the component's semantic purpose or content.
+- **Avoid global variables for application state**: Avoid using plain variables in the module scope to store data that affects the UI. Use **local component state** for isolated data or **React Context** (or a state management library) for shared data.
+- **Avoid nested component definitions**: Do not define a component inside the body of another component or wrap a component definition in `useCallback`. Define all components at the top level.
+- **Avoid over-nesting component folders**: Avoid creating a dedicated folder for every single component. Only use folders when a component is complex enough to require multiple related files.
+- **Avoid redundant executions of useEffect**: Distinguish between reactive dependencies that trigger an effect and non-reactive values that are merely read to avoid over-reactive effects.
+- **Avoid Redux for state management**: Do not use Redux as the default state management solution. Favor modern, specialized tools like React Query for server state and Zustand or Context for global UI state.
+- **Avoid storing derived state**: Calculate derived values on-the-fly during rendering instead of storing them in state to maintain a single source of truth.
+- **Avoid the Container/Presentational pattern**: Use Hooks to keep logic and UI cohesive within a single component instead of splitting them into "Container" and "Presentational" pairs by default.
+- **Avoid useRef for state management**: Favor declarative state (`useState`) over imperative refs and use `useRef` only for direct DOM access or non-UI bookkeeping.
+- **Export component props**: Export the TypeScript interface or type for component props to enable easy reuse, extension, and wrapping.
+- **Forward remaining props to the underlying element**: Forward unhandled properties (`...restProps`) to the primary child when building wrapper components to preserve the full API of the encapsulated element.
+- **Import assets directly in code**: Import images, SVGs, and other static assets directly in component files rather than using raw string paths from public directories.
+- **Keep state serializable**: Only store serializable data like primitives, plain objects, and arrays in state or global stores to ensure compatibility with hydration and debugging tools.
+- **Lift state to the nearest common ancestor**: Position your state at the lowest possible level that still allows all components that need the data to access it.
+- **Merge internal and incoming props**: Merge incoming properties like `className`, `style`, and event handlers with internal ones to ensure components remain extensible and composable.
+- **One component per file**: Export only one primary React component per file.
+- **Prefer controlled components over mirrored state**: Use controlled components where the parent remains the single source of truth instead of mirroring props in local state.
+- **Store normalized data in state**: Store only unique identifiers (IDs) in selection state instead of copying entire objects to maintain a single source of truth.
+- **Structure pages as wrappers around features**: Organize the pages layer as a thin compositional wrapper around domain-based feature modules to separate routing from business logic.
+- **Use a data request management library**: Use specialized libraries like TanStack Query or SWR to manage asynchronous data fetching and state instead of manual `useEffect` routines.
+- **Use a form management library**: Use specialized libraries like React Hook Form or Formik to handle form state, validation, and submission instead of managing complex state manually.
+- **Use a table management library**: Use a headless library like TanStack Table to manage complex table logic, ensuring full control over UI and styling while delegating state and calculations.
+- **Use functional components with Hooks**: Develop all new components as functional components using React Hooks.
+- **Use functional updates for state transitions**: Use the functional update pattern when transitioning state based on its previous value to ensure you are always working with the most recent data.
+- **Use Hooks instead of Higher-Order Components (HOCs)**: Use custom Hooks instead of Higher-Order Components (HOCs) to share logic between components for better composability and flatter component trees.
+- **Use lazy initialization for expensive state**: Use the initializer function pattern (`useState(() => createInitialState())`) when the initial value of a state requires an expensive computation.
+- **Use memo by default**: Wrap functional components in `React.memo`.
+- **Use stable, unique keys in lists**: Use unique and stable identifiers for the `key` prop in lists, favoring data IDs over array indices for dynamic collections.
+- **Use useCallback to stabilize references**: Use the `useCallback` hook to maintain stable function references when passing them to memoized child components or using them as hook dependencies.
+- **Use useMemo for stability and expensive logic**: Use `useMemo` to cache results of expensive calculations and maintain referential stability for complex objects and arrays passed to downstream components.

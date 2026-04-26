@@ -1,8 +1,8 @@
-# Keep formatting and style rules in the linter
+# Automate style check
 
 ## TLDR
 
-Don't enforce formatting and style in code reviews. If a rule isn't in the linter, ignore it.
+Don't address formatting and linting in code reviews. If a rule isn't in the linter, add it or ignore it.
 
 ## Problem
 

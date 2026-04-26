@@ -1,8 +1,8 @@
-# Reference project guidelines in reviews
+# Reference project guidelines
 
 ## TLDR
 
-Reference project guidelines and documentation in review comments to avoid repetitive explanations.
+Reference project guidelines and documentation in comments to avoid repetitive explanations.
 
 ## Problem
 

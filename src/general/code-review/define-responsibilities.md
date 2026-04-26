@@ -2,7 +2,7 @@
 aiSkip: true
 ---
 
-# Define the PR review and merge responsibilities
+# Define responsibilities
 
 ## TLDR
 

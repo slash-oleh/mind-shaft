@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Keep PRs small. Max 300 lines. Don't mix unrelated changes.
+Max 300 lines. Don't mix unrelated changes.
 
 ## Problem
 

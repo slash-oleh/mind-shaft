@@ -1,8 +1,8 @@
-# Prioritize architectural and design feedback in reviews
+# Prioritize feedback
 
 ## TLDR
 
-Prioritize high-level architecture and logic, addressing minor details only after the structure is confirmed.
+High-level architecture, logic, bugs first. Minor details only after the structure is confirmed.
 
 ## Problem
 

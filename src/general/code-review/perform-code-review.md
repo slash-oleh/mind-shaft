@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Perform code review.
+Don't skip it to detect mistakes early.
 
 ## Problem
 
