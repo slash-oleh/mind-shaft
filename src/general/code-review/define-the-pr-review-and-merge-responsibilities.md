@@ -1,3 +1,7 @@
+---
+aiSkip: true
+---
+
 # Define the PR review and merge responsibilities
 
 ## TLDR
@@ -18,7 +22,7 @@ Declare the author as the primary owner of the PR lifecycle. The author is respo
 
 - **Author Ownership**: By default, the author is responsible for resolving conflicts and merging the PR after approval.
 - **Explicit Review Status**: PRs marked as **WIP (Work In Progress)** should not be reviewed or merged until the author explicitly signals readiness (e.g., by changing the status to "Ready for Review").
-- **Comment Resolution**: The author should mark every reviewer's comment as resolved *only after* the feedback has been addressed (either by applying changes or by mutual agreement to leave as is).
+- **Comment Resolution**: The author should mark every reviewer's comment as resolved _only after_ the feedback has been addressed (either by applying changes or by mutual agreement to leave as is).
 
 ## Bad solution
 

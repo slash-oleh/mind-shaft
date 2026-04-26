@@ -164,7 +164,9 @@ export const extractFrontMatter = (content) => {
       result[key] = [];
       currentKey = key;
     } else {
-      result[key] = raw.replace(/^["']|["']$/g, '');
+      const unquoted = raw.replace(/^["']|["']$/g, '');
+      result[key] =
+        unquoted === 'true' ? true : unquoted === 'false' ? false : unquoted;
     }
   }
   return result;

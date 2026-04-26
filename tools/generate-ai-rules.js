@@ -3,6 +3,7 @@ import path from 'path';
 import {
   extractH1,
   extractFirstParagraph,
+  extractFrontMatter,
   walkArticles,
   AI_RULES_DIR,
 } from './common.js';
@@ -30,6 +31,9 @@ const generate = async () => {
       subDirLabel,
       subDirGlobs,
     }) => {
+      const fm = extractFrontMatter(content);
+      if (fm.aiSkip === true) return;
+
       const title = extractH1(content);
       const summary = extractFirstParagraph(content);
 
