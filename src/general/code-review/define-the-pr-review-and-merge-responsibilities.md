@@ -6,7 +6,7 @@ aiSkip: true
 
 ## TLDR
 
-Establish clear ownership for Pull Requests (PRs) and designate the author as the primary driver of the process.
+Author owns the PR. Author drives the process and merges the code.
 
 ## Problem
 

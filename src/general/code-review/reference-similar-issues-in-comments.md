@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Provide a detailed explanation for the first occurrence of an issue within a Pull Request and link to it for all subsequent occurrences instead of duplicating the feedback.
+Explain the first issue occurrence in detail and link to it for subsequent occurrences to avoid duplicate comments.
 
 ## Problem
 

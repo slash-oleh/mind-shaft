@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Keep Pull Requests (PRs) small and focused, ideally under 500 lines of code changes.
+Keep PRs small. Max 300 lines. Don't mix unrelated changes.
 
 ## Problem
 

@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Reference established project guidelines and documentation in code review comments instead of writing repetitive explanations.
+Reference project guidelines and documentation in review comments to avoid repetitive explanations.
 
 ## Problem
 

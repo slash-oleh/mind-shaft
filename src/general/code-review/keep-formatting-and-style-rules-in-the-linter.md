@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Automate code formatting and style enforcement using linters and formatters like ESLint or Prettier.
+Don't enforce formatting and style in code reviews. If a rule isn't in the linter, ignore it.
 
 ## Problem
 

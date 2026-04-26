@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Conduct code reviews promptly and professionally, focusing on defect detection and architectural alignment.
+Perform code review.
 
 ## Problem
 

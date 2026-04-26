@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Stop pushing commits to a branch once it has been merged into the main development line. Create a new branch for any subsequent work or follow-up fixes.
+Don't push to merged branch. Use new branch for follow-up.
 
 ## Problem
 

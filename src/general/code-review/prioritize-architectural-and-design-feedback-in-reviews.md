@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Prioritize high-level concerns such as architecture, design patterns, and overall logic during code reviews before addressing minor implementation details.
+Prioritize high-level architecture and logic, addressing minor details only after the structure is confirmed.
 
 ## Problem
 

@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Leave the code better than you found it by fixing small issues encountered during development and ensuring new changes do not degrade the overall codebase health.
+Don't add tech debt. Leave code in better state than you found it if possible.
 
 ## Problem
 
