@@ -1,4 +1,4 @@
-# Follow established project code style
+# Follow project code style
 
 ## TLDR
 
@@ -31,10 +31,7 @@ Mixing styles within the same project or combining style changes with feature de
 const fruits = ['apple', 'orange'];
 
 // BAD: Introducing a different style for a similar construct
-const colors = [
-  'red',
-  'blue',
-];
+const colors = ['red', 'blue'];
 ```
 
 ## Impact

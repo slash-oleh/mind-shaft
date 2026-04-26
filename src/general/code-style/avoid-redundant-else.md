@@ -1,8 +1,8 @@
-# Avoid redundant `if` branches for returning statements
+# Avoid redundant else
 
 ## TLDR
 
-Remove unnecessary `else` blocks and avoid redundant `if` statements when using `return` or `throw`.
+Remove unnecessary `else` blocks after `if` when using `return` or `throw`.
 
 ## Problem
 

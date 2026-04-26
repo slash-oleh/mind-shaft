@@ -1,8 +1,8 @@
-# Use boolean logic for boolean results
+# Shorten boolean expressions
 
 ## TLDR
 
-Use boolean operators instead of ternary operators or conditional statements when the desired outcome is a boolean value.
+Use boolean operators instead of ternary expressions or conditional statements when the desired outcome is a boolean value.
 
 ## Problem
 

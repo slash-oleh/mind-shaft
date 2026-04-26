@@ -1,8 +1,8 @@
-# Use translation templates instead of concatenation
+# Use text templates
 
 ## TLDR
 
-Use placeholders within translation strings instead of concatenating partial keys with dynamic values.
+Use placeholders within translation strings instead of concatenating partial tokens with dynamic values.
 
 ## Problem
 
@@ -20,7 +20,7 @@ export const translations = {
   },
   uk: {
     authFail: 'Користувача з електронною адресою {{email}} не знайдено.',
-  }
+  },
 };
 
 // Application code
@@ -37,7 +37,7 @@ export const translations = {
   en: {
     noUser: 'No user found with the',
     emailSuffix: 'email address.',
-  }
+  },
 };
 
 // Application code

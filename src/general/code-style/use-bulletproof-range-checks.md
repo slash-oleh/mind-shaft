@@ -1,8 +1,8 @@
-# Use robust range checks for edge cases
+# Use bulletproof range checks
 
 ## TLDR
 
-Use inclusive range checks (`>=` or `<=`) instead of exact equality (`==`) for progress monitoring, counters, and loop terminations.
+Use inclusive range checks (`>=` or `<=`) instead of exact equality (`==`) for progress monitoring, counters, and loop terminations to prevent infinite loops in case counter change logic is bugged.
 
 ## Problem
 

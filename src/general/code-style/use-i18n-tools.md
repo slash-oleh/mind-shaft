@@ -1,4 +1,4 @@
-# Use translation tools for all user-facing text
+# Use i18n tools
 
 ## TLDR
 
@@ -40,7 +40,9 @@ Hardcoding string literals directly into the business logic or UI components.
 // Application code
 if (!success) {
   // BAD: Literal string is trapped in code
-  notification.error('Authorization failed. Please check your credentials and try again.');
+  notification.error(
+    'Authorization failed. Please check your credentials and try again.',
+  );
 }
 ```
 

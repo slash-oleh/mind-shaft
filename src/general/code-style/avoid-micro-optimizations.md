@@ -1,8 +1,8 @@
-# Leave optimization for compilers and pre-processors
+# Avoid micro-optimizations
 
 ## TLDR
 
-Write clear, readable code instead of performing manual micro-optimizations handled by compilers and JIT engines.
+Write expressive code instead of assembly-like code. Leave conversion to low-level instructions for compilers and pre-processors.
 
 ## Problem
 

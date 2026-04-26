@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Adhere to the standard naming, formatting, and structural conventions of the programming language being used.
+Follow the standard naming, formatting, and structural conventions of the programming language.
 
 ## Problem
 

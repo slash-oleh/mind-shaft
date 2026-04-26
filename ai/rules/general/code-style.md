@@ -4,19 +4,19 @@ description: "General: Code style"
 
 - **Apply modern language features**: Adopt modern syntax and language features like optional chaining and async/await.
 - **Avoid magic values**: Replace raw values (numbers, strings, flags) with named constants.
+- **Avoid micro-optimizations**: Write expressive code instead of assembly-like code. Leave conversion to low-level instructions for compilers and pre-processors.
 - **Avoid nested conditions**: Use guard clauses and early returns to flatten logic and avoid deeply nested conditional blocks.
 - **Avoid one-line coding**: Break down complex operations and long method chains into multiple lines.
-- **Avoid redundant if branches for returning statements**: Remove unnecessary `else` blocks and avoid redundant `if` statements when using `return` or `throw`.
-- **Comment unclear or non-obvious code**: Write self-explanatory code by default, and use comments only to explain the reasoning behind inherently complex or non-obvious logic.
+- **Avoid redundant else**: Remove unnecessary `else` blocks after `if` when using `return` or `throw`.
+- **Comment complex logic**: Prioritize self-explanatory code but comment complex or non-obvious logic.
 - **Don't extrapolate object properties as args**: Pass entire objects or dedicated interfaces instead of extracting individual properties as separate function arguments.
 - **Don't fail silently**: Handle errors explicitly or report them to a logging/monitoring system instead of silently ignoring them.
 - **Don't overuse DRY**: Avoid premature deduplication and only create abstractions when code represents the same underlying concept, not just the same visual shape.
 - **Don't overuse environment variables**: Use environment variables only for infrastructure configuration instead of business logic or feature flags.
-- **Follow code conventions**: Adhere to the standard naming, formatting, and structural conventions of the programming language being used.
-- **Follow established project code style**: Match the existing codebase's style and apply improvements systematically as separate tasks.
-- **Leave optimization for compilers and pre-processors**: Write clear, readable code instead of performing manual micro-optimizations handled by compilers and JIT engines.
-- **Use boolean logic for boolean results**: Use boolean operators instead of ternary operators or conditional statements when the desired outcome is a boolean value.
+- **Follow code conventions**: Follow the standard naming, formatting, and structural conventions of the programming language.
+- **Follow project code style**: Match the existing codebase's style and apply improvements systematically as separate tasks.
+- **Shorten boolean expressions**: Use boolean operators instead of ternary expressions or conditional statements when the desired outcome is a boolean value.
+- **Use bulletproof range checks**: Use inclusive range checks (`>=` or `<=`) instead of exact equality (`==`) for progress monitoring, counters, and loop terminations to prevent infinite loops in case counter change logic is bugged.
 - **Use exceptions for errors**: Throw exceptions instead of returning error codes or status objects to signal unexpected failures.
-- **Use robust range checks for edge cases**: Use inclusive range checks (`>=` or `<=`) instead of exact equality (`==`) for progress monitoring, counters, and loop terminations.
-- **Use translation templates instead of concatenation**: Use placeholders within translation strings instead of concatenating partial keys with dynamic values.
-- **Use translation tools for all user-facing text**: Internalize all user-facing strings into translation files (i18n).
+- **Use i18n tools**: Internalize all user-facing strings into translation files (i18n).
+- **Use text templates**: Use placeholders within translation strings instead of concatenating partial tokens with dynamic values.

@@ -1,8 +1,8 @@
-# Comment unclear or non-obvious code
+# Comment complex logic
 
 ## TLDR
 
-Write self-explanatory code by default, and use comments only to explain the reasoning behind inherently complex or non-obvious logic.
+Prioritize self-explanatory code but comment complex or non-obvious logic.
 
 ## Problem
 
