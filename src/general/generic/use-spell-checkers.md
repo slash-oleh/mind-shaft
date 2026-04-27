@@ -1,4 +1,4 @@
-# Use text checkers
+# Use spell checkers
 
 ## TLDR
 
@@ -16,6 +16,7 @@ Integrate spell checkers directly into your IDE and use dedicated grammar tools 
 
 ```markdown
 # Pro-tip: Enable Spell Checking in VS Code
+
 1. Open Extensions (Ctrl+Shift+X)
 2. Search for "Code Spell Checker"
 3. Install and enable
@@ -27,6 +28,7 @@ Ignoring typos and grammar issues, or relying solely on manual proofreading with
 
 ```markdown
 # Bad Readme
+
 To run the projct, type npm incstall. Its easy!
 ```
 

@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format for Date, Time, and Duration representation.
+Use the "ISO 8601" format for Date, Time, and Duration representation.
 
 ## Problem
 
@@ -21,7 +21,7 @@ const timestamp = new Date().toISOString();
 
 // Good: ISO 8601 Duration (P: Period, T: Time)
 // Represents 3 years, 6 months, 4 days, 12 hours, 30 minutes, and 5 seconds
-const duration = "P3Y6M4DT12H30M5S";
+const duration = 'P3Y6M4DT12H30M5S';
 ```
 
 ## Bad solution
@@ -30,10 +30,10 @@ Using localized or ambiguous formats that depend on system settings, or plain nu
 
 ```ts
 // Bad: Ambigious and non-sortable format
-const date = "05/04/24 2:30 PM"; // Is it May 4th or April 5th? Which timezone?
+const date = '05/04/24 2:30 PM'; // Is it May 4th or April 5th? Which timezone?
 
 // Bad: Duration as ambiguous string (is it hh:mm or mm:ss?)
-const duration = "11:30"
+const duration = '11:30';
 ```
 
 ## Impact

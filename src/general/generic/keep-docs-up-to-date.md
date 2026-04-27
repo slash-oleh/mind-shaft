@@ -1,4 +1,4 @@
-# Keep README up-to-date
+# Keep docs up-to-date
 
 ## TLDR
 
@@ -16,16 +16,20 @@ Treat the README as a living document. Update it immediately when local setup st
 # Project Name
 
 ## Getting Started
+
 ### Prerequisites
+
 - Node.js v20+
 - Docker
 
 ### Local Setup
+
 1. Clone the repo
 2. Run `npm install`
 3. Run `docker-compose up`
 
 ## Tech Stack
+
 - React, Vite, CSS Modules
 - NestJS, PostgreSQL
 ```
@@ -36,6 +40,7 @@ Letting the README rot while the project evolves. Relying on "tribal knowledge" 
 
 ```markdown
 # Project X
+
 (Last updated: 3 years ago)
 To run: just type `make` (Note: 'make' was replaced by 'npm' a year ago)
 ```

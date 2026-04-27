@@ -6,29 +6,32 @@ Prioritize code readability and maintainability over performance until a specifi
 
 ## Problem
 
-Optimizing code before it is necessary often leads to complex, hard-to-read, and bug-prone logic. Developers may spend significant time making a section of code "faster" when that section isn't actually a bottleneck in the overall system. This results in wasted effort and a technical debt of unnecessary complexity.
+Optimizing code before it is necessary often leads to complex, hard-to-read, and bug-prone logic. Manually applying micro-optimizations (e.g., bitwise operations instead of arithmetic or obscure syntax) results in code difficult to maintain. Modern compilers and JIT engines (like V8) are exceptionally good at optimizing such patterns; manual tweaks can even prevent these higher-level optimizations and obscure intent.
 
 ## Good solution
 
 Write clean, declarative code that is easy to understand. Rely on standard language features and abstractions. If a performance problem is suspected, use profiling tools to identify the real bottleneck before making any optimizations.
 
 ```ts
+// Clear and declarative: filters then transforms
 const getTodayComments = (userId: number) => {
   return getAllComments(userId)
-    // Clear and declarative: filters then transforms
     .filter(({ time }) => time >= today())
     .map(({ id }) => id);
 };
+
+// Use standard math: intent is obvious
+const offset = baseValue * 4;
 ```
 
 ## Bad solution
 
-Using more complex constructs (like `reduce` or manual loops) to save iterations or minor memory overhead when the data set is small or the performance gain is negligible.
+Using "clever" tricks or more complex constructs to save iterations or minor memory overhead when the performance gain is negligible.
 
 ```ts
+// More complex: combines filtering and transformation into one pass
 const getTodayComments = (userId: number) => {
   return getAllComments(userId)
-    // More complex: combines filtering and transformation into one pass
     .reduce((result, comment) => {
       if (comment.time >= today()) {
         result.push(comment.id);
@@ -36,6 +39,9 @@ const getTodayComments = (userId: number) => {
       return result;
     }, []);
 };
+
+// Obscure: minor gain at cost of clarity
+const offset = baseValue << 2;
 ```
 
 ## Impact
@@ -43,6 +49,7 @@ const getTodayComments = (userId: number) => {
 - **[Readability](../../home/impact/positive/readability.md)**: Clean code is easier for others (and your future self) to understand and verify.
 - **[Maintainability](../../home/impact/positive/maintainability.md)**: Simpler code is easier to modify and less likely to contain hidden bugs.
 - **[Flexibility](../../home/impact/positive/flexibility.md)**: It is much easier to optimize clear, well-structured code than it is to clean up complex, "optimized" code.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: The intent of the operation is immediately obvious.
 
 ## Exceptions
 
@@ -52,5 +59,7 @@ const getTodayComments = (userId: number) => {
 ## References
 
 - [Wikipedia: Program optimization](https://en.wikipedia.org/wiki/Program_optimization#When_to_optimize)
+- [Donald Knuth: Premature Optimization is the Root of All Evil](https://en.wikipedia.org/wiki/Program_optimization#When_to_optimize)
+- [V8: Engine Optimizations](https://v8.dev/blog)
 - [Stackify: Why Premature Optimization Is the Root of All Evil](https://stackify.com/premature-optimization-evil/)
 - [Medium: Anti-Patterns by Example: Premature Optimization](https://makingofamaker.medium.com/anti-patterns-by-example-premature-optimization-f46056dd1e39)

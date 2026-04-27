@@ -1,4 +1,4 @@
-# Automate build, test and deployment
+# Apply DevOps approaches
 
 ## TLDR
 

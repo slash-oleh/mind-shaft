@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Maintain a balanced file size to ensure code remains navigable and focused without becoming fragmented.
+Maintain a balanced file size to ensure code remains navigable and focused without becoming fragmented. The sweet spot is 50-400 lines per file.
 
 ## Problem
 
@@ -35,7 +35,7 @@ Creating monolithic files that handle multiple responsibilities or splitting eve
 // Bad: Over-fragmentation
 // Extracting a single-use constant to a separate file instead of keeping it in context.
 // src/services/user-service/constants.ts
-export const DEFAULT_USER_AVATAR = "https://example.com/avatar.png";
+export const DEFAULT_USER_AVATAR = 'https://example.com/avatar.png';
 
 // src/services/user-service.ts
 import { DEFAULT_USER_AVATAR } from './constants';
