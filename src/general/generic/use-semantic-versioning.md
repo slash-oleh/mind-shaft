@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Adhere to the Semantic Versioning (SemVer) specification for all project releases and shared packages to ensure compatibility.
+Whenever a versioning scheme is required, just use SemVer and don't reinvent the wheel.
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Don't force push to shared remote branches
+# Avoid force push to shared branches
 
 ## TLDR
 
-Avoid using `git push --force` on branches that are shared with other developers.
+Force pushing to your own PRs is acceptable for history cleanup though.
 
 ## Problem
 
@@ -37,7 +37,7 @@ git push --force origin feature/shared-task
 
 ## Exceptions
 
-- When you are the **only** person working on a feature branch and you know for certain that no one else has pulled it. Even then, `--force-with-lease` is a safer alternative.
+- Personal Pull Request branches. Use for rebasing and history cleanup when you are the sole contributor.
 - When explicitly repairing a corrupted remote branch after team-wide coordination.
 
 ## References

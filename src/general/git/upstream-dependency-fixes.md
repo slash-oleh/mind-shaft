@@ -1,8 +1,8 @@
-# Contribute back to Open Source dependencies
+# Upstream dependency fixes
 
 ## TLDR
 
-Contribute fixes and improvements back to the original repositories of open-source libraries instead of maintaining local patches.
+Contribute 3rd-party dependency fixes to original repositories instead of maintaining local patches.
 
 ## Problem
 
@@ -17,7 +17,7 @@ When you find a bug or a missing feature in a dependency, take the time to contr
 1. **Fork** the repository and create a new branch.
 2. **Reproduce** the issue with a minimal test case or a small reproduction project.
 3. **Fix** the issue while strictly adhering to the original project's code style.
-4. **Document** the change clearly in the Pull Request description, explaining the *why* and *how*.
+4. **Document** the change clearly in the Pull Request description, explaining the _why_ and _how_.
 5. **Engage** with the maintainers to address feedback and get the PR merged.
 
 ```bash
@@ -37,9 +37,9 @@ Ignoring the issue, building a local workaround, or maintaining a permanent priv
 // Bad: Monkey-patching a library locally
 import { someLibrary } from 'some-library';
 
-someLibrary.brokenMethod = function() {
+someLibrary.brokenMethod = function () {
   // Local fix that will break upon library update
-  console.log("Hacked fix");
+  console.log('Hacked fix');
 };
 ```
 

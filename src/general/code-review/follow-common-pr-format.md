@@ -1,8 +1,8 @@
-# Create consistent pull requests
+# Follow common PR format
 
 ## TLDR
 
-Use a standardized format for Pull Request (PR) titles and descriptions, following the imperative mood and including associated ticket numbers.
+Standardize PR titles and descriptions. Use imperative mood and include ticket numbers.
 
 ## Problem
 

@@ -1,3 +1,7 @@
+---
+aiSkip: true
+---
+
 # Don't overcomplicate branching flow
 
 ## TLDR

@@ -1,8 +1,8 @@
-# Write meaningful and consistent commit messages
+# Follow common commit message format
 
 ## TLDR
 
-Follow a standardized, imperative format for Git commit messages to ensure a readable and searchable project history.
+Standardize commit messages. Use imperative mood and include task ID.
 
 ## Problem
 
