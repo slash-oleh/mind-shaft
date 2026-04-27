@@ -1,21 +1,21 @@
-# Use content-agnostic translation keys
+# Use intent-based identifiers
 
 ## TLDR
 
-Use descriptive translation keys that represent the purpose or context of a message rather than its literal content.
+Name identifiers for purpose or role. Avoid using literal values or duplicating content in names.
 
 ## Problem
 
-Using the literal text as a translation key (e.g., `welcomeToTheService`) creates a tight coupling between the application logic and the user interface's wording. If the wording changes, you are faced with a dilemma:
+Using literal text as a variable name or translation key (e.g., `welcomeToTheService`) couples application logic to UI wording. Changing wording causes issues:
 
-1. **Mismatch**: The key stays the same but the message changes (e.g., key is `welcomeToTheService`, but message is "Hello there!"), which is confusing for developers.
-2. **Refactoring Overhead**: You must update the key in both the translation files and every point in the code where it is used, which is error-prone and time-consuming.
+1. **Mismatch**: Name stays same but text changes (e.g., variable `welcomeToTheService` holds "Hello!"), confusing developers.
+2. **Refactoring Overhead**: Updating wording requires changing identifiers everywhere, which is error-prone.
 
-Additionally, this approach makes it harder to manage different messages that happen to have the same wording initially but might diverge in the future or in other languages.
+This also prevents reusing names for messages that happen to be identical but serve different purposes.
 
 ## Good solution
 
-Use keys that describe the *role* or *context* of the message.
+Use identifiers that describe the _role_ or _context_ of the text.
 
 ```typescript
 // Translation file

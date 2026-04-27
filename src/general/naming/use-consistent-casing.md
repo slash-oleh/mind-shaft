@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use consistent casing for all variable and function names, and treat acronyms (e.g., `userId`) as regular words to maintain clear word boundaries.
+Treat acronyms and abbreviations as regular words for clear word boundaries.
 
 ## Problem
 

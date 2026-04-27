@@ -1,4 +1,4 @@
-# Use nouns for data and verbs for ops
+# Distinguish data and operations
 
 ## TLDR
 

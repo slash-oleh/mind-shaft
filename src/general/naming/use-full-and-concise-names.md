@@ -1,8 +1,8 @@
-# Use full and concise names
+# Use concise words
 
 ## TLDR
 
-Use complete, descriptive words instead of cryptic abbreviations while avoiding excessive verbosity that doesn't add clarity.
+Use common, complete, descriptive words instead of cryptic abbreviations, contractions while avoiding excessive verbosity that doesn't add clarity.
 
 ## Problem
 
@@ -22,7 +22,7 @@ const source = getSource();
 const profile = await getUserProfile(userId);
 
 // Good: Concise in context
-const activeAccount = accounts.find(a => a.isActive);
+const activeAccount = accounts.find((a) => a.isActive);
 ```
 
 ## Bad solution
@@ -36,7 +36,7 @@ const src = getSrc();
 
 // Bad: Overly verbose and redundant
 const externallyFetchedUserWithDetailedInfo = await fetchUser();
-const currentActiveAccountFoundInTheList = accounts.find(a => a.isActive);
+const currentActiveAccountFoundInTheList = accounts.find((a) => a.isActive);
 ```
 
 ## Impact

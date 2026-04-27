@@ -1,8 +1,8 @@
-# Care about variable context: not too generic and not too specific
+# Balance context
 
 ## TLDR
 
-Ensure variable names provide sufficient information for clarity while avoiding redundant details already provided by the surrounding context.
+Avoid both too generic names lacking context, and redundant names duplicating it. Use surrounding context to keep it concise.
 
 ## Problem
 

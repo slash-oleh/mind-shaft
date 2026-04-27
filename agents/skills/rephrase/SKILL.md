@@ -7,4 +7,7 @@ description: Rephrase a text to match text style rules.
 
 Take into account text style rules and rewrite the text.
 
-TLDR section should be focused and what to do, not why.
+## TLDR section
+
+- Should be focused and what to do, not why
+- Should not duplicate article title

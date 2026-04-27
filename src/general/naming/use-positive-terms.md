@@ -1,8 +1,8 @@
-# Use positive naming
+# Use positive terms
 
 ## TLDR
 
-Use positive identifiers for variables and states instead of inverted logic.
+Avoid inverted logic like 'isDisabled' or 'isNotValid'.
 
 ## Problem
 

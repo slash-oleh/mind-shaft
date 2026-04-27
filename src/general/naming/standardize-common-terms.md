@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use a single, project-wide term for common concepts and operations names.
+Use a single, project-wide term for common concepts and operations (e.g. unify 'id' vs 'uid', 'fetch' vs 'get').
 
 ## Problem
 
