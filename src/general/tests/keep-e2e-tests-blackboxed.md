@@ -1,8 +1,8 @@
-# Keep E2E tests totally blackboxed
+# Keep E2E tests blackboxed
 
 ## TLDR
 
-Interact with the system only through public interfaces (UI or public API) in E2E tests to verify final behavior without implementation knowledge.
+Interact with the system only through public interfaces (UI or public API), without implementation knowledge.
 
 ## Problem
 
@@ -41,7 +41,9 @@ it('should generate a reset token', async ({ page }) => {
   await page.click('button[type="submit"]');
 
   // Direct DB access bypasses the public interface
-  const token = await db.tokens.findFirst({ where: { user: 'user@example.com' } });
+  const token = await db.tokens.findFirst({
+    where: { user: 'user@example.com' },
+  });
   expect(token).toBeDefined();
 });
 ```

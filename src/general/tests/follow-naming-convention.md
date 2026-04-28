@@ -1,8 +1,8 @@
-# Follow naming convention for tests
+# Follow naming convention
 
 ## TLDR
 
-Use clear and descriptive names for tests that state the unit of work, context, and expected result.
+In test name state the unit of work, context, and expected result, in order.
 
 ## Problem
 

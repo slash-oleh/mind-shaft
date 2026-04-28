@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use parametrized tests (table-driven tests) to deduplicate logic when testing multiple scenarios with different inputs and outputs.
+Deduplicate logic via table-driven tests when testing multiple scenarios with different inputs and outputs.
 
 ## Problem
 
@@ -19,13 +19,16 @@ describe('Validator.isValidEmail', () => {
     { email: 'valid@example.com', expected: true },
     { email: 'invalid-email', expected: false },
     { email: '', expected: false },
-  ])('should return $expected when email is "$email"', ({ email, expected }) => {
-    // Act
-    const result = Validator.isValidEmail(email);
+  ])(
+    'should return $expected when email is "$email"',
+    ({ email, expected }) => {
+      // Act
+      const result = Validator.isValidEmail(email);
 
-    // Assert
-    expect(result).toBe(expected);
-  });
+      // Assert
+      expect(result).toBe(expected);
+    },
+  );
 });
 ```
 

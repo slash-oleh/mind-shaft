@@ -1,8 +1,8 @@
-# Avoid mocking in integration tests
+# Avoid mocking
 
 ## TLDR
 
-Minimize the use of mocks in integration tests and use real dependencies like databases or file systems to ensure accurate production behavior.
+Mock only infrastructure, not implementation. Domain tested with shouldn't be dependent on infrastructure in the first place. E2E tests should use real instances where possible.
 
 ## Problem
 
