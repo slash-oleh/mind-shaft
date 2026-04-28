@@ -1,4 +1,4 @@
-# Be aware of numeric precision and limits
+# Mind numeric limitations
 
 ## TLDR
 
@@ -25,7 +25,7 @@ const hugeNumber = 9007199254740993n;
 const total = new Decimal(0.1).plus(0.2); // results in exactly 0.3
 
 // GOOD: Compare floats using Number.EPSILON
-const isEqual = Math.abs((0.1 + 0.2) - 0.3) < Number.EPSILON;
+const isEqual = Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON;
 
 // GOOD: Use Number.isNaN() for reliable checks
 if (Number.isNaN(result)) {
@@ -66,6 +66,6 @@ if (result === NaN) {
 
 ## References
 
-- [MDN: Number.MAX\_SAFE\_INTEGER](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER)
+- [MDN: Number.MAX_SAFE_INTEGER](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER)
 - [MDN: BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 - [Lukas Kollmer: IEEE 754 Visualizer](https://lukaskollmer.de/ieee-754-visualizer/)

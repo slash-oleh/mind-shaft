@@ -48,4 +48,5 @@ function processUser(user: User | null) {
 ## References
 
 - [Wikipedia: Guard (computer science)](https://en.wikipedia.org/wiki/Guard_%28computer_science%29)
+- [Refactoring Guru: Replace Nested Conditional with Guard Clauses](https://refactoring.guru/replace-nested-conditional-with-guard-clauses)
 - [Martin Fowler: Replace Nested Conditional with Guard Clauses](https://refactoring.com/catalog/replaceNestedConditionalWithGuardClauses.html)

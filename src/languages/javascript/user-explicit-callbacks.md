@@ -1,8 +1,8 @@
-# Use explicit callbacks for iterative methods
+# Use explicit callbacks
 
 ## TLDR
 
-Use explicit callback functions when using iterative array methods like `map`, `filter`, or `forEach` instead of passing function references directly.
+Use explicit arrow functions as callback arguments for standard methods. Prevents signature intent mismatch from extra arguments to callbacks.
 
 ## Problem
 

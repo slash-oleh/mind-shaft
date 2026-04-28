@@ -14,9 +14,11 @@ description: "General: Code style"
 - **Don't overuse environment variables**: Use environment variables only for infrastructure configuration instead of business logic or feature flags.
 - **Follow code conventions**: Follow the standard naming, formatting, and structural conventions of the programming language.
 - **Follow project code style**: Match the existing codebase's style and apply improvements systematically as separate tasks.
+- **Forward properties**: Follow Open/Closed Principle. Wrappers should forward properties to underlying layers. Preserves composed interface and avoids manual re-mapping.
 - **Shorten boolean expressions**: Use boolean operators instead of ternary expressions or conditional statements when the desired outcome is a boolean value.
 - **Use bulletproof range checks**: Use inclusive range checks (`>=` or `<=`) instead of exact equality (`==`) for progress monitoring, counters, and loop terminations to prevent infinite loops in case counter change logic is bugged.
 - **Use exceptions for errors**: Throw exceptions instead of returning error codes or status objects to signal unexpected failures.
 - **Use guard clauses**: Avoid if statement nesting by using early returns at function start to handle prerequisites.
 - **Use i18n tools**: Internalize all user-facing strings into translation files (i18n).
 - **Use text templates**: Use placeholders within translation strings instead of concatenating partial tokens with dynamic values.
+- **Use lookup maps**: Use objects or Maps for multi-branch logic instead of if/else or switch.

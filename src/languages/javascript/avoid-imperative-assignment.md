@@ -1,8 +1,8 @@
-# Declare variables as `const` using ternary operators
+# Avoid imperative assignment
 
 ## TLDR
 
-Use ternary operators to initialize `const` variables instead of using `let` with `if/else` blocks.
+When possible, use ternary operators to initialize `const` variables instead of using `let` with `if/else` blocks.
 
 ## Problem
 
@@ -33,7 +33,7 @@ if (condition) {
 
 ## Impact
 
-- **[Declarative](../../home/impact/positive/declarative.md)**: Explicitly defines *what* the value is based on a condition, rather than *how* to set it.
+- **[Declarative](../../home/impact/positive/declarative.md)**: Explicitly defines _what_ the value is based on a condition, rather than _how_ to set it.
 - **[Readability](../../home/impact/positive/readability.md)**: Reduces the amount of code and keeps the initialization in one place.
 - **[Stateless](../../home/impact/positive/stateless.md)**: Encourages immutability by allowing the use of `const`.
 - **[Size/Code Amount](../../home/impact/negative/size-code-amount.md)**: significantly shorter than the equivalent `if/else` structure.

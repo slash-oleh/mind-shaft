@@ -1,8 +1,8 @@
-# Use `if/else` instead of `switch/case`
+# Avoid switch statement
 
 ## TLDR
 
-Use `if/else` statements or lookup maps instead of `switch/case` structures.
+Use `if/else` statements or lookup maps instead of `switch/case` structures. Consider polymorphism as well.
 
 ## Problem
 

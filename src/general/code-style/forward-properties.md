@@ -1,8 +1,8 @@
-# Pass unused properties through implicitly
+# Forward properties
 
 ## TLDR
 
-Use the rest operator (`...`) to collect and forward unused properties when passing them to another function.
+Follow Open/Closed Principle. Wrappers should forward properties to underlying layers. Preserves composed interface and avoids manual re-mapping.
 
 ## Problem
 
@@ -52,5 +52,6 @@ signUp(email, password, { firstName, ...restInfo });
 
 ## References
 
+- [Wikipedia: Open/Closed Principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle)
 - [MDN: Rest parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)
 - [MDN: Spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)

@@ -1,8 +1,8 @@
-# Use lookup maps instead of conditional branching
+# Use lookup maps
 
 ## TLDR
 
-Use object literals or `Map` instances to handle multi-branch logic based on keys instead of extensive `if/else` or `switch` statements.
+Use objects or Maps for multi-branch logic instead of if/else or switch.
 
 ## Problem
 
@@ -20,7 +20,8 @@ const handleStatus = (status) => {
     PENDING: () => console.log('Operation in progress'),
   };
 
-  const handler = statusHandlers[status] || (() => console.log('Unknown status'));
+  const handler =
+    statusHandlers[status] || (() => console.log('Unknown status'));
   handler();
 };
 ```
@@ -46,7 +47,7 @@ const handleStatus = (status) => {
 ## Impact
 
 - **[Scalability](../../home/impact/positive/scalability.md)**: Adding a new case is as simple as adding a new key-value pair to the map.
-- **[Declarative](../../home/impact/positive/declarative.md)**: Describes *what* to do for each key rather than *how* to branch to it.
+- **[Declarative](../../home/impact/positive/declarative.md)**: Describes _what_ to do for each key rather than _how_ to branch to it.
 - **[Readability](../../home/impact/positive/readability.md)**: The relationship between keys and actions is immediately obvious.
 - **[Maintainability](../../home/impact/positive/maintainability.md)**: Encourages smaller, focused functions and separates selection logic from execution logic.
 
@@ -58,4 +59,5 @@ const handleStatus = (status) => {
 
 ## References
 
+- [Refactoring Guru: Replace Conditional with Polymorphism](https://refactoring.guru/replace-conditional-with-polymorphism)
 - [Martin Fowler: Replace Conditional with Polymorphism (Refactoring)](https://refactoring.com/catalog/replaceConditionalWithPolymorphism.html)

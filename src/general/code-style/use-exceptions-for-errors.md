@@ -64,5 +64,6 @@ if (result !== 0) {
 
 ## References
 
+- [Refactoring Guru: Replace Error Code with Exception](https://refactoring.guru/replace-error-code-with-exception)
 - [Clean Code: Prefer Exceptions to Returning Error Codes](https://github.com/ryanmcdermott/clean-code-javascript#error-handling)
 - [MDN: throw statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw)

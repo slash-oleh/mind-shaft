@@ -61,5 +61,6 @@ const deleteUser = (user: User) => {
 
 ## References
 
+- [Refactoring Guru: Preserve Whole Object](https://refactoring.guru/preserve-whole-object)
 - [Martin Fowler: Introduce Parameter Object (Refactoring)](https://refactoring.com/catalog/introduceParameterObject.html)
 - [Robert C. Martin: Clean Code - Function Arguments](https://github.com/ryanmcdermott/clean-code-javascript#function-arguments-2-or-fewer-ideally)

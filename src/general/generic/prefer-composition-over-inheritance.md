@@ -15,15 +15,22 @@ Use composition to assemble behavior from smaller, reusable parts. This allows f
 ```ts
 // Good: Composition using independent components
 class Logger {
-  log(message: string) { console.log(message); }
+  log(message: string) {
+    console.log(message);
+  }
 }
 
 class Authenticator {
-  authenticate(user: string) { /* ... */ }
+  authenticate(user: string) {
+    /* ... */
+  }
 }
 
 class UserHandler {
-  constructor(private logger: Logger, private auth: Authenticator) {}
+  constructor(
+    private logger: Logger,
+    private auth: Authenticator,
+  ) {}
 
   handle(user: string) {
     this.auth.authenticate(user);
@@ -39,8 +46,12 @@ Creating deep or broad inheritance hierarchies to share code.
 ```ts
 // Bad: Inheritance forcing a rigid structure
 class BaseHandler {
-  log(message: string) { console.log(message); }
-  authenticate(user: string) { /* ... */ }
+  log(message: string) {
+    console.log(message);
+  }
+  authenticate(user: string) {
+    /* ... */
+  }
 }
 
 class UserHandler extends BaseHandler {
@@ -66,4 +77,5 @@ class UserHandler extends BaseHandler {
 ## References
 
 - [Wikipedia: Composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance)
+- [Refactoring Guru: Replace Inheritance with Delegation](https://refactoring.guru/replace-inheritance-with-delegation)
 - [Wikipedia: Design Patterns: Elements of Reusable Object-Oriented Software by Gamma et al. (The "Gang of Four" book)](https://en.wikipedia.org/wiki/Design_Patterns)

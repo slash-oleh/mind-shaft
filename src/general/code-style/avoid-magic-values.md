@@ -43,4 +43,5 @@ if (button.color === '#FF5733' || file.mode === 0o644) {
 
 ## References
 
-- [Martin Fowler: Replace Magic Number with Symbolic Constant (Refactoring)](https://refactoring.com/catalog/replaceMagicNumberWithSymbolicConstant.html)
+- [Refactoring Guru: Replace Magic Number with Symbolic Constant](https://refactoring.guru/replace-magic-literal)
+- [Martin Fowler: Replace Magic Literal](https://refactoring.com/catalog/replaceMagicLiteral.html)
