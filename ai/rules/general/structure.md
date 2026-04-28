@@ -2,13 +2,12 @@
 description: "General: Structure"
 ---
 
-- **Don't import directly from inside a submodule**: Import only from the public API (entry point) of a submodule and avoid reaching into its internal file structure.
-- **Don't overuse core/utils/helpers modules**: Avoid using generic catch-all modules like `core`, `utils`, or `helpers` for logic that has a definitive domain home. These modules should be reserved for truly foundational, non-business logic.
-- **Explicitly define the public API of a module**: Export only essential components and functions through a root index file to keep internal implementation details hidden.
-- **File should export only one component**: Export only one primary component per file.
-- **Prefer feature-based structure over technical role-based one**: Organize your codebase around features or domain concepts rather than technical roles like "components", "data", or "hooks". Group everything related to a single feature in one place.
-- **Prefer src folder over project root folder**: Place all application source code and assets within a dedicated `src` directory to keep the project root clean.
-- **Separate the business-logic part and the user interface**: Decouple business logic and state management from the presentation layer using 'headless' patterns or service layers.
-- **Structure translations to represent the modules structure**: Organize translation keys to mirror the directory and file structure of the codebase.
-- **Use corresponding module for the code**: Place code within the feature or domain module that it logically belongs to. Ensure that components, hooks, and services reside in the module that defines their business role or scope.
-- **Use technical role separation inside feature module**: Organize feature modules into subdirectories by technical role (e.g., `components/`, `hooks/`) when they contain multiple files of the same type.
+- **Avoid helpers modules**: Avoid stockpiling non-cohesive code into generic modules (`core`, `utils`, `helpers`). Use corresponding domain modules instead and fallback to helpers only as a last resort.
+- **Encapsulate implementation details**: Export only the public API. Keep internal logic of files and modules private to enforce encapsulation and prevent coupling.
+- **Group by feature**: On top-level, group code by feature first (`auth`, `billing`), not technical role (`ui`, `api`, `models`). Keep feature-related logic together and group by role inside feature.
+- **Mirror components in translations**: Organize translation keys to reflect modules structure in the codebase.
+- **One component per file**: Keep one primary component per file. Internal one-time use helpers are allowed.
+- **Separate logic and UI**: Decouple business logic and state management from presentation layer. Use headless patterns or services.
+- **Use appropriate domain module**: Place code within its logical feature or domain module. Ensure components reside in their relevant business scope.
+- **Use module entrypoints**: Expose and use the public API of a module and avoid reaching into its internal file structure directly.
+- **Use src folder**: When possible put files into `src` directory instead of root directory.
