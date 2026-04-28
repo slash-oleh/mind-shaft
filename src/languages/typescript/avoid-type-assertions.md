@@ -1,8 +1,8 @@
-# Use explicit types instead of type assertions
+# Avoid type assertions
 
 ## TLDR
 
-Explicitly annotate variables and function returns with types instead of relying on inference for complex objects or using type assertions to force compliance.
+Annotate types explicitly. Avoid `as` keyword to ensure structural validity.
 
 ## Problem
 

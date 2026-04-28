@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Reuse existing internal and third-party types through inheritance or imports instead of re-declaring their structure.
+Reuse existing internal and third-party types through inheritance, composition or utility types instead of re-declaring their structure.
 
 ## Problem
 
