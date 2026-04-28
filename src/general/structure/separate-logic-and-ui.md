@@ -1,8 +1,8 @@
-# Separate the business-logic part and the user interface
+# Separate logic and UI
 
 ## TLDR
 
-Decouple business logic and state management from the presentation layer using 'headless' patterns or service layers.
+Decouple business logic and state management from presentation layer. Use headless patterns or services.
 
 ## Problem
 

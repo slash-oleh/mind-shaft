@@ -1,8 +1,8 @@
-# Structure translations to represent the modules structure
+# Mirror components in translations
 
 ## TLDR
 
-Organize translation keys to mirror the directory and file structure of the codebase.
+Organize translation keys to reflect modules structure in the codebase.
 
 ## Problem
 
@@ -20,8 +20,8 @@ user/
 
 ```typescript
 export default {
-  "user": {
-    "signUp": "Sign Up",
+  user: {
+    signUp: 'Sign Up',
   },
 };
 ```
@@ -32,8 +32,8 @@ Using mismatched keys or hierarchies that deviate from the file system.
 
 ```typescript
 export default {
-  "forms": {
-    "signUp": "Sign Up",
+  forms: {
+    signUp: 'Sign Up',
   },
 };
 ```

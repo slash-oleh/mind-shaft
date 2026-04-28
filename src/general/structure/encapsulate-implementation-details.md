@@ -1,8 +1,8 @@
-# Explicitly define the public API of a module
+# Encapsulate implementation details
 
 ## TLDR
 
-Export only essential components and functions through a root index file to keep internal implementation details hidden.
+Export only the public API. Keep internal logic of files and modules private to enforce encapsulation and prevent coupling.
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Don't import directly from inside a submodule
+# Use module entrypoints
 
 ## TLDR
 
-Import only from the public API (entry point) of a submodule and avoid reaching into its internal file structure.
+Expose and use the public API of a module and avoid reaching into its internal file structure directly.
 
 ## Problem
 

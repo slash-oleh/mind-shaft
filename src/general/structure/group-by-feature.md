@@ -1,8 +1,8 @@
-# Prefer feature-based structure over technical role-based one
+# Group by feature
 
 ## TLDR
 
-Organize your codebase around features or domain concepts rather than technical roles like "components", "data", or "hooks". Group everything related to a single feature in one place.
+On top-level, group code by feature first (`auth`, `billing`), not technical role (`ui`, `api`, `models`). Keep feature-related logic together and group by role inside feature.
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Prefer `src` folder over project root folder
+# Use src folder
 
 ## TLDR
 
-Place all application source code and assets within a dedicated `src` directory to keep the project root clean.
+When possible put files into `src` directory instead of root directory.
 
 ## Problem
 
@@ -48,4 +48,4 @@ project-root/
 
 ## Exceptions
 
-- Configuration files, project metadata, and scripts that *must* reside in the project root as required by standard tooling (e.g., `Dockerfile`, `docker-compose.yml`, `README.md`).
+- Configuration files, project metadata, and scripts that _must_ reside in the project root as required by standard tooling (e.g., `Dockerfile`, `docker-compose.yml`, `README.md`).

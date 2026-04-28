@@ -1,8 +1,8 @@
-# File should export only one component
+# One component per file
 
 ## TLDR
 
-Export only one primary component per file.
+Keep one primary component per file. Internal one-time use helpers are allowed.
 
 ## Problem
 
@@ -50,5 +50,5 @@ export const PasswordReset = () => { ... };
 
 ## Exceptions
 
-- Small, private helper components that are *exclusively* used within the same file and are not exported.
+- Small, private helper components that are _exclusively_ used within the same file and are not exported.
 - Files that are naturally small and have extremely tight coupling (e.g., a set of related constants or small, atomic utility functions).
