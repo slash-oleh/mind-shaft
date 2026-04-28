@@ -1,8 +1,8 @@
-# Don't use UUID as a secure random string
+# Use secure secrets
 
 ## TLDR
 
-Use cryptographically secure random number generators (CSPRNG) instead of UUIDs for security credentials, session tokens, or unpredictable strings.
+Use cryptographically secure random number generators (CSPRNG) for secret values generation. Avoid using UUID or similar for that.
 
 ## Problem
 

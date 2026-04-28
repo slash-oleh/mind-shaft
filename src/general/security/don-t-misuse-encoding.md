@@ -1,8 +1,8 @@
-# Don't confuse encoding with encryption
+# Don't misuse encoding
 
 ## TLDR
 
-Use encryption for data protection and avoid relying on encoding (like Base64) as a security measure.
+Encoding (like Base64) is data representation. For protection, use encryption instead.
 
 ## Problem
 
@@ -21,7 +21,8 @@ const key = Buffer.from(process.env.ENCRYPTION_KEY, 'hex');
 const iv = randomBytes(16);
 
 const cipher = createCipheriv(algorithm, key, iv);
-const encrypted = cipher.update(sensitiveData, 'utf8', 'hex') + cipher.final('hex');
+const encrypted =
+  cipher.update(sensitiveData, 'utf8', 'hex') + cipher.final('hex');
 ```
 
 ## Bad solution

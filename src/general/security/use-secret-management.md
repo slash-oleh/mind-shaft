@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use environment variables or dedicated vault services to manage sensitive secrets and avoid storing them in source code.
+Use dedicated vault services, external files or environment variables to manage sensitive secrets and avoid storing them in source code.
 
 ## Problem
 

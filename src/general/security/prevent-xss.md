@@ -1,8 +1,8 @@
-# Prevent Cross-Site Scripting (XSS)
+# Prevent XSS
 
 ## TLDR
 
-Escape or sanitize user-controlled data before rendering and prefer safe DOM manipulation methods over direct HTML string injection.
+Escape or sanitize user-controlled data before rendering and use safe DOM manipulation methods instead of direct HTML string injection.
 
 ## Problem
 

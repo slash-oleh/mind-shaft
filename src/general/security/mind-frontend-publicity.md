@@ -1,8 +1,8 @@
-# Frontend code is public
+# Mind frontend publicity
 
 ## TLDR
 
-Assume all frontend source code is public and avoid storing secrets, API keys, or sensitive business logic on the client side.
+Avoid storing secrets, API keys, or sensitive business logic on the client side.
 
 ## Problem
 
@@ -16,7 +16,7 @@ Keep all sensitive operations and secrets on the server side. The frontend shoul
 
 - **Server-Side Secret Storage**: Use environment variables and secret managers on the backend.
 - **Proxy Sensitive APIs**: If a third-party API requires a private key, call it from your backend and return only the necessary results to the frontend.
-- **Backend Authentication**: Perform all authorization and permission checks on the server, never relying on a "is\_admin" flag in the frontend code.
+- **Backend Authentication**: Perform all authorization and permission checks on the server, never relying on a "is_admin" flag in the frontend code.
 
 ```typescript
 // Good: Backend handles the sensitive API call
@@ -30,7 +30,7 @@ Storing API keys or private configuration in the frontend, even if "protected" b
 
 ```typescript
 // Bad: Secrets are still visible in network tabs or source maps
-const SENSITIVE_API_KEY = "my-secret-key";
+const SENSITIVE_API_KEY = 'my-secret-key';
 const decodedKey = atob(ENCODED_KEY); // Obfuscation is not security
 ```
 
