@@ -1,8 +1,8 @@
-# Don't overuse CSS specificity
+# Avoid specificity
 
 ## TLDR
 
-Structure CSS classes modularly so that properties are applied additively instead of relying on overrides and high specificity.
+Structure CSS classes modularly so that properties are applied additively in distinct manner instead of relying on overrides and high CSS specificity.
 
 ## Problem
 

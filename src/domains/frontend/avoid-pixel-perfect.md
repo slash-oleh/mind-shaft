@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Implement fluid, adaptable, and system-driven layouts instead of trying to match design mockups down to the exact pixel.
+Implement fluid, adaptable, and system-driven layouts instead of trying to match design mockups down to the exact pixel for certain screen size.
 
 ## Problem
 
@@ -36,7 +36,7 @@ Forcing exact pixel measurements found in a mockup, using structural hacks or ma
 /* Bad: Using magic numbers and rigid dimensions to match a mockup exactly */
 .card {
   padding: 23px; /* Arbitrary number from a design error */
-  width: 300px;  /* Rigid pixel perfect width that breaks on small screens */
+  width: 300px; /* Rigid pixel perfect width that breaks on small screens */
   margin-top: 17px;
 }
 ```

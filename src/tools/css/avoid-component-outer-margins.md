@@ -1,8 +1,8 @@
-# Avoid top-level component margins
+# Avoid component outer margins
 
 ## TLDR
 
-Leave outer spacing decisions to the parent container by not applying margins to the root element of reusable UI components.
+Leave outer spacing decisions to the parent user container by not applying margins to the root element of reusable UI components.
 
 ## Problem
 
@@ -15,11 +15,7 @@ Design components to be completely agnostic of their surroundings. Apply spacing
 ```tsx
 // Good: The Card is agnostic. The parent controls the spacing via gap or its own padding.
 function Card({ children }) {
-  return (
-    <div style={{ background: 'white' }}>
-      {children}
-    </div>
-  );
+  return <div style={{ background: 'white' }}>{children}</div>;
 }
 
 function CardList() {
@@ -38,11 +34,7 @@ Hardcoding margins directly into the root of the component.
 ```tsx
 // Bad: The Card brings its own opinions about the surrounding layout
 function Card({ children }) {
-  return (
-    <div style={{ background: 'white', margin: '16px' }}>
-      {children}
-    </div>
-  );
+  return <div style={{ background: 'white', margin: '16px' }}>{children}</div>;
 }
 
 function CardList() {

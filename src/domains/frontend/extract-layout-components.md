@@ -1,8 +1,8 @@
-# Use Grid/Stack components for layout
+# Extract layout components
 
 ## TLDR
 
-Use high-level layout components like `<Grid>` or `<Stack>` instead of raw flexbox or CSS Grid properties.
+Use high-level layout components like `Grid` or `Stack` instead of raw styles (like CSS flexbox or grid).
 
 ## Problem
 
@@ -18,12 +18,27 @@ import { Stack, Grid } from '@mui/material';
 
 function DashboardLayout({ sidebar, content }) {
   return (
-    <Grid container spacing={3}>
-      <Grid item xs={12} md={4}>
+    <Grid
+      container
+      spacing={3}
+    >
+      <Grid
+        item
+        xs={12}
+        md={4}
+      >
         {sidebar}
       </Grid>
-      <Grid item xs={12} md={8}>
-        <Stack direction="column" spacing={2} alignItems="center">
+      <Grid
+        item
+        xs={12}
+        md={8}
+      >
+        <Stack
+          direction="column"
+          spacing={2}
+          alignItems="center"
+        >
           {content}
         </Stack>
       </Grid>
@@ -42,12 +57,27 @@ import { Box } from '@mui/material';
 
 function DashboardLayout({ sidebar, content }) {
   return (
-    <Box display="flex" flexWrap="wrap" sx={{ margin: '-12px' }}>
-      <Box flex="0 0 33.333%" padding="12px">
+    <Box
+      display="flex"
+      flexWrap="wrap"
+      sx={{ margin: '-12px' }}
+    >
+      <Box
+        flex="0 0 33.333%"
+        padding="12px"
+      >
         {sidebar}
       </Box>
-      <Box flex="0 0 66.666%" padding="12px">
-        <Box display="flex" flexDirection="column" alignItems="center" gap="16px">
+      <Box
+        flex="0 0 66.666%"
+        padding="12px"
+      >
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          gap="16px"
+        >
           {content}
         </Box>
       </Box>

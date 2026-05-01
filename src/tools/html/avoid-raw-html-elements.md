@@ -1,8 +1,8 @@
-# Avoid pure HTML elements
+# Avoid raw HTML elements
 
 ## TLDR
 
-Encapsulate raw HTML elements like `<div>` or `<button>` into reusable UI Kit primitives instead of using them directly in application pages.
+Encapsulate raw HTML elements like `<div>` or `<button>` into reusable UI Kit primitives instead of using them directly in application components.
 
 ## Problem
 
@@ -18,9 +18,18 @@ import { Box, Typography, Link } from '@/ui-kit';
 
 function UserProfile({ user }) {
   return (
-    <Box padding={4} borderRadius="md" background="surface">
+    <Box
+      padding={4}
+      borderRadius="md"
+      background="surface"
+    >
       <Typography variant="heading">{user.name}</Typography>
-      <Link href={user.websiteUrl} isExternal>Visit Website</Link>
+      <Link
+        href={user.websiteUrl}
+        isExternal
+      >
+        Visit Website
+      </Link>
     </Box>
   );
 }
@@ -36,7 +45,12 @@ function UserProfile({ user }) {
   return (
     <div className="bg-white p-4 rounded-md">
       <span className="text-xl font-bold">{user.name}</span>
-      <a href={user.websiteUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+      <a
+        href={user.websiteUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-500 hover:underline"
+      >
         Visit Website
       </a>
     </div>
@@ -52,5 +66,5 @@ function UserProfile({ user }) {
 
 ## Exceptions
 
-- **The UI Kit itself**: The foundational components within the UI Design System are the literal designated places where raw HTML tags *must* be used and encapsulated.
+- **The UI Kit itself**: The foundational components within the UI Design System are the literal designated places where raw HTML tags _must_ be used and encapsulated.
 - **Third-Party Integrations**: Specific external libraries or charting tools that explicitly require an empty raw `<div>` with an `id` to mount a canvas or iframe onto.

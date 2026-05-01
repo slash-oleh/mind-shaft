@@ -1,4 +1,4 @@
-# Avoid element wrappers
+# Avoid no-op wrappers
 
 ## TLDR
 

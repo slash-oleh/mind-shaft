@@ -1,8 +1,8 @@
-# Avoid percentage for spacing
+# Avoid percentage spacing
 
 ## TLDR
 
-Use fixed units like `px` or `rem` for margins and padding instead of percentages.
+Use fixed-size spacing units for margins and padding instead of percentages.
 
 ## Problem
 
@@ -15,8 +15,8 @@ Use fixed units for spacing and let Flexbox or Grid handle the distribution. Use
 ```css
 /* Good: Predictable spacing that doesn't change based on parent width */
 .card {
-  padding: 16px;          /* Fixed, predictable */
-  max-width: 400px;       /* Adapts to parent, but doesn't use percentages */
+  padding: 16px; /* Fixed, predictable */
+  max-width: 400px; /* Adapts to parent, but doesn't use percentages */
   margin: 0 auto 24px auto; /* Centered and predictable */
 }
 ```
@@ -28,8 +28,8 @@ Using percentages for spacing, which creates unpredictable gaps that change base
 ```css
 /* Bad: Unpredictable spacing that breaks easily */
 .card {
-  padding: 10%;           /* 10% of parent width - too small on mobile, too large on desktop */
-  margin-left: 5%;         /* Creates inconsistent gaps */
+  padding: 10%; /* 10% of parent width - too small on mobile, too large on desktop */
+  margin-left: 5%; /* Creates inconsistent gaps */
   margin-right: 5%;
 }
 ```

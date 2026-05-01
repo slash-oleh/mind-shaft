@@ -1,8 +1,8 @@
-# Avoid `style` attribute
+# Avoid style attribute
 
 ## TLDR
 
-Use CSS classes instead of the inline `style` attribute for static styling.
+For static styling, prefer at least CSS classes. Avoid `style` attribute unless for frequently changing dynamic values.
 
 ## Problem
 
@@ -29,7 +29,13 @@ Applying static styles directly using the `style` attribute.
 // Bad: Hardcoding static styles into the inline attribute
 function Card({ children }) {
   return (
-    <div style={{ padding: '16px', backgroundColor: '#f5f5f5', borderRadius: '8px' }}>
+    <div
+      style={{
+        padding: '16px',
+        backgroundColor: '#f5f5f5',
+        borderRadius: '8px',
+      }}
+    >
       {children}
     </div>
   );

@@ -1,8 +1,8 @@
-# Avoid referencing final colors by hue
+# Use semantic tokens
 
 ## TLDR
 
-Use semantic color tokens instead of hue-based color values in final components.
+Use semantic color tokens in theme and final components. Avoid referencing colors by hue outside of primitives palette.
 
 ## Problem
 
@@ -64,9 +64,9 @@ body {
 
 - **[Maintainability](../../home/impact/positive/maintainability.md)**: Changing a brand color requires updating a single mapping in the theme configuration, rather than renaming classes across hundreds of components.
 - **[Robustness](../../home/impact/positive/robustness.md)**: A semantic naming architecture is the foundational requirement for supporting multiple themes (like Light/Dark modes) efficiently without duplication.
-- **[Explicitness](../../home/impact/positive/explicitness.md)**: A token name like `danger` communicates *why* the color is used, whereas `red` only communicates *what* it currently looks like.
+- **[Explicitness](../../home/impact/positive/explicitness.md)**: A token name like `danger` communicates _why_ the color is used, whereas `red` only communicates _what_ it currently looks like.
 
 ## Exceptions
 
-- **Base Color Palette Definition**: When you are actively defining the internal primitive color scales of your root theme configuration, you *must* use hue names internally (e.g., `red-500: #FF0000`, which is later mapped to `primary: var(--red-500)`).
+- **Base Color Palette Definition**: When you are actively defining the internal primitive color scales of your root theme configuration, you _must_ use hue names internally (e.g., `red-500: #FF0000`, which is later mapped to `primary: var(--red-500)`).
 - **Physical Real-World Context**: When an element unequivocally represents a physical property that will never change regardless of the theme (e.g., a color picker showing `blue`, or social media brand colors like `facebook-blue`).

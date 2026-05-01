@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use CSS Flexbox or Grid instead of `position: absolute` for general page layouts.
+Use CSS flexbox, grid, spacing to position inline elements. Avoid `position: absolute` unless for truly floating areas.
 
 ## Problem
 
@@ -17,11 +17,11 @@ Use CSS Flexbox or Grid, which are designed to manage responsive, dynamic layout
 .card {
   display: flex;
   align-items: center; /* Vertically center icon and text */
-  gap: 16px;           /* Maintain consistent spacing automatically */
+  gap: 16px; /* Maintain consistent spacing automatically */
 }
 
 .card-icon {
-  flex-shrink: 0;      /* Ensure icon doesn't squash */
+  flex-shrink: 0; /* Ensure icon doesn't squash */
 }
 ```
 

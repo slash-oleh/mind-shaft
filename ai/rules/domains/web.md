@@ -1,5 +1,5 @@
 ---
-description: "Platforms: Web"
+description: "Domains: Web"
 ---
 
 - **Configure caching policies**: Use long-term caching for hashed static assets and `must-revalidate` for entry points like `index.html`.

@@ -1,8 +1,8 @@
-# Take minimal mobile friendliness into account
+# Support smaller screens
 
 ## TLDR
 
-Design layouts with minimal mobile-friendliness in mind to avoid hardcoding rigid desktop-only structures.
+Keep a room for minimal mobile friendliness even when doing desktop-only layout.
 
 ## Problem
 

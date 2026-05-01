@@ -1,4 +1,4 @@
-# Use only relative `z-index`
+# Use relative stacking order
 
 ## TLDR
 
@@ -58,4 +58,4 @@ function Tooltip({ children }) {
 
 ## Exceptions
 
-- **Local Stacking Contexts**: Relative z-indexing (e.g., `z-index: 1`, `2`, `3`) is sometimes acceptable when used purely *internally* within a tightly sealed micro-component (like overlapping 3 avatar icons together) where the scope does not span globally across the page structure.
+- **Local Stacking Contexts**: Relative z-indexing (e.g., `z-index: 1`, `2`, `3`) is sometimes acceptable when used purely _internally_ within a tightly sealed micro-component (like overlapping 3 avatar icons together) where the scope does not span globally across the page structure.

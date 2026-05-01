@@ -1,8 +1,8 @@
-# Avoid CSS outside of UI kit
+# Avoid ad-hoc styles
 
 ## TLDR
 
-Encapsulate raw CSS within the UI Kit's primitive components and build business features by composing these primitives.
+Encapsulate low-level styling within the UI Kit's primitive components and build business features by composing these primitives. Avoid fine-tuning per use case.
 
 ## Problem
 
@@ -19,7 +19,10 @@ import { Stack, Text, Button, Card } from '@/ui-kit';
 function UserProfile({ user }) {
   return (
     <Card padding="large">
-      <Stack direction="column" spacing="medium">
+      <Stack
+        direction="column"
+        spacing="medium"
+      >
         <Text variant="heading">{user.name}</Text>
         <Text variant="body">{user.bio}</Text>
         <Button variant="primary">Edit Profile</Button>
@@ -40,15 +43,30 @@ import { Stack, Text, Button, Card } from '@/ui-kit';
 
 function UserProfile({ user }) {
   return (
-    <Card className="user-profile-custom-card" style={{ padding: '24px' }}>
-      <Stack direction="column" style={{ gap: '16px' }}>
-        <Text variant="heading" style={{ fontSize: '28px', color: '#333' }}>
+    <Card
+      className="user-profile-custom-card"
+      style={{ padding: '24px' }}
+    >
+      <Stack
+        direction="column"
+        style={{ gap: '16px' }}
+      >
+        <Text
+          variant="heading"
+          style={{ fontSize: '28px', color: '#333' }}
+        >
           {user.name}
         </Text>
-        <Text variant="body" className="tight-leading">
+        <Text
+          variant="body"
+          className="tight-leading"
+        >
           {user.bio}
         </Text>
-        <Button variant="primary" style={{ marginTop: '8px', background: 'blue' }}>
+        <Button
+          variant="primary"
+          style={{ marginTop: '8px', background: 'blue' }}
+        >
           Edit Profile
         </Button>
       </Stack>

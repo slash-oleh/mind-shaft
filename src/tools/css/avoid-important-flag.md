@@ -1,8 +1,8 @@
-# Avoid CSS `!important`
+# Avoid important flag
 
 ## TLDR
 
-Manage CSS specificity correctly using selectors instead of the `!important` flag.
+Manage specificity correctly using selectors. Avoid the `!important` flag.
 
 ## Problem
 

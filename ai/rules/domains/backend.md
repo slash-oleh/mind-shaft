@@ -1,5 +1,5 @@
 ---
-description: "Platforms: Backend"
+description: "Domains: Backend"
 ---
 
 - **Keep backend stateless**: Rely on external shared persistence in runtime. Avoid in-memory state and local storage.

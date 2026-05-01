@@ -1,8 +1,8 @@
-# Avoid odd or fractional pixels
+# Use even pixels
 
 ## TLDR
 
-Use even, whole numbers for pixel values and stick to a base multiple system like an 8px grid or 4px grid.
+Use even, whole numbers for pixel values and stick to a base multiple system like an 8px grid or 4px grid. Avoid odd and espessially fractional values.
 
 ## Problem
 

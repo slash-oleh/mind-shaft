@@ -1,4 +1,4 @@
-# Avoid single-side paddings
+# Avoid single-side spacing
 
 ## TLDR
 
@@ -33,7 +33,11 @@ Applying single-side margins to separate adjacent elements, requiring pseudo-sel
 function List() {
   return (
     <div style={{ display: 'flex' }}>
-      <div style={{ background: 'white', padding: '16px', marginRight: '16px' }}>Item 1</div>
+      <div
+        style={{ background: 'white', padding: '16px', marginRight: '16px' }}
+      >
+        Item 1
+      </div>
       <div style={{ background: 'white', padding: '16px' }}>Item 2</div>
     </div>
   );

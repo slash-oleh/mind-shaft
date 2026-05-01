@@ -1,8 +1,8 @@
-# Prefer components over styling via classes or inline styles
+# Encapsulate design in components
 
 ## TLDR
 
-Encapsulate design and layout decisions into reusable components like `Box` or `Stack` rather than using CSS classes or inline styles.
+Reuse components, not styling rulesets. Avoid exporting utility styling groups (CSS classes, style objects constants) disconnected from markup.
 
 ## Problem
 
@@ -19,7 +19,10 @@ import { Box, Text } from '@/ui-kit';
 function UserProfile({ name }) {
   // The Box component handles the padding internally.
   return (
-    <Box padding={4} background="surface">
+    <Box
+      padding={4}
+      background="surface"
+    >
       <Text variant="heading">{name}</Text>
     </Box>
   );

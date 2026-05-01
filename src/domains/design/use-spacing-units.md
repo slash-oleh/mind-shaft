@@ -1,8 +1,8 @@
-# Avoid pixels as user-level spacing unit
+# Use spacing units
 
 ## TLDR
 
-Define a universal spacing unit as a foundational factor and express all layout decisions as multiples of this unit instead of using arbitrary raw pixels.
+Define spacing tokens as pixel constants. Express layout as non-fractional multiples of base unit. Avoid arbitrary pixel values.
 
 ## Problem
 
@@ -17,10 +17,11 @@ Establish a fixed design token scale using multiples of `2px`, `4px`, or `8px`, 
 // spacing={4} translates to 16px
 function Card({ children }) {
   return (
-    <Box padding={4} marginBottom={6}>
-      <Stack gap={2}>
-        {children}
-      </Stack>
+    <Box
+      padding={4}
+      marginBottom={6}
+    >
+      <Stack gap={2}>{children}</Stack>
     </Box>
   );
 }
@@ -43,9 +44,7 @@ Hardcoding raw pixel numbers everywhere, relying on a developer's visual guessin
 function Card({ children }) {
   return (
     <div style={{ padding: '15px', marginBottom: '22px' }}>
-      <div style={{ display: 'flex', gap: '9px' }}>
-        {children}
-      </div>
+      <div style={{ display: 'flex', gap: '9px' }}>{children}</div>
     </div>
   );
 }
