@@ -1,5 +1,5 @@
 ---
-description: "Domains: Frontend"
+description: "Domains: Frontend: Platform-agnostic frontend development. Applicable to Websites, SPAs, desktop apps, mobile apps but not to be specific to one of them."
 ---
 
 - **Avoid one-key shortcuts**: Use multi-key combinations (e.g., `Ctrl+S`, `Cmd+K`) instead of single-key shortcuts.

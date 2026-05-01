@@ -1,5 +1,6 @@
 ---
-description: "General: Code Style"
+description: "General: Code Style: Everything that affects readability and maintainability but not behavior.
+Includes formatting, linting but not the rules that can be defined in automated tools like Prettier, ESLint, etc."
 ---
 
 - **Apply modern language features**: Adopt modern syntax and language features like optional chaining and async/await.

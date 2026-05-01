@@ -30,6 +30,7 @@ const generate = async () => {
       catLabel,
       subDirLabel,
       subDirGlobs,
+      subDirDescription,
     }) => {
       const fm = extractFrontMatter(content);
       if (fm.aiSkip === true) return;
@@ -46,6 +47,7 @@ const generate = async () => {
             catLabel,
             subDirLabel,
             subDirGlobs,
+            subDirDescription,
             rules: [],
           };
         }
@@ -71,7 +73,11 @@ const generate = async () => {
     const globsLine = group.subDirGlobs
       ? `\nglobs:${serializeGlobs(group.subDirGlobs)}`
       : '';
-    let fileContent = `---\ndescription: "${heading}"${globsLine}\n---\n\n`;
+    const descriptionText = group.subDirDescription
+      ? `${heading}: ${group.subDirDescription}`
+      : heading;
+    const description = descriptionText.replace(/"/g, '\\"');
+    let fileContent = `---\ndescription: "${description}"${globsLine}\n---\n\n`;
 
     if (!SHORT) {
       fileContent += `# ${heading}\n`;

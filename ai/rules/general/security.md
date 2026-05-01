@@ -1,5 +1,5 @@
 ---
-description: "General: Security"
+description: "General: Security: Preventing vulnerabilities in code. Injections, auth, secrets, etc."
 ---
 
 - **Don't misuse encoding**: Encoding (like Base64) is data representation. For protection, use encryption instead.

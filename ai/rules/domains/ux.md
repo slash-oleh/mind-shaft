@@ -1,5 +1,5 @@
 ---
-description: "Domains: UX"
+description: "Domains: UX: Design and frontend aspects that influence end user."
 ---
 
 - **Avoid floating areas**: Minimize the use of modal windows, pop‑overs, and other floating UI elements.

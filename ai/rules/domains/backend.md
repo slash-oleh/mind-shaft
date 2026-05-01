@@ -1,5 +1,5 @@
 ---
-description: "Domains: Backend"
+description: "Domains: Backend: Platform-agnostic backend. API servers, BFF, CLI, services, daemons, cron jobs."
 ---
 
 - **Keep backend stateless**: Rely on external shared persistence in runtime. Avoid in-memory state and local storage.

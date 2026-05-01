@@ -1,5 +1,5 @@
 ---
-description: "Tools: SQL"
+description: "Tools: SQL: Not including particular SQL dialect, DBMS, usage via ORM."
 ---
 
 - **Limit default values usage**: Prefer domain-level default values over database-level. Define default values for entity attributes in the application domain layer rather than using database-level schema constraints.

@@ -1,5 +1,5 @@
 ---
-description: "General: Git"
+description: "General: Git: Mainly applicable to VCS in general but focusing on Git as de-facto standard."
 ---
 
 - **Avoid force push to shared branches**: Force pushing to your own PRs is acceptable for history cleanup though.

@@ -1,5 +1,5 @@
 ---
-description: "General: Naming"
+description: "General: Naming: Naming variables, functions, classes, etc. Wording in general."
 ---
 
 - **Avoid technical suffixes**: Omit technical and structural suffixes like 'Object', 'Helper', 'Block', or 'Container'. Use plurals for collections and semantic roles for components instad of 'List' or 'Array'.

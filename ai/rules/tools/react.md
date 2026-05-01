@@ -1,5 +1,5 @@
 ---
-description: "Tools: React"
+description: "Tools: React: Not including web, browser, language specifics."
 ---
 
 - **Avoid async useEffect callbacks**: Define async functions inside `useEffect` instead of making the callback `async`.

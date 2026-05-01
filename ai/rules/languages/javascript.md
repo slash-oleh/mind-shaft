@@ -1,5 +1,5 @@
 ---
-description: "Languages: JavaScript"
+description: "Languages: JavaScript: globs:"
 globs:
   - "**/*.js"
   - "**/*.jsx"

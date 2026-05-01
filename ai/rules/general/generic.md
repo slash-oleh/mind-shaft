@@ -1,5 +1,5 @@
 ---
-description: "General: Generic"
+description: "General: Generic: Everything that applies to multiple existing categories or doesn't belong to any."
 ---
 
 - **Apply clean architecture approaches**: Separate business logic from infrastructure concerns like HTTP handling, database queries, and external APIs.

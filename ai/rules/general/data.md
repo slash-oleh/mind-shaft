@@ -1,5 +1,5 @@
 ---
-description: "General: Data"
+description: "General: Data: Data model design, management. Databases, storages, runtime states."
 ---
 
 - **Keep schema normalized**: Calculate derived state dynamically at runtime. Avoid storing redundant data in the database. Unless for specific performance needs.

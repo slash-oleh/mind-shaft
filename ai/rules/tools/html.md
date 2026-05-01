@@ -1,5 +1,5 @@
 ---
-description: "Tools: HTML"
+description: "Tools: HTML: Markup and DOM specifics."
 ---
 
 - **Avoid no-op wrappers**: Minimize the use of wrapper elements like `<div>` or `<span>` to keep the DOM hierarchy flat.

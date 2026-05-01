@@ -1,5 +1,5 @@
 ---
-description: "Languages: TypeScript"
+description: "Languages: TypeScript: globs:"
 globs:
   - "**/*.ts"
   - "**/*.tsx"

@@ -1,5 +1,5 @@
 ---
-description: "Tools: CSS"
+description: "Tools: CSS: Implies use of CSS Modules, CSS-in-JS, Tailwind CSS, or SCSS/SASS/LESS, but doesn't include their specifics."
 ---
 
 - **Avoid absolute positioning**: Use CSS flexbox, grid, spacing to position inline elements. Avoid `position: absolute` unless for truly floating areas.

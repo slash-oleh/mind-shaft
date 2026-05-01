@@ -1,5 +1,5 @@
 ---
-description: "General: Code Review"
+description: "General: Code Review: Feedback, process, PR best practices."
 ---
 
 - **Automate style check**: Don't address formatting and linting in code reviews. If a rule isn't in the linter, add it or ignore it.

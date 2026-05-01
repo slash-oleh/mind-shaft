@@ -1,5 +1,6 @@
 ---
-description: "Domains: Design"
+description: "Domains: Design: Covers UI organization and implementationin design documents.
+Topics may cover implementation on the frontend code layer but should be addressed from the design perspective primarily, so that the design remains a source of truth."
 ---
 
 - **Avoid ad-hoc styles**: Encapsulate low-level styling within the UI Kit's primitive components and build business features by composing these primitives. Avoid fine-tuning per use case.

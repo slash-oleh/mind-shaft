@@ -1,5 +1,5 @@
 ---
-description: "General: Structure"
+description: "General: Structure: Organizing code, files, modules. Architecture is too fancy word for it but close enough."
 ---
 
 - **Avoid helpers modules**: Avoid stockpiling non-cohesive code into generic modules (`core`, `utils`, `helpers`). Use corresponding domain modules instead and fallback to helpers only as a last resort.

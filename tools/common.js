@@ -92,10 +92,11 @@ export const walkArticles = async (callback) => {
   for (const cat of structure) {
     const catLabel = await getLabel(cat.path, formatName(cat.name));
     for (const subDir of cat.subDirs) {
-      const { label: subDirLabel, globs: subDirGlobs } = await getSubDirMeta(
-        subDir.path,
-        formatName(subDir.name),
-      );
+      const {
+        label: subDirLabel,
+        globs: subDirGlobs,
+        description: subDirDescription,
+      } = await getSubDirMeta(subDir.path, formatName(subDir.name));
       for (const article of subDir.articles) {
         const content = await readFile(article.path, 'utf-8');
         await callback({
@@ -104,6 +105,7 @@ export const walkArticles = async (callback) => {
           subDir,
           subDirLabel,
           subDirGlobs,
+          subDirDescription,
           article,
           content,
         });
@@ -177,9 +179,12 @@ export const getSubDirMeta = async (dirPath, fallbackLabel) => {
     const content = await readFile(path.join(dirPath, 'README.md'), 'utf-8');
     const fm = extractFrontMatter(content);
     const label = extractH1(content) || fallbackLabel;
-    return { label, globs: fm.globs || null };
+    const tree = parser.parse(content);
+    const firstP = tree.children.find((n) => n.type === 'paragraph');
+    const description = firstP ? toString(firstP) : fm.description || '';
+    return { label, globs: fm.globs || null, description };
   } catch {
-    return { label: fallbackLabel, globs: null };
+    return { label: fallbackLabel, globs: null, description: '' };
   }
 };
 
