@@ -11,7 +11,6 @@ description: "General: Generic"
 - **Keep docs up-to-date**: Maintain the README as a fresh, accurate, and comprehensive entry point for the project.
 - **Keep files size reasonable**: Maintain a balanced file size to ensure code remains navigable and focused without becoming fragmented. The sweet spot is 50-400 lines per file.
 - **Prefer composition over inheritance**: Use composition to build complex functionality by combining simple, independent components instead of creating deep class hierarchies.
-- **Use Datetime ISO format**: Use the "ISO 8601" format for Date, Time, and Duration representation.
 - **Use i18n tools**: Internalize all user-facing strings into translation files (i18n).
 - **Use semantic versioning**: Whenever a versioning scheme is required, just use SemVer and don't reinvent the wheel.
 - **Use spell checkers**: Utilize automated text, grammar, and style checkers for all written documentation and code comments.

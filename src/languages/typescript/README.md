@@ -5,3 +5,5 @@ globs:
 ---
 
 # TypeScript
+
+Not including Browser, NodeJS, CommonJS, ES specifics.

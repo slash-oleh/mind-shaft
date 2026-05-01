@@ -9,3 +9,5 @@ globs:
 ---
 
 # JavaScript
+
+Including ECMAScript. Not including Browser, NodeJS, TypeScript specifics.

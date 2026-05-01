@@ -1,11 +1,10 @@
 ---
-description: "General: Code style"
+description: "General: Code Style"
 ---
 
 - **Apply modern language features**: Adopt modern syntax and language features like optional chaining and async/await.
 - **Avoid imperative assignment**: When possible, use ternary operators to initialize `const` variables instead of using `let` with `if/else` blocks.
 - **Avoid magic values**: Replace raw values (numbers, strings, flags) with named constants.
-- **Avoid nested conditions**: Use guard clauses and early returns to flatten logic and avoid deeply nested conditional blocks.
 - **Avoid one-line coding**: Break down complex operations and long method chains into multiple lines.
 - **Avoid redundant else**: Remove unnecessary `else` blocks after `if` when using `return` or `throw`.
 - **Avoid switch statement**: Use `if/else` statements or lookup maps instead of `switch/case` structures. Consider polymorphism as well.
@@ -19,6 +18,6 @@ description: "General: Code style"
 - **Shorten boolean expressions**: Use boolean operators instead of ternary expressions or conditional statements when the desired outcome is a boolean value.
 - **Use bulletproof range checks**: Use inclusive range checks (`>=` or `<=`) instead of exact equality (`==`) for progress monitoring, counters, and loop terminations to prevent infinite loops in case counter change logic is bugged.
 - **Use exceptions for errors**: Throw exceptions instead of returning error codes or status objects to signal unexpected failures.
-- **Use guard clauses**: Avoid if statement nesting by using early returns at function start to handle prerequisites.
+- **Use guard clauses**: Flatten logic by using early returns for prerequisites. Avoid if-statement nesting.
 - **Use text templates**: Use placeholders within translation strings instead of concatenating partial tokens with dynamic values.
 - **Use lookup maps**: Use objects or Maps for multi-branch logic instead of if/else or switch.

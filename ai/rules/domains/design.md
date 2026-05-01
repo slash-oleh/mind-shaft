@@ -7,6 +7,6 @@ description: "Domains: Design"
 - **Avoid percentage spacing**: Use fixed-size spacing units for margins and padding instead of percentages.
 - **Use even pixels**: Use even, whole numbers for pixel values and stick to a base multiple system like an 8px grid or 4px grid. Avoid odd and espessially fractional values.
 - **Use rem for typography**: Use relative (rem/em) units for text sizes. Avoid absolute pixels (px) to respect user font settings.
-- **Use semantic tokens**: Use semantic color tokens in theme and final components. Avoid referencing colors by hue outside of primitives palette.
+- **Use semantic colors**: Use semantic color tokens in theme and final components. Avoid referencing colors by hue outside of primitives palette.
 - **Use spacing units**: Define spacing tokens as pixel constants. Express layout as non-fractional multiples of base unit. Avoid arbitrary pixel values.
 - **Use theme constants**: Centralize design decisions like colors, spacing, and typography into predefined theme constants and reference these tokens instead of hardcoding raw values.
