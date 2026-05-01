@@ -2,15 +2,15 @@
 
 ## TLDR
 
-Avoid if statement nesting by using early returns at function start to handle prerequisites.
+Flatten logic by using early returns for prerequisites. Avoid if-statement nesting.
 
 ## Problem
 
-Deeply nested if blocks create complex branching that obscures primary function logic. Validation checks buried inside multiple indentation levels hide the happy path and increase cognitive load for maintainers.
+Deeply nested if blocks ("Pyramid of Doom") obscure primary logic. Validation buried in indentation hides the happy path and increases cognitive load. Code becomes fragile and prone to refactoring errors.
 
 ## Good solution
 
-Avoid nesting by checking prerequisites at function start and returning early.
+Check prerequisites at function start and return early.
 
 ```ts
 function processUser(user: User | null) {
@@ -39,14 +39,17 @@ function processUser(user: User | null) {
 ## Impact
 
 - **[Readability](../../home/impact/positive/readability.md)**: Happy path stays at top level.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Flat code easier to refactor and test.
 - **[Nesting](../../home/impact/negative/nesting.md)**: Lower indentation reduces cognitive load.
 
 ## Exceptions
 
-- Rare cases where multiple complex conditions must evaluate together before any action.
+- Complex logic fundamentally nested (e.g. multi-dimensional matrix).
+- Evaluate multiple complex conditions together before action.
 
 ## References
 
 - [Wikipedia: Guard (computer science)](https://en.wikipedia.org/wiki/Guard_%28computer_science%29)
 - [Refactoring Guru: Replace Nested Conditional with Guard Clauses](https://refactoring.guru/replace-nested-conditional-with-guard-clauses)
 - [Martin Fowler: Replace Nested Conditional with Guard Clauses](https://refactoring.com/catalog/replaceNestedConditionalWithGuardClauses.html)
+- [Dustin Boswell and Trevor Foucher: The Art of Writing Readable Code - Minimize Nesting](https://www.oreilly.com/library/view/the-art-of/9781449318482/ch07.html)

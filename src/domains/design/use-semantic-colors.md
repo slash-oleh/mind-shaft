@@ -1,4 +1,4 @@
-# Use semantic tokens
+# Use semantic colors
 
 ## TLDR
 

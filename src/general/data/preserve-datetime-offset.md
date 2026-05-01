@@ -1,8 +1,8 @@
-# Keep UTC offset for timestamps
+# Preserve datetime offset
 
 ## TLDR
 
-Store all timestamps in UTC or with an explicit timezone offset.
+For datetime values, store UTC offset along with the value. Store the timestamp itself in UTC and timezone offset along with it.
 
 ## Problem
 

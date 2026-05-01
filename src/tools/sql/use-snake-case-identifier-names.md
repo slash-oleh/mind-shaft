@@ -1,8 +1,8 @@
-# Use snake case for identifiers
+# Use snake case identifier names
 
 ## TLDR
 
-Use `snake_case` for all database identifiers, including tables, columns, constraints, sequences, and indexes.
+Use snake case for all database identifiers, including tables, columns, constraints, sequences, and indexes.
 
 ## Problem
 

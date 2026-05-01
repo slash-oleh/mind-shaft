@@ -1,8 +1,8 @@
-# Use meaningful names for junction tables
+# Name junction entities
 
 ## TLDR
 
-Name many-to-many junction tables based on the relationship they represent instead of just concatenating the names of the connected tables.
+Name many-to-many entities based on the relationship they represent instead of just concatenating the names of the connected entities.
 
 ## Problem
 

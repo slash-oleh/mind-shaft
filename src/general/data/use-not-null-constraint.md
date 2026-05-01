@@ -1,8 +1,8 @@
-# Use NOT NULL constraints by default
+# Use NOT NULL constraint
 
 ## TLDR
 
-Define database columns as `NOT NULL` by default to reduce ambiguity and simplify application logic.
+Prefer defining database columns as `NOT NULL` by default to reduce ambiguity, redundancy, and simplify handling special values.
 
 ## Problem
 

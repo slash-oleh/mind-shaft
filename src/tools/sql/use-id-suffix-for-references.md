@@ -1,4 +1,4 @@
-# Use `_id` suffix for foreign key fields
+# Use id suffix for references
 
 ## TLDR
 

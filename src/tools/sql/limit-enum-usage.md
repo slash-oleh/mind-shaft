@@ -1,8 +1,8 @@
-# Use enum for rarely changed sets only
+# Limit enum usage
 
 ## TLDR
 
-Use database enums exclusively for static domain concepts and reference tables with foreign keys for dynamic or frequently updated sets of values.
+Use enum for rarely changed sets only like static global domain concepts. Reference tables with foreign keys for dynamic or frequently updated sets of values.
 
 ## Problem
 

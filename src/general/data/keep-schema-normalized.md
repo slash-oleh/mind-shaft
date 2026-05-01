@@ -1,12 +1,12 @@
-# Avoid storing derived state in the database
+# Keep schema normalized
 
 ## TLDR
 
-Calculate state dynamically at runtime instead of saving derived or redundant values in the database schema.
+Calculate derived state dynamically at runtime. Avoid storing redundant data in the database. Unless for specific performance needs.
 
 ## Problem
 
-Storing derived state e.g., a "status" column that simply reflects whether `suspended_at` is set, or a "total\_amount" that is the sum of a user's `order_items` violates the single source of truth principle. When the underlying data changes, the derived state must be explicitly updated in parallel. If a transaction fails, a bug occurs, or a developer runs a manual query without updating the derived column, the database becomes inconsistent. You are then left with conflicting data and synchronization issues.
+Storing derived state e.g., a "status" column that simply reflects whether `suspended_at` is set, or a "total_amount" that is the sum of a user's `order_items` violates the single source of truth principle. When the underlying data changes, the derived state must be explicitly updated in parallel. If a transaction fails, a bug occurs, or a developer runs a manual query without updating the derived column, the database becomes inconsistent. You are then left with conflicting data and synchronization issues.
 
 ## Good solution
 

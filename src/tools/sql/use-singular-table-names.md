@@ -1,4 +1,4 @@
-# Use singular form for table names
+# Use singular table names
 
 ## TLDR
 
