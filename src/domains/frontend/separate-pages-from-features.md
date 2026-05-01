@@ -1,4 +1,4 @@
-# Structure pages as wrappers around features
+# Separate pages from features
 
 ## TLDR
 

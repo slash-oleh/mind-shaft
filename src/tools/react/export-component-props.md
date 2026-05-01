@@ -30,7 +30,8 @@ Defining the props type locally without an export.
 
 ```tsx
 // UserProfile.tsx
-interface LocalProps { // Not exported
+interface LocalProps {
+  // Not exported
   name: string;
   avatarUrl: string;
 }

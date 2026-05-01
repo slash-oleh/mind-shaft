@@ -1,4 +1,4 @@
-# Import assets directly in code
+# Reference assets via imports
 
 ## TLDR
 
@@ -17,7 +17,12 @@ Import the asset as a module. This allows the build tool (like Vite or Webpack) 
 import logoUrl from '../assets/logo.png';
 
 export const Logo = () => {
-  return <img src={logoUrl} alt="Company Logo" />;
+  return (
+    <img
+      src={logoUrl}
+      alt="Company Logo"
+    />
+  );
 };
 ```
 
@@ -28,7 +33,12 @@ Using hardcoded string paths that bypass the build system's dependency graph.
 ```tsx
 // Bad: Build tools cannot verify if this file exists or is still in use
 export const Logo = () => {
-  return <img src="/static/logo.png" alt="Company Logo" />;
+  return (
+    <img
+      src="/static/logo.png"
+      alt="Company Logo"
+    />
+  );
 };
 ```
 

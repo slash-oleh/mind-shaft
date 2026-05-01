@@ -1,4 +1,4 @@
-# Avoid the Container/Presentational pattern
+# Avoid Container/Presentational pattern
 
 ## TLDR
 
@@ -6,7 +6,7 @@ Use Hooks to keep logic and UI cohesive within a single component instead of spl
 
 ## Problem
 
-The Container/Presentational pattern (also known as the "Smart/Dumb" pattern) creates significant boilerplate and complicates the component hierarchy. By artificially splitting a single feature into two components, you increase the amount of prop-drilling and make it harder to trace how data flows from the source to the screen. This pattern organizes code by *technical role* rather than *feature responsibility*, leading to a fragmented developer experience where you have to jump between multiple files to understand a single piece of functionality.
+The Container/Presentational pattern (also known as the "Smart/Dumb" pattern) creates significant boilerplate and complicates the component hierarchy. By artificially splitting a single feature into two components, you increase the amount of prop-drilling and make it harder to trace how data flows from the source to the screen. This pattern organizes code by _technical role_ rather than _feature responsibility_, leading to a fragmented developer experience where you have to jump between multiple files to understand a single piece of functionality.
 
 ## Good solution
 
@@ -38,7 +38,9 @@ Always splitting a feature into a "wrapper" component for data and a "view" comp
 // UserProfileContainer.tsx
 function UserProfileContainer({ userId }) {
   const [user, setUser] = useState(null);
-  useEffect(() => { /* fetch user */ }, [userId]);
+  useEffect(() => {
+    /* fetch user */
+  }, [userId]);
 
   return <UserProfileView user={user} />;
 }

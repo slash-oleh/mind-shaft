@@ -1,8 +1,8 @@
-# Avoid storing derived state
+# Use derived values
 
 ## TLDR
 
-Calculate derived values on-the-fly during rendering instead of storing them in state to maintain a single source of truth.
+Use state to store normalized data only. Calculate derived values on-the-fly during rendering. Proxy through `useMemo` if needed. Avoid storing them in state or ref. Avoid calculating via `useEffect`. Maintain single source of truth.
 
 ## Problem
 

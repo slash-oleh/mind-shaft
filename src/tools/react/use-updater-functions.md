@@ -1,8 +1,8 @@
-# Use functional updates for state transitions
+# Use updater functions
 
 ## TLDR
 
-Use the functional update pattern when transitioning state based on its previous value to ensure you are always working with the most recent data.
+Use updater functions when state depends on its previous value. Avoid referencing stale state variables inside setters.
 
 ## Problem
 

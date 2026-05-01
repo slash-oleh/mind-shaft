@@ -1,4 +1,4 @@
-# Avoid async `useEffect` callbacks
+# Avoid async useEffect callbacks
 
 ## TLDR
 

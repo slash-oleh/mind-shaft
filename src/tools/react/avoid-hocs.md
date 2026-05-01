@@ -1,8 +1,8 @@
-# Use Hooks instead of Higher-Order Components (HOCs)
+# Avoid HOCs
 
 ## TLDR
 
-Use custom Hooks instead of Higher-Order Components (HOCs) to share logic between components for better composability and flatter component trees.
+Use custom Hooks pulling state from common context to share it between components. Avoid Higher-Order Components (HOCs) for better composability and flatter component trees.
 
 ## Problem
 
@@ -21,7 +21,7 @@ Use custom hooks to access shared state or logic. This keeps the data flow expli
 // Good: Explicit data flow via hooks
 export const UserProfile = () => {
   const { user, isLoading } = useAuth(); // Source is clear
-  const { theme } = useTheme();          // No collision possible
+  const { theme } = useTheme(); // No collision possible
 
   if (isLoading) return <Loading />;
   return <div className={theme}>{user.name}</div>;
@@ -50,4 +50,4 @@ export default withTheme(withAuth(UserProfile));
 
 ## Exceptions
 
-- **Gatekeeping / Guards**: Cases where the underlying component should not render at all or must be wrapped for structural reasons. This includes **Authentication Guards** (e.g., `withAuthRequired`), **Routing logic**, or **Layout providers** where the outer layer must make a decision *before* the inner component's logic is even invoked.
+- **Gatekeeping / Guards**: Cases where the underlying component should not render at all or must be wrapped for structural reasons. This includes **Authentication Guards** (e.g., `withAuthRequired`), **Routing logic**, or **Layout providers** where the outer layer must make a decision _before_ the inner component's logic is even invoked.

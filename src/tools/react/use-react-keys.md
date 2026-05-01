@@ -1,4 +1,4 @@
-# Use stable, unique keys in lists
+# Use React keys
 
 ## TLDR
 
@@ -9,7 +9,7 @@ Use unique and stable identifiers for the `key` prop in lists, favoring data IDs
 The `key` prop is React's primary mechanism for tracking identity in a collection. Two major misconceptions lead to broken UIs:
 
 1. **Unstable Keys**: Using `Math.random()` or a timestamp as a key. This forces React to destroy and recreate the entire list on every render, causing immediate loss of input focus and massive performance drops.
-2. **Reordered Index Keys**: Using the array `index` as a key for a list that can be sorted, filtered, or modified. When items move, React sees the same "key" (the index) at the same position and tries to reuse the existing DOM/state for a *different* piece of data, leading to "ghost" values appearing in inputs or broken animations.
+2. **Reordered Index Keys**: Using the array `index` as a key for a list that can be sorted, filtered, or modified. When items move, React sees the same "key" (the index) at the same position and tries to reuse the existing DOM/state for a _different_ piece of data, leading to "ghost" values appearing in inputs or broken animations.
 
 ## Good solution
 
@@ -18,7 +18,7 @@ Use a unique and persistent identifier from your data (like an `id` or `uuid`) a
 ```tsx
 // Good: Using a stable data ID
 <ul>
-  {users.map(user => (
+  {users.map((user) => (
     <li key={user.id}>{user.name}</li>
   ))}
 </ul>
@@ -30,7 +30,9 @@ Use a unique and persistent identifier from your data (like an `id` or `uuid`) a
 const steps = ['Step 1', 'Step 2', 'Step 3'];
 return (
   <nav>
-    {steps.map((label, index) => <span key={index}>{label}</span>)}
+    {steps.map((label, index) => (
+      <span key={index}>{label}</span>
+    ))}
   </nav>
 );
 ```
@@ -45,7 +47,9 @@ function TodoList({ items }) {
   return (
     <ul>
       {items.map((item, index) => (
-        <li key={index}> {/* Bad for dynamic lists */}
+        <li key={index}>
+          {' '}
+          {/* Bad for dynamic lists */}
           <input defaultValue={item.text} />
         </li>
       ))}

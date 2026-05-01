@@ -1,8 +1,8 @@
-# Avoid redundant executions of `useEffect`
+# Mind useEffect dependencies
 
 ## TLDR
 
-Distinguish between reactive dependencies that trigger an effect and non-reactive values that are merely read to avoid over-reactive effects.
+Distinguish between reactive dependencies that intended to trigger `useEffect` callback and values that are merely data sources. Reduce unnecessary effect executions but keep in mind it should be safe to run as many times as needed.
 
 ## Problem
 
@@ -10,7 +10,7 @@ The React linting rule `exhaustive-deps` is designed to prevent stale closure bu
 
 ## Good solution
 
-Extract the non-reactive logic into an **Effect Event**. An Effect Event is a special hook (currently `useEffectEvent`) that allows you to read the latest props and state without "subscribing" to their changes. This keeps the `useEffect` focused strictly on the values that *should* trigger it.
+Extract the non-reactive logic into an **Effect Event**. An Effect Event is a special hook (currently `useEffectEvent`) that allows you to read the latest props and state without "subscribing" to their changes. This keeps the `useEffect` focused strictly on the values that _should_ trigger it.
 
 ```tsx
 // Good: Effect only triggers on 'url' change, but uses the latest 'theme'
@@ -26,7 +26,7 @@ function Page({ url, theme }) {
 }
 ```
 
-*Note: If `useEffectEvent` is not yet available in your version of React, you can achieve a similar result using a `useRef` to store the latest value of the non-reactive data.*
+_Note: If `useEffectEvent` is not yet available in your version of React, you can achieve a similar result using a `useRef` to store the latest value of the non-reactive data._
 
 There are some ready-to-use implementations of the useEvent RFC to consider using:
 
@@ -47,11 +47,11 @@ useEffect(() => {
 ## Impact
 
 - **[Performance](../../home/impact/positive/performance.md)**: Prevents expensive or rate-limited side effects from firing unnecessarily.
-- **[Maintainability](../../home/impact/positive/maintainability.md)**: Clearly separates the *reason* an effect runs from the *data* it needs to perform its task.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Clearly separates the _reason_ an effect runs from the _data_ it needs to perform its task.
 
 ## Exceptions
 
-- **Synchronization**: If the effect's purpose is to keep a component in sync with a value (e.g., updating a document title to match a state), that value *must* remain in the dependency array to ensure the UI is never stale.
+- **Synchronization**: If the effect's purpose is to keep a component in sync with a value (e.g., updating a document title to match a state), that value _must_ remain in the dependency array to ensure the UI is never stale.
 
 ## References
 

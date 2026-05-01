@@ -1,8 +1,8 @@
-# Avoid nested component definitions
+# Avoid remouning component
 
 ## TLDR
 
-Do not define a component inside the body of another component or wrap a component definition in `useCallback`. Define all components at the top level.
+Define component at the top level when possible. If not, for dynamic ones defined in render cycle, use raw function call (no JSX, no `createElement`).
 
 ## Problem
 
@@ -28,7 +28,9 @@ function MyList({ items }) {
   return (
     <ul>
       {renderHeader()}
-      {items.map(item => <ListItem {...item} />)}
+      {items.map((item) => (
+        <ListItem {...item} />
+      ))}
     </ul>
   );
 }
@@ -48,7 +50,7 @@ function Parent() {
 
   return (
     <div>
-      <button onClick={() => setCount(c => c + 1)}>Increment</button>
+      <button onClick={() => setCount((c) => c + 1)}>Increment</button>
       {/* This will unmount/remount on every click! */}
       <InnerComponent />
       {/* This is equivalent to the above */}

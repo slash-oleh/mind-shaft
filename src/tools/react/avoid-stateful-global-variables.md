@@ -1,8 +1,8 @@
-# Avoid global variables for application state
+# Avoid stateful global variables
 
 ## TLDR
 
-Avoid using plain variables in the module scope to store data that affects the UI. Use **local component state** for isolated data or **React Context** (or a state management library) for shared data.
+Avoid using plain variables in the module scope to store data that affects the UI. For isolated data use local state. For shared data use React Context or state management library.
 
 ## Problem
 
@@ -21,18 +21,14 @@ Store your data within React's management system. Use `useState` for logic restr
 // Good: Local state for isolated logic
 function Counter() {
   const [count, setCount] = useState(0);
-  return <button onClick={() => setCount(c => c + 1)}>{count}</button>;
+  return <button onClick={() => setCount((c) => c + 1)}>{count}</button>;
 }
 
 // Good: Context for shared application state
 const UserContext = createContext(null);
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  return (
-    <UserContext.Provider value={user}>
-      {children}
-    </UserContext.Provider>
-  );
+  return <UserContext.Provider value={user}>{children}</UserContext.Provider>;
 };
 ```
 

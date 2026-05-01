@@ -1,8 +1,8 @@
-# Prefer controlled components over mirrored state
+# Use controlled components
 
 ## TLDR
 
-Use controlled components where the parent remains the single source of truth instead of mirroring props in local state.
+Let the state of parent remain the single source of truth. Avoid only defining initial state and mirroring changes via onChange.
 
 ## Problem
 
@@ -55,5 +55,5 @@ const Input = (props) => {
 
 ## Exceptions
 
-- **Initial Values Only**: If a prop is explicitly intended as a *starting point* (e.g., `defaultValue`) and the parent does not need to remain synchronized with changes, using local state is appropriate.
+- **Initial Values Only**: If a prop is explicitly intended as a _starting point_ (e.g., `defaultValue`) and the parent does not need to remain synchronized with changes, using local state is appropriate.
 - **Performance-Critical Inputs**: In rare cases with high-frequency updates (like a complex text editor), "uncontrolled" components with `refs` might be used to bypass React's render cycle for localized performance gains.

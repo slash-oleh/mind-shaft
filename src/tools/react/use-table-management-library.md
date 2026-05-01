@@ -1,4 +1,4 @@
-# Use a table management library
+# Use table management library
 
 ## TLDR
 
@@ -27,11 +27,14 @@ export const MyTable = ({ data, columns }) => {
   return (
     <table>
       <thead>
-        {table.getHeaderGroups().map(headerGroup => (
+        {table.getHeaderGroups().map((headerGroup) => (
           <tr key={headerGroup.id}>
-            {headerGroup.headers.map(header => (
+            {headerGroup.headers.map((header) => (
               <th key={header.id}>
-                {flexRender(header.column.columnDef.header, header.getContext())}
+                {flexRender(
+                  header.column.columnDef.header,
+                  header.getContext(),
+                )}
               </th>
             ))}
           </tr>

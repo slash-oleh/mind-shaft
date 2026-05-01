@@ -1,8 +1,8 @@
-# Use `memo` by default
+# Use memo
 
 ## TLDR
 
-Wrap functional components in `React.memo`.
+Unless using React Compiler, always wrap functional components in `memo`.
 
 ## Problem
 
@@ -49,7 +49,7 @@ export const UserCard = ({ name, role }: UserCardProps) => {
 
 ## Exceptions
 
-- **Components that *must* re-render on parent render**: Very rare cases where a component depends on non-prop, non-state external triggers for visual updates.
+- **Components that _must_ re-render on parent render**: Very rare cases where a component depends on non-prop, non-state external triggers for visual updates.
 - **Breaking changes**: React hasn't made this the default behavior primarily because it would be a breaking change for existing projects, not because it's a bad pattern for new ones.
 
 ## References

@@ -1,4 +1,4 @@
-# Use a form management library
+# Use form management library
 
 ## TLDR
 
@@ -18,15 +18,22 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 export const RegistrationForm = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm({
-    resolver: zodResolver(schema)
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(schema),
   });
 
   const onSubmit = (data) => console.log(data);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register('email')} placeholder="Email" />
+      <input
+        {...register('email')}
+        placeholder="Email"
+      />
       {errors.email && <span>{errors.email.message}</span>}
 
       <button type="submit">Submit</button>
@@ -59,9 +66,17 @@ export const RegistrationForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input value={email} onChange={e => setEmail(e.target.value)} />
+      <input
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
       {error && <span>{error}</span>}
-      <button type="submit" disabled={isSubmitting}>Submit</button>
+      <button
+        type="submit"
+        disabled={isSubmitting}
+      >
+        Submit
+      </button>
     </form>
   );
 };

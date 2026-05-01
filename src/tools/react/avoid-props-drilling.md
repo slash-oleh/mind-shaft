@@ -1,8 +1,8 @@
-# Lift state to the nearest common ancestor
+# Avoid props drilling
 
 ## TLDR
 
-Position your state at the lowest possible level that still allows all components that need the data to access it.
+Lift state to the nearest common ancestor. Position your state at the lowest possible level that still allows all components that need the data to access it. context or state management tool.
 
 ## Problem
 
@@ -26,7 +26,9 @@ export const Table = ({ items }) => {
           key={item.id}
           item={item}
           isExpanded={expandedId === item.id}
-          onToggle={() => setExpandedId(expandedId === item.id ? null : item.id)}
+          onToggle={() =>
+            setExpandedId(expandedId === item.id ? null : item.id)
+          }
         />
       ))}
     </div>

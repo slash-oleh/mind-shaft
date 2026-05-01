@@ -1,8 +1,8 @@
-# Use useMemo for stability and expensive logic
+# Use useMemo consciously
 
 ## TLDR
 
-Use `useMemo` to cache results of expensive calculations and maintain referential stability for complex objects and arrays passed to downstream components.
+To cache results of expensive calculations or maintain referential stability, use `useMemo`. Otherwise, don't use it by default - it pollutes memory and only creates boilerplate.
 
 ## Problem
 
@@ -15,11 +15,14 @@ Use `useMemo` for any complex object, array, or intensive calculation that is pa
 ```tsx
 // Good: Stable reference prevents 'Chart' from re-rendering
 export const Dashboard = ({ data }) => {
-  const chartOptions = useMemo(() => ({
-    title: 'Monthly Revenue',
-    data: data.map(d => d.value),
-    theme: 'dark'
-  }), [data]);
+  const chartOptions = useMemo(
+    () => ({
+      title: 'Monthly Revenue',
+      data: data.map((d) => d.value),
+      theme: 'dark',
+    }),
+    [data],
+  );
 
   return <DeeplyMemoizedChart options={chartOptions} />;
 };
@@ -34,8 +37,8 @@ Re-creating objects or performing heavy logic directly in the render body. This 
 export const Dashboard = ({ data }) => {
   const chartOptions = {
     title: 'Monthly Revenue',
-    data: data.map(d => d.value),
-    theme: 'dark'
+    data: data.map((d) => d.value),
+    theme: 'dark',
   };
 
   return <DeeplyMemoizedChart options={chartOptions} />;

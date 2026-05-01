@@ -1,4 +1,4 @@
-# Use a data request management library
+# Use async request management library
 
 ## TLDR
 
@@ -42,13 +42,15 @@ export const UserProfile = ({ userId }) => {
   useEffect(() => {
     let isMounted = true;
     setLoading(true);
-    fetchUser(userId).then(data => {
+    fetchUser(userId).then((data) => {
       if (isMounted) {
         setUser(data);
         setLoading(false);
       }
     });
-    return () => { isMounted = false; };
+    return () => {
+      isMounted = false;
+    };
   }, [userId]);
 
   if (loading) return <Spinner />;

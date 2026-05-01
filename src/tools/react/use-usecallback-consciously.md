@@ -1,14 +1,14 @@
-# Use `useCallback` to stabilize references
+# Use useCallback consciously
 
 ## TLDR
 
-Use the `useCallback` hook to maintain stable function references when passing them to memoized child components or using them as hook dependencies.
+When needed to pass function as a prop or hook dependency, use the `useCallback` hook to maintain stable reference. Otherwise, don't use it by default - it does not optimize function creation and only creates boilerplate.
 
 ## Problem
 
 In React, functions defined inside a component are recreated on every render. If these functions are passed as props to a child component wrapped in `React.memo`, the child will re-render every time because it receives a "new" function reference. This negates the performance benefits of memoization. Additionally, using an unstable function reference in the dependency array of a `useEffect` or another hook can trigger infinite loops or redundant effect executions.
 
-A common myth is that `useCallback` "prevents function creation" to save memory. This is false. A function expression (like `() => {}`) is still evaluated and created as a new object on every render before it is passed as an argument to `useCallback`. The hook's role is to decide whether to return the *previously stored* version of the function or the *new* one. Use it for **referential stability**, not for optimizing the cost of function creation itself.
+A common myth is that `useCallback` "prevents function creation" to save memory. This is false. A function expression (like `() => {}`) is still evaluated and created as a new object on every render before it is passed as an argument to `useCallback`. The hook's role is to decide whether to return the _previously stored_ version of the function or the _new_ one. Use it for **referential stability**, not for optimizing the cost of function creation itself.
 
 ## Good solution
 
@@ -20,13 +20,13 @@ const Parent = () => {
   const [count, setCount] = useState(0);
 
   const handleUpdate = useCallback(() => {
-    console.log("Submitting...");
+    console.log('Submitting...');
   }, []); // Dependencies are empty, so reference stays the same
 
   return (
     <div>
       <p>Count: {count}</p>
-      <button onClick={() => setCount(c => c + 1)}>Increment</button>
+      <button onClick={() => setCount((c) => c + 1)}>Increment</button>
       <MemoizedChild onUpdate={handleUpdate} />
     </div>
   );
@@ -44,9 +44,9 @@ const Parent = () => {
 
   return (
     <div>
-      <button onClick={() => setCount(c => c + 1)}>Increment</button>
+      <button onClick={() => setCount((c) => c + 1)}>Increment</button>
       {/* Re-renders MemoizedChild on every click because of the new arrow function */}
-      <MemoizedChild onUpdate={() => console.log("Submitting...")} />
+      <MemoizedChild onUpdate={() => console.log('Submitting...')} />
     </div>
   );
 };

@@ -1,8 +1,8 @@
-# Use functional components with Hooks
+# Use Functional Components
 
 ## TLDR
 
-Develop all new components as functional components using React Hooks.
+Develop all new components as Functional Components using React Hooks. When affecting existing Class Components, refactor them to Functional Components.
 
 ## Problem
 
@@ -19,7 +19,7 @@ export const UserStatus = ({ userId }: { userId: string }) => {
 
   useEffect(() => {
     // Subscription logic stays together
-    const unsubscribe = ChatAPI.subscribe(userId, status => {
+    const unsubscribe = ChatAPI.subscribe(userId, (status) => {
       setIsOnline(status.isOnline);
     });
     return () => unsubscribe();

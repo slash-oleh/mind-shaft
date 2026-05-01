@@ -1,4 +1,4 @@
-# Forward remaining props to the underlying element
+# Forward props
 
 ## TLDR
 
@@ -25,11 +25,7 @@ interface ProfileCardProps extends CardProps {
 }
 
 export const ProfileCard = ({ userId, ...restProps }: ProfileCardProps) => {
-  return (
-    <Card {...restProps}>
-      User Profile: {userId}
-    </Card>
-  );
+  return <Card {...restProps}>User Profile: {userId}</Card>;
 };
 ```
 
@@ -46,7 +42,9 @@ interface ProfileCardProps {
 
 export const ProfileCard = ({ userId, title }: ProfileCardProps) => {
   return (
-    <Card title={title}> {/* theme and children are lost */}
+    <Card title={title}>
+      {' '}
+      {/* theme and children are lost */}
       User Profile: {userId}
     </Card>
   );

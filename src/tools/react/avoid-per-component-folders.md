@@ -1,8 +1,8 @@
-# Avoid over-nesting component folders
+# Avoid per-component folders
 
 ## TLDR
 
-Avoid creating a dedicated folder for every single component. Only use folders when a component is complex enough to require multiple related files.
+Do not create a dedicated folder for single component. Only use folders when a component is complex and large enough to split into internal helper component files.
 
 ## Problem
 
@@ -47,4 +47,4 @@ src/components/
 ## Exceptions
 
 - **Strict Framework Requirements**: When using frameworks or tools that automatically resolve routes or logic based on a specific folder-per-item structure.
-- **Library Components**: When building a library where each component *must* be an entry point for tree-shaking or packaging reasons.
+- **Library Components**: When building a library where each component _must_ be an entry point for tree-shaking or packaging reasons.

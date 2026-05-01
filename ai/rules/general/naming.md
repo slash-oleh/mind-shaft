@@ -2,7 +2,7 @@
 description: "General: Naming"
 ---
 
-- **Avoid technical suffixes**: Omit technical suffixes like 'Object' or 'Helper'. Use plurals for collections instead of 'List' or 'Array'.
+- **Avoid technical suffixes**: Omit technical and structural suffixes like 'Object', 'Helper', 'Block', or 'Container'. Use plurals for collections and semantic roles for components instad of 'List' or 'Array'.
 - **Balance context**: Avoid both too generic names lacking context, and redundant names duplicating it. Use surrounding context to keep it concise.
 - **Distinguish data and operations**: Use nouns for data variables and verbs for functions or methods to clearly distinguish between data and operations.
 - **Standardize common terms**: Use a single, project-wide term for common concepts and operations (e.g. unify 'id' vs 'uid', 'fetch' vs 'get').

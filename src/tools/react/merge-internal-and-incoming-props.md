@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Merge incoming properties like `className`, `style`, and event handlers with internal ones to ensure components remain extensible and composable.
+Merge values of incoming properties like `className`, `style`, event handlers with internal definitions to ensure components remain extensible and composable without unwanted overrides.
 
 ## Problem
 

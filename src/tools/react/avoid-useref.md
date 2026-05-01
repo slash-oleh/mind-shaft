@@ -1,8 +1,8 @@
-# Avoid `useRef` for state management
+# Avoid useRef
 
 ## TLDR
 
-Favor declarative state (`useState`) over imperative refs and use `useRef` only for direct DOM access or non-UI bookkeeping.
+Favor declarative state (`useState`) over imperative refs. Use `useRef` only for direct DOM access or specific performance needs and only as a last resort.
 
 ## Problem
 
@@ -21,7 +21,7 @@ function SearchForm() {
     <form onClear={() => setQuery('')}>
       <input
         value={query}
-        onChange={e => setQuery(e.target.value)}
+        onChange={(e) => setQuery(e.target.value)}
       />
       <p>Searching for: {query}</p>
     </form>
@@ -62,5 +62,5 @@ function SearchForm() {
 
 - **Direct DOM Access**: When you must call native browser APIs that are impossible via props (e.g., `.focus()`, `.scrollIntoView()`, `.play()` on a video element).
 - **External Library Integration**: Coordinating with imperative non-React libraries (e.g., D3, Google Maps).
-- **Internal Bookkeeping**: Storing values that *never* affect rendering or effects (e.g., `setInterval` IDs, previous prop values for manual comparison).
+- **Internal Bookkeeping**: Storing values that _never_ affect rendering or effects (e.g., `setInterval` IDs, previous prop values for manual comparison).
 - **Critical Optimizations**: In extremely rare, high-frequency scenarios where re-rendering on every small data change would cause frame drops (e.g., a high-perf canvas animation controller).

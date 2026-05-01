@@ -1,8 +1,8 @@
-# Avoid Redux for state management
+# Avoid Redux
 
 ## TLDR
 
-Do not use Redux as the default state management solution. Favor modern, specialized tools like React Query for server state and Zustand or Context for global UI state.
+Do not use Redux as the default state management solution. Favor modern, specialized tools like React Query for async state and React Context, Recoil or Zustand for global UI state.
 
 ## Problem
 
