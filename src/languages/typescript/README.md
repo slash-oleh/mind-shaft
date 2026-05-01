@@ -1,7 +1,7 @@
 ---
 globs:
-  - "**/*.ts"
-  - "**/*.tsx"
+  - '**/*.ts'
+  - '**/*.tsx'
 ---
 
 # TypeScript

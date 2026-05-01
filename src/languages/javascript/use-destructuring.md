@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Use destructuring to extract data from objects and arrays into local variables or function parameters.
+Extract data from objects and arrays into local variables or function parameters. Avoid overusing dot notation.
 
 ## Problem
 
