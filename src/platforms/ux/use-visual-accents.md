@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Establish a clear visual hierarchy using variations in font weight, color, size, and positioning to guide user attention.
+Establish hierarchy via size, color, animations to guide attention.
 
 ## Problem
 
@@ -15,8 +15,18 @@ Establish a clear hierarchy by using bold font weights for headings, brand color
 ```jsx
 // Good: Clear hierarchy with font weight and color
 <ArticleCard>
-  <Text variant="h2" weight="bold">The Future of UX</Text>
-  <Text variant="caption" color="textSecondary">Published Oct 24, 2023</Text>
+  <Text
+    variant="h2"
+    weight="bold"
+  >
+    The Future of UX
+  </Text>
+  <Text
+    variant="caption"
+    color="textSecondary"
+  >
+    Published Oct 24, 2023
+  </Text>
   <Text variant="body">Visual hierarchy is the arrangement of elements...</Text>
   <Button variant="primary">Read More</Button>
 </ArticleCard>
@@ -26,7 +36,12 @@ Establish a clear hierarchy by using bold font weights for headings, brand color
 // Good: Using positioning and size to highlight a key metric
 <MetricSlot>
   <Label color="textSecondary">Total Revenue</Label>
-  <Value size="xl" weight="bold">$42,000</Value>
+  <Value
+    size="xl"
+    weight="bold"
+  >
+    $42,000
+  </Value>
   <Badge trend="up">+12%</Badge>
 </MetricSlot>
 ```

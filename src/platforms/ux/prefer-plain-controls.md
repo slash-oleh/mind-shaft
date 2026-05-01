@@ -1,8 +1,8 @@
-# Use high-visibility controls for few options
+# Prefer plain controls
 
 ## TLDR
 
-Use button groups, switches, or radio buttons instead of dropdowns for small sets of options (typically 2-5).
+Use button groups or radios for small fixed sets (2-5 items). Avoid dropdowns for few options.
 
 ## Problem
 
@@ -22,12 +22,18 @@ Use a Button Group (Toggle Button), Switch, or Radio Group to make all choices v
 
 ```jsx
 // Good: A switch for binary choices
-<Switch label="Enable Notifications" checked={true} />
+<Switch
+  label="Enable Notifications"
+  checked={true}
+/>
 ```
 
 ```jsx
 // Good: Radio group when there are 3-4 options
-<RadioGroup label="Size" orientation="horizontal">
+<RadioGroup
+  label="Size"
+  orientation="horizontal"
+>
   <Radio value="s">Small</Radio>
   <Radio value="m">Medium</Radio>
   <Radio value="l">Large</Radio>

@@ -1,8 +1,8 @@
-# Prefer flat menus over nested submenus
+# Prefer flat navigation
 
 ## TLDR
 
-Keep navigation shallow by using flat lists with clear grouping instead of nested submenus.
+Use flat lists/menus/etc. with separators where their count is low. Avoid premature or deep nesting of submenus.
 
 ## Problem
 

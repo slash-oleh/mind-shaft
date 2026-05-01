@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Question requirements that prescribe over-engineered solutions and propose simpler alternatives that achieve the same business goals.
+Question requirements that prescribe over-engineered solutions. Propose simpler alternatives that achieve the same business goals.
 
 ## Problem
 
@@ -10,29 +10,49 @@ Requirements documents often describe a specific technical solution rather than 
 
 ## Good solution
 
-Focus on the *what* and the *why* before committing to the *how*. When faced with a complex requirement, peel back the layers to find the essential problem it aims to solve.
+Focus on the _what_ and the _why_ before committing to the _how_. When faced with a complex requirement or design, peel back the layers to find the essential problem it aims to solve.
 
 **Best Practices:**
 
-- **Ask for the "Why"**: Clarify the business goal or user pain point behind a specific technical request.
-- **Differentiate must-haves**: Determine if a specific implementation is a firm requirement or just a suggestion from the stakeholder.
-- **Propose Simpler Alternatives**: If a requirement seems over-engineered, suggest a simpler implementation that delivers the same (or 80%) value with significantly less effort.
-- **Highlight Hidden Costs**: Clearly communicate the maintenance and performance implications of a complex solution compared to a simpler one.
+- **Ask Why**: Find the goal behind a specific technical or design request.
+- **Identify Suggestions**: Check if an implementation is a firm requirement or just a placeholder.
+- **Propose Simpler Alternatives**: Suggest implementations that deliver 80% value with significantly less effort.
+- **Flag Inconsistencies**: Question new UI patterns that duplicate existing functionality.
+
+```jsx
+// Requirement: Show error modal
+// Good: Question shift from snackbars to modals
+// "We usually use Snackbars for errors. Use it here too?"
+// Result: Reuse existing pattern.
+showSnackbar({ message: 'Invalid input', type: 'error' });
+```
 
 ## Bad solution
 
-Implementing complex architectural or technical requirements without proactively questioning their necessity or exploring simpler ways to achieve the same objective.
+Implementing complex architectural or technical requirements as they are without proactively questioning their necessity or exploring simpler ways to achieve the same objective.
+
+```jsx
+// Requirement: Show error modal
+// Bad: Build one-off modal because mockup showed it
+// Result: Fragmented UX.
+<ErrorModal
+  isOpen={true}
+  message="Invalid input"
+/>
+```
 
 ## Impact
 
-- **[KISS](../../home/impact/positive/kiss.md)**: Reduces the amount of code to write and maintain.
-- **[Maintainability](../../home/impact/positive/maintainability.md)**: Simpler systems are easier to understand, test, and evolve.
+- **[Consistency](../../home/impact/positive/consistency.md)**: predictable and intuitive app.
+- **[KISS](../../home/impact/positive/kiss.md)**: less code, less maintenance.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: easier to understand and evolve.
 
 ## Exceptions
 
-- When a specific solution is strictly required for legal, compliance, or legacy integration reasons that cannot be altered.
+- **Intentional Overhauls**: Planned migrations to new patterns.
+- **Fixed Constraints**: Legal or legacy integration requirements.
 
 ## References
 
-- [Martin Fowler: YAGNI (You Ain't Gonna Need It)](https://martinfowler.com/bliki/Yagni.html)
-- [Wikipedia: 5 Whys - Finding the Root Cause](https://en.wikipedia.org/wiki/5_Whys)
+- [Martin Fowler: Yagni](https://martinfowler.com/bliki/Yagni.html)
+- [Wikipedia: Five Whys](https://en.wikipedia.org/wiki/Five_whys)

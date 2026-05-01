@@ -1,8 +1,8 @@
-# Make form fail early
+# Fail forms early
 
 ## TLDR
 
-Validate form inputs as soon as the user interacts with them instead of waiting for submission.
+Validate inputs during interaction. Avoid waiting for submission to show errors.
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Limit the use of color
+# Limit color usage
 
 ## TLDR
 
-Use color sparingly and purposefully. A restrained color palette improves clarity, focuses attention, and makes meaningful color cues (like errors or success states) stand out more effectively.
+Use color sparingly. Restrain palette and avoid highlighting too many elements at once.
 
 ## Problem
 
@@ -22,7 +22,10 @@ Stick to a small, curated set of colors. Use a primary brand color for main acti
   <MainContent>
     <Card>
       <Text>Daily Progress</Text>
-      <ProgressBar value={80} color="primary" />
+      <ProgressBar
+        value={80}
+        color="primary"
+      />
     </Card>
     <StatusBadge type="success">Live</StatusBadge> {/* Functional color */}
   </MainContent>

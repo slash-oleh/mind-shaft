@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Standardize on a small set of well-defined component variants. Avoid creating multiple components or variations that serve the same underlying purpose.
+Define a small set of distinct component properties with limited values. Avoid multiplied combinations of them as reusable patterns.
 
 ## Problem
 

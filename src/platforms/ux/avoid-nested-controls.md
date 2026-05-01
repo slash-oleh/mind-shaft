@@ -1,8 +1,8 @@
-# Don't wrap interactive elements into each other
+# Avoid nested controls
 
 ## TLDR
 
-Avoid nesting interactive elements (buttons, links, inputs) inside other interactive elements.
+Don't nest interactive elements (buttons, links, inputs) inside other controls.
 
 ## Problem
 
@@ -16,7 +16,11 @@ Keep interactive elements separate and clearly delineated. If an action needs to
 // Good: The link and button are siblings, not nested.
 <div>
   <Link href="/item/123">View Item 123</Link>
-  <Button variant="outline" size="sm" onClick={() => handleDelete(123)}>
+  <Button
+    variant="outline"
+    size="sm"
+    onClick={() => handleDelete(123)}
+  >
     Delete
   </Button>
 </div>
@@ -27,7 +31,11 @@ Keep interactive elements separate and clearly delineated. If an action needs to
 <ListItem>
   <ListItemText primary="Item 123" />
   <ListItemSecondaryAction>
-    <Button variant="ghost" size="sm" onClick={() => handleDelete(123)}>
+    <Button
+      variant="ghost"
+      size="sm"
+      onClick={() => handleDelete(123)}
+    >
       Delete
     </Button>
   </ListItemSecondaryAction>
@@ -42,7 +50,11 @@ Nesting a button inside a link or another interactive element.
 // Bad: The button is inside the link, making it unclear which element activates.
 <Link href="/item/123">
   View Item 123
-  <Button variant="ghost" size="sm" onClick={() => handleDelete(123)}>
+  <Button
+    variant="ghost"
+    size="sm"
+    onClick={() => handleDelete(123)}
+  >
     Delete
   </Button>
 </Link>
@@ -50,9 +62,17 @@ Nesting a button inside a link or another interactive element.
 
 ```jsx
 // Bad: A button inside a list item that is also a link.
-<ListItem button component={Link} to="/item/123">
+<ListItem
+  button
+  component={Link}
+  to="/item/123"
+>
   <ListItemText primary="Item 123" />
-  <Button variant="ghost" size="sm" onClick={() => handleDelete(123)}>
+  <Button
+    variant="ghost"
+    size="sm"
+    onClick={() => handleDelete(123)}
+  >
     Delete
   </Button>
 </ListItem>

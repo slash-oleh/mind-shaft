@@ -1,8 +1,8 @@
-# Add explanation to disabled controls
+# Explain disabled controls
 
 ## TLDR
 
-Provide a visible explanation of *why* a control is disabled and *what* the user can do to enable it.
+Explain why control disabled and how to enable it.
 
 ## Problem
 

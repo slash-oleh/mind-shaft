@@ -1,8 +1,8 @@
-# Maintain core accessibility features
+# Maintain accessibility
 
 ## TLDR
 
-Preserve and enhance native browser accessibility features.
+Preserve native features and semantics. Avoid overreliance on color, small text, gestures, etc.
 
 ## Problem
 
@@ -24,7 +24,11 @@ Ensure the following core accessibility aspects are maintained:
   <ul>
     <li><a href="/home">Home</a></li>
     <li>
-      <button type="button" aria-haspopup="true" aria-expanded="false">
+      <button
+        type="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
         Settings
       </button>
     </li>
@@ -52,7 +56,10 @@ Using generic elements for interactive components and overriding native browser 
 
 ```html
 <!-- BAD: Logic-only "button" with no accessibility -->
-<div class="custom-button" onclick="openSettings()">
+<div
+  class="custom-button"
+  onclick="openSettings()"
+>
   Settings
 </div>
 ```
@@ -72,7 +79,7 @@ button:focus {
 
 - **[Accessibility](../../home/impact/positive/accessibility.md)**: Ensures the product is usable by the widest possible audience, regardless of ability or device.
 - **[Robustness](../../home/impact/positive/robustness.md)**: Semantic HTML provides a more resilient foundation that works better across different browsers and devices.
-- **[UX](../../home/impact/positive/readability.md)**: Features like visible focus states and zoom support improve the experience for *all* users, not just those with disabilities.
+- **[UX](../../home/impact/positive/readability.md)**: Features like visible focus states and zoom support improve the experience for _all_ users, not just those with disabilities.
 - **[Portability](../../home/impact/positive/portability.md)**: Standards-compliant applications are more likely to work correctly on future platforms and assistive tools.
 
 ## Exceptions

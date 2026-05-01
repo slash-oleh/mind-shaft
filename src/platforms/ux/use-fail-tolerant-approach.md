@@ -1,8 +1,8 @@
-# Prefer fail-tolerant approaches
+# Use fail-tolerant approach
 
 ## TLDR
 
-Design interfaces that prevent errors before they happen and allow users to recover easily.
+Where possible, in priority order: Prevent errors before they even happen. Recover silently or conceal. Allow users recover easily.
 
 ## Problem
 
@@ -17,8 +17,10 @@ Implement a "fail‑safe" design by providing real-time feedback, suggesting cor
 <Form>
   <Input
     label="Username"
-    validationStatus={isTaken ? "warning" : "success"}
-    helperText={isTaken ? "That name is taken. How about 'user_123'?" : "Available!"}
+    validationStatus={isTaken ? 'warning' : 'success'}
+    helperText={
+      isTaken ? "That name is taken. How about 'user_123'?" : 'Available!'
+    }
   />
   <Button disabled={isInvalid}>Create Account</Button>
 </Form>
@@ -57,5 +59,5 @@ Blocking the user with late-stage errors and losing their progress or context.
 
 ## Exceptions
 
-- **Security/Authentication**: Some security protocols (like password entry) must be strict about not suggesting corrections or providing too much detail about *why* a login failed to prevent enumeration attacks.
+- **Security/Authentication**: Some security protocols (like password entry) must be strict about not suggesting corrections or providing too much detail about _why_ a login failed to prevent enumeration attacks.
 - **Critical Financial/Legal Transactions**: Situations where an "undo" is legally or technically impossible may require stricter "fail-fast" checks and explicit confirmations.
