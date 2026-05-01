@@ -1,8 +1,8 @@
-# Use Server-Side Rendering (SSR)
+# Use SSR
 
 ## TLDR
 
-Use Server-Side Rendering (SSR) for public-facing applications.
+Use Server-Side Rendering for public-facing multi-page applications with promo sections.
 
 ## Problem
 
@@ -39,13 +39,14 @@ Serving an empty root element and relying entirely on client-side hooks to fetch
 <!-- BAD: Empty HTML shell that needs JS to show anything -->
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>My App</title>
-</head>
-<body>
-    <div id="root"></div> <!-- User sees nothing until main.js runs -->
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- User sees nothing until main.js runs -->
     <script src="/main.js"></script>
-</body>
+  </body>
 </html>
 ```
 

@@ -1,8 +1,8 @@
-# Implement graceful shutdown
+# Perform graceful shutdown
 
 ## TLDR
 
-Handle termination signals to finish active work and close resources before exiting.
+Handle termination signals to finish work and close resources. Avoid abrupt, hanged exits during active tasks.
 
 ## Problem
 
@@ -72,7 +72,7 @@ start();
 ## Exceptions
 
 - **Ephemeral Scripts**: Short-lived CLI tools or migration scripts that perform a single task and exit immediately might not require complex signal handling.
-- **Purely Stateless Utilities**: Small utilities that do not interact with databases or external state *might* get away with sudden termination, though it's still not recommended.
+- **Purely Stateless Utilities**: Small utilities that do not interact with databases or external state _might_ get away with sudden termination, though it's still not recommended.
 
 ## References
 

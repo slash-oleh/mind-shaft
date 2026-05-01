@@ -1,8 +1,8 @@
-# Use IoC for page and navigation
+# Use endpoint IoC
 
 ## TLDR
 
-Invert the control of page structure by allowing individual page components to compose their own layouts rather than being injected into a rigid, global wrapper.
+For screens or pages, allow them to control full layout structure by reusing individual components and common layouts. Avoid restricting them to content-only, being automatically injected into a rigid, global wrapper.
 
 ## Problem
 
@@ -102,7 +102,7 @@ const App = () => (
 
 ## Exceptions
 
-- **Extremely Simple Apps**: If every single page in the application is identical in structure and will *never* change, a simple wrapper might be sufficient (though IoC is still a safer default).
+- **Extremely Simple Apps**: If every single page in the application is identical in structure and will _never_ change, a simple wrapper might be sufficient (though IoC is still a safer default).
 
 ## References
 

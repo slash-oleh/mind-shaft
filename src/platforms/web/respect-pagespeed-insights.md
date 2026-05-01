@@ -1,4 +1,4 @@
-# Optimize for PageSpeed Insights
+# Respect PageSpeed Insights
 
 ## TLDR
 
@@ -19,18 +19,27 @@ Aim for a "Green" score (90+) by focusing on the Core Web Vitals:
 
 ```html
 <!-- GOOD: Reserving space for an image to prevent layout shift -->
-<div class="image-container" style="aspect-ratio: 16 / 9; background: #eee;">
+<div
+  class="image-container"
+  style="aspect-ratio: 16 / 9; background: #eee;"
+>
   <img
     src="hero.webp"
     alt="Hero Image"
     width="1600"
     height="900"
     fetchpriority="high"
-  >
+  />
 </div>
 
 <!-- GOOD: Preloading critical fonts -->
-<link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link
+  rel="preload"
+  href="/fonts/inter.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
 ```
 
 ## Bad solution
@@ -39,10 +48,14 @@ Ignoring performance metrics until the end of development or using "fixes" that 
 
 ```html
 <!-- BAD: No dimensions, causing layout shift when image loads -->
-<img src="hero.jpg">
+<img src="hero.jpg" />
 
 <!-- BAD: Lazy loading the main LCP element -->
-<img src="hero.jpg" loading="lazy"> <!-- This DELAYS the initial render! -->
+<img
+  src="hero.jpg"
+  loading="lazy"
+/>
+<!-- This DELAYS the initial render! -->
 ```
 
 ## Impact

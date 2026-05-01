@@ -1,8 +1,8 @@
-# Prefer query builders over raw SQL
+# Use query builders
 
 ## TLDR
 
-Use query builders for standard database operations instead of raw SQL strings.
+Use for standard database operations. Build queries from composable parts. Avoid raw SQL strings and manual string concatenation.
 
 ## Problem
 

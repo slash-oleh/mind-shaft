@@ -1,8 +1,8 @@
-# Maintain a stateless backend
+# Keep backend stateless
 
 ## TLDR
 
-Design the application logic to be completely stateless, relying on external shared persistence instead of local in-memory data.
+Rely on external shared persistence in runtime. Avoid in-memory state and local storage.
 
 ## Problem
 
@@ -60,7 +60,7 @@ export const handleRequest = async (req, res) => {
 
 ## Exceptions
 
-- **Short-lived request-scoped state**: It's perfectly fine to use local variables *within the scope of a single request* processing.
+- **Short-lived request-scoped state**: It's perfectly fine to use local variables _within the scope of a single request_ processing.
 - **Local Read-only Cache**: Caching static configuration data that is identical across all instances and doesn't change based on user interaction (though a distributed cache is still often better).
 - **Standalone legacy systems**: When specifically designing a singular, non-distributed tool where horizontal scale is explicitly not a requirement.
 

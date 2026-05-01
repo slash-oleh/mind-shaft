@@ -1,8 +1,8 @@
-# Avoid editing applied migrations
+# Lock applied migrations
 
 ## TLDR
 
-Do not modify database migration files once they have been applied to any shared environment (staging, production) or committed to the main branch.
+Keep database migrations immutable once applied on remote environments or committed to mainline. Avoid editing historical files.
 
 ## Problem
 
@@ -51,7 +51,7 @@ CREATE TABLE users (
 ## Exceptions
 
 - **Local-only development**: If you haven't committed the migration and it only exists on your local machine, you can revert and edit it safely.
-- **Failed first run**: If a migration fails during the *initial* deployment and the database hasn't successfully recorded it, you might fix the file (depending on the tool's behavior).
+- **Failed first run**: If a migration fails during the _initial_ deployment and the database hasn't successfully recorded it, you might fix the file (depending on the tool's behavior).
 - **Conditional bugs**: Fixing a script that fails on a specific edge case (like a fresh DB vs. an existing one) only if you are certain the change doesn't alter the resulting schema for anyone who already ran it.
 
 ## References

@@ -1,4 +1,4 @@
-# Use effective caching policies
+# Configure caching policies
 
 ## TLDR
 
