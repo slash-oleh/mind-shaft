@@ -1,8 +1,8 @@
-# Group similar issues
+# Feedback grouping
 
 ## TLDR
 
-Explain the first issue occurrence in detail and link to it for subsequent occurrences to avoid duplicate comments.
+For repeating issues, always explain first occurrence in detail and link to it for others. Avoid duplicate comments throughout PR. Good: `"Same here. See comment above"`. Bad: `<repeating long explanation>`.
 
 ## Problem
 

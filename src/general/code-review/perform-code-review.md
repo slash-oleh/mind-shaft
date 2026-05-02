@@ -1,8 +1,8 @@
-# Perform code review
+# Code review
 
 ## TLDR
 
-Don't skip it to detect mistakes early.
+Always perform structured and timely reviews. Aim for feedback within one business day and time-box passes to 30 minutes. Good: `feedback within 24 hours`. Bad: `PR sitting for 3 days`.
 
 ## Problem
 

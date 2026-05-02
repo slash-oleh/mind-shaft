@@ -1,8 +1,8 @@
-# Keep PRs small
+# PR size
 
 ## TLDR
 
-Max 300 lines. Don't mix unrelated changes.
+For pull requests, always aim for maximum 300 lines. Avoid mixing unrelated changes, unless mechanical or generated code. Good: `"Feature A" PR, "Feature B" PR`. Bad: `"Epic X: A, B" PR`.
 
 ## Problem
 

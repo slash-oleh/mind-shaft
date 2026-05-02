@@ -1,8 +1,8 @@
-# Don't add tech debt
+# Technical debt
 
 ## TLDR
 
-Leave code in better state than you found it if possible.
+When modifying code, always leave it in better state than found (Boy Scout Rule) or at least not worse. Avoid ignoring small but annoying issues in touched code. Good: fix typo in modified file. Bad: `// TODO: fix naming later`.
 
 ## Problem
 

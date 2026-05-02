@@ -2,11 +2,11 @@
 aiSkip: true
 ---
 
-# Define responsibilities
+# PR ownership
 
 ## TLDR
 
-Author owns the PR. Author drives the process and merges the code.
+Author always owns lifecycle: asks for review, applies fixes, merges code once approved. Avoid blurred multi-person resposibilities. Good: `author reminds about review`. Bad: `author waits for reviewer to merge PR with broken CI`.
 
 ## Problem
 

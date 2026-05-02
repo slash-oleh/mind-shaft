@@ -1,8 +1,8 @@
-# Prioritize feedback
+# Feedback priority
 
 ## TLDR
 
-High-level architecture, logic, bugs first. Minor details only after the structure is confirmed.
+Always prioritize high-level architecture and logic. Avoid addressing minor details before structure is confirmed. Good: `Round 1: Split function into two; Round 2: Change local var naming`. Bad: `<Same but opposite order>`.
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Don't push to merged branches
+# Merged branches
 
 ## TLDR
 
-Use new branches for follow-ups.
+For follow-up tasks, always use new branches. Never push to branches already merged into main. Good: `git checkout -b new-branch`. Bad: `git push origin merged-branch`.
 
 ## Problem
 

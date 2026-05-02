@@ -1,8 +1,8 @@
-# Reference project guidelines
+# Guideline references
 
 ## TLDR
 
-Reference project guidelines and documentation in comments to avoid repetitive explanations.
+In comments, always reference project guidelines and documentation via links. Avoid repetitive explanations. Good: `"See class naming conventions in docs"`. Bad: `<lengthy manual explanation>`.
 
 ## Problem
 

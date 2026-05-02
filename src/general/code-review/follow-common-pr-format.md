@@ -1,8 +1,8 @@
-# Follow common PR format
+# PR format
 
 ## TLDR
 
-Standardize PR titles and descriptions. Use imperative mood and include ticket numbers.
+When submitting, always use standardized titles and descriptions. Include ticket numbers and use imperative mood. Good: `#42: Add user signup`. Bad: `fixing things`.
 
 ## Problem
 

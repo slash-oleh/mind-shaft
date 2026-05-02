@@ -1,8 +1,8 @@
-# Automate style check
+# Style automation
 
 ## TLDR
 
-Don't address formatting and linting in code reviews. If a rule isn't in the linter, add it or ignore it.
+For formatting and linting, always use automated tools or ignore. Avoid addressing styling nits unless it's documented but not automated. Good: `eslint --fix`. Bad: `Reviewer: "use single quotes"`.
 
 ## Problem
 
