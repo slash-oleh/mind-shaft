@@ -40,7 +40,7 @@ if (condition) {
 
 ## Exceptions
 
-- **Nested conditions**: Avoid using nested ternary operators (e.g., `a ? (b ? c : d) : e`) as they significantly reduce readability. In such cases, use `if/else`, a [lookup map](./use-lookup-maps-instead-of-conditional-branching.md), or extract the logic into a separate function.
+- **Nested conditions**: Avoid using nested ternary operators (e.g., `a ? (b ? c : d) : e`) as they significantly reduce readability. In such cases, use `if/else`, a lookup map, or extract the logic into a separate function.
 - **Overly complex logic**: If the conditions or the results are so complex that they require multiple lines or have significant side effects.
 
 ## References
