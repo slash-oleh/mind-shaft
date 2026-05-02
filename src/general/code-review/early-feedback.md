@@ -1,8 +1,8 @@
-# Code review
+# Early feedback
 
 ## TLDR
 
-Always perform structured and timely reviews. Aim for feedback within one business day and time-box passes to 30 minutes. Good: `feedback within 24 hours`. Bad: `PR sitting for 3 days`.
+Always perform structured and timely reviews, ideally withing 1 business day, 30min max per round. Avoid skipping or delaying feedback. Good: `<feedback within 24 hours>`, `<external review for single developer on project>`. Bad: `<PR sitting for 3 days>`, `<Code unreviewed for years>`.
 
 ## Problem
 
