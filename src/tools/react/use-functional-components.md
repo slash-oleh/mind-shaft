@@ -1,8 +1,8 @@
-# Use Functional Components
+# Functional components
 
 ## TLDR
 
-Develop all new components as Functional Components using React Hooks. When affecting existing Class Components, refactor them to Functional Components.
+Always use functional components with Hooks. Avoid Class components, unless maintaining legacy code or implementing Error Boundaries. Good: `const Comp = () => {}`. Bad: `class Comp extends React.Component {}`.
 
 ## Problem
 

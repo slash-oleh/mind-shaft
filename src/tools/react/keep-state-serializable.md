@@ -1,8 +1,8 @@
-# Keep state serializable
+# Serializable state
 
 ## TLDR
 
-Only store serializable data like primitives, plain objects, and arrays in state or global stores to ensure compatibility with hydration and debugging tools.
+For state and stores, always use serializable data like primitives, plain objects, and arrays. Avoid storing functions, Promises, or Classes. Good: `const [q, setQ] = useState("")`. Bad: `const [element, setElement] = useState(() => <Button />)`.
 
 ## Problem
 
@@ -15,7 +15,7 @@ Keep state as "pure data." If you need a function that depends on certain values
 ```tsx
 // Good: State is a simple string; function is a stable reference via useCallback
 function SearchComponent({ id }) {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
 
   const handleSearch = useCallback(() => {
     return api.get(`/search?q=${query}&id=${id}`);
@@ -52,4 +52,4 @@ function SearchComponent({ id }) {
 
 ## Exceptions
 
-- **Ref escape hatches**: If you *must* store a non-serializable value (like a `setInterval` ID, a third-party library instance, or a DOM reference), use `useRef` instead of `useState`. Refs are intended for imperative "side-data" and do not affect the serializability of the component's UI state.
+- **Ref escape hatches**: If you _must_ store a non-serializable value (like a `setInterval` ID, a third-party library instance, or a DOM reference), use `useRef` instead of `useState`. Refs are intended for imperative "side-data" and do not affect the serializability of the component's UI state.

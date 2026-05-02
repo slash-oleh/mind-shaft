@@ -1,8 +1,8 @@
-# Use useMemo consciously
+# Value memoization
 
 ## TLDR
 
-To cache results of expensive calculations or maintain referential stability, use `useMemo`. Otherwise, don't use it by default - it pollutes memory and only creates boilerplate.
+For expensive calculations or referential stability, always use `useMemo`. Avoid using for primitives and lightweight calculations. Good: `const v = useMemo(() => ({ x: ... }), [x])`. Bad: `const o = {}`, `const v = useMemo(() => x * 100, [x])`.
 
 ## Problem
 

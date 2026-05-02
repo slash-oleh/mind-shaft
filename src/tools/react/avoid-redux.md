@@ -1,8 +1,8 @@
-# Avoid Redux
+# State management
 
 ## TLDR
 
-Do not use Redux as the default state management solution. Favor modern, specialized tools like React Query for async state and React Context, Recoil or Zustand for global UI state.
+For global state, always use specialized tools like React Query, Recoil or Zustand. For local state just use plain `useState`. Avoid global mutable variables and Redux, unless maintaining legacy integrations. Good: `useQuery()`. Bad: `dispatch(fetchUser())`.
 
 ## Problem
 

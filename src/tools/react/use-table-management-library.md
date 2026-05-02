@@ -1,8 +1,8 @@
-# Use table management library
+# Table management
 
 ## TLDR
 
-Use a headless library like TanStack Table to manage complex table logic, ensuring full control over UI and styling while delegating state and calculations.
+For complex tables, always use headless libraries like TanStack Table. Avoid manual state management for sorting, pagination, or filtering. Good: `useTable({ columns, rows })`. Bad: `columns = useState(); rows = useState();`.
 
 ## Problem
 

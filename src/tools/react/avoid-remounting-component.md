@@ -1,8 +1,8 @@
-# Avoid remouning component
+# Component remounting
 
 ## TLDR
 
-Define component at the top level when possible. If not, for dynamic ones defined in render cycle, use raw function call (no JSX, no `createElement`).
+Always define component functions at top level or use raw function call to render. Avoid defining inside render cycle along with JSX or `createElement` rendering. Good: `RenderHeader = () => {}; return <>{RenderHeader()}</>`. Bad: `RenderHeader = () => {}; return <><RenderHeader/>{createElement(RenderHeader)}</>`.
 
 ## Problem
 

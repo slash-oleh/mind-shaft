@@ -1,8 +1,8 @@
-# Use memo
+# Component memoization
 
 ## TLDR
 
-Unless using React Compiler, always wrap functional components in `memo`.
+Always wrap functional components in `memo`. Avoid redundant re-renders due to parent re-renders unless using React Compiler. Good: `const Comp = memo(() => {})`. Bad: `const Comp = () => {}`.
 
 ## Problem
 

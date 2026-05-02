@@ -1,8 +1,8 @@
-# Avoid props drilling
+# Props drilling
 
 ## TLDR
 
-Lift state to the nearest common ancestor. Position your state at the lowest possible level that still allows all components that need the data to access it. context or state management tool.
+For shared state, always lift to nearest common ancestor. Avoid props drilling by using Context or state management. Good: `Table` manages `Row` selection; `UserAvatar` uses `useUser` hook. Bad: `Row` manages own selection state; `UserAvatar` takes user as a prop provided from `Page` all the way up.
 
 ## Problem
 

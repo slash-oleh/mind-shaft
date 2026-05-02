@@ -1,12 +1,12 @@
-# Use updater functions
+# State updaters
 
 ## TLDR
 
-Use updater functions when state depends on its previous value. Avoid referencing stale state variables inside setters.
+When state depends on previous value, always use updater functions. Avoid referencing stale state variables inside setters. Good: `setCount(prev => prev + 1)`. Bad: `setCount(count + 1)`.
 
 ## Problem
 
-React state updates are asynchronous and batched. If you reference the state variable directly within an update (e.g., `setCount(count + 1)`), you are relying on the value of `count` from the current render cycle. If multiple updates are triggered before the next render (such as multiple calls in a single event handler or updates within a closure like `setTimeout`), they will all reference the same "stale" value. This results in lost updates, where only the last operation "wins" or the calculations are simply incorrect.
+React state updates are asynchronous and batched. If you reference the state variable directly within an update (e.g., `setCount(count + 1)`), you are relying on the value of `count` from the current render cycle. If multiple updates are triggered before the next render (such as multiple calls in a single event handler or updates within a closure like `setTimeout`), they will all reference the same "stale" value. This results in lost updates, race conditions, where only the last operation "wins" or the calculations are simply incorrect.
 
 ## Good solution
 
@@ -15,9 +15,9 @@ Pass a function to the state setter. React will call this function with the late
 ```tsx
 // Good: Every click correctly increments the count by 3
 const handleTripleIncrement = () => {
-  setCount(prev => prev + 1);
-  setCount(prev => prev + 1);
-  setCount(prev => prev + 1);
+  setCount((prev) => prev + 1);
+  setCount((prev) => prev + 1);
+  setCount((prev) => prev + 1);
 };
 ```
 
@@ -38,7 +38,7 @@ const handleTripleIncrement = () => {
 ## Impact
 
 - **[Consistency](../../home/impact/positive/consistency.md)**: Guarantees that the update logic always operates on the literal "current" state, preventing data loss.
-- **[Performance](../../home/impact/positive/performance.md)**: Leverages React's **Automatic Batching**. While React 18+ batches multiple state updates into a single render by default, functional updates ensure that multiple updates to the *same* state within that single batch are cumulative rather than overwriting each other.
+- **[Performance](../../home/impact/positive/performance.md)**: Leverages React's **Automatic Batching**. While React 18+ batches multiple state updates into a single render by default, functional updates ensure that multiple updates to the _same_ state within that single batch are cumulative rather than overwriting each other.
 - **[Reliability](../../home/impact/positive/reliability.md)**: Solves stale closure issues in asynchronous callbacks (like `setTimeout` or `Promise.then`) without needing to add the state variable to dependency arrays in complex ways.
 
 ## Exceptions

@@ -1,8 +1,8 @@
-# Use controlled components
+# Controlled components
 
 ## TLDR
 
-Let the state of parent remain the single source of truth. Avoid only defining initial state and mirroring changes via onChange.
+For stateful inputs, always use parent state as single source of truth. Avoid setting only initial state nad mirroring changes via `onChange` and `useEffect`. Good: `<input value={v} onChange={c} />`. Bad: `const [v, setV] = useState(props.v)`.
 
 ## Problem
 

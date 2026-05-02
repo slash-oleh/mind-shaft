@@ -1,8 +1,8 @@
-# Reference assets via imports
+# Asset referencing
 
 ## TLDR
 
-Import images, SVGs, and other static assets directly in component files rather than using raw string paths from public directories.
+For images and SVGs, always use direct imports in component files. Avoid raw string paths from public directories. Good: `import logo from './logo.png'`. Bad: `src="/images/logo.png"`.
 
 ## Problem
 

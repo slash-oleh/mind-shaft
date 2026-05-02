@@ -1,8 +1,8 @@
-# Use form management library
+# Form management
 
 ## TLDR
 
-Use specialized libraries like React Hook Form or Formik to handle form state, validation, and submission instead of managing complex state manually.
+For non-trivial forms, always use specialized libraries like React Hook Form or Formik. Avoid manual state management for every field, unless form is extremely simple. Good: `useForm({ email, password })`. Bad: `useState('email'); useState('password');`.
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Avoid useRef
+# Refs
 
 ## TLDR
 
-Favor declarative state (`useState`) over imperative refs. Use `useRef` only for direct DOM access or specific performance needs and only as a last resort.
+Always use declarative reactive state. Avoid `useRef`, unless for direct DOM access or specific performance needs. Good: `const [q, setQ] = useState('')`. Bad: `const q = useRef('')`.
 
 ## Problem
 

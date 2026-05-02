@@ -1,8 +1,8 @@
-# Use derived values
+# Derived values
 
 ## TLDR
 
-Use state to store normalized data only. Calculate derived values on-the-fly during rendering. Proxy through `useMemo` if needed. Avoid storing them in state or ref. Avoid calculating via `useEffect`. Maintain single source of truth.
+For derived state, always calculate values on-the-fly during rendering. Use `useMemo` for expensive calculations. Avoid storing derived data in state or calculating via `useEffect`. Good: `const total = items.length`. Bad: `useEffect(() => setTotal(items.length), [items])`.
 
 ## Problem
 

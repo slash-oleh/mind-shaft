@@ -1,3 +1,3 @@
 # Code Review
 
-Feedback, process, PR best practices.
+Both feedback and PR sumbitting.

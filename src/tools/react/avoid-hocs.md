@@ -1,8 +1,8 @@
-# Avoid HOCs
+# Logic sharing
 
 ## TLDR
 
-Use custom Hooks pulling state from common context to share it between components. Avoid Higher-Order Components (HOCs) for better composability and flatter component trees.
+For sharing state and logic, always use custom Hooks. Avoid Higher-Order Components (HOCs), unless used for authentication guards or layout providers. Good: `const user = useAuth()`. Bad: `withAuth(Comp)`.
 
 ## Problem
 

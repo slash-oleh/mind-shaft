@@ -1,8 +1,8 @@
-# Avoid per-component folders
+# Component files
 
 ## TLDR
 
-Do not create a dedicated folder for single component. Only use folders when a component is complex and large enough to split into internal helper component files.
+For components, always use flat files in shared directories. Avoid dedicated folders for single components, unless complex enough to split into helper files. Good: `Button.tsx`. Bad: `Button/index.tsx`.
 
 ## Problem
 

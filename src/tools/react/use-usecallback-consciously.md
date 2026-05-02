@@ -1,8 +1,8 @@
-# Use useCallback consciously
+# Callback memoization
 
 ## TLDR
 
-When needed to pass function as a prop or hook dependency, use the `useCallback` hook to maintain stable reference. Otherwise, don't use it by default - it does not optimize function creation and only creates boilerplate.
+For functions, when passed to children components or hooks, use `useCallback`. Avoid using by default - only for stabilizing references. Good: `const onUpdate = useCallback(() => {}, []); return <Loader onUpdate={onUpdate}/>`. Bad: `<Loader onUpdate={() => {}} />`, `const renderLoader = useCallback(() => {}, []); return renderLoader();`.
 
 ## Problem
 

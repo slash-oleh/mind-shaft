@@ -1,8 +1,8 @@
-# Avoid async useEffect callbacks
+# Async effects
 
 ## TLDR
 
-Define async functions inside `useEffect` instead of making the callback `async`.
+For `useEffect` with async calls, always define self-called function inside. Never make effect callback itself `async`. Good: `useEffect(() => { (async () => {})() }, [])`. Bad: `useEffect(async () => {}, [])`.
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Use React keys
+# Render keys
 
 ## TLDR
 
-Use unique and stable identifiers for the `key` prop in lists, favoring data IDs over array indices for dynamic collections.
+For lists, use unique and stable identifiers from data for the `key` prop. Avoid using array indices for dynamic or reorderable collections. Good: `<li key={user.id}>`. Bad: `<li key={index}>` for sortable list.
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Mind useEffect dependencies
+# Effect dependencies
 
 ## TLDR
 
-Distinguish between reactive dependencies that intended to trigger `useEffect` callback and values that are merely data sources. Reduce unnecessary effect executions but keep in mind it should be safe to run as many times as needed.
+For `useEffect` always distinguish between triggers and data sources. Use `useEffectEvent` (or refs) for non-reactive but ref-unstable data. Avoid unnecessary effect executions but keep in mind it should be safe to run as many times as needed. Good: `log = () => {}; useEffectEvent(() => { log(value) }, [value])`. Bad: `log = () => {}; useEffect(() => { log(value) }, [value, log])`.
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Use async request management library
+# Async request management
 
 ## TLDR
 
-Use specialized libraries like TanStack Query or SWR to manage asynchronous data fetching and state instead of manual `useEffect` routines.
+For data fetching, always use specialized libraries like TanStack Query or SWR. Avoid manual `useEffect` routines and manual data, loading, error helper states. Good: `useQuery()`. Bad: `useEffect(() => { fetch().then(...) })`.
 
 ## Problem
 

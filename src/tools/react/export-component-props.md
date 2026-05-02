@@ -1,8 +1,8 @@
-# Export component props
+# Prop exports
 
 ## TLDR
 
-Export the TypeScript interface or type for component props to enable easy reuse, extension, and wrapping.
+For reusable components, always export prop interfaces or types along with the component. Use `[ComponentName]Props` naming convention. Avoid concealing prop types inside component file. Good: `export interface ButtonProps {}`. Bad: `interface ButtonProps {}`.
 
 ## Problem
 

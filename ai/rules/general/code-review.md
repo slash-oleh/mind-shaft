@@ -1,8 +1,8 @@
 ---
-description: "General: Code Review: Feedback, process, PR best practices."
+description: "General: Code Review: Both feedback and PR sumbitting."
 ---
 
-- **Code review**: Always perform structured and timely reviews. Aim for feedback within one business day and time-box passes to 30 minutes. Good: `feedback within 24 hours`. Bad: `PR sitting for 3 days`.
+- **Early feedback**: Always perform structured and timely reviews, ideally withing 1 business day, 30min max per round. Avoid skipping or delaying feedback. Good: `<feedback within 24 hours>`, `<external review for single developer on project>`. Bad: `<PR sitting for 3 days>`, `<Code unreviewed for years>`.
 - **Feedback grouping**: For repeating issues, always explain first occurrence in detail and link to it for others. Avoid duplicate comments throughout PR. Good: `"Same here. See comment above"`. Bad: `<repeating long explanation>`.
 - **Feedback priority**: Always prioritize high-level architecture and logic. Avoid addressing minor details before structure is confirmed. Good: `Round 1: Split function into two; Round 2: Change local var naming`. Bad: `<Same but opposite order>`.
 - **Guideline references**: In comments, always reference project guidelines and documentation via links. Avoid repetitive explanations. Good: `"See class naming conventions in docs"`. Bad: `<lengthy manual explanation>`.

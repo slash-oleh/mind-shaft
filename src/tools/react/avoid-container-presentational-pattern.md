@@ -1,8 +1,8 @@
-# Avoid Container/Presentational pattern
+# Component logic
 
 ## TLDR
 
-Use Hooks to keep logic and UI cohesive within a single component instead of splitting them into "Container" and "Presentational" pairs by default.
+For UI and logic decoupling, always use hooks. Avoid splitting into Container/Presentational component pairs pattern. Good: `useUser` hook in `User` component. Bad: `UserContainer` wrapping `UserView`.
 
 ## Problem
 

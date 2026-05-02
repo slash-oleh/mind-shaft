@@ -1,8 +1,8 @@
-# Forward props
+# Props forwarding
 
 ## TLDR
 
-Forward unhandled properties (`...restProps`) to the primary child when building wrapper components to preserve the full API of the encapsulated element.
+For wrapper components, always forward supported and unhandled properties using `...restProps`. Avoid picking specific props manually. Good: `({ onClick, ...restProps }) => <Button onClick={onClick} {...restProps} />`. Bad: `({ onClick }) => <Button variant="primary" />`.
 
 ## Problem
 

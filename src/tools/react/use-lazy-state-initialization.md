@@ -1,8 +1,8 @@
-# Use lazy state initialization
+# Lazy state initialization
 
 ## TLDR
 
-For expensive state calculations use the initializer function pattern (`useState(() => createInitialState())`).
+For expensive initial state value calculations, always use function initializer function. Avoid direct function calls for `useState` argument. Good: `useState(() => heavyCompute())`. Bad: `useState(heavyCompute())`.
 
 ## Problem
 

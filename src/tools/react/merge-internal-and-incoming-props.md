@@ -1,8 +1,8 @@
-# Merge internal and incoming props
+# Props merging
 
 ## TLDR
 
-Merge values of incoming properties like `className`, `style`, event handlers with internal definitions to ensure components remain extensible and composable without unwanted overrides.
+For wrapper components, always merge incoming props like `className` and event handlers with internal definitions. Avoid unwanted overriding. Good: `className={cx('base', className)}`. Bad: `className="base" {...restProps} // restProps contains className`.
 
 ## Problem
 
