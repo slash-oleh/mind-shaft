@@ -1,8 +1,8 @@
-# Apply modern language features
+# Syntax sugar
 
 ## TLDR
 
-Adopt modern syntax and language features like optional chaining and async/await.
+Always use modern language features. Avoid legacy patterns, unless using older version and upgrade is risky. Good: `r = await f()`. Bad: `f().then(r => {})`.
 
 ## Problem
 

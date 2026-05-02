@@ -1,8 +1,8 @@
-# Avoid magic values
+# Magic values
 
 ## TLDR
 
-Replace raw values (numbers, strings, flags) with named constants.
+When passing raw constants further, use named constants. Avoid literal values, unless self-explanatory or prepended with argument name. Good: `maxTime = 5; request(maxTime);`, `request({ timeout: 5 });`. Bad: `request(5);`, `maxTime = 5; request({ timeout: maxTime })`.
 
 ## Problem
 

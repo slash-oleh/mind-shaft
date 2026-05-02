@@ -1,8 +1,8 @@
-# Avoid redundant else
+# Redundant else
 
 ## TLDR
 
-Remove unnecessary `else` blocks after `if` when using `return` or `throw`.
+Always remove redundant else blocks after return or throw. Avoid unnecessary indentation, unless symmetry aids readability. Good: `if (c) return x; return y`. Bad: `if (c) return x; else return y`.
 
 ## Problem
 

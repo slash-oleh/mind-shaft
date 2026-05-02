@@ -1,8 +1,8 @@
-# Follow project code style
+# Project code style
 
 ## TLDR
 
-Match the existing codebase's style and apply improvements systematically as separate tasks.
+Always match existing codebase style. Avoid mixing styles or combining cleanup with functional changes, unless ongoing project-wide migration. Good: `f(opts); g(opts);`. Bad: `f(opts); f({ opts })`.
 
 ## Problem
 

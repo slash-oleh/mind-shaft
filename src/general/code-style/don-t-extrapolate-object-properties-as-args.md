@@ -1,8 +1,8 @@
-# Don't extrapolate object properties as args
+# Object arguments
 
 ## TLDR
 
-Pass entire objects or dedicated interfaces instead of extracting individual properties as separate function arguments.
+For multiple function arguments, when existing interface covers them, pass entire object. Avoid extracting individual properties as separate arguments, unless function must remain decoupled or dependency overhead is too high. Good: `f(u)`. Bad: `f(u.id, u.name)`.
 
 ## Problem
 

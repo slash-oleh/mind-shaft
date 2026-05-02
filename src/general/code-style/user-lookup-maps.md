@@ -1,8 +1,8 @@
-# Use lookup maps
+# Lookup maps
 
 ## TLDR
 
-Use objects or Maps for multi-branch logic instead of if/else or switch.
+For multi-branch logic, always use mapping. Avoid if/else or switch for key-based dispatching, unless complex conditions, or a few branches. Good: `{ a: f, b: g, ... }`. Bad: `if (v === 'a') f() else if (v === 'b') g() ...`.
 
 ## Problem
 

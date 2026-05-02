@@ -1,8 +1,8 @@
-# Avoid imperative assignment
+# Variable assignment
 
 ## TLDR
 
-When possible, use ternary operators to initialize `const` variables instead of using `let` with `if/else` blocks.
+For conditional constants, use assignment with ternary operators. Avoid let with if/else blocks, unless nested, complex or mutable. Good: `const x = c ? 1 : 2`. Bad: `let x; if (c) x = 1; else x = 2;`.
 
 ## Problem
 

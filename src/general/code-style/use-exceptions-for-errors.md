@@ -1,8 +1,8 @@
-# Use exceptions for errors
+# Exceptions for errors
 
 ## TLDR
 
-Throw exceptions instead of returning error codes or status objects to signal unexpected failures.
+Always throw exceptions for unexpected failures. Avoid error codes or status objects, unless using Result patterns or expected domain states. Good: `throw Exception`. Bad: `return -1`.
 
 ## Problem
 

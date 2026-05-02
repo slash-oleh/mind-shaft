@@ -1,8 +1,8 @@
-# Shorten boolean expressions
+# Shortened boolean expressions
 
 ## TLDR
 
-Use boolean operators instead of ternary expressions or conditional statements when the desired outcome is a boolean value.
+Always shorten boolean expressions using logical operators. Avoid ternary operators or if/else for boolean results, unless complex or nested conditions. Good: `v >= 5`, `u?.id || null`. Bad: `v >= 5 ? true : false`, `u?.id ? u.id : null`.
 
 ## Problem
 

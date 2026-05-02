@@ -1,8 +1,8 @@
-# Forward properties
+# Property forwarding
 
 ## TLDR
 
-Follow Open/Closed Principle. Wrappers should forward properties to underlying layers. Preserves composed interface and avoids manual re-mapping.
+Always forward properties from wrappers to wrapping components. Avoid manual re-mapping of unused fields, unless strict interface required. Good: `({ a, ...rest }) => a && f({ a, ...rest })`. Bad: `({ a, b, c }) => f({ a, b, c })`.
 
 ## Problem
 

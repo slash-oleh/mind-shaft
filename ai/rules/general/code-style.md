@@ -3,22 +3,22 @@ description: "General: Code Style: Everything that affects readability and maint
 Includes formatting, linting but not the rules that can be defined in automated tools like Prettier, ESLint, etc."
 ---
 
-- **Apply modern language features**: Adopt modern syntax and language features like optional chaining and async/await.
-- **Avoid imperative assignment**: When possible, use ternary operators to initialize `const` variables instead of using `let` with `if/else` blocks.
-- **Avoid magic values**: Replace raw values (numbers, strings, flags) with named constants.
-- **Avoid one-line coding**: Break down complex operations and long method chains into multiple lines.
-- **Avoid redundant else**: Remove unnecessary `else` blocks after `if` when using `return` or `throw`.
-- **Avoid switch statement**: Use `if/else` statements or lookup maps instead of `switch/case` structures. Consider polymorphism as well.
-- **Comment complex logic**: Prioritize self-explanatory code but comment complex or non-obvious logic.
-- **Don't extrapolate object properties as args**: Pass entire objects or dedicated interfaces instead of extracting individual properties as separate function arguments.
-- **Don't fail silently**: Handle errors explicitly or report them to a logging/monitoring system instead of silently ignoring them.
-- **Don't overuse DRY**: Avoid premature deduplication and only create abstractions when code represents the same underlying concept, not just the same visual shape.
-- **Follow code conventions**: Follow the standard naming, formatting, and structural conventions of the programming language.
-- **Follow project code style**: Match the existing codebase's style and apply improvements systematically as separate tasks.
-- **Forward properties**: Follow Open/Closed Principle. Wrappers should forward properties to underlying layers. Preserves composed interface and avoids manual re-mapping.
-- **Shorten boolean expressions**: Use boolean operators instead of ternary expressions or conditional statements when the desired outcome is a boolean value.
-- **Use bulletproof range checks**: Use inclusive range checks (`>=` or `<=`) instead of exact equality (`==`) for progress monitoring, counters, and loop terminations to prevent infinite loops in case counter change logic is bugged.
-- **Use exceptions for errors**: Throw exceptions instead of returning error codes or status objects to signal unexpected failures.
-- **Use guard clauses**: Flatten logic by using early returns for prerequisites. Avoid if-statement nesting.
-- **Use text templates**: Use placeholders within translation strings instead of concatenating partial tokens with dynamic values.
-- **Use lookup maps**: Use objects or Maps for multi-branch logic instead of if/else or switch.
+- **Syntax sugar**: Always use modern language features. Avoid legacy patterns, unless using older version and upgrade is risky. Good: `r = await f()`. Bad: `f().then(r => {})`.
+- **Variable assignment**: For conditional constants, use assignment with ternary operators. Avoid let with if/else blocks, unless nested, complex or mutable. Good: `const x = c ? 1 : 2`. Bad: `let x; if (c) x = 1; else x = 2;`.
+- **Magic values**: When passing raw constants further, use named constants. Avoid literal values, unless self-explanatory or prepended with argument name. Good: `maxTime = 5; request(maxTime);`, `request({ timeout: 5 });`. Bad: `request(5);`, `maxTime = 5; request({ timeout: maxTime })`.
+- **Code density**: Always break down method chains and complex operations. Avoid horizontal scanning, unless pattern simple trivial. Good: `f()\n.b()\n.c()`. Bad: `f().b().c();`.
+- **Redundant else**: Always remove redundant else blocks after return or throw. Avoid unnecessary indentation, unless symmetry aids readability. Good: `if (c) return x; return y`. Bad: `if (c) return x; else return y`.
+- **Switch statement**: For logical branching, always use polymorphism, lookup maps, if/else (in priority order, depending on complexity). Avoid switch/case structures. Good: `if (c === 1) {} else if (c === 2) {}`. Bad: `switch (c) {case 1: ... case 2: ...}`.
+- **Code comments**: For complex logic, favor self-documenting code by extracting to named identifiers, but use short comments explaining reasons or hidden behavior. Avoid uncommented obscure segments but also avoid comments repeating after code. Good: `a << 2 // Multiply by 4`. Bad: `a + b // Calculate sum`.
+- **Object arguments**: For multiple function arguments, when existing interface covers them, pass entire object. Avoid extracting individual properties as separate arguments, unless function must remain decoupled or dependency overhead is too high. Good: `f(u)`. Bad: `f(u.id, u.name)`.
+- **Error reporting**: Always handle errors explicitly and report to logging or monitoring. Avoid failing silently such as in empty catch blocks, unless failure truly inconsequential. Good: `catch { log }`. Bad: `catch {}`.
+- **DRY**: When repeating what's expected to be changed together, extract and reuse. Avoid duplication, unless code represents the same visual shape, and not underlying concept (premature deduplication). Good: `limit = 5; limit1 = limit; limit2 = limit;`, `default1 = []; default2 = [];`. Bad: `limit1 = 5; limit2 = 5;`, `default = []; default1 = empty; default2 = empty;`.
+- **Language conventions**: Always follow idiomatic syntax and naming patterns of the language. Avoid forcing foreign conventions, unless matching external APIs or legacy systems. Good: camelCase in JS. Bad: snake_case in JS.
+- **Project code style**: Always match existing codebase style. Avoid mixing styles or combining cleanup with functional changes, unless ongoing project-wide migration. Good: `f(opts); g(opts);`. Bad: `f(opts); f({ opts })`.
+- **Property forwarding**: Always forward properties from wrappers to wrapping components. Avoid manual re-mapping of unused fields, unless strict interface required. Good: `({ a, ...rest }) => a && f({ a, ...rest })`. Bad: `({ a, b, c }) => f({ a, b, c })`.
+- **Shortened boolean expressions**: Always shorten boolean expressions using logical operators. Avoid ternary operators or if/else for boolean results, unless complex or nested conditions. Good: `v >= 5`, `u?.id || null`. Bad: `v >= 5 ? true : false`, `u?.id ? u.id : null`.
+- **Bulletproof range checks**: For iteration boundaries checks, always use relational operators (`>=`, `<=`, `>`, `<`). Avoid exact equality (`==` or `!==`), unless specific short-circuit breaker is needed and guaranteed. Good: `i <= max`. Bad: `i !== max`.
+- **Exceptions for errors**: Always throw exceptions for unexpected failures. Avoid error codes or status objects, unless using Result patterns or expected domain states. Good: `throw Exception`. Bad: `return -1`.
+- **Guard clauses**: Always use early returns for prerequisites. Avoid nested if-statements. Good: `if (!user) return`. Bad: `if (user) { if (active) { ... } }`.
+- **Text templates**: For text containing dynamic data, always use template strings. Avoid concatenating partial tokens, unless complex conditions calculated in the middle. Good: `Hello, {name}`. Bad: `'Hello, ' + name`.
+- **Lookup maps**: For multi-branch logic, always use mapping. Avoid if/else or switch for key-based dispatching, unless complex conditions, or a few branches. Good: `{ a: f, b: g, ... }`. Bad: `if (v === 'a') f() else if (v === 'b') g() ...`.

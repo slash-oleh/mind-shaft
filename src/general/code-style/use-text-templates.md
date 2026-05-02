@@ -1,8 +1,8 @@
-# Use text templates
+# Text templates
 
 ## TLDR
 
-Use placeholders within translation strings instead of concatenating partial tokens with dynamic values.
+For text containing dynamic data, always use template strings. Avoid concatenating partial tokens, unless complex conditions calculated in the middle. Good: `Hello, {name}`. Bad: `'Hello, ' + name`.
 
 ## Problem
 

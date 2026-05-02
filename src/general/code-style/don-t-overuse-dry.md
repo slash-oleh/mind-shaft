@@ -1,8 +1,8 @@
-# Don't overuse DRY
+# DRY
 
 ## TLDR
 
-Avoid premature deduplication and only create abstractions when code represents the same underlying concept, not just the same visual shape.
+When repeating what's expected to be changed together, extract and reuse. Avoid duplication, unless code represents the same visual shape, and not underlying concept (premature deduplication). Good: `limit = 5; limit1 = limit; limit2 = limit;`, `default1 = []; default2 = [];`. Bad: `limit1 = 5; limit2 = 5;`, `default = []; default1 = empty; default2 = empty;`.
 
 ## Problem
 
@@ -15,8 +15,14 @@ Prioritize explicitness and local reasoning, especially when dealing with a smal
 ```tsx
 const Dashboard = () => (
   <nav>
-    <NavItem label="Home" icon="home" />
-    <NavItem label="Settings" icon="settings" />
+    <NavItem
+      label="Home"
+      icon="home"
+    />
+    <NavItem
+      label="Settings"
+      icon="settings"
+    />
     {/* Adding a non-standard item is simple */}
     <Tooltip text="Contact support">
       <IconItem icon="question" />
@@ -34,7 +40,7 @@ const NAV_ITEMS = [
   { label: 'Home', icon: 'home' },
   { label: 'Settings', icon: 'settings' },
   // Adding a non-standard item requires schema changes
-  { label: 'Help', icon: 'question', isIconOnly: true }
+  { label: 'Help', icon: 'question', isIconOnly: true },
 ];
 
 const Dashboard = () => (
@@ -44,12 +50,20 @@ const Dashboard = () => (
       // or even more complicated schema supporting custom components
       if (item.isIconOnly) {
         return (
-          <Tooltip key={item.label} text={item.label}>
+          <Tooltip
+            key={item.label}
+            text={item.label}
+          >
             <IconItem icon={item.icon} />
           </Tooltip>
         );
       }
-      return <NavItem key={item.label} {...item} />;
+      return (
+        <NavItem
+          key={item.label}
+          {...item}
+        />
+      );
     })}
   </nav>
 );

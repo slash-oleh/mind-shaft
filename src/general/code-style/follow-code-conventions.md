@@ -1,8 +1,8 @@
-# Follow code conventions
+# Language conventions
 
 ## TLDR
 
-Follow the standard naming, formatting, and structural conventions of the programming language.
+Always follow idiomatic syntax and naming patterns of the language. Avoid forcing foreign conventions, unless matching external APIs or legacy systems. Good: camelCase in JS. Bad: snake_case in JS.
 
 ## Problem
 

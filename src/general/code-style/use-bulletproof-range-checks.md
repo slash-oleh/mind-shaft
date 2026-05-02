@@ -1,8 +1,8 @@
-# Use bulletproof range checks
+# Bulletproof range checks
 
 ## TLDR
 
-Use inclusive range checks (`>=` or `<=`) instead of exact equality (`==`) for progress monitoring, counters, and loop terminations to prevent infinite loops in case counter change logic is bugged.
+For iteration boundaries checks, always use relational operators (`>=`, `<=`, `>`, `<`). Avoid exact equality (`==` or `!==`), unless specific short-circuit breaker is needed and guaranteed. Good: `i <= max`. Bad: `i !== max`.
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Avoid switch statement
+# Switch statement
 
 ## TLDR
 
-Use `if/else` statements or lookup maps instead of `switch/case` structures. Consider polymorphism as well.
+For logical branching, always use polymorphism, lookup maps, if/else (in priority order, depending on complexity). Avoid switch/case structures. Good: `if (c === 1) {} else if (c === 2) {}`. Bad: `switch (c) {case 1: ... case 2: ...}`.
 
 ## Problem
 

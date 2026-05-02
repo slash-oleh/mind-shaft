@@ -1,8 +1,8 @@
-# Use guard clauses
+# Guard clauses
 
 ## TLDR
 
-Flatten logic by using early returns for prerequisites. Avoid if-statement nesting.
+Always use early returns for prerequisites. Avoid nested if-statements. Good: `if (!user) return`. Bad: `if (user) { if (active) { ... } }`.
 
 ## Problem
 

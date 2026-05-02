@@ -1,8 +1,8 @@
-# Comment complex logic
+# Code comments
 
 ## TLDR
 
-Prioritize self-explanatory code but comment complex or non-obvious logic.
+For complex logic, favor self-documenting code by extracting to named identifiers, but use short comments explaining reasons or hidden behavior. Avoid uncommented obscure segments but also avoid comments repeating after code. Good: `a << 2 // Multiply by 4`. Bad: `a + b // Calculate sum`.
 
 ## Problem
 

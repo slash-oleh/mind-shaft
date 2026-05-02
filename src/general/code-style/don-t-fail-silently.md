@@ -1,8 +1,8 @@
-# Don't fail silently
+# Error reporting
 
 ## TLDR
 
-Handle errors explicitly or report them to a logging/monitoring system instead of silently ignoring them.
+Always handle errors explicitly and report to logging or monitoring. Avoid failing silently such as in empty catch blocks, unless failure truly inconsequential. Good: `catch { log }`. Bad: `catch {}`.
 
 ## Problem
 

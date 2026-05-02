@@ -1,8 +1,8 @@
-# Avoid one-line coding
+# Code density
 
 ## TLDR
 
-Break down complex operations and long method chains into multiple lines.
+Always break down method chains and complex operations. Avoid horizontal scanning, unless pattern simple trivial. Good: `f()\n.b()\n.c()`. Bad: `f().b().c();`.
 
 ## Problem
 
@@ -13,9 +13,7 @@ While one-liners appear concise, they often sacrifice readability, make debuggin
 Break down complex operations into multiple lines to improve vertical scannability.
 
 ```typescript
-const activeUserIds = users
-  .filter((user) => user.isActive)
-  .map(({ id }) => id);
+const activeUserIds = users.filter((user) => user.isActive).map(({ id }) => id);
 ```
 
 ## Bad solution
