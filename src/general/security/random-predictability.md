@@ -1,4 +1,4 @@
-# Secure randomness
+# Random predictability
 
 ## TLDR
 
