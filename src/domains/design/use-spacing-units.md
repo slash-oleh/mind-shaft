@@ -1,8 +1,8 @@
-# Use spacing units
+# Spacing units
 
 ## TLDR
 
-Define spacing tokens as pixel constants. Express layout as non-fractional multiples of base unit. Avoid arbitrary pixel values.
+Always use spacing multiples of base unit. Avoid arbitrary pixel values. Good: `margin: var(--space-4)` (`4 * 4px`). Bad: `margin: 16px`.
 
 ## Problem
 

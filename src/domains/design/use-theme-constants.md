@@ -1,8 +1,8 @@
-# Use theme constants
+# Theme constants
 
 ## TLDR
 
-Centralize design decisions like colors, spacing, and typography into predefined theme constants and reference these tokens instead of hardcoding raw values.
+Always access design tokens via centralized theme constants. Avoid hardcoded magic values. Good: `theme.colors.primary`. Bad: `#FF5A5F`.
 
 ## Problem
 

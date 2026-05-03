@@ -1,8 +1,8 @@
-# Use rem for typography
+# Typography units
 
 ## TLDR
 
-Use relative (rem/em) units for text sizes. Avoid absolute pixels (px) to respect user font settings.
+Always use rem units for font sizes. Avoid px or percentage for text. Good: `font-size: 1rem`. Bad: `font-size: 16px`.
 
 ## Problem
 

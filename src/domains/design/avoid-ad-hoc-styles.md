@@ -1,8 +1,8 @@
-# Avoid ad-hoc styles
+# Ad-hoc styles
 
 ## TLDR
 
-Encapsulate low-level styling within the UI Kit's primitive components and build business features by composing these primitives. Avoid fine-tuning per use case.
+Always encapsulate low-level styling in UI Kit primitives. Build features by composing primitives. Avoid fine-tuning in business components per use case. Good: `<Button size="large"/>`. Bad: `<Button height="32px"/>`.
 
 ## Problem
 

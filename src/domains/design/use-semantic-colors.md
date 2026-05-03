@@ -1,8 +1,8 @@
-# Use semantic colors
+# Semantic colors
 
 ## TLDR
 
-Use semantic color tokens in theme and final components. Avoid referencing colors by hue outside of primitives palette.
+Always reference colors by functional role tokens. Avoid hardcoded hex/RGB values and referencing by hue outside of primitives palette definition. Good: `<Button color="error"/>`. Bad: `<Button color="#ff0000"/>`, `<Button color="red-500"/>`.
 
 ## Problem
 

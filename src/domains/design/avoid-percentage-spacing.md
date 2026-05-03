@@ -1,8 +1,8 @@
-# Avoid percentage spacing
+# Percentage spacing
 
 ## TLDR
 
-Use fixed-size spacing units for margins and padding instead of percentages.
+Always use fixed units (px/rem) for internal padding and margins. Avoid percentages for spacing and sizes unless `100%`. Good: `padding: 16px`. Bad: `padding: 5%`.
 
 ## Problem
 

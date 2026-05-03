@@ -1,8 +1,8 @@
-# Use even pixels
+# Even pixels
 
 ## TLDR
 
-Use even, whole numbers for pixel values and stick to a base multiple system like an 8px grid or 4px grid. Avoid odd and espessially fractional values.
+Always use even numbers (e.g. 4px increments) for dimensions and spacing. Avoid odd or fractional pixel values. Good: `padding: 16px`. Bad: `padding: 15px`, `width: 2.5px`.
 
 ## Problem
 

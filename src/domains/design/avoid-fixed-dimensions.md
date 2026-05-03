@@ -1,8 +1,8 @@
-# Avoid fixed dimensions
+# Fixed dimensions
 
 ## TLDR
 
-Use responsive layout models that scale with content. Set upper bounds (`max-width`), lower baselines (`min-height`) and full width (`width: 100%`). Avoid rigid fixed dimensions (`width: 100px`) or hard floors (`min-width`).
+Always use relative sizing and responsive layouts. Avoid hardcoded pixel widths and heights. Good: `width: 100%`, `flex: 1`. Bad: `width: 400px`, `height: 600px`.
 
 ## Problem
 
