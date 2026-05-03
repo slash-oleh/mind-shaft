@@ -1,8 +1,8 @@
-# Avoid one-key shortcuts
+# Keyboard shortcuts
 
 ## TLDR
 
-Use multi-key combinations (e.g., `Ctrl+S`, `Cmd+K`) instead of single-key shortcuts.
+Always use multi-key combinations. Avoid single-key hotkeys. Good: `if(ctrl && key=='s')`. Bad: `if(key=='s')`.
 
 ## Problem
 

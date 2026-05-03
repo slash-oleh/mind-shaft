@@ -1,8 +1,8 @@
-# Encapsulate design in components
+# Styles encapsulation
 
 ## TLDR
 
-Reuse components, not styling rulesets. Avoid exporting utility styling groups (CSS classes, style objects constants) disconnected from markup.
+Always encapsulate styles and behavior in reusable components. Reuse components, not styles. Avoid styling markup with disconnected classes defined elsewhere. Good: `<Button size="large" />`. Bad: `<Button className="button-large"/>`.
 
 ## Problem
 

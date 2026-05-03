@@ -1,8 +1,8 @@
-# Separate pages from features
+# Layout separation
 
 ## TLDR
 
-Organize the pages layer as a thin compositional wrapper around domain-based feature modules to separate routing from business logic.
+Always keep page components thin layout-only layer. Delegate logic to domain feature modules. Think of pages like controllers in backend. Good: `LoginPage = AuthForm + AuthLayout`. Bad: `LoginPage = EmailField + PasswordField + Submit + API`.
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Avoid pixel perfect
+# Pixel perfect
 
 ## TLDR
 
-Implement fluid, adaptable, and system-driven layouts instead of trying to match design mockups down to the exact pixel for certain screen size.
+Always use flexible systematic layouts. Avoid rigid pixel-perfect designs reinforcing design mistakes. Good: `max-width: var(--breakpoint-lg); width: 100%`. Bad: `width: 681px;`.
 
 ## Problem
 

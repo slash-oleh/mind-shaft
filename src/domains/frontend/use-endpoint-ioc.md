@@ -1,8 +1,8 @@
-# Use endpoint IoC
+# Layout IoC
 
 ## TLDR
 
-For screens or pages, allow them to control full layout structure by reusing individual components and common layouts. Avoid restricting them to content-only, being automatically injected into a rigid, global wrapper.
+For screens or pages, allow them to control full layout structure by reusing individual components and common layouts. Avoid restricting them to content-only, being automatically injected into a rigid, global wrapper. Good: `DefaultPage = () => <Layout><Header/><Content/></Layout>; AuthPage = () => <DefaultPage><AuthForm/></DefaultPage>`. Bad: `App = () => <Layout><Header/><AuthPage/></Layout>; AuthPage = () => <AuthForm/>`.
 
 ## Problem
 

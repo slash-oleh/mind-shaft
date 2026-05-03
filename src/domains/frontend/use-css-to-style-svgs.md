@@ -1,8 +1,8 @@
-# Use CSS to style SVGs
+# SVG styling
 
 ## TLDR
 
-Use `currentColor` or CSS variables instead of hardcoding colors directly in SVG files.
+Always use CSS (`currentColor`) for SVG graphics. Avoid hardcoded fill/stroke attributes inside SVG file. Good: `fill="currentColor"`. Bad: `fill="#FF0000"`.
 
 ## Problem
 
@@ -14,8 +14,16 @@ Replace hardcoded color values in the SVG with `currentColor`. This special keyw
 
 ```html
 <!-- GOOD: icon.svg uses currentColor -->
-<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="10" cy="10" r="5" fill="currentColor" />
+<svg
+  viewBox="0 0 20 20"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle
+    cx="10"
+    cy="10"
+    r="5"
+    fill="currentColor"
+  />
 </svg>
 ```
 
@@ -37,8 +45,16 @@ Keeping the original colors exported from design tools directly in the SVG path.
 
 ```html
 <!-- BAD: Hardcoded color values -->
-<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="10" cy="10" r="5" fill="#FF0000" />
+<svg
+  viewBox="0 0 20 20"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle
+    cx="10"
+    cy="10"
+    r="5"
+    fill="#FF0000"
+  />
 </svg>
 ```
 

@@ -1,8 +1,8 @@
-# Optimize image delivery
+# Raster image optimization
 
 ## TLDR
 
-Deliver images in modern formats (WebP/AVIF), use responsive resizing, and implement lazy loading.
+Always use modern formats, responsive sizes, adaptive to actual viewport, lazy loading. Avoid large raw assets, unused trasparency data. Good: `<img src="img.webp" srcset="...">`. Bad: `<img src="original.png">`.
 
 ## Problem
 
@@ -20,15 +20,21 @@ Implement a multi-layered strategy for image optimization:
 ```html
 <!-- GOOD: Responsive, modern format with lazy loading -->
 <picture>
-  <source srcset="image-400.avif 400w, image-800.avif 800w" type="image/avif">
-  <source srcset="image-400.webp 400w, image-800.webp 800w" type="image/webp">
+  <source
+    srcset="image-400.avif 400w, image-800.avif 800w"
+    type="image/avif"
+  />
+  <source
+    srcset="image-400.webp 400w, image-800.webp 800w"
+    type="image/webp"
+  />
   <img
     src="image-800.jpg"
     alt="Descriptive text"
     width="800"
     height="600"
     loading="lazy"
-  >
+  />
 </picture>
 ```
 
@@ -38,7 +44,10 @@ Serving raw, original assets directly from a camera or design tool without proce
 
 ```html
 <!-- BAD: High-res original, legacy format, no lazy loading -->
-<img src="original-camera-upload.png" alt="Product">
+<img
+  src="original-camera-upload.png"
+  alt="Product"
+/>
 <!-- This file might be 5MB and 5000px wide, even if displayed at 200px. -->
 ```
 

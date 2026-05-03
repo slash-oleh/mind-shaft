@@ -1,8 +1,8 @@
-# Extract layout components
+# Layout components
 
 ## TLDR
 
-Use high-level layout components like `Grid` or `Stack` instead of raw styles (like CSS flexbox or grid).
+Always extract layout primitives (like Flex, Grid, Stack). Avoid low-level CSS positioning in business components. Good: `<Stack spacing={2}>`. Bad: `<div style={{ display: 'flex', gap: '16px' }}>`.
 
 ## Problem
 
