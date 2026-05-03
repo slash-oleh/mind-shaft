@@ -1,8 +1,8 @@
-# Follow common commit message format
+# Commit messages
 
 ## TLDR
 
-Standardize commit messages. Use imperative mood and include task ID.
+Always standardize commit messages. Use imperative mood, short sentences and include task ID. Good: `Resolve #42: Add user sign up`. Bad: `fixed bug`.
 
 ## Problem
 

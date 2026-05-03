@@ -1,8 +1,8 @@
-# Avoid force push to shared branches
+# Force push
 
 ## TLDR
 
-Force pushing to your own PRs is acceptable for history cleanup though.
+Always use force push with caution. Avoid overwriting shared remote history, unless cleanup of own PR. Good: `git push --force wip-branch`. Bad: `git push --force main`.
 
 ## Problem
 

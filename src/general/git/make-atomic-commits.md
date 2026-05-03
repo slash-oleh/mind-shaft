@@ -1,8 +1,8 @@
-# Make atomic commits
+# Atomic commits
 
 ## TLDR
 
-Ensure each commit represents a single, logical change that leaves the project in a working state.
+Always ensure each commit represents single logical change. Avoid bundling unrelated changes or intermediate changes leaving build in broken state. Good: `Commit 1: "Add auth backend", Commit 2: "Add auth frontend"`. Bad: `Commit 1: "Add auth frontend, fix FAQ typos", Commit 2: "Add auth backend so frontend works"`.
 
 ## Problem
 

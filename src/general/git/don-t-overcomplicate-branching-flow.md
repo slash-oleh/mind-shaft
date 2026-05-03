@@ -2,11 +2,11 @@
 aiSkip: true
 ---
 
-# Don't overcomplicate branching flow
+# Branching flow
 
 ## TLDR
 
-Start with the simplest branching model that meets the project's needs and evolve as complexity increases.
+Always start with simplest branching model. Avoid complex models like GitFlow, unless delivery requirements strictly demand it. Good: `main` + feature branches + tags. Bad: GitFlow for small projects.
 
 ## Problem
 

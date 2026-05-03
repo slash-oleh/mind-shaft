@@ -1,8 +1,8 @@
-# Keep history clean
+# Clean history
 
 ## TLDR
 
-Squash intermediate commits and rebase onto target branch before merging to maintain linear history.
+Always squash intermediate commits and rebase before merging. Avoid cluttered history or merge noise. Good: `Commit 1: "#42: Add alerts"; Commit 2: "Merge main"; Commit 3: "fix alert position"`. Bad: `Commit 1: "#42: Add alerts" (squashed in fixup commit and rebased onto main)`.
 
 ## Problem
 

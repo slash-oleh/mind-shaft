@@ -1,8 +1,8 @@
-# Follow established branching flow
+# Branch naming
 
 ## TLDR
 
-Follow repo Git flow and naming format. Start branches with ticket number. Use lowercase and hyphens.
+Always follow repo Git flow and naming format. Avoid non-standard branch names. Good: `42-add-alerts-feature`. Bad: `fix_bug_42`.
 
 ## Problem
 

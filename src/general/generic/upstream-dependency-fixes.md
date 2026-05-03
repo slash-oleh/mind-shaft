@@ -1,8 +1,8 @@
-# Upstream dependency fixes
+# Dependency patches
 
 ## TLDR
 
-Contribute 3rd-party dependency fixes to original repositories instead of maintaining local patches.
+Always contribute 3rd-party dependency fixes to original repositories. Avoid maintaining local patches or private forks. Good: Submit PR upstream. Bad: Monkey-patching locally.
 
 ## Problem
 
