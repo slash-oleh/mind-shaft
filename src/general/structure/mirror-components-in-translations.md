@@ -1,8 +1,8 @@
-# Mirror components in translations
+# Translation hierarchy
 
 ## TLDR
 
-Organize translation keys to reflect modules structure in the codebase.
+Always organize translation keys to mirror module structure. Good: `user: { login: '...' }`. Bad: `forms: { login: '...' }`.
 
 ## Problem
 

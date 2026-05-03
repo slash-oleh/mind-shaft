@@ -1,8 +1,8 @@
-# Group by feature
+# Feature-based grouping
 
 ## TLDR
 
-On top-level, group code by feature first (`auth`, `billing`), not technical role (`ui`, `api`, `models`). Keep feature-related logic together and group by role inside feature.
+Always group top-level code by feature. Avoid root-level grouping by technical role like `api` or `models`. Good: `features/auth/services/login.ts`, `features/auth/models/user.ts`. Bad: `services/auth/login.ts`, `models/auth/user.ts`.
 
 ## Problem
 

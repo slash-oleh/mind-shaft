@@ -1,8 +1,8 @@
-# Separate logic and UI
+# Logic and UI separation
 
 ## TLDR
 
-Decouple business logic and state management from presentation layer. Use headless patterns or services.
+Always decouple business logic from presentation layer. Use headless hooks or services. Good: `useAuth()`, `signIn.ts`. Bad: `UserPage.tsx` with `useEffect(fetch)`.
 
 ## Problem
 

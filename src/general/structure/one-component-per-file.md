@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Keep one primary component per file. Internal one-time use helpers are allowed.
+Always keep one primary component per file. Avoid multiple components in single file, unless as private one-time use helpers. Good: `SignIn.tsx`, `SignUp.tsx`. Bad: `forms.tsx` with both.
 
 ## Problem
 

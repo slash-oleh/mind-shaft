@@ -1,8 +1,8 @@
-# Use appropriate domain module
+# Domain modules
 
 ## TLDR
 
-Place code within its logical feature or domain module. Ensure components reside in their relevant business scope.
+Always place code within logical feature module. Avoid leaking components into unrelated scopes. Good: `user/Profile.tsx`. Bad: `dashboard/UserProfile.tsx`.
 
 ## Problem
 

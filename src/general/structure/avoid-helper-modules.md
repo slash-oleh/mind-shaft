@@ -1,8 +1,8 @@
-# Avoid helpers modules
+# Helper modules
 
 ## TLDR
 
-Avoid stockpiling non-cohesive code into generic modules (`core`, `utils`, `helpers`). Use corresponding domain modules instead and fallback to helpers only as a last resort.
+Always use corresponding domain modules for feature logic. Avoid stockpiling non-cohesive code into generic modules like `core` or `utils`. Good: `features/auth/service.ts`. Bad: `utils/auth.ts`.
 
 ## Problem
 

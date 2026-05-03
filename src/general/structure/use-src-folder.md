@@ -1,8 +1,8 @@
-# Use src folder
+# Source directory
 
 ## TLDR
 
-When possible put files into `src` directory instead of root directory.
+When not prescribled by external tool or not customizable, always put source files into dedicated sources directory. Avoid cluttering project root with application logic. Good: `src/auth/login.ts`, `scripts/deploy.sh`. Bad: `auth/login.ts`, `deploy.sh`.
 
 ## Problem
 

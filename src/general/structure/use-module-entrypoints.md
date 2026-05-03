@@ -1,8 +1,8 @@
-# Use module entrypoints
+# Module entrypoints
 
 ## TLDR
 
-Expose and use the public API of a module and avoid reaching into its internal file structure directly.
+Always use public module entrypoints. Avoid reaching into internal file structure. Good: `import { AuthForm } from '@/features/auth'`. Bad: `import AuthForm from '@/features/auth/components/Form'`.
 
 ## Problem
 

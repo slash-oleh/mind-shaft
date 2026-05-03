@@ -1,8 +1,8 @@
-# Encapsulate implementation details
+# Encapsulation
 
 ## TLDR
 
-Export only the public API. Keep internal logic of files and modules private to enforce encapsulation and prevent coupling.
+Always export only public API. Avoid exposing internal logic for potential direct usage. Good: `export { Form, FormProps } from 'form.tsx'`. Bad: `export { Form, FieldWrapper, FormBackground } from 'form.tsx'`.
 
 ## Problem
 
