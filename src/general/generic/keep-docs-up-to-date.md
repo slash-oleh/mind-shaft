@@ -1,8 +1,8 @@
-# Keep docs up-to-date
+# Up-to-date docs
 
 ## TLDR
 
-Maintain the README as a fresh, accurate, and comprehensive entry point for the project.
+Always maintain README as accurate project entry point. Avoid letting docs rot while project evolves. Good: Up-to-date setup steps. Bad: Tribal knowledge reliance.
 
 ## Problem
 

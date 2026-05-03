@@ -1,8 +1,8 @@
-# Use i18n tools
+# Translations
 
 ## TLDR
 
-Internalize all user-facing strings into translation files (i18n).
+Always internalize user-facing strings into translation files. Avoid hardcoded string literals in business logic or UI. Good: `alert(t('auth.loginError'))`. Bad: `alert('Authorization failed')`.
 
 ## Problem
 

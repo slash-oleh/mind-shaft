@@ -1,8 +1,8 @@
-# Avoid premature optimization
+# Premature optimization
 
 ## TLDR
 
-Prioritize code readability and maintainability over performance until a specific performance issue is identified and measured.
+Always prioritize readability over performance until measured. Avoid "clever" tricks or micro-optimizations. Good: `filter().map()`. Bad: `reduce()`.
 
 ## Problem
 
@@ -31,13 +31,12 @@ Using "clever" tricks or more complex constructs to save iterations or minor mem
 ```ts
 // More complex: combines filtering and transformation into one pass
 const getTodayComments = (userId: number) => {
-  return getAllComments(userId)
-    .reduce((result, comment) => {
-      if (comment.time >= today()) {
-        result.push(comment.id);
-      }
-      return result;
-    }, []);
+  return getAllComments(userId).reduce((result, comment) => {
+    if (comment.time >= today()) {
+      result.push(comment.id);
+    }
+    return result;
+  }, []);
 };
 
 // Obscure: minor gain at cost of clarity

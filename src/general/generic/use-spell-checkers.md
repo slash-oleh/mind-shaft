@@ -1,12 +1,12 @@
-# Use spell checkers
+# Spell checking
 
 ## TLDR
 
-Utilize automated text, grammar, and style checkers for all written documentation and code comments.
+For documentation, comments and user-facing texts, always use automated text and grammar checkers. Avoid manual proofreading reliance and ignoring typos. Good: `Weclome to homepage`. Bad: `Welcome to homepage`.
 
 ## Problem
 
-Typos, grammatical errors, and awkward phrasing in documentation, README files, and code comments can damage the professional image of a project and lead to misunderstandings. Manual proofreading is time-consuming and prone to human error, especially for non-native speakers or when dealing with large volumes of text.
+Typos, grammatical errors, and awkward phrasing in documentation, README files, and code comments can damage the professional image of a project and lead to misunderstandings. Manual proofreading is time-consuming and prone to human error, especially for non-native speakers or when dealing with large volumes of text. Errors also make text harder to find by keywords.
 
 ## Good solution
 

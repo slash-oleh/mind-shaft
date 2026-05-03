@@ -1,8 +1,8 @@
-# Prefer composition over inheritance
+# Composition vs inheritance
 
 ## TLDR
 
-Use composition to build complex functionality by combining simple, independent components instead of creating deep class hierarchies.
+Always use composition to build complex functionality. Avoid deep class hierarchies, tight parent-child coupling, multiple inheritance, mixins. Good: `UserHandler(logger, auth); userHandler.logger.log()`. Bad: `UserHandler extends BaseHandler; userHandler.log()`.
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Apply clean architecture approaches
+# Clean architecture
 
 ## TLDR
 
-Separate business logic from infrastructure concerns like HTTP handling, database queries, and external APIs.
+Always separate business logic from infrastructure. Avoid mixing HTTP/DB logic in core. Good: `loginService(token)`. Bad: `loginHandler(request)`.
 
 ## Problem
 

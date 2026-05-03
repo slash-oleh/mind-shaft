@@ -1,8 +1,8 @@
-# Apply DevOps approaches
+# DevOps
 
 ## TLDR
 
-Automate build, test, and deployment processes to ensure consistency and reliability across environments.
+Always automate build, test, and deployment. Avoid manual SSH/FTP steps. Good: `./deploy.sh` in CI. Bad: `scp -R . root@...` locally.
 
 ## Problem
 

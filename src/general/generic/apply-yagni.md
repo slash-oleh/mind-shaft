@@ -1,8 +1,8 @@
-# Apply YAGNI
+# YAGNI
 
 ## TLDR
 
-Keep solutions proportional to current requirements. Avoid premature abstractions or complex structures for simple cases. Refactor only when complexity increases.
+Always keep solutions proportional to current requirements. Avoid premature abstractions or complex "future-proof" patterns unless "future" is defined. Good: `f(id)`. Bad: `f({ id })`.
 
 ## Problem
 

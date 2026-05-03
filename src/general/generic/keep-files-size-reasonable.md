@@ -1,8 +1,8 @@
-# Keep files size reasonable
+# File size
 
 ## TLDR
 
-Maintain a balanced file size to ensure code remains navigable and focused without becoming fragmented. The sweet spot is 50-400 lines per file.
+Always maintain balanced file size (50-400 lines). Avoid monolithic files or over-fragmentation. Good: `component.tsx` (200 LoC), `service.ts` (100 LoC), `types.ts` (50 LoC). Bad: `feature.tsx` (1000 LoC), `types.ts` (5 LoC).
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Don't overuse environment variables
+# Environment variables
 
 ## TLDR
 
-Use environment variables only for infrastructure configuration instead of business logic or feature flags.
+Always use environment variables only for minimal infrastructure configuration. Avoid using for business logic, feature flags or anything that can retrieved at runtime. Good: `settingsService.get('adminEmails')`. Bad: `process.env.ADMIN_EMAILS`.
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Use semantic versioning
+# Semantic versioning
 
 ## TLDR
 
-Whenever a versioning scheme is required, just use SemVer and don't reinvent the wheel.
+Always use SemVer (MAJOR.MINOR.PATCH) for versioning. Avoid arbitrary version numbers or inventing custom counting methods. Good: `v1.0.1`. Bad: `v-2025-5C`.
 
 ## Problem
 

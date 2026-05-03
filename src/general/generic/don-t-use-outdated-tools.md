@@ -1,8 +1,8 @@
-# Don't use outdated tools
+# Maintained dependencies
 
 ## TLDR
 
-Use tools and libraries with active maintenance and healthy ecosystems to ensure long-term project stability.
+Always use tools with active maintenance and healthy ecosystems. Avoid unmaintained or archived libraries. Good: `npm i lodash`. Bad: `npm i react-popper`.
 
 ## Problem
 
