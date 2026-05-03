@@ -1,8 +1,8 @@
-# Prevent SQL injection
+# SQL injection
 
 ## TLDR
 
-Use parameterized queries or an ORM to handle database interactions and avoid concatenating user input into SQL strings.
+Always use parameterized queries or ORM. Avoid concatenating user input into SQL strings. Good: `WHERE id = ?`, `.where('id', id)`. Bad: `WHERE id = ${id}`.
 
 ## Problem
 

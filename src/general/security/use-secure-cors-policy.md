@@ -1,8 +1,8 @@
-# Use secure CORS policy
+# CORS policy
 
 ## TLDR
 
-Restrict Cross-Origin Resource Sharing (CORS) to specific, trusted domains and avoid using wildcard origins (`*`) in production.
+In production, always restrict CORS to trusted domains. Avoid wildcard origins. Good: `origin: ['a.com']`. Bad: `origin: '*'`.
 
 ## Problem
 
@@ -16,15 +16,17 @@ Explicitly list allowed origins in your server configuration. Use environment va
 // Good: Restricting origins to trusted domains (Express example)
 const allowedOrigins = ['https://app.example.com', 'https://admin.example.com'];
 
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-}));
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+  }),
+);
 ```
 
 ## Bad solution
@@ -33,9 +35,11 @@ Using the wildcard `*` in production or a policy that returns `true` for any inc
 
 ```typescript
 // Bad: Disabling cross-origin protection
-app.use(cors({
-  origin: '*'
-}));
+app.use(
+  cors({
+    origin: '*',
+  }),
+);
 ```
 
 ## Impact

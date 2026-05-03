@@ -1,8 +1,8 @@
-# Use secure secrets
+# Secure randomness
 
 ## TLDR
 
-Use cryptographically secure random number generators (CSPRNG) for secret values generation. Avoid using UUID or similar for that.
+For secrets, always use cryptographically secure random generators. Avoid UUIDs for security tokens. Good: `crypto.randomBytes(32)`. Bad: `uuid.v4()`.
 
 ## Problem
 

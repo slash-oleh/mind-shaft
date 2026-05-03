@@ -1,8 +1,8 @@
-# Use secret management
+# Secrets management
 
 ## TLDR
 
-Use dedicated vault services, external files or environment variables to manage sensitive secrets and avoid storing them in source code.
+Always load secrets from environment variables or vault services. Avoid hardcoding secrets in source code. Good: `vault.get('key')`, `process.env.KEY`. Bad: `const KEY = 'abc'`.
 
 ## Problem
 

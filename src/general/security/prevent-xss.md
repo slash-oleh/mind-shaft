@@ -1,8 +1,8 @@
-# Prevent XSS
+# XSS
 
 ## TLDR
 
-Escape or sanitize user-controlled data before rendering and use safe DOM manipulation methods instead of direct HTML string injection.
+Always escape user data before rendering. Use safe DOM methods. Avoid `innerHTML` with untrusted input. Good: `el.textContent = val`. Bad: `el.innerHTML = val`.
 
 ## Problem
 

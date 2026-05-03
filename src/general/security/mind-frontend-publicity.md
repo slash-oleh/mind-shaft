@@ -1,8 +1,8 @@
-# Mind frontend publicity
+# Frontend publicity
 
 ## TLDR
 
-Avoid storing secrets, API keys, or sensitive business logic on the client side.
+Always keep secrets and sensitive logic on server. Avoid storing external API keys or private config in client storage or using in the frontend code. Good: `fetch('/api/email-service')`. Bad: `localStorage.setItem('SMTP_PASSWORD', process.env.SMTP_PASSWORD)`.
 
 ## Problem
 

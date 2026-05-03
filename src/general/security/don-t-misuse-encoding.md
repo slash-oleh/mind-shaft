@@ -1,8 +1,8 @@
-# Don't misuse encoding
+# Encoding
 
 ## TLDR
 
-Encoding (like Base64) is data representation. For protection, use encryption instead.
+For data protection, always use encryption. Avoid misusing encoding as obfuscation for confidentiality. Good: `send(aes.encrypt(secret))`. Bad: `send(b64encode(secret))`.
 
 ## Problem
 
