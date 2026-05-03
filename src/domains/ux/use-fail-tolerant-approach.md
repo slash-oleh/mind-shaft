@@ -1,8 +1,8 @@
-# Use fail-tolerant approach
+# Fail tolerance
 
 ## TLDR
 
-Where possible, in priority order: Prevent errors before they even happen. Recover silently or conceal. Allow users recover easily.
+Where possible, in priority order: Prevent errors before they even happen. Recover silently or conceal. Allow users recover easily. Good: `Auto-save drafts`, `Inline validation`, `Undo button`. Bad: `Form resetting on error`, `Blocking alerts`, `Late validation`.
 
 ## Problem
 

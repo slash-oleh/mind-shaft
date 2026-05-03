@@ -1,8 +1,8 @@
-# Use visual accents
+# Visual accents
 
 ## TLDR
 
-Establish hierarchy via size, color, animations to guide attention.
+Always establish concise hierarchy via size and color to guide attention. Avoid uniform weighting or overusing highlighting. Good: `<h3>Danger Zone</h3><p>Warning</p><Button color="error">Delete</Button>`. Bad: `<p>Danger Zone</p><p>Warning</p><Button>Delete</Button>`, `<h1>DANGER ZONE!</h1><h2>Warning</2><Button color="error" size="large">Delete</Button>`.
 
 ## Problem
 

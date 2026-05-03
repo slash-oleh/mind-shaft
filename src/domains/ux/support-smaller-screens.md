@@ -1,8 +1,8 @@
-# Support smaller screens
+# Responsive layout
 
 ## TLDR
 
-Keep a room for minimal mobile friendliness even when doing desktop-only layout.
+Always use fluid layouts and wrapping. Keep a room for minimal mobile friendliness even when dealing with desktop-only layout. Avoid rigid desktop-only dimensions. Good: `flex-wrap: wrap`. Bad: `width: 400px`.
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Explain disabled controls
+# Disabled controls
 
 ## TLDR
 
-Explain why control disabled and how to enable it.
+Always keep disabled controls visible and provide feedback for why control is disabled. Avoid silent hiding or disabling with no hint. Good: `<Tooltip text="Error"><Button disabled/></Tooltip>`. Bad: `<Button disabled />`, `!disabled && <Button />`.
 
 ## Problem
 

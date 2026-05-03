@@ -1,8 +1,8 @@
-# Fail forms early
+# Form validation
 
 ## TLDR
 
-Validate inputs during interaction. Avoid waiting for submission to show errors.
+When possible, validate inputs on change or blur. Avoid waiting for submit, unless expensive server validation. Good: Inline error on blur. Bad: Alert on submit.
 
 ## Problem
 
@@ -21,7 +21,7 @@ Use inline validation that triggers as the user types or leaves a field. Show cl
     onChange={(e) => setEmail(e.target.value)}
     onBlur={() => {
       if (!isValidEmail(email)) {
-        showError("Please enter a valid email address");
+        showError('Please enter a valid email address');
       }
     }}
   />
@@ -38,7 +38,7 @@ Use inline validation that triggers as the user types or leaves a field. Show cl
     value={password}
     onChange={(e) => setPassword(e.target.value)}
     // Show green checkmark when valid, red border when invalid
-    status={isValidPassword(password) ? "success" : "error"}
+    status={isValidPassword(password) ? 'success' : 'error'}
   />
 </Form>
 ```
@@ -50,14 +50,23 @@ Validating only on form submission, with generic error messages.
 ```jsx
 // Bad: All validation happens after clicking submit
 <Form onSubmit={handleSubmit}>
-  <Input label="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-  <Input label="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+  <Input
+    label="Email"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+  />
+  <Input
+    label="Password"
+    type="password"
+    value={password}
+    onChange={(e) => setPassword(e.target.value)}
+  />
   <Button type="submit">Submit</Button>
-</Form>
+</Form>;
 
 // On submit:
 if (!isValidEmail(email)) {
-  showError("Invalid input"); // Generic message
+  showError('Invalid input'); // Generic message
 }
 ```
 

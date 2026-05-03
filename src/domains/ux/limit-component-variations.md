@@ -1,8 +1,8 @@
-# Limit component variations
+# Component variations
 
 ## TLDR
 
-Define a small set of distinct component properties with limited values. Avoid multiplied combinations of them as reusable patterns.
+Always configure components via distinct properties with limited option sets. Avoid various multiplied combinations of them as reusable patterns. Good: `<Button variant="primary" size="lg" />`. Bad: `<BigPrimaryButton />`, `<SmallSecondaryButton />`.
 
 ## Problem
 

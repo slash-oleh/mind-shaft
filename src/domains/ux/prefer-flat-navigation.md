@@ -1,8 +1,8 @@
-# Prefer flat navigation
+# Navigation depth
 
 ## TLDR
 
-Use flat lists/menus/etc. with separators where their count is low. Avoid premature or deep nesting of submenus.
+Always prefer shallow hierarchy. Avoid deep nested menus, unless too many items (consider complete re-thinking in that case). Good: `<Menu><Header>Cloud</Header><Upload/></Menu>`. Bad: `<Menu><SubMenu label="Cloud"><Upload/></SubMenu></Menu>`.
 
 ## Problem
 

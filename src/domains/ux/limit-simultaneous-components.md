@@ -1,8 +1,8 @@
-# Limit simultaneous components
+# Overloaded interface
 
 ## TLDR
 
-Limit the number of interactive elements, data points, and navigation options displayed simultaneously.
+Always limit number of active visual elements. Avoid multiple open layers, sequential flows spilled out in whole without order. Good: `<ProfileTabs><PeronalInfoTab/><SecurityTab/><PaymentTab/></ProfileTabs>`. Bad: Same but all tab contents on single scrollable page as non-collapsed sections.
 
 ## Problem
 
@@ -19,9 +19,7 @@ Use progressive disclosure to show only the information needed for the current t
     <Input label="First Name" />
     <Input label="Last Name" />
   </Step>
-  <Step label="Shipping">
-    {/* Hidden until user proceeds */}
-  </Step>
+  <Step label="Shipping">{/* Hidden until user proceeds */}</Step>
 </Stepper>
 ```
 
@@ -29,11 +27,17 @@ Use progressive disclosure to show only the information needed for the current t
 // Good: Dashboard using tabs or expanding sections to keep views focused
 <Dashboard>
   <Tabs defaultTab="overview">
-    <Tab id="overview" label="Overview">
+    <Tab
+      id="overview"
+      label="Overview"
+    >
       <PrimaryMetricChart />
       <RecentActivityList limit={5} />
     </Tab>
-    <Tab id="details" label="Full Report">
+    <Tab
+      id="details"
+      label="Full Report"
+    >
       {/* Complex data hidden until requested */}
     </Tab>
   </Tabs>

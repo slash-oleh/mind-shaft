@@ -1,8 +1,8 @@
-# Prefer plain controls
+# Plain controls
 
 ## TLDR
 
-Use button groups or radios for small fixed sets (2-5 items). Avoid dropdowns for few options.
+For small fixed sets (2-5), always use button groups or radios. Avoid dropdowns. Good: `<RadioGroup options={['yes', 'no', 'maybe']} />`. Bad: `<Select options={['yes', 'no', 'maybe']} />`.
 
 ## Problem
 

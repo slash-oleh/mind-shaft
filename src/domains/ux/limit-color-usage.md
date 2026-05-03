@@ -1,8 +1,8 @@
-# Limit color usage
+# Color palette
 
 ## TLDR
 
-Use color sparingly. Restrain palette and avoid highlighting too many elements at once.
+Always use color sparingly, restrain colors amount. Avoid highlighting too many elements at once or with too many variations. Good: `palette: { primary, secondary, accent }`. Bad: `palette: { primary, secondary, accent, brand, priority, teal, gold }`.
 
 ## Problem
 

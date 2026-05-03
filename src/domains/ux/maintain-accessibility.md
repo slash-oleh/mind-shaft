@@ -1,8 +1,8 @@
-# Maintain accessibility
+# Accessibility
 
 ## TLDR
 
-Preserve native features and semantics. Avoid overreliance on color, small text, gestures, etc.
+Always use semantic HTML elements, ARIA labels and maintain native features such as zoom, relative text size, input focus. Avoid overreliance on color, small text, gestures. Good: `<button aria-label="Close">`. Bad: `<div onClick={close}>`.
 
 ## Problem
 

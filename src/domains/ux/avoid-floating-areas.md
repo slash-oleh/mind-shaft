@@ -1,8 +1,8 @@
-# Avoid floating areas
+# Floating areas
 
 ## TLDR
 
-Minimize the use of modal windows, pop‑overs, and other floating UI elements.
+Always prefer inline content. Avoid floating elements like dialogs, popovers covering content, unless absolutely reasoned. Avoid multiple modal areas overlaying each other. Good: Static list. Bad: Floating button covering text.
 
 ## Problem
 

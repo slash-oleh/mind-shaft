@@ -1,8 +1,8 @@
-# Avoid nested controls
+# Nested controls
 
 ## TLDR
 
-Don't nest interactive elements (buttons, links, inputs) inside other controls.
+Always keep interactive elements separate. Avoid nesting clickable elements. Good: `<TableRow><SelectCheckbox/><ActionButton/></TableRow>`. Bad: `<TableRow onClick={select}><ActionButton/></TableRow>`.
 
 ## Problem
 
