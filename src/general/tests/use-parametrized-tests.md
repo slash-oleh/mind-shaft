@@ -1,8 +1,8 @@
-# Use parametrized tests
+# Parametrization
 
 ## TLDR
 
-Deduplicate logic via table-driven tests when testing multiple scenarios with different inputs and outputs.
+When testing multiple scenarios with slightly different data, always use parametrized tests. Avoid duplication of test flows. Good: `it.each([[1,2],[2,3]])('add', (a,e) => expect(f(a)).toBe(e))`. Bad: `it('1', () => expect(f(1)).toBe(2)); it('2', () => expect(f(2)).toBe(3));`.
 
 ## Problem
 

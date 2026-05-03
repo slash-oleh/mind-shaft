@@ -1,8 +1,8 @@
-# Keep fixtures reusable
+# Fixtures
 
 ## TLDR
 
-Use data factories or builders to create test fixtures that can be easily customized for specific scenarios.
+Always use data factories or builders for fixtures. Avoid hardcoding duplicated test data in individual tests. Good: `userFixture('admin'); userFixture('guest')`. Bad: `user = { id: 1, role: 'admin' }; user = { id: 2, role: 'guest' };`.
 
 ## Problem
 
@@ -16,10 +16,10 @@ Implement factory functions or builder patterns that generate valid, default obj
 // Good: A centralized factory for creating test users
 // src/features/user/testing/userFactory.ts
 export const createUserFixture = (overrides: Partial<User> = {}): User => ({
-  id: "standard-uuid",
-  name: "John Doe",
-  email: "john@example.com",
-  role: "user",
+  id: 'standard-uuid',
+  name: 'John Doe',
+  email: 'john@example.com',
+  role: 'user',
   ...overrides, // Allow specific tests to overwrite any field
 });
 

@@ -1,8 +1,8 @@
-# Avoid mocking
+# Mocking
 
 ## TLDR
 
-Mock only infrastructure, not implementation. Domain tested with shouldn't be dependent on infrastructure in the first place. E2E tests should use real instances where possible.
+For E2E always use real infrastructure instances when possible. Avoid mocking as such, espesially implementation. For domain modules tested with unit tests, avoid their infrastructure dependency in the first place. Good: `SMTP_HOST = 'loopback'`. Bad: `emailService = mock('@/services/email')`.
 
 ## Problem
 

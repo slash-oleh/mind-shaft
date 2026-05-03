@@ -1,8 +1,8 @@
-# Follow naming convention
+# Naming
 
 ## TLDR
 
-In test name state the unit of work, context, and expected result, in order.
+Always standartize test name. State unit of work, context, and expected result. Avoid arbitrary free-form sentence formats. Good: `it('calculateTotal_multipleItems_returnsSum')`. Bad: `it('check if total is calculated')`.
 
 ## Problem
 

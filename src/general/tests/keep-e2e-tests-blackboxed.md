@@ -1,8 +1,8 @@
-# Keep E2E tests blackboxed
+# Black-box testing
 
 ## TLDR
 
-Interact with the system only through public interfaces (UI or public API), without implementation knowledge.
+For E2E tests, always interact via public interfaces. Avoid direct database or internal state checks. Good: `page.getByLabel('Email')`, `page.getByText('Signed in')`. Bad: `page.select('.form-input:first-of-type')`, `expect(localStorage.getValue('token')).toBeDefined()`.
 
 ## Problem
 

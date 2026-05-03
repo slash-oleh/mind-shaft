@@ -1,8 +1,8 @@
-# Isolate tests
+# Isolation
 
 ## TLDR
 
-Design each test to be completely independent of others to avoid side effects.
+Always design tests to be independent. Avoid shared state between tests. Good: `beforeEach(() => c = new C())`. Bad: `beforeAll(() => c = new C()); it('1', () => c.add(1)); it('2', () => expect(c.size).toBe(1))`.
 
 ## Problem
 

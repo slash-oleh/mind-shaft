@@ -1,8 +1,8 @@
-# Apply AAA pattern
+# AAA pattern
 
 ## TLDR
 
-Use the Arrange-Act-Assert (AAA) pattern to structure tests.
+Always use Arrange-Act-Assert (AAA) pattern to structure test scenarios. Good: `e='arrange'; r=act(); assert(r, e);`. Bad: `assert(act(), 'arrange'); update(); assert(act(), 'other');`.
 
 ## Problem
 
