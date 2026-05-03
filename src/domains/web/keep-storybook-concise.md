@@ -1,8 +1,8 @@
-# Keep Storybook concise
+# Storybook scope
 
 ## TLDR
 
-Use Storybook for isolated UI and atomic elements. Avoid complex components tied to data or infrastructure.
+When using Storybook, always add stories for atomic components. Avoid stories for complex modules with infrastructure dependencies (API, state, routing). Good: `export const Primary = () => <Button label="Ok" />`. Bad: `ComplexSection.decorators = [(Story) => <MockedApi><MockedState><Story/></MockedState></MockedApi>]`.
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Optimize application bundling
+# Application bundling
 
 ## TLDR
 
-Implement code splitting and lazy loading for routes and large components.
+Always use code splitting and lazy loading for routes and heavy components. Avoid static imports for everything in main entry, unless lightweight SPA. Good: `const Page = lazy(() => import('./Page'))`. Bad: `import { Page } from './Page'`.
 
 ## Problem
 

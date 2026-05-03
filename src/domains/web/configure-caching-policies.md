@@ -1,8 +1,8 @@
-# Configure caching policies
+# Caching policies
 
 ## TLDR
 
-Use long-term caching for hashed static assets and `must-revalidate` for entry points like `index.html`.
+For static assets, always use long-term immutable caching with content hashes. For entry points, avoid caching, use `must-revalidate` instead. Good: `Cache-Control: max-age=31536000, immutable` (for `main.a1b2c3.js`). Bad: `Cache-Control: max-age=31536000` (for `main.js` without hash).
 
 ## Problem
 

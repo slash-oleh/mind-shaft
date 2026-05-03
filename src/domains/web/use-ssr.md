@@ -1,8 +1,8 @@
-# Use SSR
+# SSR
 
 ## TLDR
 
-Use Server-Side Rendering for public-facing multi-page applications with promo sections.
+For public apps and SEO-critical content, public-facing multi-page applications with promo indexable pages, always use Server-Side Rendering. Good: `<meta name="description" content="SSR Page" />` (in initial HTML). Bad: `document.title = "CSR Page"` (set via JS, hidden from bots in initial document).
 
 ## Problem
 

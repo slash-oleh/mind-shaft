@@ -1,8 +1,8 @@
-# Respect PageSpeed Insights
+# Vitals
 
 ## TLDR
 
-Optimize Core Web Vitals like LCP and CLS to meet PageSpeed Insights standards.
+Always optimize LCP and CLS. Check PageSpeed Insights / Lighthouse. Avoid layout shifts and lazy-loading above-the-fold assets. Good: `<img width="1600" height="900" fetchpriority="high" />`. Bad: `<img src="hero.jpg" />` (missing dimensions), `<script src="optional-3rd-party.js" />` (render-blocking).
 
 ## Problem
 
