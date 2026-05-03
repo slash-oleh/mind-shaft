@@ -1,8 +1,8 @@
-# Preserve datetime offset
+# Datetime offsets
 
 ## TLDR
 
-For datetime values, store UTC offset along with the value. Store the timestamp itself in UTC and timezone offset along with it.
+Always store datetime in UTC along with originating offset. Avoid timezone-unaware timestamps unless explicitly defining multi-zone logic. Good: `2024-05-20T14:30:00+02:00`. Bad: `2024-05-20T14:30:00`.
 
 ## Problem
 

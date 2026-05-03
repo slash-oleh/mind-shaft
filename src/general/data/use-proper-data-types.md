@@ -1,8 +1,8 @@
-# Use proper data types
+# Specific types
 
 ## TLDR
 
-Choose the most specific, semantically correct data type for storing and transferring information instead of using generic primitives like `text` or `number`.
+Always use specific native data types. Avoid generic primitives. Good: `uuid: UUID`, `status: StatusEnum`, `birthAt: DateTime`. Bad: `uuid: string`, `status: string`, `birthAt: number`.
 
 ## Problem
 

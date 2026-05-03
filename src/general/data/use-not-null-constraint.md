@@ -1,8 +1,8 @@
-# Use NOT NULL constraint
+# Required attributes
 
 ## TLDR
 
-Prefer defining database columns as `NOT NULL` by default to reduce ambiguity, redundancy, and simplify handling special values.
+When possible, use mandatory fields with default values. Avoid nullable or optional properties, unless business logic requires distinct missing state or for backward compatibility. Good: `bio: string = ""`. Bad: `bio?: string | null`.
 
 ## Problem
 

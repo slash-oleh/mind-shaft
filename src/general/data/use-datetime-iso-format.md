@@ -1,8 +1,8 @@
-# Use Datetime ISO format
+# ISO datetime format
 
 ## TLDR
 
-Use the "ISO 8601" format for Date, Time, and Duration representation.
+Always use ISO 8601 format for dates and durations. Avoid ambiguous, arbitrary formats. Good: `2024-05-20T14:30:00.000Z`; `P3Y6M`. Bad: `05/04/24`; `11:30`.
 
 ## Problem
 

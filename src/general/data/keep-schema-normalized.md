@@ -1,8 +1,8 @@
-# Keep schema normalized
+# Schema normalization
 
 ## TLDR
 
-Calculate derived state dynamically at runtime. Avoid storing redundant data in the database. Unless for specific performance needs.
+Always calculate derived state dynamically. Avoid storing redundant data in database, unless performance optimization requires materialization. Good: `column birth_at; age = now() - birth`. Bad: `column birth_at; column age;`.
 
 ## Problem
 

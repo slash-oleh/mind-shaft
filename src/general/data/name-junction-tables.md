@@ -1,8 +1,8 @@
-# Name junction entities
+# Junction entities
 
 ## TLDR
 
-Name many-to-many entities based on the relationship they represent instead of just concatenating the names of the connected entities.
+Always name many-to-many relationships based on business meaning. Avoid lazy concatenating table names. Good: `user <- membership -> group`. Bad: `user <- user_group -> group`.
 
 ## Problem
 
