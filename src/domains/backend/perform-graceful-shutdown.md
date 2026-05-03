@@ -1,8 +1,8 @@
-# Perform graceful shutdown
+# Graceful shutdown
 
 ## TLDR
 
-Handle termination signals to finish work and close resources. Avoid abrupt, hanged exits during active tasks.
+Always handle termination signals to finish pending tasks and close connections. Avoid abrupt process exits and hang-ups. Good: `process.on('SIGTERM', cleanup)`. Bad: `process.exit(1)` during active request.
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Use thin controllers
+# Thin controllers
 
 ## TLDR
 
-Controllers should act as a bridge between the network protocol (HTTP/GraphQL) and core logic. Move business rules to services.
+Always delegate logic to services. Avoid controllers aware of more than request/response handling. Good: `userController = { get: (req) => userService.get(req.body) }`. Bad: `userController = { get: (req) => db.user.get(req.id) }`.
 
 ## Problem
 

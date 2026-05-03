@@ -1,8 +1,8 @@
-# Keep backend stateless
+# Stateless runtime
 
 ## TLDR
 
-Rely on external shared persistence in runtime. Avoid in-memory state and local storage.
+Always rely on external shared persistence. Avoid in-memory state and local storage. Good: `await redis.get(session)`. Bad: `const sessions = {}`.
 
 ## Problem
 

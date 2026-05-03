@@ -1,8 +1,8 @@
-# Lock applied migrations
+# Immutable migrations
 
 ## TLDR
 
-Keep database migrations immutable once applied on remote environments or committed to mainline. Avoid editing historical files.
+Always lock database schema migrations once applied. Avoid modifying existing migration files. Good: `1_add_users.sql`, `2_add_teams.sql`. Bad: `1_add_users.sql -> 1_add_users_and_teams.sql`.
 
 ## Problem
 

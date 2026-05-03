@@ -1,8 +1,8 @@
-# Use atomic operations
+# Atomic operations
 
 ## TLDR
 
-Execute complex operations as atomic units of work that either succeed completely or fail without side effects.
+For multi-step data changes, always use database transactions. Avoid independent potentially partially applied updates. Good: `db.transaction(tx => { u = tx.user.create(); tx.team.update(teamId, {ownerId: u.id}); })`. Bad: `u = db.user.create(); db.team.update(teamId, {ownerId: u.id});`.
 
 ## Problem
 

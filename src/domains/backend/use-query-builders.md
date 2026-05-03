@@ -1,8 +1,8 @@
-# Use query builders
+# Query builders
 
 ## TLDR
 
-Use for standard database operations. Build queries from composable parts. Avoid raw SQL strings and manual string concatenation.
+For standard database operations, always use query builders or ORMs providing composable operations. Avoid raw SQL string concatenation. Good: `db('users').where('id', 1)`. Bad: `db.raw('SELECT * FROM users WHERE id = ?', id)`.
 
 ## Problem
 
