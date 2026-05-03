@@ -1,8 +1,8 @@
-# Distinguish data and operations
+# Data and operations
 
 ## TLDR
 
-Use nouns for data variables and verbs for functions or methods to clearly distinguish between data and operations.
+Always use nouns for data and prepending verbs for functions. Avoid nouns for operations and trailing verbs. Good: `count = 42`, `fetchUser()`. Bad: `updateCount = 42`, `user()`, `userFetch()`.
 
 ## Problem
 

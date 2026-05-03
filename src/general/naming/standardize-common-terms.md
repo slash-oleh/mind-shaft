@@ -1,8 +1,8 @@
-# Standardize common terms
+# Common terms
 
 ## TLDR
 
-Use a single, project-wide term for common concepts and operations (e.g. unify 'id' vs 'uid', 'fetch' vs 'get').
+Always standardize project-wide terms. Use single term for common concepts. Avoid synonyms. Good: `id`, `count`, `get`. Bad: `id+uid`, `count+amount`, `get+fetch`.
 
 ## Problem
 

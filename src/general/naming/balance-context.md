@@ -1,8 +1,8 @@
-# Balance context
+# Context
 
 ## TLDR
 
-Avoid both too generic names lacking context, and redundant names duplicating it. Use surrounding context to keep it concise.
+Always balance specificity. Avoid redundant names duplicating context and generic names lacking it. Good: `user.id`, `users.map(user => user.info)`. Bad: `user.userId`, `users.map(item => item.data)`.
 
 ## Problem
 

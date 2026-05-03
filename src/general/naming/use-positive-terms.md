@@ -1,8 +1,8 @@
-# Use positive terms
+# Positive terms
 
 ## TLDR
 
-Avoid inverted logic like 'isDisabled' or 'isNotValid'.
+Always use positive terms. Avoid inverted logic or double negations. Good: `active`, `valid`, `enabled`. Bad: `inactive`, `invalid`, `disabled`, `notValid`, `notInvalid`.
 
 ## Problem
 

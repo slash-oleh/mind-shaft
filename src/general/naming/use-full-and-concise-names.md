@@ -1,8 +1,8 @@
-# Use concise words
+# Conciseness
 
 ## TLDR
 
-Use common, complete, descriptive words instead of cryptic abbreviations, contractions while avoiding excessive verbosity that doesn't add clarity.
+Always use full descriptive but short words. Avoid one-letter names, cryptic abbreviations and excessive verbosity, unless industry standard (like `id`, `db`, `ui`). Good: `user`, `project`. Bad: `u`, `usr`, `proj`, `externallyFetchedUserWithDetailedInfo`.
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Avoid technical suffixes
+# Technical suffixes
 
 ## TLDR
 
-Omit technical and structural suffixes like 'Object', 'Helper', 'Block', or 'Container'. Use plurals for collections and semantic roles for components instad of 'List' or 'Array'.
+Always use concise names reflecting semantics, word class and plurality. Avoid technical suffixes. Good: `User`, `users`, `UserCard`, `getUser`. Bad: `UserObject, UserEntity`, `userList, userArray`, `UserBlock, UserContainer`, `userHelper`.
 
 ## Problem
 

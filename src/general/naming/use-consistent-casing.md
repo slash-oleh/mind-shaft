@@ -1,8 +1,8 @@
-# Use consistent casing
+# Casing
 
 ## TLDR
 
-Treat acronyms and abbreviations as regular words for clear word boundaries.
+For non-delimitated casing, treat acronyms as regular words. Avoid all-caps acronyms. Good: `userId`, `fetchUrl`. Bad: `userID`, `fetchURL`.
 
 ## Problem
 
@@ -47,9 +47,7 @@ const myHTMLURLIsConfusing = '...'; // Is it HTML + URL or HTMLUR + L?
 
 ## Exceptions
 
-- React components (usually `PascalCase`).
-- Environmental variables or constants that use `SCREAMING_SNAKE_CASE`.
-- External API keys or properties that mandate a specific casing.
+- Specific language or framework conventions.
 
 ## References
 

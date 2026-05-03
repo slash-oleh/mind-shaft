@@ -1,8 +1,8 @@
-# Use intent-based identifiers
+# Intent-based identifiers
 
 ## TLDR
 
-Name identifiers for purpose or role. Avoid using literal values or duplicating content in names.
+Always use purpose or role. Avoid literal values or duplicating content, unless for enums and similar. Good: `message = 'Hello'`, `timeout = 5`. Bad: `hello = 'Hello'`, `fiveSeconds = 5`.
 
 ## Problem
 
