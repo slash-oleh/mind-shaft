@@ -1,8 +1,8 @@
-# Avoid single-side spacing
+# Symmetric spacing
 
 ## TLDR
 
-Use symmetric padding and the `gap` property instead of single-side paddings or margins like `padding-left` or `margin-right`.
+Always use symmetric padding and `gap` property for distribution. Avoid single-side paddings or margins like `padding-left`. Good: `.cards { display: flex; gap: 16px }`, `.card { padding: 8px 16px }`. Bad: `.card { margin-left: 16px }`, `.card { padding-left: 16px; padding-right: 12px }`.
 
 ## Problem
 

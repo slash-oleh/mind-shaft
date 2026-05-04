@@ -1,8 +1,8 @@
-# Avoid absolute positioning
+# Absolute positioning
 
 ## TLDR
 
-Use CSS flexbox, grid, spacing to position inline elements. Avoid `position: absolute` unless for truly floating areas.
+Always use Flexbox, Grid, or spacing for element placement. Avoid `position: absolute` unless for truly floating areas. Good: `.window { display: flex; justify-content: space-between; padding: 8px; &.title {} &.close: {} }`. Bad: `.window .close { position: absolute; top: 8px; right: 8px; }`.
 
 ## Problem
 

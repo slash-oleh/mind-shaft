@@ -1,8 +1,8 @@
-# Use relative stacking order
+# Stacking order
 
 ## TLDR
 
-Centralize all `z-index` values into an aliased set of design tokens and reference these aliases instead of using arbitrary magic numbers.
+Always centralize `z-index` values into tokens. Avoid arbitrary magic numbers for layer stacking. Good: `zIndex: Z_INDEX.modal`. Bad: `zIndex: 9999`.
 
 ## Problem
 

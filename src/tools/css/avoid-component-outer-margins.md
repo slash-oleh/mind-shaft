@@ -1,8 +1,8 @@
-# Avoid component outer margins
+# Component outer margins
 
 ## TLDR
 
-Leave outer spacing decisions to the parent user container by not applying margins to the root element of reusable UI components.
+Always let parent containers decide outer spacing. Never apply margins to root element of reusable components. Good: `.card-list { display: grid; gap: 16px; }`. Bad: `.card { margin: 16px; }`.
 
 ## Problem
 

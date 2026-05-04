@@ -1,8 +1,8 @@
-# Avoid important flag
+# Important flag
 
 ## TLDR
 
-Manage specificity correctly using selectors. Avoid the `!important` flag.
+Always manage CSS specificity via selectors. Avoid `!important` flag, unless fixing 3rd-party styles. Good: `.button { background: blue; &.is-active { background: red; } }`. Bad: `.button { background: blue !important; } .button.is-active { background: red; }`.
 
 ## Problem
 

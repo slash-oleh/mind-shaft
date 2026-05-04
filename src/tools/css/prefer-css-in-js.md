@@ -1,8 +1,8 @@
-# Prefer CSS-in-JS
+# CSS-in-JS
 
 ## TLDR
 
-Use CSS-in-JS or CSS Modules to bind styling directly to component logic instead of using global CSS stylesheets.
+Always use CSS-in-JS techniques or at least CSS Modules to bind styling to components. Avoid global CSS for component-specific styles. Good: `const Container = styled.div { ... }`. Bad: `import './styles.css'; <div className="card">`.
 
 ## Problem
 

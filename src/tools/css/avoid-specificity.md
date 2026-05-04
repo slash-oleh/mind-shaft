@@ -1,8 +1,8 @@
-# Avoid specificity
+# Specificity
 
 ## TLDR
 
-Structure CSS classes modularly so that properties are applied additively in distinct manner instead of relying on overrides and high CSS specificity.
+Always structure styles in distinct manner, modularly and additively. Avoid high specificity and property overrides. Good: `button.primary { background: red }`. Bad: `button { background: red }`.
 
 ## Problem
 

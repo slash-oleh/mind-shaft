@@ -1,8 +1,8 @@
-# Avoid style attribute
+# Style attribute
 
 ## TLDR
 
-For static styling, prefer at least CSS classes. Avoid `style` attribute unless for frequently changing dynamic values.
+For static styling, always provide CSS classes. This often implies CSS-in-JS generating classes dynamically in the end. Avoid `style` attribute, unless for high-frequency dynamic updates. Good: `<div className={styles.container}>`. Bad: `<div style={{ padding: '16px' }}>`.
 
 ## Problem
 

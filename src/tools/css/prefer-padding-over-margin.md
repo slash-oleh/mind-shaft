@@ -1,8 +1,8 @@
-# Prefer padding over margin
+# Padding
 
 ## TLDR
 
-Use `padding` on containers to create internal space instead of using `margin` on child elements.
+Always use padding on containers for internal space. Avoid margins on child elements. Good: `<div style={{ padding: '24px' }}><h1/></div>`. Bad: `<div><h1 style={{ margin: '24px' }}></div>`.
 
 ## Problem
 
@@ -10,7 +10,7 @@ Margins push outwards, affecting the layout spacing outside of the element's act
 
 ## Good solution
 
-Apply padding to the parent container to create inward space around children, or use `gap` in Flexbox/Grid systems to create space *between* children without using margins.
+Apply padding to the parent container to create inward space around children, or use `gap` in Flexbox/Grid systems to create space _between_ children without using margins.
 
 ```tsx
 // Good: The parent container uses padding to establish internal space from the edges.
@@ -21,7 +21,9 @@ function DialogBox() {
       <h1>Title</h1>
       <p>Content goes here.</p>
       {/* Button expands its clickable area cleanly */}
-      <button style={{ padding: '12px 24px', background: 'blue' }}>Confirm</button>
+      <button style={{ padding: '12px 24px', background: 'blue' }}>
+        Confirm
+      </button>
     </div>
   );
 }
@@ -37,9 +39,13 @@ function DialogBox() {
   return (
     <div style={{ background: 'white' }}>
       <h1 style={{ marginTop: '24px', marginLeft: '24px' }}>Title</h1>
-      <p style={{ marginLeft: '24px', marginBottom: '24px' }}>Content goes here.</p>
+      <p style={{ marginLeft: '24px', marginBottom: '24px' }}>
+        Content goes here.
+      </p>
       {/* A padded button is better, but margin creates dead non-clickable space */}
-      <button style={{ margin: '12px 24px', background: 'blue' }}>Confirm</button>
+      <button style={{ margin: '12px 24px', background: 'blue' }}>
+        Confirm
+      </button>
     </div>
   );
 }
