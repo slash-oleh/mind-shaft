@@ -1,8 +1,8 @@
-# Preserve semantic page navigation
+# Semantic navigation
 
 ## TLDR
 
-Use semantically correct elements for navigation to ensure standard browser behavior and accessibility. Favor declarative links over imperative state changes or script-driven navigation.
+Always use declarative links and browser history for navigation. Avoid imperative script-driven navigation or local state for UI locations. Good: `<Link href="/profile">`, `<Link href="#checkout">`. Bad: `<Button onClick={() => router.push('/profile')}>`, `router.replace({ state: { checkout: true } })`.
 
 ## Problem
 
@@ -14,9 +14,7 @@ Use the `<Link>` component (from your router library) or standard `<a>` tags for
 
 ```jsx
 // Good: Using a semantic Link component that renders an <a> tag
-<Link href="/user/profile">
-  View Profile
-</Link>
+<Link href="/user/profile">View Profile</Link>
 ```
 
 ```jsx
@@ -34,16 +32,12 @@ Using buttons or generic elements with imperative click handlers to navigate.
 
 ```jsx
 // Bad: Navigation hidden behind a click handler
-<Button onClick={() => router.push('/user/profile')}>
-  View Profile
-</Button>
+<Button onClick={() => router.push('/user/profile')}>View Profile</Button>
 ```
 
 ```jsx
 // Bad: Storing UI state (like active tab) in local state instead of the URL
-<Tab onClick={() => setActiveTab('settings')}>
-  Settings
-</Tab>
+<Tab onClick={() => setActiveTab('settings')}>Settings</Tab>
 ```
 
 ## Impact

@@ -1,8 +1,8 @@
-# Avoid raw HTML elements
+# Raw HTML elements
 
 ## TLDR
 
-Encapsulate raw HTML elements like `<div>` or `<button>` into reusable UI Kit primitives instead of using them directly in application components.
+Always encapsulate raw HTML elements into components. Avoid using tags like `div` or `button` directly in application components. Good: `<Image src="logo.png"/><Typography>Motto</Typography>`. Bad: `<img src="logo.png"/><p>Motto</p>`.
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Avoid no-op wrappers
+# Wrappers
 
 ## TLDR
 
-Minimize the use of wrapper elements like `<div>` or `<span>` to keep the DOM hierarchy flat.
+Always use elements to express structure rather than styles. Avoid no-op wrappers like `div` containing single child. Good: `<article className="card"><h2/><p/></article>`. Bad: `<div className="card-wrapper"><div className="card-inner"><article>...</article></div></div>`.
 
 ## Problem
 
