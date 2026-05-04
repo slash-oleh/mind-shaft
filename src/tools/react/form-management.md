@@ -97,3 +97,4 @@ export const RegistrationForm = () => {
 - [React Hook Form: Documentation](https://react-hook-form.com/)
 - [Formik: Documentation](https://formik.org/)
 - [Zod: Schema Validation](https://zod.dev/)
+- [React: Choosing the State Structure -> Principles for structuring state -> Group related state](https://react.dev/learn/choosing-the-state-structure#principles-for-structuring-state)

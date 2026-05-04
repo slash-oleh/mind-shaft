@@ -2,7 +2,7 @@
 
 ## TLDR
 
-When repeating what's expected to be changed together, extract and reuse. Avoid duplication, unless code represents the same visual shape, and not underlying concept (premature deduplication). Good: `limit = 5; limit1 = limit; limit2 = limit;`, `default1 = []; default2 = [];`. Bad: `limit1 = 5; limit2 = 5;`, `default = []; default1 = empty; default2 = empty;`.
+When repeating the logic that's expected to be changed together, extract and reuse. Avoid duplication, unless code represents the same visual shape, and not underlying concept (premature deduplication). Good: `f = (x) => x * 2; a = f(x); b = f(y);`. Bad: `a = x * 2; b = y * 2;`.
 
 ## Problem
 
@@ -10,74 +10,46 @@ While identical blocks of code can suggest a "zero-one-infinity" rule scenario f
 
 ## Good solution
 
-Prioritize explicitness and local reasoning, especially when dealing with a small, stable set of items.
+Prioritize explicit logic for independent concepts, even if implementation looks similar. Extract shared logic only when concepts are fundamentally linked.
 
-```tsx
-const Dashboard = () => (
-  <nav>
-    <NavItem
-      label="Home"
-      icon="home"
-    />
-    <NavItem
-      label="Settings"
-      icon="settings"
-    />
-    {/* Adding a non-standard item is simple */}
-    <Tooltip text="Contact support">
-      <IconItem icon="question" />
-    </Tooltip>
-  </nav>
-);
+```typescript
+// GOOD: Independent logic paths for different domains
+const handleUserUpdate = (data) => {
+  validateUser(data);
+  saveToDatabase(data);
+};
+
+const handleProductUpdate = (data) => {
+  validateProduct(data);
+  saveToDatabase(data);
+};
 ```
 
 ## Bad solution
 
-Applying the "Infinity" rule prematurely by wrapping a small set of items into a loop or a generic configuration object.
+Applying the "Infinity" rule prematurely by forcing different domains into a single generic handler.
 
-```tsx
-const NAV_ITEMS = [
-  { label: 'Home', icon: 'home' },
-  { label: 'Settings', icon: 'settings' },
-  // Adding a non-standard item requires schema changes
-  { label: 'Help', icon: 'question', isIconOnly: true },
-];
+```typescript
+// BAD: Premature abstraction coupling unrelated domains
+const handleUpdate = (type, data) => {
+  if (type === 'USER') validateUser(data);
+  if (type === 'PRODUCT') validateProduct(data);
 
-const Dashboard = () => (
-  <nav>
-    {NAV_ITEMS.map((item) => {
-      // Adding a non-standard item requires complex branching inside the loop
-      // or even more complicated schema supporting custom components
-      if (item.isIconOnly) {
-        return (
-          <Tooltip
-            key={item.label}
-            text={item.label}
-          >
-            <IconItem icon={item.icon} />
-          </Tooltip>
-        );
-      }
-      return (
-        <NavItem
-          key={item.label}
-          {...item}
-        />
-      );
-    })}
-  </nav>
-);
+  // Hard to customize save logic for only one type later
+  saveToDatabase(data);
+};
 ```
 
 ## Impact
 
-- **[Readability](../../home/impact/positive/readability.md)**: Explicit code is easier to scan than an abstraction driven by mapping or generic configurations.
-- **[Maintainability](../../home/impact/positive/maintainability.md)**: Prevents the need for complex conditional logic inside shared components as requirements diverge.
-- **[Coupling](../../home/impact/negative/coupling.md)**: Premature abstraction tightly couples unrelated items to a shared schema, making it difficult to change one without affecting the others.
+- **[Readability](../../home/impact/positive/readability.md)**: Explicit code is easier to scan than abstractions driven by complex conditional flags.
+- **[Maintainability](../../home/impact/positive/maintainability.md)**: Prevents complex conditional logic inside shared handlers as requirements diverge.
+- **[Coupling](../../home/impact/negative/coupling.md)**: Premature abstraction tightly couples unrelated domains, making it difficult to change one without affecting others.
 
 ## Exceptions
 
-- We are not sure if the number of items will grow into "infinity", then apply the Zero-One-Infinity rule instead.
+- **Utility functions**: Generic logic like date formatting or string manipulation that is truly domain-agnostic.
+- **Zero-One-Infinity**: When the number of items is guaranteed to grow significantly (e.g. dynamic plugins).
 
 ## References
 

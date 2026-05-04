@@ -60,3 +60,8 @@ function ShoppingCart({ items }) {
 
 - **Expensive Computations**: If a calculation is very heavy (e.g., complex data processing or large array manipulations), use `useMemo` to cache the result between renders.
 - **External API Requirements**: When an external, imperative library (e.g., a charting tool) requires a persistent reference that only changes under specific conditions.
+
+## References
+
+- [Wikipedia: Single source of truth](https://en.wikipedia.org/wiki/Single_source_of_truth)
+- [React: Choosing the State Structure -> Principles for structuring state -> Avoid redundant state](https://react.dev/learn/choosing-the-state-structure#principles-for-structuring-state)
