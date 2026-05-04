@@ -2,6 +2,6 @@
 description: "Tools: HTML: Markup and DOM specifics."
 ---
 
-- **Avoid no-op wrappers**: Minimize the use of wrapper elements like `<div>` or `<span>` to keep the DOM hierarchy flat.
-- **Avoid raw HTML elements**: Encapsulate raw HTML elements like `<div>` or `<button>` into reusable UI Kit primitives instead of using them directly in application components.
-- **Preserve semantic page navigation**: Use semantically correct elements for navigation to ensure standard browser behavior and accessibility. Favor declarative links over imperative state changes or script-driven navigation.
+- **Raw elements**: Always encapsulate raw HTML elements into components. Avoid using tags like `div` or `button` directly in application components. Good: `<Image src="logo.png"/><Typography>Motto</Typography>`. Bad: `<img src="logo.png"/><p>Motto</p>`.
+- **Semantic navigation**: Always use declarative links and browser history for navigation. Avoid imperative script-driven navigation or local state for UI locations. Good: `<Link href="/profile">`, `<Link href="#checkout">`. Bad: `<Button onClick={() => router.push('/profile')}>`, `router.replace({ state: { checkout: true } })`.
+- **Wrappers**: Always use elements to express structure rather than styles. Avoid no-op wrappers like `div` containing single child. Good: `<article className="card"><h2/><p/></article>`. Bad: `<div className="card-wrapper"><div className="card-inner"><article>...</article></div></div>`.

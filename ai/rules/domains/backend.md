@@ -2,9 +2,9 @@
 description: "Domains: Backend: Platform-agnostic backend. API servers, BFF, CLI, services, daemons, cron jobs."
 ---
 
-- **Keep backend stateless**: Rely on external shared persistence in runtime. Avoid in-memory state and local storage.
-- **Lock applied migrations**: Keep database migrations immutable once applied on remote environments or committed to mainline. Avoid editing historical files.
-- **Perform graceful shutdown**: Handle termination signals to finish work and close resources. Avoid abrupt, hanged exits during active tasks.
-- **Use atomic operations**: Execute complex operations as atomic units of work that either succeed completely or fail without side effects.
-- **Use query builders**: Use for standard database operations. Build queries from composable parts. Avoid raw SQL strings and manual string concatenation.
-- **Use thin controllers**: Controllers should act as a bridge between the network protocol (HTTP/GraphQL) and core logic. Move business rules to services.
+- **Atomic operations**: For multi-step data changes, always use database transactions. Avoid independent potentially partially applied updates. Good: `db.transaction(tx => { u = tx.user.create(); tx.team.update(teamId, {ownerId: u.id}); })`. Bad: `u = db.user.create(); db.team.update(teamId, {ownerId: u.id});`.
+- **Graceful shutdown**: Always handle termination signals to finish pending tasks and close connections. Avoid abrupt process exits and hang-ups. Good: `process.on('SIGTERM', cleanup)`. Bad: `process.exit(1)` during active request.
+- **Immutable migrations**: Always lock database schema migrations once applied. Avoid modifying existing migration files. Good: `1_add_users.sql`, `2_add_teams.sql`. Bad: `1_add_users.sql -> 1_add_users_and_teams.sql`.
+- **Query builders**: For standard database operations, always use query builders or ORMs providing composable operations. Avoid raw SQL string concatenation. Good: `db('users').where('id', 1)`. Bad: `db.raw('SELECT * FROM users WHERE id = ?', id)`.
+- **Stateless runtime**: Always rely on external shared persistence. Avoid in-memory state and local storage. Good: `await redis.get(session)`. Bad: `const sessions = {}`.
+- **Thin controllers**: Always delegate logic to services. Avoid controllers aware of more than request/response handling. Good: `userController = { get: (req) => userService.get(req.body) }`. Bad: `userController = { get: (req) => db.user.get(req.id) }`.

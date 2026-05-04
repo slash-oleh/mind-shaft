@@ -5,7 +5,7 @@ globs:
   - "**/*.tsx"
 ---
 
-- **Avoid type assertions**: Annotate types explicitly. Avoid `as` keyword to ensure structural validity.
-- **Export associated types**: Export parameter interfaces and type aliases alongside their functions.
-- **Reuse existing types**: Reuse existing internal and third-party types through inheritance, composition or utility types instead of re-declaring their structure.
-- **Use interface inheritance**: Use `extends` to model hierarchical relationships and share common properties instead of defining unions of types that duplicate base fields.
+- **Associated types**: Always export parameter interfaces and type aliases alongside their functions. Avoid internal-only definitions for public utilities. Good: `export interface SearchOptions { ... }; export const search = (options: SearchOptions) => {};`. Bad: Same but `SearchOptions` not exported.
+- **Interface inheritance**: Always use `extends` to model hierarchical relationships and share common properties. Avoid unions of types that duplicate base fields. Good: `interface Admin extends User { ... }`. Bad: `interface Admin { id: string; ... }; interface Guest { id: string; ... }`.
+- **Type assertions**: Always use explicit type annotations for inferred types. Avoid `as` keyword and force casts. Good: `const user: User = { id: 1 }`. Bad: `const user = { id: 1 } as User`.
+- **Type reuse**: Always reuse internal and third-party types via inheritance, composition, or utility types. Avoid manual property duplication. Good: `interface User extends Entity { email: string }`. Bad: `interface User { id: string; email: string }`.

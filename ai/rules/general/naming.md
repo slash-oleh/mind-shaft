@@ -2,11 +2,11 @@
 description: "General: Naming: Naming variables, functions, classes, etc. Wording in general."
 ---
 
-- **Avoid technical suffixes**: Omit technical and structural suffixes like 'Object', 'Helper', 'Block', or 'Container'. Use plurals for collections and semantic roles for components instad of 'List' or 'Array'.
-- **Balance context**: Avoid both too generic names lacking context, and redundant names duplicating it. Use surrounding context to keep it concise.
-- **Distinguish data and operations**: Use nouns for data variables and verbs for functions or methods to clearly distinguish between data and operations.
-- **Standardize common terms**: Use a single, project-wide term for common concepts and operations (e.g. unify 'id' vs 'uid', 'fetch' vs 'get').
-- **Use consistent casing**: Treat acronyms and abbreviations as regular words for clear word boundaries.
-- **Use concise words**: Use common, complete, descriptive words instead of cryptic abbreviations, contractions while avoiding excessive verbosity that doesn't add clarity.
-- **Use intent-based identifiers**: Name identifiers for purpose or role. Avoid using literal values or duplicating content in names.
-- **Use positive terms**: Avoid inverted logic like 'isDisabled' or 'isNotValid'.
+- **Casing**: For non-delimitated casing, treat acronyms as regular words. Avoid all-caps acronyms. Good: `userId`, `fetchUrl`. Bad: `userID`, `fetchURL`.
+- **Common terms**: Always standardize project-wide terms. Use single term for common concepts. Avoid synonyms. Good: `id`, `count`, `get`. Bad: `id+uid`, `count+amount`, `get+fetch`.
+- **Conciseness**: Always use full descriptive but short words. Avoid one-letter names, cryptic abbreviations and excessive verbosity, unless industry standard (like `id`, `db`, `ui`). Good: `user`, `project`. Bad: `u`, `usr`, `proj`, `externallyFetchedUserWithDetailedInfo`.
+- **Context**: Always balance specificity. Avoid redundant names duplicating context and generic names lacking it. Good: `user.id`, `users.map(user => user.info)`. Bad: `user.userId`, `users.map(item => item.data)`.
+- **Data and operations**: Always use nouns for data and prepending verbs for functions. Avoid nouns for operations and trailing verbs. Good: `count = 42`, `fetchUser()`. Bad: `updateCount = 42`, `user()`, `userFetch()`.
+- **Intent-based identifiers**: Always use purpose or role. Avoid literal values or duplicating content, unless for enums and similar. Good: `message = 'Hello'`, `timeout = 5`. Bad: `hello = 'Hello'`, `fiveSeconds = 5`.
+- **Positive terms**: Always use positive terms. Avoid inverted logic or double negations. Good: `active`, `valid`, `enabled`. Bad: `inactive`, `invalid`, `disabled`, `notValid`, `notInvalid`.
+- **Technical suffixes**: Always use concise names reflecting semantics, word class and plurality. Avoid technical suffixes. Good: `User`, `users`, `UserCard`, `getUser`. Bad: `UserObject, UserEntity`, `userList, userArray`, `UserBlock, UserContainer`, `userHelper`.

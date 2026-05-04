@@ -2,12 +2,12 @@
 description: "Tools: CSS: Implies use of CSS Modules, CSS-in-JS, Tailwind CSS, or SCSS/SASS/LESS, but doesn't include their specifics."
 ---
 
-- **Avoid absolute positioning**: Use CSS flexbox, grid, spacing to position inline elements. Avoid `position: absolute` unless for truly floating areas.
-- **Avoid component outer margins**: Leave outer spacing decisions to the parent user container by not applying margins to the root element of reusable UI components.
-- **Avoid important flag**: Manage specificity correctly using selectors. Avoid the `!important` flag.
-- **Avoid single-side spacing**: Use symmetric padding and the `gap` property instead of single-side paddings or margins like `padding-left` or `margin-right`.
-- **Avoid specificity**: Structure CSS classes modularly so that properties are applied additively in distinct manner instead of relying on overrides and high CSS specificity.
-- **Avoid style attribute**: For static styling, prefer at least CSS classes. Avoid `style` attribute unless for frequently changing dynamic values.
-- **Prefer CSS-in-JS**: Use CSS-in-JS or CSS Modules to bind styling directly to component logic instead of using global CSS stylesheets.
-- **Prefer padding over margin**: Use `padding` on containers to create internal space instead of using `margin` on child elements.
-- **Use relative stacking order**: Centralize all `z-index` values into an aliased set of design tokens and reference these aliases instead of using arbitrary magic numbers.
+- **Absolute positioning**: Always use Flexbox, Grid, or spacing for element placement. Avoid `position: absolute` unless for truly floating areas. Good: `.window { display: flex; justify-content: space-between; padding: 8px; &.title {} &.close: {} }`. Bad: `.window .close { position: absolute; top: 8px; right: 8px; }`.
+- **Component outer margins**: Always let parent containers decide outer spacing. Never apply margins to root element of reusable components. Good: `.card-list { display: grid; gap: 16px; }`. Bad: `.card { margin: 16px; }`.
+- **CSS-in-JS**: Always use CSS-in-JS techniques or at least CSS Modules to bind styling to components. Avoid global CSS for component-specific styles. Good: `const Container = styled.div { ... }`. Bad: `import './styles.css'; <div className="card">`.
+- **Important flag**: Always manage CSS specificity via selectors. Avoid `!important` flag, unless fixing 3rd-party styles. Good: `.button { background: blue; &.is-active { background: red; } }`. Bad: `.button { background: blue !important; } .button.is-active { background: red; }`.
+- **Padding**: Always use padding on containers for internal space. Avoid margins on child elements. Good: `<div style={{ padding: '24px' }}><h1/></div>`. Bad: `<div><h1 style={{ margin: '24px' }}></div>`.
+- **Specificity**: Always structure styles in distinct manner, modularly and additively. Avoid high specificity and property overrides. Good: `button.primary { background: red }`. Bad: `button { background: red }`.
+- **Stacking order**: Always centralize `z-index` values into tokens. Avoid arbitrary magic numbers for layer stacking. Good: `zIndex: Z_INDEX.modal`. Bad: `zIndex: 9999`.
+- **Style attribute**: For static styling, always provide CSS classes. This often implies CSS-in-JS generating classes dynamically in the end. Avoid `style` attribute, unless for high-frequency dynamic updates. Good: `<div className={styles.container}>`. Bad: `<div style={{ padding: '16px' }}>`.
+- **Symmetric spacing**: Always use symmetric padding and `gap` property for distribution. Avoid single-side paddings or margins like `padding-left`. Good: `.cards { display: flex; gap: 16px }`, `.card { padding: 8px 16px }`. Bad: `.card { margin-left: 16px }`, `.card { padding-left: 16px; padding-right: 12px }`.

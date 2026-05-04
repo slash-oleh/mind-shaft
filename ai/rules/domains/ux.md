@@ -2,16 +2,16 @@
 description: "Domains: UX: Design and frontend aspects that influence end user."
 ---
 
-- **Avoid floating areas**: Minimize the use of modal windows, pop‑overs, and other floating UI elements.
-- **Avoid nested controls**: Don't nest interactive elements (buttons, links, inputs) inside other controls.
-- **Explain disabled controls**: Explain why control disabled and how to enable it.
-- **Fail forms early**: Validate inputs during interaction. Avoid waiting for submission to show errors.
-- **Limit color usage**: Use color sparingly. Restrain palette and avoid highlighting too many elements at once.
-- **Limit component variations**: Define a small set of distinct component properties with limited values. Avoid multiplied combinations of them as reusable patterns.
-- **Limit simultaneous components**: Limit the number of interactive elements, data points, and navigation options displayed simultaneously.
-- **Maintain accessibility**: Preserve native features and semantics. Avoid overreliance on color, small text, gestures, etc.
-- **Prefer flat navigation**: Use flat lists/menus/etc. with separators where their count is low. Avoid premature or deep nesting of submenus.
-- **Prefer plain controls**: Use button groups or radios for small fixed sets (2-5 items). Avoid dropdowns for few options.
-- **Support smaller screens**: Keep a room for minimal mobile friendliness even when doing desktop-only layout.
-- **Use fail-tolerant approach**: Where possible, in priority order: Prevent errors before they even happen. Recover silently or conceal. Allow users recover easily.
-- **Use visual accents**: Establish hierarchy via size, color, animations to guide attention.
+- **Accessibility**: Always use semantic HTML elements, ARIA labels and maintain native features such as zoom, relative text size, input focus. Avoid overreliance on color, small text, gestures. Good: `<button aria-label="Close">`. Bad: `<div onClick={close}>`.
+- **Color palette**: Always use color sparingly, restrain colors amount. Avoid highlighting too many elements at once or with too many variations. Good: `palette: { primary, secondary, accent }`. Bad: `palette: { primary, secondary, accent, brand, priority, teal, gold }`.
+- **Component variations**: Always configure components via distinct properties with limited option sets. Avoid various multiplied combinations of them as reusable patterns. Good: `<Button variant="primary" size="lg" />`. Bad: `<BigPrimaryButton />`, `<SmallSecondaryButton />`.
+- **Disabled controls**: Always keep disabled controls visible and provide feedback for why control is disabled. Avoid silent hiding or disabling with no hint. Good: `<Tooltip text="Error"><Button disabled/></Tooltip>`. Bad: `<Button disabled />`, `!disabled && <Button />`.
+- **Fail tolerance**: Where possible, in priority order: Prevent errors before they even happen. Recover silently or conceal. Allow users recover easily. Good: `Auto-save drafts`, `Inline validation`, `Undo button`. Bad: `Form resetting on error`, `Blocking alerts`, `Late validation`.
+- **Floating areas**: Always prefer inline content. Avoid floating elements like dialogs, popovers covering content, unless absolutely reasoned. Avoid multiple modal areas overlaying each other. Good: Static list. Bad: Floating button covering text.
+- **Form validation**: When possible, validate inputs on change or blur. Avoid waiting for submit, unless expensive server validation. Good: Inline error on blur. Bad: Alert on submit.
+- **Navigation depth**: Always prefer shallow hierarchy. Avoid deep nested menus, unless too many items (consider complete re-thinking in that case). Good: `<Menu><Header>Cloud</Header><Upload/></Menu>`. Bad: `<Menu><SubMenu label="Cloud"><Upload/></SubMenu></Menu>`.
+- **Nested controls**: Always keep interactive elements separate. Avoid nesting clickable elements. Good: `<TableRow><SelectCheckbox/><ActionButton/></TableRow>`. Bad: `<TableRow onClick={select}><ActionButton/></TableRow>`.
+- **Overloaded interface**: Always limit number of active visual elements. Avoid multiple open layers, sequential flows spilled out in whole without order. Good: `<ProfileTabs><PeronalInfoTab/><SecurityTab/><PaymentTab/></ProfileTabs>`. Bad: Same but all tab contents on single scrollable page as non-collapsed sections.
+- **Plain controls**: For small fixed sets (2-5), always use button groups or radios. Avoid dropdowns. Good: `<RadioGroup options={['yes', 'no', 'maybe']} />`. Bad: `<Select options={['yes', 'no', 'maybe']} />`.
+- **Responsive layout**: Always use fluid layouts and wrapping. Keep a room for minimal mobile friendliness even when dealing with desktop-only layout. Avoid rigid desktop-only dimensions. Good: `flex-wrap: wrap`. Bad: `width: 400px`.
+- **Visual accents**: Always establish concise hierarchy via size and color to guide attention. Avoid uniform weighting or overusing highlighting. Good: `<h3>Danger Zone</h3><p>Warning</p><Button color="error">Delete</Button>`. Bad: `<p>Danger Zone</p><p>Warning</p><Button>Delete</Button>`, `<h1>DANGER ZONE!</h1><h2>Warning</2><Button color="error" size="large">Delete</Button>`.

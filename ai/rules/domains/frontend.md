@@ -2,11 +2,11 @@
 description: "Domains: Frontend: Platform-agnostic frontend development. Applicable to Websites, SPAs, desktop apps, mobile apps but not to be specific to one of them."
 ---
 
-- **Avoid one-key shortcuts**: Use multi-key combinations (e.g., `Ctrl+S`, `Cmd+K`) instead of single-key shortcuts.
-- **Avoid pixel perfect**: Implement fluid, adaptable, and system-driven layouts instead of trying to match design mockups down to the exact pixel for certain screen size.
-- **Encapsulate design in components**: Reuse components, not styling rulesets. Avoid exporting utility styling groups (CSS classes, style objects constants) disconnected from markup.
-- **Extract layout components**: Use high-level layout components like `Grid` or `Stack` instead of raw styles (like CSS flexbox or grid).
-- **Optimize image delivery**: Deliver images in modern formats (WebP/AVIF), use responsive resizing, and implement lazy loading.
-- **Separate pages from features**: Organize the pages layer as a thin compositional wrapper around domain-based feature modules to separate routing from business logic.
-- **Use CSS to style SVGs**: Use `currentColor` or CSS variables instead of hardcoding colors directly in SVG files.
-- **Use endpoint IoC**: For screens or pages, allow them to control full layout structure by reusing individual components and common layouts. Avoid restricting them to content-only, being automatically injected into a rigid, global wrapper.
+- **Keyboard shortcuts**: Always use multi-key combinations. Avoid single-key hotkeys. Good: `if(ctrl && key=='s')`. Bad: `if(key=='s')`.
+- **Layout components**: Always extract layout primitives (like Flex, Grid, Stack). Avoid low-level CSS positioning in business components. Good: `<Stack spacing={2}>`. Bad: `<div style={{ display: 'flex', gap: '16px' }}>`.
+- **Layout IoC**: For screens or pages, allow them to control full layout structure by reusing individual components and common layouts. Avoid restricting them to content-only, being automatically injected into a rigid, global wrapper. Good: `DefaultPage = () => <Layout><Header/><Content/></Layout>; AuthPage = () => <DefaultPage><AuthForm/></DefaultPage>`. Bad: `App = () => <Layout><Header/><AuthPage/></Layout>; AuthPage = () => <AuthForm/>`.
+- **Layout separation**: Always keep page components thin layout-only layer. Delegate logic to domain feature modules. Think of pages like controllers in backend. Good: `LoginPage = AuthForm + AuthLayout`. Bad: `LoginPage = EmailField + PasswordField + Submit + API`.
+- **Pixel perfect**: Always use flexible systematic layouts. Avoid rigid pixel-perfect designs reinforcing design mistakes. Good: `max-width: var(--breakpoint-lg); width: 100%`. Bad: `width: 681px;`.
+- **Raster image optimization**: Always use modern formats, responsive sizes, adaptive to actual viewport, lazy loading. Avoid large raw assets, unused trasparency data. Good: `<img src="img.webp" srcset="...">`. Bad: `<img src="original.png">`.
+- **Styles encapsulation**: Always encapsulate styles and behavior in reusable components. Reuse components, not styles. Avoid styling markup with disconnected classes defined elsewhere. Good: `<Button size="large" />`. Bad: `<Button className="button-large"/>`.
+- **SVG styling**: Always use CSS (`currentColor`) for SVG graphics. Avoid hardcoded fill/stroke attributes inside SVG file. Good: `fill="currentColor"`. Bad: `fill="#FF0000"`.

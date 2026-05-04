@@ -2,5 +2,5 @@
 description: "Tools: MUI: Material UI implementation library for React."
 ---
 
-- **Prefer component props over sx**: Use component-specific props for styling and behavior instead of the generic `sx` prop when they are available.
-- **Use sx prop**: Use the `sx` prop to define theme-aware and dynamic styles directly on MUI components.
+- **Component props**: Always use component-specific props for styling. Avoid `sx` prop when direct props are available. Good: `<Typography variant="h6" color="primary">`. Bad: `<Typography sx={{ fontSize: '1.25rem', color: 'primary.main' }}>`.
+- **Sx prop**: Always use `sx` prop for theme-aware and dynamic styling. Avoid native `style`, `styled` wrapper, `className` usage or legacy `makeStyles`. Good: `<Box sx={{ p: 1, color: 'primary.main' }}>`. Bad: `<div style={{ padding: '8px', color: '#1976d2' }}>`.

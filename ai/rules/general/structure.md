@@ -2,12 +2,12 @@
 description: "General: Structure: Organizing code, files, modules. Architecture is too fancy word for it but close enough."
 ---
 
-- **Avoid helpers modules**: Avoid stockpiling non-cohesive code into generic modules (`core`, `utils`, `helpers`). Use corresponding domain modules instead and fallback to helpers only as a last resort.
-- **Encapsulate implementation details**: Export only the public API. Keep internal logic of files and modules private to enforce encapsulation and prevent coupling.
-- **Group by feature**: On top-level, group code by feature first (`auth`, `billing`), not technical role (`ui`, `api`, `models`). Keep feature-related logic together and group by role inside feature.
-- **Mirror components in translations**: Organize translation keys to reflect modules structure in the codebase.
-- **One component per file**: Keep one primary component per file. Internal one-time use helpers are allowed.
-- **Separate logic and UI**: Decouple business logic and state management from presentation layer. Use headless patterns or services.
-- **Use appropriate domain module**: Place code within its logical feature or domain module. Ensure components reside in their relevant business scope.
-- **Use module entrypoints**: Expose and use the public API of a module and avoid reaching into its internal file structure directly.
-- **Use src folder**: When possible put files into `src` directory instead of root directory.
+- **Domain modules**: Always place code within logical feature module. Avoid leaking components into unrelated scopes. Good: `user/Profile.tsx`. Bad: `dashboard/UserProfile.tsx`.
+- **Encapsulation**: Always export only public API. Avoid exposing internal logic for potential direct usage. Good: `export { Form, FormProps } from 'form.tsx'`. Bad: `export { Form, FieldWrapper, FormBackground } from 'form.tsx'`.
+- **Feature-based grouping**: Always group top-level code by feature. Avoid root-level grouping by technical role like `api` or `models`. Good: `features/auth/services/login.ts`, `features/auth/models/user.ts`. Bad: `services/auth/login.ts`, `models/auth/user.ts`.
+- **Helper modules**: Always use corresponding domain modules for feature logic. Avoid stockpiling non-cohesive code into generic modules like `core` or `utils`. Good: `features/auth/service.ts`. Bad: `utils/auth.ts`.
+- **Logic and UI separation**: Always decouple business logic from presentation layer. Use headless hooks or services. Good: `useAuth()`, `signIn.ts`. Bad: `UserPage.tsx` with `useEffect(fetch)`.
+- **Module entrypoints**: Always use public module entrypoints. Avoid reaching into internal file structure. Good: `import { AuthForm } from '@/features/auth'`. Bad: `import AuthForm from '@/features/auth/components/Form'`.
+- **One component per file**: Always keep one primary component per file. Avoid multiple components in single file, unless as private one-time use helpers. Good: `SignIn.tsx`, `SignUp.tsx`. Bad: `forms.tsx` with both.
+- **Source directory**: When not prescribled by external tool or not customizable, always put source files into dedicated sources directory. Avoid cluttering project root with application logic. Good: `src/auth/login.ts`, `scripts/deploy.sh`. Bad: `auth/login.ts`, `deploy.sh`.
+- **Translation hierarchy**: Always organize translation keys to mirror module structure. Good: `user: { login: '...' }`. Bad: `forms: { login: '...' }`.
