@@ -1,8 +1,8 @@
-# Export associated types
+# Associated types
 
 ## TLDR
 
-Export parameter interfaces and type aliases alongside their functions.
+Always export parameter interfaces and type aliases alongside their functions. Avoid internal-only definitions for public utilities. Good: `export interface SearchOptions { ... }; export const search = (options: SearchOptions) => {};`. Bad: Same but `SearchOptions` not exported.
 
 ## Problem
 

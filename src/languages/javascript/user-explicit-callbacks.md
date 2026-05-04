@@ -1,8 +1,8 @@
-# Use explicit callbacks
+# Explicit callbacks
 
 ## TLDR
 
-Use explicit arrow functions as callback arguments for standard methods. Prevents signature intent mismatch from extra arguments to callbacks.
+Always wrap callbacks in explicit arrow functions. Avoid mismatching references caused by direct function references in standard methods receiving extra unwanted arguments. Good: `ids.map(id => parseInt(id, 10))`. Bad: `ids.map(parseInt)`.
 
 ## Problem
 

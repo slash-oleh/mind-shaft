@@ -1,8 +1,8 @@
-# Reuse existing types
+# Type reuse
 
 ## TLDR
 
-Reuse existing internal and third-party types through inheritance, composition or utility types instead of re-declaring their structure.
+Always reuse internal and third-party types via inheritance, composition, or utility types. Avoid manual property duplication. Good: `interface User extends Entity { email: string }`. Bad: `interface User { id: string; email: string }`.
 
 ## Problem
 

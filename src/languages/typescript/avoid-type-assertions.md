@@ -1,8 +1,8 @@
-# Avoid type assertions
+# Type assertions
 
 ## TLDR
 
-Annotate types explicitly. Avoid `as` keyword to ensure structural validity.
+Always use explicit type annotations for inferred types. Avoid `as` keyword and force casts. Good: `const user: User = { id: 1 }`. Bad: `const user = { id: 1 } as User`.
 
 ## Problem
 

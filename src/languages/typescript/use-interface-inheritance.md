@@ -1,8 +1,8 @@
-# Use interface inheritance
+# Interface inheritance
 
 ## TLDR
 
-Use `extends` to model hierarchical relationships and share common properties instead of defining unions of types that duplicate base fields.
+Always use `extends` to model hierarchical relationships and share common properties. Avoid unions of types that duplicate base fields. Good: `interface Admin extends User { ... }`. Bad: `interface Admin { id: string; ... }; interface Guest { id: string; ... }`.
 
 ## Problem
 

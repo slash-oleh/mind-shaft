@@ -1,8 +1,8 @@
-# Mind numeric limitations
+# Numeric limitations
 
 ## TLDR
 
-Use `BigInt` for large integers and epsilon-based comparisons or specialized libraries for high-precision decimal arithmetic.
+Always use `BigInt` for large integers and `Number.EPSILON` for float comparisons. For wide usage consider libraries like `decimal.js`. Avoid direct float equality checks. Good: `Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON`. Bad: `0.1 + 0.2 === 0.3`.
 
 ## Problem
 

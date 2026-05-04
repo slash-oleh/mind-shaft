@@ -1,8 +1,8 @@
-# Use destructuring
+# Destructuring
 
 ## TLDR
 
-Extract data from objects and arrays into local variables or function parameters. Avoid overusing dot notation.
+Always extract properties in assignments and function parameters. Avoid repeated property access via parent object. Avoid destructuring directly in function signature, unless it's a small anonymous callback. Good: `f = (user) => { const { name, avatarUrl } = user; ... }`, `users.find(({ id }) => id === profileId)`. Bad: `f(user.name, user.avatarUrl)`, `users.find((user) => user.id === profileId)`, `const f = ({ name, avatarUrl, ... }) => { ... }`.
 
 ## Problem
 
