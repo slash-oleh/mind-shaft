@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Always export only public API. Avoid exposing internal logic for potential direct usage. Good: `export { Form, FormProps } from 'form.tsx'`. Bad: `export { Form, FieldWrapper, FormBackground } from 'form.tsx'`.
+Always keep implementation private and export only public API. Avoid exposing internal logic for potential direct usage. Good: `export { Form, FormProps } from 'form.tsx'`. Bad: `export { Form, FieldWrapper, FormBackground } from 'form.tsx'`.
 
 ## Problem
 

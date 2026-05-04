@@ -1,5 +1,5 @@
 ---
-description: "Tools: SQL: Not including particular SQL dialect, DBMS, usage via ORM."
+description: "Languages: SQL: Not including particular SQL dialect, DBMS, usage via ORM."
 ---
 
 - **Class table inheritance**: Always use Class Table Inheritance for polymorphic relationships. Avoid Single Table Inheritance with nullable columns. Good: `CREATE TABLE vehicle (id UUID); CREATE TABLE car (vehicle_id UUID REFERENCES vehicle(id), doors INT NULL)`. Bad: `CREATE TABLE vehicle (id UUID, car_doors INT NULL, bicycle_bell BOOLEAN NULL)`.

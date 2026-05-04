@@ -1,4 +1,4 @@
-# Composition vs inheritance
+# Composition over inheritance
 
 ## TLDR
 

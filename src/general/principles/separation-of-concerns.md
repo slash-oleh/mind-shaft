@@ -1,8 +1,8 @@
-# Logic and UI separation
+# Separation of concerns
 
 ## TLDR
 
-Always decouple business logic from presentation layer. Use headless hooks or services. Good: `useAuth()`, `signIn.ts`. Bad: `UserPage.tsx` with `useEffect(fetch)`.
+Always decouple domain, business logic, presentation (UI), infrastructure from each other. Use headless hooks or services. Good: `useAuth()`, `signIn.ts`. Bad: `UserPage.tsx` with `useEffect(fetch)`.
 
 ## Problem
 

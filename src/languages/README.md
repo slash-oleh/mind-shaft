@@ -1,3 +1,3 @@
 # Languages
 
-Programming languages.
+Programming, markup, style, query languages, notations.

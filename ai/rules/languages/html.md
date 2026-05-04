@@ -1,5 +1,5 @@
 ---
-description: "Tools: HTML: Markup and DOM specifics."
+description: "Languages: HTML: Markup and DOM specifics."
 ---
 
 - **Raw elements**: Always encapsulate raw HTML elements into components. Avoid using tags like `div` or `button` directly in application components. Good: `<Image src="logo.png"/><Typography>Motto</Typography>`. Bad: `<img src="logo.png"/><p>Motto</p>`.
