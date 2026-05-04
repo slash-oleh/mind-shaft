@@ -1,4 +1,4 @@
-# Database constraints
+# Constraints
 
 ## TLDR
 
