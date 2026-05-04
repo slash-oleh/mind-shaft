@@ -1,8 +1,8 @@
-# Limit default values usage
+# Default values
 
 ## TLDR
 
-Prefer domain-level default values over database-level. Define default values for entity attributes in the application domain layer rather than using database-level schema constraints.
+Always define default values in application domain layer. Avoid database-level `DEFAULT` constraints, unless for infrastructure timestamps. Good: `@Field({ defaultValue: true })`. Bad: `ALTER TABLE "user" ALTER COLUMN active SET DEFAULT true`.
 
 ## Problem
 

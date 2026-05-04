@@ -1,8 +1,8 @@
-# Use snake case identifier names
+# Identifier names
 
 ## TLDR
 
-Use snake case for all database identifiers, including tables, columns, constraints, sequences, and indexes.
+Always use `snake_case` for all database identifiers. Avoid `camelCase` or `PascalCase`. Good: `first_name`, `created_at`. Bad: `"firstName"`, `"CreatedAt"`, `"updatedat"`.
 
 ## Problem
 

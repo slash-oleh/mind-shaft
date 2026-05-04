@@ -1,8 +1,8 @@
-# Use database constraints
+# Database constraints
 
 ## TLDR
 
-Use foreign keys, unique constraints, and check constraints to enforce data integrity and validity at the schema level.
+Always use foreign keys, unique constraints, and check constraints for data integrity. Avoid relying only on application-level validation. Good: `category_id: uuid REFERENCES categories(id)`. Bad: `category_id: uuid` (orphaned records).
 
 ## Problem
 

@@ -1,8 +1,8 @@
-# Use id suffix for references
+# ID suffix
 
 ## TLDR
 
-Append the `_id` suffix (or `Id` in camelCase contexts) to all columns storing a foreign key reference.
+Always append `_id` suffix to foreign key columns. Avoid naming columns after entities. Good: `user_id UUID REFERENCES "user"(id)`. Bad: `user UUID REFERENCES "user"(id)`.
 
 ## Problem
 

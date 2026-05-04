@@ -1,8 +1,8 @@
-# Use singular table names
+# Table names
 
 ## TLDR
 
-Name database tables using singular nouns to represent a single row's entity type.
+Always name database tables using singular nouns. Avoid plural names. Good: `user`, `category`. Bad: `users`, `categories`.
 
 ## Problem
 

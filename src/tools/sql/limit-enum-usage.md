@@ -1,8 +1,8 @@
-# Limit enum usage
+# Enums
 
 ## TLDR
 
-Use enum for rarely changed sets only like static global domain concepts. Reference tables with foreign keys for dynamic or frequently updated sets of values.
+Always use reference tables with foreign keys for dynamic values. Use enums only for simple static global concepts. Good: `CREATE TABLE category (id UUID PRIMARY KEY)`. Bad: `CREATE TYPE category AS ENUM ('electronics')`.
 
 ## Problem
 

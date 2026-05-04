@@ -1,8 +1,8 @@
-# Prefer class table inheritance
+# Class table inheritance
 
 ## TLDR
 
-Use Class Table Inheritance for mapping object-oriented inheritance models or polymorphic relationships into a relational database.
+Always use Class Table Inheritance for polymorphic relationships. Avoid Single Table Inheritance with nullable columns. Good: `CREATE TABLE vehicle (id UUID); CREATE TABLE car (vehicle_id UUID REFERENCES vehicle(id), doors INT NULL)`. Bad: `CREATE TABLE vehicle (id UUID, car_doors INT NULL, bicycle_bell BOOLEAN NULL)`.
 
 ## Problem
 

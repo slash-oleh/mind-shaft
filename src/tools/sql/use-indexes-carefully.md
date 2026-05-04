@@ -1,8 +1,8 @@
-# Use indexes carefully
+# Indexes
 
 ## TLDR
 
-Balance read performance with write latency by strategically indexing columns based on query patterns.
+Always index columns used in frequent lookups and joins. Avoid over-indexing every field for frequently written data. Good: `CREATE INDEX ON posts (author_id)`. Bad: `CREATE INDEX ON audit_logs (payload)`.
 
 ## Problem
 
