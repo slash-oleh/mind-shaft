@@ -1,4 +1,4 @@
-# Raw HTML elements
+# Raw elements
 
 ## TLDR
 
