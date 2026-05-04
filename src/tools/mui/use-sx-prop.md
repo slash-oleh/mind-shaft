@@ -1,8 +1,8 @@
-# Use sx prop
+# Sx prop
 
 ## TLDR
 
-Use the `sx` prop to define theme-aware and dynamic styles directly on MUI components.
+Always use `sx` prop for theme-aware and dynamic styling. Avoid native `style`, `styled` wrapper, `className` usage or legacy `makeStyles`. Good: `<Box sx={{ p: 1, color: 'primary.main' }}>`. Bad: `<div style={{ padding: '8px', color: '#1976d2' }}>`.
 
 ## Problem
 
@@ -23,7 +23,8 @@ Use the `sx` prop for direct, theme-aware styling. It supports shorthand propert
     gap: 2, // uses theme.spacing(2)
     p: 1, // uses theme.spacing(1)
     color: 'primary.main', // uses theme.palette.primary.main
-    bgcolor: (theme) => theme.palette.mode === 'dark' ? 'grey.900' : 'grey.100', // dynamic access
+    bgcolor: (theme) =>
+      theme.palette.mode === 'dark' ? 'grey.900' : 'grey.100', // dynamic access
   }}
 >
   Content
@@ -37,13 +38,11 @@ Using legacy hooks or native styles that ignore the theme environment.
 ```tsx
 // Legacy and verbose
 const useStyles = makeStyles((theme) => ({
-  root: { padding: theme.spacing(1) }
+  root: { padding: theme.spacing(1) },
 }));
 
 // Ignores theme tokens
-<div style={{ padding: '8px', color: '#1976d2' }}>
-  Content
-</div>
+<div style={{ padding: '8px', color: '#1976d2' }}>Content</div>;
 ```
 
 ## Impact

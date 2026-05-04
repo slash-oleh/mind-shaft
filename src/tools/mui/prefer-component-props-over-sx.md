@@ -1,8 +1,8 @@
-# Prefer component props over sx
+# Component props
 
 ## TLDR
 
-Use component-specific props for styling and behavior instead of the generic `sx` prop when they are available.
+Always use component-specific props for styling. Avoid `sx` prop when direct props are available. Good: `<Typography variant="h6" color="primary">`. Bad: `<Typography sx={{ fontSize: '1.25rem', color: 'primary.main' }}>`.
 
 ## Problem
 
