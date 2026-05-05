@@ -2,11 +2,11 @@
 
 ## TLDR
 
-For nested Grid, use separate elements. Avoid mixing `item` and `container` props on same element. Good: `<Grid item><Grid container>...</Grid></Grid>`. Bad: `<Grid item container>...</Grid>`.
+For nested Grid, use separate elements. Avoid mixing `item` and `container` props on same element, esp. with hybrid direction. Good: `<Grid item><Grid container>...</Grid></Grid>`. Bad: `<Grid item container>...</Grid>`.
 
 ## Problem
 
-Grid component as both `item` and `container` causes style inheritance conflicts. Multiple CSS rule sets (padding vs negative margin) applied simultaneously. Unpredictable spacing, alignment shifts, or horizontal overflow results. Hard to debug cascading layout issues.
+Grid component as both `item` and `container` causes style inheritance conflicts, especially with switching directions. Multiple CSS rule sets (padding vs negative margin) applied simultaneously. Unpredictable spacing, alignment shifts, or horizontal overflow results. Hard to debug cascading layout issues.
 
 ## Good solution
 
@@ -15,6 +15,7 @@ Nesting separate Grid components.
 ```tsx
 <Grid
   container
+  direction="column"
   spacing={2}
 >
   <Grid
@@ -43,12 +44,14 @@ Combining props on one component.
 ```tsx
 <Grid
   container
+  direction="column"
   spacing={2}
 >
   {/* Mixing item and container here */}
   <Grid
     item
     container
+    direction="row"
     xs={12}
     spacing={1}
   >
