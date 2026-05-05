@@ -1,16 +1,16 @@
-# Single source of truth
+# Normalization
 
 ## TLDR
 
-For information, always define facts exactly once. Avoid mirroring configurations, duplicating knowledge, rules, or split ownership. Good: `total = items.reduce(...)`. Bad: `setTotal(items.reduce(...))`.
+For any data or state, define and store it only once. Keep data normalized and use derived values, computed on-the-fly from source. Avoid redundant variables, mirrored runtime or persistent state, or duplicate database columns. Good: `const fullName = user.first + ' ' + user.last`, `SELECT (price * count) AS total FROM orders`. Bad: `const [fullName, setFullName] = useState(firstName + ' ' + lastName); useEffect(() => setFullName(firstName + ' ' + lastName), [firstName, lastName])`, `ALTER TABLE orders ADD COLUMN total`.
 
 ## Problem
 
-Duplicating data creates multiple sources of truth. Requires manual synchronization. Leads to state desynchronization, stale UI, database inconsistency. Manual sync logic error-prone, hard to trace, triggers redundant updates or render cycles.
+Redundant data storage requires manual synchronization. Leads to state desynchronization, stale UI, and database inconsistency. Sync logic is error-prone, hard to trace, and triggers unnecessary updates or render cycles.
 
 ## Good solution
 
-Centralize data ownership. Calculate dependent values (computed properties) directly from base state during render or selection.
+Centralize data ownership. Calculate dependent values directly from base state during render or database selection.
 
 ```typescript
 // Frontend: Derived value calculated in real-time
@@ -32,7 +32,7 @@ FROM users;
 
 ## Bad solution
 
-Mirror state across classes. Require manual synchronization. Hardcode and duplicate business rules across boundaries.
+Mirroring source data or storing derived results. Requires fragile manual sync logic.
 
 ```typescript
 // Frontend: Redundant state sync via effect
@@ -61,6 +61,5 @@ ALTER TABLE users ADD COLUMN status TEXT;
 
 ## References
 
-- [Wikipedia: Single source of truth](https://en.wikipedia.org/wiki/Single_source_of_truth)
+- [Wikipedia: Database normalization](https://en.wikipedia.org/wiki/Database_normalization)
 - [React: You Might Not Need an Effect](https://react.dev/learn/you-might-not-need-an-effect)
-- [Database normalization](https://en.wikipedia.org/wiki/Database_normalization)
