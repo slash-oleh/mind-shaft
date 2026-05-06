@@ -1,8 +1,9 @@
 ---
-description: "Languages: TypeScript: Not including Browser, NodeJS, CommonJS, ES specifics."
+description: "Languages: TypeScript: Apply when working with TypeScript"
 globs:
   - "**/*.ts"
   - "**/*.tsx"
+trigger: glob
 ---
 
 - **Associated types**: Always export parameter interfaces and type aliases alongside their functions. Avoid internal-only definitions for public utilities. Good: `export interface SearchOptions { ... }; export const search = (options: SearchOptions) => {};`. Bad: Same but `SearchOptions` not exported.

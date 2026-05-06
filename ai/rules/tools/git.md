@@ -1,5 +1,6 @@
 ---
-description: "Tools: Git: Mainly applicable to VCS in general but focusing on Git as de-facto standard."
+description: "Tools: Git: Apply when working with Git. Keywords: VCS, commits, branches, pull requests, merging, rebasing, GitHub, GitLab, conflicts, hooks, history."
+trigger: model_decision
 ---
 
 - **Atomic commits**: Always ensure each commit represents single logical change. Avoid bundling unrelated changes or intermediate changes leaving build in broken state. Good: `Commit 1: "Add auth backend", Commit 2: "Add auth frontend"`. Bad: `Commit 1: "Add auth frontend, fix FAQ typos", Commit 2: "Add auth backend so frontend works"`.

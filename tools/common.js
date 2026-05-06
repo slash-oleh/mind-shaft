@@ -96,6 +96,7 @@ export const walkArticles = async (callback) => {
         label: subDirLabel,
         globs: subDirGlobs,
         description: subDirDescription,
+        trigger: subDirTrigger,
       } = await getSubDirMeta(subDir.path, formatName(subDir.name));
       for (const article of subDir.articles) {
         const content = await readFile(article.path, 'utf-8');
@@ -106,6 +107,7 @@ export const walkArticles = async (callback) => {
           subDirLabel,
           subDirGlobs,
           subDirDescription,
+          subDirTrigger,
           article,
           content,
         });
@@ -186,8 +188,8 @@ export const getSubDirMeta = async (dirPath, fallbackLabel) => {
     const label = extractH1(content) || fallbackLabel;
     const tree = parser.parse(stripFrontMatter(content));
     const firstP = tree.children.find((n) => n.type === 'paragraph');
-    const description = firstP ? toString(firstP) : fm.description || '';
-    return { label, globs: fm.globs || null, description };
+    const description = fm.description || (firstP ? toString(firstP) : '');
+    return { label, globs: fm.globs || null, description, trigger: fm.trigger || null };
   } catch {
     return { label: fallbackLabel, globs: null, description: '' };
   }

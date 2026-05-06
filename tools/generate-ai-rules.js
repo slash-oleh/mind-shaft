@@ -31,6 +31,7 @@ const generate = async () => {
       subDirLabel,
       subDirGlobs,
       subDirDescription,
+      subDirTrigger,
     }) => {
       const fm = extractFrontMatter(content);
       if (fm.aiSkip === true) return;
@@ -48,6 +49,7 @@ const generate = async () => {
             subDirLabel,
             subDirGlobs,
             subDirDescription,
+            subDirTrigger,
             rules: [],
           };
         }
@@ -73,11 +75,12 @@ const generate = async () => {
     const globsLine = group.subDirGlobs
       ? `\nglobs:${serializeGlobs(group.subDirGlobs)}`
       : '';
+    const triggerLine = group.subDirTrigger ? `\ntrigger: ${group.subDirTrigger}` : '';
     const descriptionText = group.subDirDescription
       ? `${heading}: ${group.subDirDescription}`
       : heading;
     const description = descriptionText.replace(/"/g, '\\"');
-    let fileContent = `---\ndescription: "${description}"${globsLine}\n---\n\n`;
+    let fileContent = `---\ndescription: "${description}"${globsLine}${triggerLine}\n---\n\n`;
 
     if (!SHORT) {
       fileContent += `# ${heading}\n`;

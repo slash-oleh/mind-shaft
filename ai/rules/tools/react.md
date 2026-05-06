@@ -1,5 +1,5 @@
 ---
-description: "Tools: React: Not including web, browser, language specifics."
+description: "Tools: React: Apply when working with React. Keywords: reactivity, components, hooks, context, providers, rendering lifecycle, other features"
 globs:
   - "**/*.js"
   - "**/*.jsx"
@@ -7,6 +7,7 @@ globs:
   - "**/*.tsx"
   - "**/*.cjs"
   - "**/*.mjs"
+trigger: model_decision
 ---
 
 - **Asset referencing**: For images and SVGs, always use direct imports in component files. Avoid raw string paths from public directories. Good: `import logo from './logo.png'`. Bad: `src="/images/logo.png"`.

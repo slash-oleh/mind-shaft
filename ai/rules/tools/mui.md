@@ -1,5 +1,5 @@
 ---
-description: "Tools: MUI: Material UI implementation library for React."
+description: "Tools: MUI: Apply when working with MUI React library. Keywords: Material UI guidelines, design system, components, icons, themes. Packages: @mui/* (mainly @mui/material), @material-ui/* (legacy) and all related such as @emotion/*, material-ui-popup-state."
 globs:
   - "**/*.js"
   - "**/*.jsx"
@@ -7,6 +7,7 @@ globs:
   - "**/*.tsx"
   - "**/*.cjs"
   - "**/*.mjs"
+trigger: model_decision
 ---
 
 - **Component props**: Always use component-specific props for styling. Avoid `sx` prop when direct props are available. Good: `<Typography variant="h6" color="primary">`. Bad: `<Typography sx={{ fontSize: '1.25rem', color: 'primary.main' }}>`.

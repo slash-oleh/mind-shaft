@@ -1,4 +1,6 @@
 ---
+description: 'Apply when working with JavaScript, TypeScript or any dialets'
+trigger: glob
 globs:
   - '**/*.js'
   - '**/*.jsx'

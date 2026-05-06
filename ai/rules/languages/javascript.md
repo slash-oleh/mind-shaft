@@ -1,5 +1,5 @@
 ---
-description: "Languages: JavaScript: Including ECMAScript. Not including Browser, NodeJS, TypeScript specifics."
+description: "Languages: JavaScript: Apply when working with JavaScript, TypeScript or any dialets"
 globs:
   - "**/*.js"
   - "**/*.jsx"
@@ -7,6 +7,7 @@ globs:
   - "**/*.tsx"
   - "**/*.cjs"
   - "**/*.mjs"
+trigger: glob
 ---
 
 - **Destructuring**: Always extract properties in assignments and function parameters. Avoid repeated property access via parent object. Avoid destructuring directly in function signature, unless it's a small anonymous callback. Good: `f = (user) => { const { name, avatarUrl } = user; ... }`, `users.find(({ id }) => id === profileId)`. Bad: `f(user.name, user.avatarUrl)`, `users.find((user) => user.id === profileId)`, `const f = ({ name, avatarUrl, ... }) => { ... }`.

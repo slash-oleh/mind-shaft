@@ -1,4 +1,6 @@
 ---
+description: 'Apply when working with TypeScript'
+trigger: glob
 globs:
   - '**/*.ts'
   - '**/*.tsx'
