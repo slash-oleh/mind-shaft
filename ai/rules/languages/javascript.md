@@ -1,5 +1,5 @@
 ---
-description: "Languages: JavaScript: globs:"
+description: "Languages: JavaScript: Including ECMAScript. Not including Browser, NodeJS, TypeScript specifics."
 globs:
   - "**/*.js"
   - "**/*.jsx"

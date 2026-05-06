@@ -1,5 +1,5 @@
 ---
-description: "Languages: TypeScript: globs:"
+description: "Languages: TypeScript: Not including Browser, NodeJS, CommonJS, ES specifics."
 globs:
   - "**/*.ts"
   - "**/*.tsx"

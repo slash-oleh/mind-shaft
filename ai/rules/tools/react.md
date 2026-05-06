@@ -1,5 +1,12 @@
 ---
 description: "Tools: React: Not including web, browser, language specifics."
+globs:
+  - "**/*.js"
+  - "**/*.jsx"
+  - "**/*.ts"
+  - "**/*.tsx"
+  - "**/*.cjs"
+  - "**/*.mjs"
 ---
 
 - **Asset referencing**: For images and SVGs, always use direct imports in component files. Avoid raw string paths from public directories. Good: `import logo from './logo.png'`. Bad: `src="/images/logo.png"`.
@@ -11,11 +18,12 @@ description: "Tools: React: Not including web, browser, language specifics."
 - **Component memoization**: Always wrap functional components in `memo`. Avoid redundant re-renders due to parent re-renders unless using React Compiler. Good: `const Comp = memo(() => {})`. Bad: `const Comp = () => {}`.
 - **Component remounting**: Always define component functions at top level or use raw function call to render. Avoid defining inside render cycle along with JSX or `createElement` rendering. Good: `RenderHeader = () => {}; return <>{RenderHeader()}</>`. Bad: `RenderHeader = () => {}; return <><RenderHeader/>{createElement(RenderHeader)}</>`.
 - **Controlled components**: For stateful inputs, always use parent state as single source of truth. Avoid setting only initial state nad mirroring changes via `onChange` and `useEffect`. Good: `<input value={v} onChange={c} />`. Bad: `const [v, setV] = useState(props.v)`.
-- **Derived values**: For derived state, always calculate values on-the-fly during rendering. Use `useMemo` for expensive calculations. Avoid storing derived data in state or calculating via `useEffect`. Good: `const total = items.length`. Bad: `useEffect(() => setTotal(items.length), [items])`.
 - **Effect dependencies**: For `useEffect` always distinguish between triggers and data sources. Use `useEffectEvent` (or refs) for non-reactive but ref-unstable data. Avoid unnecessary effect executions but keep in mind it should be safe to run as many times as needed. Good: `log = () => {}; useEffectEvent(() => { log(value) }, [value])`. Bad: `log = () => {}; useEffect(() => { log(value) }, [value, log])`.
+- **Effects**: For side effects, always prefer event handlers or render-cycle logic. Use useEffect only to synchronize with external systems outside of React. Avoid `useEffect` for computed state, React state synchronization, or resetting and in general if possible. Good: `const total = items.length`. Bad: `useEffect(() => setTotal(items.length), [items])`.
 - **Form management**: For non-trivial forms, always use specialized libraries like React Hook Form or Formik. Avoid manual state management for every field, unless form is extremely simple. Good: `useForm({ email, password })`. Bad: `useState('email'); useState('password');`.
 - **Functional components**: Always use functional components with Hooks. Avoid Class components, unless maintaining legacy code or implementing Error Boundaries. Good: `const Comp = () => {}`. Bad: `class Comp extends React.Component {}`.
 - **Lazy state initialization**: For expensive initial state value calculations, always use function initializer function. Avoid direct function calls for `useState` argument. Good: `useState(() => heavyCompute())`. Bad: `useState(heavyCompute())`.
+- **Logic portability**: For logic, always prefer pure functions or services. Use hooks and providers only to bridge React state or lifecycle. Avoid wrapping simple logic in hooks or providers. Good: `formatDate(date)`. Bad: `useDateFormatter(date)`.
 - **Logic sharing**: For sharing state and logic, always use custom Hooks. Avoid Higher-Order Components (HOCs), unless used for authentication guards or layout providers. Good: `const user = useAuth()`. Bad: `withAuth(Comp)`.
 - **Prop exports**: For reusable components, always export prop interfaces or types along with the component. Use `[ComponentName]Props` naming convention. Avoid concealing prop types inside component file. Good: `export interface ButtonProps {}`. Bad: `interface ButtonProps {}`.
 - **Props drilling**: For shared state, always lift to nearest common ancestor. Avoid props drilling by using Context or state management. Good: `Table` manages `Row` selection; `UserAvatar` uses `useUser` hook. Bad: `Row` manages own selection state; `UserAvatar` takes user as a prop provided from `Page` all the way up.

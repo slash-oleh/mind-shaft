@@ -120,8 +120,13 @@ export const stringifier = unified().use(remarkStringify);
 /**
  * Extracts the H1 title from a markdown file content.
  */
+export const stripFrontMatter = (content) => content.replace(FRONT_MATTER_RE, '');
+
+/**
+ * Extracts the H1 title from a markdown file content.
+ */
 export const extractH1 = (content) => {
-  const tree = parser.parse(content);
+  const tree = parser.parse(stripFrontMatter(content));
   const h1 = tree.children.find((n) => n.type === 'heading' && n.depth === 1);
   return h1 ? toString(h1) : null;
 };
@@ -179,7 +184,7 @@ export const getSubDirMeta = async (dirPath, fallbackLabel) => {
     const content = await readFile(path.join(dirPath, 'README.md'), 'utf-8');
     const fm = extractFrontMatter(content);
     const label = extractH1(content) || fallbackLabel;
-    const tree = parser.parse(content);
+    const tree = parser.parse(stripFrontMatter(content));
     const firstP = tree.children.find((n) => n.type === 'paragraph');
     const description = firstP ? toString(firstP) : fm.description || '';
     return { label, globs: fm.globs || null, description };
@@ -192,30 +197,37 @@ export const getLabel = async (dirPath, fallback) =>
   (await getSubDirMeta(dirPath, fallback)).label;
 
 /**
- * Extracts all paragraphs from the "TLDR" section using raw content slicing.
+ * Finds nodes belonging to a specific H2 section.
  */
-export const extractFirstParagraph = (content) => {
-  const tree = parser.parse(content);
+export const getSectionNodes = (tree, sectionName) => {
   const children = tree.children;
-
-  // Find the TLDR section
-  const tldrHeading = children.find(
+  const heading = children.find(
     (n) =>
       n.type === 'heading' &&
       n.depth === 2 &&
-      toString(n).toLowerCase() === 'tldr',
+      toString(n).toLowerCase() === sectionName.toLowerCase(),
   );
-  if (tldrHeading) {
-    const tldrIndex = children.indexOf(tldrHeading);
-    const nextNodes = children.slice(tldrIndex + 1);
-    const nextHeadingIndex = nextNodes.findIndex(
-      (n) => n.type === 'heading' && n.depth === 2,
-    );
-    const sectionNodes =
-      nextHeadingIndex === -1
-        ? nextNodes
-        : nextNodes.slice(0, nextHeadingIndex);
+  if (!heading) return null;
 
+  const index = children.indexOf(heading);
+  const nextNodes = children.slice(index + 1);
+  const nextHeadingIndex = nextNodes.findIndex(
+    (n) => n.type === 'heading' && n.depth === 2,
+  );
+
+  return nextHeadingIndex === -1
+    ? nextNodes
+    : nextNodes.slice(0, nextHeadingIndex);
+};
+
+/**
+ * Extracts all paragraphs from the "TLDR" section using raw content slicing.
+ */
+export const extractFirstParagraph = (content) => {
+  const tree = parser.parse(stripFrontMatter(content));
+  const sectionNodes = getSectionNodes(tree, 'tldr');
+
+  if (sectionNodes) {
     const paragraphs = sectionNodes.filter((n) => n.type === 'paragraph');
     if (paragraphs.length > 0) {
       const start = paragraphs[0].position.start.offset;
@@ -231,24 +243,9 @@ export const extractFirstParagraph = (content) => {
  * Extracts impact items from the "Impact" section.
  */
 export const extractImpactItems = (content) => {
-  const tree = parser.parse(content);
-  const children = tree.children;
-
-  const impactHeading = children.find(
-    (n) =>
-      n.type === 'heading' &&
-      n.depth === 2 &&
-      toString(n).toLowerCase() === 'impact',
-  );
-  if (!impactHeading) return [];
-
-  const impactIndex = children.indexOf(impactHeading);
-  const nextNodes = children.slice(impactIndex + 1);
-  const nextHeadingIndex = nextNodes.findIndex(
-    (n) => n.type === 'heading' && n.depth === 2,
-  );
-  const sectionNodes =
-    nextHeadingIndex === -1 ? nextNodes : nextNodes.slice(0, nextHeadingIndex);
+  const tree = parser.parse(stripFrontMatter(content));
+  const sectionNodes = getSectionNodes(tree, 'impact');
+  if (!sectionNodes) return [];
 
   const impactList = sectionNodes.find((n) => n.type === 'list');
   if (!impactList) return [];
@@ -270,40 +267,16 @@ export const extractImpactItems = (content) => {
  * Extracts the "Good Solution" and "Bad Solution" sections using raw content slicing.
  */
 export const extractSolutions = (content) => {
-  const tree = parser.parse(content);
-  const children = tree.children;
+  const tree = parser.parse(stripFrontMatter(content));
+  const result = { good: null, bad: null };
 
-  const result = {
-    good: null,
-    bad: null,
-  };
-
-  const sections = ['Good Solution', 'Bad Solution'];
-
-  for (const sectionName of sections) {
-    const heading = children.find(
-      (n) =>
-        n.type === 'heading' &&
-        n.depth === 2 &&
-        toString(n).toLowerCase() === sectionName.toLowerCase(),
-    );
-    if (heading) {
-      const index = children.indexOf(heading);
-      const nextNodes = children.slice(index + 1);
-      const nextHeadingIndex = nextNodes.findIndex(
-        (n) => n.type === 'heading' && n.depth === 2,
-      );
-      const sectionNodes =
-        nextHeadingIndex === -1
-          ? nextNodes
-          : nextNodes.slice(0, nextHeadingIndex);
-
-      if (sectionNodes.length > 0) {
-        const start = sectionNodes[0].position.start.offset;
-        const end = sectionNodes[sectionNodes.length - 1].position.end.offset;
-        const key = sectionName === 'Good Solution' ? 'good' : 'bad';
-        result[key] = content.slice(start, end).trim();
-      }
+  for (const sectionName of ['Good Solution', 'Bad Solution']) {
+    const sectionNodes = getSectionNodes(tree, sectionName);
+    if (sectionNodes && sectionNodes.length > 0) {
+      const start = sectionNodes[0].position.start.offset;
+      const end = sectionNodes[sectionNodes.length - 1].position.end.offset;
+      const key = sectionName === 'Good Solution' ? 'good' : 'bad';
+      result[key] = content.slice(start, end).trim();
     }
   }
 

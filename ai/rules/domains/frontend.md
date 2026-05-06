@@ -10,3 +10,4 @@ description: "Domains: Frontend: Platform-agnostic frontend development. Applica
 - **Raster image optimization**: Always use modern formats, responsive sizes, adaptive to actual viewport, lazy loading. Avoid large raw assets, unused trasparency data. Good: `<img src="img.webp" srcset="...">`. Bad: `<img src="original.png">`.
 - **Styles encapsulation**: Always encapsulate styles and behavior in reusable components. Reuse components, not styles. Avoid styling markup with disconnected classes defined elsewhere. Good: `<Button size="large" />`. Bad: `<Button className="button-large"/>`.
 - **SVG styling**: Always use CSS (`currentColor`) for SVG graphics. Avoid hardcoded fill/stroke attributes inside SVG file. Good: `fill="currentColor"`. Bad: `fill="#FF0000"`.
+- **Vector graphics**: Always use SVG for icons and simple graphics. Avoid raster formats (PNG, JPG, WebP) for vector-like content. Good: `<svg>...</svg>`. Bad: `<img src="icon.png" />`.

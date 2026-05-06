@@ -1,19 +1,21 @@
 ---
 description: "General: Code Style: Everything that affects readability and maintainability but not behavior.
+Relates closely to actual code writing and less about high-level philosophical paradigms.
 Includes formatting, linting but not the rules that can be defined in automated tools like Prettier, ESLint, etc."
 ---
 
 - **Bulletproof range checks**: For iteration boundaries checks, always use relational operators (`>=`, `<=`, `>`, `<`). Avoid exact equality (`==` or `!==`), unless specific short-circuit breaker is needed and guaranteed. Good: `i <= max`. Bad: `i !== max`.
 - **Code comments**: For complex logic, favor self-documenting code by extracting to named identifiers, but use short comments explaining reasons or hidden behavior. Avoid uncommented obscure segments but also avoid comments repeating after code. Good: `a << 2 // Multiply by 4`. Bad: `a + b // Calculate sum`.
 - **Code density**: Always break down method chains and complex operations. Avoid horizontal scanning, unless pattern simple trivial. Good: `f()\n.b()\n.c()`. Bad: `f().b().c();`.
+- **Codebase patterns**: Always follow existing codebase patterns. Avoid introducing new architecture, approaches or tools without repository audit. Good: `f(opts); g(opts);`. Bad: `f(opts); f({ opts })`.
 - **Error reporting**: Always handle errors explicitly and report to logging or monitoring. Avoid failing silently such as in empty catch blocks, unless failure truly inconsequential. Good: `catch { log }`. Bad: `catch {}`.
 - **Exceptions for errors**: Always throw exceptions for unexpected failures. Avoid error codes or status objects, unless using Result patterns or expected domain states. Good: `throw Exception`. Bad: `return -1`.
+- **Functional programming**: Always prefer functional programming. Avoid procedural logic and mutable variables. Good: `const total = items.reduce((sum, item) => sum + item.price, 0)`. Bad: `let total = 0; for (const item of items) { total += item.price; }`.
 - **Guard clauses**: Always use early returns for prerequisites. Avoid nested if-statements. Good: `if (!user) return`. Bad: `if (user) { if (active) { ... } }`.
 - **Language conventions**: Always follow idiomatic syntax and naming patterns of the language. Avoid forcing foreign conventions, unless matching external APIs or legacy systems. Good: camelCase in JS. Bad: snake_case in JS.
 - **Lookup maps**: For multi-branch logic, always use mapping. Avoid if/else or switch for key-based dispatching, unless complex conditions, or a few branches. Good: `{ a: f, b: g, ... }`. Bad: `if (v === 'a') f() else if (v === 'b') g() ...`.
 - **Magic values**: When passing raw constants further, use named constants. Avoid literal values, unless self-explanatory or prepended with argument name. Good: `maxTime = 5; request(maxTime);`, `request({ timeout: 5 });`. Bad: `request(5);`, `maxTime = 5; request({ timeout: maxTime })`.
 - **Object arguments**: For multiple function arguments, when existing interface covers them, pass entire object. Avoid extracting individual properties as separate arguments, unless function must remain decoupled or dependency overhead is too high. Good: `f(u)`. Bad: `f(u.id, u.name)`.
-- **Project code style**: Always match existing codebase style. Avoid mixing styles or combining cleanup with functional changes, unless ongoing project-wide migration. Good: `f(opts); g(opts);`. Bad: `f(opts); f({ opts })`.
 - **Property forwarding**: Always forward properties from wrappers to wrapping components. Avoid manual re-mapping of unused fields, unless strict interface required. Good: `({ a, ...rest }) => a && f({ a, ...rest })`. Bad: `({ a, b, c }) => f({ a, b, c })`.
 - **Redundant else**: Always remove redundant else blocks after return or throw. Avoid unnecessary indentation, unless symmetry aids readability. Good: `if (c) return x; return y`. Bad: `if (c) return x; else return y`.
 - **Shortened boolean expressions**: Always shorten boolean expressions using logical operators. Avoid ternary operators or if/else for boolean results, unless complex or nested conditions. Good: `v >= 5`, `u?.id || null`. Bad: `v >= 5 ? true : false`, `u?.id ? u.id : null`.
