@@ -1,6 +1,6 @@
 [project]
-docs_dir="src"
-site_name="BP"
+docs_dir="docs"
+site_name="Dev Handbook"
 
 #nav = [
 #  {"Home" = [

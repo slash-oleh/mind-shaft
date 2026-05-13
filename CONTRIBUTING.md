@@ -1,144 +1,47 @@
-# Contributing
+# Contributing to Dev Handbook
 
-Contribution guidelines and structure definition.
+Monorepo with multiple npm workspace packages.
+Each package represents documentation section.
 
-## Writing an article
+## Used tools
 
-### Keep the content unique
+- [Markdown](https://en.wikipedia.org/wiki/Markdown) - source text
+- [Zensical](https://zensical.org/) - bundling everything together
+- [Remark](https://remark.js.org/) - linting and structure validation
 
-Make sure the topic is not covered by another article.
+## Getting Started
 
-Try not to define the generic best practice as a Recommendation Item. This would
-simply duplicate the external resource with theoretical info. Instead, ask
-yourself if it's not an Impact actually. If so, add it and create a
-Recommendation Item with the reference and the example. The Recommendation Item
-can also reference the external practical examples.
+Pre-requisites: [Node.js](https://nodejs.org/), [Docker](https://www.docker.com/).
 
-### Follow the template
+### Installation
 
-Use [article template](templates/article.md) - copy the file and fill in the blocks.
+```bash
+npm install
+```
 
-- File must be named after the article title (lowercased, hyphenated)
-- Change only the blocks enclosed in `{{ }}`
-- Keep the titles, structure and order static (except for the main title of course, which is a template variable).
-- Treat the `...` as a placeholder for repeated content (lists).
+### Local Documentation
 
-#### 1. Fill "Title"
+The documentation site is powered by [Zensical](https://zensical.org/) and aggregates content from all packages.
 
-Format:
+```bash
+docker compose up
+```
 
-- Use imperative form
-- One sentence without any punctuation at the end
-- Prefer positive wording where possible ("do" over "don't")
+Go to [http://127.0.0.1:8005](http://127.0.0.1:8005).
 
-Some possible presets:
+## Adding a new package
 
-- "Do/don't X"
-- "Prefer X over Y"
-- "Use X"
-- "Reduce X"
-- "Avoid X"
-- "Keep X"
+1. Create a new directory in `packages/`.
+2. Initialize with `package.json`.
+3. Add content to `packages/<name>/src`.
+4. Symlink the content to `docs/<name>` for Zensical aggregation.
 
-#### 2. Fill the "TLDR"
+## Scripts
 
-Format:
+- `npm run rules:lint` - Lint rules markdown files.
+- `npm run rules:generate:toc` - Generate Table of Contents for rules.
+- `npm run rules:generate:ai-rules` - Generate AI rules for IDEs.
 
-- Use imperative form
-- One paragraph
-- Usually a 1 or 2 sentences long
+## Package-specific guidelines
 
-Content:
-
-- Defines the rule, mostly "what" to do
-- Less mention "why" aspect, it's covered by the "Problem" and "Impact" sections
-- If necessary, very shortly mention "how" or "when"
-
-#### 3. Fill "Problem"
-
-Explain the problem this rule addresses.
-
-Format:
-
-- Usually a few sentences long
-
-Content:
-
-- Some context if needed
-- Why it's an issue
-- Why it's important
-
-#### 4. Fill "Good solution"
-
-Format:
-
-- Usually a few sentences long
-- Usually has a code example
-
-#### 5. Fill "Bad solution"
-
-Format:
-
-- Same as "Good solution".
-
-Content:
-
-- The example should outline reaching the same goal (having the same result, solving the same problem) as the good solution, but in a bad way
-
-#### 6. Fill "Impact"
-
-Format:
-
-- Only list items
-- Usually a few
-- Use only [Impact](./src/home/impact/README.md) items with the internal links
-
-Content:
-
-- If the reason is not covered by any Impact, but it is generic, add it as a new Impact item
-- Where needed, add a context unique for this impact application (usually a sentence)
-
-#### 7. Exceptions
-
-Format:
-
-- Only list items
-- Usually 1 or 2
-
-Content:
-
-- When the rule should or can be broken
-
-#### 8. References
-
-Format:
-
-- Only list items
-- Usually a few
-- Only links
-
-Content:
-
-- Extenal resources, articles, etc.
-- Do not reference other internal articles
-- Title links as `Source: Title`, for example `Wikipedia: Cohesion`
-
-## Adding an Impact item
-
-### Follow the template
-
-Use [impact template](templates/impact.md).
-
-Put it under one of the categories under the [impact](./src/home/impact/) folder.
-
-The same templating rules as for articles apply.
-
-## Publishing the changes
-
-Just change any files you need, commit and push the changes.
-
-You can use web IDE or compile and serve docs locally as described below.
-
-Any change to the source will trigger
-the [GitHub Workflow](.github/workflows/pages.yml)
-to deploy to [GitHub Pages](https://pages.github.com).
+- [Rules Contribution Guidelines](packages/rules/CONTRIBUTING.md)

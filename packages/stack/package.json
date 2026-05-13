@@ -1,0 +1,6 @@
+{
+  "name": "@dev-handbook/stack",
+  "version": "1.0.0",
+  "description": "Toolset.",
+  "type": "module"
+}

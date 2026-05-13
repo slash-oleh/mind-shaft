@@ -72,8 +72,5 @@ site/
 # Exclude .gitkeep
 !.gitkeep
 
-# Vendor static files
-src/common/vendor/*
-
 # NodeJS dependencies
 node_modules/

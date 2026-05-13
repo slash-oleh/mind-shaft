@@ -1,0 +1,68 @@
+# Component logic
+
+## TLDR
+
+For UI and logic decoupling, always use hooks. Avoid splitting into Container/Presentational component pairs pattern. Good: `useUser` hook in `User` component. Bad: `UserContainer` wrapping `UserView`.
+
+## Problem
+
+The Container/Presentational pattern (also known as the "Smart/Dumb" pattern) creates significant boilerplate and complicates the component hierarchy. By artificially splitting a single feature into two components, you increase the amount of prop-drilling and make it harder to trace how data flows from the source to the screen. This pattern organizes code by _technical role_ rather than _feature responsibility_, leading to a fragmented developer experience where you have to jump between multiple files to understand a single piece of functionality.
+
+## Good solution
+
+Keep logic and UI together. Use custom hooks to encapsulate and share complex logic while keeping the component itself focused on its primary responsibility.
+
+```tsx
+// Good: Logic and UI are cohesive in one component
+function UserProfile({ userId }) {
+  const { user, isLoading, error } = useUser(userId); // Custom hook for logic
+
+  if (isLoading) return <Spinner />;
+  if (error) return <ErrorMessage message={error.message} />;
+
+  return (
+    <article>
+      <h1>{user.name}</h1>
+      <p>{user.bio}</p>
+    </article>
+  );
+}
+```
+
+## Bad solution
+
+Always splitting a feature into a "wrapper" component for data and a "view" component for the UI.
+
+```tsx
+// Bad: Redundant split leading to prop-drilling and extra files
+// UserProfileContainer.tsx
+function UserProfileContainer({ userId }) {
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    /* fetch user */
+  }, [userId]);
+
+  return <UserProfileView user={user} />;
+}
+
+// UserProfileView.tsx
+function UserProfileView({ user }) {
+  return (
+    <article>
+      <h1>{user.name}</h1>
+      <p>{user.bio}</p>
+    </article>
+  );
+}
+```
+
+## Impact
+
+- **Cohesion**: Keeps related data-fetching and display logic in one place, making the feature easier to understand and debug.
+- **KISS**: Reduces the total number of components and files in the project.
+- **Maintainability**: Hooks are a more flexible abstraction for logic reuse than component wrapping.
+
+## Exceptions
+
+- **Truly Reusable UI Primitives**: When building a low-level UI library (e.g., a complex DataGrid) that must remain entirely "dumb" to be used across many different data sources.
+- **Extreme Complexity**: If a component's render logic is so massive (thousands of lines) that separating the view helps purely with file scannability (though refactoring into smaller sub-components is usually better).
