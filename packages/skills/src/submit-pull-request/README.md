@@ -11,3 +11,4 @@ Supports only GitHub for now.
 ## TODO
 
 - Delegate VCS/Git platform specifics to a separate skill
+- Update ticket status where applicable
