@@ -8,9 +8,10 @@
   ],
   "scripts": {
     "list": "npm run rules:lint",
-    "generate": "npm run rules:generate:ai",
+    "generate": "npm run rules:generate:ai && npm run skills:generate:ai",
     "rules:lint": "npm run lint -w @dev-handbook/rules",
-    "rules:generate:ai": "npm run build:ai -w @dev-handbook/rules && mkdir -p ai/rules && cp -r packages/*/dist/ai/* ai/rules/"
+    "rules:generate:ai": "npm run build:ai -w @dev-handbook/rules && mkdir -p ai/rules && cp -r packages/*/dist/ai/* ai/rules/",
+    "skills:generate:ai": "npm run build -w @dev-handbook/skills && mkdir -p ai/skills && cp -r packages/skills/dist/* ai/skills/"
   },
   "type": "module"
 }
