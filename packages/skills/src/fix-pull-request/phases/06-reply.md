@@ -4,7 +4,7 @@ Reply in every acted-on thread.
 
 ## Tone
 
-Be brief and factual. State what changed, not why it was right. Match the tone of a code review - no fluff, apologies, fillers.
+Be brief and factual. State what changed, not why it was right. Match the tone of a code review - no fluff, apologies, fillers. When not "Fixed", avoid blunt or confrontational starting word like "Declined", "Rejected", or "Incorrect" - just explain.
 
 ## Reply Examples
 
