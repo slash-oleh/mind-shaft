@@ -31,7 +31,7 @@ Ideas for new skills:
   - Rough flow from existing (or planned) skills
     - estimate-prd
     - create-ticket
-    - prepare-workspace
+    - prepare-task-workspace
     - implement-task
     - fix-pull-request
     - fix-feedback

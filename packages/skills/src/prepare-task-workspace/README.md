@@ -8,6 +8,5 @@ Cleanup worktree, come up with a branch.
 
 ## TODO
 
-- Incorporate questions asking to close gaps early (grill-me, 5 Why's, etc.)
-- Update ticket status where applicable
+- **Update ticket status**: Where applicable, use ticket tracker to move to "in progress" status or similar.
 - Consider merging into `implement-task` skill
