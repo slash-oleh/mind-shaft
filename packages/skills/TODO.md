@@ -1,18 +1,5 @@
 # TODO
 
-## Common structure
-
-Unify structure and common instructions across skills
-
-- Prerequisites
-- Tools (or delegations to other skills)
-- Phases (separate files, execution, announces)
-- Phases inputs/outputs, logged as data files (as we go, not retrospectively)
-- Rules (precise following, ask when unclear)
-- Human review
-- Execution (steps)
-- Add examples
-
 ## Multi-skill workflows
 
 Settle on Multi-stage skills vs Multi-skill workflows balance.

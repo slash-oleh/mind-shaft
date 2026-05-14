@@ -20,9 +20,11 @@ Format: `<task-id>-<hyphenated-title>` — all lowercase, all hyphens.
 
 Example: `4242-add-user-auth`
 
-## Process
+## Execution
 
-Work through these steps in order:
+Follow the **Skill Execution Protocol** (injected below).
+
+### Steps
 
 1. **Gather inputs** — confirm you have both the ticket ID and a branch title. If either is missing, ask the user now. Don't proceed until you have both.
 

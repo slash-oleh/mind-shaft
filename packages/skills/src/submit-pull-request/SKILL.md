@@ -5,7 +5,9 @@ description: Submit Pull Request for review when work on a task is completed. Us
 
 # Submit Pull Request
 
-Ensure all pull requests meet team standards for code quality, commit structure, and description format.
+## Execution
+
+Follow the **Skill Execution Protocol** (injected below).
 
 ## Phase 1: Pre-Submission Checks
 
@@ -33,6 +35,8 @@ Ensure all pull requests meet team standards for code quality, commit structure,
 - If not found in the branch, look for it in the latest commit message or ask the user directly.
 
 ### 2. Commit Cleanup
+
+Ensure all pull requests meet team standards for code quality, commit structure, and description format.
 
 - Verify commit count: `git rev-list --count origin/main..HEAD`.
 - Target is 1-3 atomic commits.
