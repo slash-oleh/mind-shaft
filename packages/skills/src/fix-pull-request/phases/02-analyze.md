@@ -20,6 +20,7 @@ Conclusions:
 - Fix
 - Defer
 - Decline
+- Explain
 
 ## Priority Order
 
@@ -69,6 +70,7 @@ Classification by conclusion with typical reasons:
 
 - Decline: factually incorrect, missing full context, or not worth the effort
 - Defer: valid but out of scope for this PR - a separate issue or would expand the diff significantly
+- Explain: only a question is asked, no code change required
 - Fix: everything else
 
 ## Deferred Items
