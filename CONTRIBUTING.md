@@ -19,6 +19,22 @@ Pre-requisites: [Node.js](https://nodejs.org/), [Docker](https://www.docker.com/
 npm install
 ```
 
+```bash
+npx --yes skills add \
+  JuliusBrussee/caveman \
+  --agent universal \
+  --agent antigravity
+npx --yes skills add \
+  ./agents/skills/ \
+  --skill merge-article \
+  --skill refine-article \
+  --skill rephrase \
+  --skill resolve-todo \
+  --agent universal \
+  --agent antigravity \
+  --agent claude-code
+```
+
 ### Local Documentation
 
 The documentation site is powered by [Zensical](https://zensical.org/) and aggregates content from all packages.
