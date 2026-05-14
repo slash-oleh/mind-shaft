@@ -1,4 +1,4 @@
-# Phase 8: Reply
+# Phase 6: Reply
 
 Reply in every acted-on thread.
 
@@ -11,12 +11,14 @@ Be brief and factual. State what changed, not why it was right. Match the tone o
 - **Fixed**: `"Fixed. Added missing X."` (for fixes) / `"Done. Replaced X with Y."` (for improvements)
 - **Declined**: `"Existing convention is relative imports throughout this package"`
 - **Deferred**: `"Will address in a future PR"` / `"Added TODO at <file>:<line>"` / `"Created <Ticket URL>"`
-- **Explained**: `"Yes, X is handled by Y because of Z."`
 
 ## Post a Reply
 
+Use the **Shell Markdown Bodies** pattern from `SKILL.md`:
+
 ```bash
-bash "$SKILL_DIR/scripts/post-reply.sh" <PR_NUMBER> <COMMENT_ID> "<reply>" "<summary>"
+# ... create $TMP with reply ...
+bash "$SKILL_DIR/scripts/post-reply.sh" <PR_NUMBER> <COMMENT_ID> "$TMP" "<summary>"
 ```
 
 ## Output

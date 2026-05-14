@@ -1,6 +1,6 @@
-# Phase 7: Push
+# Phase 5: Push
 
-**Only proceed after explicit user approval from Phase 6.**
+**Only proceed after explicit user approval from Phase 4.**
 
 ## Autosquash fixups
 

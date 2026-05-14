@@ -3,8 +3,10 @@ set -euo pipefail
 
 PR=$1
 COMMENT_ID=$2
-BODY=$3
+BODY_FILE=$3
 SUMMARY=$4
+
+BODY=$(cat "$BODY_FILE")
 
 REPO=$(gh repo view --json nameWithOwner -q .nameWithOwner)
 
@@ -20,7 +22,7 @@ mapfile -t lines < <(
 )
 
 gh api "repos/$REPO/pulls/$PR/comments/$COMMENT_ID/replies" \
-    -X POST -f body="$BODY" >/dev/null
+    -X POST --field body=@"$BODY_FILE" >/dev/null
 
 echo "Thread **\"$SUMMARY\"** by _@${ROOT_AUTHOR}_"
 printf '%s\n' "${lines[@]}"

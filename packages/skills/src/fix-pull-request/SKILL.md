@@ -19,6 +19,21 @@ Systematic workflow for resolving all blockers on a GitHub Pull Request: review 
 4. [Apply Fixes](phases/04-apply-fixes.md)
 5. [Push](phases/05-push.md)
 6. [Reply](phases/06-reply.md)
+7. [Update Description](phases/07-update-description.md)
+
+## Shared Patterns
+
+### Shell Markdown Bodies
+
+When a script requires a markdown body (replies, descriptions), always use a temp file with a quoted heredoc to avoid shell escaping issues (especially backticks):
+
+```bash
+TMP=$(mktemp)
+cat > "$TMP" <<'EOF'
+...markdown content...
+EOF
+# Pass "$TMP" to script
+```
 
 ## Execution
 
