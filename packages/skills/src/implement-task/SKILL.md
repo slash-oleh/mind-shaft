@@ -24,7 +24,7 @@ Structured workflow for implementing a task from a ticket or description through
 
 For each phase in order:
 
-1. Announce **Phase N/6: [Name]**
+1. Announce **Phase N/X: [Name]**
 2. Read the phase file instructions
 3. Execute instructions from it
 4. Report **Phase N complete**
