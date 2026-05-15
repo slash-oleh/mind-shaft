@@ -8,5 +8,5 @@ A heart of SDLC.
 
 ## TODO
 
-- **Challenge more**: Incorporate questions asking to close gaps early (grill-me, 5 Why's, etc.)
+- **Challenge more**: Incorporate widely known techniques for asking questions to close gaps early (grill-me, 5 Why's, etc.)
 - **Spec-driven**: Consider Claude's /goal, OpenSpec and similar

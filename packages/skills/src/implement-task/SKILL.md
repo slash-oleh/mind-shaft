@@ -5,17 +5,19 @@ description: Implement a task end-to-end from a ticket, external link, or plain 
 
 # Implement Task
 
-Structured workflow for implementing a task from a ticket or description through to a verified code change.
+Structured workflow for implementing a task from a specification through to a verified code change.
 
 ## Prerequisites
 
-- Project management MCP server, CLI available (if applicable)
+- Project management MCP server (e.g., Jira, GitHub Issues)
+- Design MCP server (e.g., Figma)
+- Documentation MCP server (e.g., Confluence)
 
 ## Phases
 
 1. [Gather Info](phases/01-gather-info.md)
 2. [Analyze](phases/02-analyze.md)
-3. [Acceptance Criteria](phases/03-acceptance-criteria.md) [APPROVAL REQUIRED]
+3. [Success Criteria](phases/03-success-criteria.md) [APPROVAL REQUIRED]
 4. [Plan](phases/04-plan.md)
 5. [Implement](phases/05-implement.md) [APPROVAL REQUIRED]
 6. [Verify](phases/06-verify.md)

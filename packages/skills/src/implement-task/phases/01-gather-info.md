@@ -1,39 +1,26 @@
 # Phase 1: Gather Info
 
+## Goal
+
 Collect all information needed to understand the task before any analysis or coding.
 
-## Task source
+## Steps
 
-Resolve the task from the first matching source:
-
-1. **Ticket or URL** - if the user provided a ticket ID, a project management URL, or a task link, fetch it:
-   - Read title, description, acceptance criteria, and linked issues
-   - Download any attached assets (images, diagrams, specs)
-   - Identify linked design or documentation resources
-
-2. **Plain description** - if the user described the task in plain text, treat that as the spec.
-
-Do not ask the user to repeat information already provided.
-
-## Related assets
-
-For each linked resource found in the source (or mentioned in the description), retrieve it:
-
-- **Design links** - use appropriate MCP (Figma, Miro, etc.) to extract details (layout, component structure)
-- **Documentation pages** - use appropriate MCP (Jira, Confluence, GitHub, Notion, etc.) to read content
-- **Other URLs** - fetch and summarize the content
-
-## Codebase context
-
-Identify relevant parts of the codebase without deep analysis yet:
-
-- Locate files and modules likely affected by this task
-- Find existing patterns related to the feature area (similar components, services, hooks)
-- Note the tech stack layers involved (frontend, backend, infra, etc.)
+1. Identify Task Source:
+   - If ticket ID or URL provided: fetch title, description, and linked issues.
+   - If plain description provided: treat as the spec.
+2. Retrieve Related Assets:
+   - For design links: extract details (layout, components) via MCP (Figma, Miro, etc.).
+   - For documentation: read content via MCP (Confluence, Notion, GitHub, etc.).
+   - For other URLs: fetch and summarize content.
+3. Establish Codebase Context:
+   - Locate files and modules likely affected.
+   - Find existing patterns (similar components, services, hooks).
 
 ## Output
 
-- Task title and description
-- Acceptance criteria from the ticket (if any)
-- List of related assets and their key content
-- List of likely affected files and modules
+Persist to Markdown:
+
+- `Task`: Title and description.
+- `Linked Resources`: List of URLs/IDs and summaries.
+- `Affected Modules`: List of directories/files likely affected.
