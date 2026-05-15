@@ -6,7 +6,7 @@ Diagnose all items from Phase 1 and produce a concrete, prioritized action item 
 
 ## Steps
 
-### Step 1. Prioritize input items
+### Step 1: Prioritize input items
 
 Classify and sort input items from Phase 1 by type for processing:
 
@@ -14,11 +14,11 @@ Classify and sort input items from Phase 1 by type for processing:
 2. CI: Failures
 3. Comments: Review threads and general comments
 
-### Step 2. Convert input items to action items
+### Step 2: Convert input items to action items
 
 For each input item one by one, do A-D sub-steps:
 
-#### Item sub-step A. Analyze
+#### Item sub-step A: Analyze
 
 Verify the item is relevant and actionable.
 
@@ -27,7 +27,7 @@ Use analysis directions below for each type of items:
 - [Analysis of CI failures](#analysis-of-ci-failures)
 - [Analysis of Comments](#analysis-of-comments)
 
-#### Item sub-step B. Classify by severity
+#### Item sub-step B: Classify by severity
 
 Severities:
 
@@ -35,7 +35,7 @@ Severities:
 - Medium
 - Minor
 
-#### Item sub-step C. Reach conclusion
+#### Item sub-step C: Reach conclusion
 
 Conclusions:
 
@@ -44,7 +44,7 @@ Conclusions:
 - Decline
 - Explain
 
-#### Item sub-step D. Create action item
+#### Item sub-step D: Create action item
 
 - Input item reference
 - Severity
@@ -58,7 +58,7 @@ Conclusions:
   - Decline
   - Explain
 
-### Step 3. Prioritize action items
+### Step 3: Prioritize action items
 
 - Merge conflicts always first.
 - Rest ordered by severity (major first).

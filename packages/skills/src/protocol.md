@@ -17,7 +17,7 @@ Pass data between phases using persistent files:
 - **Path**: `.skills/runs/<run_id>/<phase_id>.<ext>`
 - **Format**: JSON for structured data (preferred), Markdown for unstructured text.
 - **Output**: Phase MUST save results to its data file before completion.
-- **Input**: Subsequent phases MUST read previous data files for context.
+- **Input**: Subsequent phases MUST read previous data files for context. Previous phases output is an input for next phases.
 - **Timing**: Save critical state _as you go_, not retrospectively.
 
 ## Human Approval
@@ -31,7 +31,7 @@ The user will review previous output. If they request changes, go back to the re
 ## Common Rules
 
 - **Follow instructions precisely**. Deviate only when user explicitly requests different approach.
-- **Expected skips**: When phase states optional activation and the condition is met, announce it and skip.
+- **Expected skips**: When phase states optional activation in "Skip Conditions" section and the condition is met, announce it and skip.
 - **Phases order**: Always maintain sequential order. Don't mix actions from different phases.
 - **Tools**: When a specific pre-built script or command is mentioned - use exactly that. Do not improvise or make up new ones.
 - **Ask, don't guess**: Resolve ambiguity and errors by asking and fixing systematically, not by ad-hoc assuming.

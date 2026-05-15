@@ -6,36 +6,38 @@ Clean up commit history by autosquashing fixups, push changes to the remote bran
 
 ## Steps
 
-1. **Autosquash fixups**:
-   Identify the earliest commit targeted by a fixup:
+### Step 1: Autosquash fixups
 
-   ```bash
-   BASE_COMMIT=$(git log --format="%p %s" | grep "fixup!" | tail -1 | awk '{print $2}')
-   ```
+Identify the earliest commit targeted by a fixup:
 
-   Squash all fixup commits into their originating commits non-interactively:
+```bash
+BASE_COMMIT=$(git log --format="%p %s" | grep "fixup!" | tail -1 | awk '{print $2}')
+```
 
-   ```bash
-   GIT_SEQUENCE_EDITOR=true git rebase --autosquash -i "$BASE_COMMIT"^
-   ```
+Squash all fixup commits into their originating commits non-interactively:
 
-2. **Push to remote**:
+```bash
+GIT_SEQUENCE_EDITOR=true git rebase --autosquash -i "$BASE_COMMIT"^
+```
 
-   ```bash
-   git push origin $(git branch --show-current) --force-with-lease
-   ```
+### Step 2: Push to remote
 
-3. **Post replies**:
-   For each `fixes` item with present `reply` field.
+```bash
+git push origin $(git branch --show-current) --force-with-lease
+```
 
-   Use the **Shell Markdown Bodies** pattern from `SKILL.md`:
+### Step 3: Post replies
 
-   ```bash
-   # ... create $TMP with reply ...
-   bash "$SKILL_DIR/scripts/post-reply.sh" <PR_NUMBER> <COMMENT_ID> "$TMP" "<summary>"
-   ```
+For each `fixes` item with present `reply` field.
 
-   Print script output to chat.
+Use the **Shell Markdown Bodies** pattern from `SKILL.md`:
+
+```bash
+# ... create $TMP with reply ...
+bash "$SKILL_DIR/scripts/post-reply.sh" <PR_NUMBER> <COMMENT_ID> "$TMP" "<summary>"
+```
+
+Print script output to chat.
 
 ## Output
 

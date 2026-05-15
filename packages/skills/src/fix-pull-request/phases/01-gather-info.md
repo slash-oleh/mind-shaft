@@ -6,36 +6,41 @@ Resolve PR number and fetch comprehensive details including merge state, CI fail
 
 ## Steps
 
-1. **Resolve PR number** using the first matching source:
-   - **Explicit user input**: If the user provided a PR number (e.g. `#123`, `123`), a PR URL, or a ticket number (e.g. `XXX-42`), extract the PR number from it without running any script.
-     - PR number or `#NNN` -> use directly
-     - PR URL -> extract number from the URL
-     - Ticket (e.g. `XXX-42`) -> derive the branch name pattern `xxx-42-*` and resolve via API. If multiple found, ask which one to use.
-   - **Fallback**: If no explicit identifier was provided, run:
-     ```bash
-     bash "$SKILL_DIR/scripts/identify-pr.sh"
-     ```
-     Prints the PR number for the current branch. Exits non-zero if no open PR is found.
-     Do not ask the user for a PR number - always attempt the fallback.
+### Step 1: Resolve PR number
 
-2. **Fetch all PR info**:
+Resolve PR number using the first matching source:
 
-   ```bash
-   bash "$SKILL_DIR/scripts/get-pr-info.sh" <PR_NUMBER>
-   ```
+- **Explicit user input**: If the user provided a PR number (e.g. `#123`, `123`), a PR URL, or a ticket number (e.g. `XXX-42`), extract the PR number from it without running any script.
+  - PR number or `#NNN` -> use directly
+  - PR URL -> extract number from the URL
+  - Ticket (e.g. `XXX-42`) -> derive the branch name pattern `xxx-42-*` and resolve via API. If multiple found, ask which one to use.
+- **Fallback**: If no explicit identifier was provided, run:
+  ```bash
+  bash "$SKILL_DIR/scripts/identify-pr.sh"
+  ```
+  Prints the PR number for the current branch. Exits non-zero if no open PR is found.
+  Do not ask the user for a PR number - always attempt the fallback.
 
-   Prints these sections in order:
-   - **PR info**: title and description body
-   - **Merge state**: `mergeable` and `mergeStateStatus`
-   - **CI failures**: failed checks and filtered log lines for each failed run
-   - **Reviews**: each review with author, state, and body
-   - **Open review threads**: unresolved discussions; each entry includes `thread_id`, `location` (file and lines), and full `comments` array with `id`, `author`, and `body`
+### Step 2: Fetch all PR info
 
-3. **Draft Thread Summaries**:
+```bash
+bash "$SKILL_DIR/scripts/get-pr-info.sh" <PR_NUMBER>
+```
 
-   For each thread:
-   - Identify thread starter (first comment author)
-   - Draft a summary (subject of discussion). One short sentense.
+Prints these sections in order:
+
+- **PR info**: title and description body
+- **Merge state**: `mergeable` and `mergeStateStatus`
+- **CI failures**: failed checks and filtered log lines for each failed run
+- **Reviews**: each review with author, state, and body
+- **Open review threads**: unresolved discussions; each entry includes `thread_id`, `location` (file and lines), and full `comments` array with `id`, `author`, and `body`
+
+### Step 3: Draft Thread Summaries
+
+For each thread:
+
+- Identify thread starter (first comment author)
+- Draft a summary (subject of discussion). One short sentence.
 
 ## Output
 

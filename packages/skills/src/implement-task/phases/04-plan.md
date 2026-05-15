@@ -6,16 +6,21 @@ Build a concrete, ordered implementation plan based on analysis and acceptance c
 
 ## Steps
 
-1. Structure Logical Steps:
-   - Target single coherent changes per step.
-   - Foundation first (types, models), then utilities, then consumers/UI.
-   - Name exact files and describe specific changes.
-2. Address Constraints:
-   - Reuse existing abstractions.
-   - Ensure steps are small (single commit size).
-   - Flag risks (shared code, breaking changes).
-3. Resolve Assumptions:
-   - Make reasonable assumptions for any remaining gaps.
+### Step 1: Structure Logical Steps
+
+- Target single coherent changes per step.
+- Foundation first (types, models), then utilities, then consumers/UI.
+- Name exact files and describe specific changes.
+
+### Step 2: Address Constraints
+
+- Reuse existing abstractions.
+- Ensure steps are small (single commit size).
+- Flag risks (shared code, breaking changes).
+
+### Step 3: Resolve Assumptions
+
+- Make reasonable assumptions for any remaining gaps.
 
 ## Output
 

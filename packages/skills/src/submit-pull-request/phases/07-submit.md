@@ -6,20 +6,22 @@ Push changes and create the Pull Request on the remote platform.
 
 ## Steps
 
-1. Push: `git push origin [branch-name]`.
-2. Create PR using the **Shell Markdown Bodies** pattern:
-   ```bash
-   TMP=$(mktemp)
-   cat > "$TMP" <<'EOF'
-   <description_from_previous_phase>
-   EOF
+### Step 1: Push branch
 
-   bash "$SKILL_DIR/scripts/create-pr.sh" \
-     "<TASK_ID>: <TITLE>" \
-     "$TMP" \
-     "main" \
-     "[branch-name]"
-   ```
+Push: `git push origin [branch-name]`.
+
+### Step 2: Create PR
+
+Create PR using the **Shell Markdown Bodies** pattern:
+
+```bash
+# ... create $TMP with description ...
+bash "$SKILL_DIR/scripts/create-pr.sh" \
+  "<TASK_ID>: <TITLE>" \
+  "$TMP" \
+  "main" \
+  "[branch-name]"
+```
 
 ## Output
 

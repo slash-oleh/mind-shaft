@@ -10,41 +10,39 @@ If anything appears unclear, in particular due to conflict resolving during Phas
 
 For each action item from Phase 2 in order:
 
-1. **Apply solution**:
-   - Make code changes or whatever needed to resolve the action item. For deferred action items it can be ticket creation.
-   - Commit as fixup commit.
+### Step 1: Apply solution
 
-2. **Verify changes**:
-   Run pre-commit hooks on modified files and fix any introduced errors.
+- Make code changes or whatever needed to resolve the action item. For deferred action items it can be ticket creation.
+- Commit as fixup commit. Identify originating commits using:
+  ```bash
+  git log --oneline <file>
+  ```
+- After each action item is applied and verified, stage relevant files and create a fixup commit targeting the originating commit:
+  ```bash
+  git add <files>
+  git commit --fixup <HASH>
+  ```
+  One fixup commit per action item. Do not bundle unrelated fixes into the same fixup.
 
-   ```bash
-   MODIFIED_FILES=$(git status --porcelain | awk '{print $2}')
-   pre-commit run --files $MODIFIED_FILES
-   ```
+### Step 2: Verify changes
 
-3. **Create fixup commits**:
-   After each action item is applied and verified, stage relevant files and create a fixup commit targeting the originating commit.
+Run pre-commit hooks on modified files and fix any introduced errors.
 
-   ```bash
-   git add <files>
-   git commit --fixup <HASH>
-   ```
+```bash
+MODIFIED_FILES=$(git status --porcelain | awk '{print $2}')
+pre-commit run --files $MODIFIED_FILES
+```
 
-   Identify originating commits using:
+### Step 3: Prepare reply
 
-   ```bash
-   git log --oneline <file>
-   ```
+Draft prepared reply for relevant thread (if input type was Comment):
 
-   One fixup commit per action item. Do not bundle unrelated fixes into the same fixup.
-
-4. **Prepare reply** for relevant thread (if input type was Comment):
-   - **Tone**: Brief and factual. No fluff, apologies, or fillers.
-   - **Examples**: Style per conclusion:
-     - **Fixed**: `"Fixed. Added missing X."` (for fixes) / `"Done. Replaced X with Y."` (for improvements).
-     - **Declined**: Explain without confrontational words. `"Existing convention is relative imports throughout this package"`.
-     - **Deferred**: `"Will address in a future PR"` or `"Created <Ticket URL>"`
-     - **Explain**: Provide the requested clarification.
+- **Tone**: Brief and factual. No fluff, apologies, or fillers.
+- **Examples**: Style per conclusion:
+  - **Fixed**: `"Fixed. Added missing X."` (for fixes) / `"Done. Replaced X with Y."` (for improvements).
+  - **Declined**: Explain without confrontational words. `"Existing convention is relative imports throughout this package"`.
+  - **Deferred**: `"Will address in a future PR"` or `"Created <Ticket URL>"`
+  - **Explain**: Provide the requested clarification.
 
 ## Output
 

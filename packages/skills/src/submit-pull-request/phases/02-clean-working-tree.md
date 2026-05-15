@@ -6,16 +6,23 @@ Make working tree clean (or have only explicitly ignored files).
 
 ## Steps
 
-1. Verify current branch is `branchName` from Phase 1.
-2. Run `git status`.
-3. Analyze state:
-   - Committed changes.
-   - Staged changes.
-   - Unstaged changes.
-   - Untracked files.
-4. Handle dirty state:
-   - If staged changes exist: commit them using `<ticketId>: <summary>` (use `ticketId` from Phase 1).
-   - If unstaged/untracked changes exist: ask user if they should be committed, stashed, or ignored.
+### Step 1: Verify branch
+
+Verify current branch is `branchName` from Phase 1.
+
+### Step 2: Analyze status
+
+Run `git status`. Analyze state:
+
+- Committed changes.
+- Staged changes.
+- Unstaged changes.
+- Untracked files.
+
+### Step 3: Handle dirty state
+
+- If staged changes exist: commit them using `<ticketId>: <summary>` (use `ticketId` from Phase 1).
+- If unstaged/untracked changes exist: ask user if they should be committed, stashed, or ignored.
 
 ## Output
 

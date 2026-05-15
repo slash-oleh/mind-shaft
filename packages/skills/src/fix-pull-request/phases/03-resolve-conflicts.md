@@ -4,36 +4,40 @@
 
 The branch has no merge conflicts with the target branch (usually `main`) and is pushed.
 
+## Skip Conditions
+
+- `mergeable` from Phase 1 was not `CONFLICTING`.
+
 ## Steps
 
-1. **Skip** this phase if `mergeable` from Phase 1 was not `CONFLICTING`.
+### Step 1: Fetch and rebase
 
-2. **Fetch and rebase**:
+```bash
+git fetch origin main
+git rebase origin/main
+```
 
-   ```bash
-   git fetch origin main
-   git rebase origin/main
-   ```
+### Step 2: Resolve conflicts
 
-3. **Resolve conflicts**:
-   - For **generated files** (e.g., `uv.lock`), regenerate instead of resolving manually:
-     ```bash
-     git checkout --theirs uv.lock
-     uv lock
-     git add uv.lock
-     ```
-   - For **other files**: Resolve trivial ones directly. Ask the user if resolution is ambiguous.
+- For **generated files** (e.g., `uv.lock`), regenerate instead of resolving manually:
+  ```bash
+  git checkout --theirs uv.lock
+  uv lock
+  git add uv.lock
+  ```
+- For **other files**: Resolve trivial ones directly. Ask the user if resolution is ambiguous.
 
-4. **Continue rebase**:
+### Step 3: Continue rebase
 
-   ```bash
-   GIT_EDITOR=true git rebase --continue
-   ```
+```bash
+GIT_EDITOR=true git rebase --continue
+```
 
-5. **Push to remote**:
-   ```bash
-   git push origin $(git branch --show-current) --force-with-lease
-   ```
+### Step 4: Push to remote
+
+```bash
+git push origin $(git branch --show-current) --force-with-lease
+```
 
 ## Output
 

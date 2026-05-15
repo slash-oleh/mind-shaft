@@ -6,9 +6,14 @@ Ensure the diff size and complexity are within team standards.
 
 ## Steps
 
-1. Check diff size: `git diff --stat origin/main..HEAD`.
-2. Verify diff does not exceed 300 added lines (ideally < 200).
-3. If it exceeds 300, warn user and suggest splitting the PR.
+### Step 1: Check diff size
+
+Check diff size: `git diff --stat origin/main..HEAD`.
+
+### Step 2: Verify standards
+
+- Verify diff does not exceed 300 added lines (ideally < 200).
+- If it exceeds 300, warn user and suggest splitting the PR.
 
 ## Output
 

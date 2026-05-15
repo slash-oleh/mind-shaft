@@ -4,9 +4,15 @@
 
 [DESCRIPTION]
 
+## Skip Conditions
+
+[CRITERIA]
+
 ## Steps
 
-1. [ACTION]
+### Step [ORDER]: [ACTION]
+
+[DESCRIPTION]
 
 ## Output
 

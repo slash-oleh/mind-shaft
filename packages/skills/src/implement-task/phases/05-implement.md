@@ -6,14 +6,19 @@ Execute the implementation plan step by step, resulting in committed changes.
 
 ## Steps
 
-1. Execute Plan:
-   - Follow the Phase 4 plan sequentially.
-   - For each step: Apply code change, lint/format, and verify against immediate scope.
-2. Commit Individually:
-   - Use one commit per plan step.
-   - Follow conventional commit format.
-3. Handle Deviations:
-   - If unexpected conflicts arise, adjust the remaining plan and continue.
+### Step 1: Execute Plan
+
+- Follow the Phase 4 plan sequentially.
+- For each step: Apply code change, lint/format, and verify against immediate scope.
+
+### Step 2: Commit Individually
+
+- Use one commit per plan step.
+- Follow conventional commit format.
+
+### Step 3: Handle Deviations
+
+- If unexpected conflicts arise, adjust the remaining plan and continue.
 
 ## Output
 

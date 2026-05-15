@@ -6,10 +6,18 @@ Standardize the commit history for review.
 
 ## Steps
 
-1. Verify commit count: `git rev-list --count origin/main..HEAD`.
-2. Ensure commit count is between 1-3 atomic commits.
-3. Verify commit messages follow: `<TASK_ID>: <MESSAGE>` (e.g., `#1234: Add user authentication`).
-4. Use `git commit --amend` or `git rebase` if cleanup is needed.
+### Step 1: Verify commit count
+
+Verify commit count: `git rev-list --count origin/main..HEAD`.
+Ensure commit count is between 1-3 atomic commits.
+
+### Step 2: Standardize messages
+
+Verify commit messages follow: `<TASK_ID>: <MESSAGE>` (e.g., `#1234: Add user authentication`).
+
+### Step 3: Cleanup
+
+Use `git commit --amend` or `git rebase` if cleanup is needed.
 
 ## Output
 
