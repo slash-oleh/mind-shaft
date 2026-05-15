@@ -1,19 +1,41 @@
 # Phase 2: Analyze
 
-Diagnose all items from Phase 1 one by one and produce a concrete action item list.
+## Goal
 
-Process:
+Diagnose all items from Phase 1 and produce a concrete, prioritized action item list categorized by severity and conclusion.
 
-1. Analyze and verify
-2. Classify by severity
-3. Reach conclusion
-4. Output as action item
+## Steps
+
+### Step 1. Prioritize input items
+
+Process input items from Phase 1 in this order:
+
+1. Merge conflicts
+2. CI failures
+3. Comments
+
+### Step 2. Convert input items to action items
+
+For each input item one by one, do A-D sub-steps:
+
+#### Item sub-step A. Analyze
+
+Verify the item is relevant and actionable.
+
+Use analysis directions below for each type of items:
+
+- [Analysis of CI failures](#analysis-of-ci-failures)
+- [Analysis of Comments](#analysis-of-comments)
+
+#### Item sub-step B. Classify by severity
 
 Severities:
 
 - Major
 - Medium
 - Minor
+
+#### Item sub-step C. Reach conclusion
 
 Conclusions:
 
@@ -22,17 +44,28 @@ Conclusions:
 - Decline
 - Explain
 
-## Priority Order
+#### Item sub-step D. Create action item
 
-Process input items from Phase 1 in this order:
+- Input item reference
+- Severity
+- Conclusion
+- Solution
+  - Fix
+  - Defer
+    - If explicitly asked, create a task tracker ticket
+    - If the change is a part of a known future work, note "Will address in a future PR"
+    - Otherwise, add a `TODO` comment at the relevant code location
+  - Decline
+  - Explain
 
-1. Merge conflicts
-2. CI failures
-3. Comments
+### Step 3. Prioritize action items
 
-Resulting action items should be ordered by severity (major first), but merge conflicts always come first.
+- Merge conflicts always first.
+- Rest ordered by severity (major first).
 
-## CI failures
+---
+
+## Analysis of CI failures
 
 1. Identify root cause from logs.
 2. If the root cause is unclear, look into CI configuration as well.
@@ -52,7 +85,7 @@ Classification by conclusion with examples:
 - Defer: informational checks, flaky tests, test environment deployments
 - Decline: unrelated to PR changes failures
 
-## Comments
+## Analysis of Comments
 
 Verify against actual codebase that comment/suggestion is relevant.
 
@@ -73,18 +106,11 @@ Classification by conclusion with typical reasons:
 - Explain: only a question is asked, no code change required
 - Fix: everything else
 
-## Deferred Items
-
-Defer explicitly via one of:
-
-- If explicitly asked, create a task tracker ticket
-- If the change is a part of a known future work, note "Will address in a future PR"
-- Otherwise, add a `TODO` comment at the relevant code location
-
 ## Output
 
-A prioritized action item list. Each item specifies:
+Persist to JSON:
 
-- What: Severity + Conclusion (for example "Major fix")
-- Where: File and location
-- Why: CI run ID / thread or comment ID / conflict
+- `action_items`: List of prioritized items.
+  - `what`: Severity + Conclusion (e.g., "Major fix").
+  - `where`: File and location.
+  - `why`: CI run ID, thread/comment ID, or conflict.

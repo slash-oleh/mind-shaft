@@ -1,28 +1,25 @@
 # Phase 5: Push
 
-**Only proceed after explicit user approval from Phase 4.**
+## Goal
 
-## Autosquash fixups
+Clean up commit history by autosquashing fixups and push changes to the remote branch.
 
-Squash all fixup commits into their originating commits non-interactively:
+## Steps
 
-```bash
-GIT_SEQUENCE_EDITOR=true git rebase --autosquash -i <PARENT-OF-EARLIEST-CHANGED-COMMIT>^
-```
+1. **Autosquash fixups**:
+   Squash all fixup commits into their originating commits non-interactively:
 
-Stash unrelated uncommitted changes before rebasing if needed:
+   ```bash
+   GIT_SEQUENCE_EDITOR=true git rebase --autosquash -i <PARENT-OF-EARLIEST-CHANGED-COMMIT>^
+   ```
 
-```bash
-git stash push -m "WIP: description" -- <unrelated-files>
-git stash pop  # after rebase
-```
-
-## Push
-
-```bash
-git push origin $(git branch --show-current) --force-with-lease
-```
+2. **Push to remote**:
+   ```bash
+   git push origin $(git branch --show-current) --force-with-lease
+   ```
 
 ## Output
 
-Clean history pushed to the remote branch.
+Persist to JSON:
+
+- `last_commit_hash`: Hash of the pushed head.

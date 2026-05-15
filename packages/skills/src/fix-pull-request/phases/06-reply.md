@@ -1,39 +1,33 @@
 # Phase 6: Reply
 
-Reply in every acted-on thread.
+## Goal
 
-## Tone
+Post replies to all processed review threads.
 
-Be brief and factual. State what changed, not why it was right. Match the tone of a code review - no fluff, apologies, fillers. When not "Fixed", avoid blunt or confrontational starting word like "Declined", "Rejected", or "Incorrect" - just explain.
+## Steps
 
-## Reply Examples
+1. **Draft replies** for every thread addressed in Phase 4:
+   - **Tone**: Brief and factual. No fluff, apologies, or fillers.
+   - **Examples**: Per-type style:
+     - **Fixed**: `"Fixed. Added missing X."` (for fixes) / `"Done. Replaced X with Y."` (for improvements).
+     - **Declined**: Explain without confrontational words. `"Existing convention is relative imports throughout this package"`.
+     - **Deferred**: `"Will address in a future PR"` or `"Created <Ticket URL>"`
+     - **Explain**: Provide the requested clarification.
 
-- **Fixed**: `"Fixed. Added missing X."` (for fixes) / `"Done. Replaced X with Y."` (for improvements)
-- **Declined**: `"Existing convention is relative imports throughout this package"`
-- **Deferred**: `"Will address in a future PR"` / `"Added TODO at <file>:<line>"` / `"Created <Ticket URL>"`
-
-## Post a Reply
-
-Use the **Shell Markdown Bodies** pattern from `SKILL.md`:
-
-```bash
-# ... create $TMP with reply ...
-bash "$SKILL_DIR/scripts/post-reply.sh" <PR_NUMBER> <COMMENT_ID> "$TMP" "<summary>"
-```
+2. **Post replies**:
+   Use the **Shell Markdown Bodies** pattern from `SKILL.md`:
+   ```bash
+   # ... create $TMP with reply ...
+   bash "$SKILL_DIR/scripts/post-reply.sh" <PR_NUMBER> <COMMENT_ID> "$TMP" "<summary>"
+   ```
+   Repeat for each thread.
 
 ## Output
 
-Run the script for each acted-on thread. Paste all output blocks combined as the response.
+Persist to JSON:
 
-For each thread, in "summary" put a few words indicating thread topic.
-
-Format per thread:
-
-```markdown
-Thread **"<summary>"** by _@author_
-├── _@author_: last-but-one comment (first line, max 80 chars)
-├── _@author_: last comment (first line, max 80 chars)
-└── _me_: **<reply>**
-```
-
-At most 2 prior comments shown per thread. Every acted-on thread must appear.
+- `replies_posted`: List of threads replied to.
+  - `thread_id`: ID of the thread.
+  - `summary`: Short topic summary.
+  - `reply`: The posted text.
+  - `author`: Original comment author.

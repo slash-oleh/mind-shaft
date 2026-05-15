@@ -1,38 +1,45 @@
 # Phase 4: Apply Fixes
 
-Execute the action items from Phase 2 in order. If anything is unclear, go back to Phase 2.
+## Goal
 
-- Apply code corrections using Edit
-- For deferred items: add the `TODO` or create the ticket decided in Phase 2
+Apply and verify the action items from Phase 2 in order. Create individual fixup commits for each action item.
 
-Run pre-commit hooks on modified files. Fix introduced errors before proceeding.
+## Steps
 
-```bash
-pre-commit run --files <MODIFIED_FILES>
-```
+If anything appears unclear, in particular due to conflict resolving during Phase 3, go back to Phase 2.
 
-After each action item is applied, stage the relevant files and create a fixup commit targeting the originating commit:
+1. **Apply action items** from Phase 2 in order:
+   - Apply code corrections using `Edit`.
+   - For deferred items: add `TODO` comments or create tickets as decided.
 
-```bash
-git add <files-for-this-item>
-git commit --fixup <HASH-OF-ORIGINATING-COMMIT>
-```
+2. **Verify changes**:
+   Run pre-commit hooks on modified files and fix any introduced errors.
 
-Identify the originating commit per file with:
+   ```bash
+   pre-commit run --files <MODIFIED_FILES>
+   ```
 
-```bash
-git log --oneline <file>
-git show --name-only <HASH>
-```
+3. **Create fixup commits**:
+   After each action item is applied and verified, stage relevant files and create a fixup commit targeting the originating commit.
 
-One fixup commit per action item. Do not bundle unrelated fixes into the same fixup.
+   ```bash
+   git add <files>
+   git commit --fixup <HASH>
+   ```
+
+   Identify originating commits using:
+
+   ```bash
+   git log --oneline <file>
+   ```
+
+   One fixup commit per action item. Do not bundle unrelated fixes into the same fixup.
 
 ## Output
 
-All code corrections applied as individual fixup commits.
+Persist to JSON:
 
-1. **Conflicts resolved**: yes/no, how
-2. **CI fixes**: what failed, what changed
-3. **Comment fixes**: per thread, what changed and why
-4. **Deferred items**: TODO / ticket / future PR
-5. **Files modified**: list with one-line rationale
+- `ci_fixes`: List of addressed CI failures.
+- `comment_fixes`: List of addressed comment threads.
+- `deferred_items`: List of TODOs, tickets, or future work notes.
+- `files_modified`: List of files with change rationale.
