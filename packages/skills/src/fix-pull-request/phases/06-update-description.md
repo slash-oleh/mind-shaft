@@ -1,4 +1,4 @@
-# Phase 7: Update Description
+# Phase 6: Update Description
 
 ## Goal
 
@@ -9,8 +9,9 @@ Ensure the PR description accurately reflects the current state of the PR after 
 1. **Skip** this phase if no changes in this iteration affect the PR description.
 
 2. **Draft updated description**:
-   - Reflect the final state of the PR.
-   - Do not include intermediate fixes that are no longer visible in the diff.
+   - Summarize the fixes and improvements applied in this iteration.
+   - Reflect the final state of the PR compared to the previous version.
+   - Do not include intermediate technical fixes (e.g., squashed fixups).
 
 3. **Submit updated description**:
    Use the **Shell Markdown Bodies** pattern from `SKILL.md`:

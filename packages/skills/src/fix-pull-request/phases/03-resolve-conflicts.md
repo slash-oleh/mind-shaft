@@ -2,7 +2,7 @@
 
 ## Goal
 
-The branch has no merge conflicts with target branch (usually `main`) and pushed.
+The branch has no merge conflicts with the target branch (usually `main`) and is pushed.
 
 ## Steps
 

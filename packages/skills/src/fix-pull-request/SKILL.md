@@ -17,9 +17,8 @@ Systematic workflow for resolving all blockers on a GitHub Pull Request: review 
 2. [Analyze](phases/02-analyze.md)
 3. [Resolve Merge Conflicts](phases/03-resolve-conflicts.md) [APPROVAL REQUIRED]
 4. [Apply Fixes](phases/04-apply-fixes.md)
-5. [Push](phases/05-push.md) [APPROVAL REQUIRED]
-6. [Reply](phases/06-reply.md)
-7. [Update Description](phases/07-update-description.md)
+5. [Publish](phases/05-publish.md) [APPROVAL REQUIRED]
+6. [Update Description](phases/06-update-description.md)
 
 ## Shared Patterns
 

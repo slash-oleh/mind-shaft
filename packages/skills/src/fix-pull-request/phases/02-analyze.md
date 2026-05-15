@@ -8,11 +8,11 @@ Diagnose all items from Phase 1 and produce a concrete, prioritized action item 
 
 ### Step 1. Prioritize input items
 
-Process input items from Phase 1 in this order:
+Classify and sort input items from Phase 1 by type for processing:
 
-1. Merge conflicts
-2. CI failures
-3. Comments
+1. Conflicts: Merge conflicts
+2. CI: Failures
+3. Comments: Review threads and general comments
 
 ### Step 2. Convert input items to action items
 
@@ -62,6 +62,7 @@ Conclusions:
 
 - Merge conflicts always first.
 - Rest ordered by severity (major first).
+- After sorting, assign a unique artificial ID to each action item (1, 2, 3, ...).
 
 ---
 
@@ -111,6 +112,9 @@ Classification by conclusion with typical reasons:
 Persist to JSON:
 
 - `action_items`: List of prioritized items.
-  - `what`: Severity + Conclusion (e.g., "Major fix").
-  - `where`: File and location.
-  - `why`: CI run ID, thread/comment ID, or conflict.
+  - `id`: Action item ID.
+  - `type`: Type of input item (Conflict, CI, Comment).
+  - `reference`: CI run ID, thread/comment ID, or conflict.
+  - `severity`: "Major", "Medium", or "Minor".
+  - `conclusion`: "Fix", "Defer", "Decline", or "Explain".
+  - `solution`: Detailed plan for the conclusion (e.g., specific code change, TODO comment text, or ticket details).

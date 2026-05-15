@@ -29,7 +29,7 @@ Resolve PR number and fetch comprehensive details including merge state, CI fail
    - **Merge state**: `mergeable` and `mergeStateStatus`
    - **CI failures**: failed checks and filtered log lines for each failed run
    - **Reviews**: each review with author, state, and body
-   - **Open review threads**: unresolved discussions; each entry includes `thread_id` and full `comments` array with `id`, `author`, and `body`
+   - **Open review threads**: unresolved discussions; each entry includes `thread_id`, `location` (file and lines), and full `comments` array with `id`, `author`, and `body`
 
 3. **Draft Thread Summaries**:
 
