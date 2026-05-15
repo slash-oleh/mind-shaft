@@ -7,16 +7,18 @@ For each phase/step in order:
 1. Announce **Phase N/X: [Name]**.
 2. Read instructions (from file or section).
 3. Execute instructions.
-4. Log phase data (see below).
+4. Persist phase output (see below).
 5. Report **Phase N complete**.
 
-## Data Logging
+## Data Exchange
 
-Save inputs/outputs for every phase:
+Pass data between phases using persistent files:
 
-- Path: `.skills/runs/<run_id>/<phase_id>.json`
-- Content: `{ "input": ..., "output": ..., "status": ... }`
-- Log _as you go_, not at the end.
+- **Path**: `.skills/runs/<run_id>/<phase_id>.<ext>`
+- **Format**: JSON for structured data (preferred), Markdown for unstructured text.
+- **Output**: Phase MUST save results to its data file before completion.
+- **Input**: Subsequent phases MUST read previous data files for context.
+- **Timing**: Save critical state _as you go_, not retrospectively.
 
 ## Human Approval
 
