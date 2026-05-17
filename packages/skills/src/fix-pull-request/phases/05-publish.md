@@ -37,7 +37,8 @@ Use the **Shell Markdown Bodies** pattern from `SKILL.md`:
 bash "$SKILL_DIR/scripts/post-reply.sh" <PR_NUMBER> <COMMENT_ID> "$TMP" "<summary>"
 ```
 
-Print script output to chat.
+Post replies concurrently in batches.
+Print all script outputs to chat once all done.
 
 ## Output
 
