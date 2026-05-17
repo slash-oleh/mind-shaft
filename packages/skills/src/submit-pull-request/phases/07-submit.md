@@ -39,6 +39,15 @@ Once the parent PR is merged, perform the following manual cleanup steps on this
    gh pr edit <PR_NUMBER> --body "<UPDATED_BODY_WITHOUT_DEPENDENCY_NOTE>"
    ```
 
+### Step 4: Update Ticket Status
+
+If `ticketId` from Phase 1 exists, transition ticket to "In Review" or "Code Review".
+
+Use corresponding tools (if available), for example:
+
+- **Jira**: Use `transitionJiraIssue` tool or Jira UI/CLI.
+- **GitHub**: Use `gh issue` or project board CLI/UI.
+
 ## Output
 
 Persist to JSON:

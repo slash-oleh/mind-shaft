@@ -27,3 +27,4 @@ If ticket ID resolved, use project tools to fetch ticket title.
 Persist to JSON:
 
 - `branch_name`: String.
+- `ticket_id`: String. Optional extracted ticket ID.

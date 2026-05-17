@@ -23,6 +23,15 @@ Check if target branch exists:
 
 Show active branch name and confirm workspace ready. Stop execution. Do not edit, analyze, or plan work.
 
+### Step 3: Update Ticket Status
+
+If `ticket_id` from Phase 1 exists, transition ticket to "In Progress" (or system equivalent).
+
+Use corresponding tools (if available), for example:
+
+- **Jira**: Use `transitionJiraIssue` tool or Jira UI/CLI.
+- **GitHub**: Use `gh issue` or project board CLI/UI.
+
 ## Output
 
 Persist to JSON:
