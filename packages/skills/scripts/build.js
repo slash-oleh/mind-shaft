@@ -6,7 +6,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const src = path.join(root, 'src');
 const dist = path.join(root, 'dist');
-const protocolPath = path.join(src, 'protocol.md');
+const templatesPath = path.join(src, 'formalize-skill', 'templates');
+const protocolPath = path.join(templatesPath, 'protocol.md');
 
 function copyDir(source, destination) {
     if (!fs.existsSync(destination)) {
@@ -16,7 +17,7 @@ function copyDir(source, destination) {
     const items = fs.readdirSync(source);
     for (const item of items) {
         if (item === 'README.md' && source === src) continue;
-        if (item === 'protocol.md' && source === src) continue;
+        if (item === 'protocol.md' && source === templatesPath) continue;
 
         const srcPath = path.join(source, item);
         const destPath = path.join(destination, item);

@@ -19,17 +19,35 @@ Pre-requisites: [Node.js](https://nodejs.org/), [Docker](https://www.docker.com/
 npm install
 ```
 
+Install 3rd-party skills:
+
 ```bash
 npx --yes skills add \
   JuliusBrussee/caveman \
   --agent universal \
   --agent antigravity
+```
+
+Install repo's skills:
+
+```bash
 npx --yes skills add \
   ./agents/skills/ \
   --skill merge-article \
   --skill refine-article \
   --skill rephrase \
   --skill resolve-todo \
+  --agent universal \
+  --agent antigravity \
+  --agent claude-code
+```
+
+Install packages' skills:
+
+```bash
+npx --yes skills add \
+  ./packages/skills/src \
+  --skill formalize-skill \
   --agent universal \
   --agent antigravity \
   --agent claude-code

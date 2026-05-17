@@ -2,7 +2,7 @@
 
 ## Goal
 
-[DESCRIPTION]
+[GOAL DESCRIPTION]
 
 ## Skip Conditions
 
@@ -12,7 +12,7 @@
 
 ### Step [ORDER]: [ACTION]
 
-[DESCRIPTION]
+[STEP DESCRIPTION]
 
 ## Output
 
