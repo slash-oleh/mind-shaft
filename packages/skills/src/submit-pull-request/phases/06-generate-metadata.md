@@ -20,6 +20,10 @@ Create a professional and concise PR title and description.
 - If multiple commits, add: "It's better to review commits separately:" with a bulleted list of commits: "- [commit-hash-link] Add user auth"
 - Mention changes worth extra attention (if any - complex logic)
 - Mention changes can be skipped (indentation changes, generated files, moved code)
+- If dependent on PR A, add note at the top of the description:
+  ```markdown
+  > Dependent on #<PR_NUMBER>
+  ```
 
 ### Step 3: Add Attachments and References
 

@@ -2,7 +2,7 @@
 
 ## Goal
 
-Identify the ticket ID and the branch name.
+Identify the ticket ID, the branch name, and any PR dependencies.
 
 ## Steps
 
@@ -16,9 +16,18 @@ If still not found, ask user for ID.
 
 Get current branch name and confirm it matches the ticket.
 
+### Step 3: Check for Dependent PRs
+
+Ask user if current work depends on another open PR (PR A) that is not yet merged.
+If yes:
+- Identify target branch of PR A. This is the base branch for the current PR.
+- Record dependent PR reference (e.g., `#123`).
+
 ## Output
 
 Persist to JSON:
 
 - `ticketId`: The extracted ID.
 - `branchName`: The current branch name.
+- `baseBranch`: Target branch name (defaults to `main`).
+- `dependentPr`: Reference to PR A (if any).
