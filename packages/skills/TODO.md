@@ -15,6 +15,8 @@ Ideas for new skills:
 - `code-review`: Take all relevant rules into account. Utilize reply wording rules, tools, etc. from `fix-pull-request`.
 - `fix-feedback`: Make a followup fix based on ticket comments / chat message. Decide on ticket creation, create branch, implement, submit PR. Sort of `fix-pull-request` but when changes are already merged.
 - `why-ci-failed`: Part of `fix-pull-request` already but would still prove useful being ad-hoc.
+- `investigate`: Detective job on incidents, (heisen)bugs, performance, etc.
+- `reflect` / `reflect-skill`: Review errors (including self-fixed) to improve initial instructions or update memory.
 - `ship`: Merge, release, verify, prepare presentational info (links, screenshots), announce: comment in ticket, send messages.
 - `sdlc`: Combining other skills in iterative for PRD/task to make the way to Done in iterative approach.
   - Rough flow from existing (or planned) skills

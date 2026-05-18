@@ -23,6 +23,11 @@ For each action item from Phase 2 in order:
   git commit --fixup <HASH>
   ```
   One fixup commit per action item. Do not bundle unrelated fixes into the same fixup.
+- If an unpushed fixup for the same target commit already exists (e.g. iterating on a fix before push), amend it instead of creating a second fixup:
+  ```bash
+  git add <files>
+  git commit --amend --no-edit
+  ```
 
 ### Step 2: Verify changes
 

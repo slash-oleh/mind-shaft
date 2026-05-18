@@ -8,16 +8,10 @@ Clean up commit history by autosquashing fixups, push changes to the remote bran
 
 ### Step 1: Autosquash fixups
 
-Identify the earliest commit targeted by a fixup:
-
-```bash
-BASE_COMMIT=$(git log --format="%p %s" | grep "fixup!" | tail -1 | awk '{print $2}')
-```
-
 Squash all fixup commits into their originating commits non-interactively:
 
 ```bash
-GIT_SEQUENCE_EDITOR=true git rebase --autosquash -i "$BASE_COMMIT"^
+GIT_SEQUENCE_EDITOR=true git rebase --autosquash -i $(git merge-base HEAD main)
 ```
 
 ### Step 2: Push to remote

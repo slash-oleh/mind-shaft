@@ -17,7 +17,11 @@ Verify commit messages follow: `<TASK_ID>: <MESSAGE>` (e.g., `#1234: Add user au
 
 ### Step 3: Cleanup
 
-Use `git commit --amend` or `git rebase` if cleanup is needed.
+Use `git commit --amend` or rebase to squash:
+
+```bash
+GIT_SEQUENCE_EDITOR=true git rebase --autosquash -i $(git merge-base HEAD main)
+```
 
 ## Output
 
