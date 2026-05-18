@@ -1,5 +1,6 @@
 ---
-description: "Domains: Frontend: Platform-agnostic frontend development. Applicable to Websites, SPAs, desktop apps, mobile apps but not to be specific to one of them."
+description: "Domains: Frontend: Apply when working with Frontend. Keywords: Browser, desktop, mobile, website, GUI, HTML, SEO, SPA, PWA."
+trigger: model_decision
 ---
 
 - **Keyboard shortcuts**: Always use multi-key combinations. Avoid single-key hotkeys. Good: `if(ctrl && key=='s')`. Bad: `if(key=='s')`.

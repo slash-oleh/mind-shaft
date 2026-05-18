@@ -1,5 +1,6 @@
 ---
-description: "Domains: UX: Design and frontend aspects that influence end user."
+description: "Domains: UX: Apply when working with UX. Keywords: UI, GUI, usability, accessibility, design, flow, use case."
+trigger: model_decision
 ---
 
 - **Accessibility**: Always use semantic HTML elements, ARIA labels and maintain native features such as zoom, relative text size, input focus. Avoid overreliance on color, small text, gestures. Good: `<button aria-label="Close">`. Bad: `<div onClick={close}>`.

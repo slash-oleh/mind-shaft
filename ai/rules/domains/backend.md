@@ -1,5 +1,6 @@
 ---
-description: "Domains: Backend: Platform-agnostic backend. API servers, BFF, CLI, services, daemons, cron jobs."
+description: "Domains: Backend: Apply when working with Backend. Keywords: API, server, BFF, CLI, service, daemon, cron jobs."
+trigger: model_decision
 ---
 
 - **Atomic operations**: For multi-step data changes, always use database transactions. Avoid independent potentially partially applied updates. Good: `db.transaction(tx => { u = tx.user.create(); tx.team.update(teamId, {ownerId: u.id}); })`. Bad: `u = db.user.create(); db.team.update(teamId, {ownerId: u.id});`.

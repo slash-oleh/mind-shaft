@@ -1,5 +1,6 @@
 ---
-description: "Domains: Web: Everything that is either backend or frontend or both, but only relevant for web platform."
+description: "Domains: Web: Apply when working with Web. Keywords: HTTP, browser, website, SEO, HTML, REST, API, SPA, PWA."
+trigger: model_decision
 ---
 
 - **Application bundling**: Always use code splitting and lazy loading for routes and heavy components. Avoid static imports for everything in main entry, unless lightweight SPA. Good: `const Page = lazy(() => import('./Page'))`. Bad: `import { Page } from './Page'`.
