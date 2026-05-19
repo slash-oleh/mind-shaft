@@ -22,6 +22,11 @@
 
 - Consider rules about fixup, squash, rebase, bisect, reflog, etc.
 
+## Ecosystem
+
+- Write and update changelog (mind already present `up-to-date-docs`)
+- IaC - Infrastructure as code (Terraform, CDK, etc.)
+
 ## Backend
 
 - Idempotency
