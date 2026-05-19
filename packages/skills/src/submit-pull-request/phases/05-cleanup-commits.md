@@ -2,7 +2,7 @@
 
 ## Goal
 
-Standardize the commit history for review.
+The branch's commit history is cleaned up, structured (1-3 commits), and all messages standardized.
 
 ## Steps
 

@@ -2,7 +2,7 @@
 
 ## Goal
 
-Define concrete, testable criteria to later verify whether the task is done.
+A list of concrete, testable success criteria and a clear Definition of Done are established.
 
 ## Steps
 

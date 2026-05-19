@@ -2,7 +2,11 @@
 
 ## Goal
 
-Self-check the implementation against the acceptance criteria and ensure no regressions.
+The implementation:
+
+- Passes `successCriteria` and `definitionOfDone` from Phase 3
+- Passes project quality checks.
+- Aligns with requirements from Phase 2.
 
 ## Steps
 

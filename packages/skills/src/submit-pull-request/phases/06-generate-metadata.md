@@ -2,7 +2,7 @@
 
 ## Goal
 
-Create a professional and concise PR title and description.
+PR title and markdown description are generated.
 
 ## Steps
 

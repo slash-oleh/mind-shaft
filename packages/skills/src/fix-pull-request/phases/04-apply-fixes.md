@@ -2,7 +2,9 @@
 
 ## Goal
 
-Apply and verify the `action_items` from Phase 2 in order. Create individual fixup commits for each action item.
+- All resolved action items are individually implemented.
+- Quality tools checks pass.
+- All changes committed as separate git fixup commits.
 
 ## Steps
 

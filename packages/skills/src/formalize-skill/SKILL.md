@@ -37,7 +37,7 @@ Variables:
 
 Create `phases/` folder. For each phase, write markdown matching `templates/stage-template.md`:
 
-- `## Goal`: Single sentence.
+- `## Goal`: Single verifiable sentence or checklist stating the completed end-state.
 - `## Skip Conditions`: Omit if none.
 - `## Steps`: Format steps with `### Step [ORDER]: [ACTION]`.
 - `## Output`: Define JSON schema fields to persist.

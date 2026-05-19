@@ -7,8 +7,9 @@ For each phase/step in order:
 1. Announce **Phase N/X: [Name]**.
 2. Read instructions (from file or section).
 3. Execute instructions.
-4. Persist phase output (see below).
-5. Report **Phase N complete**.
+4. Verify phase goal is met.
+5. Persist phase output (see below).
+6. Report **Phase N complete**.
 
 ## Data Exchange
 

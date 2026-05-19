@@ -2,7 +2,7 @@
 
 ## Goal
 
-Build a concrete, ordered implementation plan based on `Requirements` (Phase 2) and `successCriteria` (Phase 3).
+An ordered, step-by-step implementation plan detailing exact file changes, commits, and risk flags is established.
 
 ## Steps
 

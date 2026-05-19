@@ -2,7 +2,7 @@
 
 ## Goal
 
-Ensure the PR description accurately reflects the current state of the PR after all changes.
+The remote PR description is up-to-date and aligned with current PR changes.
 
 ## Skip Conditions
 

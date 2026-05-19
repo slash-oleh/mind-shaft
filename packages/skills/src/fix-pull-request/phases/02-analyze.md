@@ -2,7 +2,8 @@
 
 ## Goal
 
-Diagnose all items from Phase 1 and produce a concrete, prioritized action item list categorized by severity and conclusion.
+- All PR checks and comments are processed
+- A prioritized, categorized action item list is compiled.
 
 ## Steps
 

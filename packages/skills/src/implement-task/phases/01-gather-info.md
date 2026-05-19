@@ -2,7 +2,8 @@
 
 ## Goal
 
-Collect all information needed to understand the task before any analysis or coding.
+- All raw task specifications, design links, documentation retrieved
+- Relevant codebase locations are identified.
 
 ## Steps
 

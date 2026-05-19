@@ -2,7 +2,7 @@
 
 ## Goal
 
-Resolve branch name.
+Target branch name is resolved.
 
 ## Steps
 

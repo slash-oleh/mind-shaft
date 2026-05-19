@@ -2,7 +2,8 @@
 
 ## Goal
 
-The branch has no merge conflicts with the target branch (usually `main`) and is pushed.
+- Branch has zero merge conflicts with the target branch
+- Branch is in sync with remote branch.
 
 ## Skip Conditions
 

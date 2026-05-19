@@ -2,7 +2,8 @@
 
 ## Goal
 
-Push changes and create the Pull Request on the remote platform.
+- Remote branch is pushed.
+- Pull Request is created.
 
 ## Steps
 

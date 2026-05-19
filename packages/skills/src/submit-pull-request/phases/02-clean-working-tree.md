@@ -2,7 +2,7 @@
 
 ## Goal
 
-Make working tree clean (or have only explicitly ignored files).
+Working tree is clean of uncommitted, unstaged, or untracked changes.
 
 ## Steps
 

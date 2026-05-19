@@ -2,7 +2,8 @@
 
 ## Goal
 
-Resolve PR number and fetch comprehensive details including merge state, CI failures, and review comments.
+- Target pull request number is resolved
+- PR full metadata (merge state, CI status, and comments) is fetched.
 
 ## Steps
 

@@ -2,7 +2,7 @@
 
 ## Goal
 
-Ensure changes pass automated quality checks (linting).
+Quality checks pass for the affected files.
 
 ## Steps
 

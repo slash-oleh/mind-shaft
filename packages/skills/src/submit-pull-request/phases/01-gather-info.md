@@ -2,7 +2,7 @@
 
 ## Goal
 
-Identify the ticket ID, the branch name, and any PR dependencies.
+Ticket ID, target branch, and pull request dependencies are identified.
 
 ## Steps
 
@@ -20,6 +20,7 @@ Get current branch name and confirm it matches the ticket.
 
 Ask user if current work depends on another open PR (PR A) that is not yet merged.
 If yes:
+
 - Identify target branch of PR A. This is the base branch for the current PR.
 - Record dependent PR reference (e.g., `#123`).
 

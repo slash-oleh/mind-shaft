@@ -2,7 +2,7 @@
 
 ## Goal
 
-Ensure the diff size and complexity are within team standards.
+The pull request diff size is within team standards.
 
 ## Steps
 

@@ -2,7 +2,8 @@
 
 ## Goal
 
-Ensure dirty state is stashed and update local repository to latest main.
+- Local repository is aligned with the latest remote main branch.
+- Any active dirty state is stashed.
 
 ## Steps
 

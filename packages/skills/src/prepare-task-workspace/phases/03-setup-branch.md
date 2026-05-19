@@ -2,7 +2,8 @@
 
 ## Goal
 
-Create or resume target feature branch and stop execution.
+- Target branch is checked out
+- Ticket status updated to In Progress.
 
 ## Steps
 

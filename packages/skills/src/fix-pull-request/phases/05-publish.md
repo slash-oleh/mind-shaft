@@ -2,7 +2,9 @@
 
 ## Goal
 
-Clean up commit history by autosquashing fixups, push changes to the remote branch, and post prepared replies to processed review threads.
+- Commit history is autosquashed.
+- Remote branch is updated.
+- All thread replies are posted.
 
 ## Steps
 

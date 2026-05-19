@@ -1,8 +1,14 @@
 # Phase 2: Analyze
 
+Critically examine the task against the codebase and identify risks, reuse opportunities, and potential requirement challenges, fill unclear or missing items.
+
 ## Goal
 
-Critically examine the task against the codebase and identify risks, reuse opportunities, and potential requirement challenges, fill unclear or missing items.
+- Core task goal is identified.
+- Task scope is fully bounded.
+- Codebase checked for alignment.
+- Requirements challenged for gaps, conflicts, unnecessary complications.
+- Prioritized task list is compiled.
 
 ## Steps
 

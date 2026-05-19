@@ -2,7 +2,8 @@
 
 ## Goal
 
-Execute the implementation plan step by step, resulting in committed changes.
+- The implementation plan is fully executed.
+- All changes committed.
 
 ## Steps
 
@@ -11,9 +12,9 @@ Execute the implementation plan step by step, resulting in committed changes.
 - Follow the `Implementation Steps` from Phase 4 sequentially.
 - For each step: Apply code change, lint/format, and verify against immediate scope.
 
-### Step 2: Commit Individually
+### Step 2: Create Commits
 
-- Use one commit per plan step.
+- Use one commit per plan step (if possible).
 - Follow conventional commit format.
 
 ### Step 3: Handle Deviations
