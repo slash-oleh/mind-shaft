@@ -20,9 +20,29 @@ Pass data between phases using persistent files:
   - `<phase_id>`: Identical to phase filename in `/phases` directory.
   - `<ext>`: Depends on Format (see below).
 - **Format**: JSON for structured data (preferred), Markdown for unstructured text.
-- **Output**: Phase MUST save results to its data file before completion.
-- **Input**: Subsequent phases MUST read previous data files for context. Previous phases output is an input for next phases.
-- **Timing**: Save critical state _as you go_, not retrospectively.
+- **Output**: Phase MUST save results to its data file before phase completion.
+
+  Create parent directories first:
+
+  ```bash
+  mkdir -p .cache/skills/<skill_name>/runs/<run_id>
+  ```
+
+  JSON example:
+
+  ```bash
+  cat << 'EOF' > .cache/skills/<skill_name>/runs/<run_id>/<phase_id>.json
+  {
+    "key": "value"
+  }
+  EOF
+  ```
+
+- **Read Input**: Subsequent phases MUST read previous data files for context. Previous phases output is an input for next phases.
+
+  ```bash
+  cat .cache/skills/<skill_name>/runs/<run_id>/<phase_id>.json 2>/dev/null || echo "{}"
+  ```
 
 ## Human Approval
 

@@ -16,6 +16,18 @@
 
 ## Output
 
-Persist to JSON:
+JSON format:
 
-- `[FIELD]`: [VALUE DESCRIPTION].
+```jsonc
+{
+  "[FIELD_1]": "[TYPE]", // [DESCRIPTION]
+  "[FIELD_2]": {
+    "[SUB_FIELD]": "[TYPE]", // [DESCRIPTION]
+  }, // [DESCRIPTION]
+}
+```
+
+Markdown format:
+
+- [H2 TITLE]: [DESCRIPTION]
+- [H2 TITLE]: [DESCRIPTION]
