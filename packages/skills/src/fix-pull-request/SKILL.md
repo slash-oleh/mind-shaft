@@ -1,11 +1,9 @@
 ---
 name: fix-pull-request
-description: Address all PR blockers - review comments (human, CodeRabbit, Copilot), CI failures, and formatting issues - then push a clean fix back to GitHub. Use this skill whenever the user says "fix PR", "fix review comments", "address comments", "CI is failing", "fix CI", "PR feedback", or needs to get a pull request unblocked.
+description: Address pull request review comments, conflicts, and CI failures. Use when a PR needs unblocking.
 ---
 
 # Fix Pull Request
-
-Systematic workflow for resolving all blockers on a GitHub Pull Request: review comments, CI failures, and merge conflicts.
 
 ## Goal
 

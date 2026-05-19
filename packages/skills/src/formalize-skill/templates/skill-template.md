@@ -5,8 +5,6 @@ description: [ACTIVATION DESCRIPTION]
 
 # [TITLE]
 
-[GENERAL INTENT]
-
 ## Goal
 
 [GOAL DESCRIPTION]

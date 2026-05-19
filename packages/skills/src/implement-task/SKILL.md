@@ -1,11 +1,9 @@
 ---
 name: implement-task
-description: Implement a task end-to-end from a ticket, external link, or plain description. Use this skill whenever the user provides a ticket ID, a task URL, or a description and says "implement", "build", "work on", "do this task", or "add this feature".
+description: Execute task implementation from a specification through to a verified code change. Use when user provides ticket or description to implement.
 ---
 
 # Implement Task
-
-Structured workflow for implementing a task from a specification through to a verified code change.
 
 ## Goal
 

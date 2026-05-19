@@ -1,6 +1,6 @@
 ---
 name: create-ticket
-description: Generic ticket creation workflow. Defines data gathering, output format, and update pattern for creating issues in any project management system.
+description: Create a structured ticket in the project management system. Use when user requests ticket or issue creation.
 ---
 
 # Create Ticket

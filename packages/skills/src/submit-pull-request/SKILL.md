@@ -1,11 +1,9 @@
 ---
 name: submit-pull-request
-description: Submit Pull Request for review when work on a task is completed. Use this skill whenever the user says "submit PR", "open pull request", "create PR", or when you have finished a task and need to get it reviewed.
+description: Check, clean, polish, and submit changes as a pull request for review. Use when a task is ready to present for integration.
 ---
 
 # Submit Pull Request
-
-Check and polish changes to present as Pull Request for review.
 
 ## Goal
 

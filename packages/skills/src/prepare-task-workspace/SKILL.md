@@ -1,11 +1,9 @@
 ---
 name: prepare-task-workspace
-description: Prepare the workspace for working on a task — creates the correct branch from a clean main. Use this skill whenever the user mentions a ticket ID, pastes a task URL, says "start working on", "set up the branch", "prepare for ticket", "I'm starting on ...", or anything that signals they're about to begin implementation of a ticket. Trigger even if the user doesn't say the word "workspace" or "branch" explicitly — if there's a ticket ID and an intent to work on it, use this skill.
+description: Prepare a clean local feature branch and git state for a task, and switch the ticket to In Progress. Use when beginning work on a ticket.
 ---
 
 # Prepare Task Workspace
-
-Set up a clean feature branch so the user can start implementation without worrying about git state.
 
 ## Goal
 

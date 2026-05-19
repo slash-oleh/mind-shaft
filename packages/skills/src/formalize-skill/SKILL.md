@@ -1,6 +1,6 @@
 ---
 name: formalize-skill
-description: Unify skill structure to match templates for multi-stage processes with clear steps, inputs, outputs, approval gates, goals, rules. Use when skill needs unification or "refine skill" requested.
+description: Refactor and unify skill files according to standardized multi-phase templates. Use when skill refinement or formalization is requested.
 ---
 
 # Formalize Skill
