@@ -18,15 +18,21 @@ Ensure the PR description accurately reflects the current state of the PR after 
 
 ### Step 2: Submit updated description
 
-Use the **Shell Markdown Bodies** pattern from `SKILL.md`:
+Use the **Shell Markdown Bodies** pattern from `SKILL.md`.
+Where `<pr_number>` comes from Phase 1:
+
 ```bash
 # ... create $TMP with description ...
-bash "$SKILL_DIR/scripts/update-pr-description.sh" <PR_NUMBER> "$TMP"
+bash "$SKILL_DIR/scripts/update-pr-description.sh" <pr_number> "$TMP"
 ```
 
 ## Output
 
-Persist to JSON:
+JSON format:
 
-- `updated`: Boolean.
-- `new_description`: The submitted description text (if updated).
+```jsonc
+{
+  "updated": "boolean", // True if the PR description was updated.
+  "new_description": "string", // The submitted description text (if updated) or null.
+}
+```

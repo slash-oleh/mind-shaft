@@ -20,11 +20,15 @@ If ticket ID resolved, use project tools to fetch ticket title.
 - If no context provided, check for existing local or remote branches matching ticket ID:
   - If match exists, ask whether to use that branch name.
   - If no match exists, convert fetched ticket title to short, hyphenated description.
-- Use project branch naming convention: `<task-id>-<hyphenated-description>` in lowercase.
+- Use project branch naming convention: `<ticket_id>-<hyphenated-description>` in lowercase.
 
 ## Output
 
-Persist to JSON:
+JSON format:
 
-- `branch_name`: String.
-- `ticket_id`: String. Optional extracted ticket ID.
+```jsonc
+{
+  "branch_name": "string", // Proposed or existing branch name.
+  "ticket_id": "string", // Optional extracted ticket ID.
+}
+```

@@ -8,7 +8,7 @@ Ensure changes pass automated quality checks (linting).
 
 ### Step 1: Execute linting
 
-Execute linting suite: (for example `npm run lint`).
+Execute linting suite (for example `npm run lint`).
 
 ### Step 2: Analyze errors
 
@@ -21,7 +21,11 @@ Execute linting suite: (for example `npm run lint`).
 
 ## Output
 
-Persist to JSON:
+JSON format:
 
-- `lintPassed`: boolean.
-- `lintErrors`: list of errors (if any).
+```jsonc
+{
+  "lintPassed": "boolean", // True if linting checks passed.
+  "lintErrors": "string[]", // List of linting errors introduced by this PR's changes.
+}
+```

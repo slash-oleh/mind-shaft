@@ -8,7 +8,7 @@ Execute the implementation plan step by step, resulting in committed changes.
 
 ### Step 1: Execute Plan
 
-- Follow the Phase 4 plan sequentially.
+- Follow the `Implementation Steps` from Phase 4 sequentially.
 - For each step: Apply code change, lint/format, and verify against immediate scope.
 
 ### Step 2: Commit Individually
@@ -22,8 +22,8 @@ Execute the implementation plan step by step, resulting in committed changes.
 
 ## Output
 
-Persist to Markdown:
+Markdown format:
 
-- `Commits`: List of commit hashes, messages, and affected files.
-- `Deviations`: Unexpected changes from original plan and how they were resolved.
-- `Status`: Overall completion status.
+- Commits: List of commit hashes, messages, and affected files.
+- Deviations: Unexpected changes from original plan and how they were resolved.
+- Status: Overall completion status.

@@ -2,7 +2,7 @@
 
 ## Goal
 
-Build a concrete, ordered implementation plan based on analysis and acceptance criteria.
+Build a concrete, ordered implementation plan based on `Requirements` (Phase 2) and `successCriteria` (Phase 3).
 
 ## Steps
 
@@ -20,12 +20,12 @@ Build a concrete, ordered implementation plan based on analysis and acceptance c
 
 ### Step 3: Resolve Assumptions
 
-- Make reasonable assumptions for any remaining gaps.
+- Make reasonable assumptions for any remaining `Gaps` flagged in Phase 2.
 
 ## Output
 
-Persist to Markdown:
+Markdown format:
 
-- `Implementation Steps`: Ordered list of steps with files, changes, and dependencies.
-- `Assumptions`: List of assumptions made for unknowns.
-- `Risk Flags`: List of steps with high risk or breaking potential.
+- Implementation Steps: Ordered list of steps with files, changes, and dependencies.
+- Assumptions: List of assumptions made for unknowns.
+- Risk Flags: List of steps with high risk or breaking potential.

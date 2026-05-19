@@ -12,11 +12,11 @@ Check if target branch exists:
 
 - **Exists on remote only**: Track remote branch:
   ```bash
-  git checkout --track origin/<branch-name>
+  git checkout --track origin/<branch_name>
   ```
 - **Does not exist**: Create fresh branch:
   ```bash
-  git checkout -b <branch-name>
+  git checkout -b <branch_name>
   ```
 
 ### Step 2: Report and Stop
@@ -34,7 +34,11 @@ Use corresponding tools (if available), for example:
 
 ## Output
 
-Persist to JSON:
+JSON format:
 
-- `active_branch`: String. Checked out branch name.
-- `branch_action`: String. Value `resumed_local`, `recreated_fresh`, `tracked_remote`, or `created_new`.
+```jsonc
+{
+  "active_branch": "string", // Checked out branch name.
+  "branch_action": "string", // Value: resumed_local, recreated_fresh, tracked_remote, or created_new.
+}
+```

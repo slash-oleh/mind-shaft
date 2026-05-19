@@ -2,13 +2,13 @@
 
 ## Goal
 
-Apply and verify the action items from Phase 2 in order. Create individual fixup commits for each action item.
+Apply and verify the `action_items` from Phase 2 in order. Create individual fixup commits for each action item.
 
 ## Steps
 
 If anything appears unclear, in particular due to conflict resolving during Phase 3, go back to Phase 2.
 
-For each action item from Phase 2 in order:
+For each action item from `action_items` in Phase 2 in order:
 
 ### Step 1: Apply solution
 
@@ -51,9 +51,16 @@ Draft prepared reply for relevant thread (if input type was Comment):
 
 ## Output
 
-Persist to JSON:
+JSON format:
 
-- `fixes`: List of applied actions from Phase 2 with results:
-  - `action_item_id`: Action item ID from Phase 2.
-  - `fixup_commit`: Hash of the created fixup commit (if any).
-  - `reply`: Text drafted for the thread (if Comment type).
+```jsonc
+{
+  "fixes": [
+    {
+      "action_item_id": "number", // Action item ID from Phase 2.
+      "fixup_commit": "string", // Hash of the created fixup commit (if any) or null.
+      "reply": "string", // Text drafted for the thread (if Comment type) or null.
+    },
+  ], // List of applied actions from Phase 2 with results.
+}
+```

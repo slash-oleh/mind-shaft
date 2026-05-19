@@ -11,7 +11,7 @@ Ensure dirty state is stashed and update local repository to latest main.
 Stash staged or unstaged changes if dirty (ignore untracked files). Use a descriptive message:
 
 ```bash
-git stash push -m "WIP: before switching to <task_id>"
+git stash push -m "WIP: before switching to <ticket_id>"
 ```
 
 ### Step 2: Update Main Branch
@@ -26,6 +26,10 @@ git pull origin main
 
 ## Output
 
-Persist to JSON:
+JSON format:
 
-- `stashed`: Boolean. True if changes stashed.
+```jsonc
+{
+  "stashed": "boolean", // True if changes stashed.
+}
+```

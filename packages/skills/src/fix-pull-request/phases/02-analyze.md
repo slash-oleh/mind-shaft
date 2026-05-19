@@ -8,11 +8,11 @@ Diagnose all items from Phase 1 and produce a concrete, prioritized action item 
 
 ### Step 1: Prioritize input items
 
-Classify and sort input items from Phase 1 by type for processing:
+Classify and sort input items (`merge_state`, `ci_failures`, and `threads`) from Phase 1 by type for processing:
 
-1. Conflicts: Merge conflicts
-2. CI: Failures
-3. Comments: Review threads and general comments
+1. Conflicts: `merge_state` (if `CONFLICTING`)
+2. CI: `ci_failures`
+3. Comments: `threads`
 
 ### Step 2: Convert input items to action items
 
@@ -68,7 +68,7 @@ Conclusions:
 
 ## Analysis of CI failures
 
-1. Identify root cause from logs.
+1. Identify root cause from `logs` in `ci_failures`.
 2. If the root cause is unclear, look into CI configuration as well.
 3. Translate to file and required change.
 
@@ -109,12 +109,19 @@ Classification by conclusion with typical reasons:
 
 ## Output
 
-Persist to JSON:
+JSON format:
 
-- `action_items`: List of prioritized items.
-  - `id`: Action item ID.
-  - `type`: Type of input item (Conflict, CI, Comment).
-  - `reference`: CI run ID, thread/comment ID, or conflict.
-  - `severity`: "Major", "Medium", or "Minor".
-  - `conclusion`: "Fix", "Defer", "Decline", or "Explain".
-  - `solution`: Detailed plan for the conclusion (e.g., specific code change, TODO comment text, or ticket details).
+```jsonc
+{
+  "action_items": [
+    {
+      "id": "number", // Action item ID.
+      "type": "string", // Type of input item (Conflict, CI, Comment).
+      "reference": "string", // CI run ID, thread/comment ID, or conflict.
+      "severity": "string", // Major, Medium, or Minor.
+      "conclusion": "string", // Fix, Defer, Decline, or Explain.
+      "solution": "string", // Detailed plan for the conclusion (e.g., specific code change, TODO comment text, or ticket details).
+    },
+  ], // List of prioritized action items.
+}
+```

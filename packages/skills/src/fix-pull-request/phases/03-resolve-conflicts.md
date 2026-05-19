@@ -6,7 +6,7 @@ The branch has no merge conflicts with the target branch (usually `main`) and is
 
 ## Skip Conditions
 
-- `mergeable` from Phase 1 was not `CONFLICTING`.
+- `merge_state` from Phase 1 was not `CONFLICTING`.
 
 ## Steps
 
@@ -41,7 +41,11 @@ git push origin $(git branch --show-current) --force-with-lease
 
 ## Output
 
-Persist to JSON:
+JSON format:
 
-- `status`: `resolved` or `skipped`.
-- `explanation`: how conflicts were resolved.
+```jsonc
+{
+  "status": "string", // "resolved" or "skipped".
+  "explanation": "string", // How conflicts were resolved.
+}
+```

@@ -44,26 +44,42 @@ For each thread:
 
 ## Output
 
-Persist to JSON:
+JSON format:
 
-- `pr_number`: Resolved PR number.
-- `title`: PR title.
-- `description`: PR description body.
-- `merge_state`: `MERGEABLE`, `CONFLICTING`, or `UNKNOWN`.
-- `ci_failures`: List of objects. Contains failed CI checks with raw logs:
-  - `name`: Check name.
-  - `status`: Failure status.
-  - `logs`: Filtered log lines.
-- `reviews`: List of objects:
-  - `author`: Reviewer handle.
-  - `state`: Review state (e.g., `COMMENTED`, `APPROVED`, `CHANGES_REQUESTED`).
-  - `body`: Review body text.
-- `threads`: List of objects:
-  - `thread_id`: Unique ID for the discussion thread.
-  - `location`: Path to the file and line numbers.
-  - `author`: Thread starter handle.
-  - `summary`: Text.
-  - `comments`: List of objects:
-    - `id`: Comment ID.
-    - `author`: Handle.
-    - `body`: Text.
+```jsonc
+{
+  "pr_number": "number", // Resolved PR number.
+  "title": "string", // PR title.
+  "description": "string", // PR description body.
+  "merge_state": "string", // MERGEABLE, CONFLICTING, or UNKNOWN.
+  "ci_failures": [
+    {
+      "name": "string", // Check name.
+      "status": "string", // Failure status.
+      "logs": "string", // Filtered log lines.
+    },
+  ], // List of failed CI checks with raw logs.
+  "reviews": [
+    {
+      "author": "string", // Reviewer handle.
+      "state": "string", // Review state (e.g., COMMENTED, APPROVED, CHANGES_REQUESTED).
+      "body": "string", // Review body text.
+    },
+  ], // List of reviews.
+  "threads": [
+    {
+      "thread_id": "string", // Unique ID for the discussion thread.
+      "location": "string", // Path to the file and line numbers.
+      "author": "string", // Thread starter handle.
+      "summary": "string", // One short sentence summary of the discussion.
+      "comments": [
+        {
+          "id": "string", // Comment ID.
+          "author": "string", // Commenter handle.
+          "body": "string", // Comment body text.
+        },
+      ], // Comments in the thread.
+    },
+  ], // List of open discussion threads.
+}
+```

@@ -24,8 +24,8 @@ Collect all information needed to understand the task before any analysis or cod
 
 ## Output
 
-Persist to Markdown:
+Markdown format:
 
-- `Task`: Title and description.
-- `Linked Resources`: List of URLs/IDs and summaries.
-- `Affected Modules`: List of directories/files likely affected.
+- Task: Title and description.
+- Linked Resources: List of URLs/IDs and summaries.
+- Affected Modules: List of directories/files likely affected.

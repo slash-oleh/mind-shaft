@@ -25,9 +25,13 @@ If yes:
 
 ## Output
 
-Persist to JSON:
+JSON format:
 
-- `ticketId`: The extracted ID.
-- `branchName`: The current branch name.
-- `baseBranch`: Target branch name (defaults to `main`).
-- `dependentPr`: Reference to PR A (if any).
+```jsonc
+{
+  "ticketId": "string", // The extracted ticket/task ID (e.g., "PROJ-123" or "#1234") or null.
+  "branchName": "string", // The current branch name.
+  "baseBranch": "string", // Target branch name (defaults to "main").
+  "dependentPr": "string", // Reference to PR A (e.g., "#123") or null.
+}
+```

@@ -8,21 +8,28 @@ Push changes and create the Pull Request on the remote platform.
 
 ### Step 1: Push branch
 
-Push: `git push origin [branch-name]`.
+Push using `branchName` from Phase 1:
+
+```bash
+git push origin <branchName>
+```
 
 ### Step 2: Create PR
 
-Create PR using the **Shell Markdown Bodies** pattern. Use `baseBranch` from Phase 1 as the base branch (defaults to `main`).
-If this PR depends on another open PR, pass `--draft` as the fifth argument to open the PR in Draft status.
+Create the PR using the **Shell Markdown Bodies** pattern.
+
+- Use `baseBranch` from Phase 1 as the target branch (defaults to `main`).
+- Use `title` and `description` from Phase 6.
+- If `dependentPr` from Phase 1 is present, pass `--draft` to create the PR in Draft status.
 
 ```bash
 # ... create $TMP with description ...
 bash "$SKILL_DIR/scripts/create-pr.sh" \
-  "<TASK_ID>: <TITLE>" \
+  "<title>" \
   "$TMP" \
-  "<BASE_BRANCH>" \
-  "[branch-name]" \
-  "[DRAFT_FLAG]"
+  "<baseBranch>" \
+  "<branchName>" \
+  "[--draft if dependentPr exists, else empty]"
 ```
 
 ### Step 3: Dependent PR Post-Merge Cleanup
@@ -50,6 +57,10 @@ Use corresponding tools (if available), for example:
 
 ## Output
 
-Persist to JSON:
+JSON format:
 
-- `prUrl`: The URL of the created Pull Request.
+```jsonc
+{
+  "prUrl": "string", // The URL of the created Pull Request.
+}
+```

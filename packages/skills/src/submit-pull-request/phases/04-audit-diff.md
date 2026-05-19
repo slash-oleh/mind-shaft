@@ -8,7 +8,11 @@ Ensure the diff size and complexity are within team standards.
 
 ### Step 1: Check diff size
 
-Check diff size: `git diff --stat origin/main..HEAD`.
+Check diff size against the `baseBranch` from Phase 1:
+
+```bash
+git diff --stat <baseBranch>..HEAD
+```
 
 ### Step 2: Verify standards
 
@@ -17,7 +21,11 @@ Check diff size: `git diff --stat origin/main..HEAD`.
 
 ## Output
 
-Persist to JSON:
+JSON format:
 
-- `addedLinesCount`: total lines added.
-- `isDiffLarge`: boolean.
+```jsonc
+{
+  "addedLinesCount": "number", // Total lines added in this PR.
+  "isDiffLarge": "boolean", // True if the added lines count exceeds 300.
+}
+```

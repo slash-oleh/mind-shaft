@@ -8,7 +8,7 @@ Self-check the implementation against the acceptance criteria and ensure no regr
 
 ### Step 1: Check Acceptance Criteria
 
-- Validate each criterion from Phase 3.
+- Validate each criterion from `successCriteria` in Phase 3.
 - For UI changes: Provide visual confirmation.
 
 ### Step 2: Complete Definition of Done
@@ -18,13 +18,13 @@ Self-check the implementation against the acceptance criteria and ensure no regr
 
 ### Step 3: Regression Audit
 
-- Re-verify high-risk areas flagged in Phase 2.
+- Re-verify regression risks in `Codebase` flagged in Phase 2.
 - Confirm existing tests for affected modules pass.
 
 ## Output
 
-Persist to Markdown:
+Markdown format:
 
-- `Success Criteria Results`: Status (Pass/Fail) and evidence for each criterion.
-- `Definition of Done`: Final status of lint, tests, and regression checks.
-- `Verification Artifacts`: Screenshots, test logs, or trace snippets.
+- Success Criteria Results: Status (Pass/Fail) and evidence for each criterion.
+- Definition of Done: Final status of lint, tests, and regression checks.
+- Verification Artifacts: Screenshots, test logs, or trace snippets.

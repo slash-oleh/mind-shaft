@@ -8,21 +8,21 @@ Create a professional and concise PR title and description.
 
 ### Step 1: Create Title
 
-- Template: `TASK_ID`: <TITLE>`
-- Imperative mood
-- Aligned with branch
+- Template: `[ticketId]: <TITLE>` (where `ticketId` is from Phase 1, e.g., `#1234` or `PROJ-123`).
+- Imperative mood.
+- Aligned with branch name.
 
 ### Step 2: Create Description
 
 - Keep it short: no boilerplate, no fluff, no repetitions.
-- 1-3 sentence intro, not duplicating title (explain implementation, approach or root cause)
-- 2-4 bullets starting with Action Verbs for loose changes (Add X, Fix Y, Refactor Z)
-- If multiple commits, add: "It's better to review commits separately:" with a bulleted list of commits: "- [commit-hash-link] Add user auth"
-- Mention changes worth extra attention (if any - complex logic)
-- Mention changes can be skipped (indentation changes, generated files, moved code)
-- If dependent on PR A, add note at the top of the description:
+- 1-3 sentence intro, not duplicating title (explain implementation, approach, or root cause).
+- 2-4 bullets starting with Action Verbs for changes (Add X, Fix Y, Refactor Z).
+- If multiple commits exist (based on `hashes` from Phase 5), add: "It's better to review commits separately:" with a bulleted list of commits: `- [commit-hash-link] Add user auth`.
+- Mention what worth extra attention (e.g., complex logic).
+- Mention what can be skipped (e.g., indentation, generated files, moved code).
+- If `dependentPr` from Phase 1 exists, add a blockquote note at the top of the description:
   ```markdown
-  > Dependent on #<PR_NUMBER>
+  > Dependent on <dependentPr>
   ```
 
 ### Step 3: Add Attachments and References
@@ -32,8 +32,12 @@ Create a professional and concise PR title and description.
 
 ## Output
 
-Persist to JSON:
+JSON format:
 
-- `title`: The formatted PR title.
-- `description`: The generated markdown body.
-- `attachments`: list of local file paths (if any).
+```jsonc
+{
+  "title": "string", // The formatted PR title.
+  "description": "string", // The generated markdown body.
+  "attachments": "string[]", // List of local file paths for attachments (if any).
+}
+```

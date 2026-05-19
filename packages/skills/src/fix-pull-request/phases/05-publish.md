@@ -22,13 +22,14 @@ git push origin $(git branch --show-current) --force-with-lease
 
 ### Step 3: Post replies
 
-For each `fixes` item with present `reply` field.
+For each item in `fixes` from Phase 4 with a present `reply` field:
 
-Use the **Shell Markdown Bodies** pattern from `SKILL.md`:
+Use the **Shell Markdown Bodies** pattern from `SKILL.md`.
+Where `<pr_number>` comes from Phase 1, `<comment_id>` is the comment `id` from `threads` in Phase 1, and `<summary>` is the corresponding thread `summary` from Phase 1:
 
 ```bash
 # ... create $TMP with reply ...
-bash "$SKILL_DIR/scripts/post-reply.sh" <PR_NUMBER> <COMMENT_ID> "$TMP" "<summary>"
+bash "$SKILL_DIR/scripts/post-reply.sh" <pr_number> <comment_id> "$TMP" "<summary>"
 ```
 
 Post replies concurrently in batches.
@@ -36,7 +37,11 @@ Print all script outputs to chat once all done.
 
 ## Output
 
-Persist to JSON:
+JSON format:
 
-- `last_commit_hash`: Hash of the pushed head.
-- `replies_posted`: List of thread IDs where replies were posted.
+```jsonc
+{
+  "last_commit_hash": "string", // Hash of the pushed head.
+  "replies_posted": ["string"], // List of thread IDs where replies were posted.
+}
+```

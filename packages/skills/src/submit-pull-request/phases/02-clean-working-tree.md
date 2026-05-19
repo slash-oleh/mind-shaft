@@ -26,8 +26,12 @@ Run `git status`. Analyze state:
 
 ## Output
 
-Persist to JSON:
+JSON format:
 
-- `committedHashes`: list of existing hashes in current branch (relative to `main`).
-- `newCommits`: list of hashes created during this phase.
-- `remainingUncommittedFiles`: list of files still dirty (should be empty or ignored).
+```jsonc
+{
+  "committedHashes": "string[]", // List of existing hashes in current branch (relative to main)
+  "newCommits": "string[]", // List of hashes created during this phase
+  "remainingUncommittedFiles": "string[]", // List of files still dirty (should be empty or ignored)
+}
+```

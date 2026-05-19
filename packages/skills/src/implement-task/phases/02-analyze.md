@@ -17,7 +17,7 @@ Critically examine the task against the codebase and identify risks, reuse oppor
 ### Step 2: Review Codebase
 
 - Inspect existing implementation for related functionality.
-- Deep-dive into affected files and existing patterns.
+- Deep-dive into `Affected Modules` (Phase 1) and existing patterns.
 - Identify specific reuse opportunities (models, components, utilities).
 - Spot regression risks in shared code or core paths.
 
@@ -53,10 +53,10 @@ Critically examine the task against the codebase and identify risks, reuse oppor
 
 ## Output
 
-Persist to Markdown:
+Markdown format:
 
-- `Requirements`: Core goal, scope bounds, initial criteria, identified risks, and conflicts.
-- `Codebase`: Related functionality, patterns, reuse opportunities (models, components, utilities), and regression risks.
-- `Challenges`: Results of challenging goal, scope, criteria, risks, and conflicts.
-- `Gaps`: Unclear or missing items and clarifying questions.
-- `Task Assessment`: Sub-tasks with complexity (low/med/high) and risk (low/med/high).
+- Requirements: Core goal, scope bounds, initial criteria, identified risks, and conflicts.
+- Codebase: Related functionality, patterns, reuse opportunities (models, components, utilities), and regression risks.
+- Challenges: Results of challenging goal, scope, criteria, risks, and conflicts.
+- Gaps: Unclear or missing items and clarifying questions.
+- Task Assessment: Sub-tasks with complexity (low/med/high) and risk (low/med/high).

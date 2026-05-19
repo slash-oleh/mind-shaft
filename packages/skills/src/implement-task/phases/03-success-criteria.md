@@ -10,7 +10,7 @@ Define concrete, testable criteria to later verify whether the task is done.
 
 - Use specified criteria from the task source.
 - Infer criteria from design assets (Figma/Miro).
-- Derive criteria from Phase 2 analysis.
+- Derive criteria from `Requirements` and `Challenges` in Phase 2.
 
 ### Step 2: Draft Testable Criteria
 
@@ -25,7 +25,15 @@ Define concrete, testable criteria to later verify whether the task is done.
 
 ## Output
 
-Persist to JSON:
+JSON format:
 
-- `successCriteria`: list of criteria strings.
-- `definitionOfDone`: checklist of final verification steps.
+```jsonc
+{
+  "successCriteria": [
+    "string",
+  ], // List of concrete success criteria.
+  "definitionOfDone": [
+    "string",
+  ], // Checklist of final verification steps.
+}
+```

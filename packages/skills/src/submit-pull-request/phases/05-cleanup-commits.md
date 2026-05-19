@@ -8,24 +8,33 @@ Standardize the commit history for review.
 
 ### Step 1: Verify commit count
 
-Verify commit count: `git rev-list --count origin/main..HEAD`.
+Verify commit count against `baseBranch` from Phase 1:
+
+```bash
+git rev-list --count <baseBranch>..HEAD
+```
+
 Ensure commit count is between 1-3 atomic commits.
 
 ### Step 2: Standardize messages
 
-Verify commit messages follow: `<TASK_ID>: <MESSAGE>` (e.g., `#1234: Add user authentication`).
+Verify commit messages follow: `<ticketId>: <MESSAGE>` (e.g., `#1234: Add user authentication`), where `ticketId` is from Phase 1.
 
 ### Step 3: Cleanup
 
-Use `git commit --amend` or rebase to squash:
+Use `git commit --amend` or rebase to squash/cleanup commits relative to the `baseBranch`:
 
 ```bash
-GIT_SEQUENCE_EDITOR=true git rebase --autosquash -i $(git merge-base HEAD main)
+GIT_SEQUENCE_EDITOR=true git rebase --autosquash -i $(git merge-base HEAD <baseBranch>)
 ```
 
 ## Output
 
-Persist to JSON:
+JSON format:
 
-- `commitCount`: total number of commits.
-- `hashes`: list of final commit hashes.
+```jsonc
+{
+  "commitCount": "number", // Total number of commits in the PR.
+  "hashes": "string[]", // List of final commit hashes.
+}
+```
