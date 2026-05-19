@@ -16,12 +16,12 @@ For each phase/step in order:
 Pass data between phases using persistent files:
 
 - **Path**: `.cache/skills/<skill_name>/runs/<run_id>/<phase_id>.<ext>`
-  - `<skill_name>`: Hyphenated name of the executing skill.
-  - `<run_id>`: Explicit task/issue ID (e.g. `PROJ-123` from Jira/GitHub). If no ID exists, use a unique, short hyphenated summary of the task or conversation (e.g. `fix-user-auth`).
-  - `<phase_id>`: Identical to phase filename in `/phases` directory.
-  - `<ext>`: Depends on Format (see below).
-- **Format**: JSON for structured data (preferred), Markdown for unstructured text.
-- **Output**: Phase MUST save results to its data file before phase completion.
+  - `<skill_name>`: Hyphenated name of the skill.
+  - `<run_id>`: Ticket ID (e.g. `PROJ-123`) or unique, short hyphenated task summary (e.g. `fix-user-auth`).
+  - `<phase_id>`: Matching phase filename.
+  - `<ext>`: JSON or MD.
+- **Format**: JSON for structured data, Markdown for text.
+- **Output**: Phase must save results to file before completion.
 
   Create parent directories first:
 
@@ -47,16 +47,16 @@ Pass data between phases using persistent files:
 
 ## Human Approval
 
-Require explicit approval before transition to phases marked as `[APPROVAL REQUIRED]`.
+Require explicit approval before starting phases marked `[APPROVAL REQUIRED]`.
 
 Ask: **"Ready for Phase N: [Name]. Confirm?"**
 
-The user will review previous output. If they request changes, go back to the relevant phase.
+If user requests changes, return to the relevant phase.
 
 ## Common Rules
 
-- **Follow instructions precisely**. Deviate only when user explicitly requests different approach.
-- **Expected skips**: When phase states optional activation in "Skip Conditions" section and the condition is met, announce it and skip.
-- **Phases order**: Always maintain sequential order. Don't mix actions from different phases.
-- **Tools**: When a specific pre-built script or command is mentioned - use exactly that. Do not improvise or make up new ones.
-- **Ask, don't guess**: Resolve ambiguity and errors by asking and fixing systematically, not by ad-hoc assuming.
+- **Follow instructions precisely**: Deviate only on explicit user request.
+- **Expected skips**: If phase "Skip Conditions" are defined and met, announce and skip the phase.
+- **Phase sequence**: Maintain sequential order. Do not mix phase actions.
+- **Strict tool usage**: When specific script or command is mentioned - use exactly that. Do not improvise.
+- **Ask, don't guess**: Clarify ambiguity and fix systematically instead of making silent assumptions.
