@@ -1,16 +1,14 @@
 # Dev Handbook
 
-Comprehensive knowledge base of software engineering.
+Comprehensive software engineering knowledge base.
 
 ## Shortcuts
 
-Looking for something specific?
+### Live Web Version
 
-### Live web version
+[Read online](). <!-- TODO: Add github pages link when available -->
 
-It's [here](). <!-- TODO: Add github pages link when available -->
-
-### AI Agent plug-ins
+### AI Agent Plugins
 
 <!-- TODO: Add rulesync and skills commands when repo is public -->
 
@@ -20,25 +18,34 @@ npx skills add ...
 
 ## Background
 
-Hey,
-I'm Oleh and this is my comprehensive knowledge base of software engineering vision.
+Hey, I'm Oleh.
+This is an attempt to create my software engineering brain dump.
+It started as best practices knowledge base.
+Used to share knowledge with teammates, as project guidelines and during code reviews.
+Later evolved into system of rules, skills and other tools focused on AI agents.
+Now it can be fed to AI agents to guide their work.
 
-It was created to replicate my vision of SE on paper.
-Mostly objective but sometimes opinionated.
-I used it to share knowledge with my teammates, in particular in code review to avoid repeating myself.
-Now I'm also feeding it to AI agents so they not just do the job for me but also do the job the way I do it.
-We can say that by copying it you copy myself as a developer.
+Mainly, statements are meant to be evidentary but sometimes may be opinionated.
+It's never a final version and is meant to be improved and fixed over time.
+In other words, by copying it you copy myself as a developer at this moment.
 
-## Philosophy
+## Values
 
-- Concise. No fluff, formality, long intros, repeated explanations, polite fillers.
-- Clear. See a problem? Announce it. Have a solution? Great. No? Fine. At least do not conceal the issue.
-- Direct. If it's bad - it's bad, not "not so good". Need something? Ask.
-- Consistent. No double standards.
-- Pragmatic. Actions matter. Words - not so much.
-- No harm. _Primum non nocere_.
+These have no direct impact, but to let you know what to expect from these docs:
+
+- **Concise**: No fluff, formality, long intros, duplications, or polite fillers.
+- **Clear**: Public issue better than silent solution.
+- **Direct**: If it's bad - it's bad, not "not so good".
+- **Consistent**: No double standards.
+- **Documented**: Written, not spoken.
+- **Pragmatic**: Actions matter. Words - not so much.
+- **Scientific**: Rely on facts, not feelings.
+- **Precise**: Measure, not estimate.
+- **Intentional**: Focus on goal, not plan.
+- **Systematic**: Fix process, not symptom.
+- **Harmless**: _Primum non nocere_ (first, do no harm).
 
 ## Contribution
 
-See [CONTRIBUTION.md](CONTRIBUTING.md).
-Specific package guidelines are in their respective folders.
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+Package-specific guidelines are in their respective directories.
