@@ -23,4 +23,8 @@ Check and polish changes to present as Pull Request for review.
 
 ## Execution
 
-Follow the **Skill Execution Protocol** (injected below).
+Follow the **Skill Execution Protocol** (see below).
+
+---
+
+[PROTOCOL INJECTED]

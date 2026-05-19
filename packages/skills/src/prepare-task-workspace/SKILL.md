@@ -19,6 +19,8 @@ Set up a clean feature branch so the user can start implementation without worry
 
 ## Execution
 
-Follow the **Skill Execution Protocol** (injected below).
+Follow the **Skill Execution Protocol** (see below).
+
+---
 
 [PROTOCOL INJECTED]

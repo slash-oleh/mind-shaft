@@ -24,4 +24,8 @@ Structured workflow for implementing a task from a specification through to a ve
 
 ## Execution
 
-Follow the **Skill Execution Protocol** (injected below).
+Follow the **Skill Execution Protocol** (see below).
+
+---
+
+[PROTOCOL INJECTED]
