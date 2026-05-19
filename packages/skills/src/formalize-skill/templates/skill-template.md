@@ -7,6 +7,10 @@ description: [ACTIVATION DESCRIPTION]
 
 [GENERAL INTENT]
 
+## Goal
+
+[GOAL DESCRIPTION]
+
 ## Prerequisites
 
 [TOOLS]

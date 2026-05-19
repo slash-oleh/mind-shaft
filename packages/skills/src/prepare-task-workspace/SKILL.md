@@ -7,6 +7,12 @@ description: Prepare the workspace for working on a task — creates the correct
 
 Set up a clean feature branch so the user can start implementation without worrying about git state.
 
+## Goal
+
+- A clean, local feature branch matching the target ticket is checked out.
+- The local repository is fully synchronized with remote origin main.
+- Ticket status is transitioned to "In Progress".
+
 ## Prerequisites
 
 - `git` CLI installed

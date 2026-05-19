@@ -7,7 +7,8 @@ description: Unify skill structure to match templates for multi-stage processes 
 
 ## Goal
 
-Make target `SKILL.md` to match templates and have stages defined.
+- Target `SKILL.md` matches `templates/skill-template.md` with a verifiable goal, prerequisites, and phases.
+- Target skill contains a `phases/` directory with formalized phase files matching `templates/stage-template.md`.
 
 ## Steps
 
@@ -21,14 +22,21 @@ Refactor skill into multi-phase flow (e.g., Gather Info, Analyze, Implement, Ver
 
 ### Step 3: Generate SKILL.md
 
-Rewrite target `SKILL.md` to match `templates/skill-template.md`. Fill frontmatter, intent, prerequisites. List phases under `## Phases`.
+Rewrite target `SKILL.md` to match `templates/skill-template.md`. Fill frontmatter, prerequisites, and phases.
+
+Structure:
+
+- `## Goal`: Single verifiable sentence or checklist stating the completed end-state.
+- `## Prerequisites`: List of required tools/configurations (Omit section if none).
+- `## Phases`: Ordered list of links to phase files.
 
 Variables:
 
 - `[SKILL NAME]`: Frontmatter name.
 - `[ACTIVATION DESCRIPTION]`: Frontmatter trigger description.
 - `[TITLE]`: Main header.
-- `[GENERAL INTENT]`: High-level goal.
+- `[GENERAL INTENT]`: High-level description of actions (optional).
+- `[GOAL DESCRIPTION]`: Single verifiable sentence or checklist stating the completed end-state.
 - `[TOOLS]`: Prerequisites/tools.
 - `[STEPS]`: Phases overview.
 - `[PROTOCOL INJECTED]`: Keep verbatim. Build injects protocol.

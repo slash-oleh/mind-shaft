@@ -7,6 +7,11 @@ description: Implement a task end-to-end from a ticket, external link, or plain 
 
 Structured workflow for implementing a task from a specification through to a verified code change.
 
+## Goal
+
+- Code changes are successfully implemented and committed.
+- Implementation passes all quality checks and project success criteria.
+
 ## Prerequisites
 
 - Project management MCP server (e.g., Jira, GitHub Issues)

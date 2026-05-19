@@ -5,6 +5,10 @@ description: Generic ticket creation workflow. Defines data gathering, output fo
 
 # Create Ticket
 
+## Goal
+
+- Ticket is created in issue tracker system.
+
 ## Before creating
 
 Gather target project required fields. Common fields:

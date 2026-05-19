@@ -7,6 +7,10 @@ description: Submit Pull Request for review when work on a task is completed. Us
 
 Check and polish changes to present as Pull Request for review.
 
+## Goal
+
+- Pull request is published.
+
 ## Prerequisites
 
 - `gh` CLI installed and authenticated

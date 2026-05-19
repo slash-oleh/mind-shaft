@@ -5,7 +5,15 @@ description: Address all PR blockers - review comments (human, CodeRabbit, Copil
 
 # Fix Pull Request
 
-Systematic workflow for resolving all blockers on a GitHub Pull Request: review comments, CI failures, merge conflicts, and bot suggestions.
+Systematic workflow for resolving all blockers on a GitHub Pull Request: review comments, CI failures, and merge conflicts.
+
+## Goal
+
+- CI failures fixed.
+- Conflicts resolved.
+- Comment suggestions addressed (fixed/replied).
+- Remote branch is up-to-date.
+- PR description is up-to-date.
 
 ## Prerequisites
 
