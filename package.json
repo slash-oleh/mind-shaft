@@ -12,8 +12,12 @@
     "generate": "npm run rules:generate:ai && npm run skills:generate:ai",
     "rules:lint": "npm run lint -w @dev-handbook/rules",
     "skills:lint": "npm run lint -w @dev-handbook/skills",
+    "spellcheck": "cspell lint \"**/*.{md,js,ts,json,yml}\"",
     "rules:generate:ai": "npm run build:ai -w @dev-handbook/rules && mkdir -p ai/rules && cp -r packages/rules/dist/ai/* ai/rules/",
     "skills:generate:ai": "npm run build:ai -w @dev-handbook/skills && mkdir -p ai/skills && cp -r packages/skills/dist/ai/* ai/skills/"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "cspell": "^10.0.0"
+  }
 }
