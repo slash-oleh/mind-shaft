@@ -1,3 +1,7 @@
+---
+title: Home
+---
+
 # fix-pull-request
 
 For skill itself see [SKILL.md](./SKILL.md).

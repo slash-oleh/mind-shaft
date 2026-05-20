@@ -1,4 +1,5 @@
 ---
+title: SKILL.md
 name: submit-pull-request
 description: Check, clean, polish, and submit changes as a pull request for review. Use when a task is ready to present for integration.
 ---

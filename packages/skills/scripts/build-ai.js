@@ -1,6 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { remark } from 'remark';
+import remarkFrontmatter from 'remark-frontmatter';
+import { visit } from 'unist-util-visit';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
@@ -16,7 +19,7 @@ function copyDir(source, destination) {
 
   const items = fs.readdirSync(source);
   for (const item of items) {
-    if (item === 'README.md' && source === src) continue;
+    if (item === 'README.md') continue;
     if (item === 'protocol.md' && source === templatesPath) continue;
 
     const srcPath = path.join(source, item);
@@ -25,7 +28,20 @@ function copyDir(source, destination) {
     if (fs.lstatSync(srcPath).isDirectory()) {
       copyDir(srcPath, destPath);
     } else {
-      fs.copyFileSync(srcPath, destPath);
+      if (item.endsWith('.md')) {
+        let content = fs.readFileSync(srcPath, 'utf8');
+        const tree = remark().use(remarkFrontmatter, ['yaml']).parse(content);
+        
+        visit(tree, 'yaml', (node) => {
+          content = content
+            .replace(node.value, node.value.replace(/^title:.*(\r?\n)?/m, ''))
+            .replace(/^---\n\s*---\n+/m, '');
+        });
+        
+        fs.writeFileSync(destPath, content);
+      } else {
+        fs.copyFileSync(srcPath, destPath);
+      }
     }
   }
 }

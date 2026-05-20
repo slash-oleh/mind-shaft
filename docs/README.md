@@ -1,3 +1,7 @@
+---
+title: Home
+---
+
 # Dev Handbook
 
 Welcome to the centralized knowledge base for software development excellence. This handbook provides actionable guidance, technical standards, and skill development resources for engineering teams.

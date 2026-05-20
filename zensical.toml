@@ -2,20 +2,6 @@
 docs_dir="docs"
 site_name="Dev Handbook"
 
-#nav = [
-#  {"Home" = [
-#    "README.md",
-##    {"Articles" = "articles/README.md"},
-##    {"Quality Attributes" = "quality-attributes/README.md"}
-#  ]},
-#  {"Home" = [
-#    "articles/README.md",
-#  ]},
-#  {"QA" = [
-#    "quality-attributes/README.md",
-#  ]}
-#]
-
 [project.theme]
 features = [
   "navigation.tabs",

@@ -1,3 +1,7 @@
+---
+title: 'Phase template'
+---
+
 # Phase {{ORDER}}: {{NAME}}
 
 ## Goal
