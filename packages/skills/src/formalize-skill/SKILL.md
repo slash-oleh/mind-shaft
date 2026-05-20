@@ -1,4 +1,5 @@
 ---
+title: SKILL.md
 name: formalize-skill
 description: Refactor and unify skill files according to standardized multi-phase templates. Use when skill refinement or formalization is requested.
 ---

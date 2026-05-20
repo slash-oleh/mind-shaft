@@ -1,4 +1,5 @@
 ---
+title: SKILL.md
 name: implement-task
 description: Execute task implementation from a specification through to a verified code change. Use when user provides ticket or description to implement.
 ---

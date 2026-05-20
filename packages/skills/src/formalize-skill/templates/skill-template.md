@@ -1,6 +1,7 @@
 ---
-name: { { SKILL_NAME } }
-description: { { ACTIVATION_DESCRIPTION } }
+title: SKILL.md template
+name: SKILL_NAME
+description: ACTIVATION_DESCRIPTION
 ---
 
 # {{TITLE}}

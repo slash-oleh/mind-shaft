@@ -1,3 +1,7 @@
+---
+title: Home
+---
+
 # implement-task
 
 For skill itself see [SKILL.md](./SKILL.md).

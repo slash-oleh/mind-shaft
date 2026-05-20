@@ -1,3 +1,7 @@
+---
+title: Home
+---
+
 # Rules
 
 Best practices and contribution guidelines for software developers.

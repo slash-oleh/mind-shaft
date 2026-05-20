@@ -1,4 +1,5 @@
 ---
+title: SKILL.md
 name: create-ticket
 description: Create a structured ticket in the project management system. Use when user requests ticket or issue creation.
 ---

@@ -13,8 +13,8 @@
     "rules:lint": "npm run lint -w @dev-handbook/rules",
     "skills:lint": "npm run lint -w @dev-handbook/skills",
     "spellcheck": "cspell lint \"**/*.{md,js,ts,json,yml}\"",
-    "rules:generate:ai": "npm run build:ai -w @dev-handbook/rules && mkdir -p ai/rules && cp -r packages/rules/dist/ai/* ai/rules/",
-    "skills:generate:ai": "npm run build:ai -w @dev-handbook/skills && mkdir -p ai/skills && cp -r packages/skills/dist/ai/* ai/skills/"
+    "rules:generate:ai": "npm run build:ai -w @dev-handbook/rules && rm -rf ai/rules && mkdir -p ai/rules && cp -r packages/rules/dist/ai/* ai/rules/",
+    "skills:generate:ai": "npm run build:ai -w @dev-handbook/skills && rm -rf ai/skills && mkdir -p ai/skills && cp -r packages/skills/dist/ai/* ai/skills/"
   },
   "type": "module",
   "devDependencies": {
