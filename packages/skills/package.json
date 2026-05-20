@@ -4,6 +4,20 @@
   "description": "Processes.",
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.js"
+    "lint": "remark src *.md --no-stdout --quiet",
+    "lint:fix": "prettier --write \"src/**/*.md\" *.md --ignore-unknown",
+    "build": "npm run build:ai",
+    "build:ai": "node scripts/build-ai.js"
+  },
+  "dependencies": {
+    "remark-cli": "^12.0.1",
+    "remark-lint": "^10.0.1",
+    "remark-lint-heading-style": "^4.0.1",
+    "remark-lint-list-item-spacing": "^5.0.1",
+    "remark-lint-no-consecutive-blank-lines": "^5.0.1",
+    "remark-lint-no-missing-blank-lines": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-preset-lint-recommended": "^7.0.1",
+    "remark-stringify": "^11.0.0"
   }
 }

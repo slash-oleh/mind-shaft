@@ -2,14 +2,13 @@
   "name": "@dev-handbook/rules",
   "version": "1.0.0",
   "description": "Best practices.",
-  "repository": "https://github.com/insolite/dev-rules",
   "type": "module",
   "scripts": {
-    "lint": "remark src README.md --no-stdout --quiet",
-    "lint:fix": "remark src README.md --no-stdout --quiet -o",
-    "build:toc": "node bin/generate-toc.js",
-    "build:ai": "node bin/generate-ai-rules.js",
-    "build:ai:verbose": "node bin/generate-ai-rules.js --verbose"
+    "lint": "remark src *.md --no-stdout --quiet",
+    "lint:fix": "prettier --write \"src/**/*.md\" *.md --ignore-unknown",
+    "build": "npm run build:ai",
+    "build:ai": "node bin/build-ai.js",
+    "build:ai:verbose": "node bin/build-ai.js --verbose"
   },
   "dependencies": {
     "mdast-util-to-string": "^4.0.0",

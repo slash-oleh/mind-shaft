@@ -77,7 +77,9 @@ const generate = async () => {
     const globsLine = group.subDirGlobs
       ? `\nglobs:${serializeGlobs(group.subDirGlobs)}`
       : '';
-    const triggerLine = group.subDirTrigger ? `\ntrigger: ${group.subDirTrigger}` : '';
+    const triggerLine = group.subDirTrigger
+      ? `\ntrigger: ${group.subDirTrigger}`
+      : '';
     const descriptionText = group.subDirDescription
       ? `${heading}: ${group.subDirDescription}`
       : heading;
