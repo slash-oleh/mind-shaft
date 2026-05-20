@@ -2,7 +2,6 @@
 
 ## Infra
 
-- Finish existing "empty" (H1 only) READMEs
 - Docs: Fix zensical config given the multi-package changes
 - Docs: Fix docker compose if needed
 - Distribution: Claude plugin, `ai` folder committed, lint+generate pre-commit, npx skills support
