@@ -10,9 +10,11 @@
 
 - Reuse
   - Reinventing the wheel (Replace "Codebase patterns" and move to "principles"?)
+
 - Decoupling
   - SOLID
     - SRP, OCP, LSP, ICP, DIP
+
 - Simplicity
   - KISS
   - Flat over nested (Consider the rest of "Zen of Python" too)

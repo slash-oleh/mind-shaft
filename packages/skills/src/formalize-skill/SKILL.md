@@ -32,14 +32,14 @@ Structure:
 
 Variables:
 
-- `[SKILL NAME]`: Frontmatter name.
-- `[ACTIVATION DESCRIPTION]`: Frontmatter trigger description.
-- `[TITLE]`: Main header.
-- `[GENERAL INTENT]`: High-level description of actions (optional).
-- `[GOAL DESCRIPTION]`: Single verifiable sentence or checklist stating the completed end-state.
-- `[TOOLS]`: Prerequisites/tools.
-- `[STEPS]`: Phases overview.
-- `[PROTOCOL INJECTED]`: Keep verbatim. Build injects protocol.
+- `{{SKILL_NAME}}`: Frontmatter name.
+- `{{ACTIVATION_DESCRIPTION}}`: Frontmatter trigger description.
+- `{{TITLE}}`: Main header.
+- `{{GENERAL_INTENT}}`: High-level description of actions (optional).
+- `{{GOAL_DESCRIPTION}}`: Single verifiable sentence or checklist stating the completed end-state.
+- `{{TOOLS}}`: Prerequisites/tools.
+- `{{STEPS}}`: Phases overview.
+- `{{PROTOCOL_INJECTED}}`: Keep verbatim. Build injects protocol.
 
 ### Step 4: Generate phase files
 
@@ -47,21 +47,21 @@ Create `phases/` folder. For each phase, write markdown matching `templates/stag
 
 - `## Goal`: Single verifiable sentence or checklist stating the completed end-state.
 - `## Skip Conditions`: Omit if none.
-- `## Steps`: Format steps with `### Step [ORDER]: [ACTION]`.
+- `## Steps`: Format steps with `### Step {{ORDER}}: {{ACTION}}`.
 - `## Output`: Define JSON schema fields to persist.
 
 Variables:
 
-- `[ORDER]`: Phase or step number (1, 2, 3, ...).
-- `[NAME]`: Phase title.
-- `[GOAL DESCRIPTION]`: Goal or step details.
-- `[CRITERIA]`: Skip conditions (Omit section if none).
-- `[STEP DESCRIPTION]`: Step description.
-- `[FIELD]`: JSON output key.
-- `[VALUE DESCRIPTION]`: Value type and details.
+- `{{ORDER}}`: Phase or step number (1, 2, 3, ...).
+- `{{NAME}}`: Phase title.
+- `{{GOAL_DESCRIPTION}}`: Goal or step details.
+- `{{CRITERIA}}`: Skip conditions (Omit section if none).
+- `{{STEP_DESCRIPTION}}`: Step description.
+- `{{FIELD}}`: JSON output key.
+- `{{VALUE_DESCRIPTION}}`: Value type and details.
 
 Filename: `<ORDER>-<name>.md` where `ORDER` padded to 2 digits.
 
 ## Rules
 
-- Do NOT inject `protocol.md`. Keep `[PROTOCOL INJECTED]`. Build script injects it.
+- Do NOT inject `protocol.md`. Keep `{{PROTOCOL_INJECTED}}`. Build script injects it.

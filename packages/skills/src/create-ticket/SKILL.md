@@ -29,7 +29,9 @@ If details already provided, proceed without asking.
 Write structured, developer-friendly descriptions:
 
 - **Tone**: Professional, objective, direct.
+
 - **Details**: Sufficient for immediate implementation without extra clarification.
+
 - **Structure**:
   - Paragraphs for logical context.
   - Lists for requirements, tasks, or options.

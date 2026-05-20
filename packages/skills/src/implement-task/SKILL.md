@@ -20,9 +20,9 @@ description: Execute task implementation from a specification through to a verif
 
 1. [Gather Info](phases/01-gather-info.md)
 2. [Analyze](phases/02-analyze.md)
-3. [Success Criteria](phases/03-success-criteria.md) [APPROVAL REQUIRED]
+3. [Success Criteria](phases/03-success-criteria.md) (APPROVAL REQUIRED)
 4. [Plan](phases/04-plan.md)
-5. [Implement](phases/05-implement.md) [APPROVAL REQUIRED]
+5. [Implement](phases/05-implement.md) (APPROVAL REQUIRED)
 6. [Verify](phases/06-verify.md)
 
 ## Execution
@@ -31,4 +31,4 @@ Follow the **Skill Execution Protocol** (see below).
 
 ---
 
-[PROTOCOL INJECTED]
+{{PROTOCOL_INJECTED}}

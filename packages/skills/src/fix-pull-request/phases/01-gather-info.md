@@ -15,6 +15,7 @@ Resolve PR number using the first matching source:
   - PR number or `#NNN` -> use directly
   - PR URL -> extract number from the URL
   - Ticket (e.g. `XXX-42`) -> derive the branch name pattern `xxx-42-*` and resolve via API. If multiple found, ask which one to use.
+
 - **Fallback**: If no explicit identifier was provided, run:
   ```bash
   bash "$SKILL_DIR/scripts/identify-pr.sh"

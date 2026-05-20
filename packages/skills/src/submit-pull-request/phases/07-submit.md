@@ -39,10 +39,13 @@ Note: When the parent PR (the PR this PR depends on) is merged, GitHub automatic
 Once the parent PR is merged, perform the following manual cleanup steps on this PR:
 
 1. Mark this PR as ready for review:
+
    ```bash
    gh pr ready <PR_NUMBER>
    ```
+
 2. Edit the PR description to remove the dependency note block at the top:
+
    ```bash
    gh pr edit <PR_NUMBER> --body "<UPDATED_BODY_WITHOUT_DEPENDENCY_NOTE>"
    ```

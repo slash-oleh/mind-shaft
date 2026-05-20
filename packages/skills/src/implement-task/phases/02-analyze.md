@@ -34,16 +34,20 @@ Critically examine the task against the codebase and identify risks, reuse oppor
   - Does the task state solution, goal or both?
   - Is the solution over-engineered, implying unneccessary complexity?
   - Is there a simpler alternative to achieve the same business goal?
+
 - **Scope**
   - Is the scope explicitly defined and complete?
   - Are there hidden implementation implications not explicitly mentioned but required?
   - Is the task trying to cover too many unrelated things?
+
 - **Acceptance criteria**
   - Are they measurable or testable?
   - Do they align with the core goal?
+
 - **Risks**
   - Is it worth it?
   - Can we avoid risks by changing the implementation?
+
 - **Conflicts**
   - Does it imply misuse of existing architecture or patterns?
   - Does it have contradicting requirements?

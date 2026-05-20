@@ -12,10 +12,13 @@
 Check if target branch exists:
 
 - **Exists on remote only**: Track remote branch:
+
   ```bash
   git checkout --track origin/<branch_name>
   ```
+
 - **Does not exist**: Create fresh branch:
+
   ```bash
   git checkout -b <branch_name>
   ```

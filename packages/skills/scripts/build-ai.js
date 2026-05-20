@@ -8,6 +8,7 @@ const src = path.join(root, 'src');
 const dist = path.join(root, 'dist', 'ai');
 const templatesPath = path.join(src, 'formalize-skill', 'templates');
 const protocolPath = path.join(templatesPath, 'protocol.md');
+const PROTOCOL_MARKER = '{{PROTOCOL_INJECTED}}';
 
 function copyDir(source, destination) {
   fs.rmSync(destination, { recursive: true, force: true });
@@ -40,8 +41,8 @@ function injectProtocol(directory) {
     } else if (item === 'SKILL.md') {
       const content = fs.readFileSync(fullPath, 'utf8');
       let newContent;
-      if (content.includes('[PROTOCOL INJECTED]')) {
-        newContent = content.replace('[PROTOCOL INJECTED]', protocolContent);
+      if (content.includes(PROTOCOL_MARKER)) {
+        newContent = content.replace(PROTOCOL_MARKER, protocolContent);
       } else {
         newContent = `${content}\n\n---\n\n${protocolContent}`;
       }

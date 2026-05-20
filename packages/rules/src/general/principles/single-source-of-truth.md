@@ -63,4 +63,4 @@ ALTER TABLE users ADD COLUMN status TEXT;
 
 - [Wikipedia: Single source of truth](https://en.wikipedia.org/wiki/Single_source_of_truth)
 - [React: You Might Not Need an Effect](https://react.dev/learn/you-might-not-need-an-effect)
-- [Database normalization](https://en.wikipedia.org/wiki/Database_normalization)
+- [Wikipedia: Database normalization](https://en.wikipedia.org/wiki/Database_normalization)

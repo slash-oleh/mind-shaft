@@ -2,6 +2,7 @@ import recommended from 'remark-preset-lint-recommended';
 import noConsecutiveBlankLines from 'remark-lint-no-consecutive-blank-lines';
 import noMissingBlankLines from 'remark-lint-no-missing-blank-lines';
 import listItemSpacing from 'remark-lint-list-item-spacing';
+import frontmatter from 'remark-frontmatter';
 
 const remarkConfig = {
   settings: {
@@ -10,6 +11,7 @@ const remarkConfig = {
     strong: '*',
   },
   plugins: [
+    frontmatter,
     recommended,
     noConsecutiveBlankLines,
     [noMissingBlankLines, { exceptTightLists: true }],

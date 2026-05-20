@@ -4,14 +4,19 @@
 
 For each phase in order:
 
-1. Announce **Phase N/X: [Name]**.
+1. Announce **Phase N/X: <Name>**.
+
 2. Read instructions (from file or section).
+
 3. Execute instructions.
    - Follow phase steps exactly as defined, in order.
+
 4. Verify phase goals are met:
    - For each item in `## Goal`, explicitly verify and state how it was satisfied.
    - Do not skip, merge, or adopt goals during verification.
+
 5. Persist phase output (see below).
+
 6. Report **Phase N complete**.
 
 ## Data Exchange
@@ -23,7 +28,9 @@ Pass data between phases using persistent files:
   - `<run_id>`: Ticket ID (e.g. `PROJ-123`) or unique, short hyphenated task summary (e.g. `fix-user-auth`).
   - `<phase_id>`: Matching phase filename.
   - `<ext>`: JSON or MD.
+
 - **Format**: JSON for structured data, Markdown for text.
+
 - **Output**: Phase must save results to file before completion.
 
   Create parent directories first:
@@ -50,9 +57,9 @@ Pass data between phases using persistent files:
 
 ## Human Approval
 
-Require explicit approval before starting phases marked `[APPROVAL REQUIRED]`.
+Require explicit approval before starting phases marked `(APPROVAL REQUIRED)`.
 
-Ask: **"Ready for Phase N: [Name]. Confirm?"**
+Ask: **"Ready for Phase N: <Name>. Confirm?"**
 
 If user requests changes, return to the relevant phase.
 

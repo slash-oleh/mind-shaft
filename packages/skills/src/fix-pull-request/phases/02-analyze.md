@@ -48,15 +48,21 @@ Conclusions:
 #### Item sub-step D: Create action item
 
 - Input item reference
+
 - Severity
+
 - Conclusion
+
 - Solution
   - Fix
+
   - Defer
     - If explicitly asked, create a task tracker ticket
     - If the change is a part of a known future work, note "Will address in a future PR"
     - Otherwise, add a `TODO` comment at the relevant code location
+
   - Decline
+
   - Explain
 
 ### Step 3: Prioritize action items

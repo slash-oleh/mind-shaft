@@ -21,11 +21,13 @@ git rebase origin/main
 ### Step 2: Resolve conflicts
 
 - For **generated files** (e.g., `uv.lock`), regenerate instead of resolving manually:
+
   ```bash
   git checkout --theirs uv.lock
   uv lock
   git add uv.lock
   ```
+
 - For **other files**: Resolve trivial ones directly. Ask the user if resolution is ambiguous.
 
 ### Step 3: Continue rebase

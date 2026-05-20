@@ -21,7 +21,7 @@ description: Check, clean, polish, and submit changes as a pull request for revi
 4. [Audit Diff](phases/04-audit-diff.md)
 5. [Cleanup Commits](phases/05-cleanup-commits.md)
 6. [Generate Metadata](phases/06-generate-metadata.md)
-7. [Submit](phases/07-submit.md) [APPROVAL REQUIRED]
+7. [Submit](phases/07-submit.md) (APPROVAL REQUIRED)
 
 ## Execution
 
@@ -29,4 +29,4 @@ Follow the **Skill Execution Protocol** (see below).
 
 ---
 
-[PROTOCOL INJECTED]
+{{PROTOCOL_INJECTED}}

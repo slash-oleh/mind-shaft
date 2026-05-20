@@ -139,19 +139,14 @@ const validateImpact = (nodes, file, headingNode, settings) => {
       }
       const [firstChild, secondChild] = paragraph.children;
       const isBold = firstChild?.type === 'strong';
-      const hasLinkInBold =
-        isBold &&
-        firstChild.children.some(
-          (c) => c.type === 'link' && c.url.includes('impact'),
-        );
       const hasColonAfter =
         secondChild &&
         secondChild.type === 'text' &&
         secondChild.value.startsWith(': ');
-      if (!hasLinkInBold || !hasColonAfter) {
+      if (!isBold || !hasColonAfter) {
         warn(
           file,
-          '"Impact" list items must follow the format: "**[Impact](../../home/impact/...md)**: description"',
+          '"Impact" list items must follow the format: "**Keyword**: description"',
           item.position,
           'checkListItemFormat',
           settings,
@@ -278,7 +273,9 @@ const checkGlobalPlaceholders = (tree, file, settings) => {
 
     // Check for template placeholders {{ }} in text nodes and inline code
     if (node.type === 'text' || node.type === 'inlineCode') {
-      if (node.value.includes('{{') || node.value.includes('}}')) {
+      // Matches {{var}}, {{ var }}, {{}} but not {{ style: 'flex' }}
+      // to avoid most false positives on React props, etc.
+      if (/\{\{\s*[a-zA-Z0-9_ -]*\s*\}\}/.test(node.value)) {
         warn(
           file,
           'Article contains template placeholders ({{ }})',

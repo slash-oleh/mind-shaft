@@ -1,18 +1,18 @@
-# Phase [ORDER]: [NAME]
+# Phase {{ORDER}}: {{NAME}}
 
 ## Goal
 
-[GOAL DESCRIPTION]
+{{GOAL_DESCRIPTION}}
 
 ## Skip Conditions
 
-[CRITERIA]
+{{CRITERIA}}
 
 ## Steps
 
-### Step [ORDER]: [ACTION]
+### Step {{ORDER}}: {{ACTION}}
 
-[STEP DESCRIPTION]
+{{STEP_DESCRIPTION}}
 
 ## Output
 
@@ -20,14 +20,14 @@ JSON format:
 
 ```jsonc
 {
-  "[FIELD_1]": "[TYPE]", // [DESCRIPTION]
-  "[FIELD_2]": {
-    "[SUB_FIELD]": "[TYPE]", // [DESCRIPTION]
-  }, // [DESCRIPTION]
+  "{{FIELD_1}}": "{{TYPE}}", // {{DESCRIPTION}}
+  "{{FIELD_2}}": {
+    "{{SUB_FIELD}}": "{{TYPE}}", // {{DESCRIPTION}}
+  }, // {{DESCRIPTION}}
 }
 ```
 
 Markdown format:
 
-- [H2 TITLE]: [DESCRIPTION]
-- [H2 TITLE]: [DESCRIPTION]
+- {{H2_TITLE_1}}: {{OUTPUT_DESCRIPTION_1}}
+- {{H2_TITLE_2}}: {{OUTPUT_DESCRIPTION_2}}

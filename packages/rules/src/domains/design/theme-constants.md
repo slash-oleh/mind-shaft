@@ -28,12 +28,14 @@ import { theme } from '@/constants/theme';
 function Button({ children }) {
   // Clear intent, globally manageable
   return (
-    <button style={{
-      backgroundColor: theme.colors.primary,
-      padding: theme.spacing.medium,
-      fontSize: theme.typography.size.base,
-      borderRadius: theme.shape.borderRadius.small,
-    }}>
+    <button
+      style={{
+        backgroundColor: theme.colors.primary,
+        padding: theme.spacing.medium,
+        fontSize: theme.typography.size.base,
+        borderRadius: theme.shape.borderRadius.small,
+      }}
+    >
       {children}
     </button>
   );
@@ -49,12 +51,14 @@ Hardcoding unmanaged magic values directly into the component.
 function Button({ children }) {
   // Highly brittle. If the primary color changes, you must manually update this.
   return (
-    <button style={{
-      backgroundColor: '#FF5A5F',
-      padding: '16px',
-      fontSize: '14px',
-      borderRadius: '4px'
-    }}>
+    <button
+      style={{
+        backgroundColor: '#FF5A5F',
+        padding: '16px',
+        fontSize: '14px',
+        borderRadius: '4px',
+      }}
+    >
       {children}
     </button>
   );
@@ -65,7 +69,7 @@ function Button({ children }) {
 
 - **Maintainability**: A global theme allows you to re-skin an entire application, introduce dark mode, or adjust spacing scales by modifying a single root file.
 - **Consistency**: Developers are restricted to a defined palette of choices, ensuring identical visual rhythms and colors across all pages.
-- **Explicitness**: A variable name like `theme.colors.danger` clearly expresses its behavioral intent, whereas a raw hex code like `#E74C3C` tells you what it is but not what it *means*.
+- **Explicitness**: A variable name like `theme.colors.danger` clearly expresses its behavioral intent, whereas a raw hex code like `#E74C3C` tells you what it is but not what it _means_.
 
 ## Exceptions
 

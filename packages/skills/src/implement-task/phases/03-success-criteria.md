@@ -29,11 +29,7 @@ JSON format:
 
 ```jsonc
 {
-  "successCriteria": [
-    "string",
-  ], // List of concrete success criteria.
-  "definitionOfDone": [
-    "string",
-  ], // Checklist of final verification steps.
+  "successCriteria": ["string"], // List of concrete success criteria.
+  "definitionOfDone": ["string"], // Checklist of final verification steps.
 }
 ```

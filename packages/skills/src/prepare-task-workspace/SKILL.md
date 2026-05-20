@@ -17,7 +17,7 @@ description: Prepare a clean local feature branch and git state for a task, and 
 
 ## Phases
 
-1. [Gather Info](phases/01-gather-info.md) [APPROVAL REQUIRED]
+1. [Gather Info](phases/01-gather-info.md) (APPROVAL REQUIRED)
 2. [Align Workspace](phases/02-align-workspace.md)
 3. [Setup Branch](phases/03-setup-branch.md)
 
@@ -27,4 +27,4 @@ Follow the **Skill Execution Protocol** (see below).
 
 ---
 
-[PROTOCOL INJECTED]
+{{PROTOCOL_INJECTED}}

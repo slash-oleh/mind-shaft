@@ -15,17 +15,24 @@ For each action item from `action_items` in Phase 2 in order:
 ### Step 1: Apply solution
 
 - Make code changes or whatever needed to resolve the action item. For deferred action items it can be ticket creation.
+
 - Commit as fixup commit. Identify originating commits using:
+
   ```bash
   git log --oneline <file>
   ```
+
 - After each action item is applied and verified, stage relevant files and create a fixup commit targeting the originating commit:
+
   ```bash
   git add <files>
   git commit --fixup <HASH>
   ```
+
   One fixup commit per action item. Do not bundle unrelated fixes into the same fixup.
+
 - If an unpushed fixup for the same target commit already exists (e.g. iterating on a fix before push), amend it instead of creating a second fixup:
+
   ```bash
   git add <files>
   git commit --amend --no-edit
@@ -45,6 +52,7 @@ pre-commit run --files $MODIFIED_FILES
 Draft prepared reply for relevant thread (if input type was Comment):
 
 - **Tone**: Brief and factual. No fluff, apologies, or fillers.
+
 - **Examples**: Style per conclusion:
   - **Fixed**: `"Fixed. Added missing X."` (for fixes) / `"Done. Replaced X with Y."` (for improvements).
   - **Declined**: Explain without confrontational words. `"Existing convention is relative imports throughout this package"`.

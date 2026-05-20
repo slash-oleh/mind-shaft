@@ -1,21 +1,21 @@
 ---
-name: [SKILL NAME]
-description: [ACTIVATION DESCRIPTION]
+name: { { SKILL_NAME } }
+description: { { ACTIVATION_DESCRIPTION } }
 ---
 
-# [TITLE]
+# {{TITLE}}
 
 ## Goal
 
-[GOAL DESCRIPTION]
+{{GOAL_DESCRIPTION}}
 
 ## Prerequisites
 
-[TOOLS]
+{{TOOLS}}
 
 ## Phases
 
-[STEPS]
+{{STEPS}}
 
 ## Execution
 
@@ -23,4 +23,4 @@ Follow the **Skill Execution Protocol** (see below).
 
 ---
 
-[PROTOCOL INJECTED]
+{{PROTOCOL_INJECTED}}
