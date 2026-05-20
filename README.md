@@ -41,6 +41,7 @@ These have no direct impact, but to let you know what to expect from these docs:
 - **Pragmatic**: Actions matter. Words - not so much.
 - **Scientific**: Rely on facts, not feelings.
 - **Precise**: Measure, not estimate.
+- **Accurate**: _Make simple, not simpler_.
 - **Intentional**: Focus on goal, not plan.
 - **Systematic**: Fix process, not symptom.
 - **Harmless**: _Primum non nocere_ (first, do no harm).

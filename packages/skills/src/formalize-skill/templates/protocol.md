@@ -2,12 +2,15 @@
 
 ## Execution Loop
 
-For each phase/step in order:
+For each phase in order:
 
 1. Announce **Phase N/X: [Name]**.
 2. Read instructions (from file or section).
 3. Execute instructions.
-4. Verify phase goal is met.
+   - Follow phase steps exactly as defined, in order.
+4. Verify phase goals are met:
+   - For each item in `## Goal`, explicitly verify and state how it was satisfied.
+   - Do not skip, merge, or adopt goals during verification.
 5. Persist phase output (see below).
 6. Report **Phase N complete**.
 
@@ -60,3 +63,4 @@ If user requests changes, return to the relevant phase.
 - **Phase sequence**: Maintain sequential order. Do not mix phase actions.
 - **Strict tool usage**: When specific script or command is mentioned - use exactly that. Do not improvise.
 - **Ask, don't guess**: Clarify ambiguity and fix systematically instead of making silent assumptions.
+- **Strict goal verification**: Verification of phase goals is mandatory. Go through every single goal item in `## Goal` section, and verify before completing a phase. Do not omit, rewrite, or generalize goals.
