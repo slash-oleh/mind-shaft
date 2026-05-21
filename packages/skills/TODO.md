@@ -22,9 +22,9 @@ Ideas for new skills:
 
 - `investigate`: Detective job on incidents, (heisen)bugs, performance, etc.
 
-- `reflect` / `reflect-skill`: Review errors (including self-fixed) to improve initial instructions or update memory.
+- `extract-skill`: Summarize conversation actions and generalize for similar situations to create a skill.
 
-- `ship`: Merge, release, verify, prepare presentational info (links, screenshots), announce: comment in ticket, send messages.
+- `reflect` / `reflect-mistakes` / `reflect-skill`: Review errors (including self-fixed) to improve initial instructions or update memory.
 
 - `sdlc`: Combining other skills in iterative for PRD/task to make the way to Done in iterative approach.
   - Rough flow from existing (or planned) skills
