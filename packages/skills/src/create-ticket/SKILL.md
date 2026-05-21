@@ -14,8 +14,8 @@ description: Create a structured ticket in the project management system. Use wh
 
 Gather target project required fields. Common fields:
 
-1. **Summary** - concise, imperative title.
-2. **Description** - formatted according to guidelines below.
+1. **Title** - see guidelines below.
+2. **Description** - see guidelines below.
 3. **Type** - Story, Task, Bug, Sub-task, or system equivalent.
 4. **Parent** - Epic or grouping context; ask if required by target project.
 5. **Assignee** - assign to self, user, or project default.
@@ -25,11 +25,20 @@ Gather target project required fields. Common fields:
 
 If details already provided, proceed without asking.
 
+### Title Guidelines
+
+- Concise
+- Must focus on the goal, not the solution.
+- For features/tasks: imperative mood.
+- For bugs: describe the current state (the issue), not the desired behavior or proposed fix.
+
 ### Description Guidelines
 
 Write structured, developer-friendly descriptions:
 
 - **Tone**: Professional, objective, direct.
+
+- **Focus**: Focus on the problem and the goal, not the proposed solution. For bugs, describe the issue, not the fix.
 
 - **Details**: Sufficient for immediate implementation without extra clarification.
 

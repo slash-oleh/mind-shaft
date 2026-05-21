@@ -18,8 +18,8 @@ description: Prepare a clean local feature branch and git state for a task, and 
 
 ## Phases
 
-1. [Gather Info](phases/01-gather-info.md) (APPROVAL REQUIRED)
-2. [Align Workspace](phases/02-align-workspace.md)
+1. [Gather Info](phases/01-gather-info.md)
+2. [Align Workspace](phases/02-align-workspace.md) (APPROVAL REQUIRED)
 3. [Setup Branch](phases/03-setup-branch.md)
 
 ## Execution
