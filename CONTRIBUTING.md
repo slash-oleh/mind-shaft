@@ -45,8 +45,9 @@ npx --yes skills add \
 Install packages' skills:
 
 ```bash
+npm run generate
 npx --yes skills add \
-  ./packages/skills/src \
+  ./ai/skills/ \
   --skill formalize-skill \
   --agent universal \
   --agent antigravity \

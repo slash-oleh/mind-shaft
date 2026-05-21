@@ -9,6 +9,7 @@
   "scripts": {
     "lint": "npm run rules:lint && npm run skills:lint",
     "lint:fix": "npm run lint:fix -w @dev-handbook/rules && npm run lint:fix -w @dev-handbook/skills",
+    "build:docs": "zensical build --clean",
     "generate": "npm run rules:generate:ai && npm run skills:generate:ai",
     "rules:lint": "npm run lint -w @dev-handbook/rules",
     "skills:lint": "npm run lint -w @dev-handbook/skills",

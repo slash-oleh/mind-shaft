@@ -31,6 +31,8 @@ JSON format:
 }
 ```
 
+OR
+
 Markdown format:
 
 - {{H2_TITLE_1}}: {{OUTPUT_DESCRIPTION_1}}

@@ -16,7 +16,8 @@ description: ACTIVATION_DESCRIPTION
 
 ## Phases
 
-{{STEPS}}
+1. [Gather Info](phases/01-gather-info.md)
+2. {{STEPS}}
 
 ## Execution
 
