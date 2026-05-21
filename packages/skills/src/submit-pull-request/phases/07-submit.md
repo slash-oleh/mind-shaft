@@ -4,6 +4,7 @@
 
 - Remote branch is pushed.
 - Pull Request is created.
+- Ticket status is updated.
 
 ## Steps
 
