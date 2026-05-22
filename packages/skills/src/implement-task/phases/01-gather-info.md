@@ -1,32 +1,52 @@
 # Phase 1: Gather Info
 
+Aiming only at structuring input, not discovery.
+
 ## Goal
 
-- All raw task specifications, design links, documentation retrieved
-- Relevant codebase locations are identified.
+- Requirements are collected and structured.
+- No info assumed, context lost, text rephrased.
 
 ## Steps
 
-### Step 1: Identify Task Source
+### Step 1: Get Info
 
-- If ticket ID or URL provided: fetch title, description, and linked issues.
-- If plain description provided: treat as the spec.
+- Retrieve requirements directly from the provided input or via tools.
+- Ask the user if any needed information is missing.
 
-### Step 2: Retrieve Related Assets
+### Step 2: Assess Requirements
 
-- For design links: extract details (layout, components) via MCP (Figma, Miro, etc.).
-- For documentation: read content via MCP (Confluence, Notion, GitHub, etc.).
-- For other URLs: fetch and summarize content.
+Perform basic check of existing requirement sections for Three Cs:
 
-### Step 3: Establish Codebase Context
+- Correctness
+- Completeness
+- Consistency
 
-- Locate files and modules likely affected.
-- Find existing patterns (similar components, services, hooks).
+Expected requirements structure to contain:
+
+- Requirements
+  - Core goal
+  - Description
+  - Scope
+  - Risks
+  - Criteria
+- Codebase
+  - Similar patterns
+  - Tech debt blockers
+  - Regression risks
+  - Affected modules
+- Addressed Concerns
+- Subtasks
+- Success Criteria
+
+Check if all info is present.
+
+- If all present and structured this way, output requirements as is.
+- If not but all info is present in different structure, and trivial restructuring is possible, do it (usually when using ticket description and not elaboration results).
+- Otherwise, suggest user do elaboration first.
 
 ## Output
 
 Markdown format:
 
-- Task: Title and description.
-- Linked Resources: List of URLs/IDs and summaries.
-- Affected Modules: List of directories/files likely affected.
+- Requirements: All info from input.

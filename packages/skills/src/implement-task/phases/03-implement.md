@@ -1,4 +1,4 @@
-# Phase 5: Implement
+# Phase 3: Implement
 
 ## Goal
 
@@ -9,7 +9,7 @@
 
 ### Step 1: Execute Plan
 
-- Follow the `Implementation Steps` from Phase 4 sequentially.
+- Follow the `Implementation Steps` from Phase 2 sequentially.
 - For each step: Apply code change, lint/format, and verify against immediate scope.
 
 ### Step 2: Create Commits
