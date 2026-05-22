@@ -48,6 +48,7 @@ Install packages' skills:
 npm run generate
 npx --yes skills add \
   ./ai/skills/ \
+  --skill extract-skill \
   --skill formalize-skill \
   --agent universal \
   --agent antigravity \
