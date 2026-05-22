@@ -20,8 +20,6 @@ Ideas for new skills:
 
 - `investigate`: Detective job on incidents, (heisen)bugs, performance, etc.
 
-- `extract-skill`: Summarize conversation actions and generalize for similar situations to create a skill.
-
 - `reflect` / `reflect-mistakes` / `reflect-skill`: Review errors (including self-fixed) to improve initial instructions or update memory.
 
 - `sdlc`: Combining other skills in iterative for PRD/task to make the way to Done in iterative approach.
@@ -34,7 +32,7 @@ Ideas for new skills:
     - submit-pull-request
     - ! code-review
     - fix-pull-request
-    - ! ship
+    - ship-task
     - fix-feedback
 
   - Consider

@@ -81,6 +81,7 @@ Markdown format:
     > {Question X}
 
     {Answer X}
+
 - Concerns
   - {ID X}. {Summary X}
     {Description X}
