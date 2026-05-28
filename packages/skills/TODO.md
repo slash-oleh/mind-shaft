@@ -12,8 +12,6 @@ Ideas for new skills:
   - `business-analysis` as a subskill for separate tasks
   - Aspects: summarize, classify, challenge, gaps, risks, stack, data model, use cases, critical path, mvp, milestones, timeline, team, components, services.
 
-- `code-review`: Take all relevant rules into account. Utilize reply wording rules, tools, etc. from `fix-pull-request`.
-
 - `fix-feedback`: Make a followup fix based on ticket comments / chat message. Decide on ticket creation, create branch, implement, submit PR. Sort of `fix-pull-request` but when changes are already merged.
 
 - `why-ci-failed`: Part of `fix-pull-request` already but would still prove useful being ad-hoc.
