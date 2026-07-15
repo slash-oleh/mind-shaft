@@ -19,12 +19,6 @@ function addUser(user) {
 }
 ```
 
-```python
-active_users = []
-def add_user(user):
-    active_users.append(user)
-```
-
 ## Bad solution
 
 Forcing conventions from other languages or using inconsistent styles that violate ecosystem norms.
@@ -34,12 +28,6 @@ const active_users = [];
 function add_user(user) {
   active_users.push(user);
 }
-```
-
-```python
-activeUsers = []
-def addUser(user):
-    activeUsers.append(user)
 ```
 
 ## Impact
@@ -54,4 +42,3 @@ def addUser(user):
 ## References
 
 - [Google: JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)
-- [Guido van Rossum: PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)
