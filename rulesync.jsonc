@@ -1,6 +1,11 @@
 {
   "$schema": "https://github.com/dyoshikawa/rulesync/releases/latest/download/config-schema.json",
-  "targets": ["claudecode", "antigravity-ide"],
+  "targets": ["cursor", "claudecode", "antigravity-ide"],
   "features": ["rules", "skills"],
-  "delete": false
+  "delete": false,
+  // Declarative skill sources — installed via 'rulesync install'
+  "sources": [
+    { "source": "JuliusBrussee/caveman" },
+    { "source": "slash-oleh/mind-shaft:ai/skills" }
+  ]
 }

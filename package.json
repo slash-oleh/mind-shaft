@@ -16,7 +16,7 @@
     "spellcheck": "cspell lint \"**/*.{md,js,ts,json,yml}\"",
     "rules:generate:ai": "npm run build:ai -w @mind-shaft/rules && rm -rf ai/rules && mkdir -p ai/rules && cp -r packages/rules/dist/ai/* ai/rules/",
     "skills:generate:ai": "npm run build:ai -w @mind-shaft/skills && rm -rf ai/skills && mkdir -p ai/skills && cp -r packages/skills/dist/ai/* ai/skills/",
-    "agents:sync": "rulesync generate"
+    "agents:sync": "rulesync install && rulesync generate"
   },
   "type": "module",
   "devDependencies": {
