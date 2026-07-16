@@ -4,8 +4,9 @@ My agentic engineering setup powered by software engineering guidelines.
 
 _Dig here. Bring a hard hat._ 👷
 
-[![Pages build](https://github.com/slash-oleh/mind-shaft/actions/workflows/pages.yml/badge.svg)](https://github.com/slash-oleh/mind-shaft/actions/workflows/pages.yml)
 [![Last commit](https://img.shields.io/github/last-commit/slash-oleh/mind-shaft)](https://github.com/slash-oleh/mind-shaft/commits/main)
+[![Pages](https://img.shields.io/badge/docs-Pages-blue)](https://slash-oleh.github.io/mind-shaft/)
+[![Pages build](https://github.com/slash-oleh/mind-shaft/actions/workflows/pages.yml/badge.svg)](https://github.com/slash-oleh/mind-shaft/actions/workflows/pages.yml)
 
 ## What's in here 🔍
 
