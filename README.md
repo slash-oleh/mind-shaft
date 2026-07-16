@@ -2,7 +2,7 @@
 
 Comprehensive software engineering handbook: knowledge base, AI agent rules and skills.
 
-[Web version]() <!-- TODO: Add github pages link when available -->
+[Web version](https://slash-oleh.github.io/mind-shaft/)
 
 ## Installation
 
