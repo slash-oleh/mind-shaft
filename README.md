@@ -8,11 +8,17 @@ Comprehensive software engineering handbook: knowledge base, AI agent rules and 
 
 [Read online](). <!-- TODO: Add github pages link when available -->
 
-### AI Agent Plugins
+### AI Agent
+
+Rules and skills, straight from GitHub - installs into `.claude/` by default (`-t cursor` for Cursor):
+
+```bash
+npx slash-oleh/mind-shaft
+```
 
 ## Installation
 
-### Skills
+### Skills only
 
 Via [skills](https://www.npmjs.com/package/skills):
 
@@ -69,6 +75,7 @@ Monorepo. Each `packages/*` is a workspace holding content source, docs/config g
 - `packages/rules` - best practices (source of `ai/rules`).
 - `packages/skills` - processes/workflows (source of `ai/skills`).
 - `packages/stack` - toolset docs.
+- `packages/cli` - installer script, run via `npx slash-oleh/mind-shaft` (root `package.json` `bin` routes here).
 - `docs/` - Zensical doc site, aggregates content from packages via symlinks.
 - `.rulesync/` - rulesync config/cache, generates `.claude/`, `.cursor/`, `.agents/` targets.
 - `ai/` - built rules/skills output from packages, published. Supposed to be used by npx skills and rulesync commands by the end user. Also pulled back in as rulesync source in this repo.

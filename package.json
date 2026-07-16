@@ -6,6 +6,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "bin": {
+    "mind-shaft": "packages/cli/bin/install.js"
+  },
   "scripts": {
     "lint": "npm run rules:lint && npm run skills:lint",
     "lint:fix": "npm run lint:fix -w @mind-shaft/rules && npm run lint:fix -w @mind-shaft/skills",
@@ -19,6 +22,9 @@
     "agents:sync": "rulesync install && rulesync generate"
   },
   "type": "module",
+  "dependencies": {
+    "tar": "^7.4.3"
+  },
   "devDependencies": {
     "cspell": "^10.0.0",
     "rulesync": "^12.0.0"

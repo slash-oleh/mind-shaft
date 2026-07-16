@@ -1,0 +1,12 @@
+{
+  "name": "@mind-shaft/cli",
+  "version": "1.0.0",
+  "description": "Install mind-shaft rules and skills into any project.",
+  "type": "module",
+  "bin": {
+    "mind-shaft": "bin/install.js"
+  },
+  "dependencies": {
+    "tar": "^7.4.3"
+  }
+}
