@@ -2,6 +2,7 @@
   "name": "@mind-shaft/skills",
   "version": "1.0.0",
   "description": "Processes.",
+  "license": "SEE LICENSE IN LICENSE",
   "type": "module",
   "scripts": {
     "lint": "remark src *.md --no-stdout --quiet",

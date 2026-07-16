@@ -2,5 +2,6 @@
   "name": "@mind-shaft/stack",
   "version": "1.0.0",
   "description": "Toolset.",
+  "license": "SEE LICENSE IN LICENSE",
   "type": "module"
 }

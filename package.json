@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Development handbook monorepo.",
   "repository": "https://github.com/slash-oleh/mind-shaft",
+  "license": "SEE LICENSE IN LICENSE",
   "workspaces": [
     "packages/*"
   ],

@@ -2,6 +2,7 @@
   "name": "@mind-shaft/cli",
   "version": "1.0.0",
   "description": "Install mind-shaft rules and skills into any project.",
+  "license": "SEE LICENSE IN LICENSE",
   "type": "module",
   "bin": {
     "mind-shaft": "bin/install.js"

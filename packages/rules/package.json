@@ -2,6 +2,7 @@
   "name": "@mind-shaft/rules",
   "version": "1.0.0",
   "description": "Best practices.",
+  "license": "SEE LICENSE IN LICENSE",
   "type": "module",
   "scripts": {
     "lint": "remark src *.md --no-stdout --quiet",
