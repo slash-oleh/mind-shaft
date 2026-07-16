@@ -1,21 +1,21 @@
 {
-  "name": "dev-handbook",
+  "name": "mind-shaft",
   "version": "1.0.0",
   "description": "Development handbook monorepo.",
-  "repository": "https://github.com/insolite/dev-rules",
+  "repository": "https://github.com/slash-oleh/mind-shaft",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
     "lint": "npm run rules:lint && npm run skills:lint",
-    "lint:fix": "npm run lint:fix -w @dev-handbook/rules && npm run lint:fix -w @dev-handbook/skills",
+    "lint:fix": "npm run lint:fix -w @mind-shaft/rules && npm run lint:fix -w @mind-shaft/skills",
     "build:docs": "zensical build --clean",
     "generate": "npm run rules:generate:ai && npm run skills:generate:ai",
-    "rules:lint": "npm run lint -w @dev-handbook/rules",
-    "skills:lint": "npm run lint -w @dev-handbook/skills",
+    "rules:lint": "npm run lint -w @mind-shaft/rules",
+    "skills:lint": "npm run lint -w @mind-shaft/skills",
     "spellcheck": "cspell lint \"**/*.{md,js,ts,json,yml}\"",
-    "rules:generate:ai": "npm run build:ai -w @dev-handbook/rules && rm -rf ai/rules && mkdir -p ai/rules && cp -r packages/rules/dist/ai/* ai/rules/",
-    "skills:generate:ai": "npm run build:ai -w @dev-handbook/skills && rm -rf ai/skills && mkdir -p ai/skills && cp -r packages/skills/dist/ai/* ai/skills/"
+    "rules:generate:ai": "npm run build:ai -w @mind-shaft/rules && rm -rf ai/rules && mkdir -p ai/rules && cp -r packages/rules/dist/ai/* ai/rules/",
+    "skills:generate:ai": "npm run build:ai -w @mind-shaft/skills && rm -rf ai/skills && mkdir -p ai/skills && cp -r packages/skills/dist/ai/* ai/skills/"
   },
   "type": "module",
   "devDependencies": {

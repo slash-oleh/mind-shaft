@@ -1,6 +1,6 @@
 [project]
 docs_dir="docs"
-site_name="Dev Handbook"
+site_name="Mind Shaft"
 
 [project.theme]
 features = [

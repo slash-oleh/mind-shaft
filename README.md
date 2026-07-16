@@ -1,6 +1,6 @@
-# Dev Handbook
+# Mind Shaft
 
-Comprehensive software engineering knowledge base.
+Comprehensive software engineering handbook: knowledge base, AI agent rules and skills.
 
 ## Shortcuts
 

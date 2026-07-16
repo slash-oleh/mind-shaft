@@ -1,4 +1,4 @@
-# Contributing to Dev Handbook
+# Contributing
 
 Monorepo with multiple npm workspace packages.
 Each package represents documentation section.
