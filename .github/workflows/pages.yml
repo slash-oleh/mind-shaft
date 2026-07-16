@@ -15,6 +15,12 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: 3.x
+      - name: Mirror package docs into docs dir
+        run: |
+          mkdir -p docs/rules docs/skills docs/stack
+          cp -r packages/rules/src/. docs/rules/
+          cp -r packages/skills/src/. docs/skills/
+          cp -r packages/stack/src/. docs/stack/
       - run: pip install zensical
       - run: zensical build --clean
       - uses: actions/upload-pages-artifact@v5
