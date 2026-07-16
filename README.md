@@ -2,36 +2,41 @@
 
 My agentic engineering setup powered by software engineering guidelines.
 
-## What's in here
+_Dig here. Bring a hard hat._ 👷
 
-### Skills (automating routine):
+[![Pages build](https://github.com/slash-oleh/mind-shaft/actions/workflows/pages.yml/badge.svg)](https://github.com/slash-oleh/mind-shaft/actions/workflows/pages.yml)
+[![Last commit](https://img.shields.io/github/last-commit/slash-oleh/mind-shaft)](https://github.com/slash-oleh/mind-shaft/commits/main)
+
+## What's in here 🔍
+
+### Skills (routine, automated away): 🤖
 
 SDLC:
 
-- `/create-ticket`: draft a structured ticket.
-- `/prepare-task-workspace`: set up branch and git state for a ticket.
-- `/elaborate-task`: assess scope, risks, done criteria before starting.
-- `/implement-task`: implement from spec through verified change.
-- `/code-review`: review a pull request against project rules.
-- `/submit-pull-request`: clean, polish, submit for review.
-- `/fix-pull-request`: address review comments, conflicts, CI failures.
-- `/ship-task`: merge, release, verify, announce.
+- [`/create-ticket`](ai/skills/create-ticket/SKILL.md): draft a structured ticket from stream of consciousness.
+- [`/prepare-task-workspace`](ai/skills/prepare-task-workspace/SKILL.md): set up branch and git state for a ticket.
+- [`/elaborate-task`](ai/skills/elaborate-task/SKILL.md): assess scope, risks, done criteria before starting.
+- [`/implement-task`](ai/skills/implement-task/SKILL.md): plan and implement from spec through verified change.
+- [`/code-review`](ai/skills/code-review/SKILL.md): review a pull request against project rules.
+- [`/submit-pull-request`](ai/skills/submit-pull-request/SKILL.md): clean, polish, submit for review.
+- [`/fix-pull-request`](ai/skills/fix-pull-request/SKILL.md): address review comments, conflicts, CI failures.
+- [`/ship-task`](ai/skills/ship-task/SKILL.md): merge, release, verify, announce.
 
 Meta:
 
-- `/extract-skill`: turn a completed task's process into a reusable skill.
-- `/formalize-skill`: refactor a skill file to the standard template.
+- [`/extract-skill`](ai/skills/extract-skill/SKILL.md): turn a completed task's process into a reusable skill.
+- [`/formalize-skill`](ai/skills/formalize-skill/SKILL.md): refactor a skill file to the standard template.
 
-### Rules (enforcing best practices):
+### Rules (best practices, enforced not suggested): ⚖️
 
-- `general`: cross-cutting, e.g. `principles`, `code-style`, `security`, `tests`, `naming`, ...
-- `domains`: per product area, e.g. `frontend`, `backend`, `web`, `ux`, `design`, `mobile`.
-- `languages`: per language, e.g. `typescript`, `javascript`, `css`, `html`, `sql`.
-- `tools`: per tool/library, e.g. `react`, `git`, `mui`, `node-js`.
+- [`general`](ai/rules/general): cross-cutting, e.g. [`principles`](ai/rules/general/principles.md), [`code-style`](ai/rules/general/code-style.md), [`security`](ai/rules/general/security.md), [`tests`](ai/rules/general/tests.md), [`naming`](ai/rules/general/naming.md), ...
+- [`domains`](ai/rules/domains): per product area, e.g. [`frontend`](ai/rules/domains/frontend.md), [`backend`](ai/rules/domains/backend.md), [`web`](ai/rules/domains/web.md), [`ux`](ai/rules/domains/ux.md), [`design`](ai/rules/domains/design.md), `mobile`.
+- [`languages`](ai/rules/languages): per language, e.g. [`typescript`](ai/rules/languages/typescript.md), [`javascript`](ai/rules/languages/javascript.md), [`css`](ai/rules/languages/css.md), [`html`](ai/rules/languages/html.md), [`sql`](ai/rules/languages/sql.md).
+- [`tools`](ai/rules/tools): per tool/library, e.g. [`react`](ai/rules/tools/react.md), [`git`](ai/rules/tools/git.md), [`mui`](ai/rules/tools/mui.md), `node-js`.
 
 Learn more on [web version](https://slash-oleh.github.io/mind-shaft/).
 
-## Installation
+## Installation 📦
 
 For AI agents.
 
@@ -69,22 +74,22 @@ then:
 npx rulesync install && npx rulesync generate
 ```
 
-## Background
+## Background 👋
 
 Hey, I'm Oleh.
-This is an attempt to create my software engineering brain dump.
-It started as best practices knowledge base.
-Used to share knowledge with teammates, as project guidelines and during code reviews.
-Later evolved into system of rules, skills and other tools focused on AI agents.
-Now it can be fed to AI agents to guide their work.
+This is my software engineering brain, dumped into files.
+It started as a best practices knowledge base.
+Used it to share knowledge with teammates, as project guidelines and during code reviews.
+Later evolved into a system of rules, skills and other tools focused on AI agents.
+Now it feeds AI agents directly so they act more like me and instead of me.
 
-Mainly, statements are meant to be evidentary but sometimes may be opinionated.
-It's never a final version and is meant to be improved and fixed over time.
-In other words, by copying it you copy myself as a developer at this moment.
+Mostly evidence-based, occasionally opinionated - flagged as such where it matters.
+Never a final version, always getting fixed.
+Fork it and you're forking a snapshot of me as a developer, bugs included.
 
-## Values
+## Values 📜
 
-These have no direct impact, but to let you know what to expect from these docs:
+No direct impact on the code, but sets expectations for these docs:
 
 - **Concise**: No fluff, formality, long intros, duplications, or polite fillers.
 - **Clear**: Public issue better than silent solution.
@@ -99,7 +104,7 @@ These have no direct impact, but to let you know what to expect from these docs:
 - **Systematic**: Fix process, not symptom.
 - **Harmless**: _Primum non nocere_ (first, do no harm).
 
-## Repository structure
+## Repository structure 🕸️
 
 Monorepo. Each `packages/*` is a workspace holding content source, docs/config generated from it.
 
@@ -112,7 +117,7 @@ Monorepo. Each `packages/*` is a workspace holding content source, docs/config g
 - `ai/` - built rules/skills output from packages, published. Supposed to be used by npx skills and rulesync commands by the end user. Also pulled back in as rulesync source in this repo.
 - `site/` - built docs site assets.
 
-## Contribution
+## Contribution 🤝
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
 Package-specific guidelines are in their respective directories.
