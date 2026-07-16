@@ -90,6 +90,10 @@ docs/rules
 docs/skills
 docs/stack
 
+# 3rd-party skills from `rulesync install`
+.rulesync/skills/.curated
+rulesync.lock
+
 # npx skills command artifacts (for personally installed skills)
 skills-lock.json
 

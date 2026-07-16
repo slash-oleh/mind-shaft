@@ -10,10 +10,26 @@ Comprehensive software engineering handbook: knowledge base, AI agent rules and 
 
 ### AI Agent Plugins
 
-<!-- TODO: Add rulesync and skills commands when repo is public -->
+## Installation
+
+### Skills
+
+Via [skills](https://www.npmjs.com/package/skills):
 
 ```bash
-npx skills add ...
+npx skills add slash-oleh/mind-shaft/ai/skills
+```
+
+Via [rulesync](https://www.npmjs.com/package/rulesync) - add to your `rulesync.jsonc`:
+
+```jsonc
+{ "sources": [{ "source": "slash-oleh/mind-shaft:ai/skills" }] }
+```
+
+then:
+
+```bash
+npx rulesync install && npx rulesync generate
 ```
 
 ## Background
@@ -45,6 +61,18 @@ These have no direct impact, but to let you know what to expect from these docs:
 - **Intentional**: Focus on goal, not plan.
 - **Systematic**: Fix process, not symptom.
 - **Harmless**: _Primum non nocere_ (first, do no harm).
+
+## Repository structure
+
+Monorepo. Each `packages/*` is a workspace holding content source, docs/config generated from it.
+
+- `packages/rules` - best practices (source of `ai/rules`).
+- `packages/skills` - processes/workflows (source of `ai/skills`).
+- `packages/stack` - toolset docs.
+- `docs/` - Zensical doc site, aggregates content from packages via symlinks.
+- `.rulesync/` - rulesync config/cache, generates `.claude/`, `.cursor/`, `.agents/` targets.
+- `ai/` - built rules/skills output from packages, published. Supposed to be used by npx skills and rulesync commands by the end user. Also pulled back in as rulesync source in this repo.
+- `site/` - built docs site assets.
 
 ## Contribution
 
