@@ -31,15 +31,7 @@ npx --yes skills add \
 Install repo's skills:
 
 ```bash
-npx --yes skills add \
-  ./agents/skills/ \
-  --skill merge-article \
-  --skill refine-article \
-  --skill rephrase \
-  --skill resolve-todo \
-  --agent universal \
-  --agent antigravity \
-  --agent claude-code
+npm run agents:sync
 ```
 
 Install packages' skills:

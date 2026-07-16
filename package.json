@@ -15,10 +15,12 @@
     "skills:lint": "npm run lint -w @mind-shaft/skills",
     "spellcheck": "cspell lint \"**/*.{md,js,ts,json,yml}\"",
     "rules:generate:ai": "npm run build:ai -w @mind-shaft/rules && rm -rf ai/rules && mkdir -p ai/rules && cp -r packages/rules/dist/ai/* ai/rules/",
-    "skills:generate:ai": "npm run build:ai -w @mind-shaft/skills && rm -rf ai/skills && mkdir -p ai/skills && cp -r packages/skills/dist/ai/* ai/skills/"
+    "skills:generate:ai": "npm run build:ai -w @mind-shaft/skills && rm -rf ai/skills && mkdir -p ai/skills && cp -r packages/skills/dist/ai/* ai/skills/",
+    "agents:sync": "rulesync generate"
   },
   "type": "module",
   "devDependencies": {
-    "cspell": "^10.0.0"
+    "cspell": "^10.0.0",
+    "rulesync": "^12.0.0"
   }
 }
