@@ -2,31 +2,35 @@
 
 Comprehensive software engineering handbook: knowledge base, AI agent rules and skills.
 
-## Shortcuts
-
-### Live Web Version
-
-[Read online](). <!-- TODO: Add github pages link when available -->
-
-### AI Agent
-
-Rules and skills, straight from GitHub - installs into `.claude/` by default (`-t cursor` for Cursor):
-
-```bash
-npx slash-oleh/mind-shaft
-```
+[Web version]() <!-- TODO: Add github pages link when available -->
 
 ## Installation
 
-### Skills only
+For AI agents.
 
-Via [skills](https://www.npmjs.com/package/skills):
+### All-in-one, via single special command (recommended)
+
+Skills and rules, straight from GitHub.
+
+```bash
+npx slash-oleh/mind-shaft -t claudecode
+```
+
+Replace `claudecode` with your agent if needed. See [rulesync docs](https://rulesync.dyoshikawa.com/reference/supported-tools.html) for all supported `--targets`.
+
+### Skills only, via vercel-labs's [skills](https://www.npmjs.com/package/skills)
+
+Most common tool but only supports skills.
 
 ```bash
 npx skills add slash-oleh/mind-shaft/ai/skills
 ```
 
-Via [rulesync](https://www.npmjs.com/package/rulesync) - add to your `rulesync.jsonc`:
+### Skills only, via [rulesync](https://www.npmjs.com/package/rulesync)
+
+Best if you're already maintaining `rulesync` infrastructure.
+
+Add to your `rulesync.jsonc`:
 
 ```jsonc
 { "sources": [{ "source": "slash-oleh/mind-shaft:ai/skills" }] }
