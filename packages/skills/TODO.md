@@ -12,6 +12,13 @@ Ideas for new skills:
   - `business-analysis` as a subskill for separate tasks
   - Aspects: summarize, classify, challenge, gaps, risks, stack, data model, use cases, critical path, mvp, milestones, timeline, team, components, services.
 
+- `adr`: Write, assess and resolve ADRs.
+  - Collect options
+  - Assess
+  - Make decision
+
+- `breakdown`: Convert PRD/System Design into tasks, milestones, roadmap ready to be created in ticket tracker.
+
 - `fix-feedback`: Make a followup fix based on ticket comments / chat message. Decide on ticket creation, create branch, implement, submit PR. Sort of `fix-pull-request` but when changes are already merged.
 
 - `why-ci-failed`: Part of `fix-pull-request` already but would still prove useful being ad-hoc.
