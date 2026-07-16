@@ -1,8 +1,35 @@
 # Mind Shaft
 
-Comprehensive software engineering handbook: knowledge base, AI agent rules and skills.
+My agentic engineering setup powered by software engineering guidelines.
 
-[Web version](https://slash-oleh.github.io/mind-shaft/)
+## What's in here
+
+### Skills (automating routine):
+
+SDLC:
+
+- `/create-ticket`: draft a structured ticket.
+- `/prepare-task-workspace`: set up branch and git state for a ticket.
+- `/elaborate-task`: assess scope, risks, done criteria before starting.
+- `/implement-task`: implement from spec through verified change.
+- `/code-review`: review a pull request against project rules.
+- `/submit-pull-request`: clean, polish, submit for review.
+- `/fix-pull-request`: address review comments, conflicts, CI failures.
+- `/ship-task`: merge, release, verify, announce.
+
+Meta:
+
+- `/extract-skill`: turn a completed task's process into a reusable skill.
+- `/formalize-skill`: refactor a skill file to the standard template.
+
+### Rules (enforcing best practices):
+
+- `general`: cross-cutting, e.g. `principles`, `code-style`, `security`, `tests`, `naming`, ...
+- `domains`: per product area, e.g. `frontend`, `backend`, `web`, `ux`, `design`, `mobile`.
+- `languages`: per language, e.g. `typescript`, `javascript`, `css`, `html`, `sql`.
+- `tools`: per tool/library, e.g. `react`, `git`, `mui`, `node-js`.
+
+Learn more on [web version](https://slash-oleh.github.io/mind-shaft/).
 
 ## Installation
 
