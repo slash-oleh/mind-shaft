@@ -56,12 +56,8 @@ function injectProtocol(directory) {
       injectProtocol(fullPath);
     } else if (item === 'SKILL.md') {
       const content = fs.readFileSync(fullPath, 'utf8');
-      let newContent;
-      if (content.includes(PROTOCOL_MARKER)) {
-        newContent = content.replace(PROTOCOL_MARKER, protocolContent);
-      } else {
-        newContent = `${content}\n\n---\n\n${protocolContent}`;
-      }
+      if (!content.includes(PROTOCOL_MARKER)) continue;
+      const newContent = content.replace(PROTOCOL_MARKER, protocolContent);
       fs.writeFileSync(fullPath, newContent);
       console.log(`Injected protocol into ${fullPath}`);
     }
