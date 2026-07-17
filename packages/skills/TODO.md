@@ -27,6 +27,8 @@ Ideas for new skills:
 
 - `reflect` / `reflect-mistakes` / `reflect-skill`: Review errors (including self-fixed) to improve initial instructions or update memory.
 
+- `security-assessment`: Run whitebox static checks against OWASP top 10. Consider other aspects like dependencies. Consider external knowledgebase source for OWASP but outline the flow, parallelization opportunities, etc.
+
 - `sdlc`: Combining other skills in iterative for PRD/task to make the way to Done in iterative approach.
   - Rough flow from existing (or planned) skills
     - estimate-prd
