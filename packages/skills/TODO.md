@@ -8,6 +8,19 @@ Settle on Multi-stage skills vs Multi-skill workflows balance.
 
 Ideas for new skills:
 
+- `project-memo`: Maintain project cheatsheet for high-level project info. Something like Claude Code's `/init` but much more trimmed to really high-level details. Exclude anything that is rather a skill or a rule - only repo-specific factual statements. Used to write the initial root `AGENTS.md` from scratch, append to existing, as well as keed it updated when relevant facts change (model decision). Should define document structure. The text style must be really concise.
+  - product brief: short basic business logic description and references to full docs
+  - structure: monorepo projects map, main modules and dependencies (e.g. `packages/backend`, `libs/auth`)
+  - git:
+    - platform: github/gitlab, submodules if any, relevant neighbour/dependency repos
+    - flow: base branch, branching/release process, commit message guidelines
+    - worktree: init, cleanup commands/instructions
+  - stack: cloud deployment/hosting, language, main framework/lib/platform/db/API/etc., specific runtime versions (e.g. via nvm, virtualenv), external/global deps (e.g. CLI commands)
+  - ticket tracker: jira/github/gitlab, ticket number format
+  - code quality: guidelines reference (agent rules or regular docs), linter, formatter, pre-commit commands
+  - tests: yes/no, commands
+  - environment setup: fresh local run (deps install, docker/docker-compose/bare platform)
+
 - `estimate-prd`: Analyze, breakdown, estimate
   - `business-analysis` as a subskill for separate tasks
   - Aspects: summarize, classify, challenge, gaps, risks, stack, data model, use cases, critical path, mvp, milestones, timeline, team, components, services.
