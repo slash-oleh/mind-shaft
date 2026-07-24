@@ -7,7 +7,15 @@
 
 ## Steps
 
-### Step 1: Resolve PR number
+### Step 1: Detect platform
+
+```bash
+PLATFORM=$(bash "$SKILL_DIR/scripts/detect-platform.sh")
+```
+
+Prints `github` or `gitlab` based on the origin remote. Later steps below use `<platform>` as a placeholder for the script suffix, matching this output directly.
+
+### Step 2: Resolve PR number
 
 Resolve PR number using the first matching source:
 
@@ -18,15 +26,15 @@ Resolve PR number using the first matching source:
 
 - **Fallback**: If no explicit identifier was provided, run:
   ```bash
-  bash "$SKILL_DIR/scripts/identify-pr.sh"
+  bash "$SKILL_DIR/scripts/identify-pr-<platform>.sh"
   ```
   Prints the PR number for the current branch. Exits non-zero if no open PR is found.
   Do not ask the user for a PR number - always attempt the fallback.
 
-### Step 2: Fetch all PR info
+### Step 3: Fetch all PR info
 
 ```bash
-bash "$SKILL_DIR/scripts/get-pr-info.sh" <PR_NUMBER>
+bash "$SKILL_DIR/scripts/get-pr-info-<platform>.sh" <PR_NUMBER>
 ```
 
 Prints these sections in order:
@@ -36,8 +44,9 @@ Prints these sections in order:
 - **CI failures**: failed checks and filtered log lines for each failed run
 - **Reviews**: each review with author, state, and body
 - **Open review threads**: unresolved discussions; each entry includes `thread_id`, `location` (file and lines), and full `comments` array with `id`, `author`, and `body`
+  - On GitLab, `thread_id` is the discussion ID (required by `post-reply-gitlab.sh` to reply).
 
-### Step 3: Draft Thread Summaries
+### Step 4: Draft Thread Summaries
 
 For each thread:
 
@@ -50,6 +59,7 @@ JSON format:
 
 ```jsonc
 {
+  "platform": "string", // "github" or "gitlab", from Step 1. Later phases read this instead of re-detecting.
   "pr_number": "number", // Resolved PR number.
   "title": "string", // PR title.
   "description": "string", // PR description body.

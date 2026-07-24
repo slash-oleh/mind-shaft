@@ -1,5 +1,5 @@
 ---
-title: Ship Task
+title: SKILL.md
 name: ship-task
 description: Merge, release, verify, prepare presentational info, announce
 ---
@@ -13,7 +13,8 @@ description: Merge, release, verify, prepare presentational info, announce
 
 ## Prerequisites
 
-- `gh` CLI installed and authenticated
+- GitHub repo: `gh` CLI installed and authenticated
+- GitLab repo: `glab` CLI installed and authenticated
 
 ## Phases
 

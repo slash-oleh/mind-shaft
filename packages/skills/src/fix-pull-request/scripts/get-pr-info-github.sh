@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Usage: get-pr-info.sh <PR_NUMBER>
+# Usage: get-pr-info-gh.sh <PR_NUMBER>
 # Prints PR body, merge state, failed CI checks with logs, reviews, and open review threads.
 set -euo pipefail
 

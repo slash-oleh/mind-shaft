@@ -12,10 +12,10 @@
 
 ### Step 1: Merge PR
 
-Run to merge the pull request and clean up the branch:
+Merge the pull request and clean up the branch. `<platform>` is the `platform` field from Phase 1's output:
 
 ```bash
-gh pr merge <pr_number> --rebase --delete-branch
+bash "$SKILL_DIR/scripts/merge-pr-<platform>.sh" <pr_number>
 ```
 
 ## Output

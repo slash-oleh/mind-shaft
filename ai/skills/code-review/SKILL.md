@@ -11,7 +11,8 @@ description: Perform a comprehensive code review of a pull request according to 
 
 ## Prerequisites
 
-- `gh` CLI installed and authenticated
+- GitHub repo: `gh` CLI installed and authenticated
+- GitLab repo: `glab` CLI installed and authenticated
 
 ## Phases
 

@@ -18,7 +18,7 @@ ROOT_AUTHOR=$(printf '%s' "$thread" | jq -r '.[0].user.login')
 
 mapfile -t lines < <(
     printf '%s' "$thread" |
-        jq -r '.[-2:] | .[] | "├── _@\(.user.login)_: \(.body | split("\n")[0] | .[0:80])"'
+        jq -r '.[-2:] | .[] | "|-- _@\(.user.login)_: \(.body | split("\n")[0] | .[0:80])"'
 )
 
 gh api "repos/$REPO/pulls/$PR/comments/$COMMENT_ID/replies" \
@@ -26,4 +26,4 @@ gh api "repos/$REPO/pulls/$PR/comments/$COMMENT_ID/replies" \
 
 echo "Thread **\"$SUMMARY\"** by _@${ROOT_AUTHOR}_"
 printf '%s\n' "${lines[@]}"
-echo "└── _me_: **$BODY**"
+echo "\`-- _me_: **$BODY**"

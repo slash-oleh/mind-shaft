@@ -27,12 +27,14 @@ git push origin $(git branch --show-current) --force-with-lease
 For each item in `fixes` from Phase 4 with a present `reply` field:
 
 Use the **Shell Markdown Bodies** pattern from `SKILL.md`.
-Where `<pr_number>` comes from Phase 1, `<comment_id>` is the comment `id` from `threads` in Phase 1, and `<summary>` is the corresponding thread `summary` from Phase 1:
+Where `<pr_number>` comes from Phase 1, `<comment_id>` is the comment `id` from `threads` in Phase 1 (on GitLab this is the `thread_id`, i.e. the discussion ID), and `<summary>` is the corresponding thread `summary` from Phase 1:
 
 ```bash
 # ... create $TMP with reply ...
-bash "$SKILL_DIR/scripts/post-reply.sh" <pr_number> <comment_id> "$TMP" "<summary>"
+bash "$SKILL_DIR/scripts/post-reply-<platform>.sh" <pr_number> <comment_id> "$TMP" "<summary>"
 ```
+
+Where `<platform>` is the `platform` field from Phase 1's output.
 
 Post replies concurrently in batches.
 Print all script outputs to chat once all done.
