@@ -27,6 +27,7 @@ Meta:
 
 - [`/extract-skill`](ai/skills/extract-skill/SKILL.md): turn a completed task's process into a reusable skill.
 - [`/formalize-skill`](ai/skills/formalize-skill/SKILL.md): refactor a skill file to the standard template.
+- [`/project-memo`](ai/skills/project-memo/SKILL.md): maintain root `AGENTS.md` repo cheatsheet.
 
 ### Rules (best practices, enforced not suggested): ⚖️
 
