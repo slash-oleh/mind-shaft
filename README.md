@@ -46,7 +46,7 @@ For AI agents.
 Skills and rules, straight from GitHub.
 
 ```bash
-npx slash-oleh/mind-shaft -t claudecode
+npx --yes --allow-git=all slash-oleh/mind-shaft install -t claudecode
 ```
 
 Replace `claudecode` with your agent if needed. See [rulesync docs](https://rulesync.dyoshikawa.com/reference/supported-tools.html) for all supported `--targets`.

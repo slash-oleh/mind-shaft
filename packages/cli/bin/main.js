@@ -11,18 +11,29 @@ const REPO = "slash-oleh/mind-shaft";
 const DEFAULT_TARGETS = ["claudecode"];
 
 function parseArgs(argv) {
-  const opts = { targets: DEFAULT_TARGETS, ref: "main" };
+  const opts = { targets: DEFAULT_TARGETS, ref: "main", rest: [] };
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
     if (arg === "--target" || arg === "-t") opts.targets = argv[++i].split(",");
     else if (arg === "--ref" || arg === "-r") opts.ref = argv[++i];
     else if (arg === "--help" || arg === "-h") opts.help = true;
+    else opts.rest.push(arg);
   }
   return opts;
 }
 
 function printHelp() {
-  console.log(`Usage: npx slash-oleh/mind-shaft [options]
+  console.log(`Usage: npx slash-oleh/mind-shaft <command> [options]
+
+Commands:
+  install                Install mind-shaft rules and skills into the current project
+
+Run 'npx slash-oleh/mind-shaft install --help' for install options.
+`);
+}
+
+function printInstallHelp() {
+  console.log(`Usage: npx slash-oleh/mind-shaft install [options]
 
 Installs mind-shaft rules and skills into the current project.
 Downloads content as a tarball (one request), then runs rulesync generate
@@ -33,6 +44,8 @@ Options:
                         See: npx rulesync generate --help
   -r, --ref <ref>        Git ref to install from (default: main)
   -h, --help             Show this help
+
+Unrecognized options (e.g. --global) pass through to rulesync generate.
 `);
 }
 
@@ -56,7 +69,7 @@ async function downloadSource(ref, destDir) {
   rmSync(tarPath);
 }
 
-function generate(targets, inputRoot) {
+function generate(targets, inputRoot, rest) {
   // --config points at a path that never exists so a consumer project's own
   // rulesync.jsonc (e.g. delete: true, different targets) can't leak in here.
   const result = spawnSync(
@@ -73,6 +86,7 @@ function generate(targets, inputRoot) {
       inputRoot,
       "--config",
       join(inputRoot, "unused-rulesync-config.jsonc"),
+      ...rest,
     ],
     { stdio: "inherit" },
   );
@@ -81,10 +95,10 @@ function generate(targets, inputRoot) {
   }
 }
 
-async function main() {
-  const opts = parseArgs(process.argv.slice(2));
+async function install(argv) {
+  const opts = parseArgs(argv);
   if (opts.help) {
-    printHelp();
+    printInstallHelp();
     return;
   }
 
@@ -93,12 +107,25 @@ async function main() {
     await downloadSource(opts.ref, tmp);
     cpSync(join(tmp, "ai/rules"), join(tmp, ".rulesync/rules"), { recursive: true });
     cpSync(join(tmp, "ai/skills"), join(tmp, ".rulesync/skills"), { recursive: true });
-    generate(opts.targets, tmp);
+    generate(opts.targets, tmp, opts.rest);
   } finally {
     rmSync(tmp, { recursive: true, force: true });
   }
 
   console.log(`Installed mind-shaft rules and skills for: ${opts.targets.join(", ")}`);
+}
+
+async function main() {
+  const [command, ...rest] = process.argv.slice(2);
+  if (command === "install") {
+    await install(rest);
+  } else if (!command || command === "--help" || command === "-h") {
+    printHelp();
+  } else {
+    console.error(`Unknown command: ${command}`);
+    printHelp();
+    process.exitCode = 1;
+  }
 }
 
 await main();
