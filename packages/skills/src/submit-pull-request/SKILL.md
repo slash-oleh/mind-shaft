@@ -12,8 +12,8 @@ description: Check, clean, polish, and submit changes as a pull request for revi
 
 ## Prerequisites
 
-- GitHub repo: `gh` CLI installed and authenticated
-- GitLab repo: `glab` CLI installed and authenticated
+- GitHub repo: `gh` CLI installed and authenticated, `github-tools` skill available
+- GitLab repo: `glab` CLI installed and authenticated, `gitlab-tools` skill available
 
 ## Phases
 
@@ -29,19 +29,7 @@ description: Check, clean, polish, and submit changes as a pull request for revi
 
 ### Platform Detection
 
-Phase 7's Step 1 runs `scripts/detect-platform.sh` (checks the origin remote for `gitlab`) and uses the result to pick the `-github.sh` or `-gitlab.sh` variant of `create-pr.sh` - the two variants produce the same result (a published PR/MR).
-
-### Shell Markdown Bodies
-
-When a script requires a markdown body (replies, descriptions), always use a temp file with a quoted heredoc to avoid shell escaping issues (especially backticks):
-
-```bash
-TMP=$(mktemp)
-cat > "$TMP" <<'EOF'
-...markdown content...
-EOF
-# Pass "$TMP" to script
-```
+Phase 7's Step 1 runs `scripts/detect-platform.sh` (checks the origin remote for `gitlab`) and uses the result to invoke the `github-tools` or `gitlab-tools` skill's `create-pr` command - both produce the same result (a published PR/MR).
 
 ## Execution
 

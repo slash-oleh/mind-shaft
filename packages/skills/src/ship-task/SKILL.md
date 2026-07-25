@@ -13,8 +13,8 @@ description: Merge, release, verify, prepare presentational info, announce
 
 ## Prerequisites
 
-- GitHub repo: `gh` CLI installed and authenticated
-- GitLab repo: `glab` CLI installed and authenticated
+- GitHub repo: `gh` CLI installed and authenticated, `github-tools` skill available
+- GitLab repo: `glab` CLI installed and authenticated, `gitlab-tools` skill available
 
 ## Phases
 

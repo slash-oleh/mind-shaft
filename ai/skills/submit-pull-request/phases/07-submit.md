@@ -14,7 +14,7 @@
 PLATFORM=$(bash "$SKILL_DIR/scripts/detect-platform.sh")
 ```
 
-Prints `github` or `gitlab` based on the origin remote. Use it to pick the `-github` or `-gitlab` script variant in every step below.
+Prints `github` or `gitlab` based on the origin remote. Use it to pick the `github-tools` or `gitlab-tools` skill in every step below.
 
 ### Step 2: Push branch
 
@@ -26,20 +26,15 @@ git push origin <branchName>
 
 ### Step 3: Create PR
 
-Create the PR using the **Shell Markdown Bodies** pattern.
+Create the PR using the `$PLATFORM-tools` skill's **Shell Markdown Bodies** pattern.
 
 - Use `baseBranch` from Phase 1 as the target branch (defaults to `main`).
 - Use `title` and `description` from Phase 6.
 - If `dependentPr` from Phase 1 is present, pass `--draft` to create the PR in Draft status.
 
-```bash
+```
 # ... create $TMP with description ...
-bash "$SKILL_DIR/scripts/create-pr-$PLATFORM.sh" \
-  "<title>" \
-  "$TMP" \
-  "<baseBranch>" \
-  "<branchName>" \
-  "[--draft if dependentPr exists, else empty]"
+Skill(skill: "$PLATFORM-tools", args: "create-pr <title> $TMP <baseBranch> <branchName> [--draft if dependentPr exists, else empty]")
 ```
 
 ### Step 4: Dependent PR Post-Merge Cleanup
@@ -51,17 +46,17 @@ This step may run in a separate invocation after the parent PR merges, so `$PLAT
 
 1. Mark this PR as ready for review:
 
-   ```bash
-   bash "$SKILL_DIR/scripts/set-pr-ready-<platform>.sh" <PR_NUMBER>
+   ```
+   Skill(skill: "<platform>-tools", args: "set-pr-ready <PR_NUMBER>")
    ```
 
 2. Edit the PR description to remove the dependency note block at the top:
 
-  Use the **Shell Markdown Bodies** pattern from `SKILL.md`.
+  Use the **Shell Markdown Bodies** pattern from the `<platform>-tools` skill's `SKILL.md`.
 
-   ```bash
+   ```
    # ... create $TMP with updated description ...
-   bash "$SKILL_DIR/scripts/update-pr-description-<platform>.sh" <PR_NUMBER> "$TMP"
+   Skill(skill: "<platform>-tools", args: "update-pr-description <PR_NUMBER> $TMP")
    ```
 
 ### Step 5: Update Ticket Status

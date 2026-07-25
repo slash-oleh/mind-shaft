@@ -24,27 +24,20 @@ Resolve PR number using the first matching source:
   - PR URL -> extract number from the URL
   - Ticket (e.g. `XXX-42`) -> derive the branch name pattern `xxx-42-*` and resolve via API. If multiple found, ask which one to use.
 
-- **Fallback**: If no explicit identifier was provided, run:
-  ```bash
-  bash "$SKILL_DIR/scripts/identify-pr-<platform>.sh"
+- **Fallback**: If no explicit identifier was provided, invoke:
+  ```
+  Skill(skill: "<platform>-tools", args: "identify-pr")
   ```
   Prints the PR number for the current branch. Exits non-zero if no open PR is found.
   Do not ask the user for a PR number - always attempt the fallback.
 
 ### Step 3: Fetch all PR info
 
-```bash
-bash "$SKILL_DIR/scripts/get-pr-info-<platform>.sh" <PR_NUMBER>
+Invoke the `<platform>-tools` skill:
+
 ```
-
-Prints these sections in order:
-
-- **PR info**: title and description body
-- **Merge state**: `mergeable` and `mergeStateStatus`
-- **CI failures**: failed checks and filtered log lines for each failed run
-- **Reviews**: each review with author, state, and body
-- **Open review threads**: unresolved discussions; each entry includes `thread_id`, `location` (file and lines), and full `comments` array with `id`, `author`, and `body`
-  - On GitLab, `thread_id` is the discussion ID (required by `post-reply-gitlab.sh` to reply).
+Skill(skill: "<platform>-tools", args: "get-pr-info <PR_NUMBER>")
+```
 
 ### Step 4: Draft Thread Summaries
 

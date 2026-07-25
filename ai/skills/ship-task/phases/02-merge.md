@@ -14,8 +14,8 @@
 
 Merge the pull request and clean up the branch. `<platform>` is the `platform` field from Phase 1's output:
 
-```bash
-bash "$SKILL_DIR/scripts/merge-pr-<platform>.sh" <pr_number>
+```
+Skill(skill: "<platform>-tools", args: "merge-pr <pr_number>")
 ```
 
 ## Output

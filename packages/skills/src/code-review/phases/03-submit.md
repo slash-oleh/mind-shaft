@@ -33,15 +33,15 @@ _Note: Use the appropriate `event` based on Phase 2 `state` ("APPROVE", "REQUEST
 
 `<platform>` is the `platform` field from Phase 1's output:
 
-```bash
-bash "$SKILL_DIR/scripts/submit-review-<platform>.sh" <PR_NUMBER> "$PAYLOAD_TMP"
+```
+Skill(skill: "<platform>-tools", args: "submit-review <PR_NUMBER> $PAYLOAD_TMP")
 ```
 
 Note: GitLab has no native "request changes" state - `REQUEST_CHANGES` and `COMMENT` are posted as notes without approving the MR; only `APPROVE` also approves it.
 
 ### Step 3: Verify and Clean Up
 
-Verify the script exited with 0. If it succeeds, the review is officially published.
+Verify the invocation succeeded. If it succeeds, the review is officially published.
 
 ## Output
 

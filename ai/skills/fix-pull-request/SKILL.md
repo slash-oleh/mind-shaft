@@ -15,8 +15,8 @@ description: Address pull request review comments, conflicts, and CI failures. U
 
 ## Prerequisites
 
-- GitHub repo: `gh` CLI installed and authenticated
-- GitLab repo: `glab` CLI installed and authenticated
+- GitHub repo: `gh` CLI installed and authenticated, `github-tools` skill available
+- GitLab repo: `glab` CLI installed and authenticated, `gitlab-tools` skill available
 
 ## Phases
 
@@ -31,19 +31,7 @@ description: Address pull request review comments, conflicts, and CI failures. U
 
 ### Platform Detection
 
-Phase 1's Step 1 runs `scripts/detect-platform.sh` (checks the origin remote for `gitlab`) and persists the result as `platform` in its output. Every later step that calls a script picks the `-github.sh` or `-gitlab.sh` variant of the same script name based on that value - the two variants produce the same output shape, so no other step needs to change based on platform.
-
-### Shell Markdown Bodies
-
-When a script requires a markdown body (replies, descriptions), always use a temp file with a quoted heredoc to avoid shell escaping issues (especially backticks):
-
-```bash
-TMP=$(mktemp)
-cat > "$TMP" <<'EOF'
-...markdown content...
-EOF
-# Pass "$TMP" to script
-```
+Phase 1's Step 1 runs `scripts/detect-platform.sh` (checks the origin remote for `gitlab`) and persists the result as `platform` in its output. Every later step invokes the `<platform>-tools` skill (`github-tools` or `gitlab-tools`) based on that value - both expose the same commands with the same output shape, so no other step needs to change based on platform.
 
 ## Execution
 
