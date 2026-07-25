@@ -29,7 +29,7 @@ description: Check, clean, polish, and submit changes as a pull request for revi
 
 ### Platform Detection
 
-Phase 7's Step 1 runs `scripts/detect-platform.sh` (checks the origin remote for `gitlab`) and uses the result to invoke the `github-tools` or `gitlab-tools` skill's `create-pr` command - both produce the same result (a published PR/MR).
+Phase 1's Step 1 runs `scripts/detect-platform.sh` (checks the origin remote for `gitlab`) and persists the result as `platform` in its output. Every later step invokes the `<platform>-tools` skill (`github-tools` or `gitlab-tools`) based on that value - both expose the same commands with the same output shape, so no other step needs to change based on platform.
 
 ## Execution
 

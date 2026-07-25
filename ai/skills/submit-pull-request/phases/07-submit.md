@@ -8,15 +8,7 @@
 
 ## Steps
 
-### Step 1: Detect platform
-
-```bash
-PLATFORM=$(bash "$SKILL_DIR/scripts/detect-platform.sh")
-```
-
-Prints `github` or `gitlab` based on the origin remote. Use it to pick the `github-tools` or `gitlab-tools` skill in every step below.
-
-### Step 2: Push branch
+### Step 1: Push branch
 
 Push using `branchName` from Phase 1:
 
@@ -24,9 +16,9 @@ Push using `branchName` from Phase 1:
 git push origin <branchName>
 ```
 
-### Step 3: Create PR
+### Step 2: Create PR
 
-Create the PR using the `$PLATFORM-tools` skill's **Shell Markdown Bodies** pattern.
+Create the PR using the `<platform>-tools` skill's **Shell Markdown Bodies** pattern, where `<platform>` is the `platform` field from Phase 1's output.
 
 - Use `baseBranch` from Phase 1 as the target branch (defaults to `main`).
 - Use `title` and `description` from Phase 6.
@@ -34,15 +26,15 @@ Create the PR using the `$PLATFORM-tools` skill's **Shell Markdown Bodies** patt
 
 ```
 # ... create $TMP with description ...
-Skill(skill: "$PLATFORM-tools", args: "create-pr <title> $TMP <baseBranch> <branchName> [--draft if dependentPr exists, else empty]")
+Skill(skill: "<platform>-tools", args: "create-pr <title> $TMP <baseBranch> <branchName> [--draft if dependentPr exists, else empty]")
 ```
 
-### Step 4: Dependent PR Post-Merge Cleanup
+### Step 3: Dependent PR Post-Merge Cleanup
 
 Note: When the parent PR (the PR this PR depends on) is merged, GitHub automatically changes the target branch of this PR to `main` (GitLab: the target branch does not auto-change - set it explicitly).
 Once the parent PR is merged, perform the following manual cleanup steps on this PR:
 
-This step may run in a separate invocation after the parent PR merges, so `$PLATFORM` is not assumed to still be set as a shell variable; re-read it from this phase's own persisted `platform` output field (Step 1). `<platform>` below is a placeholder for the script suffix, matching `platform`'s value directly.
+This step may run in a separate invocation after the parent PR merges. `<platform>` below is the `platform` field from Phase 1's output.
 
 1. Mark this PR as ready for review:
 
@@ -59,7 +51,7 @@ This step may run in a separate invocation after the parent PR merges, so `$PLAT
    Skill(skill: "<platform>-tools", args: "update-pr-description <PR_NUMBER> $TMP")
    ```
 
-### Step 5: Update Ticket Status
+### Step 4: Update Ticket Status
 
 If `ticketId` from Phase 1 exists, transition ticket to "In Review" or "Code Review".
 
@@ -76,6 +68,5 @@ JSON format:
 ```jsonc
 {
   "prUrl": "string", // The URL of the created Pull Request.
-  "platform": "string", // "github" or "gitlab", from Step 1.
 }
 ```
