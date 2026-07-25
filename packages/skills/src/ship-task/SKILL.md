@@ -13,6 +13,7 @@ description: Merge, release, verify, prepare presentational info, announce
 
 ## Prerequisites
 
+- `detect-vcs-platform` skill available
 - GitHub repo: `gh` CLI installed and authenticated, `github-tools` skill available
 - GitLab repo: `glab` CLI installed and authenticated, `gitlab-tools` skill available
 

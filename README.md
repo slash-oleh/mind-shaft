@@ -29,6 +29,12 @@ Meta:
 - [`/formalize-skill`](ai/skills/formalize-skill/SKILL.md): refactor a skill file to the standard template.
 - [`/project-memo`](ai/skills/project-memo/SKILL.md): maintain root `AGENTS.md` repo cheatsheet.
 
+Tools (invoked by other skills, not directly):
+
+- [`detect-vcs-platform`](ai/skills/detect-vcs-platform/SKILL.md): detect GitHub vs GitLab from the origin remote.
+- [`github-tools`](ai/skills/github-tools/SKILL.md): GitHub PR data/operations via `gh` CLI.
+- [`gitlab-tools`](ai/skills/gitlab-tools/SKILL.md): GitLab MR data/operations via `glab` CLI.
+
 ### Rules (best practices, enforced not suggested): ⚖️
 
 - [`general`](ai/rules/general): cross-cutting, e.g. [`principles`](ai/rules/general/principles.md), [`code-style`](ai/rules/general/code-style.md), [`security`](ai/rules/general/security.md), [`tests`](ai/rules/general/tests.md), [`naming`](ai/rules/general/naming.md), ...

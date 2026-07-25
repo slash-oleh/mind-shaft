@@ -15,6 +15,7 @@ description: Address pull request review comments, conflicts, and CI failures. U
 
 ## Prerequisites
 
+- `detect-vcs-platform` skill available
 - GitHub repo: `gh` CLI installed and authenticated, `github-tools` skill available
 - GitLab repo: `glab` CLI installed and authenticated, `gitlab-tools` skill available
 
@@ -26,12 +27,6 @@ description: Address pull request review comments, conflicts, and CI failures. U
 4. [Apply Fixes](phases/04-apply-fixes.md)
 5. [Publish](phases/05-publish.md) (APPROVAL REQUIRED)
 6. [Update Description](phases/06-update-description.md)
-
-## Shared Patterns
-
-### Platform Detection
-
-Phase 1's Step 1 runs `scripts/detect-platform.sh` (checks the origin remote for `gitlab`) and persists the result as `platform` in its output. Every later step invokes the `<platform>-tools` skill (`github-tools` or `gitlab-tools`) based on that value - both expose the same commands with the same output shape, so no other step needs to change based on platform.
 
 ## Execution
 

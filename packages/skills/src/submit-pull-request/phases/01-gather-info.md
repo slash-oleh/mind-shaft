@@ -9,8 +9,10 @@
 
 ### Step 1: Detect platform
 
-```bash
-PLATFORM=$(bash "$SKILL_DIR/scripts/detect-platform.sh")
+Invoke:
+
+```
+Skill(skill: "detect-vcs-platform")
 ```
 
 Prints `github` or `gitlab` based on the origin remote. Later steps below use `<platform>` as a placeholder for the script suffix, matching this output directly. Later phases read `platform` from this phase's output instead of re-detecting.
