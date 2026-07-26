@@ -20,6 +20,7 @@ SDLC:
 - [`/elaborate`](ai/skills/elaborate/SKILL.md): assess scope, risks, done criteria before starting.
 - [`/confront`](ai/skills/confront/SKILL.md): critically examine a spec against the codebase, raise concerns.
 - [`/clarify`](ai/skills/clarify/SKILL.md): resolve open concerns with the user, update requirements.
+- [`/spec`](ai/skills/spec/SKILL.md): compile approach, sub-tasks, and testable success criteria.
 - [`/implement`](ai/skills/implement/SKILL.md): plan and implement from spec through verified change.
 - [`/code-review`](ai/skills/code-review/SKILL.md): review a diff against project rules.
 - [`/review-pull-request`](ai/skills/review-pull-request/SKILL.md): fetch, review, and submit a pull request review.

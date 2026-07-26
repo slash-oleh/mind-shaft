@@ -8,7 +8,7 @@ description: Analyze a task specification, review the codebase, and output a det
 ## Goal
 
 - Task scope, constraints, and risks are fully understood.
-- A list of concrete, testable success criteria is established.
+- A spec, with concrete testable success criteria, is established.
 - Output is ready to be used as input for task implementation.
 
 ## Prerequisites
@@ -16,13 +16,14 @@ description: Analyze a task specification, review the codebase, and output a det
 - `gather-task` already ran this session, or its output passed in as input
 - `confront` skill available
 - `clarify` skill available
+- `spec` skill available
 
 ## Phases
 
 1. [Gather Info](phases/01-gather-info.md)
 2. [Analyze](phases/02-analyze.md)
 3. [Clarify](phases/03-clarify.md)
-4. [Success Criteria](phases/04-success-criteria.md) (APPROVAL REQUIRED)
+4. [Spec](phases/04-spec.md) (APPROVAL REQUIRED)
 
 ## Execution
 
