@@ -9,95 +9,56 @@ description: Merge, release, verify, prepare presentational info, announce
 
 - PR merged.
 - Presentational info (comment text, links, screenshots) prepared.
+- Ticket updated with report and status change.
 
 ## Prerequisites
 
 - `vcs-tools` skill available (`gh` CLI for GitHub repos, `glab` CLI for GitLab repos)
+- `ticket-tools` skill available
 
-## Phases
+## Steps
 
-1. [Gather Info](phases/01-gather-info.md)
-2. [Merge](phases/02-merge.md)
-3. [Generate Report](phases/03-generate-report.md)
-4. [Announce](phases/04-announce.md) (APPROVAL REQUIRED)
+### Step 1: Resolve PR Status
 
-## Execution
+- Identify PR: `Skill(skill: "vcs-tools", args: "identify-pr")`
+- Fetch status: `Skill(skill: "vcs-tools", args: "get-pr-status <PR_NUMBER>")`
+- Verify `reviewDecision` is `APPROVED`. If not and approval is required, ask what to do.
 
-Follow the **Skill Execution Protocol** (see below).
+### Step 2: Merge PR
 
----
+Skip if PR already merged.
 
-# Skill Execution Protocol
+Merge and clean up the branch:
 
-## Execution Loop
+```
+Skill(skill: "vcs-tools", args: "merge-pr <pr_number>")
+```
 
-For each phase in order:
+### Step 3: Generate Report
 
-1. Announce **Phase N/X: <Name>**.
+- Draft the announcement text to be posted on the ticket.
+- Gather relevant deployed environment URLs, PR links, or artifact links if applicable.
+- Take visual proof (screenshots) of the working feature if applicable.
 
-2. Read instructions (from file or section).
+### Step 4: Announce
 
-3. Execute instructions.
-   - Follow phase steps exactly as defined, in order.
+Comment on the ticket:
 
-4. Verify phase goals are met:
-   - For each item in `## Goal`, explicitly verify and state how it was satisfied.
-   - Do not skip, merge, or adopt goals during verification.
+```
+# ... create $TMP with the report text (see ticket-tools' Shell Markdown Bodies pattern) ...
+Skill(skill: "ticket-tools", args: "comment <ticketId> $TMP")
+```
 
-5. Persist phase output (see below).
+Change status:
 
-6. Report **Phase N complete**.
+```
+Skill(skill: "ticket-tools", args: "change-status <ticketId> acceptance")
+```
 
-## Data Exchange
+## Output
 
-Pass data between phases using persistent files:
+Markdown format:
 
-- **Path**: `.cache/skills/<skill_name>/runs/<run_id>/<phase_id>.<ext>`
-  - `<skill_name>`: Hyphenated name of the skill.
-  - `<run_id>`: Ticket ID (e.g. `PROJ-123`) or unique, short hyphenated task summary (e.g. `fix-user-auth`).
-  - `<phase_id>`: Matching phase filename.
-  - `<ext>`: JSON or MD.
-
-- **Format**: JSON for structured data, Markdown for text.
-
-- **Output**: Phase must save results to file before completion.
-
-  Create parent directories first:
-
-  ```bash
-  mkdir -p .cache/skills/<skill_name>/runs/<run_id>
-  ```
-
-  JSON example:
-
-  ```bash
-  cat << 'EOF' > .cache/skills/<skill_name>/runs/<run_id>/<phase_id>.json
-  {
-    "key": "value"
-  }
-  EOF
-  ```
-
-- **Read Input**: Subsequent phases MUST read previous data files for context. Previous phases output is an input for next phases.
-
-  ```bash
-  cat .cache/skills/<skill_name>/runs/<run_id>/<phase_id>.json 2>/dev/null || echo "{}"
-  ```
-
-## Human Approval
-
-Require explicit approval before starting phases marked `(APPROVAL REQUIRED)`.
-
-Ask: **"Ready for Phase N: <Name>. Confirm?"**
-
-If user requests changes, return to the relevant phase.
-
-## Common Rules
-
-- **Follow instructions precisely**: Deviate only on explicit user request.
-- **Expected skips**: If phase "Skip Conditions" are defined and met, announce and skip the phase.
-- **Phase sequence**: Maintain sequential order. Do not mix phase actions.
-- **Strict tool usage**: When specific script or command is mentioned - use exactly that. Do not improvise.
-- **Ask, don't guess**: Clarify ambiguity and fix systematically instead of making silent assumptions.
-- **Strict goal verification**: Verification of phase goals is mandatory. Go through every single goal item in `## Goal` section, and verify before completing a phase. Do not omit, rewrite, or generalize goals.
-
+- PR: Number, merge commit.
+- Report: Drafted comment text, links (PR, deploy).
+- Ticket: Posted comment URL.
