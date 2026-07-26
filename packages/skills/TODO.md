@@ -18,7 +18,7 @@ Ideas for new skills:
   - change status
   - comment
 
-- `task-to-pull-request`: Compound hands off workflow with the following skills chain. Humam approval gates mostly skipped. Questions limited to product semi-technical ones, with rest accepted at best effort decisions.
+- `task-to-pull-request`: Compound hands-off workflow with the following skills chain. Humam approval gates mostly skipped. Questions limited to product semi-technical ones, with rest accepted at best effort decisions.
   - `gather-task`
   - `prepare-workspace`
   - `elaborate`
@@ -26,7 +26,7 @@ Ideas for new skills:
   - `code-review`
   - `submit-pull-request`
 
-- `auto-ship`: Compound hands off workflow with the following skills chain. Humam approval gates mostly skipped. Questions limited to product semi-technical ones, with rest accepted at best effort decisions.
+- `auto-ship`: Compound hands-off workflow with the following skills chain. Humam approval gates mostly skipped. Questions limited to product semi-technical ones, with rest accepted at best effort decisions.
   - (wait for review)
   - `fix-pull-request`
   - (wait for approval, start over if not)

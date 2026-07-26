@@ -12,12 +12,11 @@ _Dig here. Bring a hard hat._ 👷
 
 ### Skills (routine, automated away): 🤖
 
-SDLC:
+SDLC (atomic development processes - full control):
 
 - [`/create-ticket`](ai/skills/create-ticket/SKILL.md): draft a structured ticket from stream of consciousness.
 - [`/gather-task`](ai/skills/gather-task/SKILL.md): collect ticket, design, and codebase info for a task.
 - [`/prepare-workspace`](ai/skills/prepare-workspace/SKILL.md): set up branch and git state for a task.
-- [`/elaborate`](ai/skills/elaborate/SKILL.md): assess scope, risks, done criteria before starting.
 - [`/confront`](ai/skills/confront/SKILL.md): critically examine a spec against the codebase, raise concerns.
 - [`/clarify`](ai/skills/clarify/SKILL.md): resolve open concerns with the user, update requirements.
 - [`/spec`](ai/skills/spec/SKILL.md): compile approach, sub-tasks, and testable success criteria.
@@ -28,16 +27,20 @@ SDLC:
 - [`/fix-pull-request`](ai/skills/fix-pull-request/SKILL.md): address review comments, conflicts, CI failures.
 - [`/ship-task`](ai/skills/ship-task/SKILL.md): merge, release, verify, announce.
 
-Meta:
+Workflows (common chains of other skills - hands-off):
+
+- [`/elaborate`](ai/skills/elaborate/SKILL.md): raw requirements to spec (`/confront`, `/clarify`, `/spec`).
+
+Tools (external integrations - invoked by other skills, not directly):
+
+- [`vcs-tools`](ai/skills/vcs-tools/SKILL.md): PR/MR data/operations for the detected platform (GitHub `gh`, GitLab `glab`).
+
+Meta (skills for skills):
 
 - [`/extract-skill`](ai/skills/extract-skill/SKILL.md): turn a completed task's process into a reusable skill.
 - [`/formalize-skill`](ai/skills/formalize-skill/SKILL.md): refactor a skill file to the standard template.
 - [`/create-dispatcher-skill`](ai/skills/create-dispatcher-skill/SKILL.md): merge a detect skill plus per-backend skills into one dispatcher skill.
 - [`/project-memo`](ai/skills/project-memo/SKILL.md): maintain root `AGENTS.md` repo cheatsheet.
-
-Tools (invoked by other skills, not directly):
-
-- [`vcs-tools`](ai/skills/vcs-tools/SKILL.md): PR/MR data/operations for the detected platform (GitHub `gh`, GitLab `glab`).
 
 ### Rules (best practices, enforced not suggested): ⚖️
 
