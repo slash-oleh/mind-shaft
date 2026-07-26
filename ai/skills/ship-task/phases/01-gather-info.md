@@ -2,22 +2,11 @@
 
 ## Goal
 
-- Platform detected.
 - PR number and approval status collected.
 
 ## Steps
 
-### Step 1: Detect platform
-
-Invoke:
-
-```
-Skill(skill: "detect-vcs-platform")
-```
-
-Prints `github` or `gitlab` based on the origin remote. Later steps below use `<platform>` as a placeholder for the script suffix, matching this output directly. Later phases read `platform` from this phase's output instead of re-detecting.
-
-### Step 2: Resolve PR number
+### Step 1: Resolve PR number
 
 Resolve PR number using the first matching source:
 
@@ -28,15 +17,15 @@ Resolve PR number using the first matching source:
 
 - **Fallback**: If no explicit identifier was provided, invoke:
   ```
-  Skill(skill: "<platform>-tools", args: "identify-pr")
+  Skill(skill: "vcs-tools", args: "identify-pr")
   ```
   Prints the PR number for the current branch. Exits non-zero if no open PR is found.
   Do not ask the user for a PR number - always attempt the fallback.
 
-### Step 3: Fetch PR status
+### Step 2: Fetch PR status
 
 ```
-Skill(skill: "<platform>-tools", args: "get-pr-status <PR_NUMBER>")
+Skill(skill: "vcs-tools", args: "get-pr-status <PR_NUMBER>")
 ```
 
 Prints `reviewDecision` and `state`. Verify `reviewDecision` is `APPROVED`. If not - stop the skill and announce.
@@ -47,7 +36,6 @@ JSON format:
 
 ```jsonc
 {
-  "platform": "string", // "github" or "gitlab", from Step 1.
   "pr_number": "string", // PR identifier
   "is_approved": "boolean", // Whether PR is approved
   "is_merged": "boolean", // Whether PR is already merged

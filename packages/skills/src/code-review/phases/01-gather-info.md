@@ -2,23 +2,12 @@
 
 ## Goal
 
-- Platform detected.
 - Pull request number is resolved.
 - PR metadata and code changes (diff) are fetched.
 
 ## Steps
 
-### Step 1: Detect platform
-
-Invoke:
-
-```
-Skill(skill: "detect-vcs-platform")
-```
-
-Prints `github` or `gitlab` based on the origin remote. Later steps below use `<platform>` as a placeholder for the script suffix, matching this output directly. Later phases read `platform` from this phase's output instead of re-detecting.
-
-### Step 2: Resolve PR number
+### Step 1: Resolve PR number
 
 Resolve PR number using the first matching source:
 
@@ -29,23 +18,23 @@ Resolve PR number using the first matching source:
 
 - **Fallback**: If no explicit identifier was provided, invoke:
   ```
-  Skill(skill: "<platform>-tools", args: "identify-pr")
+  Skill(skill: "vcs-tools", args: "identify-pr")
   ```
   Prints the PR number for the current branch. Exits non-zero if no open PR is found.
   Do not ask the user for a PR number - always attempt the fallback.
 
-### Step 3: Fetch PR info and diff
+### Step 2: Fetch PR info and diff
 
-Invoke the `<platform>-tools` skill:
+Invoke the `vcs-tools` skill:
 
 ```
-Skill(skill: "<platform>-tools", args: "get-pr-info <PR_NUMBER>")
+Skill(skill: "vcs-tools", args: "get-pr-info <PR_NUMBER>")
 ```
 
 Then fetch the full PR diff:
 
 ```
-Skill(skill: "<platform>-tools", args: "diff <PR_NUMBER>")
+Skill(skill: "vcs-tools", args: "diff <PR_NUMBER>")
 ```
 
 Save the returned diff text to `/tmp/pr-<PR_NUMBER>.diff`.
@@ -56,7 +45,6 @@ JSON format:
 
 ```jsonc
 {
-  "platform": "string", // "github" or "gitlab", from Step 1.
   "pr_number": "number", // Resolved PR number.
   "title": "string", // PR title.
   "description": "string", // PR description body.

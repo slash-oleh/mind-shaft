@@ -31,10 +31,8 @@ _Note: Use the appropriate `event` based on Phase 2 `state` ("APPROVE", "REQUEST
 
 ### Step 2: Submit Review
 
-`<platform>` is the `platform` field from Phase 1's output:
-
 ```
-Skill(skill: "<platform>-tools", args: "submit-review <PR_NUMBER> $PAYLOAD_TMP")
+Skill(skill: "vcs-tools", args: "submit-review <PR_NUMBER> $PAYLOAD_TMP")
 ```
 
 Note: GitLab has no native "request changes" state - `REQUEST_CHANGES` and `COMMENT` are posted as notes without approving the MR; only `APPROVE` also approves it.

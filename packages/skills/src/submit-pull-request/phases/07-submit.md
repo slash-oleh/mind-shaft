@@ -18,7 +18,7 @@ git push origin <branchName>
 
 ### Step 2: Create PR
 
-Create the PR using the `<platform>-tools` skill's **Shell Markdown Bodies** pattern, where `<platform>` is the `platform` field from Phase 1's output.
+Create the PR using the `vcs-tools` skill's **Shell Markdown Bodies** pattern.
 
 - Use `baseBranch` from Phase 1 as the target branch (defaults to `main`).
 - Use `title` and `description` from Phase 6.
@@ -26,7 +26,7 @@ Create the PR using the `<platform>-tools` skill's **Shell Markdown Bodies** pat
 
 ```
 # ... create $TMP with description ...
-Skill(skill: "<platform>-tools", args: "create-pr <title> $TMP <baseBranch> <branchName> [--draft if dependentPr exists, else empty]")
+Skill(skill: "vcs-tools", args: "create-pr <title> $TMP <baseBranch> <branchName> [--draft if dependentPr exists, else empty]")
 ```
 
 ### Step 3: Dependent PR Post-Merge Cleanup
@@ -34,21 +34,21 @@ Skill(skill: "<platform>-tools", args: "create-pr <title> $TMP <baseBranch> <bra
 Note: When the parent PR (the PR this PR depends on) is merged, GitHub automatically changes the target branch of this PR to `main` (GitLab: the target branch does not auto-change - set it explicitly).
 Once the parent PR is merged, perform the following manual cleanup steps on this PR:
 
-This step may run in a separate invocation after the parent PR merges. `<platform>` below is the `platform` field from Phase 1's output.
+This step may run in a separate invocation after the parent PR merges.
 
 1. Mark this PR as ready for review:
 
    ```
-   Skill(skill: "<platform>-tools", args: "set-pr-ready <PR_NUMBER>")
+   Skill(skill: "vcs-tools", args: "set-pr-ready <PR_NUMBER>")
    ```
 
 2. Edit the PR description to remove the dependency note block at the top:
 
-  Use the **Shell Markdown Bodies** pattern from the `<platform>-tools` skill's `SKILL.md`.
+  Use the **Shell Markdown Bodies** pattern from the `vcs-tools` skill's `SKILL.md`.
 
    ```
    # ... create $TMP with updated description ...
-   Skill(skill: "<platform>-tools", args: "update-pr-description <PR_NUMBER> $TMP")
+   Skill(skill: "vcs-tools", args: "update-pr-description <PR_NUMBER> $TMP")
    ```
 
 ### Step 4: Update Ticket Status

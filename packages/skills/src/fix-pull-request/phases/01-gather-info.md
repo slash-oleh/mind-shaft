@@ -7,17 +7,7 @@
 
 ## Steps
 
-### Step 1: Detect platform
-
-Invoke:
-
-```
-Skill(skill: "detect-vcs-platform")
-```
-
-Prints `github` or `gitlab` based on the origin remote. Later steps below use `<platform>` as a placeholder for the script suffix, matching this output directly.
-
-### Step 2: Resolve PR number
+### Step 1: Resolve PR number
 
 Resolve PR number using the first matching source:
 
@@ -28,20 +18,20 @@ Resolve PR number using the first matching source:
 
 - **Fallback**: If no explicit identifier was provided, invoke:
   ```
-  Skill(skill: "<platform>-tools", args: "identify-pr")
+  Skill(skill: "vcs-tools", args: "identify-pr")
   ```
   Prints the PR number for the current branch. Exits non-zero if no open PR is found.
   Do not ask the user for a PR number - always attempt the fallback.
 
-### Step 3: Fetch all PR info
+### Step 2: Fetch all PR info
 
-Invoke the `<platform>-tools` skill:
+Invoke the `vcs-tools` skill:
 
 ```
-Skill(skill: "<platform>-tools", args: "get-pr-info <PR_NUMBER>")
+Skill(skill: "vcs-tools", args: "get-pr-info <PR_NUMBER>")
 ```
 
-### Step 4: Draft Thread Summaries
+### Step 3: Draft Thread Summaries
 
 For each thread:
 
@@ -54,7 +44,6 @@ JSON format:
 
 ```jsonc
 {
-  "platform": "string", // "github" or "gitlab", from Step 1. Later phases read this instead of re-detecting.
   "pr_number": "number", // Resolved PR number.
   "title": "string", // PR title.
   "description": "string", // PR description body.

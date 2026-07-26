@@ -12,10 +12,10 @@
 
 ### Step 1: Merge PR
 
-Merge the pull request and clean up the branch. `<platform>` is the `platform` field from Phase 1's output:
+Merge the pull request and clean up the branch:
 
 ```
-Skill(skill: "<platform>-tools", args: "merge-pr <pr_number>")
+Skill(skill: "vcs-tools", args: "merge-pr <pr_number>")
 ```
 
 ## Output

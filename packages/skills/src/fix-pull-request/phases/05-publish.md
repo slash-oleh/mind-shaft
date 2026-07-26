@@ -26,15 +26,13 @@ git push origin $(git branch --show-current) --force-with-lease
 
 For each item in `fixes` from Phase 4 with a present `reply` field:
 
-Use the **Shell Markdown Bodies** pattern from the `<platform>-tools` skill's `SKILL.md`.
+Use the **Shell Markdown Bodies** pattern from the `vcs-tools` skill's `SKILL.md`.
 Where `<pr_number>` comes from Phase 1, `<comment_id>` is the comment `id` from `threads` in Phase 1 (on GitLab this is the `thread_id`, i.e. the discussion ID), and `<summary>` is the corresponding thread `summary` from Phase 1:
 
 ```
 # ... create $TMP with reply ...
-Skill(skill: "<platform>-tools", args: "post-reply <pr_number> <comment_id> $TMP <summary>")
+Skill(skill: "vcs-tools", args: "post-reply <pr_number> <comment_id> $TMP <summary>")
 ```
-
-Where `<platform>` is the `platform` field from Phase 1's output.
 
 Post replies concurrently in batches.
 Print all outputs to chat once all done.

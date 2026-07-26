@@ -18,12 +18,12 @@ The remote PR description is up-to-date and aligned with current PR changes.
 
 ### Step 2: Submit updated description
 
-Use the **Shell Markdown Bodies** pattern from the `<platform>-tools` skill's `SKILL.md`.
-Where `<pr_number>` and `<platform>` come from Phase 1's output:
+Use the **Shell Markdown Bodies** pattern from the `vcs-tools` skill's `SKILL.md`.
+Where `<pr_number>` comes from Phase 1's output:
 
 ```
 # ... create $TMP with description ...
-Skill(skill: "<platform>-tools", args: "update-pr-description <pr_number> $TMP")
+Skill(skill: "vcs-tools", args: "update-pr-description <pr_number> $TMP")
 ```
 
 ## Output

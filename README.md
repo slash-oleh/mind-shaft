@@ -32,9 +32,7 @@ Meta:
 
 Tools (invoked by other skills, not directly):
 
-- [`detect-vcs-platform`](ai/skills/detect-vcs-platform/SKILL.md): detect GitHub vs GitLab from the origin remote.
-- [`github-tools`](ai/skills/github-tools/SKILL.md): GitHub PR data/operations via `gh` CLI.
-- [`gitlab-tools`](ai/skills/gitlab-tools/SKILL.md): GitLab MR data/operations via `glab` CLI.
+- [`vcs-tools`](ai/skills/vcs-tools/SKILL.md): PR/MR data/operations for the detected platform (GitHub `gh`, GitLab `glab`).
 
 ### Rules (best practices, enforced not suggested): ⚖️
 
