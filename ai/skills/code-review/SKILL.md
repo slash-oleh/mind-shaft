@@ -1,115 +1,66 @@
 ---
 name: code-review
-description: Perform a comprehensive code review of a pull request according to project rules.
+description: Perform a comprehensive code review of a diff against project rules. Reusable review core - invoke directly for an ad-hoc/local diff, or via the review-pull-request skill for pull requests.
 ---
 
 # Code Review
 
 ## Goal
 
-- Review comments are posted.
+- Diff is evaluated against high-level architecture, logic, and style guidelines.
+- Feedback is prioritized and drafted into actionable review comments.
 
-## Prerequisites
+## Input
 
-- `vcs-tools` skill available (`gh` CLI for GitHub repos, `glab` CLI for GitLab repos)
+- `diff_file` (required): path to a file containing the diff to review.
+- `title`, `description` (optional): context on the change's intent (e.g. PR title/body, ticket). If absent, infer intent from the diff and commit messages.
 
-## Phases
+## Steps
 
-1. [Gather Info](phases/01-gather-info.md)
-2. [Analyze](phases/02-analyze.md)
-3. [Submit](phases/03-submit.md)
+### Step 1: High-level review
 
-## Shared Patterns
+Read the diff and any given context. Evaluate overall architecture and logic only - do not assess details yet.
 
-### Shell Markdown Bodies
+Determine:
 
-When a script or CLI command requires a markdown body, always use a temp file with a quoted heredoc to avoid shell escaping issues (especially backticks):
+- Does the change solve the task?
+- Does the approach make sense architecturally?
+- Do we have missed code, pattern re-use opportunities?
+- Are there logic flaws or design issues that would require structural changes?
 
-```bash
-TMP=$(mktemp)
-cat > "$TMP" <<'EOF'
-...markdown content...
-EOF
-# Pass "$TMP" to gh or script
+### Step 2: Lines Review
+
+- **Style Automation**: Rely on automated tools for formatting/linting. Avoid manually pointing out styling issues unless not automated.
+- **Technical Debt**: Enforce the Boy Scout Rule. Code should be left in a better state or at least not worse. Look out for "I'll fix it later" shortcuts.
+
+### Step 3: Formulate Comments
+
+- **Feedback Grouping**: For repeating issues, explain the first occurrence in detail and link to it for others. Avoid duplication.
+- **Guideline References**: In comments, reference project guidelines and documentation via links instead of explaining manually.
+
+For each issue found, draft a review comment. Follow the reply wording rules:
+
+- **Tone**: Brief and factual. No fluff, apologies, or fillers.
+
+Structure your comments into:
+
+- `general_review_body`: A top-level summary of the review (e.g., acknowledging architectural issues, size, or overall approval).
+- `comments`: A list of file-specific comments with exact line numbers.
+
+## Output
+
+JSON format:
+
+```jsonc
+{
+  "general_review_body": "string", // The top-level review summary.
+  "state": "string", // "APPROVE", "REQUEST_CHANGES", or "COMMENT".
+  "comments": [
+    {
+      "path": "string", // File path relative to repository root.
+      "line": "number | [number, number]", // Line number or [start, end] range for the comment.
+      "body": "string", // Brief, factual comment text.
+    },
+  ], // Can be empty if no specific line comments are needed.
+}
 ```
-
-## Execution
-
-Follow the **Skill Execution Protocol** (see below).
-
----
-
-# Skill Execution Protocol
-
-## Execution Loop
-
-For each phase in order:
-
-1. Announce **Phase N/X: <Name>**.
-
-2. Read instructions (from file or section).
-
-3. Execute instructions.
-   - Follow phase steps exactly as defined, in order.
-
-4. Verify phase goals are met:
-   - For each item in `## Goal`, explicitly verify and state how it was satisfied.
-   - Do not skip, merge, or adopt goals during verification.
-
-5. Persist phase output (see below).
-
-6. Report **Phase N complete**.
-
-## Data Exchange
-
-Pass data between phases using persistent files:
-
-- **Path**: `.cache/skills/<skill_name>/runs/<run_id>/<phase_id>.<ext>`
-  - `<skill_name>`: Hyphenated name of the skill.
-  - `<run_id>`: Ticket ID (e.g. `PROJ-123`) or unique, short hyphenated task summary (e.g. `fix-user-auth`).
-  - `<phase_id>`: Matching phase filename.
-  - `<ext>`: JSON or MD.
-
-- **Format**: JSON for structured data, Markdown for text.
-
-- **Output**: Phase must save results to file before completion.
-
-  Create parent directories first:
-
-  ```bash
-  mkdir -p .cache/skills/<skill_name>/runs/<run_id>
-  ```
-
-  JSON example:
-
-  ```bash
-  cat << 'EOF' > .cache/skills/<skill_name>/runs/<run_id>/<phase_id>.json
-  {
-    "key": "value"
-  }
-  EOF
-  ```
-
-- **Read Input**: Subsequent phases MUST read previous data files for context. Previous phases output is an input for next phases.
-
-  ```bash
-  cat .cache/skills/<skill_name>/runs/<run_id>/<phase_id>.json 2>/dev/null || echo "{}"
-  ```
-
-## Human Approval
-
-Require explicit approval before starting phases marked `(APPROVAL REQUIRED)`.
-
-Ask: **"Ready for Phase N: <Name>. Confirm?"**
-
-If user requests changes, return to the relevant phase.
-
-## Common Rules
-
-- **Follow instructions precisely**: Deviate only on explicit user request.
-- **Expected skips**: If phase "Skip Conditions" are defined and met, announce and skip the phase.
-- **Phase sequence**: Maintain sequential order. Do not mix phase actions.
-- **Strict tool usage**: When specific script or command is mentioned - use exactly that. Do not improvise.
-- **Ask, don't guess**: Clarify ambiguity and fix systematically instead of making silent assumptions.
-- **Strict goal verification**: Verification of phase goals is mandatory. Go through every single goal item in `## Goal` section, and verify before completing a phase. Do not omit, rewrite, or generalize goals.
-

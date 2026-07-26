@@ -1,43 +1,67 @@
 ---
 title: SKILL.md
 name: code-review
-description: Perform a comprehensive code review of a pull request according to project rules.
+description: Perform a comprehensive code review of a diff against project rules. Reusable review core - invoke directly for an ad-hoc/local diff, or via the review-pull-request skill for pull requests.
 ---
 
 # Code Review
 
 ## Goal
 
-- Review comments are posted.
+- Diff is evaluated against high-level architecture, logic, and style guidelines.
+- Feedback is prioritized and drafted into actionable review comments.
 
-## Prerequisites
+## Input
 
-- `vcs-tools` skill available (`gh` CLI for GitHub repos, `glab` CLI for GitLab repos)
+- `diff_file` (required): path to a file containing the diff to review.
+- `title`, `description` (optional): context on the change's intent (e.g. PR title/body, ticket). If absent, infer intent from the diff and commit messages.
 
-## Phases
+## Steps
 
-1. [Gather Info](phases/01-gather-info.md)
-2. [Analyze](phases/02-analyze.md)
-3. [Submit](phases/03-submit.md)
+### Step 1: High-level review
 
-## Shared Patterns
+Read the diff and any given context. Evaluate overall architecture and logic only - do not assess details yet.
 
-### Shell Markdown Bodies
+Determine:
 
-When a script or CLI command requires a markdown body, always use a temp file with a quoted heredoc to avoid shell escaping issues (especially backticks):
+- Does the change solve the task?
+- Does the approach make sense architecturally?
+- Do we have missed code, pattern re-use opportunities?
+- Are there logic flaws or design issues that would require structural changes?
 
-```bash
-TMP=$(mktemp)
-cat > "$TMP" <<'EOF'
-...markdown content...
-EOF
-# Pass "$TMP" to gh or script
+### Step 2: Lines Review
+
+- **Style Automation**: Rely on automated tools for formatting/linting. Avoid manually pointing out styling issues unless not automated.
+- **Technical Debt**: Enforce the Boy Scout Rule. Code should be left in a better state or at least not worse. Look out for "I'll fix it later" shortcuts.
+
+### Step 3: Formulate Comments
+
+- **Feedback Grouping**: For repeating issues, explain the first occurrence in detail and link to it for others. Avoid duplication.
+- **Guideline References**: In comments, reference project guidelines and documentation via links instead of explaining manually.
+
+For each issue found, draft a review comment. Follow the reply wording rules:
+
+- **Tone**: Brief and factual. No fluff, apologies, or fillers.
+
+Structure your comments into:
+
+- `general_review_body`: A top-level summary of the review (e.g., acknowledging architectural issues, size, or overall approval).
+- `comments`: A list of file-specific comments with exact line numbers.
+
+## Output
+
+JSON format:
+
+```jsonc
+{
+  "general_review_body": "string", // The top-level review summary.
+  "state": "string", // "APPROVE", "REQUEST_CHANGES", or "COMMENT".
+  "comments": [
+    {
+      "path": "string", // File path relative to repository root.
+      "line": "number | [number, number]", // Line number or [start, end] range for the comment.
+      "body": "string", // Brief, factual comment text.
+    },
+  ], // Can be empty if no specific line comments are needed.
+}
 ```
-
-## Execution
-
-Follow the **Skill Execution Protocol** (see below).
-
----
-
-{{PROTOCOL_INJECTED}}

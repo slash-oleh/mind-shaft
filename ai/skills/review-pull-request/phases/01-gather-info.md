@@ -4,6 +4,7 @@
 
 - Pull request number is resolved.
 - PR metadata and code changes (diff) are fetched.
+- PR is confirmed ready for review.
 
 ## Steps
 
@@ -38,6 +39,17 @@ Skill(skill: "vcs-tools", args: "diff <PR_NUMBER>")
 ```
 
 Save the returned diff text to `/tmp/pr-<PR_NUMBER>.diff`.
+
+### Step 3: Sanity check
+
+Verify the PR is ready for review, using the info fetched in Step 2. Check:
+
+- **Not a draft**: PR must not be in draft state.
+- **CI passing**: All required checks must pass.
+- **Rebased**: Branch must be up to date with the base branch (no unresolved merge conflicts or stale base).
+- **Size**: Aim for max 300 added lines, except for trivial or generated changes.
+
+If any check fails, ask user how to proceed.
 
 ## Output
 
