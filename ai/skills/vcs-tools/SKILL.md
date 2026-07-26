@@ -33,7 +33,14 @@ Commands below are identical across both platforms (`PR_NUMBER` means the MR num
 
 #### `identify-pr`
 
-Prints the PR/MR number for the current branch. Exits non-zero if no open one is found.
+Resolves the target PR/MR number from the first matching source:
+
+- **Explicit input**: If the user provided a PR number (e.g. `#123`, `!123`, `123`), a PR URL, or a ticket number (e.g. `XXX-42`), extract the PR number from it without running any script.
+  - PR number or `#NNN` -> use directly
+  - PR URL -> extract number from the URL
+  - Ticket (e.g. `XXX-42`) -> derive the branch name pattern `xxx-42-*` and resolve via API. If multiple found, ask which one to use.
+
+- **Fallback**: If no explicit identifier was provided, run this command's script (see Step 2 above). Prints the PR/MR number for the current branch, exits non-zero if no open one is found. Do not ask the user for a PR number - always attempt the fallback.
 
 #### `get-pr-info <PR_NUMBER>`
 
