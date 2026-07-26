@@ -19,17 +19,50 @@ description: Analyze a task specification, review the codebase, and output a det
 - `clarify` skill available
 - `spec` skill available
 
-## Phases
+## Steps
 
-1. [Gather Info](phases/01-gather-info.md)
-2. [Analyze](phases/02-analyze.md)
-3. [Clarify](phases/03-clarify.md)
-4. [Spec](phases/04-spec.md) (APPROVAL REQUIRED)
+### Step 1: Analyze
 
-## Execution
+Invoke the `confront` skill, passing along `gather-task`'s output as input:
 
-Follow the **Skill Execution Protocol** (see below).
+```
+Skill(skill: "confront", args: "<gather_task_output>")
+```
 
----
+Treat `confront` as a single unit - do not read or invoke its internal files directly.
 
-{{PROTOCOL_INJECTED}}
+### Step 2: Clarify
+
+Invoke the `clarify` skill, passing along Step 1's Requirements and Concerns as input:
+
+```
+Skill(skill: "clarify", args: "<step_1_requirements_and_concerns>")
+```
+
+Treat `clarify` as a single unit - do not read or invoke its internal files directly.
+
+### Step 3: Spec
+
+Invoke the `spec` skill, passing along Step 2's Updated Requirements (incl. Non-goals, Assumptions/Constraints) as input:
+
+```
+Skill(skill: "spec", args: "<step_2_updated_requirements>")
+```
+
+Treat `spec` as a single unit - do not read or invoke its internal files directly.
+
+## Output
+
+The Markdown returned by `spec`:
+
+- Spec
+  - Approach
+    - {Decision X}
+  - Non-goals
+    - {Non-goal X}
+  - Assumptions
+    - {Assumption X}
+  - Subtasks
+    - {Sub-task X}
+  - Success Criteria
+    - {Criteria X}
