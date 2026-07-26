@@ -12,6 +12,28 @@ Settle on Multi-stage skills vs Multi-skill workflows balance.
 
 Ideas for new skills:
 
+- `resolve-task`: A skill to collect all info about the task: ticket, design, etc. A split out of `prepare-task-workspace`, `elaborate-task` and `implement-task` which in turn should be strip the `-task` part of naming and logic.
+
+- `ticket-tools`: Dispatcher skill with jira backend (for now)
+  - create
+  - update description
+  - change status
+  - comment
+
+- `task-to-pull-request`: Compound hands off workflow with the following skills chain. Humam approval gates mostly skipped. Questions limited to product semi-technical ones, with rest accepted at best effort decisions.
+  - `resolve-task`
+  - `prepare-workspace`
+  - `elaborate`
+  - `implement`
+  - `code-review`
+  - `submit-pull-request`
+
+- `auto-ship`: Compound hands off workflow with the following skills chain. Humam approval gates mostly skipped. Questions limited to product semi-technical ones, with rest accepted at best effort decisions.
+  - (wait for review)
+  - `fix-pull-request`
+  - (wait for approval, start over if not)
+  - `ship-task`
+
 - `estimate-prd`: Analyze, breakdown, estimate
   - `business-analysis` as a subskill for separate tasks
   - Aspects: summarize, classify, challenge, gaps, risks, stack, data model, use cases, critical path, mvp, milestones, timeline, team, components, services.
@@ -23,7 +45,7 @@ Ideas for new skills:
 
 - `breakdown`: Convert PRD/System Design into tasks, milestones, roadmap ready to be created in ticket tracker.
 
-- `fix-feedback`: Make a followup fix based on ticket comments / chat message. Decide on ticket creation, create branch, implement, submit PR. Sort of `fix-pull-request` but when changes are already merged.
+- `fix-feedback`: Make a followup fix based on ticket comments / chat message. Decide on ticket creation, create branch, implement, submit PR. Sort of `fix-pull-request` but when changes are already merged (consider a split from that skill).
 
 - `why-ci-failed`: Part of `fix-pull-request` already but would still prove useful being ad-hoc.
 

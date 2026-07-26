@@ -12,4 +12,4 @@ Cleanup worktree, come up with a branch.
 
 ## TODO
 
-- Consider merging into `implement-task` skill
+- Split into `prepare-workspace`
