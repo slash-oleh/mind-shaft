@@ -18,19 +18,25 @@ Ideas for new skills:
   - change status
   - comment
 
-- `task-to-pull-request`: Compound hands-off workflow with the following skills chain. Humam approval gates mostly skipped. Questions limited to product semi-technical ones, with rest accepted at best effort decisions.
+- `task-autopilot` (formelly `sdlc`, `task-to-pull-request`): Compound hands-off workflow with the following skills chain. Humam approval gates mostly skipped. Questions limited to product semi-technical ones, with rest accepted at best effort decisions. Since `submit-pull-request` (or existing PR from `identified-pr`) gates 2-3 passing implies asyncronous wait / periodic check and potentially iterative loop of `fix-pull-request` to get to `ship-task`.
   - `gather-task`
-  - `prepare-workspace`
-  - `elaborate`
-  - `implement`
-  - `code-review`
-  - `submit-pull-request`
+  - `identify-pr`
+  - Gate 1: No PR exists
+    - `prepare-workspace`
+    - `elaborate`
+    - `implement`
+    - `code-review`
+    - `submit-pull-request`
+  - Gate 2: PR CI failed or has requested changes
+    - `fix-pull-request`
+  - Gate 3: PR approved
+    - `ship-task`
 
-- `auto-ship`: Compound hands-off workflow with the following skills chain. Humam approval gates mostly skipped. Questions limited to product semi-technical ones, with rest accepted at best effort decisions.
-  - (wait for review)
-  - `fix-pull-request`
-  - (wait for approval, start over if not)
-  - `ship-task`
+  - Consider
+    - Ralph loop
+    - Claude's /goal
+    - Remote execution
+    - Durable compute (restate, temporal.io)
 
 - `estimate-prd`: Analyze, breakdown, estimate
   - `business-analysis` as a subskill for separate tasks
@@ -52,26 +58,6 @@ Ideas for new skills:
 - `reflect` / `reflect-mistakes` / `reflect-skill`: Review errors (including self-fixed) to improve initial instructions or update memory.
 
 - `security-assessment`: Run whitebox static checks against OWASP top 10. Consider other aspects like dependencies. Consider external knowledgebase source for OWASP but outline the flow, parallelization opportunities, etc.
-
-- `sdlc`: Combining other skills in iterative for PRD/task to make the way to Done in iterative approach.
-  - Rough flow from existing (or planned) skills
-    - estimate-prd
-    - create-ticket
-    - gather-task
-    - prepare-workspace
-    - elaborate
-    - implement
-    - submit-pull-request
-    - ! code-review
-    - fix-pull-request
-    - ship-task
-    - fix-feedback
-
-  - Consider
-    - Ralph loop
-    - Claude's /goal
-    - Remote execution
-    - Durable compute (restate, temporal.io)
 
 ## 3rd-party
 
