@@ -1,25 +1,26 @@
 ---
-name: prepare-task-workspace
-description: Prepare a clean local feature branch and git state for a task, and switch the ticket to In Progress. Use when beginning work on a ticket.
+name: elaborate
+description: Analyze a task specification, review the codebase, and output a detailed assessment and success criteria. Use when user provides a new ticket or description to understand scope, risks, and definition of done before implementation.
 ---
 
-# Prepare Task Workspace
+# Elaborate
 
 ## Goal
 
-- A clean, local feature branch matching the target ticket is checked out.
-- The local repository is fully synchronized with remote origin main.
-- Ticket status is transitioned to "In Progress".
+- Task scope, constraints, and risks are fully understood.
+- A list of concrete, testable success criteria is established.
+- Output is ready to be used as input for task implementation.
 
 ## Prerequisites
 
-- `git` CLI installed
+- `gather-task` already ran this session, or its output passed in as input
 
 ## Phases
 
 1. [Gather Info](phases/01-gather-info.md)
-2. [Align Workspace](phases/02-align-workspace.md) (APPROVAL REQUIRED)
-3. [Setup Branch](phases/03-setup-branch.md)
+2. [Analyze](phases/02-analyze.md)
+3. [Clarify](phases/03-clarify.md)
+4. [Success Criteria](phases/04-success-criteria.md) (APPROVAL REQUIRED)
 
 ## Execution
 

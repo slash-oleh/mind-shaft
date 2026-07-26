@@ -12,8 +12,6 @@ Settle on Multi-stage skills vs Multi-skill workflows balance.
 
 Ideas for new skills:
 
-- `resolve-task`: A skill to collect all info about the task: ticket, design, etc. A split out of `prepare-task-workspace`, `elaborate-task` and `implement-task` which in turn should be strip the `-task` part of naming and logic.
-
 - `ticket-tools`: Dispatcher skill with jira backend (for now)
   - create
   - update description
@@ -21,7 +19,7 @@ Ideas for new skills:
   - comment
 
 - `task-to-pull-request`: Compound hands off workflow with the following skills chain. Humam approval gates mostly skipped. Questions limited to product semi-technical ones, with rest accepted at best effort decisions.
-  - `resolve-task`
+  - `gather-task`
   - `prepare-workspace`
   - `elaborate`
   - `implement`
@@ -59,9 +57,10 @@ Ideas for new skills:
   - Rough flow from existing (or planned) skills
     - estimate-prd
     - create-ticket
-    - prepare-task-workspace
-    - elaborate-task
-    - implement-task
+    - gather-task
+    - prepare-workspace
+    - elaborate
+    - implement
     - submit-pull-request
     - ! code-review
     - fix-pull-request

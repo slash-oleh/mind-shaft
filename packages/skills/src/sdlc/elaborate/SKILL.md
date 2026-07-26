@@ -1,10 +1,10 @@
 ---
 title: SKILL.md
-name: elaborate-task
+name: elaborate
 description: Analyze a task specification, review the codebase, and output a detailed assessment and success criteria. Use when user provides a new ticket or description to understand scope, risks, and definition of done before implementation.
 ---
 
-# Elaborate Task
+# Elaborate
 
 ## Goal
 
@@ -14,9 +14,7 @@ description: Analyze a task specification, review the codebase, and output a det
 
 ## Prerequisites
 
-- Project management access tool (e.g., Jira, GitHub Issues)
-- Design access tool (e.g., Figma)
-- Documentation access tool (e.g., Confluence)
+- `gather-task` already ran this session, or its output passed in as input
 
 ## Phases
 

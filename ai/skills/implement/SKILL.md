@@ -1,28 +1,25 @@
 ---
-name: elaborate-task
-description: Analyze a task specification, review the codebase, and output a detailed assessment and success criteria. Use when user provides a new ticket or description to understand scope, risks, and definition of done before implementation.
+name: implement
+description: Execute task implementation from a specification through to a verified code change. Use when user provides ticket or description to implement.
 ---
 
-# Elaborate Task
+# Implement
 
 ## Goal
 
-- Task scope, constraints, and risks are fully understood.
-- A list of concrete, testable success criteria is established.
-- Output is ready to be used as input for task implementation.
+- Code changes are successfully implemented and committed.
+- Implementation passes all quality checks and project success criteria.
 
 ## Prerequisites
 
-- Project management access tool (e.g., Jira, GitHub Issues)
-- Design access tool (e.g., Figma)
-- Documentation access tool (e.g., Confluence)
+- `gather-task` already ran this session, or its output passed in as input
 
 ## Phases
 
 1. [Gather Info](phases/01-gather-info.md)
-2. [Analyze](phases/02-analyze.md)
-3. [Clarify](phases/03-clarify.md)
-4. [Success Criteria](phases/04-success-criteria.md) (APPROVAL REQUIRED)
+2. [Plan](phases/02-plan.md)
+3. [Implement](phases/03-implement.md) (APPROVAL REQUIRED)
+4. [Verify](phases/04-verify.md)
 
 ## Execution
 

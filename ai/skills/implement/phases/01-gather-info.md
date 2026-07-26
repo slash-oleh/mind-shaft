@@ -11,8 +11,9 @@ Aiming only at structuring input, not discovery.
 
 ### Step 1: Get Info
 
-- Retrieve requirements directly from the provided input or via tools.
-- Ask the user if any needed information is missing.
+- If provided input already contains structured requirements (e.g., `elaborate` output), use it directly.
+- Otherwise, use `gather-task`'s output for raw info - assume it already ran earlier this session, or was supplied as input.
+- Ask the user if any needed information is still missing.
 
 ### Step 2: Assess Requirements
 

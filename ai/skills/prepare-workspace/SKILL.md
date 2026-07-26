@@ -1,27 +1,26 @@
 ---
-name: implement-task
-description: Execute task implementation from a specification through to a verified code change. Use when user provides ticket or description to implement.
+name: prepare-workspace
+description: Prepare a clean local feature branch and git state for a task, and switch the ticket to In Progress. Use when beginning work on a ticket.
 ---
 
-# Implement Task
+# Prepare Workspace
 
 ## Goal
 
-- Code changes are successfully implemented and committed.
-- Implementation passes all quality checks and project success criteria.
+- A clean, local feature branch matching the target ticket is checked out.
+- The local repository is fully synchronized with remote origin main.
+- Ticket status is transitioned to "In Progress".
 
 ## Prerequisites
 
-- Project management MCP server (e.g., Jira, GitHub Issues)
-- Design MCP server (e.g., Figma)
-- Documentation MCP server (e.g., Confluence)
+- `git` CLI installed
+- `gather-task` already ran this session, or its output passed in as input
 
 ## Phases
 
 1. [Gather Info](phases/01-gather-info.md)
-2. [Plan](phases/02-plan.md)
-3. [Implement](phases/03-implement.md) (APPROVAL REQUIRED)
-4. [Verify](phases/04-verify.md)
+2. [Align Workspace](phases/02-align-workspace.md) (APPROVAL REQUIRED)
+3. [Setup Branch](phases/03-setup-branch.md)
 
 ## Execution
 

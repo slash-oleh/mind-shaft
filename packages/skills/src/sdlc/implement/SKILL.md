@@ -1,10 +1,10 @@
 ---
 title: SKILL.md
-name: implement-task
+name: implement
 description: Execute task implementation from a specification through to a verified code change. Use when user provides ticket or description to implement.
 ---
 
-# Implement Task
+# Implement
 
 ## Goal
 
@@ -13,9 +13,7 @@ description: Execute task implementation from a specification through to a verif
 
 ## Prerequisites
 
-- Project management MCP server (e.g., Jira, GitHub Issues)
-- Design MCP server (e.g., Figma)
-- Documentation MCP server (e.g., Confluence)
+- `gather-task` already ran this session, or its output passed in as input
 
 ## Phases
 

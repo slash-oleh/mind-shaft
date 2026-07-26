@@ -6,15 +6,12 @@ Target branch name is resolved.
 
 ## Steps
 
-### Step 1: Parse Input
+### Step 1: Use Gathered Task Info
 
-If input is already a branch name, use it directly. Otherwise, extract ticket ID from input or URL.
+- If input is already a branch name, use it directly and skip the ticket-based lookup below.
+- Otherwise, use `ticket_id` and title from `gather-task`'s output - assume it already ran earlier this session, or was supplied as input.
 
-### Step 2: Fetch Ticket Details
-
-If ticket ID resolved, use project tools to fetch ticket title.
-
-### Step 3: Determine Branch Name
+### Step 2: Determine Branch Name
 
 - If user provided additional details (e.g., followup context), use them for branch name.
 

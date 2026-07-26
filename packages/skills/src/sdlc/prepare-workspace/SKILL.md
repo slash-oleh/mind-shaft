@@ -1,10 +1,10 @@
 ---
 title: SKILL.md
-name: prepare-task-workspace
+name: prepare-workspace
 description: Prepare a clean local feature branch and git state for a task, and switch the ticket to In Progress. Use when beginning work on a ticket.
 ---
 
-# Prepare Task Workspace
+# Prepare Workspace
 
 ## Goal
 
@@ -15,6 +15,7 @@ description: Prepare a clean local feature branch and git state for a task, and 
 ## Prerequisites
 
 - `git` CLI installed
+- `gather-task` already ran this session, or its output passed in as input
 
 ## Phases
 
