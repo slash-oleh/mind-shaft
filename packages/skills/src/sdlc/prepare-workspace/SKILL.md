@@ -17,16 +17,69 @@ description: Prepare a clean local feature branch and git state for a task, and 
 - `git` CLI installed
 - `gather-task` already ran this session, or its output passed in as input
 
-## Phases
+## Steps
 
-1. [Gather Info](phases/01-gather-info.md)
-2. [Align Workspace](phases/02-align-workspace.md) (APPROVAL REQUIRED)
-3. [Setup Branch](phases/03-setup-branch.md)
+### Step 1: Resolve Branch Name
 
-## Execution
+- If input is already a branch name, use it directly and skip the ticket-based lookup below.
+- Otherwise, use `ticket_id` and title from `gather-task`'s output - assume it already ran earlier this session, or was supplied as input.
+- If user provided additional details (e.g., followup context), use them for branch name.
+- If no context provided, check for existing local or remote branches matching ticket ID:
+  - If match exists, ask whether to use that branch name.
+  - If no match exists, convert fetched ticket title to short, hyphenated description.
+- Use project branch naming convention: `<ticket_id>-<hyphenated-description>` in lowercase.
 
-Follow the **Skill Execution Protocol** (see below).
+### Step 2: Clean Worktree
 
----
+Stash staged or unstaged changes if dirty (ignore untracked files). Use a descriptive message:
 
-{{PROTOCOL_INJECTED}}
+```bash
+git stash push -m "WIP: before switching to <ticket_id>"
+```
+
+### Step 3: Sync Latest Base
+
+Fetch origin and pull latest main:
+
+```bash
+git fetch origin
+git checkout main
+git pull origin main
+```
+
+### Step 4: Checkout Branch
+
+Check if target branch exists:
+
+- **Exists on remote only**: Track remote branch:
+
+  ```bash
+  git checkout --track origin/<branch_name>
+  ```
+
+- **Does not exist**: Create fresh branch:
+
+  ```bash
+  git checkout -b <branch_name>
+  ```
+
+### Step 5: Update Ticket Status
+
+If `ticket_id` from Step 1 exists, transition ticket to "In Progress" (or system equivalent).
+
+Use corresponding tools (if available), for example:
+
+- **Jira**: Use `transitionJiraIssue` tool or Jira UI/CLI.
+- **GitHub**: Use `gh issue` or project board CLI/UI.
+
+## Output
+
+JSON format:
+
+```jsonc
+{
+  "branch_name": "string", // Resolved branch name.
+  "branch_action": "string", // Value: resumed_local, recreated_fresh, tracked_remote, or created_new.
+  "stashed": "boolean", // True if changes were stashed.
+}
+```

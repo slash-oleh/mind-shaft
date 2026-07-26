@@ -16,89 +16,69 @@ description: Prepare a clean local feature branch and git state for a task, and 
 - `git` CLI installed
 - `gather-task` already ran this session, or its output passed in as input
 
-## Phases
+## Steps
 
-1. [Gather Info](phases/01-gather-info.md)
-2. [Align Workspace](phases/02-align-workspace.md) (APPROVAL REQUIRED)
-3. [Setup Branch](phases/03-setup-branch.md)
+### Step 1: Resolve Branch Name
 
-## Execution
+- If input is already a branch name, use it directly and skip the ticket-based lookup below.
+- Otherwise, use `ticket_id` and title from `gather-task`'s output - assume it already ran earlier this session, or was supplied as input.
+- If user provided additional details (e.g., followup context), use them for branch name.
+- If no context provided, check for existing local or remote branches matching ticket ID:
+  - If match exists, ask whether to use that branch name.
+  - If no match exists, convert fetched ticket title to short, hyphenated description.
+- Use project branch naming convention: `<ticket_id>-<hyphenated-description>` in lowercase.
 
-Follow the **Skill Execution Protocol** (see below).
+### Step 2: Clean Worktree
 
----
+Stash staged or unstaged changes if dirty (ignore untracked files). Use a descriptive message:
 
-# Skill Execution Protocol
+```bash
+git stash push -m "WIP: before switching to <ticket_id>"
+```
 
-## Execution Loop
+### Step 3: Sync Latest Base
 
-For each phase in order:
+Fetch origin and pull latest main:
 
-1. Announce **Phase N/X: <Name>**.
+```bash
+git fetch origin
+git checkout main
+git pull origin main
+```
 
-2. Read instructions (from file or section).
+### Step 4: Checkout Branch
 
-3. Execute instructions.
-   - Follow phase steps exactly as defined, in order.
+Check if target branch exists:
 
-4. Verify phase goals are met:
-   - For each item in `## Goal`, explicitly verify and state how it was satisfied.
-   - Do not skip, merge, or adopt goals during verification.
-
-5. Persist phase output (see below).
-
-6. Report **Phase N complete**.
-
-## Data Exchange
-
-Pass data between phases using persistent files:
-
-- **Path**: `.cache/skills/<skill_name>/runs/<run_id>/<phase_id>.<ext>`
-  - `<skill_name>`: Hyphenated name of the skill.
-  - `<run_id>`: Ticket ID (e.g. `PROJ-123`) or unique, short hyphenated task summary (e.g. `fix-user-auth`).
-  - `<phase_id>`: Matching phase filename.
-  - `<ext>`: JSON or MD.
-
-- **Format**: JSON for structured data, Markdown for text.
-
-- **Output**: Phase must save results to file before completion.
-
-  Create parent directories first:
+- **Exists on remote only**: Track remote branch:
 
   ```bash
-  mkdir -p .cache/skills/<skill_name>/runs/<run_id>
+  git checkout --track origin/<branch_name>
   ```
 
-  JSON example:
+- **Does not exist**: Create fresh branch:
 
   ```bash
-  cat << 'EOF' > .cache/skills/<skill_name>/runs/<run_id>/<phase_id>.json
-  {
-    "key": "value"
-  }
-  EOF
+  git checkout -b <branch_name>
   ```
 
-- **Read Input**: Subsequent phases MUST read previous data files for context. Previous phases output is an input for next phases.
+### Step 5: Update Ticket Status
 
-  ```bash
-  cat .cache/skills/<skill_name>/runs/<run_id>/<phase_id>.json 2>/dev/null || echo "{}"
-  ```
+If `ticket_id` from Step 1 exists, transition ticket to "In Progress" (or system equivalent).
 
-## Human Approval
+Use corresponding tools (if available), for example:
 
-Require explicit approval before starting phases marked `(APPROVAL REQUIRED)`.
+- **Jira**: Use `transitionJiraIssue` tool or Jira UI/CLI.
+- **GitHub**: Use `gh issue` or project board CLI/UI.
 
-Ask: **"Ready for Phase N: <Name>. Confirm?"**
+## Output
 
-If user requests changes, return to the relevant phase.
+JSON format:
 
-## Common Rules
-
-- **Follow instructions precisely**: Deviate only on explicit user request.
-- **Expected skips**: If phase "Skip Conditions" are defined and met, announce and skip the phase.
-- **Phase sequence**: Maintain sequential order. Do not mix phase actions.
-- **Strict tool usage**: When specific script or command is mentioned - use exactly that. Do not improvise.
-- **Ask, don't guess**: Clarify ambiguity and fix systematically instead of making silent assumptions.
-- **Strict goal verification**: Verification of phase goals is mandatory. Go through every single goal item in `## Goal` section, and verify before completing a phase. Do not omit, rewrite, or generalize goals.
-
+```jsonc
+{
+  "branch_name": "string", // Resolved branch name.
+  "branch_action": "string", // Value: resumed_local, recreated_fresh, tracked_remote, or created_new.
+  "stashed": "boolean", // True if changes were stashed.
+}
+```
