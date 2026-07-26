@@ -18,6 +18,7 @@ Ideas for new skills:
   - Gate 1: No PR exists
     - `prepare-workspace`
     - `elaborate`
+    - `plan-implementation`
     - `implement`
     - `code-review`
     - `submit-pull-request`
