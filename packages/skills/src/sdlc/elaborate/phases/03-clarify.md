@@ -2,28 +2,24 @@
 
 ## Goal
 
-Complete task understanding:
-
 - All concerns are addressed.
 - Updated requirements are established.
 
 ## Steps
 
-### Step 1: Resolve Concerns
+### Step 1: Invoke clarify
 
-Perform Q&A session.
+Invoke the `clarify` skill, passing along Phase 2's Requirements and Concerns as input:
 
-For each concern one by one, ask user clarifying questions to:
+```
+Skill(skill: "clarify", args: "<phase_2_requirements_and_concerns>")
+```
 
-- Fill gaps
-- Resolve conflicts
-- Mitigate risks
-
-Reiterate until all concerns resolved or user prefers moving on.
+Treat `clarify` as a single unit - do not read or invoke its internal files directly.
 
 ## Output
 
-Markdown format:
+The Markdown returned by `clarify`:
 
 - Updated Requirements: Same structure as in Phase 2.
 - Addressed Concerns

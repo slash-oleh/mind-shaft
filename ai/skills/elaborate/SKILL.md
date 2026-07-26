@@ -15,6 +15,7 @@ description: Analyze a task specification, review the codebase, and output a det
 
 - `gather-task` already ran this session, or its output passed in as input
 - `confront` skill available
+- `clarify` skill available
 
 ## Phases
 
