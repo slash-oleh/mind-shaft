@@ -1,0 +1,66 @@
+---
+title: SKILL.md
+name: plan-implementation
+description: Assess requirements for correctness, completeness, and consistency, then produce an ordered, file-level implementation plan. Use after spec skill, before implement.
+---
+
+# Plan Implementation
+
+## Goal
+
+- Requirements are validated for correctness, completeness, consistency.
+- An ordered, step-by-step implementation plan detailing exact file changes is established, split into commit-sized stages only where necessary.
+
+## Prerequisites
+
+- Task info gathered (e.g. via `gather-task`, `elaborate`, `spec`) - assume it already ran this session, or was supplied as input
+
+## Steps
+
+### Step 1: Assess Requirements
+
+Perform basic check of existing requirement sections for Three Cs:
+
+- Correctness
+- Completeness
+- Consistency
+
+Expected requirements structure to contain:
+
+- Requirements
+  - Core goal
+  - Description
+  - Scope
+  - Risks
+  - Criteria
+- Codebase
+  - Similar patterns
+  - Tech debt blockers
+  - Regression risks
+  - Affected modules
+- Addressed Concerns
+- Subtasks
+- Success Criteria
+
+Check if all info is present.
+
+- If all present and structured this way, use requirements as is.
+- If not but all info is present in different structure, and trivial restructuring is possible, do it (usually when using ticket description and not elaboration results).
+- Otherwise, suggest user do elaboration first.
+
+### Step 2: Structure Logical Steps
+
+For each sub-task:
+
+- Target single coherent changes.
+- Name exact files and describe specific changes.
+
+Group steps into stages only where necessary. A stage is one commit: atomic (no unrelated changes bundled in) and non-breaking (build/lint pass on its own). Default to a single stage - most tasks fit one commit.
+
+Split into multiple stages only when work must land in order for each commit to stay green (e.g. restructuring, moving files, prep before the main change). Order stages: foundation (types, models, restructuring) first, then utilities, then consumers/UI.
+
+## Output
+
+Markdown format:
+
+- Stages: Ordered list of stages (single stage by default). For each: files, changes, and dependencies.
