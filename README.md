@@ -18,6 +18,7 @@ SDLC:
 - [`/gather-task`](ai/skills/gather-task/SKILL.md): collect ticket, design, and codebase info for a task.
 - [`/prepare-workspace`](ai/skills/prepare-workspace/SKILL.md): set up branch and git state for a task.
 - [`/elaborate`](ai/skills/elaborate/SKILL.md): assess scope, risks, done criteria before starting.
+- [`/confront`](ai/skills/confront/SKILL.md): critically examine a spec against the codebase, raise concerns.
 - [`/implement`](ai/skills/implement/SKILL.md): plan and implement from spec through verified change.
 - [`/code-review`](ai/skills/code-review/SKILL.md): review a diff against project rules.
 - [`/review-pull-request`](ai/skills/review-pull-request/SKILL.md): fetch, review, and submit a pull request review.
