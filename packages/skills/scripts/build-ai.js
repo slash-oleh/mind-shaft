@@ -9,7 +9,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const src = path.join(root, 'src');
 const dist = path.join(root, 'dist', 'ai');
-const templatesPath = path.join(src, 'formalize-skill', 'templates');
+const templatesPath = path.join(src, 'meta', 'formalize-skill', 'templates');
 const protocolPath = path.join(templatesPath, 'protocol.md');
 const PROTOCOL_MARKER = '{{PROTOCOL_INJECTED}}';
 
@@ -68,6 +68,22 @@ console.log('Building skills...');
 if (fs.existsSync(dist)) {
   fs.rmSync(dist, { recursive: true });
 }
-copyDir(src, dist);
+fs.mkdirSync(dist, { recursive: true });
+
+// src is grouped into category folders (sdlc/meta/tools) for organization,
+// but dist stays flat - one skill folder per skill - since downstream
+// consumers (rulesync, the `skills` CLI) resolve skills as immediate
+// children of the skills root.
+for (const category of fs.readdirSync(src)) {
+  const categoryPath = path.join(src, category);
+  if (!fs.lstatSync(categoryPath).isDirectory()) continue;
+
+  for (const skill of fs.readdirSync(categoryPath)) {
+    const skillPath = path.join(categoryPath, skill);
+    if (!fs.lstatSync(skillPath).isDirectory()) continue;
+    copyDir(skillPath, path.join(dist, skill));
+  }
+}
+
 injectProtocol(dist);
 console.log('Build complete.');
