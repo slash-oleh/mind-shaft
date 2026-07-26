@@ -12,11 +12,18 @@ Settle on Multi-stage skills vs Multi-skill workflows balance.
 
 Ideas for new skills:
 
-- `ticket-tools`: Dispatcher skill with jira backend (for now)
-  - create
-  - update description
-  - change status
-  - comment
+- `ticket-tools`: Dispatcher skill for ticket trackers. Upon implementing, replace existing usages/mentions for tickets/statuses/jira actions with skill invocation.
+  - Identify platform (jira backend via atlassian MCP only for now)
+  - (lazy - depending on command) Map statuses - infer project-specific statuses to abstract statuses:
+    - To Do (also New, Backlog, Ready for Development, etc.)
+    - In Progress (also In Development, etc.)
+    - Code Review (also Review, In Review, Ready for Review, etc.)
+    - Acceptance (also Testing, Test, In Testing, Ready to Test, Product Review, etc.). Rarely the next status can be Done right away (if no further approval).
+  - Commands
+    - create
+    - update description
+    - change status
+    - comment
 
 - `task-autopilot` (formelly `sdlc`, `task-to-pull-request`): Compound hands-off workflow with the following skills chain. Humam approval gates mostly skipped. Questions limited to product semi-technical ones, with rest accepted at best effort decisions. Since `submit-pull-request` (or existing PR from `identified-pr`) gates 2-3 passing implies asyncronous wait / periodic check and potentially iterative loop of `fix-pull-request` to get to `ship-task`.
   - `gather-task`
