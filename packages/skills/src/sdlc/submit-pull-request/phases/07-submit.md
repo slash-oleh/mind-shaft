@@ -53,13 +53,11 @@ This step may run in a separate invocation after the parent PR merges.
 
 ### Step 4: Update Ticket Status
 
-If `ticketId` from Phase 1 exists, transition ticket to "In Review" or "Code Review".
+If `ticketId` from Phase 1 exists:
 
-Use corresponding tools (if available), for example:
-
-- **Jira**: Use `transitionJiraIssue` tool or Jira UI/CLI.
-- **GitHub**: Use `gh issue` or project board CLI/UI.
-- **GitLab**: Use `glab issue` or project board CLI/UI.
+```
+Skill(skill: "ticket-tools", args: "change-status <ticketId> code-review")
+```
 
 ## Output
 

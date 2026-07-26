@@ -64,12 +64,11 @@ Check if target branch exists:
 
 ### Step 5: Update Ticket Status
 
-If `ticket_id` from Step 1 exists, transition ticket to "In Progress" (or system equivalent).
+If `ticket_id` from Step 1 exists:
 
-Use corresponding tools (if available), for example:
-
-- **Jira**: Use `transitionJiraIssue` tool or Jira UI/CLI.
-- **GitHub**: Use `gh issue` or project board CLI/UI.
+```
+Skill(skill: "ticket-tools", args: "change-status <ticket_id> in-progress")
+```
 
 ## Output
 

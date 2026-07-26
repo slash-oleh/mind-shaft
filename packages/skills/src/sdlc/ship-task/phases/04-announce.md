@@ -6,10 +6,20 @@
 
 ## Steps
 
-### Step 1: Comment in ticket
+### Step 1: Update ticket
 
-Post the generated report text to the tracking ticket.
-Use relevant issue tracking system tool.
+Comment:
+
+```
+# ... create $TMP with the report text (see ticket-tools' Shell Markdown Bodies pattern) ...
+Skill(skill: "ticket-tools", args: "comment <ticketId> $TMP")
+```
+
+Change status:
+
+```
+Skill(skill: "ticket-tools", args: "change-status <ticketId> acceptance")
+```
 
 ## Output
 

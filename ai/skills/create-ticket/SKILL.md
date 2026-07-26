@@ -9,6 +9,10 @@ description: Create a structured ticket in the project management system. Use wh
 
 - Ticket is created in issue tracker system.
 
+## Prerequisites
+
+- `ticket-tools` skill available
+
 ## Before creating
 
 Gather target project required fields. Common fields:
@@ -55,6 +59,15 @@ If type is **Bug**, description MUST include:
 - **Steps to Reproduce (STR)**: Numbered actions triggering the bug.
 - **Actual Result (AR)**: Incorrect behavior with error logs or messages.
 - **Expected Result (ER)**: Correct expected behavior.
+
+## Create
+
+Once fields are gathered, create the ticket via the `ticket-tools` skill (see its **Shell Markdown Bodies** pattern for `DESCRIPTION_FILE`). Fold Assignee, Sprint, Priority, and Metadata into `FIELDS_JSON`, e.g. `{"assignee": "self", "priority": "High", "labels": ["bug"]}` - omit keys that don't apply:
+
+```
+# ... create $TMP with the description ...
+Skill(skill: "ticket-tools", args: "create <PROJECT_KEY> <TITLE> $TMP [TYPE] [PARENT] [FIELDS_JSON]")
+```
 
 ## After creating
 

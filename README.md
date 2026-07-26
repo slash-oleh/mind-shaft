@@ -34,6 +34,7 @@ Workflows (common chains of other skills - hands-off):
 Tools (external integrations - invoked by other skills, not directly):
 
 - [`vcs-tools`](ai/skills/vcs-tools/SKILL.md): PR/MR data/operations for the detected platform (GitHub `gh`, GitLab `glab`).
+- [`ticket-tools`](ai/skills/ticket-tools/SKILL.md): ticket create/update/status/comment operations (Jira via Atlassian MCP for now).
 
 Meta (skills for skills):
 
