@@ -31,10 +31,11 @@ Write or update root `AGENTS.md` to this structure, in order. Any section may ho
 
 - Brief: 1-3 sentences on business purpose
 - References: links to full docs if present (README, docs folder, wiki, Confluence)
+- Terminology:
 
 ## Structure
 
-- Breakdown: high-level map - monorepo packages, modules, libraries
+- Breakdown: high-level map - monorepo apps, packages, modules, libraries, accompanied by their conventional public or internal names and aliases
 - Dependencies: main logical relation between them (e.g. `packages/backend` depends on `libs/auth`, `packages/frontend` communicates with `packages/backend` via REST API)
 
 ## Git
