@@ -9,7 +9,7 @@ description: Collect raw info about a task - ticket details, linked design/docs,
 
 - Ticket ID (if any) is resolved, and its title, description, and linked issues fetched.
 - Linked design, documentation, and other resources are retrieved and summarized.
-- Relevant codebase locations and existing patterns are identified.
+- Relevant high-level codebase location is identified.
 
 ## Prerequisites
 
@@ -33,8 +33,7 @@ description: Collect raw info about a task - ticket details, linked design/docs,
 
 ### Step 3: Establish Codebase Context
 
-- Locate files and modules likely affected.
-- Find existing patterns (similar components, services, hooks).
+- Identify high-level codebase location: app, library, module (do not investigate the task itself).
 
 ## Output
 
