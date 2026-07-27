@@ -8,13 +8,19 @@
 
 ## Steps
 
-If anything appears unclear, in particular due to conflict resolving during Phase 3, go back to Phase 2.
-
-For each action item from `action_items` in Phase 2 in order:
+For each action item from `action_items` in Phase 2 in order (Conflict item, if any, is always first):
 
 ### Step 1: Apply solution
 
-- Make code changes or whatever needed to resolve the action item. For deferred action items it can be ticket creation.
+- For a **Conflict** item, invoke the `resolve-conflicts` skill instead of editing files directly:
+
+  ```
+  Skill(skill: "resolve-conflicts", args: "<target_branch>")
+  ```
+
+  This rewrites commit history via rebase - confirm with the user before proceeding. No fixup commit applies to this item (`fixup_commit` is `null`); skip straight to Step 2. Since the rebase changes commit hashes, re-run `git log --oneline <file>` for every subsequent item rather than relying on hashes looked up before this step.
+
+- For other items, make code changes or whatever needed to resolve the action item. For deferred action items it can be ticket creation.
 
 - Commit as fixup commit. Identify originating commits using:
 

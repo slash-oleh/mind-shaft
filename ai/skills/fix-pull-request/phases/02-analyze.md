@@ -25,6 +25,7 @@ Verify the item is relevant and actionable.
 
 Use analysis directions below for each type of items:
 
+- [Analysis of Conflicts](#analysis-of-conflicts)
 - [Analysis of CI failures](#analysis-of-ci-failures)
 - [Analysis of Comments](#analysis-of-comments)
 
@@ -72,6 +73,17 @@ Conclusions:
 - After sorting, assign a unique artificial ID to each action item (1, 2, 3, ...).
 
 ---
+
+## Analysis of Conflicts
+
+If `merge_state` from Phase 1 is `CONFLICTING`, create a single Conflict action item - no per-file breakdown at this stage.
+
+Classification:
+
+- Severity: Major (always - conflicts block merging).
+- Conclusion: Fix (always).
+
+Solution: rebase onto the target branch via the `resolve-conflicts` skill (invoked in Phase 3).
 
 ## Analysis of CI failures
 

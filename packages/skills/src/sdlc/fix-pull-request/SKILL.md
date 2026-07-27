@@ -17,15 +17,15 @@ description: Address pull request review comments, conflicts, and CI failures. U
 ## Prerequisites
 
 - `vcs-tools` skill available (`gh` CLI for GitHub repos, `glab` CLI for GitLab repos)
+- `resolve-conflicts` skill available
 
 ## Phases
 
 1. [Gather Info](phases/01-gather-info.md)
 2. [Analyze](phases/02-analyze.md)
-3. [Resolve Merge Conflicts](phases/03-resolve-conflicts.md) (APPROVAL REQUIRED)
-4. [Apply Fixes](phases/04-apply-fixes.md)
-5. [Publish](phases/05-publish.md) (APPROVAL REQUIRED)
-6. [Update Description](phases/06-update-description.md)
+3. [Apply Fixes](phases/03-apply-fixes.md)
+4. [Publish](phases/04-publish.md) (APPROVAL REQUIRED)
+5. [Update Description](phases/05-update-description.md)
 
 ## Execution
 
