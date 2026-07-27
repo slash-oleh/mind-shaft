@@ -1,4 +1,4 @@
-# Phase 4: Apply Fixes
+# Phase 2: Apply Fixes
 
 ## Goal
 
@@ -8,7 +8,7 @@
 
 ## Steps
 
-For each action item from `action_items` in Phase 2 in order (Conflict item, if any, is always first):
+For each action item from `action_items` in Phase 1 in order (Conflict item, if any, is always first):
 
 ### Step 1: Apply solution
 
@@ -73,10 +73,10 @@ JSON format:
 {
   "fixes": [
     {
-      "action_item_id": "number", // Action item ID from Phase 2.
+      "action_item_id": "number", // Action item ID from Phase 1.
       "fixup_commit": "string", // Hash of the created fixup commit (if any) or null.
       "reply": "string", // Text drafted for the thread (if Comment type) or null.
     },
-  ], // List of applied actions from Phase 2 with results.
+  ], // List of applied actions from Phase 1 with results.
 }
 ```

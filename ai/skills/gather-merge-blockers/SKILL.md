@@ -1,9 +1,16 @@
-# Phase 1: Gather Info
+---
+name: gather-merge-blockers
+description: Fetch and order everything blocking a pull request from merging - conflicts, CI failures, and open comment threads. Use standalone for merge-readiness triage, or invoke from fix-pull-request's Analyze phase.
+---
+
+# Gather Merge Blockers
 
 ## Goal
 
-- Target pull request number is resolved
-- PR full metadata (merge state, CI status, and comments) is fetched.
+- Target pull request number is resolved.
+- Merge state, CI failures, and open comment threads are fetched.
+- Comment threads have draft summaries.
+- Items are ordered by type for downstream processing.
 
 ## Steps
 
@@ -23,11 +30,11 @@ Invoke the `vcs-tools` skill:
 Skill(skill: "vcs-tools", args: "get-pr-info <PR_NUMBER>")
 ```
 
-### Step 3: Draft Thread Summaries
+### Step 3: Draft thread summaries
 
 For each thread:
 
-- Identify thread starter (first comment author)
+- Identify thread starter (first comment author).
 - Draft a summary (subject of discussion). One short sentence.
 
 ## Output
@@ -68,6 +75,10 @@ JSON format:
         },
       ], // Comments in the thread.
     },
-  ], // List of open discussion threads.
+  ], // List of open discussion threads. Process after merge_state and ci_failures.
 }
 ```
+
+## Notes
+
+- Does not judge relevance, severity, or required action - that's analysis, not gathering.

@@ -1,23 +1,32 @@
-# Phase 2: Analyze
+# Phase 1: Analyze
 
 ## Goal
 
-- All PR checks and comments are processed
+- Merge-blocking items for the target PR are gathered.
+- All PR checks and comments are processed.
 - A prioritized, categorized action item list is compiled.
 
 ## Steps
 
-### Step 1: Prioritize input items
+### Step 1: Gather merge blockers
 
-Classify and sort input items (`merge_state`, `ci_failures`, and `threads`) from Phase 1 by type for processing:
+Invoke the `gather-merge-blockers` skill:
+
+```
+Skill(skill: "gather-merge-blockers")
+```
+
+### Step 2: Order items for processing
+
+Group the merge-blocking items (`merge_state`, `ci_failures`, `threads`) by type. Downstream consumers must process them in this fixed order:
 
 1. Conflicts: `merge_state` (if `CONFLICTING`)
 2. CI: `ci_failures`
 3. Comments: `threads`
 
-### Step 2: Convert input items to action items
+### Step 3: Convert input items to action items
 
-For each input item one by one, do A-D sub-steps:
+For each item one by one, do A-D sub-steps:
 
 #### Item sub-step A: Analyze
 
@@ -66,7 +75,7 @@ Conclusions:
 
   - Explain
 
-### Step 3: Prioritize action items
+### Step 4: Prioritize action items
 
 - Merge conflicts always first.
 - Rest ordered by severity (major first).
@@ -76,14 +85,14 @@ Conclusions:
 
 ## Analysis of Conflicts
 
-If `merge_state` from Phase 1 is `CONFLICTING`, create a single Conflict action item - no per-file breakdown at this stage.
+If `merge_state` from Step 1 is `CONFLICTING`, create a single Conflict action item - no per-file breakdown at this stage.
 
 Classification:
 
 - Severity: Major (always - conflicts block merging).
 - Conclusion: Fix (always).
 
-Solution: rebase onto the target branch via the `resolve-conflicts` skill (invoked in Phase 3).
+Solution: rebase onto the target branch via the `resolve-conflicts` skill (invoked in Phase 2).
 
 ## Analysis of CI failures
 

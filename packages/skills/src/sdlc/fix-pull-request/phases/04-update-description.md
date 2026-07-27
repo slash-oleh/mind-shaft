@@ -1,4 +1,4 @@
-# Phase 5: Update Description
+# Phase 4: Update Description
 
 ## Goal
 
@@ -19,7 +19,7 @@ The remote PR description is up-to-date and aligned with current PR changes.
 ### Step 2: Submit updated description
 
 Use the **Shell Markdown Bodies** pattern from the `vcs-tools` skill's `SKILL.md`.
-Where `<pr_number>` comes from Phase 1's output:
+Where `<pr_number>` comes from the `gather-merge-blockers` skill's output, fetched in Phase 1:
 
 ```
 # ... create $TMP with description ...

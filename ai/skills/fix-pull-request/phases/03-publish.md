@@ -1,4 +1,4 @@
-# Phase 4: Publish
+# Phase 3: Publish
 
 ## Goal
 
@@ -24,10 +24,10 @@ git push origin $(git branch --show-current) --force-with-lease
 
 ### Step 3: Post replies
 
-For each item in `fixes` from Phase 3 with a present `reply` field:
+For each item in `fixes` from Phase 2 with a present `reply` field:
 
 Use the **Shell Markdown Bodies** pattern from the `vcs-tools` skill's `SKILL.md`.
-Where `<pr_number>` comes from Phase 1, `<comment_id>` is the comment `id` from `threads` in Phase 1 (on GitLab this is the `thread_id`, i.e. the discussion ID), and `<summary>` is the corresponding thread `summary` from Phase 1:
+Where `<pr_number>`, `<comment_id>` (the comment `id` from `threads`; on GitLab this is the `thread_id`, i.e. the discussion ID), and `<summary>` (the corresponding thread `summary`) come from the `gather-merge-blockers` skill's output, fetched in Phase 1:
 
 ```
 # ... create $TMP with reply ...
