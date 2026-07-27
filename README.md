@@ -18,6 +18,7 @@ SDLC (atomic development processes - full control):
 - [`/gather-task`](ai/skills/gather-task/SKILL.md): collect ticket, design, and codebase info for a task.
 - [`/prepare-workspace`](ai/skills/prepare-workspace/SKILL.md): set up branch and git state for a task.
 - [`/confront`](ai/skills/confront/SKILL.md): critically examine a spec against the codebase, raise concerns.
+- [`/investigate`](ai/skills/investigate/SKILL.md): trace a bug/incident to root cause, propose a fix.
 - [`/clarify`](ai/skills/clarify/SKILL.md): resolve open concerns with the user, update requirements.
 - [`/spec`](ai/skills/spec/SKILL.md): compile approach, sub-tasks, and testable success criteria.
 - [`/plan-implementation`](ai/skills/plan-implementation/SKILL.md): assess requirements, break work into commit-sized stages.

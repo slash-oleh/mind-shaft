@@ -17,7 +17,7 @@ Ideas for new skills:
   - `identify-pr`
   - Gate 1: No PR exists
     - `prepare-workspace`
-    - `elaborate`
+    - `elaborate` or `investigate`
     - `plan-implementation`
     - `implement`
     - `code-review`
@@ -47,8 +47,6 @@ Ideas for new skills:
 - `fix-feedback`: Make a followup fix based on ticket comments / chat message. Decide on ticket creation, create branch, implement, submit PR. Sort of `fix-pull-request` but when changes are already merged (consider a split from that skill).
 
 - `why-ci-failed`: Part of `fix-pull-request` already but would still prove useful being ad-hoc.
-
-- `investigate`: Detective job on incidents, (heisen)bugs, performance, etc. Finding root cause. A replacement for `/elaborate` in the ticket solving flow, when a ticket isn't a feature but a bug.
 
 - `reflect` / `reflect-mistakes` / `reflect-skill`: Review errors (including self-fixed) to improve initial instructions or update memory.
 
