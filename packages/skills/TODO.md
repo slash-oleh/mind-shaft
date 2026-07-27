@@ -48,7 +48,7 @@ Ideas for new skills:
 
 - `why-ci-failed`: Part of `fix-pull-request` already but would still prove useful being ad-hoc.
 
-- `investigate`: Detective job on incidents, (heisen)bugs, performance, etc.
+- `investigate`: Detective job on incidents, (heisen)bugs, performance, etc. Finding root cause. A replacement for `/elaborate` in the ticket solving flow, when a ticket isn't a feature but a bug.
 
 - `reflect` / `reflect-mistakes` / `reflect-skill`: Review errors (including self-fixed) to improve initial instructions or update memory.
 
