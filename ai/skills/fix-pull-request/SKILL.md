@@ -66,6 +66,10 @@ Skill(skill: "resolve-conflicts", args: "<target_branch>")
 
 Treat `resolve-conflicts` as a single unit - do not read or invoke its internal files directly.
 
+This may force-push without Step 6's gate - intentional, since
+`resolve-conflicts` is mechanical and escalates ambiguity itself. Step 6
+gates only the judgment-call fixes from Steps 4-5.
+
 ### Step 4: Resolve CI failures
 
 For each item in `ci_failures`:
