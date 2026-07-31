@@ -27,6 +27,7 @@ SDLC (atomic development processes - full control):
 - [`/review-pull-request`](ai/skills/review-pull-request/SKILL.md): fetch, review, and submit a pull request review.
 - [`/submit-pull-request`](ai/skills/submit-pull-request/SKILL.md): clean, polish, submit for review.
 - [`/resolve-conflicts`](ai/skills/resolve-conflicts/SKILL.md): rebase onto a target branch and resolve conflicts.
+- [`/process-feedback`](ai/skills/process-feedback/SKILL.md): assess feedback items, classify by severity, reach a conclusion.
 - [`/gather-merge-blockers`](ai/skills/gather-merge-blockers/SKILL.md): fetch and order a PR's conflicts, CI failures, comment threads.
 - [`/fix-pull-request`](ai/skills/fix-pull-request/SKILL.md): address review comments, conflicts, CI failures.
 - [`/ship-task`](ai/skills/ship-task/SKILL.md): merge, release, verify, announce.
