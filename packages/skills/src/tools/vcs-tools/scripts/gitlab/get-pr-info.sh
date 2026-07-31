@@ -11,6 +11,10 @@ echo "## PR Info"
 echo "$mr_info" | jq -r '"### \(.title)\n\n```markdown\n\(.description)\n```"'
 
 echo ""
+echo "## URL"
+echo "$mr_info" | jq -r '.web_url'
+
+echo ""
 echo "## Merge State"
 echo '```json'
 echo "$mr_info" | jq '{mergeable: (.has_conflicts | not), mergeStateStatus: .detailed_merge_status}'

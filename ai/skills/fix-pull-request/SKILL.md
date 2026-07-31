@@ -13,6 +13,10 @@ description: Address pull request review comments, conflicts, and CI failures. U
 - Branch published.
 - PR description updated (if needed).
 
+## Input
+
+- PR identifier (optional): PR number, PR URL, or ticket ID. Passed through to `vcs-tools`' `identify-pr` command; falls back to the current branch's open PR if omitted.
+
 ## Prerequisites
 
 - `vcs-tools` skill available (`gh` CLI for GitHub repos, `glab` CLI for GitLab repos)
@@ -26,21 +30,33 @@ description: Address pull request review comments, conflicts, and CI failures. U
 
 ## Steps
 
-### Step 1: Gather merge blockers
+### Step 1: Identify PR
+
+Invoke the `vcs-tools` skill:
+
+```
+Skill(skill: "vcs-tools", args: "identify-pr <input>")
+```
+
+Treat `vcs-tools` as a single unit - do not read or invoke its internal files directly.
+
+Capture `pr_number` from its output, and reuse this value for the rest of this skill.
+
+### Step 2: Gather merge blockers
 
 Invoke the `gather-merge-blockers` skill:
 
 ```
-Skill(skill: "gather-merge-blockers")
+Skill(skill: "gather-merge-blockers", args: "<pr_number>")
 ```
 
 Treat `gather-merge-blockers` as a single unit - do not read or invoke its internal files directly.
 
-Capture `source_branch` and `target_branch` from its output, and reuse these values for the rest of this skill instead of re-deriving them.
+Capture `url`, `source_branch`, and `target_branch` from its output, and reuse these values for the rest of this skill instead of re-deriving them.
 
-### Step 2: Resolve conflicts
+### Step 3: Resolve conflicts
 
-If `merge_state` (captured in Step 1) is not `CONFLICTING`, skip this step.
+If `merge_state` (captured in Step 2) is not `CONFLICTING`, skip this step.
 
 Invoke the `resolve-conflicts` skill:
 
@@ -50,7 +66,7 @@ Skill(skill: "resolve-conflicts", args: "<target_branch>")
 
 Treat `resolve-conflicts` as a single unit - do not read or invoke its internal files directly.
 
-### Step 3: Resolve CI failures
+### Step 4: Resolve CI failures
 
 For each item in `ci_failures`:
 
@@ -78,7 +94,7 @@ Skill(skill: "implement", args: "fixup mode. <plan-implementation-report>")
 
 Treat `implement` as a single unit - do not read or invoke its internal files directly.
 
-### Step 4: Address Threads
+### Step 5: Address Threads
 
 1. Map `threads` and `reviews` (from `gather-merge-blockers`) into `process-feedback`'s generic item shape, then invoke it:
 
@@ -107,13 +123,13 @@ Skill(skill: "implement", args: "fixup mode. <plan-implementation-report>")
 
 Treat `implement` as a single unit - do not read or invoke its internal files directly.
 
-### Step 5: Confirmation gate
+### Step 6: Confirmation gate
 
 Ask human for proceed confirmation (yes) or adjustments (free text).
 
 On adjustments, the human either makes the change manually or asks for a
 followup fix. Either way, amend the result into the existing relevant fixup
-commit from Step 3/4 - unless the human asks for a new/separate commit
+commit from Step 4/5 - unless the human asks for a new/separate commit
 instead. Re-ask for confirmation after.
 
 Assess the followup's size first. If small (fits the existing fixup as an
@@ -121,21 +137,21 @@ amend), do that. If it's big enough to need its own plan (new scope, touches
 areas outside the existing fixup), say so and propose running a separate
 `plan-implementation` + `implement` cycle for it.
 
-### Step 6: Autosquash fixups
+### Step 7: Autosquash fixups
 
-Squash all fixup commits into their originating commits non-interactively, using `target_branch` captured in Step 1:
+Squash all fixup commits into their originating commits non-interactively, using `target_branch` captured in Step 2:
 
 ```bash
-GIT_SEQUENCE_EDITOR=true git rebase --autosquash -i $(git merge-base HEAD "$target_branch")
+GIT_SEQUENCE_EDITOR=true git rebase --autosquash -i $(git merge-base HEAD "<target_branch>")
 ```
 
-### Step 7: Push to remote
+### Step 8: Push to remote
 
 ```bash
 git push origin $(git branch --show-current) --force-with-lease
 ```
 
-### Step 8: Post replies
+### Step 9: Post replies
 
 For each thread from `gather-merge-blockers` addressed in `process-feedback`, prepare a reply comment:
 
@@ -163,9 +179,11 @@ Skill(skill: "vcs-tools", args: "post-reply <pr_number> <comment_id> <reply_file
 
 Treat `vcs-tools` as a single unit - do not read or invoke its internal files directly.
 
-`<pr_number>` and `<thread_id>` come from the `gather-merge-blockers` skill's output.
+`<pr_number>` comes from Step 1; `<thread_id>` comes from the `gather-merge-blockers` skill's output.
 
-### Step 9: Update PR description
+### Step 10: Update PR description
+
+If Steps 4 and 5 made no changes, skip this step.
 
 - Summarize the fixes and improvements applied in this iteration.
 - Reflect the final state of the PR compared to the previous version.
@@ -184,3 +202,7 @@ Skill(skill: "vcs-tools", args: "update-pr-description <pr_number> <pr_descripti
 ```
 
 Treat `vcs-tools` as a single unit - do not read or invoke its internal files directly.
+
+## Output
+
+`url` (captured in Step 2), then a short plain-text summary of what was fixed.

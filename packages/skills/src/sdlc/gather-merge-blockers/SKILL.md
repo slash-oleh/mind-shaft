@@ -8,26 +8,21 @@ description: Fetch and order everything blocking a pull request from merging - c
 
 ## Goal
 
-- Target pull request number is resolved.
 - Merge state, CI failures, and open comment threads are fetched.
 - Items are ordered by type for downstream processing.
 
+## Input
+
+- `pr_number` (required): the target PR/MR number. Resolve it first via `vcs-tools`' `identify-pr` command.
+
 ## Steps
 
-### Step 1: Resolve PR number
+### Step 1: Fetch all PR info
 
 Invoke the `vcs-tools` skill:
 
 ```
-Skill(skill: "vcs-tools", args: "identify-pr")
-```
-
-### Step 2: Fetch all PR info
-
-Invoke the `vcs-tools` skill:
-
-```
-Skill(skill: "vcs-tools", args: "get-pr-info <PR_NUMBER>")
+Skill(skill: "vcs-tools", args: "get-pr-info <pr_number>")
 ```
 
 ## Output
@@ -36,7 +31,8 @@ JSON format:
 
 ```jsonc
 {
-  "pr_number": "number", // Resolved PR number.
+  "pr_number": "number", // Echoed `pr_number` input.
+  "url": "string", // PR/MR web URL.
   "title": "string", // PR title.
   "description": "string", // PR description body.
   "source_branch": "string", // Branch the PR merges from.

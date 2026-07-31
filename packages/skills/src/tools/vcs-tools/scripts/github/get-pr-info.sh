@@ -11,10 +11,14 @@ REPO_NAME=$(echo "$REPO" | cut -d'/' -f2)
 
 readonly GH_PAGE_LIMIT=100
 
-pr_info=$(gh pr view "$PR" --json title,body,mergeable,mergeStateStatus,reviews,baseRefName,headRefName)
+pr_info=$(gh pr view "$PR" --json title,body,url,mergeable,mergeStateStatus,reviews,baseRefName,headRefName)
 
 echo "## PR Info"
 echo "$pr_info" | jq -r '"### \(.title)\n\n```markdown\n\(.body)\n```"'
+
+echo ""
+echo "## URL"
+echo "$pr_info" | jq -r '.url'
 
 echo ""
 echo "## Merge State"
