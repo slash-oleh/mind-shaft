@@ -7,8 +7,12 @@ description: Assess feedback items (comments, suggestions), classify by severity
 
 ## Goal
 
-- All feedback items are classified by severity and Approach.
+- All feedback items are processed by `/elaborate`.
 - Original request IDs are preserved on output.
+
+## Prerequisites
+
+- `elaborate` skill available.
 
 ## Input
 
@@ -25,25 +29,25 @@ description: Assess feedback items (comments, suggestions), classify by severity
 
 - Group duplicated items or items referencing other items like "same as above". Keep original ID list references attached though (for later reporting back).
 
-### Step 2: Classify
+### Step 2: Elaborate
 
-For each remaining item, assign:
+Invoke the `elaborate` skill, framing remaining items as Requirements - one Requirement entry per item, each tagged with its original `id` and anchored at its `location`:
 
-**Severity**:
+```
+Skill(skill: "elaborate", args: "<items-as-requirements>")
+```
 
-- Major: architectural changes, bugs, correctness issues
-- Medium: code reuse, readability, UX
-- Minor: nitpicks, code style, renaming, minor improvements
+Treat `elaborate` as a single unit - do not read or invoke its internal files directly.
 
-**Approach**:
-
-- Decline: Factually incorrect, missing full context, or not worth the effort. Explain.
-- Defer: Valid but out of scope right now - a separate issue, or would expand the diff significantly. Suggest ticket creation or code `TODO`.
-- Explain: Only a question is asked, no code change required. Answer it or, if not clear, proxy to the human via the `clarify` skill.
-- Fix: Everything else. Proceed as usual.
-
-Keep the original ID list (incl. grouped duplicates from Step 1) attached to each classified item.
+Unlike a fresh ticket, each item is inherently code-anchored - Review Codebase (`confront` Step 2) is not optional here, it's the point.
 
 ## Output
 
-Per item: `id` (incl. grouped duplicate IDs), `severity`, `approach`, `summary`.
+Per item, mapped back by original `id` (incl. grouped duplicate IDs from Step 1), from `elaborate`'s output:
+
+- `severity`, `verdict`: from the matching Concern (`confront`'s output, possibly updated by `clarify`).
+
+- `resolution`:
+  - Implement: matching Subtask/Approach decision (from `spec`).
+  - Decline / Defer: matching Non-goal entry with rationale (from `spec`).
+  - Explain: matching Addressed Concern's Resolution (from `clarify`), or the Concern's Description if not raised there.

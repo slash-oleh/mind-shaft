@@ -23,7 +23,9 @@ description: Compile an approach, sub-task breakdown, and concrete testable succ
 
 - State chosen solution shape: interfaces, data shapes, patterns/reuse targets.
 - Record key design decisions, not a full design doc - decisions only.
-- Carry forward Non-goals (from Requirements.Scope) and Assumptions/Constraints (from Clarify) as locked-in.
+- Base decisions only on Implement-verdict concerns, if concerns carry a Verdict (e.g. from `confront`).
+- Carry forward Non-goals (from Requirements.Scope, and any Decline/Defer-verdict concerns with their rationale) and Assumptions/Constraints (from Clarify) as locked-in.
+- If concerns carry an ID (e.g. from `confront`), keep it attached to whichever of Approach/Non-goals/Subtasks that concern ends up in - callers may need to trace back to the source item.
 
 ### Step 2: Task Breakdown
 

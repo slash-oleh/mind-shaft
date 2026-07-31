@@ -11,7 +11,7 @@ description: Critically examine a task specification against the codebase - stru
 - Requirements structured as sections, with no initial information lost.
 - Codebase alignment identified.
 - Each challenging question answered.
-- List of concerns covers all answers.
+- List of concerns covers all answers, and, if input was itemized, all items.
 
 ## Input
 
@@ -24,7 +24,7 @@ description: Critically examine a task specification against the codebase - stru
 Structure the input as sections:
 
 - **Core goal**: Identify essential problem to be solved besides directly proposed solution.
-- **Description**: What is currently specified about the task (freeform).
+- **Description**: What is currently specified about the task (freeform). If the input is itemized (multiple discrete entries, each with its own ID), keep every entry enumerated here - do not collapse them into one narrative.
 - **Scope**: Identify bounds of the task. What's included and what is implied to be implemented separately (already done, in parallel or later).
 - **Criteria**: Acceptance criteria and Definition of Done for the task.
 
@@ -60,12 +60,28 @@ Answer each topic question, where positive answer is a red flag.
 
 Each positive answer can raise multiple concerns. For each concern outline:
 
-- ID: Ordered number.
+- ID: the originating item's ID, if the input was itemized (Step 1). Otherwise an ordered number.
+
 - Summary: One sentence of what is wrong.
+
 - Description: All details.
-- Suggestion: Possible solutions.
+
+- Severity:
+  - Major: architectural changes, bugs, correctness issues.
+  - Medium: code reuse, readability, UX.
+  - Minor: nitpicks, code style, renaming, minor improvements.
+
+- Verdict:
+  - Decline: Factually incorrect, missing full context, or not worth the effort. Explain.
+  - Defer: Valid but out of scope right now - a separate issue, or would expand the diff significantly. Suggest ticket creation or code `TODO`.
+  - Explain: Only a question is raised, no change required. Answer directly, or proxy to `clarify` if not clear.
+  - Implement: Everything else. Proceed as usual.
+
+- Suggestion: Possible solutions (for Implement verdict).
 
 If relevant, come up with additional concerns besides those coming from questions.
+
+If the input was itemized (Step 1), coverage must be complete: emit exactly one Concern per input item. An item with no red flags still gets a Concern - Severity/Description reduced to "None", Verdict `Implement`, Suggestion is the item's own proposal as-is.
 
 ## Output
 
@@ -92,5 +108,7 @@ Markdown format:
 - Concerns
   - {ID X}. {Summary X}
     {Description X}
+    - Severity: {Severity X}
+    - Verdict: {Verdict X}
     - Suggestion
       {Suggestion X}
