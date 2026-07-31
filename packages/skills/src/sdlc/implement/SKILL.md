@@ -16,6 +16,11 @@ description: Execute an implementation plan through to a verified, committed cod
 
 - `plan-implementation` already ran this session, or its output (`Stages`) passed in as input
 
+## Input
+
+- `Stages` (from `plan-implementation` - see Prerequisites).
+- `fixup mode` (optional): when a stage is tagged with an originating commit (see `plan-implementation`), commit it with `git commit --fixup <originating-commit>` instead of a fresh commit.
+
 ## Steps
 
 ### Step 1: Execute Plan
@@ -23,7 +28,7 @@ description: Execute an implementation plan through to a verified, committed cod
 - Follow the `Stages` from the plan in order.
 - Within each stage:
   - Apply the steps' code changes, lint/format, and verify against immediate scope.
-  - Commit changes.
+  - Commit changes - if the stage is tagged for fixup mode, commit as `git commit --fixup <originating-commit>` instead of a plain commit.
 
 ### Step 2: Handle Deviations
 

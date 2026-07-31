@@ -36,11 +36,11 @@ Skill(skill: "gather-merge-blockers")
 
 Treat `gather-merge-blockers` as a single unit - do not read or invoke its internal files directly.
 
-Capture `source_branch` and `target_branch` from its output - reuse these values for the rest of this skill, do not re-derive them.
+Capture `source_branch` and `target_branch` from its output, and reuse these values for the rest of this skill instead of re-deriving them.
 
 ### Step 2: Resolve conflicts
 
-If `merge_state` from is not `CONFLICTING`, skip this step.
+If `merge_state` (captured in Step 1) is not `CONFLICTING`, skip this step.
 
 Invoke the `resolve-conflicts` skill:
 
@@ -54,7 +54,7 @@ Treat `resolve-conflicts` as a single unit - do not read or invoke its internal 
 
 For each item in `ci_failures`:
 
-1. Invoke the `/investigate` skill with a single composed report blob (its Input is freeform, not positional args):
+1. Invoke the `investigate` skill with a single composed report blob (its Input is freeform, not positional args):
 
 ```
 Skill(skill: "investigate", args: "CI check '<name>' failed with status '<status>'. Logs: <log_file_path>")
@@ -62,18 +62,18 @@ Skill(skill: "investigate", args: "CI check '<name>' failed with status '<status
 
 Treat `investigate` as a single unit - do not read or invoke its internal files directly.
 
-2. Invoke the `/plan-implementation` skill:
+2. Invoke the `plan-implementation` skill:
 
 ```
-Skill(skill: "plan-implementation", args: "fixup mode", "<investigate-report>")
+Skill(skill: "plan-implementation", args: "fixup mode. <investigate-report>")
 ```
 
 Treat `plan-implementation` as a single unit - do not read or invoke its internal files directly.
 
-3. Invoke the `/implement` skill:
+3. Invoke the `implement` skill:
 
 ```
-Skill(skill: "implement", args: "fixup mode", "<plan-implementation-report>")
+Skill(skill: "implement", args: "fixup mode. <plan-implementation-report>")
 ```
 
 Treat `implement` as a single unit - do not read or invoke its internal files directly.
@@ -91,20 +91,18 @@ Skill(skill: "process-feedback", args: "<items>")
 
 Treat `process-feedback` as a single unit - do not read or invoke its internal files directly.
 
-`author` is not forwarded - re-join `process-feedback`'s per-`id` output with the original thread/review records for Step 4.4 below.
-
-2. Invoke the `/plan-implementation` skill:
+2. Invoke the `plan-implementation` skill:
 
 ```
-Skill(skill: "plan-implementation", args: "<process-feedback-report>")
+Skill(skill: "plan-implementation", args: "fixup mode. <process-feedback-report>")
 ```
 
 Treat `plan-implementation` as a single unit - do not read or invoke its internal files directly.
 
-3. Invoke the `/implement` skill:
+3. Invoke the `implement` skill:
 
 ```
-Skill(skill: "implement", args: "fixup mode", "<plan-implementation-report>")
+Skill(skill: "implement", args: "fixup mode. <plan-implementation-report>")
 ```
 
 Treat `implement` as a single unit - do not read or invoke its internal files directly.

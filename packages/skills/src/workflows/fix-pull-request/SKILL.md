@@ -92,12 +92,10 @@ Skill(skill: "process-feedback", args: "<items>")
 
 Treat `process-feedback` as a single unit - do not read or invoke its internal files directly.
 
-`author` is not forwarded - re-join `process-feedback`'s per-`id` output with the original thread/review records for Step 4.4 below.
-
 2. Invoke the `plan-implementation` skill:
 
 ```
-Skill(skill: "plan-implementation", args: "<process-feedback-report>")
+Skill(skill: "plan-implementation", args: "fixup mode. <process-feedback-report>")
 ```
 
 Treat `plan-implementation` as a single unit - do not read or invoke its internal files directly.

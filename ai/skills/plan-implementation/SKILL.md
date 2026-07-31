@@ -14,6 +14,11 @@ description: Assess requirements for correctness, completeness, and consistency,
 
 - Task info gathered (e.g. via `gather-task`, `elaborate`, `spec`) - assume it already ran this session, or was supplied as input
 
+## Input
+
+- Requirements (from `gather-task`, `elaborate`, `spec`, or a ticket description - see Prerequisites).
+- `fixup mode` (optional): when present, mark each stage with its originating commit and a note that it must be committed as a fixup instead of a fresh commit (see Step 2).
+
 ## Steps
 
 ### Step 1: Assess Requirements
