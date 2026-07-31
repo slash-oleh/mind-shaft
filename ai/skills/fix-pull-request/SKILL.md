@@ -107,7 +107,7 @@ If `threads` and `reviews` are both empty, skip this step.
 1. Map `threads` and `reviews` (from `gather-merge-blockers`) into `process-feedback`'s generic item shape, then invoke it:
 
 - Threads: `id` = `thread_id`, `body` = `location` folded in, then comments concatenated in order (`author`: `body` per comment).
-- Reviews: `id` = synthesized (e.g. `review-<index>`), `body` = the review's `body` (no `location` - not anchored to a file/line).
+- Reviews: skip entries with `state: APPROVED` or an empty `body` - not actionable feedback. For the rest: `id` = synthesized (e.g. `review-<index>`), `body` = the review's `body` (no `location` - not anchored to a file/line).
 
 ```
 Skill(skill: "process-feedback", args: "<items>")
