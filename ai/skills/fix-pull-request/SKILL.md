@@ -104,21 +104,19 @@ Skill(skill: "implement", args: "fixup mode", "<plan-implementation-report>")
 
 Treat `implement` as a single unit - do not read or invoke its internal files directly.
 
-4. Prepare thread replies
-
-For each thread from `gather-merge-blockers` addressed in `process-feedback`, draft a reply comment:
-
-Tone: Brief and factual. No fluff, apologies, or fillers.
-
-- **Per conclusion**:
-  - **Fixed**: Describe the `implement` result. Example: `"Fixed. Added missing X."` (for fixes) / `"Done. Replaced X with Y."` (for improvements).
-  - **Declined**: Explain without confrontational words. `"Existing convention is relative imports throughout this package"`.
-  - **Deferred**: `"Will address in a future PR"` or `"Created <Ticket URL>"`
-  - **Explain**: Provide the requested clarification.
-
 ### Step 5: Confirmation gate
 
 Ask human for proceed confirmation (yes) or adjustments (free text).
+
+On adjustments, the human either makes the change manually or asks for a
+followup fix. Either way, amend the result into the existing relevant fixup
+commit from Step 3/4 - unless the human asks for a new/separate commit
+instead. Re-ask for confirmation after.
+
+Assess the followup's size first. If small (fits the existing fixup as an
+amend), do that. If it's big enough to need its own plan (new scope, touches
+areas outside the existing fixup), say so and propose running a separate
+`plan-implementation` + `implement` cycle for it.
 
 ### Step 6: Autosquash fixups
 
@@ -136,7 +134,17 @@ git push origin $(git branch --show-current) --force-with-lease
 
 ### Step 8: Post replies
 
-Post thread replies receieved from `process-feedback`. Post concurrently in batches.
+For each thread from `gather-merge-blockers` addressed in `process-feedback`, prepare a reply comment:
+
+Tone: Brief and factual. No fluff, apologies, or fillers.
+
+- **Per conclusion**:
+  - **Fixed**: Describe the `implement` result. Example: `"Fixed. Added missing X."` (for fixes) / `"Done. Replaced X with Y."` (for improvements).
+  - **Declined**: Explain without confrontational words. `"Existing convention is relative imports throughout this package"`.
+  - **Deferred**: `"Will address in a future PR"` or `"Created <Ticket URL>"`
+  - **Explain**: Provide the requested clarification.
+
+Post concurrently in batches.
 
 Use the **Shell Markdown Bodies** pattern from the `vcs-tools` skill's `SKILL.md`:
 
