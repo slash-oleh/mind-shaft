@@ -56,6 +56,10 @@ Ticket workflows use different status names per project/tracker, but callers of 
 | `acceptance` | Acceptance, Testing, Test, In Testing, Ready to Test, Product Review |
 | `done` | Done, Closed, Resolved |
 
+### Markdown bodies
+
+Descriptions go in as Markdown with `contentFormat: "markdown"` (`##` headings, `-`/`1.` lists) - Jira converts to ADF. Avoid wiki markup (`h2.`, `#`).
+
 ### Shell Markdown Bodies
 
 When a command requires a markdown body file, always use a temp file with a quoted heredoc to avoid shell escaping issues (especially backticks):
