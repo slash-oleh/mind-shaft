@@ -8,11 +8,11 @@ description: Address pull request review comments, conflicts, and CI failures. U
 
 ## Goal
 
-- CI failures fixed.
+- CI failures addressed.
 - Conflicts resolved.
 - Comment suggestions addressed (fixed/replied).
-- Remote branch is up-to-date.
-- PR description is up-to-date.
+- Branch published.
+- PR description updated (if needed).
 
 ## Prerequisites
 
