@@ -41,6 +41,14 @@ git rebase origin/<target_branch>
 GIT_EDITOR=true git rebase --continue
 ```
 
+### Step 4: Push
+
+If the rebase was not aborted, force-push the rebased branch:
+
+```bash
+git push origin $(git branch --show-current) --force-with-lease
+```
+
 ## Output
 
 JSON format:
@@ -55,5 +63,4 @@ JSON format:
 
 ## Notes
 
-- Does not push. Rewrites commit hashes on the rebased branch - callers that reference commits by hash (e.g. for fixup targeting) must re-derive them after this skill completes.
-- Rebase rewrites history - confirm with the user before running this skill on a branch they didn't explicitly ask to have rebased.
+- Rewrites commit hashes on the rebased branch - callers that reference commits by hash (e.g. for fixup targeting) must re-derive them after this skill completes.
