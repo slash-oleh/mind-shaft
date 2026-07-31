@@ -58,10 +58,18 @@ Skill(skill: "investigate", args: "<name>", "<status>", "<logs>")
 
 Treat `investigate` as a single unit - do not read or invoke its internal files directly.
 
-2. Invoke the `/implement` skill:
+2. Invoke the `/plan-implementation` skill:
 
 ```
-Skill(skill: "implement", args: "fixup mode", "<investigate-report>")
+Skill(skill: "plan-implementation", args: "fixup mode", "<investigate-report>")
+```
+
+Treat `plan-implementation` as a single unit - do not read or invoke its internal files directly.
+
+3. Invoke the `/implement` skill:
+
+```
+Skill(skill: "implement", args: "fixup mode", "<plan-implementation-report>")
 ```
 
 Treat `implement` as a single unit - do not read or invoke its internal files directly.
