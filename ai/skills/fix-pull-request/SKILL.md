@@ -54,10 +54,10 @@ Treat `resolve-conflicts` as a single unit - do not read or invoke its internal 
 
 For each item in `ci_failures`:
 
-1. Invoke the `/investigate` skill:
+1. Invoke the `/investigate` skill with a single composed report blob (its Input is freeform, not positional args):
 
 ```
-Skill(skill: "investigate", args: "<name>", "<status>", "<logs>")
+Skill(skill: "investigate", args: "CI check '<name>' failed with status '<status>'. Logs: <log_file_path>")
 ```
 
 Treat `investigate` as a single unit - do not read or invoke its internal files directly.

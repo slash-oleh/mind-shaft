@@ -41,12 +41,12 @@ if [[ $(echo "$failures" | jq 'length') -gt 0 ]]; then
     echo "$failures" | jq -r '.[].link' | while read -r link; do
         run_id=$(echo "$link" | grep -oE '[0-9]+$')
         if [[ -n "$run_id" ]]; then
+            log_file=$(mktemp -t "ci-log.$run_id.XXXXXX.log")
+            gh run view --log-failed "$run_id" 2>/dev/null |
+                grep -E "Failed|error:|hook id|files were modified" | head -20 >"$log_file" || true
             echo ""
             echo "### Run $run_id"
-            echo '```'
-            gh run view --log-failed "$run_id" 2>/dev/null |
-                grep -E "Failed|error:|hook id|files were modified" | head -20 || true
-            echo '```'
+            echo "$log_file"
         fi
     done
 fi

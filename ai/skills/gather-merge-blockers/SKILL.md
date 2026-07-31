@@ -45,9 +45,9 @@ JSON format:
     {
       "name": "string", // Check name.
       "status": "string", // Failure status.
-      "logs": "string", // Filtered log lines.
+      "log_file_path": "string", // Path to file with filtered log lines.
     },
-  ], // List of failed CI checks with raw logs.
+  ], // List of failed CI checks.
   "reviews": [
     {
       "author": "string", // Reviewer handle.

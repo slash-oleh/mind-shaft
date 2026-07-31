@@ -40,12 +40,12 @@ if [[ $(echo "$failures" | jq 'length') -gt 0 ]]; then
     echo "$failures" | jq -r '.[].link' | while read -r link; do
         job_id=$(echo "$link" | grep -oE '[0-9]+$')
         if [[ -n "$job_id" ]]; then
+            log_file=$(mktemp -t "ci-log.$job_id.XXXXXX.log")
+            glab api "projects/:id/jobs/$job_id/trace" 2>/dev/null |
+                grep -E "Failed|error:|ERROR|warning" | head -20 >"$log_file" || true
             echo ""
             echo "### Job $job_id"
-            echo '```'
-            glab api "projects/:id/jobs/$job_id/trace" 2>/dev/null |
-                grep -E "Failed|error:|ERROR|warning" | head -20 || true
-            echo '```'
+            echo "$log_file"
         fi
     done
 fi
