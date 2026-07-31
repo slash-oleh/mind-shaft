@@ -73,6 +73,8 @@ gates only the judgment-call fixes from Steps 4-5.
 
 ### Step 4: Resolve CI failures
 
+If `ci_failures` is empty, skip this step.
+
 For each item in `ci_failures`:
 
 1. Invoke the `investigate` skill with a single composed report blob (its Input is freeform, not positional args):
@@ -100,6 +102,8 @@ Skill(skill: "implement", args: "fixup mode. <plan-implementation-report>")
 Treat `implement` as a single unit - do not read or invoke its internal files directly.
 
 ### Step 5: Address Threads
+
+If `threads` and `reviews` are both empty, skip this step.
 
 1. Map `threads` and `reviews` (from `gather-merge-blockers`) into `process-feedback`'s generic item shape, then invoke it:
 
