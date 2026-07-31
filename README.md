@@ -45,6 +45,7 @@ Tools (external integrations - invoked by other skills, not directly):
 Meta (skills for skills):
 
 - [`/extract-skill`](ai/skills/extract-skill/SKILL.md): turn a completed task's process into a reusable skill.
+- [`/refine-skill`](ai/skills/refine-skill/SKILL.md): review a skill, find flaws, suggest fixes.
 - [`/formalize-skill`](ai/skills/formalize-skill/SKILL.md): refactor a skill file to the standard template.
 - [`/create-dispatcher-skill`](ai/skills/create-dispatcher-skill/SKILL.md): merge a detect skill plus per-backend skills into one dispatcher skill.
 - [`/project-memo`](ai/skills/project-memo/SKILL.md): maintain root `AGENTS.md` repo cheatsheet.
