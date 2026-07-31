@@ -59,6 +59,8 @@ Group steps into stages only where necessary. A stage is one commit: atomic (no 
 
 Split into multiple stages only when work must land in order for each commit to stay green (e.g. restructuring, moving files, prep before the main change). Order stages: foundation (types, models, restructuring) first, then utilities, then consumers/UI.
 
+If the fixup mode is requested in the input, mark each stage with a relevant originating commit and a statement to require committing this stage as fixup.
+
 ## Output
 
 Markdown format:

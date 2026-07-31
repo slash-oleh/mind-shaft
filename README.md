@@ -29,12 +29,12 @@ SDLC (atomic development processes - full control):
 - [`/resolve-conflicts`](ai/skills/resolve-conflicts/SKILL.md): rebase onto a target branch and resolve conflicts.
 - [`/process-feedback`](ai/skills/process-feedback/SKILL.md): assess feedback items, classify by severity, reach a conclusion.
 - [`/gather-merge-blockers`](ai/skills/gather-merge-blockers/SKILL.md): fetch and order a PR's conflicts, CI failures, comment threads.
-- [`/fix-pull-request`](ai/skills/fix-pull-request/SKILL.md): address review comments, conflicts, CI failures.
 - [`/ship-task`](ai/skills/ship-task/SKILL.md): merge, release, verify, announce.
 
 Workflows (common chains of other skills - hands-off):
 
 - [`/elaborate`](ai/skills/elaborate/SKILL.md): raw requirements to spec (`/confront`, `/clarify`, `/spec`).
+- [`/fix-pull-request`](ai/skills/fix-pull-request/SKILL.md): address review comments, conflicts, CI failures.
 
 Tools (external integrations - invoked by other skills, not directly):
 

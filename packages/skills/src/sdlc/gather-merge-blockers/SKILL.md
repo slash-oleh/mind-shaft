@@ -1,7 +1,7 @@
 ---
 title: SKILL.md
 name: gather-merge-blockers
-description: Fetch and order everything blocking a pull request from merging - conflicts, CI failures, and open comment threads. Use standalone for merge-readiness triage, or invoke from fix-pull-request's Analyze phase.
+description: Fetch and order everything blocking a pull request from merging - conflicts, CI failures, and open comment threads. Use standalone for merge-readiness triage, or invoke from fix-pull-request.
 ---
 
 # Gather Merge Blockers

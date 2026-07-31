@@ -1,4 +1,5 @@
 ---
+title: SKILL.md
 name: fix-pull-request
 description: Address pull request review comments, conflicts, and CI failures. Use when a PR needs unblocking.
 ---
