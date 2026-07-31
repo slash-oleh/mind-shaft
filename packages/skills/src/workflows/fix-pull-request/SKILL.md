@@ -139,10 +139,10 @@ For each thread from `gather-merge-blockers` addressed in `process-feedback`, pr
 
 Tone: Brief and factual. No fluff, apologies, or fillers.
 
-- **Per conclusion**:
-  - **Fixed**: Describe the `implement` result. Example: `"Fixed. Added missing X."` (for fixes) / `"Done. Replaced X with Y."` (for improvements).
-  - **Declined**: Explain without confrontational words. `"Existing convention is relative imports throughout this package"`.
-  - **Deferred**: `"Will address in a future PR"` or `"Created <Ticket URL>"`
+- **Per `resolution`** (`process-feedback`'s output):
+  - **Implement**: Describe the `implement` result. Example: `"Fixed. Added missing X."` (for fixes) / `"Done. Replaced X with Y."` (for improvements).
+  - **Decline**: Explain without confrontational words. `"Existing convention is relative imports throughout this package"`.
+  - **Defer**: `"Will address in a future PR"` or `"Created <Ticket URL>"`
   - **Explain**: Provide the requested clarification.
 
 Post concurrently in batches.
