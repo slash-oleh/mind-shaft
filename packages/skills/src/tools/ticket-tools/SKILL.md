@@ -26,7 +26,7 @@ Follow the recipe at `scripts/<platform>/<command>.md`, e.g. `scripts/jira/creat
 
 Pure mechanical create - field/content guidance (title conventions, description structure, bug template) lives in whichever skill calls this one (e.g. `create-ticket`), not here.
 
-`DESCRIPTION_FILE` is a path to a plain text file containing the description (see Shell Markdown Bodies below). `TYPE` defaults to the backend's default task type if unspecified. `FIELDS_JSON` is an optional JSON object for backend-specific extras (assignee, sprint, priority, labels, custom fields) - forwarded to the recipe as-is; omit keys that don't apply.
+`DESCRIPTION_FILE` is a path to a plain text file containing the description. `TYPE` defaults to the backend's default task type if unspecified. `FIELDS_JSON` is an optional JSON object for backend-specific extras (assignee, sprint, priority, labels, custom fields) - forwarded to the recipe as-is; omit keys that don't apply.
 
 Report the created ticket URL. If creation failed, explain the reason and retry with corrected fields.
 
@@ -40,7 +40,7 @@ Same `DESCRIPTION_FILE` convention as `create`.
 
 #### `comment <TICKET_ID> <BODY_FILE>`
 
-`BODY_FILE` is a path to a plain text file containing the comment (see Shell Markdown Bodies below).
+`BODY_FILE` is a path to a plain text file containing the comment.
 
 ## Shared Patterns
 
@@ -59,15 +59,3 @@ Ticket workflows use different status names per project/tracker, but callers of 
 ### Markdown bodies
 
 Descriptions go in as Markdown with `contentFormat: "markdown"` (`##` headings, `-`/`1.` lists) - Jira converts to ADF. Avoid wiki markup (`h2.`, `#`).
-
-### Shell Markdown Bodies
-
-When a command requires a markdown body file, always use a temp file with a quoted heredoc to avoid shell escaping issues (especially backticks):
-
-```bash
-TMP=$(mktemp)
-cat > "$TMP" <<'EOF'
-...markdown content...
-EOF
-# Read "$TMP" and pass its contents as the description/comment field
-```

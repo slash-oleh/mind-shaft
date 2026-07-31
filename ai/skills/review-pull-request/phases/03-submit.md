@@ -8,11 +8,9 @@
 
 ### Step 1: Prepare Review Payload
 
-First, formulate the review JSON payload in a temporary file based on the output of Phase 2:
+Formulate the review JSON payload based on the output of Phase 2:
 
-```bash
-PAYLOAD_TMP=$(mktemp)
-cat > "$PAYLOAD_TMP" <<'EOF'
+```jsonc
 {
   "body": "General review body text...",
   "event": "REQUEST_CHANGES",
@@ -24,15 +22,22 @@ cat > "$PAYLOAD_TMP" <<'EOF'
     }
   ]
 }
-EOF
 ```
 
 _Note: Use the appropriate `event` based on Phase 2 `state` ("APPROVE", "REQUEST_CHANGES", or "COMMENT"). Omit `comments` array if there are no inline comments._
 
-### Step 2: Submit Review
+Write it to a scratch file via `scratch`:
 
 ```
-Skill(skill: "vcs-tools", args: "submit-review <PR_NUMBER> $PAYLOAD_TMP")
+Skill(skill: "scratch", args: "write pr-review-payload json")
+```
+
+### Step 2: Submit Review
+
+Pass the returned path as `<payload_file_path>` to `vcs-tools`:
+
+```
+Skill(skill: "vcs-tools", args: "submit-review <PR_NUMBER> <payload_file_path>")
 ```
 
 Note: GitLab has no native "request changes" state - `REQUEST_CHANGES` and `COMMENT` are posted as notes without approving the MR; only `APPROVE` also approves it.

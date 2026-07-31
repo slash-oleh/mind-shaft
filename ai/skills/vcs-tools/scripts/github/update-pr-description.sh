@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 # Usage: update-pr-description.sh <PR_NUMBER> <BODY_FILE>
-# BODY_FILE is a path to a plain text file containing the new description.
-# Write the body to a temp file first to avoid any shell escaping issues:
-#   TMP=$(mktemp); cat > "$TMP" <<'EOF'
-#   ...markdown with `backticks` freely...
-#   EOF
-#   bash update-pr-description.sh 123 "$TMP"
+# BODY_FILE is a path to a plain text file containing the new description,
 set -euo pipefail
 
 PR=$1

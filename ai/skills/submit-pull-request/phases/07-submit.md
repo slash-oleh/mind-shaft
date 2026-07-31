@@ -18,15 +18,20 @@ git push origin <branchName>
 
 ### Step 2: Create PR
 
-Create the PR using the `vcs-tools` skill's **Shell Markdown Bodies** pattern.
-
 - Use `baseBranch` from Phase 1 as the target branch (defaults to `main`).
 - Use `title` and `description` from Phase 6.
 - If `dependentPr` from Phase 1 is present, pass `--draft` to create the PR in Draft status.
 
+Write the description to a scratch file via `scratch`:
+
 ```
-# ... create $TMP with description ...
-Skill(skill: "vcs-tools", args: "create-pr <title> $TMP <baseBranch> <branchName> [--draft if dependentPr exists, else empty]")
+Skill(skill: "scratch", args: "write pr-description md")
+```
+
+Pass the returned path as `<pr_description_file_path>` to `vcs-tools`:
+
+```
+Skill(skill: "vcs-tools", args: "create-pr <title> <pr_description_file_path> <baseBranch> <branchName> [--draft if dependentPr exists, else empty]")
 ```
 
 ### Step 3: Dependent PR Post-Merge Cleanup
@@ -44,11 +49,16 @@ This step may run in a separate invocation after the parent PR merges.
 
 2. Edit the PR description to remove the dependency note block at the top:
 
-  Use the **Shell Markdown Bodies** pattern from the `vcs-tools` skill's `SKILL.md`.
+   Write the updated description to a scratch file via `scratch`:
 
    ```
-   # ... create $TMP with updated description ...
-   Skill(skill: "vcs-tools", args: "update-pr-description <PR_NUMBER> $TMP")
+   Skill(skill: "scratch", args: "write pr-description md")
+   ```
+
+   Pass the returned path as `<pr_description_file_path>` to `vcs-tools`:
+
+   ```
+   Skill(skill: "vcs-tools", args: "update-pr-description <PR_NUMBER> <pr_description_file_path>")
    ```
 
 ### Step 4: Update Ticket Status

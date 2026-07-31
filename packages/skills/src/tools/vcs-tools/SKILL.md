@@ -57,7 +57,7 @@ Prints the PR/MR diff to stdout.
 
 #### `create-pr <TITLE> <BODY_FILE> <BASE> <HEAD> [DRAFT_FLAG]`
 
-`BODY_FILE` is a path to a plain text file containing the description (see Shell Markdown Bodies pattern below).
+`BODY_FILE` is a path to a plain text file containing the description.
 
 #### `update-pr-description <PR_NUMBER> <BODY_FILE>`
 
@@ -74,17 +74,3 @@ Prints the PR/MR diff to stdout.
 #### `merge-pr <PR_NUMBER>`
 
 Rebases and deletes/removes the source branch on merge.
-
-## Shared Patterns
-
-### Shell Markdown Bodies
-
-When a command requires a markdown body file, always use a temp file with a quoted heredoc to avoid shell escaping issues (especially backticks):
-
-```bash
-TMP=$(mktemp)
-cat > "$TMP" <<'EOF'
-...markdown content...
-EOF
-# Pass "$TMP" as the BODY_FILE argument
-```

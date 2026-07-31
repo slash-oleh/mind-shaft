@@ -15,6 +15,7 @@ description: Merge, release, verify, prepare presentational info, announce
 
 - `vcs-tools` skill available (`gh` CLI for GitHub repos, `glab` CLI for GitLab repos)
 - `ticket-tools` skill available
+- `scratch` skill available
 
 ## Steps
 
@@ -42,11 +43,16 @@ Skill(skill: "vcs-tools", args: "merge-pr <pr_number>")
 
 ### Step 4: Announce
 
-Comment on the ticket:
+Comment on the ticket. Write the report text to a scratch file via `scratch`:
 
 ```
-# ... create $TMP with the report text (see ticket-tools' Shell Markdown Bodies pattern) ...
-Skill(skill: "ticket-tools", args: "comment <ticketId> $TMP")
+Skill(skill: "scratch", args: "write ticket-comment md")
+```
+
+Pass the returned path as `<comment_file_path>` to `ticket-tools`:
+
+```
+Skill(skill: "ticket-tools", args: "comment <ticketId> <comment_file_path>")
 ```
 
 Change status:

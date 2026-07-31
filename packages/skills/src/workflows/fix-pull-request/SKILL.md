@@ -17,6 +17,7 @@ description: Address pull request review comments, conflicts, and CI failures. U
 ## Prerequisites
 
 - `vcs-tools` skill available (`gh` CLI for GitHub repos, `glab` CLI for GitLab repos)
+- `scratch` skill available
 - `gather-merge-blockers` skill available
 - `resolve-conflicts` skill available
 - `investigate` skill available
@@ -151,10 +152,16 @@ Tone: Brief and factual. No fluff, apologies, or fillers.
 
 Post concurrently in batches.
 
-Use the **Shell Markdown Bodies** pattern from the `vcs-tools` skill's `SKILL.md`:
+Write each reply body to a scratch file via `scratch`:
 
 ```
-Skill(skill: "vcs-tools", args: "post-reply <pr_number> <comment_id> $TMP")
+Skill(skill: "scratch", args: "write pr-reply-<id> md")
+```
+
+Pass the returned path as `<reply_file_path>` to `vcs-tools`:
+
+```
+Skill(skill: "vcs-tools", args: "post-reply <pr_number> <comment_id> <reply_file_path>")
 ```
 
 Treat `vcs-tools` as a single unit - do not read or invoke its internal files directly.
@@ -167,10 +174,16 @@ Treat `vcs-tools` as a single unit - do not read or invoke its internal files di
 - Reflect the final state of the PR compared to the previous version.
 - Do not include intermediate technical fixes (e.g., squashed fixups).
 
-Use the **Shell Markdown Bodies** pattern from the `vcs-tools` skill's `SKILL.md`:
+Write the description to a scratch file via `scratch`:
 
 ```
-Skill(skill: "vcs-tools", args: "update-pr-description <pr_number> $TMP")
+Skill(skill: "scratch", args: "write pr-description md")
+```
+
+Pass the returned path as `<pr_description_file_path>` to `vcs-tools`:
+
+```
+Skill(skill: "vcs-tools", args: "update-pr-description <pr_number> <pr_description_file_path>")
 ```
 
 Treat `vcs-tools` as a single unit - do not read or invoke its internal files directly.

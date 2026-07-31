@@ -12,6 +12,7 @@ description: Create a structured ticket in the project management system. Use wh
 ## Prerequisites
 
 - `ticket-tools` skill available
+- `scratch` skill available
 
 ## Before creating
 
@@ -62,11 +63,16 @@ If type is **Bug**, description MUST include:
 
 ## Create
 
-Once fields are gathered, create the ticket via the `ticket-tools` skill (see its **Shell Markdown Bodies** pattern for `DESCRIPTION_FILE`). Fold Assignee, Sprint, Priority, and Metadata into `FIELDS_JSON`, e.g. `{"assignee": "self", "priority": "High", "labels": ["bug"]}` - omit keys that don't apply:
+Once fields are gathered, write the description to a scratch file via `scratch`:
 
 ```
-# ... create $TMP with the description ...
-Skill(skill: "ticket-tools", args: "create <PROJECT_KEY> <TITLE> $TMP [TYPE] [PARENT] [FIELDS_JSON]")
+Skill(skill: "scratch", args: "write ticket-description md")
+```
+
+Pass the returned path as `<description_file_path>` to `ticket-tools`. Fold Assignee, Sprint, Priority, and Metadata into `FIELDS_JSON`, e.g. `{"assignee": "self", "priority": "High", "labels": ["bug"]}` - omit keys that don't apply:
+
+```
+Skill(skill: "ticket-tools", args: "create <PROJECT_KEY> <TITLE> <description_file_path> [TYPE] [PARENT] [FIELDS_JSON]")
 ```
 
 ## After creating
