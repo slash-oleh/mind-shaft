@@ -126,7 +126,7 @@ Treat `implement` as a single unit - do not read or invoke its internal files di
 
 ### Step 6: Confirmation gate
 
-Ask human for proceed confirmation (yes) or adjustments (free text).
+Ask human for proceed confirmation on the fixes applied in Steps 4 and 5 (yes) or adjustments (free text).
 
 On adjustments, the human either makes the change manually or asks for a
 followup fix. Either way, amend the result into the existing relevant fixup
