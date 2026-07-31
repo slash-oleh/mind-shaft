@@ -45,7 +45,7 @@ Resolves the target PR/MR number from the first matching source:
 
 #### `get-pr-info <PR_NUMBER>`
 
-Prints, in order: title/body, merge state, failed CI checks/jobs with filtered log lines, reviews/approvals, and open (unresolved) review threads with `thread_id`, author (`location` too on GitLab), and `comments`.
+Prints, in order: title/body, merge state, failed CI checks/jobs with filtered log lines, reviews/approvals, open (unresolved) review threads with `thread_id`, author (`location` too on GitLab), and `comments`, and source/target branch names.
 
 #### `get-pr-status <PR_NUMBER>`
 

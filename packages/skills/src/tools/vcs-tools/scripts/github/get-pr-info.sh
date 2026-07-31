@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Usage: get-pr-info.sh <PR_NUMBER>
-# Prints PR body, merge state, failed CI checks with logs, reviews, and open review threads.
+# Prints PR body, merge state, failed CI checks with logs, reviews, open review threads, and source/target branches.
 set -euo pipefail
 
 PR=${1:?Usage: get-pr-info.sh <PR_NUMBER>}
@@ -11,7 +11,7 @@ REPO_NAME=$(echo "$REPO" | cut -d'/' -f2)
 
 readonly GH_PAGE_LIMIT=100
 
-pr_info=$(gh pr view "$PR" --json title,body,mergeable,mergeStateStatus,reviews)
+pr_info=$(gh pr view "$PR" --json title,body,mergeable,mergeStateStatus,reviews,baseRefName,headRefName)
 
 echo "## PR Info"
 echo "$pr_info" | jq -r '"### \(.title)\n\n```markdown\n\(.body)\n```"'
@@ -20,6 +20,12 @@ echo ""
 echo "## Merge State"
 echo '```json'
 echo "$pr_info" | jq '{mergeable, mergeStateStatus}'
+echo '```'
+
+echo ""
+echo "## Branches"
+echo '```json'
+echo "$pr_info" | jq '{source_branch: .headRefName, target_branch: .baseRefName}'
 echo '```'
 
 echo ""

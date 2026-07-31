@@ -31,6 +31,8 @@ Skill(skill: "gather-merge-blockers")
 
 Treat `gather-merge-blockers` as a single unit - do not read or invoke its internal files directly.
 
+Capture `source_branch` and `target_branch` from its output - reuse these values for the rest of this skill, do not re-derive them.
+
 ### Step 2: Resolve conflicts
 
 If `merge_state` from is not `CONFLICTING`, skip this step.
@@ -109,10 +111,10 @@ Ask human for proceed confirmation (yes) or adjustments (free text).
 
 ### Step 6: Autosquash fixups
 
-Squash all fixup commits into their originating commits non-interactively:
+Squash all fixup commits into their originating commits non-interactively, using `target_branch` captured in Step 1:
 
 ```bash
-GIT_SEQUENCE_EDITOR=true git rebase --autosquash -i $(git merge-base HEAD $target_branch)
+GIT_SEQUENCE_EDITOR=true git rebase --autosquash -i $(git merge-base HEAD "$target_branch")
 ```
 
 ### Step 7: Push to remote

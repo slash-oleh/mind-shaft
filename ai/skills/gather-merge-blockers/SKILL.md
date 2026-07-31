@@ -46,6 +46,8 @@ JSON format:
   "pr_number": "number", // Resolved PR number.
   "title": "string", // PR title.
   "description": "string", // PR description body.
+  "source_branch": "string", // Branch the PR merges from.
+  "target_branch": "string", // Branch the PR merges into.
   "merge_state": "string", // MERGEABLE, CONFLICTING, or UNKNOWN.
   "ci_failures": [
     {

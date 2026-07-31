@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Usage: get-pr-info.sh <MR_NUMBER>
-# Prints MR body, merge state, failed CI jobs with logs, approvals, and open discussion threads.
+# Prints MR body, merge state, failed CI jobs with logs, approvals, open discussion threads, and source/target branches.
 set -euo pipefail
 
 MR=${1:?Usage: get-pr-info.sh <MR_NUMBER>}
@@ -14,6 +14,12 @@ echo ""
 echo "## Merge State"
 echo '```json'
 echo "$mr_info" | jq '{mergeable: (.has_conflicts | not), mergeStateStatus: .detailed_merge_status}'
+echo '```'
+
+echo ""
+echo "## Branches"
+echo '```json'
+echo "$mr_info" | jq '{source_branch, target_branch}'
 echo '```'
 
 echo ""
