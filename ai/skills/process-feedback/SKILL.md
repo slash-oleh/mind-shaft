@@ -17,11 +17,10 @@ description: Assess feedback items (comments, suggestions), classify by severity
 ## Input
 
 - `items`: list of feedback items, each with:
-  - `id`: unique identifier (comment ID, thread ID, or similar).
-  - `location`: file/line reference (optional).
-  - `summary`: one-sentence subject of the feedback.
-  - `body`: full feedback text (comment/suggestion content).
-  - `author`: commenter handle (optional - flag bot authors).
+  - `id`: unique identifier.
+  - `body`: full feedback text. Anchoring context (e.g. file/line), where it exists, must be folded in by the caller - opaque freeform text here.
+
+Caller-specific metadata (e.g. summary, author) is not part of this shape - callers retain it and re-join by `id` on output.
 
 ## Steps
 
@@ -31,7 +30,7 @@ description: Assess feedback items (comments, suggestions), classify by severity
 
 ### Step 2: Elaborate
 
-Invoke the `elaborate` skill, framing remaining items as Requirements - one Requirement entry per item, each tagged with its original `id` and anchored at its `location`:
+Invoke the `elaborate` skill, framing remaining items as Requirements - one Requirement entry per item, each tagged with its original `id`:
 
 ```
 Skill(skill: "elaborate", args: "<items-as-requirements>")
@@ -39,7 +38,7 @@ Skill(skill: "elaborate", args: "<items-as-requirements>")
 
 Treat `elaborate` as a single unit - do not read or invoke its internal files directly.
 
-Unlike a fresh ticket, each item is inherently code-anchored - Review Codebase (`confront` Step 2) is not optional here, it's the point.
+Unlike a fresh ticket, each item is inherently code-anchored (anchoring context, folded into `body` by the caller) - Review Codebase (`confront` Step 2) is not optional here, it's the point.
 
 ## Output
 

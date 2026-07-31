@@ -76,15 +76,18 @@ Treat `implement` as a single unit - do not read or invoke its internal files di
 
 ### Step 4: Address Threads
 
-1. Invoke the `/process-feedback` skill:
+1. Map `threads` and `reviews` (from `gather-merge-blockers`) into `process-feedback`'s generic item shape, then invoke it:
+
+- Threads: `id` = `thread_id`, `body` = `location` folded in, then comments concatenated in order (`author`: `body` per comment).
+- Reviews: `id` = synthesized (e.g. `review-<index>`), `body` = the review's `body` (no `location` - not anchored to a file/line).
 
 ```
-Skill(skill: "process-feedback", args: "<threads>", "<reviews>")
+Skill(skill: "process-feedback", args: "<items>")
 ```
 
 Treat `process-feedback` as a single unit - do not read or invoke its internal files directly.
 
-Where `<threads>` and `<reviews>` come from `gather-merge-blockers`.
+`summary`, `author` are not forwarded - re-join `process-feedback`'s per-`id` output with the original thread/review records for Step 4.4 and Step 8 below.
 
 2. Invoke the `/plan-implementation` skill:
 
