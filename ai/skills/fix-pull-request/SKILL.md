@@ -103,7 +103,7 @@ Treat `implement` as a single unit - do not read or invoke its internal files di
 
 4. Prepare thread replies
 
-For each thread from `gather-merge-blockers` addressed in `processed-feedback`, draft a reply comment:
+For each thread from `gather-merge-blockers` addressed in `process-feedback`, draft a reply comment:
 
 Tone: Brief and factual. No fluff, apologies, or fillers.
 
