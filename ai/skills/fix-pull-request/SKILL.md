@@ -174,7 +174,7 @@ Skill(skill: "scratch", args: "write pr-reply-<id> md")
 Pass the returned path as `<reply_file_path>` to `vcs-tools`:
 
 ```
-Skill(skill: "vcs-tools", args: "post-reply <pr_number> <comment_id> <reply_file_path>")
+Skill(skill: "vcs-tools", args: "post-reply <pr_number> <thread_id> <reply_file_path>")
 ```
 
 Treat `vcs-tools` as a single unit - do not read or invoke its internal files directly.

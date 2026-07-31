@@ -67,9 +67,9 @@ Prints the PR/MR diff to stdout.
 
 `PAYLOAD_FILE` is JSON: `{body, event, comments: [{path, line, body}]}`. GitLab has no single batch-review endpoint - the general body posts as a top-level note, each inline comment as a diff discussion, and the MR is approved when `event` is `APPROVE`. There is no native "request changes" state.
 
-#### `post-reply <PR_NUMBER> <COMMENT_ID> <BODY_FILE>`
+#### `post-reply <PR_NUMBER> <THREAD_ID> <BODY_FILE>`
 
-`COMMENT_ID` is a `thread_id` from `get-pr-info`'s Open Review Threads output.
+`THREAD_ID` comes from `get-pr-info`'s Open Review Threads output.
 
 #### `merge-pr <PR_NUMBER>`
 
