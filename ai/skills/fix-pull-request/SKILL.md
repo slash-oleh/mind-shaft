@@ -20,13 +20,13 @@ description: Address pull request review comments, conflicts, and CI failures. U
 ## Prerequisites
 
 - `vcs-tools` skill available (`gh` CLI for GitHub repos, `glab` CLI for GitLab repos)
-- `scratch` skill available
 - `gather-merge-blockers` skill available
 - `resolve-conflicts` skill available
 - `investigate` skill available
 - `plan-implementation` skill available
 - `implement` skill available
 - `process-feedback` skill available
+- `scratch` skill available
 
 ## Steps
 
@@ -171,6 +171,8 @@ Write each reply body to a scratch file via `scratch`:
 Skill(skill: "scratch", args: "write pr-reply-<id> md")
 ```
 
+Treat `scratch` as a single unit - do not read or invoke its internal files directly.
+
 Pass the returned path as `<reply_file_path>` to `vcs-tools`:
 
 ```
@@ -194,6 +196,8 @@ Write the description to a scratch file via `scratch`:
 ```
 Skill(skill: "scratch", args: "write pr-description md")
 ```
+
+Treat `scratch` as a single unit - do not read or invoke its internal files directly.
 
 Pass the returned path as `<pr_description_file_path>` to `vcs-tools`:
 
