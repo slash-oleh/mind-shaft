@@ -53,7 +53,7 @@ Skill(skill: "gather-merge-blockers", args: "<pr_number>")
 
 Treat `gather-merge-blockers` as a single unit - do not read or invoke its internal files directly.
 
-Capture `url`, `source_branch`, and `target_branch` from its output, and reuse these values for the rest of this skill instead of re-deriving them.
+Capture `url`, `source_branch`, `target_branch`, `merge_state`, `ci_failures`, `reviews`, and `threads` from its output, and reuse these values for the rest of this skill instead of re-deriving them.
 
 ### Step 3: Resolve conflicts
 
