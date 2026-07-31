@@ -18,6 +18,10 @@ description: Address pull request review comments, conflicts, and CI failures. U
 - `vcs-tools` skill available (`gh` CLI for GitHub repos, `glab` CLI for GitLab repos)
 - `gather-merge-blockers` skill available
 - `resolve-conflicts` skill available
+- `investigate` skill available
+- `plan-implementation` skill available
+- `implement` skill available
+- `process-feedback` skill available
 
 ## Steps
 
