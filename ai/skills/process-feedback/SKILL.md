@@ -20,7 +20,7 @@ description: Assess feedback items (comments, suggestions), classify by severity
   - `id`: unique identifier.
   - `body`: full feedback text. Anchoring context (e.g. file/line), where it exists, must be folded in by the caller - opaque freeform text here.
 
-Caller-specific metadata (e.g. summary, author) is not part of this shape - callers retain it and re-join by `id` on output.
+Caller-specific metadata (e.g. author) is not part of this shape - callers retain it and re-join by `id` on output.
 
 ## Steps
 

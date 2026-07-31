@@ -10,7 +10,6 @@ description: Fetch and order everything blocking a pull request from merging - c
 
 - Target pull request number is resolved.
 - Merge state, CI failures, and open comment threads are fetched.
-- Comment threads have draft summaries.
 - Items are ordered by type for downstream processing.
 
 ## Steps
@@ -30,13 +29,6 @@ Invoke the `vcs-tools` skill:
 ```
 Skill(skill: "vcs-tools", args: "get-pr-info <PR_NUMBER>")
 ```
-
-### Step 3: Draft thread summaries
-
-For each thread:
-
-- Identify thread starter (first comment author).
-- Draft a summary (subject of discussion). One short sentence.
 
 ## Output
 
@@ -69,7 +61,6 @@ JSON format:
       "thread_id": "string", // Unique ID for the discussion thread.
       "location": "string", // Path to the file and line numbers.
       "author": "string", // Thread starter handle.
-      "summary": "string", // One short sentence summary of the discussion.
       "comments": [
         {
           "id": "string", // Comment ID.

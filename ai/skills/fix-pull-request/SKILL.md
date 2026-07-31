@@ -86,7 +86,7 @@ Skill(skill: "process-feedback", args: "<items>")
 
 Treat `process-feedback` as a single unit - do not read or invoke its internal files directly.
 
-`summary`, `author` are not forwarded - re-join `process-feedback`'s per-`id` output with the original thread/review records for Step 4.4 and Step 8 below.
+`author` is not forwarded - re-join `process-feedback`'s per-`id` output with the original thread/review records for Step 4.4 below.
 
 2. Invoke the `/plan-implementation` skill:
 
@@ -141,12 +141,12 @@ Post thread replies receieved from `process-feedback`. Post concurrently in batc
 Use the **Shell Markdown Bodies** pattern from the `vcs-tools` skill's `SKILL.md`:
 
 ```
-Skill(skill: "vcs-tools", args: "post-reply <pr_number> <comment_id> $TMP <summary>")
+Skill(skill: "vcs-tools", args: "post-reply <pr_number> <comment_id> $TMP")
 ```
 
 Treat `vcs-tools` as a single unit - do not read or invoke its internal files directly.
 
-Where `<pr_number>`, `<thread_id>`, and `<summary>` (the corresponding thread `summary`) come from the `gather-merge-blockers` skill's output
+`<pr_number>` and `<thread_id>` come from the `gather-merge-blockers` skill's output.
 
 ### Step 9: Update PR description
 
