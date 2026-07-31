@@ -84,6 +84,8 @@ node_modules/
 .cursor/
 .claude/
 .agents/
+AGENTS.md
+CLAUDE.md
 
 # Documentation copies
 docs/rules

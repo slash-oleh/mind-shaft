@@ -1,6 +1,6 @@
 {
   "$schema": "https://github.com/dyoshikawa/rulesync/releases/latest/download/config-schema.json",
-  "targets": ["cursor", "claudecode", "antigravity-ide"],
+  "targets": ["cursor", "claudecode", "antigravity-ide", "agentsmd"],
   "features": ["rules", "skills"],
   "delete": false,
   // Declarative skill sources — installed via 'rulesync install'
