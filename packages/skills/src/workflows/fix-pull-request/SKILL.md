@@ -148,6 +148,8 @@ areas outside the existing fixup), say so and propose running a separate
 
 ### Step 7: Autosquash fixups
 
+If Steps 4 and 5 made no changes and Step 3 was skipped, skip this step.
+
 Squash all fixup commits into their originating commits non-interactively, using `target_branch` captured in Step 2:
 
 ```bash
@@ -155,6 +157,8 @@ GIT_SEQUENCE_EDITOR=true git rebase --autosquash -i $(git merge-base HEAD "<targ
 ```
 
 ### Step 8: Push to remote
+
+If Steps 4 and 5 made no changes and Step 3 was skipped, skip this step.
 
 ```bash
 git push origin $(git branch --show-current) --force-with-lease
