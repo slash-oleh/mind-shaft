@@ -13,3 +13,4 @@ Reusable critical-review core. Invoke directly for ad-hoc scrutiny of a spec, or
 ## TODO
 
 - Challenge more: Incorporate widely known techniques for asking questions to close gaps early (grill-me, 5 Why's, etc.)
+- Extract Step 1 to `normalize-requirements`

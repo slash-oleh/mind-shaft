@@ -14,9 +14,11 @@ description: Detective work on an incident, (heisen)bug, error, or performance r
 
 ## Input
 
-- Incident/bug description (raw report, ticket, or `gather-task`'s output).
+- Incident/bug description: freeform report, error or structured text. May be a single incident, or an itemized batch of incidents (each with its own `id`) - process each independently, keep `id` attached throughout.
 
 ## Steps
+
+If the input is itemized, repeat Steps 1-4 per item, keyed by `id`.
 
 ### Step 1: Reproduce
 
@@ -41,42 +43,42 @@ Inspect the confirmed (or leading) root cause's surroundings to outline:
 - **Regression risks**: Spot regression risks in shared code or core paths near the fix.
 - **Affected modules**: Directories/files likely touched by the fix.
 
-### Step 4: Suggest Fix
+### Step 4: Suggest Fix Options
 
 - Propose an approach that removes the root cause, not just the symptom.
 - Note alternatives considered and why rejected (e.g. workaround vs proper fix).
 - Call out regression risk tied to the fix location.
+- Mark recommended one.
 
 ### Step 5: Formulate Concerns
 
 For each unconfirmed hypothesis, blocked reproduction, or open question, outline:
 
-- ID: Ordered number.
+- ID: the concern's own identity - an ordered number, unique per concern.
+- Item: the originating incident's `id`, if input was itemized (Step 1). Null for a single incident. One incident MAY raise multiple Concerns, each a distinct concern `id` sharing the same Item.
 - Summary: One sentence of what is unresolved.
 - Description: All details.
-- Suggestion: Possible ways to resolve (repro data needed, access needed, experiment to run).
+- Suggestion: Possible solutions.
 
 ## Output
 
-Markdown format:
+Markdown format. When input was itemized, wrap the whole structure below per `id` - one `Incident`/`Codebase`/`Suggested Fix`/`Concerns` block per item - instead of a single top-level block.
 
 - Incident
   - Symptom
   - Reproduction
   - Timeline
   - Trace
+- Investigate Report
   - Root Cause
+  - Fix Options
 - Codebase
   - Similar patterns
   - Tech debt blockers
   - Regression risks
   - Affected modules
-- Suggested Fix
-  - Approach
-  - Alternatives Considered
-  - Regression Risks
 - Concerns
-  - {ID X}. {Summary X}
+  - {Concern X}. {Summary X}
     {Description X}
-    - Suggestion
-      {Suggestion X}
+    - Item: {Item X}
+    - Suggestion: {Suggestion X}

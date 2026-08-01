@@ -1,24 +1,23 @@
 ---
 name: implement
-description: Execute an implementation plan through to a verified, committed code change. Use with a plan-implementation's `Stages` output.
+description: Execute an implementation plan through to a verified, committed code change. Use with an ordered `Stages` plan as input.
 ---
 
 # Implement
 
 ## Goal
 
-- The implementation plan is fully executed, with all changes committed.
-- All subtasks are done and quality checks (lint, type-check, tests, pre-commit hooks) pass.
-- `Success Criteria` are met, and the result aligns with `Requirements` overall.
+- All changes applied and committed.
+- Verification pass.
 
 ## Prerequisites
 
-- `plan-implementation` already ran this session, or its output (`Stages`) passed in as input
+- Input already specifies exact code changes, not vague requirements.
 
 ## Input
 
-- `Stages` (from `plan-implementation` - see Prerequisites).
-- `fixup mode` (optional): when a stage is tagged with an originating commit (see `plan-implementation`), commit it with `git commit --fixup <originating-commit>` instead of a fresh commit.
+- `Stages`: ordered implementation stages (see the `Stages` shape). Each stage MAY carry `id` tag(s).
+- `fixup mode` (optional): when a stage is tagged with an originating commit, commit it with `git commit --fixup <originating-commit>` instead of a fresh commit.
 
 ## Steps
 
@@ -26,41 +25,33 @@ description: Execute an implementation plan through to a verified, committed cod
 
 - Follow the `Stages` from the plan in order.
 - Within each stage:
-  - Apply the steps' code changes, lint/format, and verify against immediate scope.
+  - Apply the stage's code changes, lint/format, and verify against immediate scope.
   - Commit changes - if the stage is tagged for fixup mode, commit as `git commit --fixup <originating-commit>` instead of a plain commit.
 
-### Step 2: Handle Deviations
+### Step 2: Verify
 
-- If unexpected conflicts arise, adjust the remaining plan and continue.
-- If a previously committed stage needs a fix, commit it as `git commit --fixup <hash>` against that stage, then `git rebase --autosquash` once done - never edit history mid-flight.
+- Check all changes committed, each stage as a separate commit.
+- Run relevant static checks.
+- Run relevant runtime tests.
+- Validate against Success Criteria if provided.
 
-### Step 3: Verify Subtasks & Commits
+### Step 3: Handle Deviations
 
-- Verify all subtasks done.
-- Check all changes committed.
+If Step 2 checks passed, skip this step.
 
-### Step 4: Quality Checks
+When an unexpected deviation occurs:
 
-- Run lint, type-check, tests.
-- Check pre-commit hooks passed.
+1. Assess the deviation and determine the root cause.
+2. Confirm it implies a simple fix. If it's suspected to be a significant change of the initial plan, ask the user how to proceed.
+3. Apply and commit the fix as `git commit --fixup <hash>` against the offending Stage, then `git rebase --autosquash` once done.
+4. Return to Step 2 and re-run - repeat until all pass.
 
-### Step 5: Check Criteria
-
-- Validate `Success Criteria`.
-- Provide visual confirmation for UI changes.
-
-### Step 6: Overall Alignment
-
-- Verify alignment with `Requirements`, especially `Criteria`.
-- Check `Codebase.Regression risks`.
-- Confirm tests pass for `Codebase.Affected modules`.
+No Stage ends in a failed or skipped state.
 
 ## Output
 
 Markdown format:
 
-- Commits: List of commit hashes, messages, and affected files.
-- Deviations: Unexpected changes from original plan and how they were resolved.
-- Verification Results: Subtasks, commits, quality checks status.
-- Criteria Results: Pass/Fail status and evidence.
-- Artifacts: Screenshots, test logs.
+- Commits: per input `Stage`, its commit hash(es), message(s), affected files.
+- Deviations: Unexpected changes from original plan and how they were resolved. Each entry echoes the `id`(s) carried by the `Stage`.
+- Verification Results: Stages, commits, quality checks status. Entries echo the `id`(s) of the stages they cover, if tagged.

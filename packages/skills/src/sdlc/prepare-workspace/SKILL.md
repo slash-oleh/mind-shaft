@@ -15,14 +15,17 @@ description: Prepare a clean local feature branch and git state for a task, and 
 ## Prerequisites
 
 - `git` CLI installed
-- `gather-task` already ran this session, or its output passed in as input
+
+## Input
+
+- `ticket_id` (optional), `title` (optional), additional followup context (optional).
 
 ## Steps
 
 ### Step 1: Resolve Branch Name
 
 - If input is already a branch name, use it directly and skip the ticket-based lookup below.
-- Otherwise, use `ticket_id` and title from `gather-task`'s output - assume it already ran earlier this session, or was supplied as input.
+- Otherwise, use the `ticket_id` and `title` from the input.
 - If user provided additional details (e.g., followup context), use them for branch name.
 - If no context provided, check for existing local or remote branches matching ticket ID:
   - If match exists, ask whether to use that branch name.

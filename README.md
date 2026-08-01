@@ -27,20 +27,29 @@ SDLC (atomic development processes - full control):
 - [`/review-pull-request`](ai/skills/review-pull-request/SKILL.md): fetch, review, and submit a pull request review.
 - [`/submit-pull-request`](ai/skills/submit-pull-request/SKILL.md): clean, polish, submit for review.
 - [`/resolve-conflicts`](ai/skills/resolve-conflicts/SKILL.md): rebase onto a target branch and resolve conflicts.
-- [`/process-feedback`](ai/skills/process-feedback/SKILL.md): assess feedback items, classify by severity, reach a conclusion.
 - [`/gather-merge-blockers`](ai/skills/gather-merge-blockers/SKILL.md): fetch and order a PR's conflicts, CI failures, comment threads.
 - [`/ship-task`](ai/skills/ship-task/SKILL.md): merge, release, verify, announce.
 
 Workflows (common chains of other skills - hands-off):
 
-- [`/elaborate`](ai/skills/elaborate/SKILL.md): raw requirements to spec (`/confront`, `/clarify`, `/spec`).
+- [`/elaborate`](ai/skills/elaborate/SKILL.md): raw requirements to change spec.
+  - `confront` -> `clarify` -> `spec`
+- [`/prescribe`](ai/skills/prescribe/SKILL.md): raw incident to fix spec.
+  - `investigate` -> `clarify` -> `spec`
+- [`/perform-task`](ai/skills/perform-task/SKILL.md): raw requirements/incident to committed change/fix.
+  - `elaborate`/`prescribe` -> `plan-implementation` -> `implement`
+- [`/fix-feedback`](ai/skills/fix-feedback/SKILL.md): resolve a batch of feedback items end to end, dedup and map reports back.
+  - `perform-task`
+- [`/implement-ticket`](ai/skills/implement-ticket/SKILL.md): ticket to submitted PR.
+  - `gather-task` -> `prepare-workspace` -> `perform-task` -> `submit-pull-request`
 - [`/fix-pull-request`](ai/skills/fix-pull-request/SKILL.md): address review comments, conflicts, CI failures.
+  - `gather-merge-blockers` -> `resolve-conflicts` -> `perform-task` (on CI failures) -> `fix-feedback` -> update PR
 
 Tools (external integrations - invoked by other skills, not directly):
 
-- [`vcs-tools`](ai/skills/vcs-tools/SKILL.md): PR/MR data/operations for the detected platform (GitHub `gh`, GitLab `glab`).
-- [`ticket-tools`](ai/skills/ticket-tools/SKILL.md): ticket create/update/status/comment operations (Jira via Atlassian MCP for now).
-- [`scratch`](ai/skills/scratch/SKILL.md): hand off large data between skills/subagents via a file path, not inline content.
+- [`/vcs-tools`](ai/skills/vcs-tools/SKILL.md): PR/MR data/operations for the detected platform (GitHub `gh`, GitLab `glab`).
+- [`/ticket-tools`](ai/skills/ticket-tools/SKILL.md): ticket create/update/status/comment operations (Jira via Atlassian MCP for now).
+- [`/scratch`](ai/skills/scratch/SKILL.md): hand off large data between skills/subagents via a file path, not inline content.
 
 Meta (skills for skills):
 

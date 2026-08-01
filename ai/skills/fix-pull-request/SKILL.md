@@ -22,10 +22,8 @@ description: Address pull request review comments, conflicts, and CI failures. U
 - `vcs-tools` skill available (`gh` CLI for GitHub repos, `glab` CLI for GitLab repos)
 - `gather-merge-blockers` skill available
 - `resolve-conflicts` skill available
-- `investigate` skill available
-- `plan-implementation` skill available
-- `implement` skill available
-- `process-feedback` skill available
+- `perform-task` skill available
+- `fix-feedback` skill available
 - `scratch` skill available
 
 ## Steps
@@ -74,62 +72,32 @@ gates only the judgment-call fixes from Steps 4-5.
 
 If `ci_failures` is empty, skip this step.
 
-For each item in `ci_failures`:
+1. From each item in `ci_failures`, form a single task: "fixup mode. CI check '<name>' failed with status '<status>'. Logs: <log_file_path>".
 
-1. Invoke the `investigate` skill with a single composed report blob (its Input is freeform, not positional args):
+2. Consolidate them into ordered list with IDs.
 
-```
-Skill(skill: "investigate", args: "CI check '<name>' failed with status '<status>'. Logs: <log_file_path>")
-```
-
-Treat `investigate` as a single unit - do not read or invoke its internal files directly.
-
-2. Invoke the `plan-implementation` skill:
+3. Invoke `perform-task` with this tasks list and PR commits:
 
 ```
-Skill(skill: "plan-implementation", args: "fixup mode. <investigate-report>")
+Skill(skill: "perform-task", args: "<ci_fix_tasks>")
 ```
 
-Treat `plan-implementation` as a single unit - do not read or invoke its internal files directly.
-
-3. Invoke the `implement` skill:
-
-```
-Skill(skill: "implement", args: "fixup mode. <plan-implementation-report>")
-```
-
-Treat `implement` as a single unit - do not read or invoke its internal files directly.
+Treat `perform-task` as a single unit - do not read or invoke its internal files directly.
 
 ### Step 5: Address Threads
 
 If `threads` and `reviews` are both empty, skip this step.
 
-1. Map `threads` and `reviews` (from `gather-merge-blockers`) into `process-feedback`'s generic item shape, then invoke it:
+Map `threads` and `reviews` (from `gather-merge-blockers`) into `fix-feedback`'s item shape (`{id, body}`), then invoke it in one call:
 
 - Threads: `id` = `thread_id`, `body` = `location` folded in, then comments concatenated in order (`author`: `body` per comment).
 - Reviews: skip entries with `state: APPROVED` or an empty `body` - not actionable feedback. For the rest: `id` = synthesized (e.g. `review-<index>`), `body` = the review's `body` (no `location` - not anchored to a file/line).
 
 ```
-Skill(skill: "process-feedback", args: "<items>")
+Skill(skill: "fix-feedback", args: "fixup mode. <items>")
 ```
 
-Treat `process-feedback` as a single unit - do not read or invoke its internal files directly.
-
-2. Invoke the `plan-implementation` skill:
-
-```
-Skill(skill: "plan-implementation", args: "fixup mode. <process-feedback-report>")
-```
-
-Treat `plan-implementation` as a single unit - do not read or invoke its internal files directly.
-
-3. Invoke the `implement` skill:
-
-```
-Skill(skill: "implement", args: "fixup mode. <plan-implementation-report>")
-```
-
-Treat `implement` as a single unit - do not read or invoke its internal files directly.
+Treat `fix-feedback` as a single unit - do not read or invoke its internal files directly.
 
 ### Step 6: Confirmation gate
 
@@ -143,7 +111,7 @@ instead. Re-ask for confirmation after.
 Assess the followup's size first. If small (fits the existing fixup as an
 amend), do that. If it's big enough to need its own plan (new scope, touches
 areas outside the existing fixup), say so and propose running a separate
-`plan-implementation` + `implement` cycle for it.
+`perform-task` cycle for it.
 
 ### Step 7: Autosquash fixups
 
@@ -165,15 +133,15 @@ git push origin $(git branch --show-current) --force-with-lease
 
 ### Step 9: Post replies
 
-For each thread from `gather-merge-blockers` addressed in `process-feedback`, prepare a reply comment:
+For each thread from `gather-merge-blockers` addressed in Step 5, prepare a reply comment, keyed by thread `id` to `fix-feedback`'s output (`status`/`description` per original input `id`):
 
 Tone: Brief and factual. No fluff, apologies, or fillers.
 
-- **Per `resolution`** (`process-feedback`'s output):
-  - **Implement**: Describe the `implement` result. Example: `"Fixed. Added missing X."` (for fixes) / `"Done. Replaced X with Y."` (for improvements).
-  - **Decline**: Explain without confrontational words. `"Existing convention is relative imports throughout this package"`.
-  - **Defer**: `"Will address in a future PR"` or `"Created <Ticket URL>"`
-  - **Explain**: Provide the requested clarification.
+- **Per `status`** (`fix-feedback`'s output; use its `description` as the source text):
+  - **implemented**: Describe the fix. Example: `"Fixed. Added missing X."` (for fixes) / `"Done. Replaced X with Y."` (for improvements).
+  - **declined**: Explain without confrontational words. `"Existing convention is relative imports throughout this package"`.
+  - **deferred**: `"Will address in a future PR"` or `"Created <Ticket URL>"`.
+  - **explained**: Provide the requested clarification.
 
 Post concurrently in batches.
 
