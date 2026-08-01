@@ -12,11 +12,11 @@ description: Assess requirements for correctness, completeness, and consistency,
 
 ## Prerequisites
 
-- Task info gathered (e.g. via `gather-task`, `elaborate`, `spec`) - assume it already ran this session, or was supplied as input
+- Task info gathered (e.g. via `gather-task`, `elaborate`, `spec`, `investigate`, `process-feedback`) - assume it already ran this session, or was supplied as input
 
 ## Input
 
-- Requirements (from `gather-task`, `elaborate`, `spec`, or a ticket description - see Prerequisites).
+- Requirements (from `gather-task`, `elaborate`, `spec`, `investigate`, `process-feedback`, or a ticket description - see Prerequisites).
 - `fixup mode` (optional): when present, mark each stage with its originating commit and a note that it must be committed as a fixup instead of a fresh commit (see Step 2).
 
 ## Steps
@@ -49,6 +49,8 @@ Expected requirements structure to contain:
 Check if all info is present.
 
 - If all present and structured this way, use requirements as is.
+- If input is `investigate`'s report, map: `Suggested Fix.Approach` -> `Requirements.Core goal`; `Incident.Symptom`/`Root Cause` -> `Requirements.Description`; `Suggested Fix.Regression Risks` (+ `Codebase.Regression risks`) -> `Requirements.Risks`; `Incident.Reproduction` no longer failing -> `Requirements.Criteria`; `Codebase.*` carries over as-is. Leave `Addressed Concerns` empty - `investigate`'s Concerns are unresolved hypotheses, not settled decisions; carry them forward as open concerns needing a call, not as already addressed.
+- If input is `process-feedback`'s report, map: items with `resolution: Implement` -> one `Subtask` each, with `Requirements.Core goal` summarizing the batch; items with `resolution: Decline`/`Defer`/`Explain` -> `Addressed Concerns` as-is (already resolved, no code change needed). `Codebase` is not provided - items are already code-anchored (per `process-feedback`'s Goal), proceed without it.
 - If not but all info is present in different structure, and trivial restructuring is possible, do it (usually when using ticket description and not elaboration results).
 - Otherwise, suggest user do elaboration first.
 
