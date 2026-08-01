@@ -29,6 +29,7 @@ Check the skill for:
 - Missing input description
 - Missing output description
 - Missing execution steps (for execution-kind skills)
+- Duplicate or redundant content (instructions, examples, descriptions)
 - Input/output schema mismatches with external skills, commands, etc.
 - Missing details or gaps
 - Ambiguous instructions
