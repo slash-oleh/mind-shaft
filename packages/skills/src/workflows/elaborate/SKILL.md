@@ -24,37 +24,29 @@ description: Analyze a task specification, review the codebase, and output a det
 
 ## Steps
 
-### Step 1: Analyze
+### Step 1: Confront
 
-Invoke the `confront` skill, passing along the input requirements:
+Invoke:
 
 ```
-Skill(skill: "confront", args: "<requirements>")
+Skill(skill: "confront", args: "<input>")
 ```
-
-`confront` treats input as one or more Items (a single non-itemized input becomes one entry with `id: 1`): one-or-more Concerns per `flagged` item (each tagged with its `item`).
-
-Treat `confront` as a single unit - do not read or invoke its internal files directly.
 
 ### Step 2: Clarify
 
-Invoke the `clarify` skill, passing along Step 1's Requirements and Concerns as input.
+Invoke:
 
 ```
 Skill(skill: "clarify", args: "<requirements> <codebase> <challenge> <concerns>")
 ```
 
-For an itemized batch the Q&A covers all items in one session. Treat `clarify` as a single unit - do not read or invoke its internal files directly.
-
 ### Step 3: Spec
 
-Invoke the `spec` skill, passing along Step 2's Updated Requirements and Addressed Concerns:
+Invoke:
 
 ```
 Skill(skill: "spec", args: "<updated_requirements> <addressed_concerns>")
 ```
-
-Treat `spec` as a single unit - do not read or invoke its internal files directly.
 
 ## Output
 

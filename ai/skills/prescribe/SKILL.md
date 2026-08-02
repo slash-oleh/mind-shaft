@@ -26,33 +26,27 @@ description: Turn an incident/bug investigation into a compiled solution spec - 
 
 ### Step 1: Investigate
 
-Invoke the `investigate` skill, passing along the input incident(s):
+Invoke:
 
 ```
-Skill(skill: "investigate", args: "<incident>")
+Skill(skill: "investigate", args: "<input>")
 ```
-
-Treat `investigate` as a single unit - do not read or invoke its internal files directly.
 
 ### Step 2: Clarify
 
-Invoke the `clarify` skill, passing along Step 1's Incident, Codebase and Concerns as input.
+Invoke:
 
 ```
-Skill(skill: "clarify", args: "<incident> <codebase> <concerns>")
+Skill(skill: "clarify", args: "<incident> <investigate_report> <codebase> <concerns>")
 ```
-
-Treat `clarify` as a single unit - do not read or invoke its internal files directly.
 
 ### Step 3: Spec
 
-Invoke the `spec` skill, passing along Step 1's Investigate Report and Addressed Concerns:
+Invoke:
 
 ```
-Skill(skill: "spec", args: "<investigate_report> <updated_fix_options> <addressed_concerns>")
+Skill(skill: "spec", args: "<incident> <updated_investigate_report> <addressed_concerns>")
 ```
-
-Treat `spec` as a single unit - do not read or invoke its internal files directly.
 
 ## Output
 

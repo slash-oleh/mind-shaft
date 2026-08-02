@@ -55,7 +55,7 @@ Skill(skill: "prescribe", args: "<bug-like-input>")
 
 ### Step 4: Plan
 
-Invoke `plan-implementation` with Step 2 or 3's Spec, passing through `fixup mode` if set:
+Invoke:
 
 ```
 Skill(skill: "plan-implementation", args: "<fixup mode?> <requirements-or-investigate-report> <spec>")
@@ -63,7 +63,7 @@ Skill(skill: "plan-implementation", args: "<fixup mode?> <requirements-or-invest
 
 ### Step 5: Implement
 
-Invoke `implement` with Step 4's `Stages`, passing through `fixup mode` if set:
+Invoke:
 
 ```
 Skill(skill: "implement", args: "<fixup mode?> <stages>")

@@ -30,25 +30,21 @@ description: Address pull request review comments, conflicts, and CI failures. U
 
 ### Step 1: Identify PR
 
-Invoke the `vcs-tools` skill:
+Invoke:
 
 ```
 Skill(skill: "vcs-tools", args: "identify-pr <input>")
 ```
 
-Treat `vcs-tools` as a single unit - do not read or invoke its internal files directly.
-
 Capture `pr_number` from its output, and reuse this value for the rest of this skill.
 
 ### Step 2: Gather merge blockers
 
-Invoke the `gather-merge-blockers` skill:
+Invoke:
 
 ```
 Skill(skill: "gather-merge-blockers", args: "<pr_number>")
 ```
-
-Treat `gather-merge-blockers` as a single unit - do not read or invoke its internal files directly.
 
 Capture `url`, `source_branch`, `target_branch`, `merge_state`, `ci_failures`, `reviews`, and `threads` from its output, and reuse these values for the rest of this skill instead of re-deriving them.
 
@@ -56,13 +52,11 @@ Capture `url`, `source_branch`, `target_branch`, `merge_state`, `ci_failures`, `
 
 If `merge_state` (captured in Step 2) is not `CONFLICTING`, skip this step.
 
-Invoke the `resolve-conflicts` skill:
+Invoke:
 
 ```
 Skill(skill: "resolve-conflicts", args: "<target_branch>")
 ```
-
-Treat `resolve-conflicts` as a single unit - do not read or invoke its internal files directly.
 
 This may force-push without Step 6's gate - intentional, since
 `resolve-conflicts` is mechanical and escalates ambiguity itself. Step 6
@@ -76,13 +70,11 @@ If `ci_failures` is empty, skip this step.
 
 2. Consolidate them into ordered list with IDs.
 
-3. Invoke `perform-task` with this tasks list and PR commits:
+3. Invoke:
 
 ```
-Skill(skill: "perform-task", args: "<ci_fix_tasks>")
+Skill(skill: "perform-task", args: "<ci_tasks>")
 ```
-
-Treat `perform-task` as a single unit - do not read or invoke its internal files directly.
 
 ### Step 5: Address Threads
 
@@ -96,8 +88,6 @@ Map `threads` and `reviews` (from `gather-merge-blockers`) into `fix-feedback`'s
 ```
 Skill(skill: "fix-feedback", args: "fixup mode. <items>")
 ```
-
-Treat `fix-feedback` as a single unit - do not read or invoke its internal files directly.
 
 ### Step 6: Confirmation gate
 
@@ -151,15 +141,11 @@ Write each reply body to a scratch file via `scratch`:
 Skill(skill: "scratch", args: "write pr-reply-<id> md")
 ```
 
-Treat `scratch` as a single unit - do not read or invoke its internal files directly.
-
 Pass the returned path as `<reply_file_path>` to `vcs-tools`:
 
 ```
 Skill(skill: "vcs-tools", args: "post-reply <pr_number> <thread_id> <reply_file_path>")
 ```
-
-Treat `vcs-tools` as a single unit - do not read or invoke its internal files directly.
 
 `<pr_number>` comes from Step 1; `<thread_id>` comes from the `gather-merge-blockers` skill's output.
 
@@ -177,15 +163,11 @@ Write the description to a scratch file via `scratch`:
 Skill(skill: "scratch", args: "write pr-description md")
 ```
 
-Treat `scratch` as a single unit - do not read or invoke its internal files directly.
-
 Pass the returned path as `<pr_description_file_path>` to `vcs-tools`:
 
 ```
 Skill(skill: "vcs-tools", args: "update-pr-description <pr_number> <pr_description_file_path>")
 ```
-
-Treat `vcs-tools` as a single unit - do not read or invoke its internal files directly.
 
 ## Output
 

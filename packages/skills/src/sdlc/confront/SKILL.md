@@ -19,7 +19,7 @@ description: Critically examine a task specification against the codebase - stru
 
 ## Steps
 
-### Step 1: Review Requirements
+### Step 1: Normalize Requirements
 
 Perform basic check of existing requirements sections for Three Cs:
 
@@ -88,7 +88,7 @@ If relevant, come up with additional concerns besides those coming from question
 
 Markdown format:
 
-- Initial Requirements
+- Requirements
   - Core goal
   - Description
   - Items

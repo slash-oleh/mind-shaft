@@ -27,13 +27,11 @@ description: Take a ticket from raw description through to a submitted pull requ
 
 ### Step 1: Gather
 
-Invoke `gather-task` with the input:
+Invoke:
 
 ```
 Skill(skill: "gather-task", args: "<input>")
 ```
-
-Treat `gather-task` as a single unit - do not read or invoke its internal files directly.
 
 ### Step 2: Prepare workspace
 
@@ -43,8 +41,6 @@ Invoke `prepare-workspace` with Step 1's `ticket_id`/`title`:
 Skill(skill: "prepare-workspace", args: "<ticket_id> <title>")
 ```
 
-Treat `prepare-workspace` as a single unit - do not read or invoke its internal files directly.
-
 ### Step 3: Perform task
 
 Invoke `perform-task` with Step 1's output as freeform requirements text (single input, not itemized):
@@ -53,8 +49,6 @@ Invoke `perform-task` with Step 1's output as freeform requirements text (single
 Skill(skill: "perform-task", args: "<gather_task_output>")
 ```
 
-Treat `perform-task` as a single unit - do not read or invoke its internal files directly.
-
 ### Step 4: Submit
 
 Invoke `submit-pull-request`:
@@ -62,8 +56,6 @@ Invoke `submit-pull-request`:
 ```
 Skill(skill: "submit-pull-request", args: "")
 ```
-
-Treat `submit-pull-request` as a single unit - do not read or invoke its internal files directly.
 
 ## Output
 

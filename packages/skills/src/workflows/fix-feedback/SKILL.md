@@ -33,10 +33,10 @@ Keep the group-ID-to-`members` table for Step 3.
 
 ### Step 2: Resolve
 
-Invoke `perform-task` with Step 1's entries as an itemized batch, one per entry, using its group ID as the entry's `id` token (opaque, echoed back unchanged on `By id`). Forward `fixup` if set.
+Invoke:
 
 ```
-Skill(skill: "perform-task", args: "<fixup mode?> <deduped-entries-as-itemized-batch>")
+Skill(skill: "perform-task", args: "<fixup mode?> <deduped-entries>")
 ```
 
 Treat `perform-task` as a single unit - don't read or invoke its internals.
