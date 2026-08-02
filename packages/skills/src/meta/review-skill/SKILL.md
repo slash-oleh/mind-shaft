@@ -1,10 +1,10 @@
 ---
 title: SKILL.md
-name: refine-skill
+name: review-skill
 description: Review a skill to identify flaws and suggest fixes.
 ---
 
-# Refine Skill
+# Review Skill
 
 ## Goal
 
