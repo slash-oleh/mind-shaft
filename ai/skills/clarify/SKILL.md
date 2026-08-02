@@ -15,7 +15,9 @@ Complete task understanding:
 ## Input
 
 - Requirements or Incident+Investigate Report.
-- Concerns: list of `{id, item, summary, description, suggestion}` where `id` is the concern's own identity and `item` is the originating requirement/incident item's `id` (may be null for a single non-itemized input). One item MAY raise several concerns, each a distinct concern `id` sharing the same `item`, so a per-concern disposition keyed by concern `id` never collides.
+- Concerns: list of open questions to resolve with the user, each tagged with its own identity (`id`) and the originating requirement/incident item's `id` (`item`, may be null for a single non-itemized input) - content beyond that is caller's own shape. One item MAY raise several concerns, each a distinct concern `id` sharing the same `item`, so a per-concern disposition keyed by concern `id` never collides.
+- Codebase (optional, for context only): reuse/tech-debt/regression findings.
+- Challenge (optional, for context only): common critics questions answered.
 
 ## Steps
 
@@ -27,11 +29,11 @@ For each concern one by one, ask user clarifying questions to:
 - Resolve conflicts
 - Mitigate risks
 
-Reiterate until all concerns resolved or user prefers moving on.
+Reiterate until all concerns resolved.
 
-### Step 2: Fold Decisions into input
+### Step 2: Fold Decisions into Input
 
-For each adressed concern, edit the Requirements or Fix Options of Investigate Report to reflect it. Keep the structure, change only the content.
+For each addressed concern, edit the Requirements or Fix Options of Investigate Report to reflect it. Keep the structure, change only the content.
 
 ## Output
 
@@ -39,4 +41,4 @@ Markdown format:
 
 - Updated Requirements or Investigate Report: same structured sections received, with Step 2's edits applied. Each edited entry keeps its `item` tag surfaced.
 - Addressed Concerns: per concern, keeping both its concern `id` and its `item` tag surfaced:
-  - {id X} (item: {item X}): rationale + how it changed the Requirements
+  - {Concern X} (item: {item X}): rationale + how it changed the Requirements

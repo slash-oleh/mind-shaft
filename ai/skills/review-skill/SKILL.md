@@ -35,6 +35,8 @@ Check the skill for:
 - Inconsistencies with other similar skills
 - Reference mismatches: variables, names, scripts, paths, etc.
 
+Classify each concern's severity on an absolute scale, not relative to what else was found - do not inflate a minor, unclear flaw into a major one just because the skill is otherwise clean. Do not invent issues that are not there.
+
 ### Step 3: Report
 
 For every concern found, suggest a solution. Write results to `TODO.md` inside the skill's directory.
