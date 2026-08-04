@@ -33,6 +33,8 @@ Ideas for new skills:
     - Remote execution
     - Durable compute (restate, temporal.io)
 
+- `regroup-commits`: Split big ones into smaller cohesive ones. Squash non-cohesive ones. Keep commits non-breaking in between.
+
 - `estimate-prd`: Analyze, breakdown, estimate
   - `business-analysis` as a subskill for separate tasks
   - Aspects: summarize, classify, challenge, gaps, risks, stack, data model, use cases, critical path, mvp, milestones, timeline, team, components, services.
