@@ -22,10 +22,10 @@ For each Requirement Item entry:
 
 ### Step 1: Define Approach
 
-Given the Requirement description and its Concerns/Verdicts (if any), design a solution:
+Given the Input, design a solution:
 
 - Prioritize relying on Concerns/Verdicts.
-- For non-Implement Verdicts, proxy the suggested actions.
+- For non-Implement Concern Verdicts, reuse the suggested solution instead of designing a new one.
 - State chosen solution shape: interfaces, data shapes, patterns/reuse targets.
 
 ### Step 2: Draft Testable Criteria
@@ -41,6 +41,6 @@ Carry over the Requirement Item ID to each output item.
 Markdown format:
 
 - Approach
-  - {Solution X}
+  - {Solution X} (item: {Item X})
 - Success Criteria
-  - {Criteria X}
+  - {Criteria X} (item: {Item X})
