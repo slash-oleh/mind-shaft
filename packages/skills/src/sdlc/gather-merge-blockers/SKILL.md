@@ -48,7 +48,7 @@ JSON format:
   "reviews": [
     {
       "author": "string", // Reviewer handle.
-      "state": "string", // Review state (e.g., COMMENTED, APPROVED, CHANGES_REQUESTED).
+      "state": "string", // Review state (e.g., COMMENTED, APPROVED, CHANGES_REQUESTED). GitLab has no CHANGES_REQUESTED equivalent - only COMMENTED and APPROVED are possible there.
       "body": "string", // Review body text.
     },
   ], // List of reviews.

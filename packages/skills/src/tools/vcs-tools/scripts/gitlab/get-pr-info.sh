@@ -57,8 +57,11 @@ fi
 echo ""
 echo "## Reviews"
 echo '```json'
-glab api "projects/:id/merge_requests/$MR/approvals" |
-    jq '[.approved_by[]? | {author: .user.username, state: "APPROVED", body: ""}]'
+approvals=$(glab api "projects/:id/merge_requests/$MR/approvals" |
+    jq '[.approved_by[]? | {author: .user.username, state: "APPROVED", body: ""}]')
+comments=$(glab api "projects/:id/merge_requests/$MR/notes" |
+    jq '[.[] | select(.system == false and .resolvable == false and (.body | length) > 0) | {author: .author.username, state: "COMMENTED", body: .body}]')
+jq -n --argjson approvals "$approvals" --argjson comments "$comments" '$approvals + $comments'
 echo '```'
 
 echo ""
