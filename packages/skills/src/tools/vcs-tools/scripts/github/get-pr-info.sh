@@ -77,6 +77,8 @@ gh api graphql -f query="
       reviewThreads(first: $GH_PAGE_LIMIT) {
         nodes {
           isResolved
+          path
+          line
           comments(first: $GH_PAGE_LIMIT) {
             nodes {
               databaseId
@@ -92,6 +94,7 @@ gh api graphql -f query="
   }
 }" -q '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false) | {
   thread_id: .comments.nodes[0].databaseId,
+  location: (if .line then "\(.path):\(.line)" else .path end),
   comments: [.comments.nodes[] | {id: .databaseId, author: .author.login, body: .body}]
 }'
 echo '```'
