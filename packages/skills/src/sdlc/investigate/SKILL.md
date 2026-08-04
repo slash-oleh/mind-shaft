@@ -1,7 +1,7 @@
 ---
 title: SKILL.md
 name: investigate
-description: Detective work on an incident, (heisen)bug, error, or performance regression - reproduce it, trace it to root cause, and propose a fix. Use before planning or implementing a bug ticket, in place of `confront` (which is for feature specs, not incidents).
+description: Detective work on an incident, bug, error, or performance regression - reproduce it, trace it to root cause, and propose a fix. Use before planning or implementing a bug ticket, in place of `confront` (which is for feature specs, not incidents).
 ---
 
 # Investigate
@@ -31,9 +31,9 @@ If the input is itemized, repeat Steps 1-4 per item, keyed by `id`.
 
 - Timeline: recent changes (commits, deploys, config, dependency bumps) around the affected area (`git log`, `git blame`).
 - Trace: follow the failure backward through logs, stack traces, and code paths from symptom to the point where behavior diverges from expected.
-- Hypotheses: list candidate root causes, ranked by likelihood.
+- Hypotheses: ranked list candidate root causes, ranked by likelihood.
 - Isolate: test each hypothesis (added logging, bisection, reading code, reproduction) until one is confirmed with evidence and the rest are ruled out.
-- If no hypothesis can be confirmed with available info, keep the ranked list and raise the gap as a Concern rather than picking one to move on.
+- If no hypothesis can be confirmed/ruled out with available info, keep the ranked list and raise the gap as a Concern rather than picking one to move on.
 
 ### Step 3: Review Codebase
 
@@ -49,7 +49,7 @@ Inspect the confirmed (or leading) root cause's surroundings to outline:
 - Propose an approach that removes the root cause, not just the symptom.
 - Note alternatives considered and why rejected (e.g. workaround vs proper fix).
 - Call out regression risk tied to the fix location.
-- Mark recommended one.
+- Mark the recommended option.
 
 ### Step 5: Formulate Concerns
 
@@ -63,7 +63,7 @@ For each unconfirmed hypothesis, blocked reproduction, or open question, outline
 
 ## Output
 
-Markdown format. When input was itemized, wrap the whole structure below per `id` - one `Incident`/`Codebase`/`Suggested Fix`/`Concerns` block per item - instead of a single top-level block.
+Markdown format. When input was itemized, wrap the whole structure below per `id` - one `Incident`/`Investigate Report`/`Codebase`/`Concerns` block per item - instead of a single top-level block.
 
 - Incident
   - Symptom
@@ -71,6 +71,7 @@ Markdown format. When input was itemized, wrap the whole structure below per `id
   - Timeline
   - Trace
 - Investigate Report
+  - Hypotheses
   - Root Cause
   - Fix Options
 - Codebase
