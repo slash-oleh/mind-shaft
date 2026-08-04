@@ -68,6 +68,7 @@ glab api "projects/:id/merge_requests/$MR/discussions" |
     jq '[.[] | select(.notes[0].resolvable == true and .notes[0].resolved == false) | {
       thread_id: .id,
       location: (.notes[0].position | if . then "\(.new_path):\(.new_line // .old_line)" else null end),
+      author: .notes[0].author.username,
       comments: [.notes[] | {id: .id, author: .author.username, body: .body}]
     }]'
 echo '```'
