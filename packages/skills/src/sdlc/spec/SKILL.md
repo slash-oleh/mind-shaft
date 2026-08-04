@@ -13,7 +13,7 @@ description: Compile an approach, sub-task breakdown, and concrete testable succ
 
 ## Input
 
-- Structured Requirements: Goals, Items, Scope, Criteria, etc.
+- Structured Requirements: Core goal, Items, Scope, Criteria, etc.
 - Additional details: Elaboration results (Concerns/Verdicts), assets, etc.
 
 ## Steps
