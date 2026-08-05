@@ -18,7 +18,7 @@ description: Execute an implementation plan through to a verified, committed cod
 ## Input
 
 - `Stages`: ordered implementation stages (see the `Stages` shape). Each stage MAY carry `id` tag(s).
-- `fixup mode` (optional): when a stage is tagged with an originating commit, commit it with `git commit --fixup <originating-commit>` instead of a fresh commit.
+- `fixup mode` (optional): a stage may carry a `fixup-of` originating commit to fix up instead of committing fresh.
 
 ## Steps
 
@@ -43,8 +43,8 @@ If Step 2 checks passed, skip this step.
 When an unexpected deviation occurs:
 
 1. Assess the deviation and determine the root cause.
-2. Confirm it implies a simple fix. If it's suspected to be a significant change of the initial plan, ask the user how to proceed.
-3. Apply and commit the fix as `git commit --fixup <hash>` against the offending Stage, then `git rebase --autosquash` once done.
+2. Confirm it implies a simple fix. If it's suspected to be a significant change of the initial plan, or the same check has now failed 3 times in a row, stop and ask the user how to proceed.
+3. Apply and commit the fix as `git commit --fixup <hash>` against the offending Stage's own commit from Step 1 (never the fixup-mode originating commit, even if the Stage itself was committed in fixup mode), then `git rebase --autosquash <commit before Step 1's first Stage commit>` once done.
 4. Return to Step 2 and re-run - repeat until all pass.
 
 No Stage ends in a failed or skipped state.
