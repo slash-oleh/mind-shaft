@@ -9,7 +9,6 @@ description: Fetch and order everything blocking a pull request from merging - c
 ## Goal
 
 - Merge state, CI failures, and open comment threads are fetched.
-- Items are ordered by type for downstream processing.
 
 ## Prerequisites
 
