@@ -25,7 +25,7 @@ Invoke the `vcs-tools` skill:
 Skill(skill: "vcs-tools", args: "get-pr-info <pr_number>")
 ```
 
-Its output already uses this skill's field names except for `ci_failures[].log_file_path` - see the Output schema comment below.
+Its output fields match this skill's Output schema below.
 
 ## Output
 
@@ -44,8 +44,9 @@ JSON format:
   "ci_failures": [
     {
       "name": "string", // Check name.
-      "status": "string", // Failure status.
-      "log_file_path": "string", // vcs-tools' matching Failed Run Logs entry, correlated by run/job ID from the failure's link.
+      "status": "string", // Always "FAILURE" - identical literal on both platforms.
+      "link": "string", // Job URL.
+      "log_file_path": "string", // Path to file with filtered log lines.
     },
   ], // List of failed CI checks.
   "reviews": [

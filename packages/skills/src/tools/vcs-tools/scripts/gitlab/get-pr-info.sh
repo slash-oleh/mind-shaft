@@ -49,27 +49,25 @@ pipeline_id=$(echo "$mr_info" | jq -r '.head_pipeline.id // .pipeline.id // empt
 failures="[]"
 if [[ -n "$pipeline_id" ]]; then
     failures=$(glab api "projects/:id/pipelines/$pipeline_id/jobs" |
-        jq '[.[] | select(.status == "failed") | {name, status, link: .web_url}]')
+        jq '[.[] | select(.status == "failed") | {name, status: "FAILURE", link: .web_url}]')
 fi
+ci_failures="[]"
+while IFS= read -r failure; do
+    [[ -z "$failure" ]] && continue
+    link=$(echo "$failure" | jq -r '.link')
+    job_id=$(echo "$link" | grep -oE '[0-9]+$')
+    log_file_path=""
+    if [[ -n "$job_id" ]]; then
+        log_file_path=$(mktemp -t "ci-log.$job_id.XXXXXX.log")
+        glab api "projects/:id/jobs/$job_id/trace" 2>/dev/null |
+            grep -E "Failed|error:|ERROR|warning" | head -20 >"$log_file_path" || true
+    fi
+    ci_failures=$(echo "$ci_failures" | jq --argjson failure "$failure" --arg log "$log_file_path" \
+        '. + [$failure + {log_file_path: $log}]')
+done < <(echo "$failures" | jq -c '.[]')
 echo '```json'
-echo "$failures"
+echo "$ci_failures"
 echo '```'
-
-if [[ $(echo "$failures" | jq 'length') -gt 0 ]]; then
-    echo ""
-    echo "## Failed Run Logs"
-    echo "$failures" | jq -r '.[].link' | while read -r link; do
-        job_id=$(echo "$link" | grep -oE '[0-9]+$')
-        if [[ -n "$job_id" ]]; then
-            log_file=$(mktemp -t "ci-log.$job_id.XXXXXX.log")
-            glab api "projects/:id/jobs/$job_id/trace" 2>/dev/null |
-                grep -E "Failed|error:|ERROR|warning" | head -20 >"$log_file" || true
-            echo ""
-            echo "### Job $job_id"
-            echo "$log_file"
-        fi
-    done
-fi
 
 echo ""
 echo "## Reviews"
