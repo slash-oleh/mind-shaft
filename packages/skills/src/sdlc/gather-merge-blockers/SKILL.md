@@ -11,6 +11,10 @@ description: Fetch and order everything blocking a pull request from merging - c
 - Merge state, CI failures, and open comment threads are fetched.
 - Items are ordered by type for downstream processing.
 
+## Prerequisites
+
+- `vcs-tools` skill available
+
 ## Input
 
 - `pr_number` (required): the target PR/MR number. Resolve it first via `vcs-tools`' `identify-pr` command.

@@ -14,7 +14,7 @@ description: Merge, release, verify, prepare presentational info, announce
 
 ## Prerequisites
 
-- `vcs-tools` skill available (`gh` CLI for GitHub repos, `glab` CLI for GitLab repos)
+- `vcs-tools` skill available
 - `ticket-tools` skill available
 - `scratch` skill available
 

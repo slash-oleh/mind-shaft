@@ -12,7 +12,7 @@ description: Check, clean, polish, and submit changes as a pull request for revi
 
 ## Prerequisites
 
-- `vcs-tools` skill available (`gh` CLI for GitHub repos, `glab` CLI for GitLab repos)
+- `vcs-tools` skill available
 - `scratch` skill available
 
 ## Phases
