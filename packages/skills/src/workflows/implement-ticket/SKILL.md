@@ -12,7 +12,7 @@ description: Take a ticket from raw description through to a submitted pull requ
 
 ## Input
 
-- Ticket ID, URL, branch name, or plain description (same as `gather-task`'s input).
+- Ticket ID, Ticket URL, branch name, or plain description (same as `gather-task`'s input).
 
 ## Prerequisites
 
