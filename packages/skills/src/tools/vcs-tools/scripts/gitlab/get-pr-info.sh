@@ -17,7 +17,24 @@ echo "$mr_info" | jq -r '.web_url'
 echo ""
 echo "## Merge State"
 echo '```json'
-echo "$mr_info" | jq '{mergeable: (.has_conflicts | not), mergeStateStatus: .detailed_merge_status}'
+echo "$mr_info" | jq '{
+  merge_state: (if .has_conflicts == true then "CONFLICTING" elif .has_conflicts == false then "MERGEABLE" else "UNKNOWN" end),
+  merge_state_detail: ({
+    "mergeable": "CLEAN",
+    "conflict": "DIRTY",
+    "draft_status": "DRAFT",
+    "need_rebase": "BEHIND",
+    "ci_must_pass": "BLOCKED",
+    "ci_still_running": "BLOCKED",
+    "discussions_not_resolved": "BLOCKED",
+    "not_approved": "BLOCKED",
+    "blocked_status": "BLOCKED",
+    "policies_denied": "BLOCKED",
+    "requested_changes": "BLOCKED",
+    "external_status_checks": "BLOCKED",
+    "jira_association_missing": "BLOCKED"
+  }[.detailed_merge_status] // "UNKNOWN")
+}'
 echo '```'
 
 echo ""

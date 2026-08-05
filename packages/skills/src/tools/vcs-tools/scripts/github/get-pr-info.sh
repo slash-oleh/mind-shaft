@@ -23,7 +23,7 @@ echo "$pr_info" | jq -r '.url'
 echo ""
 echo "## Merge State"
 echo '```json'
-echo "$pr_info" | jq '{mergeable, mergeStateStatus}'
+echo "$pr_info" | jq '{merge_state: .mergeable, merge_state_detail: .mergeStateStatus}'
 echo '```'
 
 echo ""
@@ -92,10 +92,10 @@ gh api graphql -f query="
       }
     }
   }
-}" -q '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false) | {
+}" -q '[.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false) | {
   thread_id: .comments.nodes[0].databaseId,
   location: (if .line then "\(.path):\(.line)" else .path end),
   author: .comments.nodes[0].author.login,
   comments: [.comments.nodes[] | {id: .databaseId, author: .author.login, body: .body}]
-}'
+}]'
 echo '```'

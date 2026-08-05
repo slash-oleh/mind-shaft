@@ -25,6 +25,8 @@ Invoke the `vcs-tools` skill:
 Skill(skill: "vcs-tools", args: "get-pr-info <pr_number>")
 ```
 
+Its output already uses this skill's field names except for `ci_failures[].log_file_path` - see the Output schema comment below.
+
 ## Output
 
 JSON format:
@@ -38,11 +40,12 @@ JSON format:
   "source_branch": "string", // Branch the PR merges from.
   "target_branch": "string", // Branch the PR merges into.
   "merge_state": "string", // MERGEABLE, CONFLICTING, or UNKNOWN.
+  "merge_state_detail": "string", // BEHIND, BLOCKED, CLEAN, DIRTY, DRAFT, HAS_HOOKS, UNKNOWN, or UNSTABLE. GitLab never produces HAS_HOOKS or UNSTABLE.
   "ci_failures": [
     {
       "name": "string", // Check name.
       "status": "string", // Failure status.
-      "log_file_path": "string", // Path to file with filtered log lines.
+      "log_file_path": "string", // vcs-tools' matching Failed Run Logs entry, correlated by run/job ID from the failure's link.
     },
   ], // List of failed CI checks.
   "reviews": [
@@ -55,7 +58,7 @@ JSON format:
   "threads": [
     {
       "thread_id": "string", // Unique ID for the discussion thread.
-      "location": "string", // Path to the file and line numbers.
+      "location": "string", // Path to the file and line numbers. May be null.
       "author": "string", // Thread starter handle.
       "comments": [
         {
