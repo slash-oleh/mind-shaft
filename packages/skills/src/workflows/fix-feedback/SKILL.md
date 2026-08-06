@@ -42,8 +42,6 @@ Invoke:
 Skill(skill: "perform-task", args: "<fixup mode?> <deduped-entries>")
 ```
 
-Treat `perform-task` as a single unit - don't read or invoke its internals.
-
 ### Step 3: Expand + reconcile
 
 For each group ID, find its resolution: a matching Commit means `implemented` (description: commit summary); otherwise, find its entry in Addressed Concerns (keyed by the group ID as `Item`) and use its Rationale as `declined`/`deferred`/`explained` (description: that rationale). Copy the resolution to every ID in `members`.

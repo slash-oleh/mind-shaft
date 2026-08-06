@@ -25,6 +25,7 @@ description: Address pull request review comments, conflicts, and CI failures. U
 - `resolve-conflicts` skill available
 - `perform-task` skill available
 - `fix-feedback` skill available
+- `feedback-loop` skill available
 - `scratch` skill available
 
 ## Steps
@@ -73,8 +74,9 @@ If `ci_failures` is empty, skip this step.
 Form `ci_tasks` list:
 
 From each item in `ci_failures`, form a single task in `perform-task`'s item shape (`{id, body}`):
-  - id: synthesized as `ci-<index>`
-  - body: "fixup mode. CI check '<name>' failed with status '<status>'. Logs: <log_file_path>".
+
+- id: synthesized as `ci-<index>`
+- body: "fixup mode. CI check '<name>' failed with status '<status>'. Logs: <log_file_path>".
 
 Invoke:
 
@@ -91,35 +93,23 @@ Map `threads` and `reviews` (from `gather-merge-blockers`) into `fix-feedback`'s
 - Threads: `id` = `thread_id`, `body` = `location` folded in, then comments concatenated in order (`author`: `body` per comment).
 - Reviews: skip entries with `state: APPROVED` or an empty `body` - not actionable feedback. For the rest: `id` = synthesized (e.g. `review-<index>`), `body` = the review's `body` (no `location` - not anchored to a file/line).
 
+Invoke:
+
 ```
 Skill(skill: "fix-feedback", args: "fixup mode. <items>")
 ```
 
-### Step 6: Confirmation gate
-
-Ask the user for proceed confirmation on the fixes applied in Steps 4 and 5 (yes) or adjustments (free text). This confirmation is mandatory - if no interactive access to the user exists, stop here and wait rather than auto-proceeding.
-
-On adjustments, the user either makes the change manually or asks for a
-followup fix. Either way, amend the result into the existing relevant fixup
-commit from Step 4/5 - unless the user asks for a new/separate commit
-instead. Re-ask for confirmation after.
-
-Assess the followup's size first. If small (fits the existing fixup as an
-amend), do that. If it's big enough to need its own plan (new scope, touches
-areas outside the existing fixup), say so and propose running a separate
-`perform-task` cycle for it.
-
-### Step 7: Autosquash fixups
+### Step 6: Confirm and squash fixups
 
 If Steps 4 and 5 made no changes and Step 3 was skipped, skip this step.
 
-Squash all fixup commits into their originating commits non-interactively, using `target_branch` captured in Step 2:
+Invoke:
 
-```bash
-GIT_SEQUENCE_EDITOR=true git rebase --autosquash -i $(git merge-base HEAD "<target_branch>")
+```
+Skill(skill: "feedback-loop", args: "<target_branch>")
 ```
 
-### Step 8: Push to remote
+### Step 7: Push to remote
 
 If Steps 4 and 5 made no changes and Step 3 was skipped, skip this step.
 
@@ -127,7 +117,7 @@ If Steps 4 and 5 made no changes and Step 3 was skipped, skip this step.
 git push origin $(git branch --show-current) --force-with-lease
 ```
 
-### Step 9: Post replies
+### Step 8: Post replies
 
 For each thread and review addressed in Step 5, prepare a reply comment,
 keyed by its `id` to `fix-feedback`'s output (`status`/`description` per
@@ -172,7 +162,7 @@ Post all replies concurrently.
 
   `event: "COMMENT"` posts the reply as a top-level note without approving or requesting changes.
 
-### Step 10: Update PR description
+### Step 9: Update PR description
 
 If Steps 4 and 5 made no changes, skip this step.
 
@@ -194,4 +184,5 @@ Skill(skill: "vcs-tools", args: "update-pr-description <pr_number> <pr_descripti
 
 ## Output
 
-`url` (captured in Step 2), then a short plain-text summary of what was fixed.
+PR URL: `url` (captured in Step 2).
+Summary: Short report of what was implemented (from Step 9's PR description)

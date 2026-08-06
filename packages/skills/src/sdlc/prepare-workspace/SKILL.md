@@ -93,6 +93,7 @@ JSON format:
 ```jsonc
 {
   "branch_name": "string", // Resolved branch name.
+  "base_branch": "string", // Resolved in Step 3.
   "stashed": "boolean", // True if changes were stashed.
 }
 ```
