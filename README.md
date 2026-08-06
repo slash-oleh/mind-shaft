@@ -40,10 +40,12 @@ Workflows (common chains of other skills - hands-off):
   - `elaborate`/`prescribe` -> `plan-implementation` -> `implement`
 - [`/fix-feedback`](ai/skills/fix-feedback/SKILL.md): resolve a batch of feedback items end to end, dedup and map reports back.
   - `perform-task`
+- [`/feedback-loop`](ai/skills/feedback-loop/SKILL.md): get user sign-off on a batch of commits, route changes back through `fix-feedback`, then squash.
+  - `fix-feedback`
 - [`/implement-ticket`](ai/skills/implement-ticket/SKILL.md): ticket to submitted PR.
-  - `gather-task` -> `prepare-workspace` -> `perform-task` -> `submit-pull-request`
+  - `gather-task` -> `prepare-workspace` -> `perform-task` -> `feedback-loop` -> `submit-pull-request`
 - [`/fix-pull-request`](ai/skills/fix-pull-request/SKILL.md): address review comments, conflicts, CI failures.
-  - `gather-merge-blockers` -> `resolve-conflicts` -> `perform-task` (on CI failures) -> `fix-feedback` -> update PR
+  - `gather-merge-blockers` -> `resolve-conflicts` -> `perform-task` (on CI failures) -> `fix-feedback` -> `feedback-loop` -> update PR
 
 Tools (external integrations - invoked by other skills, not directly):
 

@@ -8,4 +8,4 @@ For skill itself see [SKILL.md](./SKILL.md).
 
 ## Meta info
 
-Fetch, classify and prioritize everything blocking a PR from merging.
+Both standalone merge-readiness triage and `fix-pull-request` need the same fetch-and-prioritize pass over conflicts, CI, and threads - extracted once instead of duplicated.

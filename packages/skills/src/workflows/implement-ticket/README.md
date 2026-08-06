@@ -8,7 +8,7 @@ For skill itself see [SKILL.md](./SKILL.md).
 
 ## Meta info
 
-Ticket to submitted pull request: gather, prepare, implement, submit.
+The one hands-off path from a bare ticket to a submitted PR, so a caller doesn't need to know or invoke the underlying SDLC skills individually.
 
 ## TODO
 

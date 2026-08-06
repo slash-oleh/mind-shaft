@@ -8,4 +8,4 @@ For skill itself see [SKILL.md](./SKILL.md).
 
 ## Meta info
 
-Cleanup worktree, come up with a branch.
+Ad-hoc branch setup risks stale state or the wrong base - this exists so every task starts from the same clean, verified point.

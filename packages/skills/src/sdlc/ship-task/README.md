@@ -2,9 +2,13 @@
 title: Home
 ---
 
-# ship
+# ship-task
 
 For skill itself see [SKILL.md](./SKILL.md).
+
+## Meta info
+
+Approval isn't the finish line - this exists so merged work gets verified and reported back, instead of stopping at merge.
 
 ## TODO
 

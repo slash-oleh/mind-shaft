@@ -8,4 +8,4 @@ For skill itself see [SKILL.md](./SKILL.md).
 
 ## Meta info
 
-Convert spec or requirements into coherent stages with actionable items.
+Implementation without an ordered plan tends to drift mid-task or reorder unsafely - this fixes the boundaries and order before code changes start.

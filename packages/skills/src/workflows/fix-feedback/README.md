@@ -8,4 +8,4 @@ For skill itself see [SKILL.md](./SKILL.md).
 
 ## Meta info
 
-Resolve a feedback batch end to end, mapping every original ID to a resolution.
+Both a standalone local review pass and `fix-pull-request` need the same dedup-and-resolve-by-ID loop over feedback items - extracted once instead of duplicated per caller.

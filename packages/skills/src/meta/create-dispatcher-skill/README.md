@@ -8,4 +8,4 @@ For skill itself see [SKILL.md](./SKILL.md).
 
 ## Meta info
 
-Guides merging a detect skill plus N near-duplicate provider skills (same command surface, different backend CLI) into one dispatcher skill that routes by script file path.
+Detect-plus-per-backend skill sets duplicate the same command surface N times and drift out of sync - this collapses them into one skill so there's only one place to update.

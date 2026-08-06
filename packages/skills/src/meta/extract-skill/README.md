@@ -8,4 +8,4 @@ For skill itself see [SKILL.md](./SKILL.md).
 
 ## Meta info
 
-Automates extracting generalized process knowledge from a conversation to create a reusable skill.
+Process knowledge learned mid-task otherwise stays trapped in that one conversation - this turns it into something reusable next time.
