@@ -19,7 +19,7 @@ description: Review a skill to identify flaws and suggest fixes. Use when auditi
 
 ### Step 1: Undraft
 
-Run `/undraft-text` on the skill's `SKILL.md` first.
+Run `/refine-text` on the skill's `SKILL.md` first.
 
 ### Step 2: Review
 

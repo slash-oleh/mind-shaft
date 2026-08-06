@@ -2,7 +2,7 @@
 title: Home
 ---
 
-# undraft-text
+# refine-text
 
 For skill itself see [SKILL.md](./SKILL.md).
 

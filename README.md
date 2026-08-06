@@ -61,7 +61,7 @@ Meta (skills for skills):
 - [`/formalize-skill`](ai/skills/formalize-skill/SKILL.md): refactor a skill file to the standard template.
 - [`/create-dispatcher-skill`](ai/skills/create-dispatcher-skill/SKILL.md): merge a detect skill plus per-backend skills into one dispatcher skill.
 - [`/project-memo`](ai/skills/project-memo/SKILL.md): maintain root `AGENTS.md` repo cheatsheet.
-- [`/undraft-text`](ai/skills/undraft-text/SKILL.md): turn a rough draft into finished prose.
+- [`/refine-text`](ai/skills/refine-text/SKILL.md): turn a rough draft into finished prose.
 
 ### Rules (best practices, enforced not suggested): ⚖️
 
