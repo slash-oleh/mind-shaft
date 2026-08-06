@@ -72,26 +72,29 @@ For each unconfirmed hypothesis, blocked reproduction, or open question, outline
 
 ## Output
 
-Markdown format. When input was itemized, wrap the whole structure below per `id` - one `Incident`/`Investigate Report`/`Codebase`/`Concerns` block per item - instead of a single top-level block.
+Markdown format, one top-level structure, entries tagged `- Item: {Item X}`. When input was itemized, `Incident`, `Investigate Report`, and `Codebase` each list one entry per incident; `Concerns` lists one entry per concern (an incident may raise several, or none).
 
 - Incident
+  - Item: {Item X}
   - Symptom
   - Reproduction
   - Timeline
   - Trace
 - Investigate Report
+  - Item: {Item X}
   - Hypotheses
   - Root Cause
   - Fix Options
 - Codebase
+  - Item: {Item X}
   - Similar patterns
   - Tech debt blockers
   - Regression risks
   - Affected modules
 - Concerns
-  - {Concern X}. {Summary X}
-    {Description X}
-    - Item: {Item X}
-    - Suggestion: {Suggestion X}
-    - Severity: {Severity X}
-    - Verdict: {Verdict X}
+  - Item: {Item X}
+  - Summary
+  - Description
+  - Suggestion
+  - Severity
+  - Verdict

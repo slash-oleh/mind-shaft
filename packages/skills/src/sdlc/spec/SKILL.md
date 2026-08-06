@@ -41,6 +41,8 @@ Carry over the Requirement Item ID to each output item.
 Markdown format:
 
 - Approach
-  - {Solution X} (item: {Item X})
+  - {Solution X}
+    - Item: {Item X}
 - Success Criteria
-  - {Criteria X} (item: {Item X})
+  - {Criteria X}
+    - Item: {Item X}

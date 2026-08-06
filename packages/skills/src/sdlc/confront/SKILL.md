@@ -19,6 +19,8 @@ description: Critically examine a task specification against the codebase - stru
 
 ## Steps
 
+If the input is itemized, repeat Steps 2-3 per item, keyed by `id`.
+
 ### Step 1: Normalize Requirements
 
 Check the existing requirements sections against the Three Cs:
@@ -86,7 +88,7 @@ If relevant, come up with additional concerns besides those coming from question
 
 ## Output
 
-Markdown format:
+Markdown format, one top-level structure, entries tagged `- Item: {Item X}`. When input was itemized, `Codebase` and `Challenge` each list one entry per item; `Concerns` lists one entry per concern (an item may raise several, or none).
 
 - Requirements
   - Core goal
@@ -95,21 +97,21 @@ Markdown format:
   - Scope
   - Criteria
 - Codebase
+  - Item: {Item X}
   - Similar patterns
   - Tech debt blockers
   - Regression risks
   - Affected modules
 - Challenge
-  - {Topic X}
-
-    > {Question X}
-
-    {Answer X}
+  - Item: {Item X}
+  - Topic
+  - Question
+  - Answer
 
 - Concerns
-  - {Concern X}. {Summary X}
-    {Description X}
-    - Item: {Item X}
-    - Suggestion: {Suggestion X}
-    - Severity: {Severity X}
-    - Verdict: {Verdict X}
+  - Item: {Item X}
+  - Summary
+  - Description
+  - Suggestion
+  - Severity
+  - Verdict

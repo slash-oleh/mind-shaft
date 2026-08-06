@@ -41,5 +41,7 @@ For each addressed concern, edit the Requirements, or the Investigate Report, to
 Markdown format:
 
 - Updated Requirements or Investigate Report: same structured sections received, with Step 2's edits applied.
-- Addressed Concerns: per concern, keeping both its concern `id` and its `item` tag surfaced:
-  - {Concern X} (item: {item X}): rationale + how it changed the Requirements or Investigate Report
+- Addressed Concerns: per concern, keeping both its concern `id` and its `Item` tag surfaced:
+  - {Concern X}
+    - Item: {Item X}
+    - Rationale: how it changed the Requirements or Investigate Report
