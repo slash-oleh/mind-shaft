@@ -1,6 +1,6 @@
 ---
 name: ship-task
-description: Merge, release, verify, prepare presentational info, announce
+description: Merge an approved PR, verify the shipped result, and report it back to the ticket. Use when a task's pull request is approved and ready to ship.
 ---
 
 # Ship Task
@@ -13,7 +13,7 @@ description: Merge, release, verify, prepare presentational info, announce
 
 ## Prerequisites
 
-- `vcs-tools` skill available (`gh` CLI for GitHub repos, `glab` CLI for GitLab repos)
+- `vcs-tools` skill available
 - `ticket-tools` skill available
 - `scratch` skill available
 

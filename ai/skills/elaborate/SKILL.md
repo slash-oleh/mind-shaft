@@ -8,6 +8,7 @@ description: Analyze a task specification, review the codebase, and output a det
 ## Goal
 
 - Task scope, constraints, and risks are fully understood.
+- Concerns raised and resolved.
 - A spec, with concrete testable success criteria, is established.
 - Output is ready to be used as input for task implementation.
 

@@ -24,6 +24,7 @@ description: Address pull request review comments, conflicts, and CI failures. U
 - `resolve-conflicts` skill available
 - `perform-task` skill available
 - `fix-feedback` skill available
+- `feedback-loop` skill available
 - `scratch` skill available
 
 ## Steps
@@ -62,15 +63,21 @@ This may force-push without Step 6's gate - intentional, since
 `resolve-conflicts` is mechanical and escalates ambiguity itself. Step 6
 gates only the judgment-call fixes from Steps 4-5.
 
+Check its output `status`. If `aborted`, stop here and report to the user
+that conflicts could not be resolved - do not proceed to Step 4.
+
 ### Step 4: Resolve CI failures
 
 If `ci_failures` is empty, skip this step.
 
-1. From each item in `ci_failures`, form a single task: "fixup mode. CI check '<name>' failed with status '<status>'. Logs: <log_file_path>".
+Form `ci_tasks` list:
 
-2. Consolidate them into ordered list with IDs.
+From each item in `ci_failures`, form a single task in `perform-task`'s item shape (`{id, body}`):
 
-3. Invoke:
+- id: synthesized as `ci-<index>`
+- body: "fixup mode. CI check '<name>' failed with status '<status>'. Logs: <log_file_path>".
+
+Invoke:
 
 ```
 Skill(skill: "perform-task", args: "<ci_tasks>")
@@ -85,35 +92,23 @@ Map `threads` and `reviews` (from `gather-merge-blockers`) into `fix-feedback`'s
 - Threads: `id` = `thread_id`, `body` = `location` folded in, then comments concatenated in order (`author`: `body` per comment).
 - Reviews: skip entries with `state: APPROVED` or an empty `body` - not actionable feedback. For the rest: `id` = synthesized (e.g. `review-<index>`), `body` = the review's `body` (no `location` - not anchored to a file/line).
 
+Invoke:
+
 ```
 Skill(skill: "fix-feedback", args: "fixup mode. <items>")
 ```
 
-### Step 6: Confirmation gate
-
-Ask human for proceed confirmation on the fixes applied in Steps 4 and 5 (yes) or adjustments (free text).
-
-On adjustments, the human either makes the change manually or asks for a
-followup fix. Either way, amend the result into the existing relevant fixup
-commit from Step 4/5 - unless the human asks for a new/separate commit
-instead. Re-ask for confirmation after.
-
-Assess the followup's size first. If small (fits the existing fixup as an
-amend), do that. If it's big enough to need its own plan (new scope, touches
-areas outside the existing fixup), say so and propose running a separate
-`perform-task` cycle for it.
-
-### Step 7: Autosquash fixups
+### Step 6: Confirm and squash fixups
 
 If Steps 4 and 5 made no changes and Step 3 was skipped, skip this step.
 
-Squash all fixup commits into their originating commits non-interactively, using `target_branch` captured in Step 2:
+Invoke:
 
-```bash
-GIT_SEQUENCE_EDITOR=true git rebase --autosquash -i $(git merge-base HEAD "<target_branch>")
+```
+Skill(skill: "feedback-loop", args: "<target_branch>")
 ```
 
-### Step 8: Push to remote
+### Step 7: Push to remote
 
 If Steps 4 and 5 made no changes and Step 3 was skipped, skip this step.
 
@@ -121,9 +116,11 @@ If Steps 4 and 5 made no changes and Step 3 was skipped, skip this step.
 git push origin $(git branch --show-current) --force-with-lease
 ```
 
-### Step 9: Post replies
+### Step 8: Post replies
 
-For each thread from `gather-merge-blockers` addressed in Step 5, prepare a reply comment, keyed by thread `id` to `fix-feedback`'s output (`status`/`description` per original input `id`):
+For each thread and review addressed in Step 5, prepare a reply comment,
+keyed by its `id` to `fix-feedback`'s output (`status`/`description` per
+original input `id`):
 
 Tone: Brief and factual. No fluff, apologies, or fillers.
 
@@ -133,23 +130,38 @@ Tone: Brief and factual. No fluff, apologies, or fillers.
   - **deferred**: `"Will address in a future PR"` or `"Created <Ticket URL>"`.
   - **explained**: Provide the requested clarification.
 
-Post concurrently in batches.
+Post all replies concurrently.
 
-Write each reply body to a scratch file via `scratch`:
+- **Threads**: write the reply body to a scratch file via `scratch`:
 
-```
-Skill(skill: "scratch", args: "write pr-reply-<id> md")
-```
+  ```
+  Skill(skill: "scratch", args: "write pr-reply-<id> md")
+  ```
 
-Pass the returned path as `<reply_file_path>` to `vcs-tools`:
+  Pass the returned path as `<reply_file_path>` to `vcs-tools`:
 
-```
-Skill(skill: "vcs-tools", args: "post-reply <pr_number> <thread_id> <reply_file_path>")
-```
+  ```
+  Skill(skill: "vcs-tools", args: "post-reply <pr_number> <thread_id> <reply_file_path>")
+  ```
 
-`<pr_number>` comes from Step 1; `<thread_id>` comes from the `gather-merge-blockers` skill's output.
+  `<pr_number>` comes from Step 1; `<thread_id>` comes from the `gather-merge-blockers` skill's output.
 
-### Step 10: Update PR description
+- **Reviews**: no `thread_id` to anchor to - write a payload file instead
+  (`{body: "<reply text>", event: "COMMENT", comments: []}`) via `scratch`:
+
+  ```
+  Skill(skill: "scratch", args: "write pr-review-reply-<id> json")
+  ```
+
+  Pass the returned path as `<payload_file_path>` to `vcs-tools`:
+
+  ```
+  Skill(skill: "vcs-tools", args: "submit-review <pr_number> <payload_file_path>")
+  ```
+
+  `event: "COMMENT"` posts the reply as a top-level note without approving or requesting changes.
+
+### Step 9: Update PR description
 
 If Steps 4 and 5 made no changes, skip this step.
 
@@ -171,4 +183,5 @@ Skill(skill: "vcs-tools", args: "update-pr-description <pr_number> <pr_descripti
 
 ## Output
 
-`url` (captured in Step 2), then a short plain-text summary of what was fixed.
+PR URL: `url` (captured in Step 2).
+Summary: Short report of what was implemented (from Step 9's PR description)

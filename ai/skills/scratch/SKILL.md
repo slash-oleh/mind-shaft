@@ -1,6 +1,6 @@
 ---
 name: scratch
-description: Hand off large data between skills or subagents via a scratch file path instead of inlining it in prompts or return values. Write mode reserves a path and writes the data; read mode validates the path and reads the data. Invoke as a unit (Skill tool) - never read or run its scripts directly.
+description: Hand off large data between skills or subagents via a scratch file path instead of inlining it in prompts or return values. Use when passing large content between skill/subagent calls (write mode reserves a path and writes it; read mode validates and reads it). Invoke as a unit (Skill tool) - never read or run its scripts directly.
 ---
 
 # Scratch

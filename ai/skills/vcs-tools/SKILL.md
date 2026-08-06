@@ -44,7 +44,7 @@ Resolves the target PR/MR number from the first matching source:
 
 #### `get-pr-info <PR_NUMBER>`
 
-Prints, in order: title/body, URL, merge state, failed CI checks/jobs (each with a file path to its filtered log lines), reviews/approvals, open (unresolved) review threads with `thread_id`, author (`location` too on GitLab), and `comments`, and source/target branch names.
+Prints, in order: title/body, URL, merge state (`merge_state`: MERGEABLE, CONFLICTING, or UNKNOWN - identical enum on both platforms; `merge_state_detail`: BEHIND, BLOCKED, CLEAN, DIRTY, DRAFT, HAS_HOOKS, UNKNOWN, or UNSTABLE - GitHub's native enum, GitLab's `detailed_merge_status` is mapped onto it and defaults to UNKNOWN for unmapped values; GitLab never produces HAS_HOOKS or UNSTABLE), failed CI checks/jobs (`name`, `status` always "FAILURE", `link`, `log_file_path` - path to a file with its filtered log lines), reviews/approvals (`state`: COMMENTED, APPROVED, or CHANGES_REQUESTED - GitLab has no CHANGES_REQUESTED equivalent), open (unresolved) review threads with `thread_id`, `location`, `author`, and `comments`, and source/target branch names.
 
 #### `get-pr-status <PR_NUMBER>`
 

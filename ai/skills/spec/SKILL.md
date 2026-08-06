@@ -12,7 +12,7 @@ description: Compile an approach, sub-task breakdown, and concrete testable succ
 
 ## Input
 
-- Structured Requirements: Goals, Items, Scope, Criteria, etc.
+- Structured Requirements: Core goal, Items, Scope, Criteria, etc.
 - Additional details: Elaboration results (Concerns/Verdicts), assets, etc.
 
 ## Steps
@@ -21,10 +21,10 @@ For each Requirement Item entry:
 
 ### Step 1: Define Approach
 
-Given the Requirement description and its Concerns/Verdicts (if any), design a solution:
+Given the Input, design a solution:
 
 - Prioritize relying on Concerns/Verdicts.
-- For non-Implement Verdicts, proxy the suggested actions.
+- For non-Implement Concern Verdicts, reuse the suggested solution instead of designing a new one.
 - State chosen solution shape: interfaces, data shapes, patterns/reuse targets.
 
 ### Step 2: Draft Testable Criteria
@@ -41,5 +41,7 @@ Markdown format:
 
 - Approach
   - {Solution X}
+    - Item: {Item X}
 - Success Criteria
   - {Criteria X}
+    - Item: {Item X}

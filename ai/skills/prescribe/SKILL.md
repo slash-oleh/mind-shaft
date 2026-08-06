@@ -20,7 +20,7 @@ description: Turn an incident/bug investigation into a compiled solution spec - 
 
 ## Input
 
-- Incident/bug description: freeform report, error, or structured text, OR an itemized batch (each entry `{id, body}`)
+- Incident/bug description: freeform report, error, or structured text, OR an itemized batch (each entry `{id, body}`) - keep each entry's `id` attached through the investigate/clarify/spec chain.
 
 ## Steps
 

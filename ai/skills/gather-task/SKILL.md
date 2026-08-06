@@ -11,6 +11,10 @@ description: Collect raw info about a task - ticket details, linked design/docs,
 - Linked design, documentation, and other resources are retrieved and summarized.
 - Relevant high-level codebase location is identified.
 
+## Input
+
+- Ticket ID, Ticket URL, branch name (containing Ticket ID), or plain task description.
+
 ## Prerequisites
 
 - Project management MCP server (e.g., Jira, GitHub Issues)
@@ -39,8 +43,7 @@ description: Collect raw info about a task - ticket details, linked design/docs,
 
 Markdown format:
 
-- Ticket: ID, if resolved.
-- Task: Title and description.
+- Ticket: `ticket_id`, if resolved.
+- Task: `title` and description.
 - Linked Resources: List of URLs/IDs and summaries.
 - Affected Modules: List of directories/files likely affected.
-- Existing Patterns: List of similar/reusable code locations.

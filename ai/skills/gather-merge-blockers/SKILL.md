@@ -8,7 +8,10 @@ description: Fetch and order everything blocking a pull request from merging - c
 ## Goal
 
 - Merge state, CI failures, and open comment threads are fetched.
-- Items are ordered by type for downstream processing.
+
+## Prerequisites
+
+- `vcs-tools` skill available
 
 ## Input
 
@@ -24,6 +27,8 @@ Invoke the `vcs-tools` skill:
 Skill(skill: "vcs-tools", args: "get-pr-info <pr_number>")
 ```
 
+Its output fields match this skill's Output schema below.
+
 ## Output
 
 JSON format:
@@ -37,24 +42,26 @@ JSON format:
   "source_branch": "string", // Branch the PR merges from.
   "target_branch": "string", // Branch the PR merges into.
   "merge_state": "string", // MERGEABLE, CONFLICTING, or UNKNOWN.
+  "merge_state_detail": "string", // BEHIND, BLOCKED, CLEAN, DIRTY, DRAFT, HAS_HOOKS, UNKNOWN, or UNSTABLE. GitLab never produces HAS_HOOKS or UNSTABLE.
   "ci_failures": [
     {
       "name": "string", // Check name.
-      "status": "string", // Failure status.
+      "status": "string", // Always "FAILURE" - identical literal on both platforms.
+      "link": "string", // Job URL.
       "log_file_path": "string", // Path to file with filtered log lines.
     },
   ], // List of failed CI checks.
   "reviews": [
     {
       "author": "string", // Reviewer handle.
-      "state": "string", // Review state (e.g., COMMENTED, APPROVED, CHANGES_REQUESTED).
+      "state": "string", // Review state (e.g., COMMENTED, APPROVED, CHANGES_REQUESTED). GitLab has no CHANGES_REQUESTED equivalent - only COMMENTED and APPROVED are possible there.
       "body": "string", // Review body text.
     },
   ], // List of reviews.
   "threads": [
     {
       "thread_id": "string", // Unique ID for the discussion thread.
-      "location": "string", // Path to the file and line numbers.
+      "location": "string", // Path to the file and line numbers. May be null.
       "author": "string", // Thread starter handle.
       "comments": [
         {

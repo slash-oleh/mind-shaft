@@ -11,7 +11,7 @@ description: Review a pull request end-to-end - fetch its info and diff, run the
 
 ## Prerequisites
 
-- `vcs-tools` skill available (`gh` CLI for GitHub repos, `glab` CLI for GitLab repos)
+- `vcs-tools` skill available
 - `code-review` skill available
 - `scratch` skill available
 

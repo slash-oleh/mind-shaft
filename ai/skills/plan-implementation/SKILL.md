@@ -1,6 +1,6 @@
 ---
 name: plan-implementation
-description: Produce an ordered, file-level implementation plan from spec. Use after spec skill, before implement.
+description: Produce an ordered, file-level implementation plan from spec. Use after `spec`, before `implement`.
 ---
 
 # Plan Implementation
@@ -13,7 +13,7 @@ description: Produce an ordered, file-level implementation plan from spec. Use a
 
 - Requirements or Investigate Report.
 - Spec.
-- `fixup mode` (optional): when present, mark each stage with its originating commit and a note that it must be committed as a fixup instead of a fresh commit (see Step 2).
+- `fixup mode` (optional): affects stage marking, see Step 2.
 
 ## Steps
 
@@ -25,14 +25,14 @@ If the exact change specification is not provided, suggest closing that loop fir
 
 Extract action items. Carry item IDs if provided.
 
-### Step 2: Structure Stages
+### Step 2: Form Stages
 
-For each approach:
+For each Spec's Approach entry:
 
 - Target single coherent changes.
 - Name exact files and describe specific changes.
 
-Items and Approaches entries MAY carry an ID - carry them through to the matching `Stage` unchanged.
+Items and Approach entries carry an ID (possibly null) - carry it through to the matching `Stage` unchanged.
 
 Group steps into stages only where necessary. A stage is one commit: atomic (no unrelated changes bundled in) and non-breaking (build/lint pass on its own). Default to a single stage - most tasks fit one commit.
 
@@ -45,4 +45,6 @@ If the fixup mode is requested in the input, mark each stage with a relevant ori
 Markdown format:
 
 - Stages
-  - {Stage X}
+  - {Stage X} (id: {Item/Approach ID}, fixup-of: {originating commit, if fixup mode})
+    - Files: {files}
+    - Changes: {changes}

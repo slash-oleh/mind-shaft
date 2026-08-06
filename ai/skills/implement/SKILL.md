@@ -1,6 +1,6 @@
 ---
 name: implement
-description: Execute an implementation plan through to a verified, committed code change. Use with an ordered `Stages` plan as input.
+description: Execute an implementation plan through to a verified, committed code change. Use after `plan-implementation` produces the ordered `Stages` plan.
 ---
 
 # Implement
@@ -17,7 +17,7 @@ description: Execute an implementation plan through to a verified, committed cod
 ## Input
 
 - `Stages`: ordered implementation stages (see the `Stages` shape). Each stage MAY carry `id` tag(s).
-- `fixup mode` (optional): when a stage is tagged with an originating commit, commit it with `git commit --fixup <originating-commit>` instead of a fresh commit.
+- `fixup mode` (optional): a stage may carry a `fixup-of` originating commit to fix up instead of committing fresh.
 
 ## Steps
 
@@ -42,8 +42,8 @@ If Step 2 checks passed, skip this step.
 When an unexpected deviation occurs:
 
 1. Assess the deviation and determine the root cause.
-2. Confirm it implies a simple fix. If it's suspected to be a significant change of the initial plan, ask the user how to proceed.
-3. Apply and commit the fix as `git commit --fixup <hash>` against the offending Stage, then `git rebase --autosquash` once done.
+2. Confirm it implies a simple fix. If it's suspected to be a significant change of the initial plan, or the same check has now failed 3 times in a row, stop and ask the user how to proceed.
+3. Apply and commit the fix as `git commit --fixup <hash>` against the offending Stage's own commit from Step 1 (never the fixup-mode originating commit, even if the Stage itself was committed in fixup mode), then `git rebase --autosquash <commit before Step 1's first Stage commit>` once done.
 4. Return to Step 2 and re-run - repeat until all pass.
 
 No Stage ends in a failed or skipped state.
@@ -52,6 +52,6 @@ No Stage ends in a failed or skipped state.
 
 Markdown format:
 
-- Commits: per input `Stage`, its commit hash(es), message(s), affected files.
+- Commits: per input `Stage`, its `id` tag(s) (if any), commit hash(es), message(s), affected files.
 - Deviations: Unexpected changes from original plan and how they were resolved. Each entry echoes the `id`(s) carried by the `Stage`.
 - Verification Results: Stages, commits, quality checks status. Entries echo the `id`(s) of the stages they cover, if tagged.

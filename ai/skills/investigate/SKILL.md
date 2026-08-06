@@ -1,6 +1,6 @@
 ---
 name: investigate
-description: Detective work on an incident, (heisen)bug, error, or performance regression - reproduce it, trace it to root cause, and propose a fix. Use before planning or implementing a bug ticket, in place of `confront` (which is for feature specs, not incidents).
+description: Detective work on an incident, bug, error, or performance regression - reproduce it, trace it to root cause, and propose a fix. Use before planning or implementing a bug ticket, in place of `confront` (which is for feature specs, not incidents).
 ---
 
 # Investigate
@@ -30,9 +30,9 @@ If the input is itemized, repeat Steps 1-4 per item, keyed by `id`.
 
 - Timeline: recent changes (commits, deploys, config, dependency bumps) around the affected area (`git log`, `git blame`).
 - Trace: follow the failure backward through logs, stack traces, and code paths from symptom to the point where behavior diverges from expected.
-- Hypotheses: list candidate root causes, ranked by likelihood.
+- Hypotheses: ranked list candidate root causes, ranked by likelihood.
 - Isolate: test each hypothesis (added logging, bisection, reading code, reproduction) until one is confirmed with evidence and the rest are ruled out.
-- If no hypothesis can be confirmed with available info, keep the ranked list and raise the gap as a Concern rather than picking one to move on.
+- If no hypothesis can be confirmed/ruled out with available info, keep the ranked list and raise the gap as a Concern rather than picking one to move on.
 
 ### Step 3: Review Codebase
 
@@ -48,7 +48,7 @@ Inspect the confirmed (or leading) root cause's surroundings to outline:
 - Propose an approach that removes the root cause, not just the symptom.
 - Note alternatives considered and why rejected (e.g. workaround vs proper fix).
 - Call out regression risk tied to the fix location.
-- Mark recommended one.
+- Mark the recommended option.
 
 ### Step 5: Formulate Concerns
 
@@ -59,26 +59,41 @@ For each unconfirmed hypothesis, blocked reproduction, or open question, outline
 - Summary: One sentence of what is unresolved.
 - Description: All details.
 - Suggestion: Possible solutions.
+- Severity:
+  - Major: Root cause unconfirmed or reproduction blocked - the fix cannot proceed safely without resolving this.
+  - Medium: Root cause confirmed, but fix approach or regression risk is uncertain.
+  - Minor: Peripheral question - does not block the fix.
+- Verdict:
+  - Decline: Factually incorrect, missing full context, or not worth the effort. Rationalize why it shouldn't or can't be done the way it's defined.
+  - Defer: Valid but out of scope right now - a separate issue, or would expand the diff significantly.
+  - Explain: Only a question is raised, no change required.
+  - Implement: Everything else. Proceed as usual.
 
 ## Output
 
-Markdown format. When input was itemized, wrap the whole structure below per `id` - one `Incident`/`Codebase`/`Suggested Fix`/`Concerns` block per item - instead of a single top-level block.
+Markdown format, one top-level structure, entries tagged `- Item: {Item X}`. When input was itemized, `Incident`, `Investigate Report`, and `Codebase` each list one entry per incident; `Concerns` lists one entry per concern (an incident may raise several, or none).
 
 - Incident
+  - Item: {Item X}
   - Symptom
   - Reproduction
   - Timeline
   - Trace
 - Investigate Report
+  - Item: {Item X}
+  - Hypotheses
   - Root Cause
   - Fix Options
 - Codebase
+  - Item: {Item X}
   - Similar patterns
   - Tech debt blockers
   - Regression risks
   - Affected modules
 - Concerns
-  - {Concern X}. {Summary X}
-    {Description X}
-    - Item: {Item X}
-    - Suggestion: {Suggestion X}
+  - Item: {Item X}
+  - Summary
+  - Description
+  - Suggestion
+  - Severity
+  - Verdict

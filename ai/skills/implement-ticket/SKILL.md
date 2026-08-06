@@ -11,15 +11,14 @@ description: Take a ticket from raw description through to a submitted pull requ
 
 ## Input
 
-- Ticket ID, URL, branch name, or plain description (same as `gather-task`'s input).
+- Ticket ID, Ticket URL, branch name, or plain description (same as `gather-task`'s input).
 
 ## Prerequisites
 
 - `gather-task` skill available.
 - `prepare-workspace` skill available.
 - `perform-task` skill available.
-- `code-review` skill available (only needed if the optional review round is used).
-- `fix-feedback` skill available (only needed if the optional review round is used).
+- `feedback-loop` skill available.
 - `submit-pull-request` skill available.
 
 ## Steps
@@ -34,7 +33,7 @@ Skill(skill: "gather-task", args: "<input>")
 
 ### Step 2: Prepare workspace
 
-Invoke `prepare-workspace` with Step 1's `ticket_id`/`title`:
+Invoke:
 
 ```
 Skill(skill: "prepare-workspace", args: "<ticket_id> <title>")
@@ -42,15 +41,23 @@ Skill(skill: "prepare-workspace", args: "<ticket_id> <title>")
 
 ### Step 3: Perform task
 
-Invoke `perform-task` with Step 1's output as freeform requirements text (single input, not itemized):
+Invoke:
 
 ```
 Skill(skill: "perform-task", args: "<gather_task_output>")
 ```
 
-### Step 4: Submit
+### Step 4: Confirm changes
 
-Invoke `submit-pull-request`:
+Invoke:
+
+```
+Skill(skill: "feedback-loop", args: "<base_branch>")
+```
+
+### Step 5: Submit
+
+Invoke:
 
 ```
 Skill(skill: "submit-pull-request", args: "")
@@ -58,4 +65,5 @@ Skill(skill: "submit-pull-request", args: "")
 
 ## Output
 
-`url` of the submitted pull request (from `submit-pull-request`), plus a short summary of what was implemented.
+PR URL: `prUrl` of the submitted pull request (from `submit-pull-request`)
+Summary: Short report of what was implemented (from Step 4's Commits)

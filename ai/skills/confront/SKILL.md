@@ -14,13 +14,15 @@ description: Critically examine a task specification against the codebase - stru
 
 ## Input
 
-- Task requirements: freeform description or structured text.
+- Task requirements: freeform description or structured text. May be a single requirement, or an itemized batch (each with its own `id`) - keep `id` attached throughout.
 
 ## Steps
 
+If the input is itemized, repeat Steps 2-3 per item, keyed by `id`.
+
 ### Step 1: Normalize Requirements
 
-Perform basic check of existing requirements sections for Three Cs:
+Check the existing requirements sections against the Three Cs:
 
 - Correctness
 - Completeness
@@ -28,24 +30,24 @@ Perform basic check of existing requirements sections for Three Cs:
 
 Structure the input as sections:
 
-- **Core goal**: Identify essential problem to be solved besides directly proposed solution.
+- **Core goal**: Identify the essential problem to solve, beyond the directly proposed solution.
 - **Description**: What is currently specified about the task (freeform narrative).
-- **Items**: List of `{id, body}` entries - do not collapse them into the Description narrative. If the input is itemized (multiple discrete entries, each with its own ID), one entry per input item, keeping its ID. Otherwise, a single entry with `id: 1` and `body` the whole input.
-- **Scope**: Identify bounds of the task. What's included and what is implied to be implemented separately (already done, in parallel or later).
+- **Items**: List of `{id, body}` entries - do not collapse them into the Description narrative. If the input is itemized (multiple discrete entries, each with its own ID), one entry per input item, keeping its ID. Otherwise, a single entry with `id: null` and `body` the whole input.
+- **Scope**: Identify the bounds of the task: what's included, and what's implied to be handled separately (already done, in parallel, or later).
 - **Criteria**: Acceptance criteria and Definition of Done for the task.
 
 ### Step 2: Review Codebase
 
-Inspect existing implementation for related functionality to outline:
+Inspect the existing implementation for related functionality to outline:
 
-- **Similar patterns**: Identify similar functionality, extract candidates, reuse opportunities (models, components, utilities)
+- **Similar patterns**: Identify similar functionality and extract reuse candidates (models, components, utilities).
 - **Tech debt blockers**: Identify circumstances that block or complicate the task.
 - **Regression risks**: Spot regression risks in shared code or core paths.
 - **Affected modules**: Identify directories/files likely affected.
 
 ### Step 3: Challenge Requirements
 
-Answer each topic question, where positive answer is a red flag.
+Answer each topic's question below - a positive answer is a red flag.
 
 ```markdown
 1. **Topic**: Question
@@ -64,52 +66,51 @@ Answer each topic question, where positive answer is a red flag.
 
 ### Step 4: Formulate Concerns
 
-Each positive answer can raise multiple concerns. For each concern outline:
+Each positive answer from the previous step can raise multiple concerns, against one or several Items. For each concern outline:
 
 - ID: the concern's own identity - an ordered number, unique per concern.
 - Item: the originating entry's ID, from Items. One entry MAY raise several concerns, each a distinct concern ID sharing the same Item.
 - Summary: One sentence of what is unresolved.
 - Description: All details.
-- Suggestion: Possible solutions (for Implement verdict).
+- Suggestion: Filled for every verdict, verdict-specific - ticket creation or code `TODO` for Defer, possible solution for Implement, direct answer or `clarify` proxy for Explain, blank for Decline (Description already covers the rationale).
 - Severity:
   - Major: architectural changes, bugs, correctness issues.
   - Medium: code reuse, readability, UX.
   - Minor: nitpicks, code style, renaming, minor improvements.
 - Verdict:
-  - Decline: Factually incorrect, missing full context, or not worth the effort. Explain.
-  - Defer: Valid but out of scope right now - a separate issue, or would expand the diff significantly. Suggest ticket creation or code `TODO`.
-  - Explain: Only a question is raised, no change required. Answer directly, or proxy to `clarify` if not clear.
+  - Decline: Factually incorrect, missing full context, or not worth the effort. Rationalize why it shouldn't or can't be done the way it's defined.
+  - Defer: Valid but out of scope right now - a separate issue, or would expand the diff significantly.
+  - Explain: Only a question is raised, no change required.
   - Implement: Everything else. Proceed as usual.
 
 If relevant, come up with additional concerns besides those coming from questions.
 
 ## Output
 
-Markdown format:
+Markdown format, one top-level structure, entries tagged `- Item: {Item X}`. When input was itemized, `Codebase` and `Challenge` each list one entry per item; `Concerns` lists one entry per concern (an item may raise several, or none).
 
 - Requirements
   - Core goal
   - Description
   - Items
   - Scope
-  - Risks
   - Criteria
 - Codebase
+  - Item: {Item X}
   - Similar patterns
   - Tech debt blockers
   - Regression risks
   - Affected modules
 - Challenge
-  - {Topic X}
-
-    > {Question X}
-
-    {Answer X}
+  - Item: {Item X}
+  - Topic
+  - Question
+  - Answer
 
 - Concerns
-  - {Concern X}. {Summary X}
-    {Description X}
-    - Item: {Item X}
-    - Suggestion: {Suggestion X}
-    - Severity: {Severity X}
-    - Verdict: {Verdict X}
+  - Item: {Item X}
+  - Summary
+  - Description
+  - Suggestion
+  - Severity
+  - Verdict

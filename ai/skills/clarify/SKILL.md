@@ -10,7 +10,7 @@ description: Resolve open concerns about a task through a Q&A session with the u
 Complete task understanding:
 
 - All concerns are addressed.
-- Updated approach is established.
+- Requirements or Investigate Report is up to date.
 
 ## Input
 
@@ -33,12 +33,14 @@ Reiterate until all concerns resolved.
 
 ### Step 2: Fold Decisions into Input
 
-For each addressed concern, edit the Requirements or Fix Options of Investigate Report to reflect it. Keep the structure, change only the content.
+For each addressed concern, edit the Requirements, or the Investigate Report, to reflect it. Keep the structure, change only the content.
 
 ## Output
 
 Markdown format:
 
-- Updated Requirements or Investigate Report: same structured sections received, with Step 2's edits applied. Each edited entry keeps its `item` tag surfaced.
-- Addressed Concerns: per concern, keeping both its concern `id` and its `item` tag surfaced:
-  - {Concern X} (item: {item X}): rationale + how it changed the Requirements
+- Updated Requirements or Investigate Report: same structured sections received, with Step 2's edits applied.
+- Addressed Concerns: per concern, keeping both its concern `id` and its `Item` tag surfaced:
+  - {Concern X}
+    - Item: {Item X}
+    - Rationale: how it changed the Requirements or Investigate Report

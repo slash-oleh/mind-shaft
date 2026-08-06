@@ -55,6 +55,8 @@ Skill(skill: "prescribe", args: "<bug-like-input>")
 
 ### Step 4: Plan
 
+If both Steps 2 and 3 ran, combine their Requirements/Investigate Report and Spec outputs, keeping each entry's `id`.
+
 Invoke:
 
 ```
@@ -73,5 +75,7 @@ Skill(skill: "implement", args: "<fixup mode?> <stages>")
 
 Markdown format:
 
+- Requirements or Investigate Report
+- Addressed Concerns
 - Spec
 - Commits
