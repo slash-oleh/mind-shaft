@@ -63,15 +63,20 @@ This may force-push without Step 6's gate - intentional, since
 `resolve-conflicts` is mechanical and escalates ambiguity itself. Step 6
 gates only the judgment-call fixes from Steps 4-5.
 
+Check its output `status`. If `aborted`, stop here and report to the user
+that conflicts could not be resolved - do not proceed to Step 4.
+
 ### Step 4: Resolve CI failures
 
 If `ci_failures` is empty, skip this step.
 
-1. From each item in `ci_failures`, form a single task: "fixup mode. CI check '<name>' failed with status '<status>'. Logs: <log_file_path>".
+Form `ci_tasks` list:
 
-2. Consolidate them into ordered list with IDs.
+From each item in `ci_failures`, form a single task in `perform-task`'s item shape (`{id, body}`):
+  - id: synthesized as `ci-<index>`
+  - body: "fixup mode. CI check '<name>' failed with status '<status>'. Logs: <log_file_path>".
 
-3. Invoke:
+Invoke:
 
 ```
 Skill(skill: "perform-task", args: "<ci_tasks>")
@@ -92,11 +97,11 @@ Skill(skill: "fix-feedback", args: "fixup mode. <items>")
 
 ### Step 6: Confirmation gate
 
-Ask human for proceed confirmation on the fixes applied in Steps 4 and 5 (yes) or adjustments (free text).
+Ask the user for proceed confirmation on the fixes applied in Steps 4 and 5 (yes) or adjustments (free text). This confirmation is mandatory - if no interactive access to the user exists, stop here and wait rather than auto-proceeding.
 
-On adjustments, the human either makes the change manually or asks for a
+On adjustments, the user either makes the change manually or asks for a
 followup fix. Either way, amend the result into the existing relevant fixup
-commit from Step 4/5 - unless the human asks for a new/separate commit
+commit from Step 4/5 - unless the user asks for a new/separate commit
 instead. Re-ask for confirmation after.
 
 Assess the followup's size first. If small (fits the existing fixup as an
@@ -124,7 +129,9 @@ git push origin $(git branch --show-current) --force-with-lease
 
 ### Step 9: Post replies
 
-For each thread from `gather-merge-blockers` addressed in Step 5, prepare a reply comment, keyed by thread `id` to `fix-feedback`'s output (`status`/`description` per original input `id`):
+For each thread and review addressed in Step 5, prepare a reply comment,
+keyed by its `id` to `fix-feedback`'s output (`status`/`description` per
+original input `id`):
 
 Tone: Brief and factual. No fluff, apologies, or fillers.
 
@@ -134,21 +141,36 @@ Tone: Brief and factual. No fluff, apologies, or fillers.
   - **deferred**: `"Will address in a future PR"` or `"Created <Ticket URL>"`.
   - **explained**: Provide the requested clarification.
 
-Post concurrently in batches.
+Post all replies concurrently.
 
-Write each reply body to a scratch file via `scratch`:
+- **Threads**: write the reply body to a scratch file via `scratch`:
 
-```
-Skill(skill: "scratch", args: "write pr-reply-<id> md")
-```
+  ```
+  Skill(skill: "scratch", args: "write pr-reply-<id> md")
+  ```
 
-Pass the returned path as `<reply_file_path>` to `vcs-tools`:
+  Pass the returned path as `<reply_file_path>` to `vcs-tools`:
 
-```
-Skill(skill: "vcs-tools", args: "post-reply <pr_number> <thread_id> <reply_file_path>")
-```
+  ```
+  Skill(skill: "vcs-tools", args: "post-reply <pr_number> <thread_id> <reply_file_path>")
+  ```
 
-`<pr_number>` comes from Step 1; `<thread_id>` comes from the `gather-merge-blockers` skill's output.
+  `<pr_number>` comes from Step 1; `<thread_id>` comes from the `gather-merge-blockers` skill's output.
+
+- **Reviews**: no `thread_id` to anchor to - write a payload file instead
+  (`{body: "<reply text>", event: "COMMENT", comments: []}`) via `scratch`:
+
+  ```
+  Skill(skill: "scratch", args: "write pr-review-reply-<id> json")
+  ```
+
+  Pass the returned path as `<payload_file_path>` to `vcs-tools`:
+
+  ```
+  Skill(skill: "vcs-tools", args: "submit-review <pr_number> <payload_file_path>")
+  ```
+
+  `event: "COMMENT"` posts the reply as a top-level note without approving or requesting changes.
 
 ### Step 10: Update PR description
 
