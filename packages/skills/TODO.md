@@ -6,7 +6,9 @@ Settle on Multi-stage skills vs Multi-skill workflows balance.
 
 ## General
 
-- Skill's README.md should define why it exists
+- Skill's README.md should define why it exists (a matter of `review-skill`)
+- Standardize cross-skill document shapes and move into shared knowledge (Requirements, Incident, Commits)
+- Unify itemized input processing (carried IDs)
 
 ## Drafts
 
@@ -34,6 +36,12 @@ Ideas for new skills:
     - Durable compute (restate, temporal.io)
 
 - `regroup-commits`: Split big ones into smaller cohesive ones. Squash non-cohesive ones. Keep commits non-breaking in between.
+
+- `normalize-requirements`: Split from `elaborate`
+
+- `normalize-bug-report`: Split from `investigate`
+
+- `inspect-codebase`: Split from `elaborate` and `investigate`
 
 - `estimate-prd`: Analyze, breakdown, estimate
   - `business-analysis` as a subskill for separate tasks

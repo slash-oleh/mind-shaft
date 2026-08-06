@@ -11,3 +11,7 @@ For skill itself see [SKILL.md](./SKILL.md).
 Present work that is done.
 
 Supports GitHub and GitLab.
+
+## TODO
+
+- Move from phases approach
