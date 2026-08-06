@@ -60,6 +60,15 @@ For each unconfirmed hypothesis, blocked reproduction, or open question, outline
 - Summary: One sentence of what is unresolved.
 - Description: All details.
 - Suggestion: Possible solutions.
+- Severity:
+  - Major: Root cause unconfirmed or reproduction blocked - the fix cannot proceed safely without resolving this.
+  - Medium: Root cause confirmed, but fix approach or regression risk is uncertain.
+  - Minor: Peripheral question - does not block the fix.
+- Verdict:
+  - Decline: Factually incorrect, missing full context, or not worth the effort. Rationalize why it shouldn't or can't be done the way it's defined.
+  - Defer: Valid but out of scope right now - a separate issue, or would expand the diff significantly.
+  - Explain: Only a question is raised, no change required.
+  - Implement: Everything else. Proceed as usual.
 
 ## Output
 
@@ -84,3 +93,5 @@ Markdown format. When input was itemized, wrap the whole structure below per `id
     {Description X}
     - Item: {Item X}
     - Suggestion: {Suggestion X}
+    - Severity: {Severity X}
+    - Verdict: {Verdict X}
