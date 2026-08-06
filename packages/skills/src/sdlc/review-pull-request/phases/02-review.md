@@ -6,17 +6,17 @@
 
 ## Steps
 
-### Step 1: Invoke code-review
+### Step 1: Invoke review-code
 
-Invoke the `code-review` skill, passing along Phase 1's output:
+Invoke the `review-code` skill, passing along Phase 1's output:
 
 ```
-Skill(skill: "code-review", args: "<diff_file> --title <title> --description <description>")
+Skill(skill: "review-code", args: "<diff_file> --title <title> --description <description>")
 ```
 
 ## Output
 
-The JSON returned by `code-review`:
+The JSON returned by `review-code`:
 
 ```jsonc
 {

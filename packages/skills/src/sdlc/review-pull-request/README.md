@@ -8,7 +8,7 @@ For skill itself see [SKILL.md](./SKILL.md).
 
 ## Meta info
 
-Binds pull request I/O (fetch, sanity check, submit) around the `code-review` skill.
+Binds pull request I/O (fetch, sanity check, submit) around the `review-code` skill.
 
 ## TODO
 

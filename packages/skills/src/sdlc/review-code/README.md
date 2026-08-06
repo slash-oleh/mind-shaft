@@ -2,13 +2,13 @@
 title: Home
 ---
 
-# code-review
+# review-code
 
 For skill itself see [SKILL.md](./SKILL.md).
 
 ## Meta info
 
-This overrides Claude Code's `/code-review` for no obvious reason. It focuses on a specific set of things and their order. It's intended to be less line-nitpicking and more architecture-addressing.
+It focuses on a specific set of things and their order. It's intended to be less line-nitpicking and more architecture-addressing. Named to avoid colliding with Claude Code's built-in `/code-review` but also to follow naming convetion.
 
 ## TODO
 

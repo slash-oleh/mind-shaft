@@ -1,7 +1,7 @@
 ---
 title: SKILL.md
 name: review-pull-request
-description: Review a pull request end-to-end - fetch its info and diff, run the code review, and publish the result back to the VCS platform. Use when asked to review a PR/MR. For an ad-hoc/local diff (not a PR), use code-review directly.
+description: Review a pull request end-to-end - fetch its info and diff, run the code review, and publish the result back to the VCS platform. Use when asked to review a PR/MR. For an ad-hoc/local diff (not a PR), use review-code directly.
 ---
 
 # Review Pull Request
@@ -13,7 +13,7 @@ description: Review a pull request end-to-end - fetch its info and diff, run the
 ## Prerequisites
 
 - `vcs-tools` skill available
-- `code-review` skill available
+- `review-code` skill available
 - `scratch` skill available
 
 ## Phases

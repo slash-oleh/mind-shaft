@@ -22,7 +22,7 @@ Ideas for new skills:
     - `elaborate` or `investigate`
     - `plan-implementation`
     - `implement`
-    - `code-review`
+    - `review-code`
     - `submit-pull-request`
   - Gate 2: PR CI failed or has requested changes
     - `fix-pull-request`

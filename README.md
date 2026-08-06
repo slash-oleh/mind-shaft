@@ -23,7 +23,7 @@ SDLC (atomic development processes - full control):
 - [`/spec`](ai/skills/spec/SKILL.md): compile approach, sub-tasks, and testable success criteria.
 - [`/plan-implementation`](ai/skills/plan-implementation/SKILL.md): assess requirements, break work into commit-sized stages.
 - [`/implement`](ai/skills/implement/SKILL.md): execute a plan through to a verified, committed change.
-- [`/code-review`](ai/skills/code-review/SKILL.md): review a diff against project rules.
+- [`/review-code`](ai/skills/review-code/SKILL.md): review a diff against project rules.
 - [`/review-pull-request`](ai/skills/review-pull-request/SKILL.md): fetch, review, and submit a pull request review.
 - [`/submit-pull-request`](ai/skills/submit-pull-request/SKILL.md): clean, polish, submit for review.
 - [`/resolve-conflicts`](ai/skills/resolve-conflicts/SKILL.md): rebase onto a target branch and resolve conflicts.
