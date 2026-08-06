@@ -9,6 +9,7 @@ description: Resolve a batch of feedback items (comments, suggestions) end to en
 ## Goal
 
 - Every input item ID maps to a resolution, including ones merged into a duplicate group.
+- Each deduped entry is resolved: implemented, or explained via a declined/deferred/explained rationale.
 
 ## Prerequisites
 
@@ -25,9 +26,11 @@ description: Resolve a batch of feedback items (comments, suggestions) end to en
 
 Classify items and reduce into entries, each assigned a fresh group ID (`g1`, `g2`, ...) mapping to its member original IDs:
 
-- **True duplicates** (same ask): merge into one entry; `members` lists all merged IDs - one shared resolution.
+- **True duplicates** (same ask): merge into one entry; `members` lists all merged IDs - one shared resolution. `body`: pick the most detailed member's body, or synthesize if none is a strict superset.
 - **Referencing** items (ask something different from what they point to, e.g. "same file as above but also..."): own entry, single-element `members`, referenced IDs folded into `body`. MUST NOT merge - two different asks need two resolutions.
 - **Standalone** items: single-element `members`.
+
+Every input ID lands in exactly one category above, including IDs referenced (not merged) by a Referencing entry - each still gets its own entry from its own original ask.
 
 Keep the group-ID-to-`members` table for Step 3.
 
@@ -43,7 +46,7 @@ Treat `perform-task` as a single unit - don't read or invoke its internals.
 
 ### Step 3: Expand + reconcile
 
-For each group ID, find its resolution in the returned Spec/Commits: a matching Commit means `implemented` (description: commit summary); a Spec Approach entry with no matching Commit means `declined`/`deferred`/`explained` per its stated rationale (description: that rationale). Copy the resolution to every ID in `members`.
+For each group ID, find its resolution: a matching Commit means `implemented` (description: commit summary); otherwise, find its entry in Addressed Concerns (keyed by the group ID as `Item`) and use its Rationale as `declined`/`deferred`/`explained` (description: that rationale). Copy the resolution to every ID in `members`.
 
 ## Output
 
