@@ -43,7 +43,7 @@ Treat `perform-task` as a single unit - don't read or invoke its internals.
 
 ### Step 3: Expand + reconcile
 
-Look up each returned `By id` group ID in Step 1's table and copy its resolution to every ID in `members`.
+For each group ID, find its resolution in the returned Spec/Commits: a matching Commit means `implemented` (description: commit summary); a Spec Approach entry with no matching Commit means `declined`/`deferred`/`explained` per its stated rationale (description: that rationale). Copy the resolution to every ID in `members`.
 
 ## Output
 

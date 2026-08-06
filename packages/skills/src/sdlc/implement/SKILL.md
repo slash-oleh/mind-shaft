@@ -53,6 +53,6 @@ No Stage ends in a failed or skipped state.
 
 Markdown format:
 
-- Commits: per input `Stage`, its commit hash(es), message(s), affected files.
+- Commits: per input `Stage`, its `id` tag(s) (if any), commit hash(es), message(s), affected files.
 - Deviations: Unexpected changes from original plan and how they were resolved. Each entry echoes the `id`(s) carried by the `Stage`.
 - Verification Results: Stages, commits, quality checks status. Entries echo the `id`(s) of the stages they cover, if tagged.
