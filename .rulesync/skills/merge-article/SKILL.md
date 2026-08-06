@@ -1,6 +1,6 @@
 ---
 name: merge-article
-description: Merges unique content from a source article into a target article and deletes the source.
+description: Merge unique content from a source article into a target article and delete the source. Use when consolidating two overlapping docs articles into one.
 ---
 
 # Merge Article Skill

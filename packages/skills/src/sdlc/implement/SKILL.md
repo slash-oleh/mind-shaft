@@ -1,7 +1,7 @@
 ---
 title: SKILL.md
 name: implement
-description: Execute an implementation plan through to a verified, committed code change. Use with an ordered `Stages` plan as input.
+description: Execute an implementation plan through to a verified, committed code change. Use after `plan-implementation` produces the ordered `Stages` plan.
 ---
 
 # Implement

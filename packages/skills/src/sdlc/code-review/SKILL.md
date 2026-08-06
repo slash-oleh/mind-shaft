@@ -1,7 +1,7 @@
 ---
 title: SKILL.md
 name: code-review
-description: Perform a comprehensive code review of a diff against project rules. Reusable review core - invoke directly for an ad-hoc/local diff, or via the review-pull-request skill for pull requests.
+description: Perform a comprehensive code review of a diff against project rules. Use when a diff needs review for architecture, logic, and style issues. Reusable review core - invoke directly for an ad-hoc/local diff, or via `review-pull-request` for pull requests.
 ---
 
 # Code Review

@@ -1,6 +1,6 @@
 ---
 name: refine-article
-description: Refines or completes an article by following the template, project structure, and caveman style.
+description: Refine or complete an article by following the template, project structure, and caveman style. Use when an article is empty, a rough draft, or out of sync with the template.
 ---
 
 # Refine Article Skill

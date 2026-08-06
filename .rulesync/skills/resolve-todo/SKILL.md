@@ -1,6 +1,6 @@
 ---
 name: resolve-todo
-description: Resolve a single TODO item from TODO.md or README.md. Pick one task, implement it, and mark it complete.
+description: Resolve a single TODO item from TODO.md or README.md, implementing it and marking it complete. Use when asked to pick up and finish one outstanding TODO item.
 ---
 
 # Resolve TODO
