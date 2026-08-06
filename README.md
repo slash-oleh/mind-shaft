@@ -24,7 +24,6 @@ SDLC (atomic development processes - full control):
 - [`/plan-implementation`](ai/skills/plan-implementation/SKILL.md): assess requirements, break work into commit-sized stages.
 - [`/implement`](ai/skills/implement/SKILL.md): execute a plan through to a verified, committed change.
 - [`/review-code`](ai/skills/review-code/SKILL.md): review a diff against project rules.
-- [`/review-pull-request`](ai/skills/review-pull-request/SKILL.md): fetch, review, and submit a pull request review.
 - [`/submit-pull-request`](ai/skills/submit-pull-request/SKILL.md): clean, polish, submit for review.
 - [`/resolve-conflicts`](ai/skills/resolve-conflicts/SKILL.md): rebase onto a target branch and resolve conflicts.
 - [`/gather-merge-blockers`](ai/skills/gather-merge-blockers/SKILL.md): fetch and order a PR's conflicts, CI failures, comment threads.
@@ -46,6 +45,8 @@ Workflows (common chains of other skills - hands-off):
   - `gather-task` -> `prepare-workspace` -> `perform-task` -> `feedback-loop` -> `submit-pull-request`
 - [`/fix-pull-request`](ai/skills/fix-pull-request/SKILL.md): address review comments, conflicts, CI failures.
   - `gather-merge-blockers` -> `resolve-conflicts` -> `perform-task` (on CI failures) -> `fix-feedback` -> `feedback-loop` -> update PR
+- [`/review-pull-request`](ai/skills/review-pull-request/SKILL.md): fetch, review, and submit a pull request review.
+  - `vcs-tools` -> `review-code` -> `vcs-tools`
 
 Tools (external integrations - invoked by other skills, not directly):
 
