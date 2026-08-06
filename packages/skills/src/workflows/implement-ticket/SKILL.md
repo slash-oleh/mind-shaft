@@ -19,8 +19,6 @@ description: Take a ticket from raw description through to a submitted pull requ
 - `gather-task` skill available.
 - `prepare-workspace` skill available.
 - `perform-task` skill available.
-- `code-review` skill available (only needed if the optional review round is used).
-- `fix-feedback` skill available (only needed if the optional review round is used).
 - `submit-pull-request` skill available.
 
 ## Steps
@@ -59,4 +57,5 @@ Skill(skill: "submit-pull-request", args: "")
 
 ## Output
 
-`url` of the submitted pull request (from `submit-pull-request`), plus a short summary of what was implemented.
+PR URL: `prUrl` of the submitted pull request (from `submit-pull-request`)
+Summary: Short report of what was implemented (from Step 3's Commits)
