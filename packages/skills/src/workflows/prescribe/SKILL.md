@@ -5,9 +5,9 @@ description: Turn an incident/bug investigation into a compiled solution spec - 
 claudecode:
   context: fork
   background: false
-  argument-hint: "[incident]"
+  argument-hint: "[raw_bug_report]"
   arguments:
-    - "incident"
+    - "raw_bug_report"
 ---
 
 # Prescribe
@@ -21,25 +21,34 @@ claudecode:
 
 ## Prerequisites
 
+- `normalize-bug-report` skill available
 - `investigate` skill available
 - `clarify` skill available
 - `spec` skill available
 
 ## Input
 
-- Incident/bug description: freeform report, error, or structured text, OR an itemized batch (each entry `{id, body}`) - keep each entry's `id` attached through the investigate/clarify/spec chain.
+- Raw bug report: freeform description, error log, or structured text, OR an itemized batch (each entry `{id, body}`) - keep each entry's `id` attached through the normalize-bug-report/investigate/clarify/spec chain.
 
 ## Steps
 
-### Step 1: Investigate
+### Step 1: Normalize Bug Report
 
 Invoke:
 
 ```
-Skill(skill: "investigate", args: "<input>")
+Skill(skill: "normalize-bug-report", args: "<raw_bug_report>")
 ```
 
-### Step 2: Clarify
+### Step 2: Investigate
+
+Invoke:
+
+```
+Skill(skill: "investigate", args: "<bug_report>")
+```
+
+### Step 3: Clarify
 
 Invoke:
 
@@ -47,7 +56,7 @@ Invoke:
 Skill(skill: "clarify", args: "<incident> <investigate_report> <codebase> <concerns>")
 ```
 
-### Step 3: Spec
+### Step 4: Spec
 
 Invoke:
 

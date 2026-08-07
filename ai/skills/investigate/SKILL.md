@@ -4,9 +4,9 @@ description: Detective work on an incident, bug, error, or performance regressio
 claudecode:
   context: fork
   background: false
-  argument-hint: "[incident]"
+  argument-hint: "[bug_report]"
   arguments:
-    - "incident"
+    - "bug_report"
 ---
 
 # Investigate
@@ -20,7 +20,7 @@ claudecode:
 
 ## Input
 
-- Incident/bug description: freeform report, error or structured text. May be a single incident, or an itemized batch of incidents (each with its own `id`) - process each independently, keep `id` attached throughout.
+- Bug Report: Structured text containing current and expected states. May be a single incident, or an itemized batch of incidents (each with its own `id`) - process each independently, keep `id` attached throughout.
 
 ## Steps
 

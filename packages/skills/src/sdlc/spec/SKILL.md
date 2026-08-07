@@ -20,7 +20,7 @@ claudecode:
 
 ## Input
 
-- Structured Requirements: Core goal, Items, Scope, Criteria, etc.
+- Structured Requirements: Title, Core goal, Items, Scope, Criteria, Risks, etc.
 - Additional details: Elaboration results (Concerns/Verdicts), assets, etc.
 
 ## Steps

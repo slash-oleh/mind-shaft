@@ -4,9 +4,9 @@ description: Analyze a task specification, review the codebase, and output a det
 claudecode:
   context: fork
   background: false
-  argument-hint: "[requirements]"
+  argument-hint: "[raw_requirements]"
   arguments:
-    - "requirements"
+    - "raw_requirements"
 ---
 
 # Elaborate
@@ -36,7 +36,7 @@ claudecode:
 Invoke:
 
 ```
-Skill(skill: "normalize-requirements", args: "<input>")
+Skill(skill: "normalize-requirements", args: "<raw_requirements>")
 ```
 
 ### Step 2: Confront

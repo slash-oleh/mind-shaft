@@ -45,8 +45,6 @@
 
 - `regroup-commits`: Split big ones into smaller cohesive ones. Squash non-cohesive ones. Keep commits non-breaking in between.
 
-- `normalize-bug-report`: Split from `investigate`
-
 - `inspect-codebase`: Split from `elaborate` and `investigate`
 
 - `why-ci-failed`: Part of `fix-pull-request` already but would still prove useful being ad-hoc.
