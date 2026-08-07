@@ -2,6 +2,12 @@
 title: SKILL.md
 name: elaborate
 description: Analyze a task specification, review the codebase, and output a detailed assessment and success criteria. Use when user provides a new ticket or description to understand scope, risks, and definition of done before implementation.
+claudecode:
+  context: fork
+  background: false
+  argument-hint: "[requirements]"
+  arguments:
+    - "requirements"
 ---
 
 # Elaborate

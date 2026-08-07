@@ -2,6 +2,13 @@
 title: SKILL.md
 name: perform-task
 description: Turn a requirements/incident description into a verified, committed code change - classifying bug-like vs feature-like scope, planning, then implementing. Use as the shared core of implement-ticket and fix-feedback.
+claudecode:
+  context: fork
+  background: false
+  argument-hint: "[requirements] [fixup]"
+  arguments:
+    - "requirements"
+    - "fixup"
 ---
 
 # Perform Task

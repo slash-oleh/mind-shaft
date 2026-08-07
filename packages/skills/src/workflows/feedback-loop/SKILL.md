@@ -2,6 +2,12 @@
 title: SKILL.md
 name: feedback-loop
 description: Get user sign-off on a set of commits, routing any requested changes through fix-feedback until confirmed, then autosquash resulting fixups. Use before a batch of commits is finalized (pushed, submitted as a PR) whenever the caller wants a human confirmation step first.
+claudecode:
+  context: fork
+  background: false
+  argument-hint: "[target_branch]"
+  arguments:
+    - "target_branch"
 ---
 
 # Feedback Loop

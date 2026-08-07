@@ -89,6 +89,8 @@ Replace `claudecode` with your agent if needed. See [rulesync docs](https://rule
 
 Most common tool but only supports skills.
 
+Also note that agent-specific frontmatters are not supported this way (Claude Code's `context: fork` directions in particular, so workflow skill runs might be messier).
+
 ```bash
 npx skills add slash-oleh/mind-shaft/ai/skills
 ```

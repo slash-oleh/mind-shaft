@@ -2,6 +2,12 @@
 title: SKILL.md
 name: prescribe
 description: Turn an incident/bug investigation into a compiled solution spec - trace root cause, resolve open concerns, then draft testable success criteria. Use as investigate's counterpart to elaborate, before implementation starts on a bug fix.
+claudecode:
+  context: fork
+  background: false
+  argument-hint: "[incident]"
+  arguments:
+    - "incident"
 ---
 
 # Prescribe

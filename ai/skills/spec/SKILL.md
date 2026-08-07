@@ -1,6 +1,13 @@
 ---
 name: spec
 description: Compile an approach, sub-task breakdown, and concrete testable success criteria into a single spec. Use once requirements are settled (e.g. after `confront`/`clarify`) and before implementation starts.
+claudecode:
+  context: fork
+  background: false
+  argument-hint: "[requirements] [additional_details]"
+  arguments:
+    - "requirements"
+    - "additional_details"
 ---
 
 # Spec

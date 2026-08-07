@@ -2,6 +2,14 @@
 title: SKILL.md
 name: submit-pull-request
 description: Push a branch and open it as a pull request, drafting its title and description from context. Use when a task is ready to present for integration.
+claudecode:
+  context: fork
+  background: false
+  argument-hint: "[branch] [target_branch] [draft]"
+  arguments:
+    - "branch"
+    - "target_branch"
+    - "draft"
 ---
 
 # Submit Pull Request

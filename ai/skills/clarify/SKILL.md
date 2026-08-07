@@ -1,6 +1,15 @@
 ---
 name: clarify
 description: Resolve open concerns about a task through a Q&A session with the user, updating requirements as answers come in. Use after concerns/gaps on a spec have been raised (e.g. by `confront`) and before committing to a plan.
+claudecode:
+  context: fork
+  background: false
+  argument-hint: "[requirements] [concerns] [codebase] [challenge]"
+  arguments:
+    - "requirements"
+    - "concerns"
+    - "codebase"
+    - "challenge"
 ---
 
 # Clarify

@@ -15,3 +15,4 @@ Approval isn't the finish line - this exists so merged work gets verified and re
 - Send messenger messages (Slack, Teams, etc.)
 - Change ticket status
 - Wait for CI status
+- Explicit polymorphic input: PR or Ticket, fallback to current branch, context, etc. (re-use/unify with `fix-pull-request`/`review-pull-request`'s "PR identifier" approach?)

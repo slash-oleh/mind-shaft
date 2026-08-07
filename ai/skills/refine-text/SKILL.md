@@ -1,6 +1,12 @@
 ---
 name: refine-text
 description: Turn a rough draft, outline, or terse notes into finished prose while preserving its structure and intent. Use when asked to "refine", "un-draft", "clean up", "polish", "finish", or "fix grammar" on a document, outline, README, or spec.
+claudecode:
+  context: fork
+  background: false
+  argument-hint: "[draft]"
+  arguments:
+    - "draft"
 ---
 # Refine Text
 

@@ -2,6 +2,13 @@
 title: SKILL.md
 name: create-dispatcher-skill
 description: Create a single dispatcher skill that merges backend detection and per-backend routing into one skill, instead of a detect skill plus N near-duplicate provider skills. Use when 2+ skills expose an identical command surface over different backends (platform CLI, cloud provider, package manager) and callers must pick one at runtime.
+claudecode:
+  context: fork
+  background: false
+  argument-hint: "[skill_name] [description]"
+  arguments:
+    - "skill_name"
+    - "description"
 ---
 
 # Create Dispatcher Skill

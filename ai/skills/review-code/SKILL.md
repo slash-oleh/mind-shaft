@@ -1,6 +1,14 @@
 ---
 name: review-code
 description: Perform a comprehensive code review of a diff against project rules. Use when a diff needs review for architecture, logic, and style issues. Reusable review core - invoke directly for an ad-hoc/local diff, or via `review-pull-request` for pull requests.
+claudecode:
+  context: fork
+  background: false
+  argument-hint: "[diff_file] [title] [description]"
+  arguments:
+    - "diff_file"
+    - "title"
+    - "description"
 ---
 
 # Code Review

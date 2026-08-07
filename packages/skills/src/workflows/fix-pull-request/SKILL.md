@@ -2,6 +2,12 @@
 title: SKILL.md
 name: fix-pull-request
 description: Address pull request review comments, conflicts, and CI failures. Use when a PR needs unblocking.
+claudecode:
+  context: fork
+  background: false
+  argument-hint: "[pr_identifier]"
+  arguments:
+    - "pr_identifier"
 ---
 
 # Fix Pull Request

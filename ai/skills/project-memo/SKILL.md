@@ -1,6 +1,11 @@
 ---
 name: project-memo
 description: Maintain root AGENTS.md project cheatsheet with concise repo-specific facts (product, structure, git, stack, tracker, code quality, tests, setup). Use to write it from scratch, append missing sections, or update it when a covered fact changes.
+claudecode:
+  context: fork
+  background: false
+  argument-hint: ""
+  arguments: []
 ---
 
 # Project Memo

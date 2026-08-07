@@ -2,6 +2,12 @@
 title: SKILL.md
 name: implement-ticket
 description: Take a ticket from raw description through to a submitted pull request - gather context, prepare a branch, implement, then submit. Use when starting fresh work on a ticket.
+claudecode:
+  context: fork
+  background: false
+  argument-hint: "[source]"
+  arguments:
+    - "source"
 ---
 
 # Implement Ticket
@@ -12,7 +18,7 @@ description: Take a ticket from raw description through to a submitted pull requ
 
 ## Input
 
-- Ticket ID, Ticket URL, branch name, or plain description (same as `gather-task`'s input).
+- Source: Ticket ID, Ticket URL, branch name, or plain description (same as `gather-task`'s input).
 
 ## Prerequisites
 
@@ -29,7 +35,7 @@ description: Take a ticket from raw description through to a submitted pull requ
 Invoke:
 
 ```
-Skill(skill: "gather-task", args: "<input>")
+Skill(skill: "gather-task", args: "<source>")
 ```
 
 ### Step 2: Prepare workspace
