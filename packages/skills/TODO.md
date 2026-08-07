@@ -1,12 +1,7 @@
 # TODO
 
-## Multi-skill workflows
-
-Settle on Multi-stage skills vs Multi-skill workflows balance.
-
 ## General
 
-- Skill's README.md should define why it exists (a matter of `review-skill`)
 - Standardize cross-skill document shapes and move into shared knowledge (Requirements, Incident, Commits)
 - Unify itemized input processing (carried IDs)
 
@@ -25,7 +20,7 @@ Settle on Multi-stage skills vs Multi-skill workflows balance.
 
 ## Draft skills
 
-Ideas for new skills:
+### SLDC
 
 - `task-autopilot` (formelly `sdlc`, `task-to-pull-request`): Compound hands-off workflow with the following skills chain. Humam approval gates mostly skipped. Questions limited to product semi-technical ones, with rest accepted at best effort decisions. Since `submit-pull-request` (or existing PR from `identified-pr`) gates 2-3 passing implies asyncronous wait / periodic check and potentially iterative loop of `fix-pull-request` to get to `ship-task`.
   - `gather-task`
@@ -50,26 +45,30 @@ Ideas for new skills:
 
 - `regroup-commits`: Split big ones into smaller cohesive ones. Squash non-cohesive ones. Keep commits non-breaking in between.
 
-- `normalize-requirements`: Split from `elaborate`
+- `normalize-requirements`: Split from `confront`
 
 - `normalize-bug-report`: Split from `investigate`
 
 - `inspect-codebase`: Split from `elaborate` and `investigate`
 
-- `estimate-prd`: Analyze, breakdown, estimate
-  - `business-analysis` as a subskill for separate tasks
-  - Aspects: summarize, classify, challenge, gaps, risks, stack, data model, use cases, critical path, mvp, milestones, timeline, team, components, services.
-
-- `adr`: Write, assess and resolve ADRs.
-  - Collect options
-  - Assess
-  - Make decision
-
-- `breakdown`: Convert PRD/System Design into tasks, milestones, roadmap ready to be created in ticket tracker.
-
-- `fix-feedback`: Make a followup fix based on ticket comments / chat message. Decide on ticket creation, create branch, implement, submit PR. Sort of `fix-pull-request` but when changes are already merged (consider a split from that skill).
-
 - `why-ci-failed`: Part of `fix-pull-request` already but would still prove useful being ad-hoc.
+
+### System Design
+
+- `estimate-prd`: Analyze, breakdown, estimate workflow
+  - `normalize-prd` (`normalize-requirements` counterpart). Outputs PRD (Requirements counterpart).
+  - `business-analysis` (`elaborate` counterpart). Summarize, classify, challenge, gaps, risks, stack, data model, use cases, critical path, mvp, milestones, timeline, team, components, services. Outputs System Design (Spec counterpart).
+    - `breakdown`: Breakdown PRD into smaller, more manageable pieces. Outputs Breakdown.
+    - For each breakdown item:
+      - `confront`
+      - `clarify`
+      - `spec`?
+      - `adr`: Collect options, Assess, Make decision, Write ADR. Outputs ADR.
+  - `roadmap` (`plan-implementation` counterpart): Convert System Design into ordered roadmap: milestones, epics, tasks - ready to be created in ticket tracker. Outputs Roadmap (Stages counterpart).
+  - `estimate` (`implement` counterpart). Combine System Design and Roadmap to estimate. Outputs Estimation.
+  - `proposal` (`submit-pull-request` counterpart). Combines System Design, Roadmap and Estimation. Outputs Proposal.
+
+### Generic/Meta
 
 - `reflect` / `reflect-mistakes` / `reflect-skill`: Review errors (including self-fixed) to improve initial instructions or update memory.
 
@@ -91,4 +90,8 @@ Suggest pairing with specific skills, MCPs, CLIs, agent plugins (might end up be
 - Services
   - `jira`
   - `figma`
-  - `gh` CLI
+
+- CLI
+  - `git`
+  - `gh`
+  - `glab`
