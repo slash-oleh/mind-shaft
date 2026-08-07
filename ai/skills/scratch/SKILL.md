@@ -7,6 +7,13 @@ description: Hand off large data between skills or subagents via a scratch file 
 
 Hand off large data between skills/subagents via a file path, not inline content. Never paste big data into prompts, args, or return values.
 
+## Commands
+
+Invoked with an args string of `<command> [...args]`.
+
+- `write [hint] [ext]` - reserve a path (write mode, below).
+- `read <path>` - validate a path (read mode, below).
+
 ## Write mode - producer side
 
 1. Reserve a path:
