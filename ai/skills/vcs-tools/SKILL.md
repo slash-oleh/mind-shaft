@@ -1,6 +1,15 @@
 ---
 name: vcs-tools
 description: Pull/merge request data and operations for the repo's Git hosting platform (GitHub via `gh`, GitLab via `glab`), autodetected from the origin remote. Use directly when the user asks to inspect or act on a PR/MR, or invoke as a unit (Skill tool) from another skill's phase - never by running its scripts directly.
+claudecode:
+  context: fork
+  background: false
+  model: haiku
+  effort: low
+  argument-hint: "[command] [...args]"
+  arguments:
+    - "command"
+    - "args"
 ---
 
 # VCS Tools

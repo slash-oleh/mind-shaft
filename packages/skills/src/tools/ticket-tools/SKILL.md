@@ -2,6 +2,15 @@
 title: SKILL.md
 name: ticket-tools
 description: Ticket operations (create, update description, change status, comment) for the project's issue tracker, autodetected where possible. Jira via the Atlassian MCP only for now. Use directly when the user asks to create/update/transition/comment on a ticket, or invoke as a unit (Skill tool) from another skill's phase - never call tracker-specific tools (e.g. `*JiraIssue`) directly.
+claudecode:
+  context: fork
+  background: false
+  model: haiku
+  effort: low
+  argument-hint: "[command] [...args]"
+  arguments:
+    - "command"
+    - "args"
 ---
 
 # Ticket Tools

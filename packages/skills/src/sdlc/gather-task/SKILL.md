@@ -2,6 +2,14 @@
 title: SKILL.md
 name: gather-task
 description: Collect raw info about a task - ticket details, linked design/docs, and relevant codebase context. Use as the first step before preparing a workspace, elaborating, or implementing a task.
+claudecode:
+  context: fork
+  background: false
+  model: haiku
+  effort: low
+  argument-hint: "[source]"
+  arguments:
+    - "source"
 ---
 
 # Gather Task
@@ -14,7 +22,7 @@ description: Collect raw info about a task - ticket details, linked design/docs,
 
 ## Input
 
-- Ticket ID, Ticket URL, branch name (containing Ticket ID), or plain task description.
+- Source: Ticket ID, Ticket URL, branch name (containing Ticket ID), or plain task description.
 
 ## Prerequisites
 

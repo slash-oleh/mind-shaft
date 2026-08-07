@@ -2,6 +2,14 @@
 title: SKILL.md
 name: create-ticket
 description: Create a structured ticket in the project management system. Use when user requests ticket or issue creation.
+claudecode:
+  context: fork
+  background: false
+  model: haiku
+  effort: low
+  argument-hint: "[source]"
+  arguments:
+    - "source"
 ---
 
 # Create Ticket
@@ -14,6 +22,10 @@ description: Create a structured ticket in the project management system. Use wh
 
 - `ticket-tools` skill available
 - `scratch` skill available
+
+## Input
+
+Source: Freeform text.
 
 ## Before creating
 
@@ -76,8 +88,6 @@ Pass the returned path as `<description_file_path>` to `ticket-tools`. Fold Assi
 Skill(skill: "ticket-tools", args: "create <PROJECT_KEY> <TITLE> <description_file_path> [TYPE] [PARENT] [FIELDS_JSON]")
 ```
 
-## After creating
+## Output
 
-Report created ticket URL.
-
-If creation failed, explain reason and retry with corrected fields.
+Ticket URL: From `ticket-tools`
