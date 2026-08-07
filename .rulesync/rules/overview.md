@@ -6,17 +6,20 @@ root: true
 
 - Brief: Mind Shaft is an agentic engineering handbook - a monorepo of rules and processes for AI coding agents, distributed to other projects and published as a docs site.
 - References: `README.md` (repo overview), `CONTRIBUTING.md` (contribution guide), `docs/` (site source), published site linked from `README.md`.
-- Terminology:
-  - Rule: an enforced best practice (`packages/rules`).
-  - Process definition: an automated workflow for an agent (`packages/skills`).
-  - Stack: toolset reference material (`packages/stack`).
-  - Target: an AI tool that rulesync generates config for (e.g. Claude Code, Cursor).
+
+## Terminology
+
+- **Skill**: Agent skill. An automated workflow for an agent (`packages/skills`).
+- **Rule** (also "Article"): Agent rule. An enforced best practice (`packages/rules`). Short AI Rules are generated from full articles.
+- **Stack**: Toolset reference material (`packages/stack`).
+- **Skill Group** (also "Skill Category"): A subdirectory grouping related skills under `packages/skills/src/` (e.g. `generic`, `meta`, `sdlc`, `tools`, `workflows`).
+- **Target**: An AI tool that rulesync generates config for (e.g. Claude Code, Cursor).
 
 ## Structure
 
 - Breakdown:
   - `packages/rules` (`@mind-shaft/rules`): best-practice rule sources.
-  - `packages/skills` (`@mind-shaft/skills`): process definition sources.
+  - `packages/skills` (`@mind-shaft/skills`): skill sources.
   - `packages/stack` (`@mind-shaft/stack`): toolset reference sources.
   - `packages/cli` (`@mind-shaft/cli`, bin `mind-shaft`): installs rules/processes into another project.
   - `ai/`: generated output consumed by the npm package (committed, not hand-edited).
@@ -43,7 +46,9 @@ root: true
 
 ## Ticket tracker
 
-- Platform: none for this repo's own work. Root `TODO.md` tracks internal tasks.
+- Platform: none for this repo's own work. TODOs are used to track internal tasks:
+  - `TODO.md` files: root one, per package, per skill/rule
+  - `README.md`'s `TODO` sections
 
 ## Code quality
 
