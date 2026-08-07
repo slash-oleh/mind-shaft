@@ -1,6 +1,6 @@
 ---
 name: submit-pull-request
-description: Check, clean, polish, and submit changes as a pull request for review. Use when a task is ready to present for integration.
+description: Push a branch and open it as a pull request, drafting its title and description from context. Use when a task is ready to present for integration.
 ---
 
 # Submit Pull Request
@@ -13,94 +13,129 @@ description: Check, clean, polish, and submit changes as a pull request for revi
 
 - `vcs-tools` skill available
 - `scratch` skill available
+- `ticket-tools` skill available
 
-## Phases
+## Input
 
-1. [Gather Info](phases/01-gather-info.md)
-2. [Clean Working Tree](phases/02-clean-working-tree.md)
-3. [Verify Quality](phases/03-verify-quality.md)
-4. [Audit Diff](phases/04-audit-diff.md)
-5. [Cleanup Commits](phases/05-cleanup-commits.md)
-6. [Generate Metadata](phases/06-generate-metadata.md)
-7. [Submit](phases/07-submit.md) (APPROVAL REQUIRED)
+- `branch` (optional): branch to merge. If omitted, resolve to the current branch
+  (`git branch --show-current`).
+- `target_branch` (optional): branch to merge into. If omitted, resolve it from the
+  project's documented convention (e.g. the "Base branch" fact in its `AGENTS.md`),
+  falling back to `main` if undocumented.
+- `draft` (optional): whether to create the PR in draft status. Defaults to `false`.
 
-## Execution
+## Steps
 
-Follow the **Skill Execution Protocol** (see below).
+### Step 1: Resolve branches
 
----
+Resolve `branch` and `target_branch` per the defaults above if not supplied as input.
 
-# Skill Execution Protocol
+### Step 2: Check for existing PR
 
-## Execution Loop
+```
+Skill(skill: "vcs-tools", args: "identify-pr")
+```
 
-For each phase in order:
+If one is found for `branch`, stop and ask the user how to proceed (e.g. update the
+existing PR instead, or abort) - do not create a duplicate.
 
-1. Announce **Phase N/X: <Name>**.
+### Step 3: Assert size
 
-2. Read instructions (from file or section).
+```bash
+git diff --stat <target_branch>..<branch>
+```
 
-3. Execute instructions.
-   - Follow phase steps exactly as defined, in order.
+- Verify diff does not exceed 300 added lines (ideally < 200).
+- If it exceeds 300, warn user and suggest splitting the PR.
 
-4. Verify phase goals are met:
-   - For each item in `## Goal`, explicitly verify and state how it was satisfied.
-   - Do not skip, merge, or adopt goals during verification.
+### Step 4: Push branch
 
-5. Persist phase output (see below).
+```bash
+git push origin <branch>
+```
 
-6. Report **Phase N complete**.
+### Step 5: Get commits
 
-## Data Exchange
+```bash
+git log --no-decorate --oneline <target_branch>..<branch>
+```
 
-Pass data between phases using persistent files:
+Capture as `commits`.
 
-- **Path**: `.cache/skills/<skill_name>/runs/<run_id>/<phase_id>.<ext>`
-  - `<skill_name>`: Hyphenated name of the skill.
-  - `<run_id>`: Ticket ID (e.g. `PROJ-123`) or unique, short hyphenated task summary (e.g. `fix-user-auth`).
-  - `<phase_id>`: Matching phase filename.
-  - `<ext>`: JSON or MD.
+### Step 6: Resolve Ticket ID
 
-- **Format**: JSON for structured data, Markdown for text.
+Infer in priority order from: input, branch name, commit messages, context.
 
-- **Output**: Phase must save results to file before completion.
+Capture as `ticket_id`.
 
-  Create parent directories first:
+### Step 7: Form Description
 
-  ```bash
-  mkdir -p .cache/skills/<skill_name>/runs/<run_id>
-  ```
+Summarize the changes into a PR description.
 
-  JSON example:
+Rules:
 
-  ```bash
-  cat << 'EOF' > .cache/skills/<skill_name>/runs/<run_id>/<phase_id>.json
-  {
-    "key": "value"
-  }
-  EOF
-  ```
+- Check the project's documented convention.
+- Keep it short: no boilerplate, no fluff, no repetitions.
 
-- **Read Input**: Subsequent phases MUST read previous data files for context. Previous phases output is an input for next phases.
+Core details:
 
-  ```bash
-  cat .cache/skills/<skill_name>/runs/<run_id>/<phase_id>.json 2>/dev/null || echo "{}"
-  ```
+- 1-3 sentence intro (explain implementation, approach, or root cause).
+- 2-4 bullets starting with Action Verbs for changes (Add X, Fix Y, Refactor Z).
+- If multiple commits exist, suggest reviewing commits separately with a bulleted list of commits (`- [12abfe42](https://...) Add user auth`).
 
-## Human Approval
+Additional details (all situational):
 
-Require explicit approval before starting phases marked `(APPROVAL REQUIRED)`.
+- Mention what is worth extra attention (e.g., complex logic).
+- Mention what can be skipped (e.g., indentation, generated files, code moved without actual changes).
+- Verification attachments (e.g., screenshots, recordings, logs).
+- Mention related PRs/tickets via IDs/URLs (e.g., PRs dependent on, PRs introducing issue fixed here).
 
-Ask: **"Ready for Phase N: <Name>. Confirm?"**
+Write the description to a scratch file via `scratch`:
 
-If user requests changes, return to the relevant phase.
+```
+Skill(skill: "scratch", args: "write pr-description md")
+```
 
-## Common Rules
+Capture the returned path as `<pr_description_file_path>`.
 
-- **Follow instructions precisely**: Deviate only on explicit user request.
-- **Expected skips**: If phase "Skip Conditions" are defined and met, announce and skip the phase.
-- **Phase sequence**: Maintain sequential order. Do not mix phase actions.
-- **Strict tool usage**: When specific script or command is mentioned - use exactly that. Do not improvise.
-- **Ask, don't guess**: Clarify ambiguity and fix systematically instead of making silent assumptions.
-- **Strict goal verification**: Verification of phase goals is mandatory. Go through every single goal item in `## Goal` section, and verify before completing a phase. Do not omit, rewrite, or generalize goals.
+### Step 8: Resolve Title
 
+Summarize the description into a PR title.
+
+Rules:
+
+- Check the project's documented convention. Fallback to `<ticket_id>: <summary>`.
+- Keep it short: no boilerplate, no fluff, no repetitions.
+- Imperative mood.
+- Single sentence.
+- Contains ticket ID.
+
+Capture as `title`
+
+### Step 9: Create PR
+
+Invoke:
+
+```
+Skill(skill: "vcs-tools", args: "create-pr <title> <pr_description_file_path> <target_branch> <branch> [DRAFT_FLAG]")
+```
+
+`DRAFT_FLAG` is `--draft` if input `draft` is `true`, omitted otherwise.
+
+### Step 10: Update Ticket Status
+
+If `ticket_id` from Step 6 exists:
+
+```
+Skill(skill: "ticket-tools", args: "change-status <ticket_id> code-review")
+```
+
+## Output
+
+JSON format:
+
+```jsonc
+{
+  "prUrl": "string", // The URL of the created Pull Request.
+}
+```
