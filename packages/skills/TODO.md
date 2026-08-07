@@ -10,7 +10,20 @@ Settle on Multi-stage skills vs Multi-skill workflows balance.
 - Standardize cross-skill document shapes and move into shared knowledge (Requirements, Incident, Commits)
 - Unify itemized input processing (carried IDs)
 
-## Drafts
+## Subagent ideas
+
+- `errand-boy`: Run "tools" skills and some of "sdlc" skills (`prepare-workspace`, `create-ticket`, `gather-task`, `gather-merge-blockers`)
+  Simple deterministic tasks, often scripts-heavy one-time command with clear i/o, no semantic analysis, focus on format and syntax.
+  Suggested cheap model / low effort.
+- `effective-manager`: Run "workflow" skills
+  High-level orchestration tasks, mostly multiple skills invoking with carrying i/o in between. Not diving into details and not micro-managing sub-skills with redundant instructions.
+  Suggested cheap model / low effort.
+- `it-depends-dev`+`self-contained-dev`: Run `clarify` skill
+  Two sides/modes:
+  - `it-depends-dev`: default mode where it asks technical questions about the code
+  - `self-contained-dev`: makes best-effort tech decisions and only asks about product
+
+## Draft skills
 
 Ideas for new skills:
 
@@ -62,7 +75,7 @@ Ideas for new skills:
 
 - `security-assessment`: Run whitebox static checks against OWASP top 10. Consider other aspects like dependencies. Consider external knowledgebase source for OWASP but outline the flow, parallelization opportunities, etc.
 
-## 3rd-party
+## 3rd-party skills
 
 Suggest pairing with specific skills, MCPs, CLIs, agent plugins (might end up being part of `stack` package):
 
