@@ -61,7 +61,7 @@ Skill(skill: "feedback-loop", args: "<base_branch>")
 Invoke:
 
 ```
-Skill(skill: "submit-pull-request", args: "")
+Skill(skill: "submit-pull-request", args: "<branch_name> <base_branch>")
 ```
 
 ## Output
