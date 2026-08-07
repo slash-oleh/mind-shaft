@@ -59,6 +59,9 @@ Meta (skills for skills):
 - [`/extract-skill`](ai/skills/extract-skill/SKILL.md): turn a completed task's process into a reusable skill.
 - [`/review-skill`](ai/skills/review-skill/SKILL.md): review a skill, find flaws, suggest fixes.
 - [`/create-dispatcher-skill`](ai/skills/create-dispatcher-skill/SKILL.md): merge a detect skill plus per-backend skills into one dispatcher skill.
+
+Generic (junk drawer):
+
 - [`/project-memo`](ai/skills/project-memo/SKILL.md): maintain root `AGENTS.md` repo cheatsheet.
 - [`/refine-text`](ai/skills/refine-text/SKILL.md): turn a rough draft into finished prose.
 
