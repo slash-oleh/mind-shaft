@@ -32,6 +32,7 @@ Check the skill for:
 
 - Outdated frontmatter
 - Frontmatter `description` not following convention (see below)
+- README.md `Meta info` not following convention (see below)
 - Missing input description
 - Missing output description
 - Missing execution steps (for execution-kind skills)
@@ -54,6 +55,10 @@ A `description` has two clauses, in order:
 Add a third clause only to disambiguate from an adjacent/similarly-named skill: "invoke from `x`", "standalone, or via `y`", "in place of `z` (which is for ...)". Backtick any referenced skill/command name.
 
 Keep the whole thing to 1-3 sentences.
+
+#### README.md convention
+
+The `Meta info` section in README.md states why the skill exists - not what it does or when to use it, both already covered by the frontmatter `description`. Flag it if missing, or if it restates function/trigger instead of rationale (e.g. history, relation to adjacent skills, design tradeoff).
 
 ### Step 3: Report
 

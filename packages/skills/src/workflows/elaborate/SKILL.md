@@ -21,25 +21,34 @@ claudecode:
 
 ## Prerequisites
 
+- `normalize-requirements` skill available
 - `confront` skill available
 - `clarify` skill available
 - `spec` skill available
 
 ## Input
 
-- Raw Requirements: freeform description or structured text, OR an itemized batch (each entry `{id, body}`) - keep each entry's `id` attached through the `confront`/`clarify`/`spec` chain.
+- Raw Requirements: freeform description or structured text, OR an itemized batch (each entry `{id, body}`) - keep each entry's `id` attached through the `normalize-requirements`/`confront`/`clarify`/`spec` chain.
 
 ## Steps
 
-### Step 1: Confront
+### Step 1: Normalize Requirements
 
 Invoke:
 
 ```
-Skill(skill: "confront", args: "<input>")
+Skill(skill: "normalize-requirements", args: "<input>")
 ```
 
-### Step 2: Clarify
+### Step 2: Confront
+
+Invoke:
+
+```
+Skill(skill: "confront", args: "<requirements>")
+```
+
+### Step 3: Clarify
 
 Invoke:
 
@@ -47,7 +56,7 @@ Invoke:
 Skill(skill: "clarify", args: "<requirements> <codebase> <challenge> <concerns>")
 ```
 
-### Step 3: Spec
+### Step 4: Spec
 
 Invoke:
 

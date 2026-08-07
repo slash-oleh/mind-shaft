@@ -14,36 +14,19 @@ claudecode:
 
 ## Goal
 
-- Requirements structured as sections, with no initial information lost.
 - Codebase alignment identified.
 - Each challenging question answered.
 - Concerns list covers every red-flag answer.
 
 ## Input
 
-- Task requirements: freeform description or structured text. May be a single requirement, or an itemized batch (each with its own `id`) - keep `id` attached throughout.
+- Requirements: Structured document, should be itemized with `id` attached to each item.
 
 ## Steps
 
-If the input is itemized, repeat Steps 2-3 per item, keyed by `id`.
+If the input is itemized, repeat Steps 1-2 per item, keyed by `id`.
 
-### Step 1: Normalize Requirements
-
-Check the existing requirements sections against the Three Cs:
-
-- Correctness
-- Completeness
-- Consistency
-
-Structure the input as sections:
-
-- **Core goal**: Identify the essential problem to solve, beyond the directly proposed solution.
-- **Description**: What is currently specified about the task (freeform narrative).
-- **Items**: List of `{id, body}` entries - do not collapse them into the Description narrative. If the input is itemized (multiple discrete entries, each with its own ID), one entry per input item, keeping its ID. Otherwise, a single entry with `id: null` and `body` the whole input.
-- **Scope**: Identify the bounds of the task: what's included, and what's implied to be handled separately (already done, in parallel, or later).
-- **Criteria**: Acceptance criteria and Definition of Done for the task.
-
-### Step 2: Review Codebase
+### Step 1: Review Codebase
 
 Inspect the existing implementation for related functionality to outline:
 
@@ -52,7 +35,7 @@ Inspect the existing implementation for related functionality to outline:
 - **Regression risks**: Spot regression risks in shared code or core paths.
 - **Affected modules**: Identify directories/files likely affected.
 
-### Step 3: Challenge Requirements
+### Step 2: Challenge Requirements
 
 Answer each topic's question below - a positive answer is a red flag.
 
@@ -71,7 +54,7 @@ Answer each topic's question below - a positive answer is a red flag.
 9. **Contradictory statements**: Are there contradictory statements?
 10. **Business logic conflicts**: Does it misuse existing architecture or patterns?
 
-### Step 4: Formulate Concerns
+### Step 3: Formulate Concerns
 
 Each positive answer from the previous step can raise multiple concerns, against one or several Items. For each concern outline:
 
@@ -96,12 +79,6 @@ If relevant, come up with additional concerns besides those coming from question
 
 Markdown format, one top-level structure, entries tagged `- Item: {Item X}`. When input was itemized, `Codebase` and `Challenge` each list one entry per item; `Concerns` lists one entry per concern (an item may raise several, or none).
 
-- Requirements
-  - Core goal
-  - Description
-  - Items
-  - Scope
-  - Criteria
 - Codebase
   - Item: {Item X}
   - Similar patterns

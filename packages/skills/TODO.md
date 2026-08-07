@@ -45,8 +45,6 @@
 
 - `regroup-commits`: Split big ones into smaller cohesive ones. Squash non-cohesive ones. Keep commits non-breaking in between.
 
-- `normalize-requirements`: Split from `confront`
-
 - `normalize-bug-report`: Split from `investigate`
 
 - `inspect-codebase`: Split from `elaborate` and `investigate`

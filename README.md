@@ -17,6 +17,7 @@ SDLC (atomic development processes - full control):
 - [`/create-ticket`](ai/skills/create-ticket/SKILL.md): draft a structured ticket from stream of consciousness.
 - [`/gather-task`](ai/skills/gather-task/SKILL.md): collect ticket, design, and codebase info for a task.
 - [`/prepare-workspace`](ai/skills/prepare-workspace/SKILL.md): set up branch and git state for a task.
+- [`/normalize-requirements`](ai/skills/normalize-requirements/SKILL.md): structure raw requirements into sections.
 - [`/confront`](ai/skills/confront/SKILL.md): critically examine a spec against the codebase, raise concerns.
 - [`/investigate`](ai/skills/investigate/SKILL.md): trace a bug/incident to root cause, propose a fix.
 - [`/clarify`](ai/skills/clarify/SKILL.md): resolve open concerns with the user, update requirements.
@@ -32,7 +33,7 @@ SDLC (atomic development processes - full control):
 Workflows (common chains of other skills - hands-off):
 
 - [`/elaborate`](ai/skills/elaborate/SKILL.md): raw requirements to change spec.
-  - `confront` -> `clarify` -> `spec`
+  - `normalize-requirements` -> `confront` -> `clarify` -> `spec`
 - [`/prescribe`](ai/skills/prescribe/SKILL.md): raw incident to fix spec.
   - `investigate` -> `clarify` -> `spec`
 - [`/perform-task`](ai/skills/perform-task/SKILL.md): raw requirements/incident to committed change/fix.
