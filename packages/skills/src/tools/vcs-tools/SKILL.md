@@ -1,7 +1,7 @@
 ---
 title: SKILL.md
 name: vcs-tools
-description: Pull/merge request data and operations for the repo's Git hosting platform (GitHub via `gh`, GitLab via `glab`), autodetected from the origin remote. Use directly when the user asks to inspect or act on a PR/MR, or invoke as a unit (Skill tool) from another skill's phase - never by running its scripts directly.
+description: Perform pull/merge request data and operations against the repo's Git hosting platform (GitHub via `gh`, GitLab via `glab`), autodetected from the origin remote. Use directly when the user asks to inspect or act on a PR/MR, or invoke as a unit (Skill tool) from another skill's phase - never by running its scripts directly.
 claudecode:
   context: fork
   background: false
@@ -22,6 +22,8 @@ claudecode:
 ## Commands
 
 Invoked with an args string of `<command> [...args]`. Resolve the platform first, then run the matching script with `$SKILL_DIR` (this skill's own directory), and return its output verbatim.
+
+## Steps
 
 ### Step 1: Resolve platform
 

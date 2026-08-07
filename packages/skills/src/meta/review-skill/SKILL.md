@@ -45,6 +45,7 @@ Check the skill for:
 - Reference mismatches: variables, names, scripts, paths, etc.
 
 Classify each concern's severity on an absolute scale, not relative to what else was found - do not inflate a minor, unclear flaw into a major one just because the skill is otherwise clean. Do not invent issues that are not there.
+Assign each concern a numeric ID.
 
 #### Frontmatter description convention
 

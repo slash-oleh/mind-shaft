@@ -1,7 +1,7 @@
 ---
 title: SKILL.md
 name: ticket-tools
-description: Ticket operations (create, update description, change status, comment) for the project's issue tracker, autodetected where possible. Jira via the Atlassian MCP only for now. Use directly when the user asks to create/update/transition/comment on a ticket, or invoke as a unit (Skill tool) from another skill's phase - never call tracker-specific tools (e.g. `*JiraIssue`) directly.
+description: Perform ticket operations (create, get, update description, change status, comment) against the project's issue tracker, autodetected where possible. Jira via the Atlassian MCP only for now. Use directly when the user asks to create/update/transition/comment on a ticket, or invoke as a unit (Skill tool) from another skill's phase - never call tracker-specific tools (e.g. `*JiraIssue`) directly.
 claudecode:
   context: fork
   background: false
@@ -17,54 +17,64 @@ claudecode:
 
 ## Prerequisites
 
-- A supported tracker backend configured. Only Jira (via the Atlassian MCP) is supported for now.
+- A tracker platform supported by this skill - one with a subfolder under `platforms/` - is configured for the project.
+- The platform's own tooling prerequisite, stated under `## Prerequisites` in `platforms/<platform>/mapping.md`, is met.
 
-## Commands
+## Invocation
 
-Invoked with an args string of `<command> [...args]`. Resolve the platform first, then follow the matching backend recipe under `scripts/<platform>/`.
+Invoked with an args string of `<command> [...args]`. Resolve the platform first, then follow the matching recipe under `platforms/<platform>/`.
+
+## Rules
+
+### Lazy resolution
+
+Resolve platform and every platform-specific value - field names, enum values, project and site identifiers - in this order:
+
+1. A "cached" value provided directly, checked in order: prompt, context, memory, other skills, project documentation.
+2. Only if none of those provide it, fall back to the resolution defined in the platform mapping.
+
+## Steps
 
 ### Step 1: Resolve platform
 
-Only `jira` exists today, so this step is a no-op - skip straight to Step 2. Once a second backend exists, add real detection here (likely infer from context/memory).
+Match the tracker platform used by the project against the subfolder names under this skill's `platforms/` folder. If no subfolder matches, stop and report that the platform is not supported.
 
-### Step 2: Run the command
+### Step 2: Load platform knowledge
 
-Follow the recipe at `scripts/<platform>/<command>.md`, e.g. `scripts/jira/create.md`. Command shapes below are backend-agnostic; each recipe fills in the actual tool calls.
+Load and remember `ticket-shape.md`, which defines the abstract fields and values.
 
-#### `create <PROJECT_KEY> <TITLE> <DESCRIPTION_FILE> [TYPE] [PARENT] [FIELDS_JSON]`
+Load and remember `platforms/<platform>/mapping.md` (the "mapping"), which defines the platform specifics - mainly the field mapping between abstract and platform naming.
 
-Pure mechanical create - field/content guidance (title conventions, description structure, bug template) lives in whichever skill calls this one (e.g. `create-ticket`), not here.
+Check the mapping's `## Prerequisites` before any command call. If it is not met, stop and report it as the mapping states, without attempting the command.
 
-`DESCRIPTION_FILE` is a path to a plain text file containing the description. `TYPE` defaults to the backend's default task type if unspecified. `FIELDS_JSON` is an optional JSON object for backend-specific extras (assignee, sprint, priority, labels, custom fields) - forwarded to the recipe as-is; omit keys that don't apply.
+### Step 3: Map input
 
-Report the created ticket URL. If creation failed, explain the reason and retry with corrected fields.
+Use the mapping to resolve the abstract field names provided for the command (`TICKET_ID`, `TITLE`, `DESCRIPTION`, `STATUS`, `TYPE`, `ASSIGNEE`, `PRIORITY`, `PARENT`), and their values where relevant, to their platform-specific equivalents.
+
+`CUSTOM_FIELDS_JSON` is not an abstract field and is not mapped by name. It is a JSON object whose keys are platform field names (as shown in the tracker UI, e.g. `Sprint`) or native field IDs, and whose values are already platform-native (e.g. `"current"`, `{ "id": "42" }`). Resolve each key to its native field ID through the mapping's custom-field resolution, and pass every value through verbatim.
+
+### Step 4: Run the command
+
+Follow the recipe at `platforms/<platform>/<command>.md`. The command shapes below are platform-agnostic; each recipe fills in the actual tool calls.
+
+All commands accept the mapped field names and values from Step 3. Arguments ending in `_FILE` are paths to files holding the corresponding text.
+
+#### `create <TITLE> <DESCRIPTION_FILE> <TYPE> <STATUS> <ASSIGNEE> <PRIORITY> <PARENT> <CUSTOM_FIELDS_JSON>`
+
+Report the created ticket URL.
+
+#### `get <TICKET_ID>`
+
+Report the ticket fields.
 
 #### `update-description <TICKET_ID> <DESCRIPTION_FILE>`
 
-Same `DESCRIPTION_FILE` convention as `create`.
-
-#### `change-status <TICKET_ID> <ABSTRACT_STATUS>`
-
-`ABSTRACT_STATUS` is one of the Abstract Statuses below. The recipe maps this to the project's actual workflow status name, matching against that table - infer that mapping lazily, only when this command runs. Some workflows skip `acceptance` and go straight from `code-review` to `done` - that is expected, not an error.
+#### `change-status <TICKET_ID> <STATUS>`
 
 #### `comment <TICKET_ID> <BODY_FILE>`
 
-`BODY_FILE` is a path to a plain text file containing the comment.
+Report the posted comment URL.
 
-## Shared Patterns
+### Step 5: Map output
 
-### Abstract Statuses
-
-Ticket workflows use different status names per project/tracker, but callers of `change-status` should not need to know them. Use one of these abstract statuses instead:
-
-| Abstract status | Common workflow status names |
-| --- | --- |
-| `to-do` | To Do, New, Backlog, Ready for Development |
-| `in-progress` | In Progress, In Development |
-| `code-review` | Code Review, Review, In Review, Ready for Review |
-| `acceptance` | Acceptance, Testing, Test, In Testing, Ready to Test, Product Review |
-| `done` | Done, Closed, Resolved |
-
-### Markdown bodies
-
-Descriptions go in as Markdown with `contentFormat: "markdown"` (`##` headings, `-`/`1.` lists) - Jira converts to ADF. Avoid wiki markup (`h2.`, `#`).
+Use the same mapping to resolve platform-specific fields back to abstract ones for output.

@@ -21,70 +21,55 @@ claudecode:
 
 - `ticket-tools` skill available
 - `scratch` skill available
+- `normalize-bug-report` skill available
 
 ## Input
 
 Source: Freeform text.
 
-## Before creating
+## Steps
 
-Gather target project required fields. Common fields:
+### Step 1: Resolve Fields
 
-1. **Title** - see guidelines below.
-2. **Description** - see guidelines below.
-3. **Type** - Story, Task, Bug, Sub-task, or system equivalent.
-4. **Parent** - Epic or grouping context; ask if required by target project.
-5. **Assignee** - assign to self, user, or project default.
-6. **Sprint** - none (backlog), current, or future.
-7. **Priority** - Low, Medium, High, or system equivalent.
-8. **Metadata** - project or system dependent custom fields like Team, Labels.
+- `type`: `feature` or `bug` - infer from source
+- `status`: `default` - constant unless stated otherwise
+- `assignee`: `default` - constant unless stated otherwise
+- `priority`: `default` unless the source states one, then `low`, `normal`, `high`, `urgent` or `immediate`
+- `parent`: `none` unless the source names an enclosing ticket, then its ID
+- `custom_fields_json` - Any remaining tracker-specific info (e.g. `{"Sprint": "current"}`). Keys are tracker field names or native field IDs, values are tracker-native and passed through unchanged. `{}` when there is none.
 
-If details already provided, proceed without asking.
+### Step 2: Form Description
 
-### Title Guidelines
+If type is `feature`, invoke:
 
-- Concise
-- Must focus on the goal, not the solution.
-- For features/tasks: imperative mood.
-- For bugs: describe the current state (the issue), not the desired behavior or proposed fix.
+```
+Skill(skill: "normalize-requirements", args: "<source>")
+```
 
-### Description Guidelines
+If type is `bug`, invoke:
 
-Write structured, developer-friendly descriptions:
+```
+Skill(skill: "normalize-bug-report", args: "<source>")
+```
 
-- **Tone**: Professional, objective, direct.
+For either type:
 
-- **Focus**: Focus on the problem and the goal, not the proposed solution. For bugs, describe the issue, not the fix.
+Extract and capture their `Title` as `title`.
 
-- **Details**: Sufficient for immediate implementation without extra clarification.
-
-- **Structure**:
-  - Paragraphs for logical context.
-  - Lists for requirements, tasks, or options.
-  - Code blocks for logs, code snippets, configs, or command outputs.
-  - References or links to files, pull requests, docs, or other tickets.
-
-### Bug Description Template
-
-If type is **Bug**, description MUST include:
-
-- **Pre-conditions**: Required system state, environment, user account, or configuration.
-- **Steps to Reproduce (STR)**: Numbered actions triggering the bug.
-- **Actual Result (AR)**: Incorrect behavior with error logs or messages.
-- **Expected Result (ER)**: Correct expected behavior.
-
-## Create
-
-Once fields are gathered, write the description to a scratch file via `scratch`:
+Write the rest of the output to a scratch file:
 
 ```
 Skill(skill: "scratch", args: "write ticket-description md")
 ```
 
-Pass the returned path as `<description_file_path>` to `ticket-tools`. Fold Assignee, Sprint, Priority, and Metadata into `FIELDS_JSON`, e.g. `{"assignee": "self", "priority": "High", "labels": ["bug"]}` - omit keys that don't apply:
+Capture the output path as `<description_file_path>`.
+
+### Step 3: Create ticket
+
+Invoke:
 
 ```
-Skill(skill: "ticket-tools", args: "create <PROJECT_KEY> <TITLE> <description_file_path> [TYPE] [PARENT] [FIELDS_JSON]")
+Skill(skill: "ticket-tools", args: "create <title> <description_file_path> <type> <status> <assignee> <priority> <parent> <custom_fields_json>")
 ```
 
 ## Output
