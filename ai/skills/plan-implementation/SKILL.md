@@ -3,7 +3,7 @@ name: plan-implementation
 description: Produce an ordered, file-level implementation plan from spec. Use after `spec`, before `implement`.
 claudecode:
   context: fork
-  background: false
+  background: true
   argument-hint: "[requirements] [spec] [fixup_mode]"
   arguments:
     - "requirements"

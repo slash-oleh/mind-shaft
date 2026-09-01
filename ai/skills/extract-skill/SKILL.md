@@ -3,7 +3,7 @@ name: extract-skill
 description: Extract process knowledge from conversation actions and outcomes into a reusable skill. Use when asked to create a skill based on recently performed work.
 claudecode:
   context: fork
-  background: false
+  background: true
   argument-hint: ""
   arguments: []
 ---

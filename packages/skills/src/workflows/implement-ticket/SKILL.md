@@ -4,7 +4,7 @@ name: implement-ticket
 description: Take a ticket from raw description through to a submitted pull request - gather context, prepare a branch, implement, then submit. Use when starting fresh work on a ticket.
 claudecode:
   context: fork
-  background: false
+  background: true
   argument-hint: "[source]"
   arguments:
     - "source"

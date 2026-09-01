@@ -3,7 +3,7 @@ name: review-skill
 description: Review a skill to identify flaws and suggest fixes. Use when auditing an existing skill for gaps, drift, or convention violations.
 claudecode:
   context: fork
-  background: false
+  background: true
   argument-hint: "[skill]"
   arguments:
     - "skill"

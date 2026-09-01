@@ -4,7 +4,7 @@ name: ship-task
 description: Merge an approved PR, verify the shipped result, and report it back to the ticket. Use when a task's pull request is approved and ready to ship.
 claudecode:
   context: fork
-  background: false
+  background: true
   argument-hint: ""
   arguments: []
 ---

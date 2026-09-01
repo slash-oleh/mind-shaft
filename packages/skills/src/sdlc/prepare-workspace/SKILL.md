@@ -4,7 +4,7 @@ name: prepare-workspace
 description: Prepare a clean local feature branch and git state for a task, and switch the ticket to In Progress. Use when beginning work on a ticket.
 claudecode:
   context: fork
-  background: false
+  background: true
   model: haiku
   effort: low
   argument-hint: "[ticket_id] [title] [followup_context]"

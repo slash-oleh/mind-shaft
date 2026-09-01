@@ -3,7 +3,7 @@ name: normalize-bug-report
 description: Structure a freeform bug report into sections. Use in `prescribe` before `investigate`, or standalone whenever a raw bug report needs structuring.
 claudecode:
   context: fork
-  background: false
+  background: true
   argument-hint: "[raw_bug_report]"
   arguments:
     - "raw_bug_report"

@@ -3,7 +3,7 @@ name: create-ticket
 description: Create a structured ticket in the project management system. Use when user requests ticket or issue creation.
 claudecode:
   context: fork
-  background: false
+  background: true
   model: haiku
   effort: low
   argument-hint: "[source]"
