@@ -3,9 +3,6 @@
   "targets": ["cursor", "claudecode", "antigravity-ide", "agentsmd"],
   "features": ["rules", "skills"],
   "delete": false,
-  // Declarative skill sources — installed via 'rulesync install'
-  "sources": [
-    { "source": "JuliusBrussee/caveman" },
-    { "source": "slash-oleh/mind-shaft:ai/skills" }
-  ]
+  // Declarative skill sources - installed via 'rulesync install'
+  "sources": []
 }

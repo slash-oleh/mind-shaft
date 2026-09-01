@@ -20,7 +20,7 @@
     "spellcheck": "cspell lint \"**/*.{md,js,ts,json,yml}\"",
     "rules:generate:ai": "npm run build:ai -w @mind-shaft/rules && rm -rf ai/rules && mkdir -p ai/rules && cp -r packages/rules/dist/ai/* ai/rules/",
     "skills:generate:ai": "npm run build:ai -w @mind-shaft/skills && rm -rf ai/skills && mkdir -p ai/skills && cp -r packages/skills/dist/ai/* ai/skills/",
-    "agents:sync": "rulesync install && rulesync generate"
+    "agents:sync": "npm run skills:generate:ai && rm -rf .rulesync/skills/.curated && cp -R ai/skills .rulesync/skills/.curated && rulesync install --update && rulesync generate"
   },
   "type": "module",
   "dependencies": {
