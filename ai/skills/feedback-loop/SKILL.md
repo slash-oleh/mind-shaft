@@ -2,7 +2,6 @@
 name: feedback-loop
 description: Get user sign-off on a set of commits, routing any requested changes through fix-feedback until confirmed, then autosquash resulting fixups. Use before a batch of commits is finalized (pushed, submitted as a PR) whenever the caller wants a human confirmation step first.
 claudecode:
-  context: fork
   background: true
   argument-hint: "[target_branch]"
   arguments:
@@ -43,7 +42,11 @@ If the user confirms, go to Step 3.
 Otherwise, wrap the feedback as a single item and invoke:
 
 ```
-Skill(skill: "fix-feedback", args: "fixup mode. {id: 'feedback-loop-<n>', body: '<feedback text>'}")
+Agent(
+  subagent_type: "fork",
+  description: "Fix feedback",
+  prompt: "Invoke Skill(skill: \"fix-feedback\", args: \"fixup mode. {id: 'feedback-loop-<n>', body: '<feedback text>'}\"). Return its Output verbatim."
+)
 ```
 
 `n` is this skill's iteration count (starts at 1, increments per round).

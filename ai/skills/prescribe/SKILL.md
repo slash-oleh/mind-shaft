@@ -2,7 +2,6 @@
 name: prescribe
 description: Turn an incident/bug investigation into a compiled solution spec - trace root cause, resolve open concerns, then draft testable success criteria. Use as investigate's counterpart to elaborate, before implementation starts on a bug fix.
 claudecode:
-  context: fork
   background: true
   argument-hint: "[raw_bug_report]"
   arguments:
@@ -36,7 +35,11 @@ claudecode:
 Invoke:
 
 ```
-Skill(skill: "normalize-bug-report", args: "<raw_bug_report>")
+Agent(
+  subagent_type: "fork",
+  description: "Normalize bug report",
+  prompt: "Invoke Skill(skill: \"normalize-bug-report\", args: \"<raw_bug_report>\"). Return its Output verbatim."
+)
 ```
 
 ### Step 2: Investigate
@@ -44,7 +47,11 @@ Skill(skill: "normalize-bug-report", args: "<raw_bug_report>")
 Invoke:
 
 ```
-Skill(skill: "investigate", args: "<bug_report>")
+Agent(
+  subagent_type: "fork",
+  description: "Investigate",
+  prompt: "Invoke Skill(skill: \"investigate\", args: \"<bug_report>\"). Return its Output verbatim."
+)
 ```
 
 ### Step 3: Clarify
@@ -52,7 +59,11 @@ Skill(skill: "investigate", args: "<bug_report>")
 Invoke:
 
 ```
-Skill(skill: "clarify", args: "<incident> <investigate_report> <codebase> <concerns>")
+Agent(
+  subagent_type: "fork",
+  description: "Clarify",
+  prompt: "Invoke Skill(skill: \"clarify\", args: \"<incident> <investigate_report> <codebase> <concerns>\"). Return its Output verbatim."
+)
 ```
 
 ### Step 4: Spec
@@ -60,7 +71,11 @@ Skill(skill: "clarify", args: "<incident> <investigate_report> <codebase> <conce
 Invoke:
 
 ```
-Skill(skill: "spec", args: "<incident> <updated_investigate_report> <addressed_concerns>")
+Agent(
+  subagent_type: "fork",
+  description: "Spec",
+  prompt: "Invoke Skill(skill: \"spec\", args: \"<incident> <updated_investigate_report> <addressed_concerns>\"). Return its Output verbatim."
+)
 ```
 
 ## Output

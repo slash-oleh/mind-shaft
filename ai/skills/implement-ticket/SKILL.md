@@ -2,7 +2,6 @@
 name: implement-ticket
 description: Take a ticket from raw description through to a submitted pull request - gather context, prepare a branch, implement, then submit. Use when starting fresh work on a ticket.
 claudecode:
-  context: fork
   background: true
   argument-hint: "[source]"
   arguments:
@@ -34,7 +33,11 @@ claudecode:
 Invoke:
 
 ```
-Skill(skill: "gather-task", args: "<source>")
+Agent(
+  subagent_type: "fork",
+  description: "Gather task",
+  prompt: "Invoke Skill(skill: \"gather-task\", args: \"<source>\"). Return its Output verbatim."
+)
 ```
 
 ### Step 2: Prepare workspace
@@ -42,7 +45,11 @@ Skill(skill: "gather-task", args: "<source>")
 Invoke:
 
 ```
-Skill(skill: "prepare-workspace", args: "<ticket_id> <title>")
+Agent(
+  subagent_type: "fork",
+  description: "Prepare workspace",
+  prompt: "Invoke Skill(skill: \"prepare-workspace\", args: \"<ticket_id> <title>\"). Return its Output verbatim."
+)
 ```
 
 ### Step 3: Perform task
@@ -50,7 +57,11 @@ Skill(skill: "prepare-workspace", args: "<ticket_id> <title>")
 Invoke:
 
 ```
-Skill(skill: "perform-task", args: "<gather_task_output>")
+Agent(
+  subagent_type: "fork",
+  description: "Perform task",
+  prompt: "Invoke Skill(skill: \"perform-task\", args: \"<gather_task_output>\"). Return its Output verbatim."
+)
 ```
 
 ### Step 4: Confirm changes
@@ -58,7 +69,11 @@ Skill(skill: "perform-task", args: "<gather_task_output>")
 Invoke:
 
 ```
-Skill(skill: "feedback-loop", args: "<base_branch>")
+Agent(
+  subagent_type: "fork",
+  description: "Feedback loop",
+  prompt: "Invoke Skill(skill: \"feedback-loop\", args: \"<base_branch>\"). Return its Output verbatim."
+)
 ```
 
 ### Step 5: Submit
@@ -66,7 +81,11 @@ Skill(skill: "feedback-loop", args: "<base_branch>")
 Invoke:
 
 ```
-Skill(skill: "submit-pull-request", args: "<branch_name> <base_branch>")
+Agent(
+  subagent_type: "fork",
+  description: "Submit pull request",
+  prompt: "Invoke Skill(skill: \"submit-pull-request\", args: \"<branch_name> <base_branch>\"). Return its Output verbatim."
+)
 ```
 
 ## Output

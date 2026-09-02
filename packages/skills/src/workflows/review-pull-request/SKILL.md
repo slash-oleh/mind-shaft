@@ -3,7 +3,6 @@ title: SKILL.md
 name: review-pull-request
 description: Review a pull request end-to-end - fetch its info and diff, run the code review, and publish the result back to the VCS platform. Use when asked to review a PR/MR. For an ad-hoc/local diff (not a PR), use review-code directly.
 claudecode:
-  context: fork
   background: true
   argument-hint: "[pr_identifier]"
   arguments:
@@ -72,7 +71,11 @@ If any check fails, ask user how to proceed.
 Invoke:
 
 ```
-Skill(skill: "review-code", args: "<diff_file> --title <title> --description <description>")
+Agent(
+  subagent_type: "fork",
+  description: "Review code",
+  prompt: "Invoke Skill(skill: \"review-code\", args: \"<diff_file> --title <title> --description <description>\"). Return its Output verbatim."
+)
 ```
 
 Capture `general_review_body`, `state` (`"APPROVE"`, `"REQUEST_CHANGES"`, or `"COMMENT"`), and `comments` from its output.

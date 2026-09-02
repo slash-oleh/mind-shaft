@@ -2,7 +2,6 @@
 name: resolve-conflicts
 description: Rebase a local branch onto a target branch and resolve any conflicts, regenerating lockfiles where possible and escalating ambiguous cases. Use for local conflicts on any branch, or invoke from fix-pull-request.
 claudecode:
-  context: fork
   background: true
   argument-hint: "[target_branch]"
   arguments:

@@ -2,7 +2,6 @@
 name: implement
 description: Execute an implementation plan through to a verified, committed code change. Use after `plan-implementation` produces the ordered `Stages` plan.
 claudecode:
-  context: fork
   background: true
   argument-hint: "[stages] [fixup_mode]"
   arguments:

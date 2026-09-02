@@ -3,7 +3,6 @@ title: SKILL.md
 name: normalize-requirements
 description: Structure a freeform or itemized task requirement into sections. Use as the first step before codebase review and challenge (e.g. in `confront`), or standalone whenever raw requirements need structuring.
 claudecode:
-  context: fork
   background: true
   argument-hint: "[raw_requirements]"
   arguments:

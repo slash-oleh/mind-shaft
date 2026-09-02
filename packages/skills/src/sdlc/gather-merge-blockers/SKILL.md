@@ -3,7 +3,6 @@ title: SKILL.md
 name: gather-merge-blockers
 description: Fetch and order everything blocking a pull request from merging - conflicts, CI failures, and open comment threads. Use standalone for merge-readiness triage, or invoke from fix-pull-request.
 claudecode:
-  context: fork
   background: true
   effort: low
   argument-hint: "[pr_number]"

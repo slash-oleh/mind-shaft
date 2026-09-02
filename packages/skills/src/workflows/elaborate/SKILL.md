@@ -3,7 +3,6 @@ title: SKILL.md
 name: elaborate
 description: Analyze a task specification, review the codebase, and output a detailed assessment and success criteria. Use when user provides a new ticket or description to understand scope, risks, and definition of done before implementation.
 claudecode:
-  context: fork
   background: true
   argument-hint: "[raw_requirements]"
   arguments:
@@ -37,7 +36,11 @@ claudecode:
 Invoke:
 
 ```
-Skill(skill: "normalize-requirements", args: "<raw_requirements>")
+Agent(
+  subagent_type: "fork",
+  description: "Normalize requirements",
+  prompt: "Invoke Skill(skill: \"normalize-requirements\", args: \"<raw_requirements>\"). Return its Output verbatim."
+)
 ```
 
 ### Step 2: Confront
@@ -45,7 +48,11 @@ Skill(skill: "normalize-requirements", args: "<raw_requirements>")
 Invoke:
 
 ```
-Skill(skill: "confront", args: "<requirements>")
+Agent(
+  subagent_type: "fork",
+  description: "Confront",
+  prompt: "Invoke Skill(skill: \"confront\", args: \"<requirements>\"). Return its Output verbatim."
+)
 ```
 
 ### Step 3: Clarify
@@ -53,7 +60,11 @@ Skill(skill: "confront", args: "<requirements>")
 Invoke:
 
 ```
-Skill(skill: "clarify", args: "<requirements> <codebase> <challenge> <concerns>")
+Agent(
+  subagent_type: "fork",
+  description: "Clarify",
+  prompt: "Invoke Skill(skill: \"clarify\", args: \"<requirements> <codebase> <challenge> <concerns>\"). Return its Output verbatim."
+)
 ```
 
 ### Step 4: Spec
@@ -61,7 +72,11 @@ Skill(skill: "clarify", args: "<requirements> <codebase> <challenge> <concerns>"
 Invoke:
 
 ```
-Skill(skill: "spec", args: "<updated_requirements> <addressed_concerns>")
+Agent(
+  subagent_type: "fork",
+  description: "Spec",
+  prompt: "Invoke Skill(skill: \"spec\", args: \"<updated_requirements> <addressed_concerns>\"). Return its Output verbatim."
+)
 ```
 
 ## Output

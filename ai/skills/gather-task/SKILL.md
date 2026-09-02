@@ -2,9 +2,7 @@
 name: gather-task
 description: Collect raw info about a task - ticket details, linked design/docs, and relevant codebase context. Use as the first step before preparing a workspace, elaborating, or implementing a task.
 claudecode:
-  context: fork
   background: true
-  model: haiku
   effort: low
   argument-hint: "[source]"
   arguments:

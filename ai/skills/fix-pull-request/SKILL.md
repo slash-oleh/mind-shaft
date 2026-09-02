@@ -2,7 +2,6 @@
 name: fix-pull-request
 description: Address pull request review comments, conflicts, and CI failures. Use when a PR needs unblocking.
 claudecode:
-  context: fork
   background: true
   argument-hint: "[pr_identifier]"
   arguments:
@@ -50,7 +49,11 @@ Capture `pr_number` from its output, and reuse this value for the rest of this s
 Invoke:
 
 ```
-Skill(skill: "gather-merge-blockers", args: "<pr_number>")
+Agent(
+  subagent_type: "fork",
+  description: "Gather merge blockers",
+  prompt: "Invoke Skill(skill: \"gather-merge-blockers\", args: \"<pr_number>\"). Return its Output verbatim."
+)
 ```
 
 Capture `url`, `source_branch`, `target_branch`, `merge_state`, `ci_failures`, `reviews`, and `threads` from its output, and reuse these values for the rest of this skill instead of re-deriving them.
@@ -62,7 +65,11 @@ If `merge_state` (captured in Step 2) is not `CONFLICTING`, skip this step.
 Invoke:
 
 ```
-Skill(skill: "resolve-conflicts", args: "<target_branch>")
+Agent(
+  subagent_type: "fork",
+  description: "Resolve conflicts",
+  prompt: "Invoke Skill(skill: \"resolve-conflicts\", args: \"<target_branch>\"). Return its Output verbatim."
+)
 ```
 
 This may force-push without Step 6's gate - intentional, since
@@ -86,7 +93,11 @@ From each item in `ci_failures`, form a single task in `perform-task`'s item sha
 Invoke:
 
 ```
-Skill(skill: "perform-task", args: "<ci_tasks>")
+Agent(
+  subagent_type: "fork",
+  description: "Perform task",
+  prompt: "Invoke Skill(skill: \"perform-task\", args: \"<ci_tasks>\"). Return its Output verbatim."
+)
 ```
 
 ### Step 5: Address Threads
@@ -101,7 +112,11 @@ Map `threads` and `reviews` (from `gather-merge-blockers`) into `fix-feedback`'s
 Invoke:
 
 ```
-Skill(skill: "fix-feedback", args: "fixup mode. <items>")
+Agent(
+  subagent_type: "fork",
+  description: "Fix feedback",
+  prompt: "Invoke Skill(skill: \"fix-feedback\", args: \"fixup mode. <items>\"). Return its Output verbatim."
+)
 ```
 
 ### Step 6: Confirm and squash fixups
@@ -111,7 +126,11 @@ If Steps 4 and 5 made no changes and Step 3 was skipped, skip this step.
 Invoke:
 
 ```
-Skill(skill: "feedback-loop", args: "<target_branch>")
+Agent(
+  subagent_type: "fork",
+  description: "Feedback loop",
+  prompt: "Invoke Skill(skill: \"feedback-loop\", args: \"<target_branch>\"). Return its Output verbatim."
+)
 ```
 
 ### Step 7: Push to remote

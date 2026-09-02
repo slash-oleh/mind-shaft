@@ -2,9 +2,7 @@
 name: create-ticket
 description: Create a structured ticket in the project management system. Use when user requests ticket or issue creation.
 claudecode:
-  context: fork
   background: true
-  model: haiku
   effort: low
   argument-hint: "[source]"
   arguments:
@@ -43,13 +41,21 @@ Source: Freeform text.
 If type is `feature`, invoke:
 
 ```
-Skill(skill: "normalize-requirements", args: "<source>")
+Agent(
+  subagent_type: "fork",
+  description: "Normalize requirements",
+  prompt: "Invoke Skill(skill: \"normalize-requirements\", args: \"<source>\"). Return its Output verbatim."
+)
 ```
 
 If type is `bug`, invoke:
 
 ```
-Skill(skill: "normalize-bug-report", args: "<source>")
+Agent(
+  subagent_type: "fork",
+  description: "Normalize bug report",
+  prompt: "Invoke Skill(skill: \"normalize-bug-report\", args: \"<source>\"). Return its Output verbatim."
+)
 ```
 
 For either type:

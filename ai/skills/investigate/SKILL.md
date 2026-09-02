@@ -2,7 +2,6 @@
 name: investigate
 description: Detective work on an incident, bug, error, or performance regression - reproduce it, trace it to root cause, and propose a fix. Use before planning or implementing a bug ticket, in place of `confront` (which is for feature specs, not incidents).
 claudecode:
-  context: fork
   background: true
   argument-hint: "[bug_report]"
   arguments:

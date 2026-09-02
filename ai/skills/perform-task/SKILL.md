@@ -2,7 +2,6 @@
 name: perform-task
 description: Turn a requirements/incident description into a verified, committed code change - classifying bug-like vs feature-like scope, planning, then implementing. Use as the shared core of implement-ticket and fix-feedback.
 claudecode:
-  context: fork
   background: true
   argument-hint: "[requirements] [fixup]"
   arguments:
@@ -47,7 +46,11 @@ If the feature-like group is empty, skip this step.
 Invoke:
 
 ```
-Skill(skill: "elaborate", args: "<feature-like-input>")
+Agent(
+  subagent_type: "fork",
+  description: "Elaborate",
+  prompt: "Invoke Skill(skill: \"elaborate\", args: \"<feature-like-input>\"). Return its Output verbatim."
+)
 ```
 
 ### Step 3: Prescribe branch
@@ -57,7 +60,11 @@ If the bug-like group is empty, skip this step.
 Invoke:
 
 ```
-Skill(skill: "prescribe", args: "<bug-like-input>")
+Agent(
+  subagent_type: "fork",
+  description: "Prescribe",
+  prompt: "Invoke Skill(skill: \"prescribe\", args: \"<bug-like-input>\"). Return its Output verbatim."
+)
 ```
 
 ### Step 4: Plan
@@ -67,7 +74,11 @@ If both Steps 2 and 3 ran, combine their Requirements/Investigate Report and Spe
 Invoke:
 
 ```
-Skill(skill: "plan-implementation", args: "<fixup mode?> <requirements-or-investigate-report> <spec>")
+Agent(
+  subagent_type: "fork",
+  description: "Plan implementation",
+  prompt: "Invoke Skill(skill: \"plan-implementation\", args: \"<fixup mode?> <requirements-or-investigate-report> <spec>\"). Return its Output verbatim."
+)
 ```
 
 ### Step 5: Implement
@@ -75,7 +86,11 @@ Skill(skill: "plan-implementation", args: "<fixup mode?> <requirements-or-invest
 Invoke:
 
 ```
-Skill(skill: "implement", args: "<fixup mode?> <stages>")
+Agent(
+  subagent_type: "fork",
+  description: "Implement",
+  prompt: "Invoke Skill(skill: \"implement\", args: \"<fixup mode?> <stages>\"). Return its Output verbatim."
+)
 ```
 
 ## Output

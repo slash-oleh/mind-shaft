@@ -3,7 +3,6 @@ title: SKILL.md
 name: confront
 description: Critically examine a task specification against the codebase - structure requirements, identify gaps, reuse opportunities and risks, then challenge it with pointed questions and concerns. Use before planning or implementing a task, or whenever a specification needs scrutiny.
 claudecode:
-  context: fork
   background: true
   argument-hint: "[requirements]"
   arguments:
