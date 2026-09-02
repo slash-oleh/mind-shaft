@@ -5,7 +5,6 @@ description: Fetch and order everything blocking a pull request from merging - c
 claudecode:
   context: fork
   background: true
-  model: haiku
   effort: low
   argument-hint: "[pr_number]"
   arguments:

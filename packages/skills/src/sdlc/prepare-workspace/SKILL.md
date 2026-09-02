@@ -5,7 +5,6 @@ description: Prepare a clean local feature branch and git state for a task, and 
 claudecode:
   context: fork
   background: true
-  model: haiku
   effort: low
   argument-hint: "[ticket_id] [title] [followup_context]"
   arguments:

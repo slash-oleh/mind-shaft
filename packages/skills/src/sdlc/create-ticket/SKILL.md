@@ -5,7 +5,6 @@ description: Create a structured ticket in the project management system. Use wh
 claudecode:
   context: fork
   background: true
-  model: haiku
   effort: low
   argument-hint: "[source]"
   arguments:

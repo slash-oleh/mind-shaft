@@ -5,7 +5,6 @@ description: Collect raw info about a task - ticket details, linked design/docs,
 claudecode:
   context: fork
   background: true
-  model: haiku
   effort: low
   argument-hint: "[source]"
   arguments:
