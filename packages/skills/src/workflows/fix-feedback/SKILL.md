@@ -45,11 +45,7 @@ Keep the group-ID-to-`members` table for Step 3.
 Invoke:
 
 ```
-Agent(
-  subagent_type: "fork",
-  description: "Perform task",
-  prompt: "Invoke Skill(skill: \"perform-task\", args: \"<fixup mode?> <deduped-entries>\"). Return its Output verbatim."
-)
+Skill(skill: "perform-task", args: "<fixup mode?> <deduped-entries>")
 ```
 
 ### Step 3: Expand + reconcile

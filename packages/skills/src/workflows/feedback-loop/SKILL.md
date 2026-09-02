@@ -43,11 +43,7 @@ If the user confirms, go to Step 3.
 Otherwise, wrap the feedback as a single item and invoke:
 
 ```
-Agent(
-  subagent_type: "fork",
-  description: "Fix feedback",
-  prompt: "Invoke Skill(skill: \"fix-feedback\", args: \"fixup mode. {id: 'feedback-loop-<n>', body: '<feedback text>'}\"). Return its Output verbatim."
-)
+Skill(skill: "fix-feedback", args: "fixup mode. {id: 'feedback-loop-<n>', body: '<feedback text>'}")
 ```
 
 `n` is this skill's iteration count (starts at 1, increments per round).

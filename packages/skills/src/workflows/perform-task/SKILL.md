@@ -47,11 +47,7 @@ If the feature-like group is empty, skip this step.
 Invoke:
 
 ```
-Agent(
-  subagent_type: "fork",
-  description: "Elaborate",
-  prompt: "Invoke Skill(skill: \"elaborate\", args: \"<feature-like-input>\"). Return its Output verbatim."
-)
+Skill(skill: "elaborate", args: "<feature-like-input>")
 ```
 
 ### Step 3: Prescribe branch
@@ -61,11 +57,7 @@ If the bug-like group is empty, skip this step.
 Invoke:
 
 ```
-Agent(
-  subagent_type: "fork",
-  description: "Prescribe",
-  prompt: "Invoke Skill(skill: \"prescribe\", args: \"<bug-like-input>\"). Return its Output verbatim."
-)
+Skill(skill: "prescribe", args: "<bug-like-input>")
 ```
 
 ### Step 4: Plan

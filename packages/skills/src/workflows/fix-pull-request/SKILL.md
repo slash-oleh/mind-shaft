@@ -94,11 +94,7 @@ From each item in `ci_failures`, form a single task in `perform-task`'s item sha
 Invoke:
 
 ```
-Agent(
-  subagent_type: "fork",
-  description: "Perform task",
-  prompt: "Invoke Skill(skill: \"perform-task\", args: \"<ci_tasks>\"). Return its Output verbatim."
-)
+Skill(skill: "perform-task", args: "<ci_tasks>")
 ```
 
 ### Step 5: Address Threads
@@ -113,11 +109,7 @@ Map `threads` and `reviews` (from `gather-merge-blockers`) into `fix-feedback`'s
 Invoke:
 
 ```
-Agent(
-  subagent_type: "fork",
-  description: "Fix feedback",
-  prompt: "Invoke Skill(skill: \"fix-feedback\", args: \"fixup mode. <items>\"). Return its Output verbatim."
-)
+Skill(skill: "fix-feedback", args: "fixup mode. <items>")
 ```
 
 ### Step 6: Confirm and squash fixups
@@ -127,11 +119,7 @@ If Steps 4 and 5 made no changes and Step 3 was skipped, skip this step.
 Invoke:
 
 ```
-Agent(
-  subagent_type: "fork",
-  description: "Feedback loop",
-  prompt: "Invoke Skill(skill: \"feedback-loop\", args: \"<target_branch>\"). Return its Output verbatim."
-)
+Skill(skill: "feedback-loop", args: "<target_branch>")
 ```
 
 ### Step 7: Push to remote
