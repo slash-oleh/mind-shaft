@@ -3,7 +3,6 @@ title: SKILL.md
 name: fix-feedback
 description: Resolve a batch of feedback items (comments, suggestions) end to end - dedup, implement or explain each, and map every result back to its original item ID. Use standalone after a local code review, or invoke from fix-pull-request.
 claudecode:
-  background: true
   argument-hint: "[feedback] [fixup]"
   arguments:
     - "feedback"
