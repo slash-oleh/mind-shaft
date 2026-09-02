@@ -2,7 +2,6 @@
 name: fix-feedback
 description: Resolve a batch of feedback items (comments, suggestions) end to end - dedup, implement or explain each, and map every result back to its original item ID. Use standalone after a local code review, or invoke from fix-pull-request.
 claudecode:
-  background: true
   argument-hint: "[feedback] [fixup]"
   arguments:
     - "feedback"
@@ -44,11 +43,7 @@ Keep the group-ID-to-`members` table for Step 3.
 Invoke:
 
 ```
-Agent(
-  subagent_type: "fork",
-  description: "Perform task",
-  prompt: "Invoke Skill(skill: \"perform-task\", args: \"<fixup mode?> <deduped-entries>\"). Return its Output verbatim."
-)
+Skill(skill: "perform-task", args: "<fixup mode?> <deduped-entries>")
 ```
 
 ### Step 3: Expand + reconcile

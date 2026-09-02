@@ -2,7 +2,6 @@
 name: implement-ticket
 description: Take a ticket from raw description through to a submitted pull request - gather context, prepare a branch, implement, then submit. Use when starting fresh work on a ticket.
 claudecode:
-  background: true
   argument-hint: "[source]"
   arguments:
     - "source"
@@ -57,11 +56,7 @@ Agent(
 Invoke:
 
 ```
-Agent(
-  subagent_type: "fork",
-  description: "Perform task",
-  prompt: "Invoke Skill(skill: \"perform-task\", args: \"<gather_task_output>\"). Return its Output verbatim."
-)
+Skill(skill: "perform-task", args: "<gather_task_output>")
 ```
 
 ### Step 4: Confirm changes
@@ -69,11 +64,7 @@ Agent(
 Invoke:
 
 ```
-Agent(
-  subagent_type: "fork",
-  description: "Feedback loop",
-  prompt: "Invoke Skill(skill: \"feedback-loop\", args: \"<base_branch>\"). Return its Output verbatim."
-)
+Skill(skill: "feedback-loop", args: "<base_branch>")
 ```
 
 ### Step 5: Submit

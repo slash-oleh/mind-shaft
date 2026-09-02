@@ -2,7 +2,6 @@
 name: review-pull-request
 description: Review a pull request end-to-end - fetch its info and diff, run the code review, and publish the result back to the VCS platform. Use when asked to review a PR/MR. For an ad-hoc/local diff (not a PR), use review-code directly.
 claudecode:
-  background: true
   argument-hint: "[pr_identifier]"
   arguments:
     - "pr_identifier"

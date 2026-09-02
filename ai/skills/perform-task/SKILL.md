@@ -2,7 +2,6 @@
 name: perform-task
 description: Turn a requirements/incident description into a verified, committed code change - classifying bug-like vs feature-like scope, planning, then implementing. Use as the shared core of implement-ticket and fix-feedback.
 claudecode:
-  background: true
   argument-hint: "[requirements] [fixup]"
   arguments:
     - "requirements"
@@ -46,11 +45,7 @@ If the feature-like group is empty, skip this step.
 Invoke:
 
 ```
-Agent(
-  subagent_type: "fork",
-  description: "Elaborate",
-  prompt: "Invoke Skill(skill: \"elaborate\", args: \"<feature-like-input>\"). Return its Output verbatim."
-)
+Skill(skill: "elaborate", args: "<feature-like-input>")
 ```
 
 ### Step 3: Prescribe branch
@@ -60,11 +55,7 @@ If the bug-like group is empty, skip this step.
 Invoke:
 
 ```
-Agent(
-  subagent_type: "fork",
-  description: "Prescribe",
-  prompt: "Invoke Skill(skill: \"prescribe\", args: \"<bug-like-input>\"). Return its Output verbatim."
-)
+Skill(skill: "prescribe", args: "<bug-like-input>")
 ```
 
 ### Step 4: Plan
