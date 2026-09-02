@@ -1,5 +1,5 @@
 ---
-name: create-ticket
+name: file-ticket
 description: Create a structured ticket in the project management system. Use when user requests ticket or issue creation.
 claudecode:
   background: true
@@ -9,7 +9,7 @@ claudecode:
     - "source"
 ---
 
-# Create Ticket
+# File Ticket
 
 ## Goal
 

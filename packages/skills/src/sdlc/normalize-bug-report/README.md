@@ -8,4 +8,4 @@ For skill itself see [SKILL.md](./SKILL.md).
 
 ## Meta info
 
-First step before `investigate` or `create-ticket`: structures raw bug report into sections.
+First step before `investigate` or `file-ticket`: structures raw bug report into sections.

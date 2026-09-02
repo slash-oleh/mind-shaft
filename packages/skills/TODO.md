@@ -7,7 +7,7 @@
 
 ## Subagent ideas
 
-- `errand-boy`: Run "tools" skills and some of "sdlc" skills (`prepare-workspace`, `create-ticket`, `gather-task`, `gather-merge-blockers`)
+- `errand-boy`: Run "tools" skills and some of "sdlc" skills (`prepare-workspace`, `gather-task`, `gather-merge-blockers`)
   Simple deterministic tasks, often scripts-heavy one-time command with clear i/o, no semantic analysis, focus on format and syntax.
   Suggested cheap model / low effort.
 - `effective-manager`: Run "workflow" skills

@@ -14,7 +14,6 @@ _Dig here. Bring a hard hat._ 👷
 
 SDLC (atomic development processes - full control):
 
-- [`/create-ticket`](ai/skills/create-ticket/SKILL.md): draft a structured ticket from stream of consciousness.
 - [`/gather-task`](ai/skills/gather-task/SKILL.md): collect ticket, design, and codebase info for a task.
 - [`/prepare-workspace`](ai/skills/prepare-workspace/SKILL.md): set up branch and git state for a task.
 - [`/normalize-requirements`](ai/skills/normalize-requirements/SKILL.md): structure raw requirements into sections.
@@ -42,6 +41,8 @@ Workflows (common chains of other skills - hands-off):
   - `perform-task`
 - [`/feedback-loop`](ai/skills/feedback-loop/SKILL.md): get user sign-off on a batch of commits, route changes back through `fix-feedback`, then squash.
   - `fix-feedback`
+- [`/file-ticket`](ai/skills/file-ticket/SKILL.md): draft a structured ticket from stream of consciousness.
+  - `normalize-requirements`/`normalize-bug-report` -> `ticket-tools`
 - [`/implement-ticket`](ai/skills/implement-ticket/SKILL.md): ticket to submitted PR.
   - `gather-task` -> `prepare-workspace` -> `perform-task` -> `feedback-loop` -> `submit-pull-request`
 - [`/fix-pull-request`](ai/skills/fix-pull-request/SKILL.md): address review comments, conflicts, CI failures.

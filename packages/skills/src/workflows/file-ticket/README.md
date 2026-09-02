@@ -2,7 +2,7 @@
 title: Home
 ---
 
-# create-ticket
+# file-ticket
 
 For skill itself see [SKILL.md](./SKILL.md).
 

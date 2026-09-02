@@ -8,7 +8,7 @@ For skill itself see [SKILL.md](./SKILL.md).
 
 ## Meta info
 
-Provider layer for ticket operations - the counterpart to `vcs-tools` on the PR/MR side. Logical-layer skills (e.g. `create-ticket`) decide what/why; this skill decides how, against whichever tracker platform is configured.
+Provider layer for ticket operations - the counterpart to `vcs-tools` on the PR/MR side. Logical-layer skills (e.g. `file-ticket`) decide what/why; this skill decides how, against whichever tracker platform is configured.
 
 ## Adding a Platform
 
