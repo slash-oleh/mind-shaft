@@ -13,43 +13,53 @@ claudecode:
 
 ## Goal
 
-- Ticket ID (if any) is resolved, and its title, description, and linked issues fetched.
-- Linked design, documentation, and other resources are retrieved and summarized.
-- Relevant high-level codebase location is identified.
-
-## Input
-
-- Source: Ticket ID, Ticket URL, branch name (containing Ticket ID), or plain task description.
+- Task info is resolved (fetched if needed).
+- Linked assets are retrieved.
 
 ## Prerequisites
 
-- Project management MCP server (e.g., Jira, GitHub Issues)
+- `ticket-tools` skill available
 - Design MCP server (e.g., Figma)
 - Documentation MCP server (e.g., Confluence)
+
+## Input
+
+- Source: Ticket ID, Ticket URL, or plain task description.
 
 ## Steps
 
 ### Step 1: Identify Task Source
 
-- If input is a ticket ID, URL, or branch name (`<ticket_id>-<description>` convention), extract the ticket ID.
-- If ticket ID resolved, use project management tools to fetch title, description, and linked issues.
-- If plain description provided (no ticket ID resolved), treat it as the task title/description directly.
+If the input is a ticket, extract the ticket ID and capture it as `ticket_id`.
+
+If no ticket ID is resolved, treat the input as the task info directly and skip ticket fetching.
+
+Invoke the `ticket-tools` skill:
+
+```
+Skill(skill: "ticket-tools", args: "get <ticket_id>")
+```
 
 ### Step 2: Retrieve Related Assets
 
 - For design links: extract details (layout, components) via MCP (Figma, Miro, etc.).
 - For documentation: read content via MCP (Confluence, Notion, GitHub, etc.).
-- For other URLs: fetch and summarize content.
+- For other URLs: fetch content.
 
-### Step 3: Establish Codebase Context
+Save each fetched asset as a file via the `scratch` skill:
 
-- Identify high-level codebase location: app, library, module (do not investigate the task itself).
+```
+Skill(skill: "scratch", args: "write <asset> <format>")
+```
+
+Capture the returned paths.
 
 ## Output
 
 Markdown format:
 
-- Ticket: `ticket_id`, if resolved.
-- Task: `title` and description.
-- Linked Resources: List of URLs/IDs and summaries.
-- Affected Modules: List of directories/files likely affected.
+- Ticket (if resolved)
+  - ID
+  - Title
+- Task: the ticket's Description if resolved, otherwise the raw input.
+- Linked Resources: references and file paths for content fetched in Step 2.

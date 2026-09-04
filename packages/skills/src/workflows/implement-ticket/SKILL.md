@@ -16,7 +16,7 @@ claudecode:
 
 ## Input
 
-- Source: Ticket ID, Ticket URL, branch name, or plain description (same as `gather-task`'s input).
+- Source: Ticket ID, Ticket URL, or plain description (same as `gather-task`'s input).
 
 ## Prerequisites
 
