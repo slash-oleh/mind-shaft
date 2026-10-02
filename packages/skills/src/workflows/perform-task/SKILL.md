@@ -3,10 +3,11 @@ title: SKILL.md
 name: perform-task
 description: Turn a requirements/incident description into a verified, committed code change - classifying bug-like vs feature-like scope, planning, then implementing. Use as the shared core of implement-ticket and fix-feedback.
 claudecode:
-  argument-hint: "[requirements] [fixup]"
+  argument-hint: "[requirements] [fixup] [persona]"
   arguments:
     - "requirements"
     - "fixup"
+    - "persona"
 ---
 
 # Perform Task
@@ -28,8 +29,9 @@ claudecode:
 
 - Requirements or incident description: freeform text, OR an itemized batch (each entry `{id, body}` per the wire format - `id` an opaque single token, possibly a caller-composed group like `c7+c9`; this skill never splits it).
 - `fixup` (optional): leading `fixup mode` token in `args`, forwarded to Steps 4-5 so fixes autosquash instead of landing as fresh commits.
+- `persona` (optional): leading `persona <full-auto|domain|tech>` token in `args`, forwarded to Steps 2-3. Absent means `tech`.
 
-Strip any leading control token (e.g. `fixup mode`) recognized here before parsing the task body, regardless of order.
+Strip any leading control token (e.g. `fixup mode`, `persona <mode>`) recognized here before parsing the task body, regardless of order.
 
 ## Steps
 
@@ -46,7 +48,7 @@ If the feature-like group is empty, skip this step.
 Invoke:
 
 ```
-Skill(skill: "elaborate", args: "<feature-like-input>")
+Skill(skill: "elaborate", args: "<persona <mode>?> <feature-like-input>")
 ```
 
 ### Step 3: Prescribe branch
@@ -56,7 +58,7 @@ If the bug-like group is empty, skip this step.
 Invoke:
 
 ```
-Skill(skill: "prescribe", args: "<bug-like-input>")
+Skill(skill: "prescribe", args: "<persona <mode>?> <bug-like-input>")
 ```
 
 ### Step 4: Plan

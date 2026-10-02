@@ -12,5 +12,4 @@ The one hands-off path from a bare ticket to a submitted PR, so a caller doesn't
 
 ## TODO
 
-- Persona modes: full-auto (no questions asked, all best-effort), domain (semi-tech, technical best-effort, only BL questions asked), tech (all (domain + technical/code) questions asked)
 - `review-code` + `fix-feedback` as additional option

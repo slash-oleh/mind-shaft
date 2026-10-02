@@ -3,9 +3,10 @@ title: SKILL.md
 name: prescribe
 description: Turn an incident/bug investigation into a compiled solution spec - trace root cause, resolve open concerns, then draft testable success criteria. Use as investigate's counterpart to elaborate, before implementation starts on a bug fix.
 claudecode:
-  argument-hint: "[raw_bug_report]"
+  argument-hint: "[raw_bug_report] [persona]"
   arguments:
     - "raw_bug_report"
+    - "persona"
 ---
 
 # Prescribe
@@ -27,6 +28,7 @@ claudecode:
 ## Input
 
 - Raw bug report: freeform description, error log, or structured text, OR an itemized batch (each entry `{id, body}`) - keep each entry's `id` attached through the normalize-bug-report/investigate/clarify/spec chain.
+- `persona` (optional): leading `persona <full-auto|domain|tech>` token in `args`, forwarded to Step 3. Strip it before parsing the bug report.
 
 ## Steps
 
@@ -62,7 +64,7 @@ Invoke:
 Agent(
   subagent_type: "fork",
   description: "Clarify",
-  prompt: "Invoke Skill(skill: \"clarify\", args: \"<incident> <investigate_report> <codebase> <concerns>\"). Return its Output verbatim."
+  prompt: "Invoke Skill(skill: \"clarify\", args: \"<persona <mode>?> <incident> <investigate_report> <codebase> <concerns>\"). Return its Output verbatim."
 )
 ```
 
