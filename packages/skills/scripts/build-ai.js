@@ -42,6 +42,24 @@ function copyDir(source, destination) {
   }
 }
 
+// Workflow skills get the shared manifest inlined as a Rules section,
+// placed right before Steps. Manifest title and intro are dropped and its
+// sections are demoted one level.
+function loadManifestRules() {
+  const manifest = fs.readFileSync(path.join(root, 'WORKFLOW-MANIFEST.md'), 'utf8');
+  const body = manifest.slice(manifest.indexOf('\n## ') + 1).trimEnd();
+  return `## Rules\n\n${body.replace(/^## /gm, '### ')}\n\n`;
+}
+
+function inlineManifest(skillDir) {
+  const file = path.join(skillDir, 'SKILL.md');
+  const content = fs.readFileSync(file, 'utf8');
+  if (!/^## Steps$/m.test(content)) {
+    throw new Error(`No "## Steps" section in ${file}`);
+  }
+  fs.writeFileSync(file, content.replace(/^## Steps$/m, () => `${loadManifestRules()}## Steps`));
+}
+
 console.log('Building skills...');
 if (fs.existsSync(dist)) {
   fs.rmSync(dist, { recursive: true });
@@ -59,7 +77,9 @@ for (const category of fs.readdirSync(src)) {
   for (const skill of fs.readdirSync(categoryPath)) {
     const skillPath = path.join(categoryPath, skill);
     if (!fs.lstatSync(skillPath).isDirectory()) continue;
-    copyDir(skillPath, path.join(dist, skill));
+    const destPath = path.join(dist, skill);
+    copyDir(skillPath, destPath);
+    if (category === 'workflows') inlineManifest(destPath);
   }
 }
 
