@@ -2,9 +2,10 @@
 name: elaborate
 description: Analyze a task specification, review the codebase, and output a detailed assessment and success criteria. Use when user provides a new ticket or description to understand scope, risks, and definition of done before implementation.
 claudecode:
-  argument-hint: "[raw_requirements]"
+  argument-hint: "[raw_requirements] [persona]"
   arguments:
     - "raw_requirements"
+    - "persona"
 ---
 
 # Elaborate
@@ -26,6 +27,7 @@ claudecode:
 ## Input
 
 - Raw Requirements: freeform description or structured text, OR an itemized batch (each entry `{id, body}`) - keep each entry's `id` attached through the `normalize-requirements`/`confront`/`clarify`/`spec` chain.
+- `persona` (optional): leading `persona <full-auto|domain|tech>` token in `args`, forwarded to Step 3. Strip it before parsing the requirements.
 
 ## Rules
 
@@ -82,7 +84,7 @@ Invoke:
 Agent(
   subagent_type: "fork",
   description: "Clarify",
-  prompt: "Invoke Skill(skill: \"clarify\", args: \"<requirements> <codebase> <challenge> <concerns>\"). Return its Output verbatim."
+  prompt: "Invoke Skill(skill: \"clarify\", args: \"<persona <mode>?> <requirements> <codebase> <challenge> <concerns>\"). Return its Output verbatim."
 )
 ```
 

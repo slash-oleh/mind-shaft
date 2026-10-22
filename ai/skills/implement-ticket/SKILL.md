@@ -2,9 +2,10 @@
 name: implement-ticket
 description: Take a ticket from raw description through to a submitted pull request - gather context, prepare a branch, implement, then submit. Use when starting fresh work on a ticket.
 claudecode:
-  argument-hint: "[source]"
+  argument-hint: "[source] [persona]"
   arguments:
     - "source"
+    - "persona"
 ---
 
 # Implement Ticket
@@ -16,6 +17,7 @@ claudecode:
 ## Input
 
 - Source: Ticket ID, Ticket URL, or plain description (same as `gather-task`'s input).
+- `persona` (optional): `full-auto` (no questions, all best-effort), `domain` (only business-logic questions, technical best-effort), or `tech` (all questions). Default `tech`.
 
 ## Prerequisites
 
@@ -77,7 +79,7 @@ Agent(
 Invoke:
 
 ```
-Skill(skill: "perform-task", args: "<gather_task_output>")
+Skill(skill: "perform-task", args: "persona <persona> <gather_task_output>")
 ```
 
 ### Step 4: Confirm changes

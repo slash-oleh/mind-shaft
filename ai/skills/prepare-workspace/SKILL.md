@@ -16,7 +16,8 @@ claudecode:
 ## Goal
 
 - A clean, local feature branch matching the target ticket is checked out.
-- The local repository is fully synchronized with the project's remote origin base branch.
+- A new feature branch starts from the latest remote origin base branch.
+- The local base branch ref is left untouched (it may be checked out in another worktree).
 - Ticket status is transitioned to "In Progress", if a ticket is resolved.
 
 ## Prerequisites
@@ -56,12 +57,17 @@ Resolve `<base_branch>` from the project's documented convention (e.g. the
 "Base branch" fact in its `AGENTS.md`), falling back to `main` if
 undocumented.
 
-Fetch origin and reset the local base ref to match, without checking it out:
+Fetch origin to update the remote-tracking base ref:
 
 ```bash
 git fetch origin
-git update-ref refs/heads/<base_branch> origin/<base_branch>
 ```
+
+Never move the local `<base_branch>` ref (no `git update-ref`, `git branch -f`,
+or `git fetch origin <base_branch>:<base_branch>`). Branch refs are shared
+across all worktrees, so if `<base_branch>` is checked out in another worktree,
+moving it leaves that worktree's index and files on the old commit, showing
+the difference as bogus staged changes.
 
 ### Step 4: Checkout Branch
 
@@ -79,10 +85,11 @@ Check if target branch exists:
   git checkout --track origin/<branch_name>
   ```
 
-- **Does not exist**: Create fresh branch off the synced base:
+- **Does not exist**: Create fresh branch off the fetched remote base, without
+  tracking it (so a later `git push -u` sets the upstream to `origin/<branch_name>`):
 
   ```bash
-  git checkout -b <branch_name> <base_branch>
+  git checkout -b <branch_name> --no-track origin/<base_branch>
   ```
 
 ### Step 5: Update Ticket Status
