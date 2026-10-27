@@ -64,6 +64,7 @@ Meta (skills for skills):
 
 Generic (junk drawer):
 
+- [`/adr`](ai/skills/adr/SKILL.md): draft an Architecture Decision Record - weigh options, make a decision.
 - [`/project-memo`](ai/skills/project-memo/SKILL.md): maintain root `AGENTS.md` repo cheatsheet.
 - [`/refine-text`](ai/skills/refine-text/SKILL.md): turn a rough draft into finished prose.
 
