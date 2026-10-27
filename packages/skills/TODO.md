@@ -4,6 +4,14 @@
 
 - Standardize cross-skill document shapes and move into shared knowledge (Requirements, Incident, Commits)
 - Unify itemized input processing (carried IDs)
+- Define terms
+  - Document types and shapes
+    - Requirements - what to do
+    - Spec - how to do
+    - Implementation Plan - where to do
+  - Ticket - task tracker entity
+  - Issue - bug or error
+  - Task - requirement, feature
 
 ## Subagent ideas
 
@@ -64,11 +72,23 @@
   - `estimate` (`implement` counterpart). Combine System Design and Roadmap to estimate. Outputs Estimation.
   - `proposal` (`submit-pull-request` counterpart). Combines System Design, Roadmap and Estimation. Outputs Proposal.
 
+### Tools
+
+- `confluence-md-bridge`: Abstract away Confluence pain, write docs in local pretty Markdown, have it bi-directionally synced.
+
 ### Generic/Meta
 
 - `reflect` / `reflect-mistakes` / `reflect-skill`: Review errors (including self-fixed) to improve initial instructions or update memory.
 
 - `security-assessment`: Run whitebox static checks against OWASP top 10. Consider other aspects like dependencies. Consider external knowledgebase source for OWASP but outline the flow, parallelization opportunities, etc.
+
+- `personalize-text`: Re-draft text for specific audience/personality: developer, QA, product, client, support, etc.
+
+- `reduce`: _Boil down_: Trim anything (code, text) to it's core: drop edge cases, comments, optional paths.
+
+- `inline-review`: Kinda `TODO` resolver: Use special marks (like `> REVIEW: ...`) to comment md/code inline, then use skill to apply change requests in-place.
+
+- `choice`: Kinda brainstorm: Output ideas, collect feedback, repeat. Used to generate ideas (e.g. names), rate/sort them, choose from existing options, or everything simultaneously.
 
 ## 3rd-party skills
 
@@ -91,3 +111,8 @@ Suggest pairing with specific skills, MCPs, CLIs, agent plugins (might end up be
   - `git`
   - `gh`
   - `glab`
+  - `heroku`
+  - `aws`
+  - `gcloud`
+  - `k9s`
+  - `twg`
