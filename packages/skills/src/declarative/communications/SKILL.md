@@ -14,3 +14,4 @@ description: Write text for readers outside the current session. Use when drafti
 - **Rely on facts**: not feelings.
 - **Keep it simple**: but not simpler than the facts allow.
 - **Stay consistent**: use the same terms and standards throughout.
+- **ASCII characters only**: no emojis, no typographic symbols.
