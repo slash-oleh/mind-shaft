@@ -6,7 +6,13 @@ title: Home
 
 Agent skills for common tasks.
 
-## Invocation
+## Declarative skills
+
+Group `declarative`. Standing rules and mindset for a domain (tasks, VCS, PRs, tickets, ...), loaded as context while doing varied work, not a fixed sequence to execute. They are intended to replace the step-by-step `sdlc` and `workflows` groups, which are legacy and to be removed once covered. Create new ones with the `declarative-skill` skill.
+
+Unlike the roles below, a declarative skill has no fork or orchestration role: it is simply invoked inline wherever its guidance applies.
+
+## Invocation (legacy groups)
 
 Each skill has one fixed role, set by its group:
 

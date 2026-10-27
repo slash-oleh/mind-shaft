@@ -12,7 +12,19 @@ _Dig here. Bring a hard hat._ 👷
 
 ### Skills (routine, automated away): 🤖
 
-SDLC (atomic development processes - full control):
+Declarative (standing rules and mindset - loaded as context, not run as steps):
+
+- [`/task`](ai/skills/task/SKILL.md): changing files to deliver a goal - minimal change, evidence, commits.
+- [`/scrutiny`](ai/skills/scrutiny/SKILL.md): challenge a task before acting - vague goals, scope creep, prescribed solutions.
+- [`/detective`](ai/skills/detective/SKILL.md): bugs, errors, regressions - reproduce, find root cause, prove the fix.
+- [`/vcs`](ai/skills/vcs/SKILL.md): branching, conflicts, commit history.
+- [`/pull-requests`](ai/skills/pull-requests/SKILL.md): submitting, fixing, reviewing PRs.
+- [`/tickets`](ai/skills/tickets/SKILL.md): ticket status, comments, feature and bug shapes.
+- [`/communications`](ai/skills/communications/SKILL.md): text for readers outside the session.
+
+Declarative skills are the future of this repo. They are meant to replace the step-by-step SDLC and Workflows skills below, which are being phased out.
+
+Legacy SDLC (atomic development processes - full control):
 
 - [`/gather-task`](ai/skills/gather-task/SKILL.md): collect ticket, design, and codebase info for a task.
 - [`/prepare-workspace`](ai/skills/prepare-workspace/SKILL.md): set up branch and git state for a task.
@@ -29,7 +41,7 @@ SDLC (atomic development processes - full control):
 - [`/gather-merge-blockers`](ai/skills/gather-merge-blockers/SKILL.md): fetch and order a PR's conflicts, CI failures, comment threads.
 - [`/ship-task`](ai/skills/ship-task/SKILL.md): merge, release, verify, announce.
 
-Workflows (common chains of other skills - hands-off):
+Legacy Workflows (common chains of other skills - hands-off):
 
 - [`/elaborate`](ai/skills/elaborate/SKILL.md): raw requirements to change spec.
   - `normalize-requirements` -> `confront` -> `clarify` -> `spec`
@@ -58,6 +70,7 @@ Tools (external integrations - invoked by other skills, not directly):
 
 Meta (skills for skills):
 
+- [`/declarative-skill`](ai/skills/declarative-skill/SKILL.md): create a declarative skill - standing rules for a domain instead of a workflow.
 - [`/extract-skill`](ai/skills/extract-skill/SKILL.md): turn a completed task's process into a reusable skill.
 - [`/review-skill`](ai/skills/review-skill/SKILL.md): review a skill, find flaws, suggest fixes.
 - [`/create-dispatcher-skill`](ai/skills/create-dispatcher-skill/SKILL.md): merge a detect skill plus per-backend skills into one dispatcher skill.
