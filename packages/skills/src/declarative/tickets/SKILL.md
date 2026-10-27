@@ -1,0 +1,37 @@
+---
+title: SKILL.md
+name: tickets
+description: Rules for working with tickets in a tracker such as Jira. Use when creating, updating, transitioning, or commenting on tickets, or when judging whether a ticket is clear enough to implement.
+---
+
+# Tickets
+
+- **Keep status current**: move to "In Progress" when work starts, to "Code Review" when the PR is submitted, and to "Testing" when shipped (merged or deployed). Use the project's own status names if they differ.
+- **Comment when shipped**: say what shipped and where.
+- **Attach evidence**: logs, screenshots, recordings.
+- **Be skeptical of the definition**: challenge tickets that are too vague (no clear goal or criteria) or too specific (prescribe a solution instead of a problem).
+- **Match the audience**: ticket readers are often semi-technical, so use higher-level language than in PRs and avoid implementation detail unless it is needed.
+
+## Creating
+
+- **Choose the shape by type**: features use the feature fields, bugs use the bug fields. Add other sections only when they carry information.
+
+### Features
+
+- **Title**: imperative mood, concise, one sentence.
+- **Core goal**: the essential problem to solve, beyond the proposed solution. Focus on the problem, not the solution.
+- **Description**: what is currently specified, as a short narrative.
+- **Items**: one entry per discrete input item, keeping its ID. Do not collapse items into the description. If the input is not itemized, use a single entry without an ID.
+- **Scope**: what is included, and what is handled separately (already done, in parallel, or later).
+- **Criteria**: acceptance criteria and Definition of Done.
+- **Risks**: immediate gaps in correctness, completeness, or consistency.
+
+### Bugs
+
+- **Title**: issue statement. Focus on the issue, not the fix - declare the current, incorrect behavior (e.g. "User cannot log in").
+- **Pre-conditions**: what is needed to reproduce (system state, environment, account, configuration).
+- **Steps to Reproduce (STR)**: sequential actions that trigger the bug.
+- **Actual Result (AR)**: the incorrect behavior (e.g. error message).
+- **Expected Result (ER)**: the correct behavior.
+- **Evidence**: logs, screenshots, or other assets showing the symptoms.
+- **Severity**: critical, high, medium, or low.
