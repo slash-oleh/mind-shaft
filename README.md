@@ -21,6 +21,7 @@ Declarative (standing rules and mindset - loaded as context, not run as steps):
 - [`/pull-requests`](ai/skills/pull-requests/SKILL.md): submitting, fixing, reviewing PRs.
 - [`/tickets`](ai/skills/tickets/SKILL.md): ticket status, comments, feature and bug shapes.
 - [`/communications`](ai/skills/communications/SKILL.md): text for readers outside the session.
+- [`/delivery-autopilot`](ai/skills/delivery-autopilot/SKILL.md): drive a task from any stage through PR to shipped.
 
 Declarative skills are the future of this repo. They are meant to replace the step-by-step SDLC and Workflows skills below, which are being phased out.
 

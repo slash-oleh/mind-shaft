@@ -30,26 +30,7 @@
 
 ### SLDC
 
-- `task-autopilot` (formelly `sdlc`, `task-to-pull-request`): Compound hands-off workflow with the following skills chain. Humam approval gates mostly skipped. Questions limited to product semi-technical ones, with rest accepted at best effort decisions. Since `submit-pull-request` (or existing PR from `identified-pr`) gates 2-3 passing implies asyncronous wait / periodic check and potentially iterative loop of `fix-pull-request` to get to `ship-task`.
-  - `gather-task`
-  - `identify-pr`
-  - Gate 1: No PR exists
-    - `prepare-workspace`
-    - `elaborate` or `investigate`
-    - `plan-implementation`
-    - `implement`
-    - `review-code`
-    - `submit-pull-request`
-  - Gate 2: PR CI failed or has requested changes
-    - `fix-pull-request`
-  - Gate 3: PR approved
-    - `ship-task`
-
-  - Consider
-    - Ralph loop
-    - Claude's /goal
-    - Remote execution
-    - Durable compute (restate, temporal.io)
+- `delivery-autopilot`: Drafted in `src/declarative/delivery-autopilot`, see its README TODO.
 
 - `regroup-commits`: Split big ones into smaller cohesive ones. Squash non-cohesive ones. Keep commits non-breaking in between.
 
