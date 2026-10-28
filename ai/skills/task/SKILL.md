@@ -1,0 +1,35 @@
+---
+name: task
+description: Mindset for changing files to deliver a goal. Use when a task implies file changes, such as implementing a feature, fixing a bug, or refactoring.
+---
+
+# Task
+
+- **Check the ticket**: look for a relevant ticket before starting.
+- **Identify the core goal**: state it up front, validate the result against it at the end.
+- **Minimal required change**: touch only what the goal needs.
+- **Provide evidence**: end-to-end proof, e.g. a screenshot for a feature, a command result for a purely technical change.
+
+## Starting
+
+- **Branch from latest base**: create the branch from an up-to-date base branch.
+- **Clean the tree**: stash staged and unstaged changes if dirty. Ignore untracked files.
+
+## Designing
+
+- **Announce the approach**: unless the change is trivial or directly dictated, state the high-level approach before implementing.
+- **Elaborate with Q&A**: unless the task is trivial or fully specified, run an elaboration session. Question gaps, assumptions and risks, and get answers before implementing.
+
+## Implementing
+
+- **Follow the fundamental coding rules**:
+  - Less code: prefer deleting or reusing over adding.
+  - Unified pattern: follow the pattern already used in the codebase.
+  - Separation of concerns: keep unrelated concerns in separate units.
+  - Single responsibility: one reason to change per unit.
+- **Don't lint in between**: run lint once at the end.
+- **Commit when done**: commit the finished changes.
+
+## Feedback
+
+- **Use fixup commits**: target the commit that introduced the original change.
