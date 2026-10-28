@@ -1,6 +1,6 @@
 ---
 title: SKILL.md
-name: communications
+name: writing
 description: Use whenever writing text other people will read - commit messages, PR titles/descriptions/comments, ticket text, READMEs and docs, code comments, messages to send.
 ---
 

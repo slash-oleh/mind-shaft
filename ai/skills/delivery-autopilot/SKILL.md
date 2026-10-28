@@ -7,7 +7,7 @@ description: Standing rules for driving a task hands-off from whatever stage it 
 
 - **Observe, don't remember**: derive the stage from ticket, git, and PR on every run. Never trust carried-over state.
 - **Enter anywhere**: fresh ticket, dirty tree, local commits, open PR, approved PR. Do only what the observed stage still needs.
-- **Apply the domain skills**: `task`, `scrutiny`, `detective`, `vcs`, `pull-requests`, `tickets`, `communications`. This skill only adds stage routing and autonomy overrides.
+- **Apply the domain skills**: `task`, `scrutiny`, `detective`, `vcs`, `pull-requests`, `tickets`, `writing`. This skill only adds stage routing and autonomy overrides.
 - **Go as far as possible**: continue through stages until one waits on someone else, then stop and report.
 - **Stay idempotent**: re-invocation at any point is safe. Never redo finished work, never duplicate PRs, comments, or ticket updates.
 

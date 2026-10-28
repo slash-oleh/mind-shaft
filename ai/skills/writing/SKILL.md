@@ -1,6 +1,6 @@
 ---
-name: communications
-description: Write text for readers outside the current session. Use when drafting ticket or PR descriptions and comments, documentation, code comments, or messages to send.
+name: writing
+description: Use whenever writing text other people will read - commit messages, PR titles/descriptions/comments, ticket text, READMEs and docs, code comments, messages to send.
 ---
 
 # Communications

@@ -24,7 +24,7 @@ If the knowledge is an ordered procedure with inputs and outputs, write a regula
 - Frontmatter: `title: SKILL.md`, `name`, `description`.
 - `description`: first sentence names the domain or mindset. Second starts with "Use when" and lists the situations (e.g. "drafting ticket or PR descriptions", "anything is broken").
 - Body: `# <Name>`, then bullets. Optional second-level sections for situational subsets (e.g. `Creating`, `Fixing`, `Reviewing`, `Submitting`).
-- Name by domain noun (`communications`, `detective`, `vcs`), not by verb phrase.
+- Name by domain noun (`writing`, `detective`, `vcs`), not by verb phrase.
 
 ## Writing rules
 

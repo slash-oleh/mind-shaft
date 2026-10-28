@@ -2,7 +2,7 @@
 title: Home
 ---
 
-# communications
+# writing
 
 For skill itself see [SKILL.md](./SKILL.md).
 
