@@ -1,6 +1,6 @@
 ---
 name: pull-requests
-description: Standing rules for pull requests - submitting, fixing, reviewing. Use when opening a PR, addressing review comments, conflicts or CI failures, or reviewing someone's PR.
+description: Load before opening, updating, force-pushing, or reviewing a pull request, and before replying to PR review comments or fixing PR conflicts and CI failures. Project rules for fixup commits, outward actions, thread handling and PR text differ from default habits.
 ---
 
 # Pull Requests

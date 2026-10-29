@@ -1,6 +1,6 @@
 ---
 name: tickets
-description: Rules for working with tickets in a tracker such as Jira. Use when creating, updating, transitioning, or commenting on tickets, or when judging whether a ticket is clear enough to implement.
+description: Load before creating, updating, commenting on, or changing the status of a ticket (Jira or similar), and when reading a ticket to decide whether it is ready to implement. Project field layout, status flow and audience rules differ from default habits.
 ---
 
 # Tickets

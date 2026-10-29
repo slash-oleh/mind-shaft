@@ -1,7 +1,7 @@
 ---
 title: SKILL.md
 name: writing
-description: Use whenever writing text other people will read - commit messages, PR titles/descriptions/comments, ticket text, READMEs and docs, code comments, messages to send.
+description: Load before drafting any text someone else will read: a commit message, PR title or body, PR or ticket comment, README, or code comment, including short ones. Project tone, structure and wording rules apply that general writing habits miss.
 ---
 
 # Communications

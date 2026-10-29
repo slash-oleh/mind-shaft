@@ -1,7 +1,7 @@
 ---
 title: SKILL.md
 name: vcs
-description: Standing rules for working with version control, git in particular. Use when branching, committing, rebasing, resolving conflicts, or reorganizing history.
+description: Load before running `git checkout -b`, `git commit`, `git commit --amend`, `git rebase`, or `git push`, including one-line commits. Project branch names, commit message format, branching base and rebase rules differ from git defaults.
 ---
 
 # VCS

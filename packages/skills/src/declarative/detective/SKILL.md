@@ -1,7 +1,7 @@
 ---
 title: SKILL.md
 name: detective
-description: Mindset for bugs, errors, incidents, and regressions. Use when anything is broken or behaves unexpectedly.
+description: Load on a reported bug, incident, or regression, or a behavior report that something is broken, before proposing a fix or editing code, even when the cause looks obvious. Not for errors or failing tests hit mid-task. Covers reproducing, root-cause tracing and proving the fix, which quick patches skip.
 ---
 
 # Detective

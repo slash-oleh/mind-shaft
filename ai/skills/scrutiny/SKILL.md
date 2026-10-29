@@ -1,6 +1,6 @@
 ---
 name: scrutiny
-description: Mindset for scrutinizing a task before acting on it - vague goals, scope creep, overly specific solutions. Use when receiving a new task, ticket, or spec, or when requirements look unclear, bloated, or contradictory.
+description: Load on receiving a ticket, spec or task, before planning any work, even when it looks fully specified. Lists what to challenge (goal, scope, prescribed solution) and which questions to ask first.
 ---
 
 # Scrutiny

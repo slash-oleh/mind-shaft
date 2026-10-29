@@ -1,7 +1,7 @@
 ---
 title: SKILL.md
 name: task
-description: Mindset for changing files to deliver a goal. Use when a task implies file changes, such as implementing a feature, fixing a bug, or refactoring.
+description: Load before the first Edit or Write in any change that delivers a feature, fix or refactor, even when a more specific skill also applies. It covers scope, verification and file-change rules that specific skills don't repeat.
 ---
 
 # Task
