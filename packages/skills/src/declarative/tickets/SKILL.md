@@ -12,6 +12,13 @@ description: Load before creating, updating, commenting on, or changing the stat
 - **Be skeptical of the definition**: challenge tickets that are too vague (no clear goal or criteria) or too specific (prescribe a solution instead of a problem).
 - **Match the audience**: ticket readers are often semi-technical, so use higher-level language than in PRs and avoid implementation detail unless it is needed.
 
+## Adjacent domains
+
+Trigger: any step below. This skill does not cover it, and being active does not replace loading the skill that does.
+
+- **Drafting text**: ticket title, description, comments. Load the skill for text other people read.
+- **Judging readiness**: challenging a ticket before work starts. Load the skill for scrutinizing a task spec.
+
 ## Creating
 
 - **Choose the shape by type**: features use the feature fields, bugs use the bug fields. Add other sections only when they carry information.

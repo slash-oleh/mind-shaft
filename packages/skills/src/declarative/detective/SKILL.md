@@ -13,3 +13,10 @@ description: Load on a reported bug, incident, or regression, or a behavior repo
 - **Fix the cause**: not the symptom. Smallest change at the responsible layer. Label workarounds as such.
 - **Prove it**: test fails without the fix, passes with it. Existing tests still pass.
 - **Look around**: same cause may exist elsewhere.
+
+## Adjacent domains
+
+Trigger: any step below. This skill does not cover it, and being active does not replace loading the skill that does.
+
+- **Applying the fix**: editing files. Load the skill for file-changing work.
+- **Filing the bug**: creating or updating a bug ticket. Load the skill for tickets.

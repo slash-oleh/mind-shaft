@@ -36,6 +36,7 @@ If the knowledge is an ordered procedure with inputs and outputs, write a regula
 - Use a fixed list of fields (e.g. Title, Pre-conditions, STR/AR/ER) when the skill governs the shape of an artifact.
 - Give defaults with fallbacks ("check the project's documented convention, fall back to X").
 - Mark user-gated actions explicitly ("ask before force-push").
+- Cross-reference adjacent domains in an `## Adjacent domains` section: one bullet per situation this skill touches but does not govern (e.g. drafting PR text), each saying to load the skill for that domain. Describe the domain, never the skill name, so skills stay easy to rename and replace. Agents tend to skip a second skill once one is active, so the section must state that this skill does not replace it.
 - Concise, no fluff, no emojis, ASCII only.
 
 ## Execution
@@ -45,7 +46,7 @@ If the knowledge is an ordered procedure with inputs and outputs, write a regula
 3. Strip case-specific data (ticket IDs, repo names, commands tied to one tool). Keep the principle.
 4. Group rules into the base list plus situational sections.
 5. Write `SKILL.md` per the structure above.
-6. Check isolation: no references into other skills' internals. Refer to sibling skills by name only.
+6. Check isolation: no references into other skills' internals or names. Refer to sibling skills by domain only.
 
 ## Anti-patterns
 

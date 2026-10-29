@@ -8,6 +8,13 @@ description: Load before running `git checkout -b`, `git commit`, `git commit --
 - **Follow project convention**: branch naming, base branch, commit messages. Fall back to `main` and short imperative messages.
 - **Cohesive commits**: one logical change each, nothing obviously broken in between.
 
+## Adjacent domains
+
+Trigger: any step below. This skill does not cover it, and being active does not replace loading the skill that does.
+
+- **Drafting text**: commit messages. Load the skill for text other people read.
+- **Pull requests**: pushing a PR branch, resolving PR conflicts. Load the skill for pull requests.
+
 ## Branching
 
 - **Branch from remote base**: fetch, then branch off `origin/<base>`. Never move the local base ref, another worktree may have it checked out.

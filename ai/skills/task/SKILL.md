@@ -10,6 +10,16 @@ description: Load before the first Edit or Write in any change that delivers a f
 - **Minimal required change**: touch only what the goal needs.
 - **Provide evidence**: end-to-end proof, e.g. a screenshot for a feature, a command result for a purely technical change.
 
+## Adjacent domains
+
+Trigger: any step below. This skill does not cover it, and being active does not replace loading the skill that does.
+
+- **Challenging the spec**: before planning. Load the skill for scrutinizing a task spec.
+- **Fixing a bug**: broken behavior or regression. Load the skill for bugs and incidents.
+- **Git operations**: branching, committing, fixups. Load the skill for git commands.
+- **Ticket updates**: status changes, comments. Load the skill for tickets.
+- **Drafting text**: commit messages, code comments, docs. Load the skill for text other people read.
+
 ## Starting
 
 - **Branch from latest base**: create the branch from an up-to-date base branch.

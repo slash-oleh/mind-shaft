@@ -9,6 +9,14 @@ description: Load before opening, updating, force-pushing, or reviewing a pull r
 - **Ask before outward actions**: pushing (with squash if fixups exist), and posting comments or reviews. Show the drafted text first.
 - **Follow project convention**: for PR title, description, and review style. Fall back to the rules below.
 
+## Adjacent domains
+
+Trigger: any step below. This skill does not cover it, and being active does not replace loading the skill that does.
+
+- **Drafting text**: PR title, description, replies, review comments. Load the skill for text other people read.
+- **Git operations**: commits, fixups, rebase, push. Load the skill for git commands.
+- **Code changes**: implementing a fix for a comment or CI failure. Load the skill for file-changing work.
+
 ## Submitting
 
 Trigger: opening a PR.
