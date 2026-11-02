@@ -47,7 +47,7 @@ Description, when relevant:
 Trigger: review comments, conflicts, or CI failures on an open PR.
 
 - **One fixup per change**: each change is its own local fixup commit, so the follow-up diff stays traceable until squashed.
-- **Reply in thread**: once a comment is addressed, say what was done.
+- **Reply in thread**: once a comment is addressed, say what was done. If applied as suggested, do not re-explain it: "Done" or "Fixed" is enough.
 - **Keep threads open**: do not resolve a thread after replying. The comment author re-checks and resolves it.
 - **Doubt bot comments**: be extra skeptical of automated reviewers (CodeRabbit, Copilot). Verify before acting.
 - **Rebase separately**: force-push rebases and conflict resolutions apart from actual changes.
