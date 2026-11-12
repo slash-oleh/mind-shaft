@@ -8,6 +8,7 @@ claudecode:
   arguments:
     - "draft"
 ---
+
 # Refine Text
 
 ## Goal

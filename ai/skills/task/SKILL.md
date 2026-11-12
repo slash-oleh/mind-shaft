@@ -37,7 +37,9 @@ Trigger: any step below. This skill does not cover it, and being active does not
   - Unified pattern: follow the pattern already used in the codebase.
   - Separation of concerns: keep unrelated concerns in separate units.
   - Single responsibility: one reason to change per unit.
+
 - **Don't lint in between**: run lint once at the end.
+
 - **Commit when done**: commit the finished changes.
 
 ## Feedback
