@@ -12,8 +12,8 @@ root: true
 - **Skill**: Agent skill. An automated workflow for an agent (`packages/skills`).
 - **Rule** (also "Article"): Agent rule. An enforced best practice (`packages/rules`). Short AI Rules are generated from full articles.
 - **Stack**: Toolset reference material (`packages/stack`).
-- **Skill Group** (also "Skill Category"): A subdirectory grouping related skills under `packages/skills/src/` (e.g. `declarative`, `generic`, `meta`, `tools`, plus legacy `sdlc` and `workflows`).
-- **Declarative Skill**: Skill made of standing rules and mindset for a domain, not a step-by-step workflow (`packages/skills/src/declarative`). Intended to replace `sdlc` and `workflows`.
+- **Skill Group** (also "Skill Category"): A subdirectory grouping related skills under `packages/skills/src/` (e.g. `sdlc`, `generic`, `meta`, `tools`).
+- **Declarative Skill**: Skill made of standing rules and mindset for a domain, not a step-by-step workflow. The `sdlc` group (`packages/skills/src/sdlc`) is made of them.
 - **Target**: An AI tool that rulesync generates config for (e.g. Claude Code, Cursor).
 
 ## Structure

@@ -12,7 +12,7 @@ _Dig here. Bring a hard hat._ 👷
 
 ### Skills (routine, automated away): 🤖
 
-Declarative (standing rules and mindset - loaded as context, not run as steps):
+SDLC (declarative - standing rules and mindset, loaded as context, not run as steps):
 
 - [`/task`](ai/skills/task/SKILL.md): changing files to deliver a goal - minimal change, evidence, commits.
 - [`/scrutiny`](ai/skills/scrutiny/SKILL.md): challenge a task before acting - vague goals, scope creep, prescribed solutions.
@@ -23,47 +23,7 @@ Declarative (standing rules and mindset - loaded as context, not run as steps):
 - [`/writing`](ai/skills/writing/SKILL.md): text for readers outside the session.
 - [`/delivery-autopilot`](ai/skills/delivery-autopilot/SKILL.md): drive a task from any stage through PR to shipped.
 
-Declarative skills are the future of this repo. They are meant to replace the step-by-step SDLC and Workflows skills below, which are being phased out.
-
-Legacy SDLC (atomic development processes - full control):
-
-- [`/gather-task`](ai/skills/gather-task/SKILL.md): collect ticket, design, and codebase info for a task.
-- [`/prepare-workspace`](ai/skills/prepare-workspace/SKILL.md): set up branch and git state for a task.
-- [`/normalize-requirements`](ai/skills/normalize-requirements/SKILL.md): structure raw requirements into sections.
-- [`/confront`](ai/skills/confront/SKILL.md): critically examine a spec against the codebase, raise concerns.
-- [`/investigate`](ai/skills/investigate/SKILL.md): trace a bug/incident to root cause, propose a fix.
-- [`/clarify`](ai/skills/clarify/SKILL.md): resolve open concerns with the user, update requirements.
-- [`/spec`](ai/skills/spec/SKILL.md): compile approach, sub-tasks, and testable success criteria.
-- [`/plan-implementation`](ai/skills/plan-implementation/SKILL.md): assess requirements, break work into commit-sized stages.
-- [`/implement`](ai/skills/implement/SKILL.md): execute a plan through to a verified, committed change.
-- [`/review-code`](ai/skills/review-code/SKILL.md): review a diff against project rules.
-- [`/submit-pull-request`](ai/skills/submit-pull-request/SKILL.md): clean, polish, submit for review.
-- [`/resolve-conflicts`](ai/skills/resolve-conflicts/SKILL.md): rebase onto a target branch and resolve conflicts.
-- [`/gather-merge-blockers`](ai/skills/gather-merge-blockers/SKILL.md): fetch and order a PR's conflicts, CI failures, comment threads.
-- [`/ship-task`](ai/skills/ship-task/SKILL.md): merge, release, verify, announce.
-
-Legacy Workflows (common chains of other skills - hands-off):
-
-- [`/elaborate`](ai/skills/elaborate/SKILL.md): raw requirements to change spec.
-  - `normalize-requirements` -> `confront` -> `clarify` -> `spec`
-- [`/prescribe`](ai/skills/prescribe/SKILL.md): raw incident to fix spec.
-  - `investigate` -> `clarify` -> `spec`
-- [`/perform-task`](ai/skills/perform-task/SKILL.md): raw requirements/incident to committed change/fix.
-  - `elaborate`/`prescribe` -> `plan-implementation` -> `implement`
-- [`/fix-feedback`](ai/skills/fix-feedback/SKILL.md): resolve a batch of feedback items end to end, dedup and map reports back.
-  - `perform-task`
-- [`/feedback-loop`](ai/skills/feedback-loop/SKILL.md): get user sign-off on a batch of commits, route changes back through `fix-feedback`, then squash.
-  - `fix-feedback`
-- [`/file-ticket`](ai/skills/file-ticket/SKILL.md): draft a structured ticket from stream of consciousness.
-  - `normalize-requirements`/`normalize-bug-report` -> `ticket-tools`
-- [`/implement-ticket`](ai/skills/implement-ticket/SKILL.md): ticket to submitted PR.
-  - `gather-task` -> `prepare-workspace` -> `perform-task` -> `feedback-loop` -> `submit-pull-request`
-- [`/fix-pull-request`](ai/skills/fix-pull-request/SKILL.md): address review comments, conflicts, CI failures.
-  - `gather-merge-blockers` -> `resolve-conflicts` -> `perform-task` (on CI failures) -> `fix-feedback` -> `feedback-loop` -> update PR
-- [`/review-pull-request`](ai/skills/review-pull-request/SKILL.md): fetch, review, and submit a pull request review.
-  - `vcs-tools` -> `review-code` -> `vcs-tools`
-
-Tools (external integrations - invoked by other skills, not directly):
+Tools (external integrations):
 
 - [`/vcs-tools`](ai/skills/vcs-tools/SKILL.md): PR/MR data/operations for the detected platform (GitHub `gh`, GitLab `glab`).
 - [`/ticket-tools`](ai/skills/ticket-tools/SKILL.md): ticket create/update/status/comment operations (Jira via Atlassian MCP for now).

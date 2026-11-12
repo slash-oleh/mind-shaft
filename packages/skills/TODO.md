@@ -15,13 +15,10 @@
 
 ## Subagent ideas
 
-- `errand-boy`: Run "tools" skills and some of "sdlc" skills (`prepare-workspace`, `gather-task`, `gather-merge-blockers`)
+- `errand-boy`: Run "tools" skills
   Simple deterministic tasks, often scripts-heavy one-time command with clear i/o, no semantic analysis, focus on format and syntax.
   Suggested cheap model / low effort.
-- `effective-manager`: Run "workflow" skills
-  High-level orchestration tasks, mostly multiple skills invoking with carrying i/o in between. Not diving into details and not micro-managing sub-skills with redundant instructions.
-  Suggested cheap model / low effort.
-- `it-depends-dev`+`self-contained-dev`: Run `clarify` skill
+- `it-depends-dev`+`self-contained-dev`: Resolve concerns raised per `scrutiny`
   Two sides/modes:
   - `it-depends-dev`: default mode where it asks technical questions about the code
   - `self-contained-dev`: makes best-effort tech decisions and only asks about product
@@ -30,28 +27,24 @@
 
 ### SLDC
 
-- `delivery-autopilot`: Drafted in `src/declarative/delivery-autopilot`, see its README TODO.
-
 - `regroup-commits`: Split big ones into smaller cohesive ones. Squash non-cohesive ones. Keep commits non-breaking in between.
 
-- `inspect-codebase`: Split from `elaborate` and `investigate`
+- `inspect-codebase`: Split from `scrutiny` and `detective`
 
-- `why-ci-failed`: Part of `fix-pull-request` already but would still prove useful being ad-hoc.
+- `why-ci-failed`: Diagnose CI failures ad-hoc.
 
 ### System Design
 
 - `estimate-prd`: Analyze, breakdown, estimate workflow
-  - `normalize-prd` (`normalize-requirements` counterpart). Outputs PRD (Requirements counterpart).
-  - `business-analysis` (`elaborate` counterpart). Summarize, classify, challenge, gaps, risks, stack, data model, use cases, critical path, mvp, milestones, timeline, team, components, services. Outputs System Design (Spec counterpart).
+  - `normalize-prd`: Structure raw input. Outputs PRD (Requirements counterpart).
+  - `business-analysis` (`scrutiny` counterpart). Summarize, classify, challenge, gaps, risks, stack, data model, use cases, critical path, mvp, milestones, timeline, team, components, services. Outputs System Design (Spec counterpart).
     - `breakdown`: Breakdown PRD into smaller, more manageable pieces. Outputs Breakdown.
     - For each breakdown item:
-      - `confront`
-      - `clarify`
-      - `spec`?
+      - Challenge per `scrutiny`
       - `adr`: Collect options, Assess, Make decision, Write ADR. Outputs ADR.
-  - `roadmap` (`plan-implementation` counterpart): Convert System Design into ordered roadmap: milestones, epics, tasks - ready to be created in ticket tracker. Outputs Roadmap (Stages counterpart).
-  - `estimate` (`implement` counterpart). Combine System Design and Roadmap to estimate. Outputs Estimation.
-  - `proposal` (`submit-pull-request` counterpart). Combines System Design, Roadmap and Estimation. Outputs Proposal.
+  - `roadmap`: Convert System Design into ordered roadmap: milestones, epics, tasks - ready to be created in ticket tracker. Outputs Roadmap.
+  - `estimate`: Combine System Design and Roadmap to estimate. Outputs Estimation.
+  - `proposal`: Combines System Design, Roadmap and Estimation. Outputs Proposal.
 
 ### Tools
 

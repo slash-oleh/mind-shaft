@@ -51,7 +51,7 @@ If the knowledge is an ordered procedure with inputs and outputs, write a regula
 
 ## Anti-patterns
 
-- Procedure disguised as rules: numbered steps with inputs and outputs belong in a workflow skill.
+- Procedure disguised as rules: numbered steps with inputs and outputs belong in a procedural skill.
 - Giant catch-all skill: split by domain.
 - Restating generic model behavior: include only what the project wants enforced.
 - Duplicating a rule across declarative skills: keep it in one place.
