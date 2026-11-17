@@ -60,6 +60,7 @@ Trigger: reviewing a PR.
 
 - **Warn first**: before starting, flag a draft PR, failing CI, conflicts, or over 300 added lines.
 - **Ask before publishing**: show the review before posting it.
+- **Resolve verified threads**: on re-review, resolve your own threads once addressed - fixed, done, or explained to your satisfaction. Keep the rest open with a follow-up reply.
 
 ### First pass: high-level
 
