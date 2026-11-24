@@ -21,6 +21,7 @@ SDLC (declarative - standing rules and mindset, loaded as context, not run as st
 - [`/pull-requests`](ai/skills/pull-requests/SKILL.md): submitting, fixing, reviewing PRs.
 - [`/tickets`](ai/skills/tickets/SKILL.md): ticket status, comments, feature and bug shapes.
 - [`/writing`](ai/skills/writing/SKILL.md): text for readers outside the session.
+- [`/media-evidence`](ai/skills/media-evidence/SKILL.md): screenshots and recordings as PR or ticket evidence.
 - [`/delivery-autopilot`](ai/skills/delivery-autopilot/SKILL.md): drive a task from any stage through PR to shipped.
 
 Tools (external integrations):
