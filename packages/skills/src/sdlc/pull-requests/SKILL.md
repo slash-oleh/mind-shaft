@@ -17,6 +17,7 @@ Trigger: any step below. This skill does not cover it, and being active does not
 - **Drafting text**: PR title, description, replies, review comments. Load the skill for text other people read.
 - **Git operations**: commits, fixups, rebase, push. Load the skill for git commands.
 - **Code changes**: implementing a fix for a comment or CI failure. Load the skill for file-changing work.
+- **Capturing evidence**: screenshots, screen recordings. Load the skill for media evidence.
 
 ## Submitting
 

@@ -20,6 +20,7 @@ Trigger: any step below. This skill does not cover it, and being active does not
 - **Git operations**: branching, committing, fixups. Load the skill for git commands.
 - **Ticket updates**: status changes, comments. Load the skill for tickets.
 - **Drafting text**: commit messages, code comments, docs. Load the skill for text other people read.
+- **Capturing evidence**: screenshots, screen recordings. Load the skill for media evidence.
 
 ## Starting
 

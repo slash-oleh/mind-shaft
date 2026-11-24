@@ -17,6 +17,7 @@ Trigger: any step below. This skill does not cover it, and being active does not
 
 - **Drafting text**: ticket title, description, comments. Load the skill for text other people read.
 - **Judging readiness**: challenging a ticket before work starts. Load the skill for scrutinizing a task spec.
+- **Capturing evidence**: screenshots, screen recordings. Load the skill for media evidence.
 
 ## Creating
 
