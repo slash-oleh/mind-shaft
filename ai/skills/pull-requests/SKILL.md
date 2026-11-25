@@ -17,6 +17,7 @@ Trigger: any step below. This skill does not cover it, and being active does not
 - **Git operations**: commits, fixups, rebase, push. Load the skill for git commands.
 - **Code changes**: implementing a fix for a comment or CI failure. Load the skill for file-changing work.
 - **Capturing evidence**: screenshots, screen recordings. Load the skill for media evidence.
+- **Ticket status**: moving the ticket when a PR is opened, updated or merged. Load the skill for tickets.
 
 ## Submitting
 
